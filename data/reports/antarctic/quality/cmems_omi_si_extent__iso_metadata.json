@@ -1,0 +1,71 @@
+{
+  "dataset_id": "cmems_omi_si_extent__iso_metadata",
+  "dataset_name": "ISO 19139 metadata record for ANTARCTIC_OMI_SI_extent_obs",
+  "category": "iso_metadata",
+  "provider": "Copernicus Marine Service",
+  "source_files": [
+    "DATAS/ANTARCTIC_OMI_SI_extent_obs.xml"
+  ],
+  "status": "metadata_inspected",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:59+00:00",
+  "finished_utc": "2026-10-10T16:03:59+00:00",
+  "steps": [
+    "Parsed CSW GetRecordById response: 'Antarctic Monthly Sea Ice Extent from Observations Reprocessing', 1979-01-01..2025-05-05, 3 online resources"
+  ],
+  "metrics": {
+    "file_identifier": "2c63f6c1-df34-4ab8-87b1-31d4ed30930e",
+    "title": "Antarctic Monthly Sea Ice Extent from Observations Reprocessing",
+    "abstract": "'''DEFINITION'''\n\nSea Ice Extent (SIE) is the area covered by sufficient sea ice, that is the area of ocean having more than 15% Sea Ice Concentration (SIC). SIC is the fractional area of ocean surface that is covered with sea ice. SIC is computed from Passive Microwave satellite observations since the 1970s. SIE is often reported with units of millions square kilometers. SIE includes all sea ice, and does not include lake and river ice. The change in sea ice extent (trend) is expressed in millions of km squared per decade. In addition, trends are expressed relative to the 1979-2024 period in % per decade. These trends are calculated (i) for the annual mean values; (ii) for the winter maximum cover (September in the Southern Hemisphere); (iii) for the summer minimum extent (February in the Southern Hemisphere). The annual mean trend is reported on the key figure. The September and February trends are reported in the text below.  See also section 1.7 in Samuelsen et al. (2016) for an introduction to this Ocean Monitoring Indicator (OMI).\n\n\n'''CONTEXT'''\n\nSea ice is frozen seawater that floats at the ocean surface. This large blanket of millions of square kilometers insulates the relatively warm ocean waters from the cold polar atmosphere. The seasonal cycle of sea ice, forming and melting with the polar seasons, impacts both human activities and biological habitat. Knowing how and by how much the sea-ice cover is changing is essential for monitoring the health of the Earth (Meredith et al. 2019; Fox-Kemper et al. 2021).\n\n\n'''CMEMS KEY FINDINGS'''\n\nSince 1979, there has been an overall slight increase of sea ice extent in the Southern Hemisphere but a sharp decrease was observed after 2016. Over the period 1979-2024, the annual rate amounts to -0.06 +/- +0.06 millions km squared by decade (-0.48% per decade). Winter (September) sea ice extent trend amounts to -0.03 +/- +0.06 millions km squared by decade (-0.14% per decade). Summer (February) sea ice extent trend amounts to -0.06 +/- +0.05 millions km squared by decade (-1.96% per decade). These trend estimates are hardly significant, which is in agreement with the IPCC SROCC, which has assessed that ‘Antarctic sea ice extent overall has had no statistically significant trend (1979–2018) due to contrasting regional signals and large interannual variability (high confidence).’ (Meredith et al. 2019). Southern Hemisphere sea-ice extent for June through October 2024 were second lowest sea ice extent values (for",
+    "temporal_begin": "1979-01-01",
+    "temporal_end": "2025-05-05",
+    "bbox": {
+      "westBoundLongitude": "-180.00",
+      "eastBoundLongitude": "180.00",
+      "southBoundLatitude": "-90.00",
+      "northBoundLatitude": "0.00"
+    },
+    "keywords": [
+      "N/A",
+      "Not Applicable",
+      "Oceanographic geographical features",
+      "coastal-marine-environment",
+      "global-ocean",
+      "marine-resources",
+      "marine-safety",
+      "multi-year",
+      "satellite-observation",
+      "sea_ice_extent",
+      "target-application#seaiceinformation",
+      "weather-climate-and-seasonal-forecasting"
+    ],
+    "use_limitation": "See Copernicus Marine Environment Monitoring Service Data commitments and licence at: http://marine.copernicus.eu/web/27-service-commitments-and-licence.php",
+    "other_constraints": "No limitations on public access",
+    "online_resources": [
+      "http://marine.copernicus.eu/",
+      "https://stac.marine.copernicus.eu/metadata/ANTARCTIC_OMI_SI_extent_obs/antarctic_omi_si_extent_obs_202311/dataset.stac.json",
+      "https://wmts.marine.copernicus.eu/teroWmts/ARCTIC_OMI_SI_extent_obs/arctic_omi_si_extent_obs_202311?service=WTMS&request=GetCapabilities"
+    ],
+    "contacts": [
+      "CMEMS",
+      "SIW-METNO-OSLO-NO"
+    ],
+    "doi": null,
+    "product_id": "ANTARCTIC_OMI_SI_extent_obs"
+  },
+  "issues": [],
+  "outputs": [
+    {
+      "path": "data/processed/antarctic/metadata/ANTARCTIC_OMI_SI_extent_obs_iso_metadata.json",
+      "kind": "json",
+      "description": "Extracted ISO metadata fields",
+      "size_bytes": 3994
+    }
+  ],
+  "validation": {
+    "xml_well_formed": true,
+    "title_present": true
+  },
+  "errors": [],
+  "notes": []
+}

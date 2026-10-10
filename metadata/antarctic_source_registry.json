@@ -1,0 +1,646 @@
+{
+  "generated_utc": "2026-10-10T16:04:01+00:00",
+  "domain": "Antarctic Climate and Cryosphere",
+  "status_vocabulary": [
+    "discovered",
+    "metadata_inspected",
+    "downloaded",
+    "not_downloaded",
+    "validated",
+    "processed",
+    "partially_processed",
+    "not_available",
+    "failed",
+    "unsupported"
+  ],
+  "sources": [
+    {
+      "dataset_id": "cmems_omi_si_extent",
+      "source_key": "A",
+      "dataset_name": "Antarctic Monthly Sea Ice Extent from Observations Reprocessing",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "Copernicus Marine Service (CMEMS); EUMETSAT OSI SAF / MET Norway",
+      "source_url": "https://data.marine.copernicus.eu/product/ANTARCTIC_OMI_SI_extent_obs/services",
+      "product_id": "ANTARCTIC_OMI_SI_extent_obs",
+      "doi": "https://doi.org/10.48670/moi-00187",
+      "local_paths": [
+        "DATAS/ANTARCTIC_OMI_SI_extent_19790115_P20250505_R19792024.nc",
+        "DATAS/ANTARCTIC_OMI_SI_extent_obs-hq.png",
+        "DATAS/ANTARCTIC_OMI_SI_extent_obs.xml"
+      ],
+      "file_formats": [
+        "nc",
+        "png",
+        "xml"
+      ],
+      "variables": [
+        "siextent (km^2)",
+        "monthlyclimsiextent_mean",
+        "monthlyclimsiextent_std"
+      ],
+      "scientific_purpose": "Monthly Southern Hemisphere sea-ice EXTENT (area with SIC > 15 %), 1979 onwards, for climate monitoring",
+      "spatial_coverage": null,
+      "temporal_coverage": "1979-01..2024-12",
+      "license": "https://marine.copernicus.eu/user-corner/service-commitments-and-licence",
+      "access_method": "Copernicus Marine Toolbox / MyOcean Data Store (free registration required); public STAC metadata",
+      "remote_check": {
+        "checked": true,
+        "reachable_urls": 2,
+        "login_required": false
+      },
+      "download_status": "downloaded",
+      "validation_status": "validated",
+      "preprocessing_status": "processed",
+      "processing_timestamp": "2026-10-10T16:02:56+00:00",
+      "output_paths": [
+        "data/processed/antarctic/sea_ice_extent/cmems_omi_si_extent_climatology.csv",
+        "data/processed/antarctic/sea_ice_extent/cmems_omi_si_extent_monthly.csv"
+      ],
+      "notes": [
+        "Data download needs a (free) Copernicus Marine account; only public STAC/ISO metadata were retrieved."
+      ]
+    },
+    {
+      "dataset_id": "cmems_dmi_asip_sic",
+      "source_key": "B",
+      "dataset_name": "Antarctic Ocean - High Resolution Sea Ice Information",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "Copernicus Marine Service (CMEMS); Danish Meteorological Institute (DMI-ASIP)",
+      "source_url": "https://data.marine.copernicus.eu/product/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/services",
+      "product_id": "SEAICE_ANT_PHY_AUTO_L3_NRT_011_012",
+      "doi": "https://doi.org/10.48670/mds-00320",
+      "local_paths": [
+        "DATAS/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012.xml",
+        "DATAS/dmi_asip_seaice_mosaic_ant_20230202.nc"
+      ],
+      "file_formats": [
+        "nc",
+        "xml"
+      ],
+      "variables": [
+        "ice_concentration (%)",
+        "confidence (%)",
+        "acq_time (s)"
+      ],
+      "scientific_purpose": "Daily 1 km SAR+AMSR2 sea-ice CONCENTRATION for the Southern Ocean (near real time)",
+      "spatial_coverage": "[-89.99836730957031, -39.26436996459961]",
+      "temporal_coverage": "['2023-02-02 12:00:00']",
+      "license": "https://marine.copernicus.eu/user-corner/service-commitments-and-licence",
+      "access_method": "Copernicus Marine Toolbox (subset/get), ARCO Zarr, WMTS; free registration required",
+      "remote_check": {
+        "checked": true,
+        "reachable_urls": 3,
+        "login_required": false
+      },
+      "download_status": "downloaded",
+      "validation_status": "validated",
+      "preprocessing_status": "validated",
+      "processing_timestamp": "2026-10-10T16:03:00+00:00",
+      "output_paths": [
+        "data/processed/antarctic/sea_ice_concentration/dmi_asip_confidence_histogram.csv",
+        "data/processed/antarctic/sea_ice_concentration/dmi_asip_sic_cell_classes.csv",
+        "data/processed/antarctic/sea_ice_concentration/dmi_asip_sic_value_histogram.csv"
+      ],
+      "notes": [
+        "Data download needs a (free) Copernicus Marine account; only public STAC/ISO metadata were retrieved.",
+        "Only ONE daily file (2023-02-02, first day of the product) is present locally."
+      ]
+    },
+    {
+      "dataset_id": "cmems_sea_ice_drift",
+      "source_key": "C",
+      "dataset_name": "Antarctic Ocean Sea Ice Drift REPROCESSED",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "Copernicus Marine Service (CMEMS); Ifremer CERSAT",
+      "source_url": "https://data.marine.copernicus.eu/product/SEAICE_ANT_PHY_L3_MY_011_018/services",
+      "product_id": "SEAICE_ANT_PHY_L3_MY_011_018",
+      "doi": "https://doi.org/10.48670/moi-00120",
+      "local_paths": [],
+      "file_formats": [],
+      "variables": [
+        "eastward_sea_ice_velocity",
+        "northward_sea_ice_velocity",
+        "quality/flag variables per dataset"
+      ],
+      "scientific_purpose": "Multi-year 2/3/30-day sea-ice DRIFT vectors (eastward/northward velocity components) from AMSR, CFOSAT, SSMI",
+      "spatial_coverage": null,
+      "temporal_coverage": null,
+      "license": "https://marine.copernicus.eu/user-corner/service-commitments-and-licence",
+      "access_method": "Copernicus Marine Toolbox (subset/get), ARCO Zarr; free registration required",
+      "remote_check": {
+        "checked": true,
+        "reachable_urls": 3,
+        "login_required": false
+      },
+      "download_status": "not_downloaded",
+      "validation_status": "metadata_inspected",
+      "preprocessing_status": "metadata_inspected",
+      "processing_timestamp": null,
+      "output_paths": [],
+      "notes": [
+        "Data download needs a (free) Copernicus Marine account; only public STAC/ISO metadata were retrieved.",
+        "No drift data present locally; ISO metadata XML only. Drift preprocessing could not be executed."
+      ]
+    },
+    {
+      "dataset_id": "pgc_antarctica_map",
+      "source_key": "D",
+      "dataset_name": "Polar Geospatial Center - Antarctica map catalog",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "Polar Geospatial Center (University of Minnesota)",
+      "source_url": "https://maps.apps.pgc.umn.edu/antarctica",
+      "product_id": "PGC map catalog (interactive)",
+      "doi": null,
+      "local_paths": [
+        "DATAS/NCALM_DV_LiDAR_Collection_Report.pdf",
+        "DATAS/NCALM_DV_LiDAR_LAS_Tile_index.kmz"
+      ],
+      "file_formats": [
+        "kmz",
+        "pdf"
+      ],
+      "variables": [
+        "map layers (not a dataset)"
+      ],
+      "scientific_purpose": "Geographic context layers; source of the NCALM Dry Valleys LiDAR tile index found locally",
+      "spatial_coverage": "[160.1043438739, -78.2825634693, 166.9605522291, -77.2118863937]",
+      "temporal_coverage": null,
+      "license": "Per-product (PGC data use and acknowledgement policy); not stated on the map application page",
+      "access_method": "Interactive JavaScript web map; linked products served from data.pgc.umn.edu (HTTPS)",
+      "remote_check": {
+        "checked": true,
+        "reachable_urls": 1,
+        "login_required": false
+      },
+      "download_status": "downloaded",
+      "validation_status": "validated",
+      "preprocessing_status": "processed",
+      "processing_timestamp": "2026-10-10T16:03:59+00:00",
+      "output_paths": [
+        "data/processed/antarctic/pgc/ncalm_dv_lidar_site_summary.csv",
+        "data/processed/antarctic/pgc/ncalm_dv_lidar_tile_index.gpkg"
+      ],
+      "notes": [
+        "Interactive map (JavaScript app) - not a dataset. Local KMZ tile index links to data.pgc.umn.edu."
+      ]
+    },
+    {
+      "dataset_id": "scar_amd",
+      "source_key": "E",
+      "dataset_name": "SCAR Antarctic Master Directory (AMD)",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "Scientific Committee on Antarctic Research (SCAR)",
+      "source_url": "https://scar.org/library-data/data/amd",
+      "product_id": "AMD",
+      "doi": null,
+      "local_paths": [],
+      "file_formats": [],
+      "variables": [
+        "catalog records"
+      ],
+      "scientific_purpose": "Discovery of Antarctic scientific datasets (metadata directory)",
+      "spatial_coverage": null,
+      "temporal_coverage": null,
+      "license": "Catalog; each listed dataset carries its own licence",
+      "access_method": "Web catalog page linking to the AMD metadata portal (catalog records, not data)",
+      "remote_check": {
+        "checked": true,
+        "reachable_urls": 1,
+        "login_required": false
+      },
+      "download_status": "not_downloaded",
+      "validation_status": "metadata_inspected",
+      "preprocessing_status": "metadata_inspected",
+      "processing_timestamp": null,
+      "output_paths": [],
+      "notes": [
+        "Catalog only; no AMD-listed dataset was downloaded. The AMD page links to the NASA Earthdata Search AMD portal (https://search.earthdata.nasa.gov/portal/amd/search); DATAS/edsc_collection_results_export.* is an Earthdata Search export that may originate from it (not verifiable from the file contents)."
+      ]
+    },
+    {
+      "dataset_id": "glims",
+      "source_key": "F",
+      "dataset_name": "GLIMS Glacier Database (NSIDC-0272)",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "GLIMS / NSIDC",
+      "source_url": "https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0272_GLIMS_v1/",
+      "product_id": "NSIDC-0272 GLIMS v1",
+      "doi": "https://doi.org/10.7265/N5V98602",
+      "local_paths": [
+        "DATAS/glims_download_33432/glims_hypsometry_100.csv",
+        "DATAS/glims_download_33432/glims_hypsometry_50.csv",
+        "DATAS/glims_download_33432/glims_images.dbf",
+        "DATAS/glims_download_33432/glims_images.prj",
+        "DATAS/glims_download_33432/glims_images.shp",
+        "DATAS/glims_download_33432/glims_images.shx",
+        "DATAS/glims_download_33432/glims_lines.dbf",
+        "DATAS/glims_download_33432/glims_lines.prj",
+        "DATAS/glims_download_33432/glims_lines.shp",
+        "DATAS/glims_download_33432/glims_lines.shx",
+        "DATAS/glims_download_33432/glims_points.dbf",
+        "DATAS/glims_download_33432/glims_points.prj",
+        "DATAS/glims_download_33432/glims_points.shp",
+        "DATAS/glims_download_33432/glims_points.shx",
+        "DATAS/glims_download_33432/glims_polygons.dbf",
+        "DATAS/glims_download_33432/glims_polygons.prj",
+        "DATAS/glims_download_33432/glims_polygons.shp",
+        "DATAS/glims_download_33432/glims_polygons.shx"
+      ],
+      "file_formats": [
+        "csv",
+        "dbf",
+        "prj",
+        "shp",
+        "shx"
+      ],
+      "variables": [
+        "glacier polygons",
+        "points",
+        "image locations",
+        "hypsometry"
+      ],
+      "scientific_purpose": "Glacier outlines, points, images and hypsometry",
+      "spatial_coverage": "[-179.921339, -80.085534, 171.210447, -48.903915]",
+      "temporal_coverage": "['1600-09-09 00:00:00+00:00', '2025-09-04 00:00:00+00:00']",
+      "license": "GLIMS data: free use with citation of the analysts (see CITATIONS.txt)",
+      "access_method": "NSIDC DAAC HTTPS (NASA Earthdata Login required); GLIMS web download (glims.org) used for the local copy",
+      "remote_check": {
+        "checked": true,
+        "reachable_urls": 0,
+        "login_required": true
+      },
+      "download_status": "downloaded",
+      "validation_status": "validated",
+      "preprocessing_status": "partially_processed",
+      "processing_timestamp": "2026-10-10T16:03:58+00:00",
+      "output_paths": [
+        "data/processed/antarctic/glims/glims_antarctic_rgi19.gpkg",
+        "data/processed/antarctic/glims/glims_hypsometry_50_antarctic_rgi19.parquet"
+      ],
+      "notes": [
+        "Remote directory redirects to NASA Earthdata Login (credentials required; not used).",
+        "Local copy is a GLOBAL GLIMS web download (790,854 polygons); Antarctic subset = RGI region 19."
+      ]
+    },
+    {
+      "dataset_id": "nsidc_g02135_south",
+      "source_key": "G",
+      "dataset_name": "NSIDC Sea Ice Index v4 (G02135) - Southern Hemisphere",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "NSIDC / NOAA",
+      "source_url": "https://noaadata.apps.nsidc.org/NOAA/G02135/south/daily/data/",
+      "product_id": "G02135 v4",
+      "doi": "https://doi.org/10.7265/a98x-0f50",
+      "local_paths": [
+        "data/raw/antarctic/external/nsidc_g02135_south/S_seaice_extent_climatology_1981-2010_v4.0.csv",
+        "data/raw/antarctic/external/nsidc_g02135_south/S_seaice_extent_daily_v4.0.csv"
+      ],
+      "file_formats": [
+        "csv"
+      ],
+      "variables": [
+        "Extent (10^6 km^2)",
+        "Missing (10^6 km^2)"
+      ],
+      "scientific_purpose": "Daily Southern Hemisphere sea-ice extent and 1981-2010 climatology (independent cross-check of source A)",
+      "spatial_coverage": null,
+      "temporal_coverage": "['1978-10-26', '2026-10-09']",
+      "license": "NSIDC data use: free with citation",
+      "access_method": "Public HTTPS directory (no login)",
+      "remote_check": {
+        "checked": true,
+        "reachable_urls": 1,
+        "login_required": false
+      },
+      "download_status": "downloaded",
+      "validation_status": "validated",
+      "preprocessing_status": "processed",
+      "processing_timestamp": "2026-10-10T16:03:01+00:00",
+      "output_paths": [
+        "data/processed/antarctic/sea_ice_extent/nsidc_g02135_south_climatology.csv",
+        "data/processed/antarctic/sea_ice_extent/nsidc_g02135_south_daily.csv"
+      ],
+      "notes": []
+    },
+    {
+      "dataset_id": "oib_arctic_form_drag",
+      "source_key": "local",
+      "dataset_name": "NASA Operation IceBridge Arctic atmospheric form-drag coefficients",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "NASA GSFC (A. Petty)",
+      "source_url": null,
+      "product_id": null,
+      "doi": null,
+      "local_paths": [
+        "DATAS/Cda_ArcticOIB20090331-0425.nc"
+      ],
+      "file_formats": [
+        "nc"
+      ],
+      "variables": "",
+      "spatial_coverage": "[47.53662109375, 89.97356414794922]",
+      "temporal_coverage": "",
+      "license": null,
+      "access_method": "local file",
+      "download_status": "downloaded",
+      "validation_status": "validated",
+      "preprocessing_status": "validated",
+      "processing_timestamp": "2026-10-10T16:03:01+00:00",
+      "output_paths": [],
+      "domain_relevance": "out_of_domain_arctic",
+      "notes": [
+        "File covers the ARCTIC (OIB spring 2009 campaign, latitudes north of 47.5N); not used in Antarctic outputs"
+      ]
+    },
+    {
+      "dataset_id": "ags_glacier_photograph",
+      "source_key": "local",
+      "dataset_name": "Glacier photograph image AGS_A_2002_04 (provenance unverified)",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "unverified",
+      "source_url": null,
+      "product_id": null,
+      "doi": null,
+      "local_paths": [
+        "DATAS/AGS_A_2002_04.tif"
+      ],
+      "file_formats": [
+        "tif"
+      ],
+      "variables": "",
+      "spatial_coverage": "",
+      "temporal_coverage": "",
+      "license": null,
+      "access_method": "local file",
+      "download_status": "downloaded",
+      "validation_status": "validated",
+      "preprocessing_status": "validated",
+      "processing_timestamp": "2026-10-10T16:04:00+00:00",
+      "output_paths": [],
+      "domain_relevance": "unverified",
+      "notes": [
+        "No CRS, geotransform or GCPs: this is an RGB photograph (Adobe Photoshop), not a GeoTIFF; it cannot be used as spatial data"
+      ]
+    },
+    {
+      "dataset_id": "nsidc_g02135_north_climatology",
+      "source_key": "local",
+      "dataset_name": "NSIDC Sea Ice Index v4 (G02135) Northern Hemisphere daily extent climatology 1981-2010",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "NSIDC / NOAA",
+      "source_url": null,
+      "product_id": null,
+      "doi": null,
+      "local_paths": [
+        "DATAS/N_seaice_extent_climatology_1981-2010_v4.0.csv",
+        "DATAS/download.htm"
+      ],
+      "file_formats": [
+        "csv",
+        "htm"
+      ],
+      "variables": "doy; mean_extent_mkm2; std_extent_mkm2; p10_extent_mkm2; p25_extent_mkm2; p50_extent_mkm2; p75_extent_mkm2; p90_extent_mkm2",
+      "spatial_coverage": "",
+      "temporal_coverage": "",
+      "license": null,
+      "access_method": "local file",
+      "download_status": "downloaded",
+      "validation_status": "processed",
+      "preprocessing_status": "processed",
+      "processing_timestamp": "2026-10-10T16:03:01+00:00",
+      "output_paths": [
+        "data/processed/antarctic/sea_ice_extent/nsidc_g02135_north_climatology.csv"
+      ],
+      "domain_relevance": "out_of_domain_arctic",
+      "notes": [
+        "Northern Hemisphere (Arctic) climatology; the Southern Hemisphere file S_seaice_extent_climatology_1981-2010_v4.0.csv is the Antarctic equivalent"
+      ]
+    },
+    {
+      "dataset_id": "earthdata_download_installer",
+      "source_key": "local",
+      "dataset_name": "NASA Earthdata Download application installer",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "NASA Earthdata",
+      "source_url": null,
+      "product_id": null,
+      "doi": null,
+      "local_paths": [
+        "DATAS/Earthdata-Download-x64.exe"
+      ],
+      "file_formats": [
+        "exe"
+      ],
+      "variables": "",
+      "spatial_coverage": "",
+      "temporal_coverage": "",
+      "license": null,
+      "access_method": "local file",
+      "download_status": "downloaded",
+      "validation_status": "unsupported",
+      "preprocessing_status": "unsupported",
+      "processing_timestamp": "2026-10-10T16:04:01+00:00",
+      "output_paths": [],
+      "domain_relevance": "not_data",
+      "notes": []
+    },
+    {
+      "dataset_id": "noaa_ncei_arcgis_antarctic__html",
+      "source_key": "local",
+      "dataset_name": "NOAA NCEI ArcGIS REST 'antarctic' services folder (saved page)",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "NOAA NCEI",
+      "source_url": null,
+      "product_id": null,
+      "doi": null,
+      "local_paths": [
+        "DATAS/antarctic.htm"
+      ],
+      "file_formats": [
+        "htm"
+      ],
+      "variables": "",
+      "spatial_coverage": "",
+      "temporal_coverage": "",
+      "license": null,
+      "access_method": "local file",
+      "download_status": "downloaded",
+      "validation_status": "metadata_inspected",
+      "preprocessing_status": "metadata_inspected",
+      "processing_timestamp": "2026-10-10T16:03:59+00:00",
+      "output_paths": [],
+      "domain_relevance": "antarctic",
+      "notes": []
+    },
+    {
+      "dataset_id": "comparison_omi_vs_nsidc_extent",
+      "source_key": "local",
+      "dataset_name": "Cross-check: CMEMS OMI vs NSIDC G02135 Southern Hemisphere monthly extent",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "derived",
+      "source_url": null,
+      "product_id": null,
+      "doi": null,
+      "local_paths": [
+        "data/processed/antarctic/sea_ice_extent/cmems_omi_si_extent_monthly.csv",
+        "data/processed/antarctic/sea_ice_extent/nsidc_g02135_south_daily.csv"
+      ],
+      "file_formats": [
+        "csv"
+      ],
+      "variables": "",
+      "spatial_coverage": "",
+      "temporal_coverage": "",
+      "license": null,
+      "access_method": "local file",
+      "download_status": "downloaded",
+      "validation_status": "processed",
+      "preprocessing_status": "processed",
+      "processing_timestamp": "2026-10-10T16:04:01+00:00",
+      "output_paths": [
+        "data/processed/antarctic/sea_ice_extent/comparison_omi_vs_nsidc_monthly.csv"
+      ],
+      "domain_relevance": "antarctic",
+      "notes": []
+    },
+    {
+      "dataset_id": "nasa_edsc_catalog",
+      "source_key": "local",
+      "dataset_name": "NASA Earthdata Search collection-results export (catalog records)",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "NASA Earthdata (CMR)",
+      "source_url": null,
+      "product_id": null,
+      "doi": null,
+      "local_paths": [
+        "DATAS/edsc_collection_results_export.json",
+        "DATAS/edsc_collection_results_export.csv"
+      ],
+      "file_formats": [
+        "csv",
+        "json"
+      ],
+      "variables": "provider; shortName; version; title; processingLevel; platforms; timeStart; timeEnd; __typename",
+      "spatial_coverage": "",
+      "temporal_coverage": "['1970-01-01 00:00:00+00:00', '2020-04-30 00:00:00+00:00']",
+      "license": null,
+      "access_method": "local file",
+      "download_status": "downloaded",
+      "validation_status": "processed",
+      "preprocessing_status": "processed",
+      "processing_timestamp": "2026-10-10T16:03:59+00:00",
+      "output_paths": [
+        "data/processed/antarctic/catalogs/nasa_edsc_collections.parquet",
+        "data/processed/antarctic/catalogs/nasa_edsc_collections.csv"
+      ],
+      "domain_relevance": "antarctic",
+      "notes": []
+    },
+    {
+      "dataset_id": "era5_pressure_levels",
+      "source_key": "API",
+      "dataset_name": "ERA5 hourly data on pressure levels (CDS API request in PRESSUREAPI.py)",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "ECMWF / Copernicus Climate Change Service (CDS)",
+      "source_url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-pressure-levels",
+      "product_id": "reanalysis-era5-pressure-levels",
+      "doi": null,
+      "local_paths": [
+        "EXTERNAL APIs/PRESSUREAPI.py"
+      ],
+      "file_formats": [
+        "py"
+      ],
+      "variables": [
+        "divergence",
+        "geopotential",
+        "ozone_mass_mixing_ratio",
+        "potential_vorticity",
+        "relative_humidity",
+        "specific_cloud_ice_water_content",
+        "specific_cloud_liquid_water_content",
+        "specific_humidity",
+        "temperature",
+        "u_component_of_wind",
+        "v_component_of_wind",
+        "vertical_velocity",
+        "vorticity"
+      ],
+      "spatial_coverage": "",
+      "temporal_coverage": "",
+      "license": "Copernicus licence (CC-BY 4.0 for ERA5)",
+      "access_method": "cdsapi (Copernicus CDS API, personal access token required)",
+      "download_status": "not_downloaded",
+      "validation_status": "not_available",
+      "preprocessing_status": "not_available",
+      "processing_timestamp": "2026-10-10T16:04:01+00:00",
+      "output_paths": [],
+      "domain_relevance": "antarctic",
+      "notes": [
+        "Request is GLOBAL; an Antarctic area [-60,-180,-90,180] would cut volume ~6x",
+        "Request far exceeds typical CDS per-request limits and would need to be split (e.g. per year/month); not executed by this pipeline",
+        "cdsapi not installed and/or no CDS credentials configured in this environment",
+        "No ERA5 pressure-levels output (NetCDF/zip) found in any search location; nothing to preprocess. No JSON output is produced by this script."
+      ]
+    },
+    {
+      "dataset_id": "era5_single_levels",
+      "source_key": "API",
+      "dataset_name": "ERA5 hourly data on single levels (CDS API request in API.py)",
+      "domain": "Antarctic Climate and Cryosphere",
+      "provider": "ECMWF / Copernicus Climate Change Service (CDS)",
+      "source_url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels",
+      "product_id": "reanalysis-era5-single-levels",
+      "doi": null,
+      "local_paths": [
+        "EXTERNAL APIs/API.py"
+      ],
+      "file_formats": [
+        "py"
+      ],
+      "variables": [
+        "10m_u_component_of_wind",
+        "10m_v_component_of_wind",
+        "2m_dewpoint_temperature",
+        "2m_temperature",
+        "mean_sea_level_pressure",
+        "sea_surface_temperature",
+        "surface_pressure",
+        "total_precipitation",
+        "10m_u_component_of_neutral_wind",
+        "10m_v_component_of_neutral_wind",
+        "snow_depth",
+        "snowfall",
+        "cloud_base_height",
+        "lake_depth",
+        "lake_ice_depth",
+        "boundary_layer_height",
+        "land_sea_mask",
+        "total_column_water_vapour",
+        "surface_sensible_heat_flux",
+        "surface_net_thermal_radiation",
+        "surface_net_solar_radiation",
+        "surface_latent_heat_flux",
+        "total_cloud_cover",
+        "sea_ice_cover",
+        "skin_temperature"
+      ],
+      "spatial_coverage": "",
+      "temporal_coverage": "",
+      "license": "Copernicus licence (CC-BY 4.0 for ERA5)",
+      "access_method": "cdsapi (Copernicus CDS API, personal access token required)",
+      "download_status": "not_downloaded",
+      "validation_status": "not_available",
+      "preprocessing_status": "not_available",
+      "processing_timestamp": "2026-10-10T16:04:01+00:00",
+      "output_paths": [],
+      "domain_relevance": "antarctic",
+      "notes": [
+        "Request is GLOBAL; an Antarctic area [-60,-180,-90,180] would cut volume ~6x",
+        "Request far exceeds typical CDS per-request limits and would need to be split (e.g. per year/month); not executed by this pipeline",
+        "cdsapi not installed and/or no CDS credentials configured in this environment",
+        "No ERA5 single-levels output (NetCDF/zip) found in any search location; nothing to preprocess. No JSON output is produced by this script."
+      ]
+    }
+  ]
+}

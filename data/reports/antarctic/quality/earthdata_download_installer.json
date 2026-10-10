@@ -1,0 +1,34 @@
+{
+  "dataset_id": "earthdata_download_installer",
+  "dataset_name": "NASA Earthdata Download application installer",
+  "category": "software",
+  "provider": "NASA Earthdata",
+  "source_files": [
+    "DATAS/Earthdata-Download-x64.exe"
+  ],
+  "status": "unsupported",
+  "domain_relevance": "not_data",
+  "started_utc": "2026-10-10T16:04:00+00:00",
+  "finished_utc": "2026-10-10T16:04:01+00:00",
+  "steps": [
+    "Identified as Windows executable; excluded from processing"
+  ],
+  "metrics": {
+    "size_bytes": 139397200,
+    "pe_header": true
+  },
+  "issues": [
+    {
+      "severity": "info",
+      "type": "not_a_dataset",
+      "detail": "Windows installer (PE executable) for a download manager; not scientific data. Not executed; recommend moving it out of DATAS/",
+      "count": null
+    }
+  ],
+  "outputs": [],
+  "validation": {
+    "identified": true
+  },
+  "errors": [],
+  "notes": []
+}

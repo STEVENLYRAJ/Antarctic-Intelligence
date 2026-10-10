@@ -1,0 +1,41 @@
+{
+  "dataset_id": "cmems_omi_si_extent__figure_png",
+  "dataset_name": "Copernicus Marine OMI product key figure (PNG)",
+  "category": "product_figure",
+  "provider": "Copernicus Marine Service",
+  "source_files": [
+    "DATAS/ANTARCTIC_OMI_SI_extent_obs-hq.png"
+  ],
+  "status": "metadata_inspected",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:59+00:00",
+  "finished_utc": "2026-10-10T16:03:59+00:00",
+  "steps": [
+    "PNG verified: 3500x3500 RGBA"
+  ],
+  "metrics": {
+    "size_px": [
+      3500,
+      3500
+    ],
+    "mode": "RGBA",
+    "dpi": [
+      249.9868,
+      249.9868
+    ]
+  },
+  "issues": [
+    {
+      "severity": "info",
+      "type": "documentation",
+      "detail": "Rendered product figure (same image as the official STAC 'omiFigure' asset); not data",
+      "count": null
+    }
+  ],
+  "outputs": [],
+  "validation": {
+    "image_verified": true
+  },
+  "errors": [],
+  "notes": []
+}

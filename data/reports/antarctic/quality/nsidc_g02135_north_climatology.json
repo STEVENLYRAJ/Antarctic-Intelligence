@@ -1,0 +1,104 @@
+{
+  "dataset_id": "nsidc_g02135_north_climatology",
+  "dataset_name": "NSIDC Sea Ice Index v4 (G02135) Northern Hemisphere daily extent climatology 1981-2010",
+  "category": "sea_ice_extent_climatology",
+  "provider": "NSIDC / NOAA",
+  "source_files": [
+    "DATAS/N_seaice_extent_climatology_1981-2010_v4.0.csv",
+    "DATAS/download.htm"
+  ],
+  "status": "processed",
+  "domain_relevance": "out_of_domain_arctic",
+  "started_utc": "2026-10-10T16:03:01+00:00",
+  "finished_utc": "2026-10-10T16:03:01+00:00",
+  "steps": [
+    "Parsed metadata line 'std Years = 1981-2010' and 366 data rows (368 lines incl. 2 header lines)",
+    "Renamed columns to snake_case with explicit unit suffix (_mkm2 = 10^6 km^2 per NSIDC G02135 User Guide; the file header itself carries no units)"
+  ],
+  "metrics": {
+    "metadata_line": "std Years = 1981-2010",
+    "columns_original": [
+      "DOY",
+      "Average Extent",
+      "Std Deviation",
+      "10th",
+      "25th",
+      "50th",
+      "75th",
+      "90th"
+    ],
+    "columns_processed": [
+      "doy",
+      "mean_extent_mkm2",
+      "std_extent_mkm2",
+      "p10_extent_mkm2",
+      "p25_extent_mkm2",
+      "p50_extent_mkm2",
+      "p75_extent_mkm2",
+      "p90_extent_mkm2"
+    ],
+    "records_before": 366,
+    "missing_by_column": {
+      "doy": 0,
+      "mean_extent_mkm2": 0,
+      "std_extent_mkm2": 0,
+      "p10_extent_mkm2": 0,
+      "p25_extent_mkm2": 0,
+      "p50_extent_mkm2": 0,
+      "p75_extent_mkm2": 0,
+      "p90_extent_mkm2": 0
+    },
+    "missing_count": 0,
+    "missing_percent": 0.0,
+    "duplicate_doy": 0,
+    "missing_doy": [],
+    "percentile_order_violations": 0,
+    "negative_values": 0,
+    "mean_extent_summary_mkm2": {
+      "count": 366,
+      "min": 6.263,
+      "p01": 6.28265,
+      "p25": 8.91975,
+      "median": 12.245000000000001,
+      "p75": 14.530000000000001,
+      "p99": 15.5084,
+      "max": 15.519,
+      "mean": 11.64054644808743,
+      "std": 3.0919755408331313
+    },
+    "seasonal_min": {
+      "doy": 255.0,
+      "mean_extent_mkm2": 6.263
+    },
+    "seasonal_max": {
+      "doy": 59.0,
+      "mean_extent_mkm2": 15.519
+    },
+    "records_after": 366,
+    "excluded_records": 0
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "type": "out_of_domain",
+      "detail": "Northern Hemisphere (Arctic) climatology; the Southern Hemisphere file S_seaice_extent_climatology_1981-2010_v4.0.csv is the Antarctic equivalent",
+      "count": null
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/processed/antarctic/sea_ice_extent/nsidc_g02135_north_climatology.csv",
+      "kind": "csv",
+      "description": "Tidy daily climatology with hemisphere label and unit-suffixed columns",
+      "size_bytes": 25404
+    }
+  ],
+  "validation": {
+    "output_reopened": true,
+    "row_count_preserved": true,
+    "no_duplicate_doy": true,
+    "values_preserved": true
+  },
+  "errors": [],
+  "notes": []
+}

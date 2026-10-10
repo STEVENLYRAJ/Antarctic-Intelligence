@@ -1,0 +1,244 @@
+{
+  "dataset_id": "era5_single_levels",
+  "dataset_name": "ERA5 hourly data on single levels (CDS API request in API.py)",
+  "category": "api_request_and_outputs",
+  "provider": "ECMWF / Copernicus Climate Change Service (CDS)",
+  "source_files": [
+    "EXTERNAL APIs/API.py"
+  ],
+  "status": "not_available",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:04:01+00:00",
+  "finished_utc": "2026-10-10T16:04:01+00:00",
+  "steps": [
+    "Parsed API.py with ast (not executed): dataset 'reanalysis-era5-single-levels', 25 variables, 11,236 valid dates x 4 times x 1 level(s), area global (not specified)",
+    "Estimated 1,123,600 fields ~ 4.67 TB uncompressed float32"
+  ],
+  "metrics": {
+    "script": {
+      "script": "EXTERNAL APIs/API.py",
+      "dataset": "reanalysis-era5-single-levels",
+      "imports": [
+        "cdsapi"
+      ],
+      "calls": [
+        "Client",
+        "download",
+        "retrieve"
+      ],
+      "executes_on_import": true,
+      "output_target": "cdsapi default: .download() with no target writes a file named after the CDS result into the current working directory"
+    },
+    "request": {
+      "product_type": [
+        "reanalysis"
+      ],
+      "variable": [
+        "10m_u_component_of_wind",
+        "10m_v_component_of_wind",
+        "2m_dewpoint_temperature",
+        "2m_temperature",
+        "mean_sea_level_pressure",
+        "sea_surface_temperature",
+        "surface_pressure",
+        "total_precipitation",
+        "10m_u_component_of_neutral_wind",
+        "10m_v_component_of_neutral_wind",
+        "snow_depth",
+        "snowfall",
+        "cloud_base_height",
+        "lake_depth",
+        "lake_ice_depth",
+        "boundary_layer_height",
+        "land_sea_mask",
+        "total_column_water_vapour",
+        "surface_sensible_heat_flux",
+        "surface_net_thermal_radiation",
+        "surface_net_solar_radiation",
+        "surface_latent_heat_flux",
+        "total_cloud_cover",
+        "sea_ice_cover",
+        "skin_temperature"
+      ],
+      "year": [
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "month": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12"
+      ],
+      "day": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31"
+      ],
+      "time": [
+        "00:00",
+        "06:00",
+        "12:00",
+        "18:00"
+      ],
+      "data_format": "netcdf",
+      "download_format": "unarchived"
+    },
+    "request_estimate": {
+      "variables": 25,
+      "years": [
+        "1996",
+        "2026"
+      ],
+      "valid_dates": 11236,
+      "invalid_calendar_dates_ignored": 209,
+      "dates_not_yet_available": 87,
+      "times_per_day": 4,
+      "pressure_levels": 1,
+      "area": "global (not specified)",
+      "grid_points_per_field": 1038240,
+      "fields": 1123600,
+      "uncompressed_float32_bytes": 4666265856000,
+      "uncompressed_float32_TB": 4.67,
+      "estimated_against_date": "2026-10-10"
+    },
+    "credentials": {
+      "cdsapi_installed": false,
+      "cdsapirc_present": false,
+      "env_CDSAPI_URL_set": false,
+      "env_CDSAPI_KEY_set": false
+    },
+    "response_format": "netcdf (unarchived)",
+    "local_outputs_found": [],
+    "search_locations": [
+      "data/raw/antarctic/era5",
+      "DATAS",
+      "EXTERNAL APIs",
+      "."
+    ],
+    "records_before": 0,
+    "records_after": 0
+  },
+  "issues": [
+    {
+      "severity": "info",
+      "type": "format_note",
+      "detail": "Script requests 'netcdf' output, i.e. NetCDF - not JSON",
+      "count": null
+    },
+    {
+      "severity": "info",
+      "type": "request_note",
+      "detail": "Request lists non-existent calendar dates (e.g. 30 Feb); CDS ignores them",
+      "count": 209
+    },
+    {
+      "severity": "info",
+      "type": "request_note",
+      "detail": "Requested dates later than the ERA5 publication horizon",
+      "count": 87
+    },
+    {
+      "severity": "warning",
+      "type": "request_scope",
+      "detail": "Request is GLOBAL; an Antarctic area [-60,-180,-90,180] would cut volume ~6x",
+      "count": null
+    },
+    {
+      "severity": "warning",
+      "type": "request_size",
+      "detail": "Request far exceeds typical CDS per-request limits and would need to be split (e.g. per year/month); not executed by this pipeline",
+      "count": 1123600
+    },
+    {
+      "severity": "info",
+      "type": "script_design",
+      "detail": "Script runs client.retrieve() at module import (no __main__ guard); the pipeline therefore parses it instead of importing it",
+      "count": null
+    },
+    {
+      "severity": "warning",
+      "type": "missing_credentials",
+      "detail": "cdsapi not installed and/or no CDS credentials configured in this environment",
+      "count": null
+    },
+    {
+      "severity": "error",
+      "type": "output_missing",
+      "detail": "No ERA5 single-levels output (NetCDF/zip) found in any search location; nothing to preprocess. No JSON output is produced by this script.",
+      "count": null
+    }
+  ],
+  "outputs": [],
+  "validation": {
+    "script_parsed": true,
+    "outputs_present": false
+  },
+  "errors": [],
+  "notes": []
+}

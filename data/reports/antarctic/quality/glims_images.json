@@ -1,0 +1,96 @@
+{
+  "dataset_id": "glims_images",
+  "dataset_name": "GLIMS source-image footprints (points)",
+  "category": "vector_points",
+  "provider": "GLIMS / NSIDC",
+  "source_files": [
+    "DATAS/glims_download_33432/glims_images.shp",
+    "DATAS/glims_download_33432/glims_images.shx",
+    "DATAS/glims_download_33432/glims_images.dbf",
+    "DATAS/glims_download_33432/glims_images.prj"
+  ],
+  "status": "processed",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:54+00:00",
+  "finished_utc": "2026-10-10T16:03:54+00:00",
+  "steps": [
+    "3,359 image points; 1 with latitude outside [-90, 90]"
+  ],
+  "metrics": {
+    "records_before": 3359,
+    "fields": [
+      "inst_sname",
+      "orig_id",
+      "acq_time",
+      "est_loc"
+    ],
+    "lat_out_of_range": 1,
+    "lon_out_of_range": 0,
+    "est_loc_counts": {
+      "0": 1939,
+      "1": 1420
+    },
+    "acq_time_unparseable": 151,
+    "acq_time_range": [
+      "1600-09-09 00:00:00+00:00",
+      "2025-09-04 00:00:00+00:00"
+    ],
+    "instrument_counts": {
+      "Landsat7": 1019,
+      "TM5": 388,
+      "Sentinel2": 259,
+      "TM4": 239,
+      "OLI": 228,
+      "ASTER": 209,
+      "Aerial20": 180,
+      "Aerial22": 136,
+      "MSI": 132,
+      "Formosat2": 36,
+      "ALOS": 33,
+      "SPOT5": 32,
+      "Aerial01": 29,
+      "Korona": 24,
+      "Aerial21": 24
+    },
+    "duplicate_orig_id": 74,
+    "missing_by_column": {
+      "inst_sname": 0,
+      "orig_id": 0,
+      "acq_time": 0,
+      "est_loc": 0
+    },
+    "missing_count": 0,
+    "missing_percent": 0.0,
+    "antarctic_images_south_of_60S": 113,
+    "records_after": 3359,
+    "excluded_records": 0
+  },
+  "issues": [
+    {
+      "severity": "error",
+      "type": "invalid_coordinate",
+      "detail": "Image locations with latitude outside [-90, 90] (retained, flagged)",
+      "count": 1
+    },
+    {
+      "severity": "info",
+      "type": "missing_link",
+      "detail": "Layer has no glac_id field in this export, so images cannot be joined to glaciers",
+      "count": null
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/processed/antarctic/glims/glims_antarctic_rgi19.gpkg",
+      "kind": "gpkg",
+      "description": "Layer 'images_all_flagged': all image points with coordinate-validity and south_of_60S flags",
+      "size_bytes": 68730880
+    }
+  ],
+  "validation": {
+    "output_reopened": true,
+    "feature_count_matches": true
+  },
+  "errors": [],
+  "notes": []
+}

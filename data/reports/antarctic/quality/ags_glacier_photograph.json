@@ -1,0 +1,74 @@
+{
+  "dataset_id": "ags_glacier_photograph",
+  "dataset_name": "Glacier photograph image AGS_A_2002_04 (provenance unverified)",
+  "category": "raster_image",
+  "provider": "unverified",
+  "source_files": [
+    "DATAS/AGS_A_2002_04.tif"
+  ],
+  "status": "validated",
+  "domain_relevance": "unverified",
+  "started_utc": "2026-10-10T16:04:00+00:00",
+  "finished_utc": "2026-10-10T16:04:00+00:00",
+  "steps": [
+    "Opened 4174x2980 3-band uint8 TIFF; CRS=None; georeferenced=False"
+  ],
+  "metrics": {
+    "width": 4174,
+    "height": 2980,
+    "bands": 3,
+    "dtype": "uint8",
+    "nodata": null,
+    "crs": "None",
+    "georeferenced": false,
+    "software": "Adobe Photoshop CC 2015 (Windows)",
+    "tiff_datetime": "2017:08:01 14:12:34",
+    "exif_datetime_original": "2017:06:21 18:06:37",
+    "band_stats": [
+      {
+        "band": 1,
+        "min": 15.0,
+        "max": 255.0,
+        "mean": 111.30103243794278,
+        "std": 58.474064175881864
+      },
+      {
+        "band": 2,
+        "min": 14.0,
+        "max": 255.0,
+        "mean": 117.40088161614082,
+        "std": 58.546318433276554
+      },
+      {
+        "band": 3,
+        "min": 22.0,
+        "max": 255.0,
+        "mean": 119.30742966204983,
+        "std": 54.27593141688317
+      }
+    ],
+    "records_before": "3x2980x4174",
+    "records_after": "not transformed"
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "type": "no_spatial_reference",
+      "detail": "No CRS, geotransform or GCPs: this is an RGB photograph (Adobe Photoshop), not a GeoTIFF; it cannot be used as spatial data",
+      "count": null
+    },
+    {
+      "severity": "info",
+      "type": "provenance_unknown",
+      "detail": "No embedded description of the subject, location or source; the 'AGS' prefix could not be matched to a verified source",
+      "count": null
+    }
+  ],
+  "outputs": [],
+  "validation": {
+    "opened": true,
+    "all_blocks_readable": true
+  },
+  "errors": [],
+  "notes": []
+}

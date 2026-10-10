@@ -1,0 +1,40 @@
+{
+  "dataset_id": "comparison_omi_vs_nsidc_extent",
+  "dataset_name": "Cross-check: CMEMS OMI vs NSIDC G02135 Southern Hemisphere monthly extent",
+  "category": "derived_comparison",
+  "provider": "derived",
+  "source_files": [
+    "data/processed/antarctic/sea_ice_extent/cmems_omi_si_extent_monthly.csv",
+    "data/processed/antarctic/sea_ice_extent/nsidc_g02135_south_daily.csv"
+  ],
+  "status": "processed",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:04:01+00:00",
+  "finished_utc": "2026-10-10T16:04:01+00:00",
+  "steps": [
+    "Matched 548 months; mean OMI-NSIDC difference 0.369 10^6 km^2, r=0.9999"
+  ],
+  "metrics": {
+    "method": "NSIDC daily values averaged to calendar months (months with >=10 daily values kept); joined to OMI on year-month. Products use different SIC algorithms (OSI SAF OSI-450/430 vs NASA Team), so differences are expected and the datasets are NOT merged.",
+    "matched_months": 548,
+    "omi_months_unmatched": 4,
+    "mean_difference_omi_minus_nsidc_mkm2": 0.3685739139301183,
+    "std_difference_mkm2": 0.09676496736123633,
+    "max_abs_difference_mkm2": 0.7533829677419348,
+    "pearson_r": 0.9998630165356144
+  },
+  "issues": [],
+  "outputs": [
+    {
+      "path": "data/processed/antarctic/sea_ice_extent/comparison_omi_vs_nsidc_monthly.csv",
+      "kind": "csv",
+      "description": "Month-matched OMI vs NSIDC extent and difference",
+      "size_bytes": 31723
+    }
+  ],
+  "validation": {
+    "output_reopened": true
+  },
+  "errors": [],
+  "notes": []
+}

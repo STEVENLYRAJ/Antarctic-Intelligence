@@ -1,0 +1,47 @@
+{
+  "file_identifier": "13c2c401-e0df-40e3-8ddb-1ca493bf7c56",
+  "title": "Antarctic Ocean Sea Ice Drift REPROCESSED",
+  "abstract": "'''Short description:''' \n\nAntarctic sea ice displacement during winter from medium resolution sensors since 2002\n\n'''DOI (product) :'''  \nhttps://doi.org/10.48670/moi-00120",
+  "temporal_begin": "2003-04-01",
+  "temporal_end": "ongoing / not specified",
+  "bbox": {
+    "westBoundLongitude": "-179.50",
+    "eastBoundLongitude": "180.00",
+    "southBoundLatitude": "-89.50",
+    "northBoundLatitude": "-59.00"
+  },
+  "keywords": [
+    "Level 3",
+    "Not Applicable",
+    "Oceanographic geographical features",
+    "antarctic-ocean",
+    "coastal-marine-environment",
+    "eastward_sea_ice_velocity",
+    "marine-resources",
+    "marine-safety",
+    "multi-year",
+    "northward_sea_ice_velocity",
+    "satellite-observation",
+    "target-application#seaiceclimate",
+    "weather-climate-and-seasonal-forecasting"
+  ],
+  "use_limitation": "See Copernicus Marine Environment Monitoring Service Data commitments and licence at: http://marine.copernicus.eu/web/27-service-commitments-and-licence.php",
+  "other_constraints": "No limitations on public access",
+  "online_resources": [
+    "http://marine.copernicus.eu/",
+    "http://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_phy_my_drift-cfosat-ssmi-merged_P30D_202411/dataset.stac.json",
+    "http://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_phy_my_drift-cfosat-ssmi-merged_P3D_202411/dataset.stac.json",
+    "http://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_phy_my_drift-cfosat_P2D_202411/dataset.stac.json",
+    "http://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_phy_my_drift-cfosat_P3D_202411/dataset.stac.json",
+    "http://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_physic_my_drift-amsr_P2D_202311/dataset.stac.json",
+    "http://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_physic_my_drift-amsr_P3D_202311/dataset.stac.json",
+    "https://wmts.marine.copernicus.eu/teroWmts/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_physic_my_drift-amsr_P2D_202311",
+    "https://wmts.marine.copernicus.eu/teroWmts/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_physic_my_drift-amsr_P3D_202311"
+  ],
+  "contacts": [
+    "CMEMS",
+    "SIW-IFREMER-BREST-FR"
+  ],
+  "doi": "https://doi.org/10.48670/moi-00120",
+  "product_id": "SEAICE_ANT_PHY_L3_MY_011_018"
+}

@@ -1,0 +1,98 @@
+{
+  "dataset_id": "oib_arctic_form_drag",
+  "dataset_name": "NASA Operation IceBridge Arctic atmospheric form-drag coefficients",
+  "category": "sea_ice_derived_grid",
+  "provider": "NASA GSFC (A. Petty)",
+  "source_files": [
+    "DATAS/Cda_ArcticOIB20090331-0425.nc"
+  ],
+  "status": "validated",
+  "domain_relevance": "out_of_domain_arctic",
+  "started_utc": "2026-10-10T16:03:00+00:00",
+  "finished_utc": "2026-10-10T16:03:01+00:00",
+  "steps": [
+    "Opened 2-D curvilinear grid {'x': 1530, 'y': 1530}; latitude range [47.53662109375, 89.97356414794922]"
+  ],
+  "metrics": {
+    "dimensions": {
+      "x": 1530,
+      "y": 1530
+    },
+    "global_attributes": {
+      "author": "Alek Petty",
+      "contact": " alek.a.petty@nasa.gov, www.alekpetty.com, @alekpetty",
+      "references": "Data is described in more detail in the following publication: Petty, A. A., M. C. Tsamados, N. T. Kurtz (2017), Atmospheric form drag over Arctic sea ice using remotely sensed ice topography observations, J. Geophys. Res. Earth Surf., 122, doi:10.1002/2017JF004209.",
+      "description": "Atmospheric form drag coefficients calculated using surface feature variability data (e.g. pressure ridge sail height and spacings) derived from NASA IceBridge Airborne Topographic Mapper laser altimeter data (full scan method) combined with existing parameterizations linking surface feature variabi",
+      "history": "Created 15/07/17",
+      "data_range": "Date range of the OIB spring Arctic sea ice campaign time period: 20090331-20090425"
+    },
+    "lat_range": [
+      47.53662109375,
+      89.97356414794922
+    ],
+    "lon_range": [
+      -179.9966278076172,
+      179.9658660888672
+    ],
+    "year": 2009,
+    "Cda": {
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "negative_count": 1481954,
+      "units": "dimensionless (not stated)",
+      "summary": {
+        "count": 2340900,
+        "min": -0.9990000128746033,
+        "p01": -0.9990000128746033,
+        "p25": -0.9990000128746033,
+        "median": -0.9990000128746033,
+        "p75": 0.0012069999938830733,
+        "p99": 0.002076999982818961,
+        "max": 0.0032389999832957983,
+        "mean": -0.6319304479395368,
+        "std": 0.48215073751200915
+      }
+    },
+    "Cdafr": {
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "negative_count": 1480321,
+      "units": "dimensionless (not stated)",
+      "summary": {
+        "count": 2340900,
+        "min": -0.9990000128746033,
+        "p01": -0.9990000128746033,
+        "p25": -0.9990000128746033,
+        "median": -0.9990000128746033,
+        "p75": 0.00024399999529123306,
+        "p99": 0.0007459999760612845,
+        "max": 0.005636000074446201,
+        "mean": -0.6316213003569486,
+        "std": 0.4818330378890534
+      }
+    },
+    "records_before": "1530x1530",
+    "records_after": "not transformed (out of domain)"
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "type": "out_of_domain",
+      "detail": "File covers the ARCTIC (OIB spring 2009 campaign, latitudes north of 47.5N); not used in Antarctic outputs",
+      "count": null
+    },
+    {
+      "severity": "info",
+      "type": "missing_metadata",
+      "detail": "No CRS/grid_mapping, no units attributes and no _FillValue declared",
+      "count": null
+    }
+  ],
+  "outputs": [],
+  "validation": {
+    "opened": true,
+    "lat_lon_in_range": true
+  },
+  "errors": [],
+  "notes": []
+}

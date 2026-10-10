@@ -1,0 +1,36 @@
+{
+  "dataset_id": "pgc_ncalm_dv_lidar_tiles__report_pdf",
+  "dataset_name": "NCALM Dry Valleys LiDAR collection report (PDF)",
+  "category": "documentation",
+  "provider": "NCALM",
+  "source_files": [
+    "DATAS/NCALM_DV_LiDAR_Collection_Report.pdf"
+  ],
+  "status": "metadata_inspected",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:59+00:00",
+  "finished_utc": "2026-10-10T16:03:59+00:00",
+  "steps": [
+    "PDF header %PDF-1.5, page count 12"
+  ],
+  "metrics": {
+    "pdf_version": "%PDF-1.5",
+    "page_objects_counted": 12,
+    "linearized_page_count": 12,
+    "size_bytes": 874928
+  },
+  "issues": [
+    {
+      "severity": "info",
+      "type": "documentation",
+      "detail": "Documentation of the LiDAR acquisition; text was not extracted (no PDF text library required)",
+      "count": null
+    }
+  ],
+  "outputs": [],
+  "validation": {
+    "pdf_header_valid": true
+  },
+  "errors": [],
+  "notes": []
+}

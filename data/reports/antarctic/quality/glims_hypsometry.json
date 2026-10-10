@@ -1,0 +1,113 @@
+{
+  "dataset_id": "glims_hypsometry",
+  "dataset_name": "GLIMS glacier hypsometry (area-elevation histograms)",
+  "category": "glacier_hypsometry_table",
+  "provider": "GLIMS / NSIDC",
+  "source_files": [
+    "DATAS/glims_download_33432/glims_hypsometry_100.csv",
+    "DATAS/glims_download_33432/glims_hypsometry_50.csv"
+  ],
+  "status": "processed",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:54+00:00",
+  "finished_utc": "2026-10-10T16:03:58+00:00",
+  "steps": [
+    "glims_hypsometry_100.csv: 1 rows x 22 bins (100 m); 0 rows belong to RGI region 19 glaciers",
+    "glims_hypsometry_50.csv: 153,222 rows x 172 bins (50 m); 3,100 rows belong to RGI region 19 glaciers"
+  ],
+  "metrics": {
+    "per_file": {
+      "glims_hypsometry_100.csv": {
+        "rows": 1,
+        "bins": 22,
+        "bin_width_m": 100,
+        "bin_centres_m": [
+          50.0,
+          2150.0
+        ],
+        "empty_cells": 0,
+        "empty_cells_percent": 0.0,
+        "negative_area_cells": 0,
+        "rows_all_empty_or_zero": 0,
+        "duplicate_glac_analysis": 0,
+        "glaciers": 1,
+        "unparseable_glac_id": 0,
+        "rows_south_of_60S_by_id": 0,
+        "rows_in_rgi19_polygon_set": 0,
+        "total_area_km2_summary": {
+          "count": 1,
+          "min": 774.46,
+          "p01": 774.46,
+          "p25": 774.46,
+          "median": 774.46,
+          "p75": 774.46,
+          "p99": 774.46,
+          "max": 774.46,
+          "mean": 774.46,
+          "std": 0.0
+        }
+      },
+      "glims_hypsometry_50.csv": {
+        "rows": 153222,
+        "bins": 172,
+        "bin_width_m": 50,
+        "bin_centres_m": [
+          25.0,
+          8575.0
+        ],
+        "empty_cells": 0,
+        "empty_cells_percent": 0.0,
+        "negative_area_cells": 9651,
+        "rows_all_empty_or_zero": 0,
+        "duplicate_glac_analysis": 0,
+        "glaciers": 153156,
+        "unparseable_glac_id": 0,
+        "rows_south_of_60S_by_id": 2372,
+        "rows_in_rgi19_polygon_set": 3100,
+        "total_area_km2_summary": {
+          "count": 153222,
+          "min": -1416.0660000000005,
+          "p01": 0.012000000000000002,
+          "p25": 0.085,
+          "median": 0.225,
+          "p75": 0.676,
+          "p99": 32.565545800000216,
+          "max": 6004.8443,
+          "mean": 3.0684891722337517,
+          "std": 50.44344940646581
+        },
+        "antarctic_rows_written": 3100,
+        "antarctic_bins_written": 172
+      }
+    },
+    "records_before": 153223,
+    "records_after": 3100,
+    "excluded_records": 150123,
+    "exclusion_reason": "Outside the Antarctic scope (glac_id not in the GLIMS RGI region 19 polygon set); source file retained unchanged",
+    "missing_count": 0,
+    "missing_percent": 0.0
+  },
+  "issues": [
+    {
+      "severity": "error",
+      "type": "invalid_value",
+      "detail": "glims_hypsometry_50.csv: negative bin areas",
+      "count": 9651
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/processed/antarctic/glims/glims_hypsometry_50_antarctic_rgi19.parquet",
+      "kind": "parquet",
+      "description": "Antarctic (RGI region 19) subset of glims_hypsometry_50.csv; wide format, empty upper bins dropped",
+      "size_bytes": 541102
+    }
+  ],
+  "validation": {
+    "outputs_reopened_and_row_counts_match": true
+  },
+  "errors": [],
+  "notes": [
+    "Hypsometry is stored as a wide histogram: empty bins mean the glacier does not span that elevation, not a missing measurement; they were NOT filled with zero."
+  ]
+}

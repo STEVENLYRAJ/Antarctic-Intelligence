@@ -1,0 +1,336 @@
+{
+  "dataset_id": "cmems_dmi_asip_sic",
+  "dataset_name": "DMI-ASIP Antarctic SAR sea-ice concentration mosaic (CMEMS SEAICE_ANT_PHY_AUTO_L3_NRT_011_012)",
+  "category": "sea_ice_concentration_grid",
+  "provider": "Danish Meteorological Institute / Copernicus Marine Service",
+  "source_files": [
+    "DATAS/dmi_asip_seaice_mosaic_ant_20230202.nc",
+    "DATAS/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012.xml"
+  ],
+  "status": "validated",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:02:56+00:00",
+  "finished_utc": "2026-10-10T16:03:00+00:00",
+  "steps": [
+    "Opened grid 1x8294x7894 (time,y,x); CRS +proj=stere +lat_0=-90 +lat_ts=-70 +lon_0=0 +x_0=0 +y_0=0 +a=6378273 +b=6356889.449 +units=m +no_defs; time ['2023-02-02 12:00:00']",
+    "Grid spacing dx=[1000.0] m, dy=[-1000.0] m; monotonic x/y = True/True",
+    "Scanned 65,472,836 cells in 512-row chunks: valid zero=743,139, ice>0=84,415, fill=64,645,282, invalid=0",
+    "Fill cells split heuristically by acq_time: fill WITH an acquisition time (inside SAR swath: land/ice-shelf mask or unclassified) vs fill WITHOUT acquisition time (outside SAR coverage). The product has no explicit land-mask variable."
+  ],
+  "metrics": {
+    "global_attributes": {
+      "title": "DMI-ASIP sea ice classification - Antarctica",
+      "start_date": "2023-02-02 13:35:15Z",
+      "stop_date": "2023-02-02 20:08:06Z",
+      "product_status": "Operational",
+      "spatial_resolution_latitude": "1000.0",
+      "institution": "DMI"
+    },
+    "dimensions": {
+      "time": 1,
+      "y": 8294,
+      "x": 7894
+    },
+    "crs_proj4": "+proj=stere +lat_0=-90 +lat_ts=-70 +lon_0=0 +x_0=0 +y_0=0 +a=6378273 +b=6356889.449 +units=m +no_defs",
+    "variables": {
+      "time": {
+        "dims": [
+          "time"
+        ],
+        "dtype": "float64",
+        "units": "days since 1970-01-01 00:00:00",
+        "_FillValue": null
+      },
+      "crs": {
+        "dims": [],
+        "dtype": "float32",
+        "units": null,
+        "_FillValue": null
+      },
+      "x": {
+        "dims": [
+          "x"
+        ],
+        "dtype": "float64",
+        "units": "m",
+        "_FillValue": null
+      },
+      "y": {
+        "dims": [
+          "y"
+        ],
+        "dtype": "float64",
+        "units": "m",
+        "_FillValue": null
+      },
+      "lat": {
+        "dims": [
+          "y",
+          "x"
+        ],
+        "dtype": "float32",
+        "units": "degrees_north",
+        "_FillValue": null
+      },
+      "lon": {
+        "dims": [
+          "y",
+          "x"
+        ],
+        "dtype": "float32",
+        "units": "degrees_east",
+        "_FillValue": null
+      },
+      "ice_concentration": {
+        "dims": [
+          "time",
+          "y",
+          "x"
+        ],
+        "dtype": "int8",
+        "units": "%",
+        "_FillValue": -1
+      },
+      "confidence": {
+        "dims": [
+          "time",
+          "y",
+          "x"
+        ],
+        "dtype": "int8",
+        "units": "%",
+        "_FillValue": -1
+      },
+      "acq_time": {
+        "dims": [
+          "time",
+          "y",
+          "x"
+        ],
+        "dtype": "float32",
+        "units": "s",
+        "_FillValue": 0.0
+      }
+    },
+    "time": [
+      "2023-02-02 12:00:00"
+    ],
+    "grid": {
+      "x_range_m": [
+        -3946875.0,
+        3946125.0
+      ],
+      "y_range_m": [
+        -3946875.0,
+        4346125.0
+      ],
+      "dx_unique_m": [
+        1000.0
+      ],
+      "dy_unique_m": [
+        -1000.0
+      ],
+      "x_monotonic": true,
+      "y_monotonic": true,
+      "x_duplicates": 0,
+      "y_duplicates": 0
+    },
+    "cell_classes": {
+      "total": 65472836,
+      "sic_fill": 64645282,
+      "sic_zero": 743139,
+      "sic_ice": 84415,
+      "sic_invalid": 0,
+      "fill_with_acq": 295054,
+      "fill_without_acq": 64350228,
+      "sic_valid_conf_missing": 0,
+      "sic_fill_conf_present": 0,
+      "acq_valid": 1122608,
+      "lat_out_of_range": 0,
+      "lon_out_of_range": 0,
+      "latlon_nan": 0
+    },
+    "cell_class_percent": {
+      "sic_fill": 98.736,
+      "sic_zero": 1.135,
+      "sic_ice": 0.1289,
+      "sic_invalid": 0.0,
+      "fill_with_acq": 0.4507,
+      "fill_without_acq": 98.2854,
+      "sic_valid_conf_missing": 0.0,
+      "sic_fill_conf_present": 0.0,
+      "acq_valid": 1.7146,
+      "lat_out_of_range": 0.0,
+      "lon_out_of_range": 0.0,
+      "latlon_nan": 0.0
+    },
+    "sic_distinct_values": 12,
+    "sic_value_counts": {
+      "-1": 64645282,
+      "0": 743139,
+      "10": 4338,
+      "20": 17451,
+      "30": 7871,
+      "40": 4193,
+      "50": 185,
+      "60": 329,
+      "70": 1055,
+      "80": 3910,
+      "90": 4926,
+      "100": 40157
+    },
+    "confidence_value_counts": {
+      "-1": 64645282,
+      "2": 1,
+      "3": 3,
+      "4": 4,
+      "5": 2,
+      "6": 1,
+      "7": 3,
+      "8": 14,
+      "9": 11,
+      "10": 11,
+      "11": 9,
+      "12": 48,
+      "13": 205,
+      "14": 550,
+      "15": 962,
+      "16": 1180,
+      "17": 1335,
+      "18": 1445,
+      "19": 1626,
+      "20": 1714,
+      "21": 1908,
+      "22": 1997,
+      "23": 2051,
+      "24": 2292,
+      "25": 2479,
+      "26": 2759,
+      "27": 2831,
+      "28": 2915,
+      "29": 3234,
+      "30": 4029,
+      "31": 4726,
+      "32": 4304,
+      "33": 3823,
+      "34": 3332,
+      "35": 2910,
+      "36": 2613,
+      "37": 2373,
+      "38": 2373,
+      "39": 2373,
+      "40": 2257,
+      "41": 2247,
+      "42": 2268,
+      "43": 2247,
+      "44": 2237,
+      "45": 2256,
+      "46": 2308,
+      "47": 2229,
+      "48": 2178,
+      "49": 2216,
+      "50": 2193,
+      "51": 2231,
+      "52": 2423,
+      "53": 2362,
+      "54": 2505,
+      "55": 2517,
+      "56": 2475,
+      "57": 2519,
+      "58": 2557,
+      "59": 2600,
+      "60": 2643,
+      "61": 2765,
+      "62": 2866,
+      "63": 2864,
+      "64": 3088,
+      "65": 3099,
+      "66": 3324,
+      "67": 3134,
+      "68": 3158,
+      "69": 3143,
+      "70": 3253,
+      "71": 3214,
+      "72": 3344,
+      "73": 3407,
+      "74": 3629,
+      "75": 3539,
+      "76": 3532,
+      "77": 3620,
+      "78": 3705,
+      "79": 3878,
+      "80": 3963,
+      "81": 3873,
+      "82": 3878,
+      "83": 4040,
+      "84": 4299,
+      "85": 4641,
+      "86": 5535,
+      "87": 6117,
+      "88": 6852,
+      "89": 7737,
+      "90": 8746,
+      "91": 10623,
+      "92": 13926,
+      "93": 17453,
+      "94": 22435,
+      "95": 27319,
+      "96": 35763,
+      "97": 46006,
+      "98": 81104,
+      "99": 336768
+    },
+    "confidence_mean_over_valid_sic": 86.55019007823054,
+    "acq_time_range_utc": [
+      "2023-02-02 13:34:56+00:00",
+      "2023-02-02 20:07:28+00:00"
+    ],
+    "lat_range": [
+      -89.99836730957031,
+      -39.26436996459961
+    ],
+    "missing_count": 64645282,
+    "missing_percent": 98.736,
+    "records_before": "1x8294x7894 cells",
+    "records_after": "unchanged (validated in native format)"
+  },
+  "issues": [
+    {
+      "severity": "info",
+      "type": "no_land_mask",
+      "detail": "Product has no separate land-mask flag; land and no-coverage are both _FillValue=-1",
+      "count": null
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/processed/antarctic/sea_ice_concentration/dmi_asip_sic_value_histogram.csv",
+      "kind": "csv",
+      "description": "Exact counts of every ice_concentration value (fill = -1)",
+      "size_bytes": 152
+    },
+    {
+      "path": "data/processed/antarctic/sea_ice_concentration/dmi_asip_confidence_histogram.csv",
+      "kind": "csv",
+      "description": "Exact counts of every confidence value (fill = -1)",
+      "size_bytes": 896
+    },
+    {
+      "path": "data/processed/antarctic/sea_ice_concentration/dmi_asip_sic_cell_classes.csv",
+      "kind": "csv",
+      "description": "Cell classification: valid zero / ice / fill / invalid",
+      "size_bytes": 326
+    }
+  ],
+  "validation": {
+    "summaries_reopened": true,
+    "histogram_total_equals_grid_cells": true,
+    "grid_regular": true,
+    "no_invalid_sic_values": true,
+    "coordinates_in_range": true
+  },
+  "errors": [],
+  "notes": [
+    "Native NetCDF retained as the analysis-ready product (155 MB, CF-1.4 compliant grid); no regridded or duplicated copy was written. Outputs are validation summaries only."
+  ]
+}

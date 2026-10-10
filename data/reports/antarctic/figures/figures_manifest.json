@@ -1,0 +1,148 @@
+[
+  {
+    "file": "data/reports/antarctic/figures/fig01_inventory_status.png",
+    "name": "fig01_inventory_status",
+    "title": "Dataset inventory and processing status",
+    "caption": "Status of the 36 files discovered in DATAS/ (left) and volume per dataset group (right, log scale).",
+    "dataset": "metadata/antarctic_dataset_inventory.csv",
+    "variables": "processing_status, size_bytes",
+    "interpretation": "23 files were processed into validated outputs, 8 validated in native form and 4 are metadata/documentation. GLIMS polygons dominate the volume (95% of 9.5 GB)."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig02_omi_extent_timeseries.png",
+    "name": "fig02_omi_extent_timeseries",
+    "title": "Antarctic monthly sea-ice extent time series",
+    "caption": "Monthly-mean Southern Hemisphere sea-ice extent from the Copernicus Marine OMI product; orange line = mean of complete calendar years; dotted lines mark months stored as _FillValue.",
+    "dataset": "DATAS/ANTARCTIC_OMI_SI_extent_19790115_P20250505_R19792024.nc",
+    "variables": "siextent (km^2, shown as 10^6 km^2)",
+    "interpretation": "Strong seasonal cycle between ~2.2 and ~20.3 million km^2. The least-squares trend of the annual mean over 1979-2024 is -0.060 million km^2 per decade; the lowest monthly value is 2.23 million km^2 (2023-02). Missing months: 1986-04, 1986-05, 1986-06, 1987-12."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig03_omi_extent_anomaly.png",
+    "name": "fig03_omi_extent_anomaly",
+    "title": "Annual sea-ice extent anomaly",
+    "caption": "Mean of monthly anomalies (extent minus the file's monthly climatology) for each complete year.",
+    "dataset": "Processed: data/processed/antarctic/sea_ice_extent/cmems_omi_si_extent_monthly.csv",
+    "variables": "anomaly_km2 (derived)",
+    "interpretation": "The three most negative years are 2023 (-1.59), 2024 (-1.06), 2017 (-0.85) million km^2; 7 of the 9 complete years since 2016 are below the long-term climatology, whereas 14 of 35 years before 2016 were."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig04_extent_seasonal_cycle.png",
+    "name": "fig04_extent_seasonal_cycle",
+    "title": "Seasonal cycle of sea-ice extent",
+    "caption": "Monthly climatology from the CMEMS OMI file (shaded ±1 standard deviation) compared with the NSIDC Sea Ice Index daily climatologies averaged to calendar months. The Northern Hemisphere file collected in DATAS/ is shown only as a contrast (out of Antarctic scope).",
+    "dataset": "OMI NetCDF; NSIDC G02135 S (downloaded) and N (DATAS/) climatology CSVs",
+    "variables": "monthlyclimsiextent_mean/std; mean_extent_mkm2",
+    "interpretation": "Antarctic extent peaks in September (18.83 million km^2) and is lowest in February (3.26), opposite in phase to the Arctic. NSIDC South 1981-2010 peaks at 18.49 (month 9) and bottoms at 3.07 (month 2)."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig05_omi_vs_nsidc_difference.png",
+    "name": "fig05_omi_vs_nsidc_difference",
+    "title": "OMI vs NSIDC monthly extent difference",
+    "caption": "Difference between CMEMS OMI monthly extent and NSIDC G02135 daily extent averaged to months (months with >=10 daily values). Products are compared, not merged.",
+    "dataset": "Processed comparison_omi_vs_nsidc_monthly.csv",
+    "variables": "siextent_million_km2, extent_mkm2",
+    "interpretation": "548 months matched; correlation r = 0.9999; mean difference +0.369 ± 0.097 million km^2 (max |diff| 0.75). The products agree closely in variability; the offset reflects different SIC algorithms and land masks."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig06_dmi_sic_distribution.png",
+    "name": "fig06_dmi_sic_distribution",
+    "title": "DMI-ASIP sea-ice concentration distribution",
+    "caption": "Exact counts of ice_concentration values in the 2023-02-02 DMI-ASIP mosaic (left) and classification of all 65.5 million grid cells (right). Classes are mutually exclusive.",
+    "dataset": "dmi_asip_seaice_mosaic_ant_20230202.nc",
+    "variables": "ice_concentration (%), acq_time (s)",
+    "interpretation": "The CNN product is quantised in 10 % steps (11 distinct valid values). Only 1.26% of the grid holds a valid retrieval (one SAR day near the February minimum); of these 89.8% are valid open-water zeros, and 100 % is the most frequent ice value. 295,054 fill cells lie inside SAR swaths (probable land/ice-shelf mask). No out-of-range values were found."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig07_dmi_sic_map.png",
+    "name": "fig07_dmi_sic_map",
+    "title": "DMI-ASIP sea-ice concentration map preview",
+    "caption": "Native polar-stereographic grid (true-scale latitude 70 S) subsampled every 8th cell for display only (no averaging). Grey = _FillValue (no SAR coverage or masked).",
+    "dataset": "dmi_asip_seaice_mosaic_ant_20230202.nc",
+    "variables": "ice_concentration (%)",
+    "interpretation": "Valid retrievals are confined to the Sentinel-1 swaths acquired on 2023-02-02 (13:35-20:08 UTC); most of the Southern Ocean has no retrieval in this single daily file, so it cannot be used for circumpolar statistics without more days."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig08_glims_map.png",
+    "name": "fig08_glims_map",
+    "title": "GLIMS Antarctic glacier outlines",
+    "caption": "Glacier outlines (line_type = glac_bound) from the GLIMS download filtered to RGI first-order region 19, reprojected to EPSG:3031 for display only (stored data keep EPSG:4326). Coloured by the GLIMS geog_area attribute (top five + Other).",
+    "dataset": "DATAS/glims_download_33432/glims_polygons.shp",
+    "variables": "geometry, geog_area, line_type",
+    "interpretation": "15,280 outlines; coverage is concentrated on the Antarctic Peninsula (9,470) and peripheral islands, with very sparse coverage of the main ice sheet - GLIMS is a glacier (not ice-sheet) inventory."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig09_glims_area_hist.png",
+    "name": "fig09_glims_area_hist",
+    "title": "GLIMS glacier area distribution",
+    "caption": "Histogram of the database-computed area (db_area, km^2) of RGI-19 glacier outlines with logarithmic bins.",
+    "dataset": "glims_polygons (RGI 19)",
+    "variables": "db_area (km^2)",
+    "interpretation": "Median area 0.03 km^2, maximum 165,079 km^2. Recomputed equal-area (EASE-Grid 2.0 South) areas match db_area with a median relative difference of 5.1e-07; 63 outlines differ by >5 % (of which 0 have invalid geometry) and are flagged for review, not removed."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig10_glims_hypsometry.png",
+    "name": "fig10_glims_hypsometry",
+    "title": "Aggregate glacier hypsometry",
+    "caption": "Sum over all RGI-19 glaciers with hypsometry of the glacier area in each 50 m elevation bin.",
+    "dataset": "DATAS/glims_download_33432/glims_hypsometry_50.csv (Antarctic subset)",
+    "variables": "area per elevation bin (km^2)",
+    "interpretation": "3,100 glacier analyses, 145,016 km^2 in total; half of the area lies below about 282 m, and the highest populated bin is 3,575 m."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig11_pgc_tiles.png",
+    "name": "fig11_pgc_tiles",
+    "title": "PGC/NCALM Dry Valleys LiDAR tile index",
+    "caption": "Tile footprints from the PGC-hosted KMZ index coloured by site (seven largest + Other) and the min-max elevation of each site.",
+    "dataset": "DATAS/NCALM_DV_LiDAR_LAS_Tile_index.kmz",
+    "variables": "geometry, site_name, Z_Min, Z_Max, Pt_Count",
+    "interpretation": "4,062 tiles in 13 sites with 14,126,743,483 LiDAR points in total; elevations span -59 to 2,930 m. Only the index is local - the LAS point clouds were not downloaded."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig12_missing_values.png",
+    "name": "fig12_missing_values",
+    "title": "Missing-value summary",
+    "caption": "Share of missing, null or _FillValue entries per dataset as computed by each handler (definitions differ by format: grid cells for rasters, attribute cells for vectors/tables, time steps for series).",
+    "dataset": "data/reports/antarctic/quality/*.json",
+    "variables": "missing_count, missing_percent",
+    "interpretation": "Highest share: cmems_dmi_asip_sic (98.7%). For the DMI-ASIP grid this is fill outside SAR coverage and for hypsometry empty elevation bins - structural, not lost measurements. Time series: nsidc_g02135_south_daily 0.00%, cmems_omi_si_extent 0.72%."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig13_before_after_counts.png",
+    "name": "fig13_before_after_counts",
+    "title": "Before-and-after record counts",
+    "caption": "Records/features in the source versus the processed output. Reductions are scope subsets (Antarctic filter), never deletions of Antarctic observations; source files are unchanged.",
+    "dataset": "data/reports/antarctic/quality/*.json",
+    "variables": "records_before, records_after",
+    "interpretation": "Counts are preserved for all tabular and time-series datasets. Reductions occur only where a global source was subset to the Antarctic scope: glims_hypsometry (153,223 -> 3,100), glims_points (392,096 -> 11,280), glims_polygons (790,854 -> 15,358)."
+  },
+  {
+    "file": "data/reports/antarctic/figures/fig14_edsc_providers.png",
+    "name": "fig14_edsc_providers",
+    "title": "Earthdata Search catalog providers",
+    "caption": "Number of catalog records per data provider in the Earthdata Search collection export (metadata only).",
+    "dataset": "DATAS/edsc_collection_results_export.json",
+    "variables": "provider",
+    "interpretation": "97 collection records from 5 providers; 38 mention Antarctic operational modes or titles; 32 are ongoing (no end date). No science granules were downloaded."
+  },
+  {
+    "file": null,
+    "name": "sea_ice_drift_components",
+    "title": "sea_ice_drift_components",
+    "caption": null,
+    "dataset": null,
+    "variables": null,
+    "interpretation": null,
+    "not_generated_reason": "No sea-ice drift data available locally (SEAICE_ANT_PHY_L3_MY_011_018 metadata only)"
+  },
+  {
+    "file": null,
+    "name": "era5_temperature_pressure_wind",
+    "title": "era5_temperature_pressure_wind",
+    "caption": null,
+    "dataset": null,
+    "variables": null,
+    "interpretation": null,
+    "not_generated_reason": "No ERA5 output from API.py / PRESSUREAPI.py available locally"
+  }
+]

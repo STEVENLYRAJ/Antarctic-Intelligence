@@ -1,0 +1,133 @@
+{
+  "dataset_id": "nasa_edsc_catalog",
+  "dataset_name": "NASA Earthdata Search collection-results export (catalog records)",
+  "category": "catalog_metadata_table",
+  "provider": "NASA Earthdata (CMR)",
+  "source_files": [
+    "DATAS/edsc_collection_results_export.json",
+    "DATAS/edsc_collection_results_export.csv"
+  ],
+  "status": "processed",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:59+00:00",
+  "finished_utc": "2026-10-10T16:03:59+00:00",
+  "steps": [
+    "JSON is syntactically valid; top-level type=list, 97 records",
+    "Flattened nested platforms/instruments into delimited columns; full nested JSON kept in platforms_json; timestamps parsed to UTC while keeping original strings",
+    "CSV export has 97 rows; 97 (provider, short_name, version) keys shared with JSON"
+  ],
+  "metrics": {
+    "json_schema": {
+      "provider": [
+        "str"
+      ],
+      "shortName": [
+        "str"
+      ],
+      "version": [
+        "str"
+      ],
+      "title": [
+        "str"
+      ],
+      "processingLevel": [
+        "dict"
+      ],
+      "platforms": [
+        "list"
+      ],
+      "timeStart": [
+        "str"
+      ],
+      "timeEnd": [
+        "NoneType",
+        "str"
+      ],
+      "__typename": [
+        "str"
+      ]
+    },
+    "csv_rows": 97,
+    "csv_columns": [
+      "Data Provider",
+      "Short Name",
+      "Version",
+      "Entry Title",
+      "Processing Level",
+      "Platform",
+      "Start Time",
+      "End Time"
+    ],
+    "json_csv_key_overlap": 97,
+    "json_only_keys": [],
+    "csv_only_keys": [],
+    "records_before": 97,
+    "records_after": 97,
+    "excluded_records": 0,
+    "duplicate_keys": 0,
+    "duplicate_full_rows": 0,
+    "invalid_start_timestamps": 0,
+    "end_before_start": 0,
+    "ongoing_collections": 32,
+    "missing_by_column": {
+      "processing_level_description": 86,
+      "time_end_original": 32,
+      "time_end_utc": 32
+    },
+    "missing_count": 150,
+    "missing_percent": 9.096,
+    "providers": {
+      "NSIDC_CPRD": 48,
+      "ASF": 39,
+      "POCLOUD": 5,
+      "GES_DISC": 3,
+      "USGS_LTA": 2
+    },
+    "processing_levels": {
+      "3": 22,
+      "1": 16,
+      "Not provided": 15,
+      "2": 13,
+      "4": 13,
+      "1B": 10,
+      "0": 6,
+      "Not Provided": 1,
+      "NA": 1
+    },
+    "records_mentioning_antarctic": 38,
+    "time_start_range": [
+      "1970-01-01 00:00:00+00:00",
+      "2020-04-30 00:00:00+00:00"
+    ]
+  },
+  "issues": [
+    {
+      "severity": "info",
+      "type": "catalog_only",
+      "detail": "These are catalog (metadata) records describing remote collections; no science data were downloaded",
+      "count": null
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/processed/antarctic/catalogs/nasa_edsc_collections.parquet",
+      "kind": "parquet",
+      "description": "Normalised collection records incl. preserved nested platform JSON",
+      "size_bytes": 32230
+    },
+    {
+      "path": "data/processed/antarctic/catalogs/nasa_edsc_collections.csv",
+      "kind": "csv",
+      "description": "Flat CSV view (without nested JSON column)",
+      "size_bytes": 28809
+    }
+  ],
+  "validation": {
+    "json_valid": true,
+    "output_reopened": true,
+    "row_count_preserved": true,
+    "nested_structure_preserved": true
+  },
+  "errors": [],
+  "notes": []
+}

@@ -1,0 +1,94 @@
+{
+  "dataset_id": "nsidc_g02135_south_daily",
+  "dataset_name": "NSIDC Sea Ice Index v4 (G02135) Southern Hemisphere daily sea-ice extent",
+  "category": "sea_ice_extent_timeseries",
+  "provider": "NSIDC / NOAA",
+  "source_files": [
+    "data/raw/antarctic/external/nsidc_g02135_south/S_seaice_extent_daily_v4.0.csv"
+  ],
+  "status": "processed",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:01+00:00",
+  "finished_utc": "2026-10-10T16:03:01+00:00",
+  "steps": [
+    "Read 15865 data rows; second header row gives units {'Year': 'YYYY', 'Month': 'MM', 'Day': 'DD', 'Extent': '10^6 sq km', 'Missing': '10^6 sq km', 'Source Data': 'Source data product web sites: http://nsidc.org/data/nsidc-0081.html and http://nsidc.org/data/nsidc-0051.html'}"
+  ],
+  "metrics": {
+    "units_row": {
+      "Year": "YYYY",
+      "Month": "MM",
+      "Day": "DD",
+      "Extent": "10^6 sq km",
+      "Missing": "10^6 sq km",
+      "Source Data": "Source data product web sites: http://nsidc.org/data/nsidc-0081.html and http://nsidc.org/data/nsidc-0051.html"
+    },
+    "records_before": 15865,
+    "time_coverage": [
+      "1978-10-26",
+      "2026-10-09"
+    ],
+    "invalid_dates": 0,
+    "duplicate_dates": 0,
+    "sampling_interval_days_counts": {
+      "1": 14253,
+      "2": 1610,
+      "42": 1
+    },
+    "gaps_gt_2_days": [
+      {
+        "after": "1987-12-02",
+        "resumes": "1988-01-13",
+        "days": 42
+      }
+    ],
+    "missing_count": 0,
+    "missing_percent": 0.0,
+    "rows_with_missing_area_gt0": 1,
+    "extent_summary_mkm2": {
+      "count": 15865,
+      "min": 1.848,
+      "p01": 2.301,
+      "p25": 5.955,
+      "median": 12.427,
+      "p75": 17.025,
+      "p99": 19.138440000000003,
+      "max": 20.201,
+      "mean": 11.53555310431768,
+      "std": 5.631204503876783
+    },
+    "records_after": 15865,
+    "excluded_records": 0
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "type": "temporal_gap",
+      "detail": "Gaps > 2 days (the record is every-other-day before 1987-08; the 1987-12-03..1988-01-12 SSM/I outage is a known gap)",
+      "count": 1
+    },
+    {
+      "severity": "info",
+      "type": "partial_coverage",
+      "detail": "Days where the product reports non-zero missing area (retained, flagged)",
+      "count": 1
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/processed/antarctic/sea_ice_extent/nsidc_g02135_south_daily.csv",
+      "kind": "csv",
+      "description": "Daily Southern Hemisphere extent with ISO dates and missing-area flag",
+      "size_bytes": 1617675
+    }
+  ],
+  "validation": {
+    "output_reopened": true,
+    "row_count_preserved": true,
+    "no_duplicate_dates": true,
+    "no_invalid_dates": true
+  },
+  "errors": [],
+  "notes": [
+    "Downloaded by this pipeline from the official NSIDC HTTPS archive (see provenance JSON); not part of DATAS/."
+  ]
+}

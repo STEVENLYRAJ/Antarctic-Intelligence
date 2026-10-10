@@ -1,0 +1,461 @@
+{
+  "checked_utc": "2026-10-10T15:50:21+00:00",
+  "sources": {
+    "A": [
+      {
+        "url": "https://data.marine.copernicus.eu/product/ANTARCTIC_OMI_SI_extent_obs/services",
+        "http_status": 200,
+        "final_url": "https://data.marine.copernicus.eu/product/ANTARCTIC_OMI_SI_extent_obs/services",
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 119150,
+        "login_redirect": false,
+        "page_title": null
+      },
+      {
+        "url": "https://stac.marine.copernicus.eu/metadata/ANTARCTIC_OMI_SI_extent_obs/product.stac.json",
+        "http_status": 200,
+        "final_url": "https://stac.marine.copernicus.eu/metadata/ANTARCTIC_OMI_SI_extent_obs/product.stac.json",
+        "content_type": "application/json",
+        "bytes": 9425,
+        "login_redirect": false,
+        "page_title": null,
+        "stac": {
+          "id": "ANTARCTIC_OMI_SI_extent_obs",
+          "title": "Antarctic Monthly Sea Ice Extent from Observations Reprocessing",
+          "license": "proprietary",
+          "extent": {
+            "temporal": {
+              "interval": [
+                [
+                  "1978-01-01T00:00:00Z",
+                  "2024-12-01T00:00:00Z"
+                ]
+              ]
+            },
+            "spatial": {
+              "bbox": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            }
+          },
+          "keywords": [
+            "target-application#seaiceinformation",
+            "oceanographic-geographical-features",
+            "satellite-observation",
+            "sea-ice-extent",
+            "multi-year",
+            "marine-resources",
+            "coastal-marine-environment",
+            "weather-climate-and-seasonal-forecasting",
+            "marine-safety",
+            "global-ocean"
+          ],
+          "assets": {
+            "thumbnail": "https://documentation.marine.copernicus.eu/IMG/ANTARCTIC_OMI_SI_extent_obs.png",
+            "omiFigure": "https://documentation.marine.copernicus.eu/IMG/ANTARCTIC_OMI_SI_extent_obs-hq.png"
+          },
+          "items": [
+            "antarctic_omi_si_extent_obs_202511/dataset.stac.json"
+          ],
+          "documentation": [
+            "https://doi.org/10.48670/moi-00187",
+            "https://documentation.marine.copernicus.eu/QUID/CMEMS-SEAICE-QUID-CLIMATE-SI-extent-obs.pdf",
+            "https://documentation.marine.copernicus.eu/PUM/CMEMS-SEAICE-PUM-CLIMATE-SI-extent-ant-obs.pdf"
+          ]
+        }
+      }
+    ],
+    "B": [
+      {
+        "url": "https://data.marine.copernicus.eu/product/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/services",
+        "http_status": 200,
+        "final_url": "https://data.marine.copernicus.eu/product/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/services",
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 103056,
+        "login_redirect": false,
+        "page_title": null
+      },
+      {
+        "url": "https://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/product.stac.json",
+        "http_status": 200,
+        "final_url": "https://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/product.stac.json",
+        "content_type": "application/json",
+        "bytes": 6625,
+        "login_redirect": false,
+        "page_title": null,
+        "stac": {
+          "id": "SEAICE_ANT_PHY_AUTO_L3_NRT_011_012",
+          "title": "Antarctic Ocean - High Resolution Sea Ice Information",
+          "license": "proprietary",
+          "extent": {
+            "spatial": {
+              "bbox": [
+                [
+                  -179.9875,
+                  -85.99375,
+                  179.9875,
+                  -45.00625
+                ]
+              ]
+            },
+            "temporal": {
+              "interval": [
+                [
+                  "2023-02-02T00:00:00Z",
+                  "2026-10-08T00:00:00Z"
+                ]
+              ]
+            }
+          },
+          "keywords": [
+            "target-application#seaiceforecastingapplication",
+            "oceanographic-geographical-features",
+            "satellite-observation",
+            "sea-ice-edge",
+            "sea-ice-concentration",
+            "near-real-time",
+            "marine-safety",
+            "weather-climate-and-seasonal-forecasting",
+            "marine-resources",
+            "coastal-marine-environment",
+            "global-ocean",
+            "level-3"
+          ],
+          "assets": {
+            "thumbnail": "https://mdl-metadata.s3.waw3-1.cloudferro.com/metadata/thumbnails/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012.jpg"
+          },
+          "items": [
+            "cmems_obs-si_ant_phy_nrt_l3-1km_P1D_202303/dataset.stac.json"
+          ],
+          "documentation": [
+            "https://doi.org/10.48670/mds-00320",
+            "https://documentation.marine.copernicus.eu/PUM/CMEMS-SEAICE-PUM-011-012.pdf",
+            "https://documentation.marine.copernicus.eu/SQO/CMEMS-SEAICE-SQO-011-002-012.pdf",
+            "https://documentation.marine.copernicus.eu/QUID/CMEMS-SEAICE-QUID-011-002-012.pdf"
+          ]
+        }
+      },
+      {
+        "url": "https://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/cmems_obs-si_ant_phy_nrt_l3-1km_P1D_202303/dataset.stac.json",
+        "http_status": 200,
+        "final_url": "https://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/cmems_obs-si_ant_phy_nrt_l3-1km_P1D_202303/dataset.stac.json",
+        "content_type": "application/json",
+        "bytes": 15795,
+        "login_redirect": false,
+        "page_title": null,
+        "stac": {
+          "id": "cmems_obs-si_ant_phy_nrt_l3-1km_P1D_202303",
+          "title": null,
+          "license": null,
+          "extent": null,
+          "keywords": null,
+          "assets": {
+            "native": "https://s3.waw3-1.cloudferro.com/mdl-native-09/native/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/cmems_obs-si_ant_phy_nrt_l3-1km_P1D_202303",
+            "wmts": "https://wmts.marine.copernicus.eu/teroWmts/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/cmems_obs-si_ant_phy_nrt_l3-1km_P1D_202303?service=WMTS&request=GetCapabilities",
+            "timeChunked": "https://s3.waw3-1.cloudferro.com/mdl-arco-time-045/arco/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/cmems_obs-si_ant_phy_nrt_l3-1km_P1D_202303/timeChunked.zarr",
+            "downsampled4": "https://s3.waw3-1.cloudferro.com/mdl-arco-time-045/arco/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/cmems_obs-si_ant_phy_nrt_l3-1km_P1D_202303/downsampled4.zarr",
+            "downsampled8": "https://s3.waw3-1.cloudferro.com/mdl-arco-time-045/arco/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/cmems_obs-si_ant_phy_nrt_l3-1km_P1D_202303/downsampled8.zarr",
+            "geoChunked": "https://s3.waw3-1.cloudferro.com/mdl-arco-geo-045/arco/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/cmems_obs-si_ant_phy_nrt_l3-1km_P1D_202303/geoChunked.zarr"
+          },
+          "items": [],
+          "documentation": [],
+          "variables": {
+            "acq_time": {
+              "unit": "s",
+              "standard_name": null,
+              "dims": [
+                "time",
+                "latitude",
+                "longitude"
+              ]
+            },
+            "confidence": {
+              "unit": "%",
+              "standard_name": null,
+              "dims": [
+                "time",
+                "latitude",
+                "longitude"
+              ]
+            },
+            "ice_concentration": {
+              "unit": "%",
+              "standard_name": "sea_ice_area_fraction",
+              "dims": [
+                "time",
+                "latitude",
+                "longitude"
+              ]
+            }
+          },
+          "dimensions": {
+            "time": {
+              "type": "temporal",
+              "extent": [
+                "2023-02-02T00:00:00Z",
+                "2026-10-08T00:00:00Z"
+              ],
+              "step": "P1D"
+            },
+            "latitude": {
+              "type": "spatial",
+              "axis": "y",
+              "extent": [
+                -85.99375,
+                -45.00625
+              ],
+              "step": 0.0125,
+              "reference_system": 4326
+            },
+            "longitude": {
+              "type": "spatial",
+              "axis": "x",
+              "extent": [
+                -179.9875,
+                179.9875
+              ],
+              "step": 0.025,
+              "reference_system": 4326
+            }
+          }
+        }
+      }
+    ],
+    "C": [
+      {
+        "url": "https://data.marine.copernicus.eu/product/SEAICE_ANT_PHY_L3_MY_011_018/services",
+        "http_status": 200,
+        "final_url": "https://data.marine.copernicus.eu/product/SEAICE_ANT_PHY_L3_MY_011_018/services",
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 164136,
+        "login_redirect": false,
+        "page_title": null
+      },
+      {
+        "url": "https://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_L3_MY_011_018/product.stac.json",
+        "http_status": 200,
+        "final_url": "https://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_L3_MY_011_018/product.stac.json",
+        "content_type": "application/json",
+        "bytes": 7650,
+        "login_redirect": false,
+        "page_title": null,
+        "stac": {
+          "id": "SEAICE_ANT_PHY_L3_MY_011_018",
+          "title": "Antarctic Ocean Sea Ice Drift REPROCESSED",
+          "license": "proprietary",
+          "extent": {
+            "spatial": {
+              "bbox": [
+                [
+                  -179.75,
+                  -90,
+                  180,
+                  -40.25
+                ]
+              ]
+            },
+            "temporal": {
+              "interval": [
+                [
+                  "2003-04-01T00:00:00Z",
+                  "2026-06-30T00:00:00Z"
+                ]
+              ]
+            }
+          },
+          "keywords": [
+            "target-application#seaiceclimate",
+            "oceanographic-geographical-features",
+            "satellite-observation",
+            "northward-sea-ice-velocity",
+            "eastward-sea-ice-velocity",
+            "multi-year",
+            "marine-resources",
+            "weather-climate-and-seasonal-forecasting",
+            "coastal-marine-environment",
+            "marine-safety",
+            "antarctic-ocean",
+            "level-3"
+          ],
+          "assets": {
+            "thumbnail": "https://mdl-metadata.s3.waw3-1.cloudferro.com/metadata/thumbnails/SEAICE_ANT_PHY_L3_MY_011_018.jpg"
+          },
+          "items": [
+            "cmems_obs-si_ant_physic_my_drift-amsr_P2D_202311/dataset.stac.json",
+            "cmems_obs-si_ant_physic_my_drift-amsr_P3D_202311/dataset.stac.json",
+            "cmems_obs-si_ant_phy_my_drift-cfosat_P2D_202411/dataset.stac.json",
+            "cmems_obs-si_ant_phy_my_drift-cfosat_P3D_202411/dataset.stac.json",
+            "cmems_obs-si_ant_phy_my_drift-cfosat-ssmi-merged_P3D_202411/dataset.stac.json",
+            "cmems_obs-si_ant_phy_my_drift-cfosat-ssmi-merged_P30D_202411/dataset.stac.json"
+          ],
+          "documentation": [
+            "https://doi.org/10.48670/moi-00120",
+            "https://documentation.marine.copernicus.eu/PUM/CMEMS-SEAICE-PUM-011-018.pdf",
+            "https://documentation.marine.copernicus.eu/SQO/CMEMS-SEAICE-SQO-011-010-018.pdf",
+            "https://documentation.marine.copernicus.eu/QUID/CMEMS-SEAICE-QUID-011-010-018.pdf"
+          ]
+        }
+      },
+      {
+        "url": "https://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_phy_my_drift-cfosat-ssmi-merged_P3D_202411/dataset.stac.json",
+        "http_status": 200,
+        "final_url": "https://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_phy_my_drift-cfosat-ssmi-merged_P3D_202411/dataset.stac.json",
+        "content_type": "application/json",
+        "bytes": 11772,
+        "login_redirect": false,
+        "page_title": null,
+        "stac": {
+          "id": "cmems_obs-si_ant_phy_my_drift-cfosat-ssmi-merged_P3D_202411",
+          "title": null,
+          "license": null,
+          "extent": null,
+          "keywords": null,
+          "assets": {
+            "native": "https://s3.waw3-1.cloudferro.com/mdl-native-09/native/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_phy_my_drift-cfosat-ssmi-merged_P3D_202411",
+            "timeChunked": "https://s3.waw3-1.cloudferro.com/mdl-arco-time-045/arco/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_phy_my_drift-cfosat-ssmi-merged_P3D_202411/timeChunked.zarr",
+            "geoChunked": "https://s3.waw3-1.cloudferro.com/mdl-arco-geo-045/arco/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_phy_my_drift-cfosat-ssmi-merged_P3D_202411/geoChunked.zarr",
+            "wmts": "https://wmts.marine.copernicus.eu/teroWmts/SEAICE_ANT_PHY_L3_MY_011_018/cmems_obs-si_ant_phy_my_drift-cfosat-ssmi-merged_P3D_202411?service=WMTS&request=GetCapabilities"
+          },
+          "items": [],
+          "documentation": [],
+          "variables": {
+            "eastward_sea_ice_velocity": {
+              "unit": "m/s",
+              "standard_name": "eastward_sea_ice_velocity",
+              "dims": [
+                "time",
+                "elevation",
+                "latitude",
+                "longitude"
+              ]
+            },
+            "northward_sea_ice_velocity": {
+              "unit": "m/s",
+              "standard_name": "northward_sea_ice_velocity",
+              "dims": [
+                "time",
+                "elevation",
+                "latitude",
+                "longitude"
+              ]
+            }
+          },
+          "dimensions": {
+            "time": {
+              "type": "temporal",
+              "extent": [
+                "2020-05-29T00:00:00Z",
+                "2022-10-31T00:00:00Z"
+              ],
+              "step": "P1D"
+            },
+            "elevation": {
+              "type": "spatial",
+              "axis": "z",
+              "extent": [
+                0,
+                0
+              ],
+              "values": [
+                0
+              ],
+              "unit": "m"
+            },
+            "latitude": {
+              "type": "spatial",
+              "axis": "y",
+              "extent": [
+                -90,
+                -40.5
+              ],
+              "step": 0.5,
+              "reference_system": 4326
+            },
+            "longitude": {
+              "type": "spatial",
+              "axis": "x",
+              "extent": [
+                -179.5,
+                180
+              ],
+              "step": 0.5,
+              "reference_system": 4326
+            }
+          }
+        }
+      }
+    ],
+    "D": [
+      {
+        "url": "https://maps.apps.pgc.umn.edu/antarctica",
+        "http_status": 200,
+        "final_url": "https://maps.apps.pgc.umn.edu/antarctica",
+        "content_type": "text/html",
+        "bytes": 616,
+        "login_redirect": false,
+        "page_title": "PGC map catalog"
+      }
+    ],
+    "E": [
+      {
+        "url": "https://scar.org/library-data/data/amd",
+        "http_status": 200,
+        "final_url": "https://scar.org/library-data/data/amd",
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 174966,
+        "login_redirect": false,
+        "page_title": "AMD (metadata directory) | SCAR",
+        "amd_links": [
+          "https://gcmd.earthdata.nasa.gov/KeywordViewer/",
+          "https://scar.org/images/banners/Products/Product_AMD.png",
+          "https://scar.org/library-data/data/amd",
+          "https://scar.org/library-data/data/amd/feed",
+          "https://scar.org/library-data/repository-of-tourism-research",
+          "https://scar.org/science/research-programmes",
+          "https://scar.org/science/research-programmes/agata",
+          "https://scar.org/science/research-programmes/age",
+          "https://scar.org/science/research-programmes/ant-icon",
+          "https://scar.org/science/research-programmes/antclimnow",
+          "https://scar.org/science/research-programmes/antclimnow/aci",
+          "https://scar.org/science/research-programmes/c-cage",
+          "https://scar.org/science/research-programmes/instant",
+          "https://scar.org/search",
+          "https://search.earthdata.nasa.gov/portal/amd/search",
+          "https://www.linkedin.com/company/scientific-committee-on-antarctic-research"
+        ]
+      }
+    ],
+    "F": [
+      {
+        "url": "https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0272_GLIMS_v1/",
+        "http_status": 200,
+        "final_url": "https://urs.earthdata.nasa.gov/oauth/authorize?client_id=OeZxXA9CSNdsGKSltLUmIQ&response_type=code&redirect_uri=https%3A%2F%2Fdaacdata.apps.nsidc.org%2Foauth%2Fredirect_uri&state=aHR0cHM6Ly9kYWFjZGF0YS5hcHBzLm5zaWRjLm9yZy9wdWIvREFUQVNFVFMvbnNpZGMwMjcyX0dMSU1TX3YxLw",
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 10937,
+        "login_redirect": true,
+        "page_title": "Earthdata Login"
+      }
+    ],
+    "G": [
+      {
+        "url": "https://noaadata.apps.nsidc.org/NOAA/G02135/south/daily/data/",
+        "http_status": 200,
+        "final_url": "https://noaadata.apps.nsidc.org/NOAA/G02135/south/daily/data/",
+        "content_type": "text/html",
+        "bytes": 479,
+        "login_redirect": false,
+        "page_title": "Index of /NOAA/G02135/south/daily/data/",
+        "directory_entries": [
+          "../",
+          "S_seaice_extent_climatology_1981-2010_v4.0.csv",
+          "S_seaice_extent_daily_v4.0.csv"
+        ]
+      }
+    ]
+  }
+}

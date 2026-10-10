@@ -1,0 +1,131 @@
+{
+  "dataset_id": "pgc_ncalm_dv_lidar_tiles",
+  "dataset_name": "NCALM McMurdo Dry Valleys LiDAR (2014) LAS tile index",
+  "category": "vector_polygons",
+  "provider": "Polar Geospatial Center (PGC) / NCALM",
+  "source_files": [
+    "DATAS/NCALM_DV_LiDAR_LAS_Tile_index.kmz",
+    "DATAS/NCALM_DV_LiDAR_Collection_Report.pdf"
+  ],
+  "status": "processed",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:58+00:00",
+  "finished_utc": "2026-10-10T16:03:59+00:00",
+  "steps": [
+    "Parsed KMZ (zipped KML 2.2): 4,062 tile placemarks; attributes extracted from HTML descriptions: ['FileName', 'Pt_Count', 'Pt_Spacing', 'Z_Min', 'Z_Max', 'site_name', 'orig_name', 'tiff_name', 'temp', 'http_url', 'n_vertices', 'z_all_zero']",
+    "Renamed FileName->las_file, Pt_Count->point_count, Pt_Spacing->point_spacing_m, Z_Min->z_min_m, Z_Max->z_max_m, http_url->las_url (units assumed metres: PGC elevation products; not stated in the KML)",
+    "Overlap check in EPSG:3031: 5 tile pairs overlap by >1 m^2 (5 across different sites)"
+  ],
+  "metrics": {
+    "records_before": 4062,
+    "fields": [
+      "FileName",
+      "Pt_Count",
+      "Pt_Spacing",
+      "Z_Min",
+      "Z_Max",
+      "site_name",
+      "orig_name",
+      "tiff_name",
+      "temp",
+      "http_url",
+      "n_vertices",
+      "z_all_zero"
+    ],
+    "geometry_invalid": 0,
+    "geometry_null": 0,
+    "duplicate_las_file": 0,
+    "duplicate_geometry": 1,
+    "z_min_gt_z_max": 0,
+    "nonpositive_point_count": 0,
+    "point_count_summary": {
+      "count": 4062,
+      "min": 16.0,
+      "p01": 19358.49,
+      "p25": 1604633.0,
+      "median": 3224025.0,
+      "p75": 5129372.75,
+      "p99": 9283506.069999998,
+      "max": 11589727.0,
+      "mean": 3477780.2764647957,
+      "std": 2300446.4119691243
+    },
+    "point_spacing_summary_m": {
+      "count": 4062,
+      "min": 0.293737269836,
+      "p01": 0.32820089929906004,
+      "p25": 0.44153336657575004,
+      "median": 0.5555686241805,
+      "p75": 0.7527651016307499,
+      "p99": 2.2459640804840983,
+      "max": 16.5397161432,
+      "mean": 0.678767213448971,
+      "std": 0.4845746208857769
+    },
+    "elevation_range_m": [
+      -59.28,
+      2929.62
+    ],
+    "sites": {
+      "Northern MDV (middle)": 692,
+      "Denton Hills (north)": 516,
+      "Northern MDV (north)": 396,
+      "Beacon Valley": 376,
+      "Northern MDV (south)": 359,
+      "Taylor Valley (west)": 346,
+      "Denton Hills (south)": 311,
+      "Taylor Valley (middle)": 304,
+      "Taylor Valley (east)": 294,
+      "Pegasus Airfield": 181,
+      "Asgard Range (west)": 136,
+      "Cape Royds / Cape Evans": 92,
+      "McMurdo Station": 59
+    },
+    "total_points": 14126743483,
+    "bounds_lonlat": [
+      160.1043438739,
+      -78.2825634693,
+      166.9605522291,
+      -77.2118863937
+    ],
+    "missing_by_column": {},
+    "missing_count": 0,
+    "missing_percent": 0.0,
+    "tile_pairs_overlapping_area_gt1m2": 5,
+    "tile_pairs_overlapping_cross_site": 5,
+    "records_after": 4062,
+    "excluded_records": 0
+  },
+  "issues": [
+    {
+      "severity": "info",
+      "type": "overlapping_features",
+      "detail": "Tiles from different sites overlap",
+      "count": 5
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/processed/antarctic/pgc/ncalm_dv_lidar_tile_index.gpkg",
+      "kind": "gpkg",
+      "description": "Tile polygons (EPSG:4326) with LAS metadata, validity flags and polar-stereographic area",
+      "size_bytes": 2211840
+    },
+    {
+      "path": "data/processed/antarctic/pgc/ncalm_dv_lidar_site_summary.csv",
+      "kind": "csv",
+      "description": "Per-site tile/point/elevation summary",
+      "size_bytes": 1160
+    }
+  ],
+  "validation": {
+    "output_reopened": true,
+    "feature_count_matches": true,
+    "crs_epsg4326": true,
+    "all_tiles_south_of_60S": true
+  },
+  "errors": [],
+  "notes": [
+    "Only the tile INDEX is local; the LAS point clouds referenced by las_url were not downloaded."
+  ]
+}

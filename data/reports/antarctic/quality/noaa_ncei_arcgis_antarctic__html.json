@@ -1,0 +1,71 @@
+{
+  "dataset_id": "noaa_ncei_arcgis_antarctic__html",
+  "dataset_name": "NOAA NCEI ArcGIS REST 'antarctic' services folder (saved page)",
+  "category": "saved_web_page",
+  "provider": "NOAA NCEI",
+  "source_files": [
+    "DATAS/antarctic.htm"
+  ],
+  "status": "metadata_inspected",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:59+00:00",
+  "finished_utc": "2026-10-10T16:03:59+00:00",
+  "steps": [
+    "Parsed saved page 'Folder: antarctic': 16 links, 3 map services"
+  ],
+  "metrics": {
+    "title": "Folder: antarctic",
+    "links": [
+      "/arcgis/rest/static/main.css",
+      "https://gis.ngdc.noaa.gov/arcgis/rest/login",
+      "https://gis.ngdc.noaa.gov/arcgis/tokens/",
+      "/arcgis/rest/services",
+      "/arcgis/rest/services",
+      "/arcgis/rest/services/antarctic",
+      "https://gis.ngdc.noaa.gov/arcgis/help/en/rest/router.html?f=rest/services/antarctic",
+      "?f=pjson",
+      "https://gis.ngdc.noaa.gov/arcgis/services/antarctic?wsdl",
+      "/arcgis/rest/services/antarctic/clipping_donut/MapServer",
+      "/arcgis/rest/services/antarctic/graticule/MapServer",
+      "/arcgis/rest/services/antarctic/reference/MapServer",
+      "https://gis.ngdc.noaa.gov/arcgis/rest/services/antarctic?f=pjson",
+      "https://gis.ngdc.noaa.gov/arcgis/services?wsdl",
+      "https://gis.ngdc.noaa.gov/arcgis/rest/services/antarctic?f=sitemap",
+      "https://gis.ngdc.noaa.gov/arcgis/rest/services/antarctic?f=geositemap"
+    ],
+    "services": [
+      {
+        "path": "/arcgis/rest/services/antarctic/clipping_donut/MapServer",
+        "name": "antarctic/clipping_donut",
+        "type": "MapServer"
+      },
+      {
+        "path": "/arcgis/rest/services/antarctic/graticule/MapServer",
+        "name": "antarctic/graticule",
+        "type": "MapServer"
+      },
+      {
+        "path": "/arcgis/rest/services/antarctic/reference/MapServer",
+        "name": "antarctic/reference",
+        "type": "MapServer"
+      }
+    ],
+    "index_entries": [
+      "https://gis.ngdc.noaa.gov/arcgis/tokens/"
+    ]
+  },
+  "issues": [
+    {
+      "severity": "info",
+      "type": "catalog_only",
+      "detail": "Saved directory/service listing - describes where data live; contains no scientific values",
+      "count": null
+    }
+  ],
+  "outputs": [],
+  "validation": {
+    "parsed": true
+  },
+  "errors": [],
+  "notes": []
+}

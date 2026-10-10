@@ -1,0 +1,8 @@
+{
+  "url": "https://noaadata.apps.nsidc.org/NOAA/G02135/south/daily/data/S_seaice_extent_daily_v4.0.csv",
+  "downloaded_utc": "2026-10-10T15:50:48+00:00",
+  "bytes": 1832151,
+  "sha256": "75b950446f4752983be82b147e76c952057c2e423cda1fc49a21ebde9190cab3",
+  "http_last_modified": "Sat, 10 Oct 2026 10:33:28 GMT",
+  "access": "public HTTPS, no credentials"
+}

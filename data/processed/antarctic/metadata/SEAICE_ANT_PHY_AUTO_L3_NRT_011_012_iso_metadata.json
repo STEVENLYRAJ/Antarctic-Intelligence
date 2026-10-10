@@ -1,0 +1,40 @@
+{
+  "file_identifier": "8fccc4da-0bf7-4dd7-bebe-5bb3248ac8dd",
+  "title": "Antarctic Ocean - High Resolution Sea Ice Information",
+  "abstract": "'''Short description:'''\nFor the Antarctic Sea - A sea ice concentration product based on satellite SAR imagery and microwave radiometer data: The algorithm uses SENTINEL-1 SAR EW and IW mode dual-polarized HH/HV data combined with AMSR2 radiometer data.\n\n'''DOI (product) :'''   \nhttps://doi.org/10.48670/mds-00320",
+  "temporal_begin": "2023-02-02",
+  "temporal_end": "ongoing / not specified",
+  "bbox": {
+    "westBoundLongitude": "-180.00",
+    "eastBoundLongitude": "180.00",
+    "southBoundLatitude": "-90.00",
+    "northBoundLatitude": "-39.26"
+  },
+  "keywords": [
+    "Level 3",
+    "Not Applicable",
+    "Oceanographic geographical features",
+    "coastal-marine-environment",
+    "global-ocean",
+    "marine-resources",
+    "marine-safety",
+    "near-real-time",
+    "satellite-observation",
+    "sea_ice_concentration",
+    "sea_ice_edge",
+    "target-application#seaiceforecastingapplication",
+    "weather-climate-and-seasonal-forecasting"
+  ],
+  "use_limitation": "See Copernicus Marine Environment Monitoring Service Data commitments and licence at: http://marine.copernicus.eu/web/27-service-commitments-and-licence.php",
+  "other_constraints": "No limitations on public access",
+  "online_resources": [
+    "http://marine.copernicus.eu/",
+    "http://stac.marine.copernicus.eu/metadata/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012/cmems_obs-si_ant_phy_nrt_l3-1km_P1D_202303/dataset.stac.json"
+  ],
+  "contacts": [
+    "CMEMS",
+    "SIW-DMI-COPENHAGEN-DK"
+  ],
+  "doi": "https://doi.org/10.48670/mds-00320",
+  "product_id": "SEAICE_ANT_PHY_AUTO_L3_NRT_011_012"
+}

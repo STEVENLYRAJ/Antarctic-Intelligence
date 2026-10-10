@@ -1,0 +1,32 @@
+{
+  "dataset_id": "glims_documentation",
+  "dataset_name": "GLIMS download package documentation",
+  "category": "documentation",
+  "provider": "GLIMS / NSIDC",
+  "source_files": [
+    "DATAS/glims_download_33432/README.txt",
+    "DATAS/glims_download_33432/CITATIONS.txt"
+  ],
+  "status": "metadata_inspected",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:58+00:00",
+  "finished_utc": "2026-10-10T16:03:58+00:00",
+  "steps": [
+    "Read README and CITATIONS (267,627 bytes; 3 DOIs)"
+  ],
+  "metrics": {
+    "readme_lines": 100,
+    "citations_bytes": 267627,
+    "submission_ids_referenced": 0,
+    "doi_count": 3,
+    "coordinate_statement": "All data are in the longitude/latitude coordinate system on the WGS-84 datum (CITATIONS.txt)",
+    "field_documentation_url": "http://www.glims.org/MapsAndDocs/downloaded_field_desc.html"
+  },
+  "issues": [],
+  "outputs": [],
+  "validation": {
+    "readable": true
+  },
+  "errors": [],
+  "notes": []
+}

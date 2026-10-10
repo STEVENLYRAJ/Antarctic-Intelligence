@@ -1,0 +1,56 @@
+{
+  "dataset_id": "glims_lines",
+  "dataset_name": "GLIMS glacier lines (snow lines / centre lines)",
+  "category": "vector_lines",
+  "provider": "GLIMS / NSIDC",
+  "source_files": [
+    "DATAS/glims_download_33432/glims_lines.shp",
+    "DATAS/glims_download_33432/glims_lines.shx",
+    "DATAS/glims_download_33432/glims_lines.dbf",
+    "DATAS/glims_download_33432/glims_lines.prj"
+  ],
+  "status": "validated",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:54+00:00",
+  "finished_utc": "2026-10-10T16:03:54+00:00",
+  "steps": [
+    "Opened lines layer: 0 features"
+  ],
+  "metrics": {
+    "records_before": 0,
+    "records_after": 0,
+    "geometry_type": "LineString",
+    "crs": "EPSG:4326",
+    "fields": [
+      "line_type",
+      "anlys_id",
+      "glac_id",
+      "anlys_time",
+      "src_date",
+      "rec_status",
+      "subm_id",
+      "release_dt",
+      "proc_desc",
+      "rc_id",
+      "geog_area",
+      "chief_affl",
+      "gtng_o1reg",
+      "gtng_o2reg"
+    ]
+  },
+  "issues": [
+    {
+      "severity": "info",
+      "type": "empty_layer",
+      "detail": "Layer is empty: the GLIMS query returned no snow/centre lines (per README this is expected when no line data match)",
+      "count": 0
+    }
+  ],
+  "outputs": [],
+  "validation": {
+    "opened": true,
+    "schema_readable": true
+  },
+  "errors": [],
+  "notes": []
+}

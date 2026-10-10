@@ -1,0 +1,71 @@
+{
+  "dataset_id": "glims_points",
+  "dataset_name": "GLIMS glacier representative points",
+  "category": "vector_points",
+  "provider": "GLIMS / NSIDC",
+  "source_files": [
+    "DATAS/glims_download_33432/glims_points.shp",
+    "DATAS/glims_download_33432/glims_points.shx",
+    "DATAS/glims_download_33432/glims_points.dbf",
+    "DATAS/glims_download_33432/glims_points.prj"
+  ],
+  "status": "processed",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:51+00:00",
+  "finished_utc": "2026-10-10T16:03:54+00:00",
+  "steps": [
+    "392,096 points; 3 with longitude > 180 (0-360 convention), 0 duplicate glacier_id"
+  ],
+  "metrics": {
+    "records_before": 392096,
+    "crs": "EPSG:4326",
+    "lon_gt_180": 3,
+    "lon_lt_minus180": 0,
+    "lat_out_of_range": 0,
+    "z_summary": {
+      "count": 392096,
+      "min": 0.0,
+      "p01": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0,
+      "p99": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "null_or_empty_geometry": 0,
+    "duplicate_glacier_id": 0,
+    "missing_glacier_id": 0,
+    "missing_count": 0,
+    "missing_percent": 0.0,
+    "antarctic_points": 11280,
+    "antarctic_points_south_of_60S_not_in_rgi19_polygons": 0,
+    "rgi19_glaciers_without_point": 1,
+    "records_after": 11280,
+    "excluded_records": 380816,
+    "exclusion_reason": "Not linked to an RGI-19 glacier and north of 60 S (outside Antarctic scope)"
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "type": "invalid_coordinate",
+      "detail": "Longitudes > 180 deg in a WGS84 (-180..180) layer; retained, flagged (column lon_wrapped gives lon-360 for use)",
+      "count": 3
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/processed/antarctic/glims/glims_antarctic_rgi19.gpkg",
+      "kind": "gpkg",
+      "description": "Layer 'points': Antarctic glacier points with coordinate flags",
+      "size_bytes": 68091904
+    }
+  ],
+  "validation": {
+    "output_reopened": true,
+    "feature_count_matches": true
+  },
+  "errors": [],
+  "notes": []
+}

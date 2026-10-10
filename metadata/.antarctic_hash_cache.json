@@ -1,0 +1,182 @@
+{
+  "DATAS/AGS_A_2002_04.tif": {
+    "size": 37334194,
+    "mtime_ns": 1791565077080525100,
+    "sha256": "9f421b81f755536ee72be398e0d7f0cf833fe26594d817957fd7de9c9856db80"
+  },
+  "DATAS/antarctic.htm": {
+    "size": 2028,
+    "mtime_ns": 1791643324610163400,
+    "sha256": "a02ba943e63c47f4743280e1f5d5a718b16417b2e2d1f755191574dc640bae91"
+  },
+  "DATAS/ANTARCTIC_OMI_SI_extent_19790115_P20250505_R19792024.nc": {
+    "size": 65612,
+    "mtime_ns": 1791641265284191300,
+    "sha256": "86d20c9f83b633d5699020ff6c1616e6c7954fce5c9454969ac60721490aac70"
+  },
+  "DATAS/ANTARCTIC_OMI_SI_extent_obs-hq.png": {
+    "size": 1096324,
+    "mtime_ns": 1791565320095856600,
+    "sha256": "9b0b80d9f3116d906ce33909f5c0080f8d90276f0f031a745753c11679daa53b"
+  },
+  "DATAS/ANTARCTIC_OMI_SI_extent_obs.xml": {
+    "size": 45748,
+    "mtime_ns": 1791565339223514800,
+    "sha256": "d87977fba6e4d663ec2e92b651e6aa0267517d9d14571e5866f5a2d4a4046e23"
+  },
+  "DATAS/Cda_ArcticOIB20090331-0425.nc": {
+    "size": 37474262,
+    "mtime_ns": 1791564448554565400,
+    "sha256": "896ac60c3f964bd8633f701bd34b8b1c224d20a88919174dbffc00547c07844f"
+  },
+  "DATAS/dmi_asip_seaice_mosaic_ant_20230202.nc": {
+    "size": 155480212,
+    "mtime_ns": 1791614100956492500,
+    "sha256": "2f6653818d6422135e86a7a75d1bb5acb9e996849240e20d7d64260190c82a02"
+  },
+  "DATAS/download.htm": {
+    "size": 502,
+    "mtime_ns": 1791565957298906300,
+    "sha256": "9bfbb4afbe2e95b5dd9c4b1c3e8c4f019c266519a872b702d3fe6551a44d64be"
+  },
+  "DATAS/Earthdata-Download-x64.exe": {
+    "size": 139397200,
+    "mtime_ns": 1791564992263015800,
+    "sha256": "253e3c7ede9d27a9a0017d8358783c040720e8f43f882c42f8f8ed895679f1e7"
+  },
+  "DATAS/edsc_collection_results_export.csv": {
+    "size": 17456,
+    "mtime_ns": 1791641625041776200,
+    "sha256": "024f8534efe2740b8208c1361d1090574012e96b75248dd577565447453add90"
+  },
+  "DATAS/edsc_collection_results_export.json": {
+    "size": 97906,
+    "mtime_ns": 1791641586528370100,
+    "sha256": "36b9ea2b8e94684151e13ac74b08ef5f4a04b632a4351fdcafb1dbb84d081f07"
+  },
+  "DATAS/glims_download_33432/CITATIONS.txt": {
+    "size": 267646,
+    "mtime_ns": 1791617875187836100,
+    "sha256": "6872fa21d5c12d41af9b8f4b1d6980c8626a5c397cde689836e0739093f02386"
+  },
+  "DATAS/glims_download_33432/glims_hypsometry_100.csv": {
+    "size": 259,
+    "mtime_ns": 1791617875169321300,
+    "sha256": "ca46fbc883bb7ea3d46ce0ab3d56ff865bfb4b8a04e8fb75a6052def72ec14d3"
+  },
+  "DATAS/glims_download_33432/glims_hypsometry_50.csv": {
+    "size": 103590664,
+    "mtime_ns": 1791617856157651200,
+    "sha256": "c80798c6ea2cc03d09fac38b21cf9569e35436073c9bc4f8a1a1ff3138f0b4dc"
+  },
+  "DATAS/glims_download_33432/glims_images.dbf": {
+    "size": 450268,
+    "mtime_ns": 1791617856251164300,
+    "sha256": "d349ebd7bc193877c997b769a4c6c33d438531786cae681f39400a880686d110"
+  },
+  "DATAS/glims_download_33432/glims_images.prj": {
+    "size": 145,
+    "mtime_ns": 1791617875180836400,
+    "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+  },
+  "DATAS/glims_download_33432/glims_images.shp": {
+    "size": 121024,
+    "mtime_ns": 1791617838742574500,
+    "sha256": "83be9728b14bbc5b5e0714ce559b8216fcaf9eefb7bca9ae20ae99439a9f1e69"
+  },
+  "DATAS/glims_download_33432/glims_images.shx": {
+    "size": 26972,
+    "mtime_ns": 1791617856259165200,
+    "sha256": "86d6069e59030579862aa1b587005648528872dae188aaccdc4b8bd705aa1f53"
+  },
+  "DATAS/glims_download_33432/glims_lines.dbf": {
+    "size": 482,
+    "mtime_ns": 1791617875261849100,
+    "sha256": "564fab82f9af36f0c259be3ed8a47d0c70a8fc576262201f12ee71aa0ad7958f"
+  },
+  "DATAS/glims_download_33432/glims_lines.prj": {
+    "size": 145,
+    "mtime_ns": 1791617855800589400,
+    "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+  },
+  "DATAS/glims_download_33432/glims_lines.shp": {
+    "size": 100,
+    "mtime_ns": 1791617855796588500,
+    "sha256": "926401bfc2997f7c001f827859a1281ceb6f688660720f605f14f3e54207568e"
+  },
+  "DATAS/glims_download_33432/glims_lines.shx": {
+    "size": 100,
+    "mtime_ns": 1791617875163317800,
+    "sha256": "926401bfc2997f7c001f827859a1281ceb6f688660720f605f14f3e54207568e"
+  },
+  "DATAS/glims_download_33432/glims_points.dbf": {
+    "size": 6665698,
+    "mtime_ns": 1791617875158322800,
+    "sha256": "fb567cc1031e414c9966a6ce6af1e968174e5566b524f4e717e0d48932b0fe03"
+  },
+  "DATAS/glims_download_33432/glims_points.prj": {
+    "size": 145,
+    "mtime_ns": 1791617875266845600,
+    "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+  },
+  "DATAS/glims_download_33432/glims_points.shp": {
+    "size": 14115556,
+    "mtime_ns": 1791617875256845800,
+    "sha256": "32f215e090ea985a02d44354c6e41fadc6bf42dea3ade5e80415d54800152b53"
+  },
+  "DATAS/glims_download_33432/glims_points.shx": {
+    "size": 3136868,
+    "mtime_ns": 1791617856177161600,
+    "sha256": "007848593e80dbdfb5390072ec6ef90f432df89f9111b1082adeda022b8cedb4"
+  },
+  "DATAS/glims_download_33432/glims_polygons.dbf": {
+    "size": 6893875472,
+    "mtime_ns": 1791617875117315000,
+    "sha256": "57c146c3444941110cd41655b9264fb7ccd59eddbbf98934e68610db5f8c4f6c"
+  },
+  "DATAS/glims_download_33432/glims_polygons.prj": {
+    "size": 145,
+    "mtime_ns": 1791617875175836500,
+    "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4"
+  },
+  "DATAS/glims_download_33432/glims_polygons.shp": {
+    "size": 2096485120,
+    "mtime_ns": 1791617855791589500,
+    "sha256": "3d9faad3ccb565821d6b33fbb2626049c349a9881df3c76937261b53290ccd17"
+  },
+  "DATAS/glims_download_33432/glims_polygons.shx": {
+    "size": 6326932,
+    "mtime_ns": 1791617856238160100,
+    "sha256": "5096c9f9bace2f3bed0b4bc2d7bf33e8ccda42edf749ed607d7660254564a88c"
+  },
+  "DATAS/glims_download_33432/README.txt": {
+    "size": 3735,
+    "mtime_ns": 1791617856245161000,
+    "sha256": "bdbbafb3a07415be3c76258908e64445a35cb17787b902986bea5a8663e67ce4"
+  },
+  "DATAS/N_seaice_extent_climatology_1981-2010_v4.0.csv": {
+    "size": 34520,
+    "mtime_ns": 1791565770619522100,
+    "sha256": "3eba40748343468e81e5fd5c464be2046ab12bc818963c324098251390212942"
+  },
+  "DATAS/NCALM_DV_LiDAR_Collection_Report.pdf": {
+    "size": 874928,
+    "mtime_ns": 1791642111082184800,
+    "sha256": "9e7bea41f4af129788b53c274c5705f1418f0c3feab3f54f610e5d391724d82b"
+  },
+  "DATAS/NCALM_DV_LiDAR_LAS_Tile_index.kmz": {
+    "size": 387820,
+    "mtime_ns": 1791641950517816600,
+    "sha256": "c98fb949a59e6d7b403ed96512116bc7a8508b731c7cd768715a83b3b9d4e75e"
+  },
+  "DATAS/SEAICE_ANT_PHY_AUTO_L3_NRT_011_012.xml": {
+    "size": 46863,
+    "mtime_ns": 1791644343755535900,
+    "sha256": "1f04dfc3520fdf564862d80151aedbb70f1cbb8aab9cd4c33f56138a98138534"
+  },
+  "DATAS/SEAICE_ANT_PHY_L3_MY_011_018.xml": {
+    "size": 52928,
+    "mtime_ns": 1791644360640161700,
+    "sha256": "bcab0748b53625d954ebcecec70a148a4f1c4500faa708bf65a3ac0853d158f1"
+  }
+}

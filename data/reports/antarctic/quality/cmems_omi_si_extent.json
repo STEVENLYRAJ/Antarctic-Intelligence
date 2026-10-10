@@ -1,0 +1,172 @@
+{
+  "dataset_id": "cmems_omi_si_extent",
+  "dataset_name": "Copernicus Marine OMI Antarctic monthly sea-ice extent",
+  "category": "sea_ice_extent_timeseries",
+  "provider": "Copernicus Marine Service / EUMETSAT OSI SAF (MET Norway)",
+  "source_files": [
+    "DATAS/ANTARCTIC_OMI_SI_extent_19790115_P20250505_R19792024.nc",
+    "DATAS/ANTARCTIC_OMI_SI_extent_obs.xml",
+    "DATAS/ANTARCTIC_OMI_SI_extent_obs-hq.png"
+  ],
+  "status": "processed",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:02:56+00:00",
+  "finished_utc": "2026-10-10T16:02:56+00:00",
+  "steps": [
+    "Opened ANTARCTIC_OMI_SI_extent_19790115_P20250505_R19792024.nc with netCDF4; global attributes: title='Southern Hemisphere Monthly Averaged Sea Ice Extent', source='EUMETSAT OSI SAF Sea Ice Concentration V3 CDR (OSI-450-a) and ICDR (OSI-430-a)'",
+    "Fill value -999.0 occurs 4 times in siextent; extent threshold variable = 15.0% SIC",
+    "Time axis: 552 months 1979-01..2024-12, 0 missing months, 0 duplicates",
+    "Checked each timestamp lies within its time_bounds: True",
+    "Recomputed monthly climatology over 1978-11-01..2024-12-31; max |difference| vs file climatology = 0.0223%",
+    "Wrote tidy monthly table (original km^2 retained; derived million km^2, climatology anomaly and z-score added)"
+  ],
+  "metrics": {
+    "fill_value": -999.0,
+    "fill_value_count": 4,
+    "extent_threshold_percent": 15.0,
+    "dimensions": {
+      "clim_months": 12,
+      "nv": 2,
+      "time": 552
+    },
+    "variables": {
+      "clim_months_bounds": {
+        "dims": [
+          "clim_months",
+          "nv"
+        ],
+        "units": null,
+        "long_name": null
+      },
+      "monthlyclimsiextent_mean": {
+        "dims": [
+          "clim_months"
+        ],
+        "units": "km^2",
+        "long_name": "Monthly climatology of the Sea Ice Extent"
+      },
+      "monthlyclimsiextent_std": {
+        "dims": [
+          "clim_months"
+        ],
+        "units": "km^2",
+        "long_name": "Standard deviation of the monthly climatology of Sea Ice Extent"
+      },
+      "sea_ice_area_fraction_threshold": {
+        "dims": [],
+        "units": "percent",
+        "long_name": "sea ice extent area fraction threshold"
+      },
+      "siextent": {
+        "dims": [
+          "time"
+        ],
+        "units": "km^2",
+        "long_name": "Monthly averaged Sea Ice Extent"
+      },
+      "time_bounds": {
+        "dims": [
+          "time",
+          "nv"
+        ],
+        "units": null,
+        "long_name": null
+      }
+    },
+    "units": "km^2",
+    "time_continuity": {
+      "n_timesteps": 552,
+      "first": "1979-01",
+      "last": "2024-12",
+      "monotonic_increasing": true,
+      "duplicate_months": [],
+      "expected_months": 552,
+      "missing_months": []
+    },
+    "missing_months_fill": [
+      "1986-04",
+      "1986-05",
+      "1986-06",
+      "1987-12"
+    ],
+    "missing_count": 4,
+    "missing_percent": 0.725,
+    "negative_count": 0,
+    "implausible_gt_40e6_km2": 0,
+    "siextent_summary_km2": {
+      "count": 548,
+      "min": 2231026.75,
+      "p01": 2697825.72,
+      "p25": 6186497.0,
+      "median": 12446381.0,
+      "p75": 17211473.0,
+      "p99": 19365392.78,
+      "max": 20263916.0,
+      "mean": 11884498.50319343,
+      "std": 5620279.379702755
+    },
+    "climatology_period": [
+      "1978-11-01",
+      "2024-12-31"
+    ],
+    "climatology_recomputed_max_abs_diff_percent": 0.022335927650392298,
+    "outliers_abs_z_gt_3": 4,
+    "outlier_months": [
+      "2023-06",
+      "2023-07",
+      "2023-08",
+      "2023-10"
+    ],
+    "annual_mean_trend_million_km2_per_decade": -0.06045399480815972,
+    "february_minimum_trend_million_km2_per_decade": -0.06388260561208828,
+    "september_maximum_trend_million_km2_per_decade": -0.02579448905334514,
+    "record_min": {
+      "time": "2023-02-16",
+      "siextent_km2": 2231026.75
+    },
+    "record_max": {
+      "time": "2014-09-16",
+      "siextent_km2": 20263916.0
+    },
+    "records_before": 552,
+    "records_after": 552,
+    "excluded_records": 0
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "type": "missing_value",
+      "detail": "siextent is _FillValue for ['1986-04', '1986-05', '1986-06', '1987-12'] (retained as NaN; not interpolated)",
+      "count": 4
+    },
+    {
+      "severity": "info",
+      "type": "suspicious_but_valid",
+      "detail": "Months with |z|>3 vs monthly climatology flagged for review (retained)",
+      "count": 4
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/processed/antarctic/sea_ice_extent/cmems_omi_si_extent_monthly.csv",
+      "kind": "csv",
+      "description": "Monthly sea-ice extent with bounds, anomaly and quality flags",
+      "size_bytes": 62617
+    },
+    {
+      "path": "data/processed/antarctic/sea_ice_extent/cmems_omi_si_extent_climatology.csv",
+      "kind": "csv",
+      "description": "Monthly climatology (file) vs recomputed climatology",
+      "size_bytes": 866
+    }
+  ],
+  "validation": {
+    "time_within_bounds": true,
+    "output_reopened": true,
+    "row_count_matches_source": true,
+    "values_identical_to_source": true,
+    "required_columns_present": true
+  },
+  "errors": [],
+  "notes": []
+}

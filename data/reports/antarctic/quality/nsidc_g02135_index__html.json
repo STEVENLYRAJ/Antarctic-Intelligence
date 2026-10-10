@@ -1,0 +1,46 @@
+{
+  "dataset_id": "nsidc_g02135_index__html",
+  "dataset_name": "NSIDC G02135 directory index (saved page)",
+  "category": "saved_web_page",
+  "provider": "NSIDC / NOAA",
+  "source_files": [
+    "DATAS/download.htm"
+  ],
+  "status": "metadata_inspected",
+  "domain_relevance": "antarctic",
+  "started_utc": "2026-10-10T16:03:59+00:00",
+  "finished_utc": "2026-10-10T16:03:59+00:00",
+  "steps": [
+    "Parsed saved page 'Index of /NOAA/G02135/': 4 links, 0 map services"
+  ],
+  "metrics": {
+    "title": "Index of /NOAA/G02135/",
+    "links": [
+      "../",
+      "north/",
+      "seaice_analysis/",
+      "south/"
+    ],
+    "services": [],
+    "index_entries": [
+      "../",
+      "north/",
+      "seaice_analysis/",
+      "south/"
+    ]
+  },
+  "issues": [
+    {
+      "severity": "info",
+      "type": "catalog_only",
+      "detail": "Saved directory/service listing - describes where data live; contains no scientific values",
+      "count": null
+    }
+  ],
+  "outputs": [],
+  "validation": {
+    "parsed": true
+  },
+  "errors": [],
+  "notes": []
+}
