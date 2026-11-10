@@ -1,0 +1,54 @@
+[
+  {
+    "file": "outputs/figures/ml_task_01/01_validation_model_comparison.png",
+    "caption": "Validation (2016-2020) full-grid comparison of baselines and ML candidates: MAE and RMSE over the seasonal ice zone (cells whose training climatology reaches 15 %) and mean integrated ice-edge error."
+  },
+  {
+    "file": "outputs/figures/ml_task_01/02_learning_curves.png",
+    "caption": "Training (dotted) and validation (solid) L1 loss of the boosted models on the sampled tables; early stopping at the validation minimum."
+  },
+  {
+    "file": "outputs/figures/ml_task_01/13_optuna_history.png",
+    "caption": "Optuna TPE trials: validation-sample MAE of each configuration and the running best."
+  },
+  {
+    "file": "outputs/figures/ml_task_01/03_test_extent_timeseries.png",
+    "caption": "Weekly sea-ice extent (SIC >= 15 %) of the observed 7-day-mean field and of the forecasts for every test issue date."
+  },
+  {
+    "file": "outputs/figures/ml_task_01/04_test_extent_error.png",
+    "caption": "Extent error per test issue date for the final model and persistence."
+  },
+  {
+    "file": "outputs/figures/ml_task_01/05_test_seasonal_performance.png",
+    "caption": "Test-period MAE (seasonal ice zone) and IIEE by season; DJF = austral summer melt minimum."
+  },
+  {
+    "file": "outputs/figures/ml_task_01/06_test_sector_performance.png",
+    "caption": "Area-weighted RMSE per sector (NSIDC sector definitions) over all valid ocean cells."
+  },
+  {
+    "file": "outputs/figures/ml_task_01/07_test_obs_vs_pred_error_dist.png",
+    "caption": "Left: joint distribution of observed and forecast SIC on cells where any of observation, forecast or persistence is non-zero. Right: error distributions of the final model and persistence."
+  },
+  {
+    "file": "outputs/figures/ml_task_01/08_test_spatial_error_maps.png",
+    "caption": "Per-cell mean absolute error of the final model over all test issue dates and its reduction relative to persistence (native EPSG:3412 grid; grey = land/coast)."
+  },
+  {
+    "file": "outputs/figures/ml_task_01/09_test_example_map.png",
+    "caption": "Example test forecast near the 2023 record-low winter maximum: observed target-week mean SIC, forecast and difference, with the observed 15 % ice edge."
+  },
+  {
+    "file": "outputs/figures/ml_task_01/10_final_shap_importance.png",
+    "caption": "Mean absolute TreeSHAP contribution of the 15 most influential features of the final model on a random sample of test-period cells."
+  },
+  {
+    "file": "outputs/figures/ml_task_01/11_feature_response.png",
+    "caption": "Partial dependence of the predicted change relative to persistence on the top features."
+  },
+  {
+    "file": "outputs/figures/ml_task_01/12_permutation_importance_validation.png",
+    "caption": "Increase in MAE when each feature is randomly permuted (validation sample, candidate LightGBM trained on 1979-2015)."
+  }
+]

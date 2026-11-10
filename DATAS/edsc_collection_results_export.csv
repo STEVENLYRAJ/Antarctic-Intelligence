@@ -1,0 +1,98 @@
+Data Provider,Short Name,Version,Entry Title,Processing Level,Platform,Start Time,End Time
+"ASF","SENTINEL-1A_SLC","1","Sentinel-1A Single Look Complex Product","1","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"ASF","ALOS_PSR_RTC_HIGH","1","ALOS PALSAR High Resolution Radiometric Terrain Corrected Product","2","ALOS","2006-03-23T16:10:55.000Z","2011-04-22T20:23:36.000Z"
+"NSIDC_CPRD","ATL06","007","ATLAS/ICESat-2 L3A Land Ice Height V007","3","ICESat-2","2018-10-14T00:00:00.000Z",
+"ASF","SENTINEL-1A_DP_GRD_HIGH","1","Sentinel-1A Dual Polarization High Resolution Ground Range Detected Product","1","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"ASF","SENTINEL-1B_SLC","1","Sentinel-1B Single Look Complex Product","1","Sentinel-1B","2016-04-25T00:00:00.000Z","2021-12-24T00:00:00.000Z"
+"ASF","SENTINEL-1A_META_RAW","1","Sentinel-1A Level 0 Product Metadata","Not provided","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"NSIDC_CPRD","LVISC2","1","LVIS Classic L2 Geolocated Surface Elevation and Canopy Height Product V001","2","B-200, C-130, G-III, G-V","1998-03-20T00:00:00.000Z",
+"NSIDC_CPRD","HMA_DTE","1","Global Glacier Debris Thickness Estimates and Sub-Debris Melt Factors V001","4","LANDSAT-8, MODELS","2000-01-01T00:00:00.000Z","2018-12-31T23:59:59.999Z"
+"NSIDC_CPRD","ATL11","007","ATLAS/ICESat-2 L3B Slope-Corrected Land Ice Height Time Series V007","3","ICESat-2","2019-03-29T00:00:00.000Z",
+"ASF","ALOS_PSR_L1.1","1","ALOS PALSAR Level 1.1 Product","1","ALOS","2006-01-23T00:00:00.000Z","2011-05-23T00:00:00.000Z"
+"NSIDC_CPRD","LVISF2","1","LVIS Facility L2 Geolocated Surface Elevation and Canopy Height Product V001","2","B-200, G-III, G-V, P-3B","2018-11-07T00:00:00.000Z",
+"NSIDC_CPRD","HMA2_GGP","1","Global PyGEM-OGGM Glacier Projections with RCP and SSP Scenarios V001","4","MODELS","2000-01-01T00:00:00.000Z","2100-12-31T23:59:59.999Z"
+"GES_DISC","M2T3NXGLC","5.12.4","MERRA-2 tavg3_2d_glc_Nx: 2d,3-Hourly,Time-Averaged,Single-Level,Assimilation,Land Ice Surface Diagnostics 0.625 x 0.5 degree V5.12.4 (M2T3NXGLC)","4","MERRA-2","1980-01-01T00:00:00.000Z",
+"NSIDC_CPRD","GLAH06","034","GLAS/ICESat L1B Global Elevation Data (HDF5) V034","1B","ICESat","2003-02-20T00:00:00.000Z","2009-10-11T23:59:59.999Z"
+"ASF","ALOS_PSR_L2.2","1","ALOS PALSAR Level 2.2 Product","2","ALOS","2006-01-23T00:00:00.000Z","2011-05-23T00:00:00.000Z"
+"ASF","ALOS_PSR_L1.0","1","ALOS PALSAR Level 1.0 Product","0","ALOS","2006-03-23T16:10:55.000Z","2011-04-22T20:23:36.000Z"
+"ASF","SENTINEL-1B_DP_GRD_HIGH","1","Sentinel-1B Dual Polarization High Resolution Ground Range Detected Product","1","Sentinel-1B","2016-04-25T00:00:00.000Z","2021-12-24T00:00:00.000Z"
+"NSIDC_CPRD","HMA_GLI","1","High Mountain Asia Near-Global Multi-Decadal Glacial Lake Inventory V001","4","LANDSAT-4, LANDSAT-5, LANDSAT-7, LANDSAT-8","1990-01-01T00:00:00.000Z","2018-12-31T23:59:59.999Z"
+"NSIDC_CPRD","NSIDC-0642","2","MEaSUREs Annual Greenland Outlet Glacier Terminus Positions from SAR Mosaics V002","3","LANDSAT-1, LANDSAT-2, LANDSAT-3, LANDSAT-4, LANDSAT-5, LANDSAT-7, LANDSAT-8, RADARSAT-1, Sentinel-1A, Sentinel-1B","1972-09-16T00:00:00.000Z","2021-03-25T23:59:59.999Z"
+"NSIDC_CPRD","GLAH12","034","GLAS/ICESat L2 Global Antarctic and Greenland Ice Sheet Altimetry Data (HDF5) V034","2","ICESat","2003-02-20T00:00:00.000Z","2009-10-11T23:59:59.999Z"
+"NSIDC_CPRD","NSIDC-0709","2","MEaSUREs Antarctic Boundaries for IPY 2007-2009 from Satellite Radar V002","3","ALOS, AQUA, COSMO-SKYMED, ENVISAT, ERS-1, ERS-2, LANDSAT-8, RADARSAT-1, RADARSAT-2, SENTINEL-1A, TERRA","1992-02-07T00:00:00.000Z","2015-12-31T23:59:59.999Z"
+"ASF","ALOS_PSR_L1.5","1","ALOS PALSAR Level 1.5 Product","1","ALOS","2006-03-23T16:10:55.000Z","2011-04-22T20:23:36.000Z"
+"GES_DISC","M2TMNXGLC","5.12.4","MERRA-2 tavgM_2d_glc_Nx: 2d,Monthly mean,Time-Averaged,Single-Level,Assimilation,Land Ice Surface Diagnostics 0.625 x 0.5 degree V5.12.4 (M2TMNXGLC)","4","MERRA-2","1980-01-01T00:00:00.000Z",
+"ASF","ALOS_PSR_RTC_LOW","1","ALOS PALSAR Low Resolution Radiometric Terrain Corrected Product","2","ALOS","2006-03-23T16:10:55.000Z","2011-04-22T20:23:36.000Z"
+"NSIDC_CPRD","HMA2_DCG_SGL","1","High Mountain Asia Supraglacial Lake Extents on Debris Covered Glaciers, 1988-2023 V001","3","LANDSAT-5, LANDSAT-7, LANDSAT-8, LANDSAT-9","1988-01-01T00:00:00.000Z","2023-12-31T23:59:59.999Z"
+"POCLOUD","TELLUS_GRAC-GRFO_MASCON_CRI_GRID_RL06.3_V4","RL06.3Mv04","JPL GRACE and GRACE-FO Mascon Ocean, Ice, and Hydrology Equivalent Water Height Coastal Resolution Improvement (CRI) Filtered Release 06.3 Version 04","3","GRACE-FO, GRACE","2002-04-04T00:00:00.000Z",
+"NSIDC_CPRD","IRMCR2","1","IceBridge MCoRDS L2 Ice Thickness V001","2","BT-67, C-130, G-V, NASA DC-8, NOAA Twin Otter, P-3B, WP-3D ORION","2009-10-16T00:00:00.000Z","2019-11-20T23:59:59.999Z"
+"NSIDC_CPRD","NSIDC-0715","2","MEaSUREs Greenland Ice Mapping Project (GrIMP) Digital Elevation Model from GeoEye and WorldView Imagery V002","3","GEOEYE-1, WORLDVIEW-1, WORLDVIEW-2, WORLDVIEW-3","2008-05-15T00:00:00.000Z","2020-11-19T23:59:59.999Z"
+"ASF","SENTINEL-1A_RAW","1","Sentinel-1A Level 0 Product","0","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"ASF","SENTINEL-1A_META_SLC","1","Sentinel-1A Single Look Complex Product Metadata","Not provided","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"ASF","ALOS_PSR_KMZ","1","KMZ for ALOS PALSAR Radiometric Terrain Corrected Product","Not Provided","ALOS","2006-03-23T16:10:55.000Z","2011-04-22T20:23:36.000Z"
+"NSIDC_CPRD","ATL15","005","ATLAS/ICESat-2 L3B Gridded Antarctic and Arctic Land Ice Height Change V005","3","ICESat-2","2019-01-01T00:00:00.000Z",
+"NSIDC_CPRD","HMA2_DCG_SMB","1","High Mountain Asia 2 m DEM, Surface Velocity, and Lagrangian Surface Mass Balance for Select Debris Covered Glaciers V001","4","GEOEYE-1, WORLDVIEW-1, WORLDVIEW-2, WORLDVIEW-3","2012-12-23T00:00:00.000Z","2017-12-22T23:59:59.999Z"
+"NSIDC_CPRD","IODEM3","1","IceBridge DMS L3 Ames Stereo Pipeline Photogrammetric DEM V001","3","B-200, BT-67, C-130, DHC-3, G-V, HU-25A, HU-25C, NASA DC-8, P-3B, WP-3D ORION","2009-10-16T00:00:00.000Z","2017-07-25T23:59:59.999Z"
+"NSIDC_CPRD","GLAH05","034","GLAS/ICESat L1B Global Waveform-based Range Corrections Data (HDF5) V034","1B","ICESat","2003-02-20T00:00:00.000Z","2009-10-11T23:59:59.999Z"
+"NSIDC_CPRD","ILATM1B","1","IceBridge ATM L1B Qfit Elevation and Return Strength V001","1B","AIRCRAFT, NASA DC-8, P-3B","2009-03-31T00:00:00.000Z","2012-11-08T23:59:59.999Z"
+"ASF","SENTINEL-1A_DP_META_GRD_HIGH","1","Sentinel-1A Dual Polarization High Resolution Ground Range Detected Product Metadata","Not provided","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"NSIDC_CPRD","ILATMW1B","1","IceBridge ATM L1B Elevation and Return Strength with Waveforms V001","1B","C-130, G-V, HU-25A, HU-25C, NASA DC-8, P-3B, WP-3D ORION","2017-07-17T00:00:00.000Z","2019-11-20T23:59:59.999Z"
+"NSIDC_CPRD","IRMCR3","2","IceBridge MCoRDS L3 Gridded Ice Thickness, Surface, and Bottom V002","3","AIRCRAFT, DC-8, P-3B","2006-01-01T00:00:00.000Z","2012-12-31T23:59:59.999Z"
+"ASF","SENTINEL-1A_DP_GRD_MEDIUM","1","Sentinel-1A Dual Polarization Medium Resolution Ground Range Detected Product","1","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"NSIDC_CPRD","NSIDC-0498","2","MEaSUREs Antarctic Grounding Line from Differential Satellite Radar Interferometry V002","3","ALOS, COSMO-SKYMED, ERS-1, ERS-2, ICEYE, PAZ, RADARSAT-1, RADARSAT-2, SENTINEL-1A, TSX","1992-02-07T00:00:00.000Z","2025-11-26T23:59:59.999Z"
+"GES_DISC","M2TUNXGLC","5.12.4","MERRA-2 tavgU_2d_glc_Nx: 2d,diurnal,Time-Averaged,Single-Level,Assimilation,Land Ice Surface Diagnostics 0.625 x 0.5 degree V5.12.4 (M2TUNXGLC)","4","MERRA-2","1980-01-01T00:00:00.000Z",
+"NSIDC_CPRD","HMA_Glacier_dH","1","High Mountain Asia Gridded Glacier Thickness Change from Multi-Sensor DEMs V001","2","HEXAGON KH-9, Terra","1974-01-01T00:00:00.000Z","2017-12-31T23:59:59.999Z"
+"ASF","SENTINEL-1A_SP_GRD_HIGH","1","Sentinel-1A Single Polarization High Resolution Ground Range Detected Product","1","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"NSIDC_CPRD","ATL11XO","007","Crossing-Track Data for ATLAS/ICESat-2 L3B Slope-Corrected Land Ice Height Time Series V007","3","ICESat-2","2018-10-14T00:00:00.000Z",
+"NSIDC_CPRD","IR1HI2","1","IceBridge HiCARS 1 L2 Geolocated Ice Thickness V001","2","BT-67, DHC-6","2009-01-02T00:00:00.000Z","2010-12-21T23:59:59.999Z"
+"NSIDC_CPRD","NSIDC-0645","1","MEaSUREs Greenland Ice Mapping Project (GIMP) Digital Elevation Model V001","3","ICESAT, NOAA-14, SPOT-5, TERRA","2003-02-20T00:00:00.000Z","2009-10-11T23:59:59.999Z"
+"NSIDC_CPRD","ATL14","005","ATLAS/ICESat-2 L3B Gridded Antarctic and Arctic Land Ice Height V005","3","ICESat-2","2019-01-01T00:00:00.000Z",
+"NSIDC_CPRD","BLATM2","1","Pre-IceBridge ATM L2 Icessn Elevation, Slope, and Roughness V001","2","DHC-6, P-3A, P-3A ORION, P-3B","1993-06-23T00:00:00.000Z","2008-10-30T23:59:59.999Z"
+"POCLOUD","TELLUS_GRAC-GRFO_MASCON_GRID_RL06.3_V4","RL06.3Mv04","JPL GRACE and GRACE-FO Mascon Ocean, Ice, and Hydrology Equivalent Water Height JPL Release 06.3 Version 04","3","GRACE-FO, GRACE","2002-04-04T00:00:00.000Z",
+"ASF","SENTINEL-1B_DP_GRD_MEDIUM","1","Sentinel-1B Dual Polarization Medium Resolution Ground Range Detected Product","1","Sentinel-1B","2016-04-25T00:00:00.000Z","2021-12-24T00:00:00.000Z"
+"NSIDC_CPRD","NSIDC-0806","1","Antarctic Grounding Lines From COSMO-SkyMed X-Band DInSAR, 2020–2022 V001","3","COSMO-SKYMED","2020-04-30T00:00:00.000Z","2022-06-10T23:59:59.999Z"
+"POCLOUD","ANTARCTICA_MASS_TELLUS_MASCON_CRI_TIME_SERIES_RL06.3_V4","RL06.3Mv04","Tellus Level-4 Antarctica Mass Anomaly Time Series from JPL GRACE/GRACE-FO Mascon CRI Filtered Release 06.3 version 04","4","GRACE, GRACE-FO","2002-04-01T00:00:00.000Z",
+"NSIDC_CPRD","HMA_GlacierAvg_dH","1","High Mountain Asia Average Glacier Thickness Change from Multi-Sensor DEMs V001","2","HEXAGON KH-9, Terra","1974-01-01T00:00:00.000Z","2017-12-31T23:59:59.999Z"
+"POCLOUD","GREENLAND_MASS_TELLUS_MASCON_CRI_TIME_SERIES_RL06.3_V4","RL06.3Mv04","Tellus Level-4 Greenland Mass Anomaly Time Series from JPL GRACE/GRACE-FO Mascon CRI Filtered Release 06.3 version 04","4","GRACE, GRACE-FO","2002-04-01T00:00:00.000Z",
+"NSIDC_CPRD","BLATM1B","1","Pre-IceBridge ATM L1B Qfit Elevation and Return Strength V001","1B","DHC-6, NASA DC-8, P-3A, P-3A ORION, P-3B","1993-06-23T00:00:00.000Z","2008-10-30T23:59:59.999Z"
+"NSIDC_CPRD","NSIDC-0778","1","MEaSUREs Grounding Zone of the Antarctic Ice Sheet V001","4","COSMO-SKYMED, ERS-1, ERS-2, RADARSAT-1, RADARSAT-2, Sentinel-1A, Sentinel-1B","2018-01-01T00:00:00.000Z","2020-12-31T23:59:59.999Z"
+"NSIDC_CPRD","BRMCR2","1","Pre-IceBridge MCoRDS L2 Ice Thickness V001","2","DC-8, DHC-6, P-3A, P-3A ORION, P-3B","1993-06-23T00:00:00.000Z","2007-09-23T23:59:59.999Z"
+"NSIDC_CPRD","IRACC1B","2","IceBridge Accumulation Radar L1B Geolocated Radar Echo Strength Profiles V002","1B","DC-8, P-3B","2013-03-21T00:00:00.000Z","2018-05-01T23:59:59.999Z"
+"NSIDC_CPRD","NSIDC-0781","1","MEaSUREs Weekly to Monthly Greenland Outlet Glacier Terminus Positions from Sentinel-1 Mosaics V001","NA","Sentinel-1A, Sentinel-1B","2015-01-01T00:00:00.000Z","2021-12-31T23:59:59.999Z"
+"NSIDC_CPRD","HMA_GL_RCPR","1","High Mountain Asia Rasterized PyGEM Glacier Projections with RCP Scenarios V001","4","MODELS","2000-10-01T00:00:00.000Z","2100-10-15T23:59:59.999Z"
+"NSIDC_CPRD","NSIDC-0764","1","CALFIN Subseasonal Greenland Glacial Terminus Positions V001","3","LANDSAT-4, LANDSAT-5, LANDSAT-7, LANDSAT-8","1972-09-06T00:00:00.000Z","2019-06-25T23:59:59.999Z"
+"ASF","RSAT-1_L1","1","RADARSAT-1 Level 1 Product","1","RADARSAT-1","1996-02-01T03:18:56.000Z","2009-03-17T17:34:23.000Z"
+"ASF","SENTINEL-1B_META_SLC","1","Sentinel-1B Single Look Complex Product Metadata","Not provided","Sentinel-1B","2016-04-25T00:00:00.000Z","2021-12-24T00:00:00.000Z"
+"ASF","SENTINEL-1B_SP_GRD_HIGH","1","Sentinel-1B Single Polarization High Resolution Ground Range Detected Product","1","Sentinel-1B","2016-04-25T00:00:00.000Z","2021-12-24T00:00:00.000Z"
+"ASF","ERS-2_L1","1","ERS-2 Level 1 Product","1","ERS-2","1995-10-01T03:13:03.000Z","2011-07-04T00:23:48.000Z"
+"NSIDC_CPRD","ILAKS1B","1","IceBridge UAF Lidar Scanner L1B Geolocated Surface Elevation Triplets V001","1B","BT-67, DHC-3","2009-08-19T00:00:00.000Z","2020-06-05T23:59:59.999Z"
+"ASF","ERS-1_L1","1","ERS-1 Level 1 Product","1","ERS-1","1991-08-08T03:18:11.000Z","1997-09-29T15:20:44.000Z"
+"NSIDC_CPRD","HMA_Glacier_dH_Mosaics","1","High Mountain Asia Glacier Thickness Change Mosaics from Multi-Sensor DEMs V001","2","HEXAGON KH-9, Terra","1974-01-01T00:00:00.000Z","2017-12-31T23:59:59.999Z"
+"NSIDC_CPRD","NSIDC-0782","1","MEaSUREs ITS_LIVE Antarctic Grounded Ice Sheet Elevation Change V001","3","CRYOSAT-2, ENVISAT, ERS-1, ERS-2, GEOSAT, ICESat, ICESat-2","1985-04-17T00:00:00.000Z","2020-12-16T23:59:59.999Z"
+"NSIDC_CPRD","ILSNP4","1","IceBridge Merged Photon Counting Lidar/Profiler L4 Surface Slope and Elevations V001","4","BT-67","2010-11-25T00:00:00.000Z","2012-12-04T23:59:59.999Z"
+"ASF","RSAT-1_L0","1","RADARSAT-1 Level 0 Product","0","RADARSAT-1","1996-02-01T03:18:56.000Z","2009-03-17T17:34:23.000Z"
+"ASF","SENTINEL-1B_RAW","1","Sentinel-1B Level 0 Product","0","Sentinel-1B","2016-04-25T00:00:00.000Z","2021-12-24T00:00:00.000Z"
+"POCLOUD","OMG_L3_ICE_ELEV_GLISTINA","1","OMG Glacial Elevations from GLISTIN-A Ver. 1","3","G-III","2015-07-25T00:00:00.000Z","2019-11-30T00:00:00.000Z"
+"ASF","SENTINEL-1A_SP_GRD_MEDIUM","1","Sentinel-1A Single Polarization Medium Resolution Ground Range Detected Product","1","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"ASF","SENTINEL-1B_DP_META_GRD_HIGH","1","Sentinel-1B Dual Polarization High Resolution Ground Range Detected Product Metadata","Not provided","Sentinel-1B","2016-04-25T00:00:00.000Z","2021-12-24T00:00:00.000Z"
+"ASF","SENTINEL-1A_DP_META_GRD_MEDIUM","1","Sentinel-1A Dual Polarization Medium Resolution Ground Range Detected Product Metadata","Not provided","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"ASF","ERS-2_L0","1","ERS-2 Level 0 Product","0","ERS-2","1995-10-01T03:13:03.000Z","2011-07-04T00:23:48.000Z"
+"ASF","SENTINEL-1A_SP_META_GRD_HIGH","1","Sentinel-1A Single Polarization High Resolution Ground Range Detected Product Metadata","Not provided","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"ASF","SENTINEL-1B_META_RAW","1","Sentinel-1B Level 0 Product Metadata","Not provided","Sentinel-1B","2016-04-25T00:00:00.000Z","2021-12-24T00:00:00.000Z"
+"ASF","SENTINEL-1B_DP_META_GRD_MEDIUM","1","Sentinel-1B Dual Polarization Medium Resolution Ground Range Detected Product Metadata","Not provided","Sentinel-1B","2016-04-25T00:00:00.000Z","2021-12-24T00:00:00.000Z"
+"ASF","ERS-1_L0","1","ERS-1 Level 0 Product","0","ERS-1","1991-08-08T03:18:11.000Z","1997-09-29T15:20:44.000Z"
+"ASF","SENTINEL-1B_SP_GRD_MEDIUM","1","Sentinel-1B Single Polarization Medium Resolution Ground Range Detected Product","1","Sentinel-1B","2016-04-25T00:00:00.000Z","2021-12-24T00:00:00.000Z"
+"NSIDC_CPRD","IS2GZANT","1","ICESat-2 L4 Grounding Zone for Antarctic Ice Shelves V001","4","ICESat-2","2019-03-30T00:00:00.000Z","2020-09-30T23:59:59.999Z"
+"NSIDC_CPRD","HMA_GL_RCP","1","High Mountain Asia PyGEM Glacier Projections with RCP Scenarios V001","3","MODELS","2000-10-01T00:00:00.000Z","2100-09-30T23:59:59.999Z"
+"NSIDC_CPRD","ATL15","006","ATLAS/ICESat-2 L3B Gridded Antarctic and Arctic Land Ice Height Change V006","3","ICESat-2","2019-01-01T00:00:00.000Z",
+"NSIDC_CPRD","ATL14","006","ATLAS/ICESat-2 L3B Gridded Antarctic and Arctic Land Ice Height V006","3","ICESat-2","2019-01-01T00:00:00.000Z",
+"NSIDC_CPRD","ILSNP1B","1","IceBridge Photon Counting Lidar L1B Subset Geolocated Photon Elevations V001","1B","BT-67","2010-11-25T00:00:00.000Z","2012-12-11T23:59:59.999Z"
+"NSIDC_CPRD","ILSIG1B","1","IceBridge Photon Counting Lidar L1B Unclassified Geolocated Photon Elevations V001","1B","BT-67","2011-11-29T00:00:00.000Z","2011-12-23T23:59:59.999Z"
+"ASF","SENTINEL-1A_SP_META_GRD_MEDIUM","1","Sentinel-1A Single Polarization Medium Resolution Ground Range Detected Product Metadata","Not provided","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"ASF","SENTINEL-1B_SP_META_GRD_HIGH","1","Sentinel-1B Single Polarization High Resolution Ground Range Detected Product Metadata","Not provided","Sentinel-1B","2016-04-25T00:00:00.000Z","2021-12-24T00:00:00.000Z"
+"ASF","SENTINEL-1A_DP_GRD_FULL","1","Sentinel-1A Dual Polarization Full Resolution Ground Range Detected Product","1","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"NSIDC_CPRD","ILAKP1B","1","IceBridge UAF Lidar Profiler L1B Geolocated Surface Elevation Triplets V001","1B","DHC-3","2009-05-22T00:00:00.000Z","2009-06-02T23:59:59.999Z"
+"ASF","SENTINEL-1B_SP_META_GRD_MEDIUM","1","Sentinel-1B Single Polarization Medium Resolution Ground Range Detected Product Metadata","Not provided","Sentinel-1B","2016-04-25T00:00:00.000Z","2021-12-24T00:00:00.000Z"
+"ASF","SENTINEL-1A_DP_META_GRD_FULL","1","Sentinel-1A Dual Polarization Full Resolution Ground Range Detected Product Metadata","Not provided","Sentinel-1A","2014-04-03T00:00:00.000Z",
+"USGS_LTA","EARTH_LAND_USGS_AMES_AIR_PHOTOS","Not provided","Aerial Photographs (from AMES Pilot Land Data System); USGS EDC, Sioux Falls","Not provided","AIRCRAFT","1970-01-01T00:00:00.000Z",
+"USGS_LTA","USGS_DOQ","Not provided","USGS Digital Orthophoto Quadrangles","Not provided","DEM","1970-01-01T00:00:00.000Z",

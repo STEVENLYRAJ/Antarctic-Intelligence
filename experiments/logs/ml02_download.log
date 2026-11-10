@@ -1,0 +1,4 @@
+2026-11-08 03:19:16,082 INFO ml02_download zenodo: {'downloaded': 32}
+2026-11-08 03:21:47,630 INFO ml02_download ghcnd: {'downloaded': 45}
+2026-11-08 03:22:01,498 WARNING aethentra.acquisition NCEP air 1981 attempt 1 failed: NetCDF: I/O failure
+2026-11-08 03:32:52,990 INFO ml02_download ncep interim: {'already_present': 46, 'downloaded': 2}

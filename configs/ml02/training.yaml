@@ -1,0 +1,20 @@
+seed: 42
+splits:                      # chronological; target windows never cross a boundary (see features.issue_dates)
+  train: ["1979-01-01", "2010-12-31"]
+  validation: ["2011-01-01", "2017-12-31"]
+  test: ["2018-01-01", "2025-12-31"]
+train_sample_fraction: 0.04          # of valid cells per training issue date (~2,200 cells x ~1,660 dates)
+val_sample_fraction: 0.15            # validation table for early stopping / Optuna (full-grid evaluation uses every cell)
+models:
+  lightgbm: {objective: regression, learning_rate: 0.05, num_leaves: 127, min_data_in_leaf: 200, feature_fraction: 0.8,
+             bagging_fraction: 0.8, bagging_freq: 1, lambda_l2: 1.0, n_estimators: 3000, early_stopping_rounds: 100}
+  xgboost: {objective: "reg:squarederror", learning_rate: 0.05, max_depth: 8, min_child_weight: 50, subsample: 0.8,
+            colsample_bytree: 0.8, reg_lambda: 1.0, n_estimators: 3000, early_stopping_rounds: 100, device: cuda, eval_metric: rmse}
+  random_forest: {n_estimators: 100, max_depth: 20, min_samples_leaf: 50, max_features: 0.5, max_train_rows: 400000}
+quantiles: [0.1, 0.9]
+optuna: {n_trials: 15, timeout_s: 1500}
+selection_metrics:                   # validation, rank-sum (lower is better; ACC higher is better); ties -> simpler model
+  - [all, area_weighted_rmse_degC, min]
+  - [antarctica_land, area_weighted_rmse_degC, min]
+  - [all, acc_pattern_mean, max]
+  - [all, area_weighted_mae_degC, min]

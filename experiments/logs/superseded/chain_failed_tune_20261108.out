@@ -1,0 +1,335 @@
+== analyze features
+{
+ "high_collinearity_pairs_abs_spearman_ge_0.9": [
+  [
+   "clim_target",
+   "clim_now",
+   0.9929487378175353
+  ],
+  [
+   "sic_d0",
+   "sic_w1",
+   0.9756716820728154
+  ],
+  [
+   "sic_w2",
+   "sic_w3",
+   0.9633454376917189
+  ],
+  [
+   "sic_w3",
+   "sic_w4",
+   0.9632740474989113
+  ],
+  [
+   "sic_w1",
+   "sic_w2",
+   0.9624982200769143
+  ],
+  [
+   "sic_w1",
+   "nbr3_w1",
+   0.9425424005937582
+  ],
+  [
+   "sic_w1",
+   "anom_persist",
+   0.9396447395566276
+  ],
+  [
+   "sie_w1",
+   "doy_sin",
+   -0.936463615190773
+  ],
+  [
+   "sic_d0",
+   "sic_w2",
+   0.9361708190272464
+  ],
+  [
+   "sic_w1",
+   "nbr7_w1",
+   0.9352509584143138
+  ],
+  [
+   "clim_now",
+   "dist_edge_km",
+   0.9340964633633277
+  ],
+  [
+   "clim_target",
+   "dist_edge_km",
+   0.9294682680028404
+  ],
+  [
+   "sic_w2",
+   "sic_w4",
+   0.9283445273291983
+  ],
+  [
+   "sic_w1",
+   "sic_w3",
+   0.9276044489168978
+  ],
+  [
+   "sic_d0",
+   "anom_persist",
+   0.9264597229788941
+  ],
+  [
+   "sic_d0",
+   "nbr3_w1",
+   0.9199917388750334
+  ],
+  [
+   "sic_w2",
+   "nbr3_w1",
+   0.917231012970338
+  ],
+  [
+   "sic_w2",
+   "nbr7_w1",
+   0.9169597437418634
+  ],
+  [
+   "sic_d0",
+   "nbr7_w1",
+   0.9138318559526877
+  ],
+  [
+   "clim_target",
+   "anom_persist",
+   0.9126034035910197
+  ],
+  [
+   "nbr3_w1",
+   "nbr7_w1",
+   0.9076591320683178
+  ],
+  [
+   "sic_d0",
+   "sic_w3",
+   0.9020717060602947
+  ],
+  [
+   "sic_w1",
+   "dist_edge_km",
+   0.9004243199756438
+  ]
+ ],
+ "shap_top10_by_season": {
+  "DJF": [
+   "sic_d0",
+   "clim_change",
+   "nbr7_w1",
+   "clim_target",
+   "sic_w1",
+   "d_d0_w1",
+   "nbr3_w1",
+   "anom_w1",
+   "anom_persist",
+   "air_w1"
+  ],
+  "MAM": [
+   "sic_d0",
+   "clim_change",
+   "nbr7_w1",
+   "clim_target",
+   "nbr3_w1",
+   "d_d0_w1",
+   "anom_w1",
+   "sic_w1",
+   "grad_w1",
+   "air_w1"
+  ],
+  "JJA": [
+   "sic_d0",
+   "nbr7_w1",
+   "clim_change",
+   "clim_target",
+   "d_d0_w1",
+   "sic_w1",
+   "nbr3_w1",
+   "anom_w1",
+   "air_w1",
+   "clim_target_std"
+  ],
+  "SON": [
+   "sic_d0",
+   "nbr7_w1",
+   "clim_change",
+   "clim_target",
+   "sic_w1",
+   "d_d0_w1",
+   "anom_w1",
+   "nbr3_w1",
+   "air_w1",
+   "clim_target_std"
+  ]
+ }
+}
+== tune
+2026-11-08 03:20:48,156 INFO aethentra.train Tables: train 3012256 rows, validation 1511821 rows
+[I 2026-11-08 03:20:48,252] A new study created in memory with name: no-name-9569cbd5-9ecb-489c-bdbf-d439c6a02918
+[I 2026-11-08 03:24:03,861] Trial 0 finished with value: 2.7967680100212386 and parameters: {'learning_rate': 0.0425378509573798, 'num_leaves': 445, 'min_data_in_leaf': 578, 'feature_fraction': 0.759195090518222, 'bagging_fraction': 0.5780093202212182, 'lambda_l2': 0.004993515273965262}. Best is trial 0 with value: 2.7967680100212386.
+[LightGBM] [Fatal] Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+[LightGBM] [Fatal] Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+[W 2026-11-08 03:24:03,871] Trial 1 failed with parameters: {'learning_rate': 0.0224831270535195, 'num_leaves': 351, 'min_data_in_leaf': 315, 'feature_fraction': 0.8248435466776274, 'bagging_fraction': 0.5102922471479012, 'lambda_l2': 21.99905443150215} because of the following error: LightGBMError('Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.\nYou need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.').
+Traceback (most recent call last):
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\optuna\study\_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\training\pipeline.py", line 269, in objective
+    b = lgb.train(p, dtr, 3000, valid_sets=[dva], callbacks=[lgb.early_stopping(100, verbose=False)])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\lightgbm\engine.py", line 261, in train
+    reduced_valid_sets.append(valid_data._update_params(params).set_reference(train_set))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\lightgbm\basic.py", line 2766, in _update_params
+    raise LightGBMError(_LIB.LGBM_GetLastError().decode("utf-8"))
+lightgbm.basic.LightGBMError: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+[W 2026-11-08 03:24:03,916] Trial 1 failed with value None.
+Traceback (most recent call last):
+  File "H:\scientific-intelligence\scripts\train.py", line 21, in <module>
+    res = fn()
+          ^^^^
+  File "H:\scientific-intelligence\src\aethentra\training\pipeline.py", line 274, in tune
+    study.optimize(objective, n_trials=n_trials or oc["n_trials"], timeout=oc["timeout_s"])
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\optuna\study\study.py", line 502, in optimize
+    _optimize(
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\optuna\study\_optimize.py", line 68, in _optimize
+    _optimize_sequential(
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\optuna\study\_optimize.py", line 165, in _optimize_sequential
+    frozen_trial_id = _run_trial(study, func, catch)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\optuna\study\_optimize.py", line 263, in _run_trial
+    raise func_err
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\optuna\study\_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\training\pipeline.py", line 269, in objective
+    b = lgb.train(p, dtr, 3000, valid_sets=[dva], callbacks=[lgb.early_stopping(100, verbose=False)])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\lightgbm\engine.py", line 261, in train
+    reduced_valid_sets.append(valid_data._update_params(params).set_reference(train_set))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\lightgbm\basic.py", line 2766, in _update_params
+    raise LightGBMError(_LIB.LGBM_GetLastError().decode("utf-8"))
+lightgbm.basic.LightGBMError: Reducing `min_data_in_leaf` with `feature_pre_filter=true` may cause unexpected behaviour for features that were pre-filtered by the larger `min_data_in_leaf`.
+You need to set `feature_pre_filter=false` to dynamically change the `min_data_in_leaf`.
+== select
+{
+  "selected_model": "lgbm_residual",
+  "selection_utc": "2026-11-07T21:54:06+00:00",
+  "criteria": "rank-sum over validation SIZ MAE, SIZ RMSE, IIEE, extent MAE; ties -> simpler model",
+  "validation_table": [
+    {
+      "method": "anomaly_persistence",
+      "siz_mae": 4.609956002578267,
+      "siz_rmse": 9.651795411419867,
+      "all_aw_rmse": 6.495113586284928,
+      "iiee": 865970.0559468978,
+      "extent_mae": 304803.57986510405
+    },
+    {
+      "method": "climatology",
+      "siz_mae": 9.574207756505775,
+      "siz_rmse": 17.172443343708125,
+      "all_aw_rmse": 11.54365055778654,
+      "iiee": 2350969.1424745917,
+      "extent_mae": 1933476.363050181
+    },
+    {
+      "method": "lgbm_absolute",
+      "siz_mae": 3.0903747127389303,
+      "siz_rmse": 7.200919150592171,
+      "all_aw_rmse": 4.855639916123022,
+      "iiee": 588110.590091996,
+      "extent_mae": 107211.28372585612
+    },
+    {
+      "method": "lgbm_residual",
+      "siz_mae": 3.067775885970478,
+      "siz_rmse": 7.148494377623577,
+      "all_aw_rmse": 4.82070759303653,
+      "iiee": 586481.5694432694,
+      "extent_mae": 117620.6400986848
+    },
+    {
+      "method": "lgbm_residual_sic_only",
+      "siz_mae": 3.0994434027558517,
+      "siz_rmse": 7.239518228737494,
+      "all_aw_rmse": 4.882645378284537,
+      "iiee": 593457.6024265835,
+      "extent_mae": 122275.33252671668
+    },
+    {
+      "method": "linear_trend",
+      "siz_mae": 4.67677729800088,
+      "siz_rmse": 10.520684629127443,
+      "all_aw_rmse": 7.112720497024136,
+      "iiee": 722667.4418785471,
+      "extent_mae": 345454.2199091327
+    },
+    {
+      "method": "persistence",
+      "siz_mae": 3.8061919402079516,
+      "siz_rmse": 8.771324195520542,
+      "all_aw_rmse": 5.914247905563841,
+      "iiee": 705241.9081675775,
+      "extent_mae": 393080.1835084505
+    },
+    {
+      "method": "persistence_week",
+      "siz_mae": 4.833291101776929,
+      "siz_rmse": 11.03105562729513,
+      "all_aw_rmse": 7.408120694589487,
+      "iiee": 967168.27751447,
+      "extent_mae": 624335.0392954412
+    },
+    {
+      "method": "rf_residual",
+      "siz_mae": 3.2973005935903004,
+      "siz_rmse": 7.080355698046931,
+      "all_aw_rmse": 4.775803332711038,
+      "iiee": 609254.0114784341,
+      "extent_mae": 170744.07658300473
+    },
+    {
+      "method": "xgb_residual",
+      "siz_mae": 3.072228724500305,
+      "siz_rmse": 7.160836786291593,
+      "all_aw_rmse": 4.829339089161645,
+      "iiee": 588397.8479267798,
+      "extent_mae": 119548.63682378507
+    }
+  ],
+  "rank_sum": {
+    "lgbm_residual": 6.0,
+    "lgbm_absolute": 10.0,
+    "xgb_residual": 11.0,
+    "rf_residual": 16.0,
+    "lgbm_residual_sic_only": 17.0
+  },
+  "best_baseline": "persistence",
+  "beats_best_baseline_on_all_criteria": true,
+  "kind": "lightgbm",
+  "features": [
+    "sic_d0",
+    "sic_age",
+    "sic_w1",
+    "sic_w2",
+    "sic_w3",
+    "sic_w4",
+    "sic_w8",
+    "d_w1_w2",
+    "d_d0_w1",
+    "sic_std28",
+    "sic_trend7",
+    "clim_target",
+    "
+== final
+2026-11-08 03:24:08,811 INFO aethentra.train Fitting SIC climatology on 1979-01-01..2020-12-31

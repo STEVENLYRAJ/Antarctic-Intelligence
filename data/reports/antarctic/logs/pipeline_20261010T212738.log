@@ -1,0 +1,69 @@
+2026-10-10 21:27:38,530 INFO Antarctic preprocessing run 20261010T212738
+2026-10-10 21:27:38,534 INFO Inventory: 36 files under DATAS
+2026-10-10 21:27:38,587 INFO Pre-run inventory saved: metadata/antarctic_dataset_inventory_prerun.csv (36 files, 9.50 GB)
+2026-10-10 21:27:38,593 INFO [cmems_omi_si_extent] Opened ANTARCTIC_OMI_SI_extent_19790115_P20250505_R19792024.nc with netCDF4; global attributes: title='Southern Hemisphere Monthly Averaged Sea Ice Extent', source='EUMETSAT OSI SAF Sea Ice Concentration V3 CDR (OSI-450-a) and ICDR (OSI-430-a)'
+2026-10-10 21:27:38,594 INFO [cmems_omi_si_extent] Fill value -999.0 occurs 4 times in siextent; extent threshold variable = 15.0% SIC
+2026-10-10 21:27:38,866 INFO [cmems_omi_si_extent] Time axis: 552 months 1979-01..2024-12, 0 missing months, 0 duplicates
+2026-10-10 21:27:38,866 INFO [cmems_omi_si_extent] Checked each timestamp lies within its time_bounds: True
+2026-10-10 21:27:38,869 INFO [cmems_omi_si_extent] Recomputed monthly climatology over 1978-11-01..2024-12-31; max |difference| vs file climatology = 0.0223%
+2026-10-10 21:27:38,878 INFO [cmems_omi_si_extent] Wrote tidy monthly table (original km^2 retained; derived million km^2, climatology anomaly and z-score added)
+2026-10-10 21:27:38,917 INFO [cmems_dmi_asip_sic] Opened grid 1x8294x7894 (time,y,x); CRS +proj=stere +lat_0=-90 +lat_ts=-70 +lon_0=0 +x_0=0 +y_0=0 +a=6378273 +b=6356889.449 +units=m +no_defs; time ['2023-02-02 12:00:00']
+2026-10-10 21:27:38,918 INFO [cmems_dmi_asip_sic] Grid spacing dx=[1000.0] m, dy=[-1000.0] m; monotonic x/y = True/True
+2026-10-10 21:27:46,027 INFO [cmems_dmi_asip_sic] Scanned 65,472,836 cells in 512-row chunks: valid zero=743,139, ice>0=84,415, fill=64,645,282, invalid=0
+2026-10-10 21:27:46,027 INFO [cmems_dmi_asip_sic] Fill cells split heuristically by acq_time: fill WITH an acquisition time (inside SAR swath: land/ice-shelf mask or unclassified) vs fill WITHOUT acquisition time (outside SAR coverage). The product has no explicit land-mask variable.
+2026-10-10 21:27:46,490 INFO [oib_arctic_form_drag] Opened 2-D curvilinear grid {'x': 1530, 'y': 1530}; latitude range [47.53662109375, 89.97356414794922]
+2026-10-10 21:27:46,520 INFO [nsidc_g02135_north_climatology] Parsed metadata line 'std Years = 1981-2010' and 366 data rows (368 lines incl. 2 header lines)
+2026-10-10 21:27:46,520 INFO [nsidc_g02135_north_climatology] Renamed columns to snake_case with explicit unit suffix (_mkm2 = 10^6 km^2 per NSIDC G02135 User Guide; the file header itself carries no units)
+2026-10-10 21:27:46,578 INFO [nsidc_g02135_south_climatology] Parsed metadata line 'std Years = 1981-2010' and 366 data rows (368 lines incl. 2 header lines)
+2026-10-10 21:27:46,578 INFO [nsidc_g02135_south_climatology] Renamed columns to snake_case with explicit unit suffix (_mkm2 = 10^6 km^2 per NSIDC G02135 User Guide; the file header itself carries no units)
+2026-10-10 21:27:46,670 INFO [nsidc_g02135_south_daily] Read 15865 data rows; second header row gives units {'Year': 'YYYY', 'Month': 'MM', 'Day': 'DD', 'Extent': '10^6 sq km', 'Missing': '10^6 sq km', 'Source Data': 'Source data product web sites: http://nsidc.org/data/nsidc-0081.html and http://nsidc.org/data/nsidc-0051.html'}
+2026-10-10 21:27:46,958 INFO [glims_polygons] Shapefile: 790,854 Polygon features, CRS EPSG:4326, 35 attribute fields
+2026-10-10 21:28:03,512 INFO [glims_polygons] Global attribute pass (no geometry, 7 columns) over all 790,854 features
+2026-10-10 21:28:30,570 INFO [glims_polygons] Antarctic subset read with attribute filter gtng_o1reg = 19 (RGI 'Antarctic and Subantarctic'): 15,358 features
+2026-10-10 21:28:31,558 INFO [glims_polygons] Geometry validation: 7 invalid, 0 empty, 0 with out-of-range coordinates
+2026-10-10 21:28:32,275 INFO [glims_polygons] Computed polygon areas in EPSG:6932; median relative difference vs db_area = 0.00000 (confirms db_area is km^2)
+2026-10-10 21:28:47,515 INFO [glims_polygons] Overlap analysis on 15,273 valid glac_bound outlines: 23,019 intersecting pairs, 5,468 pairs of DIFFERENT glaciers overlapping by >0.01 km^2
+2026-10-10 21:28:49,190 INFO [glims_polygons] Wrote 7 repaired copies of invalid polygons to layer polygons_invalid_repaired (originals untouched)
+2026-10-10 21:28:52,585 INFO [glims_points] 392,096 points; 3 with longitude > 180 (0-360 convention), 0 duplicate glacier_id
+2026-10-10 21:28:53,275 INFO [glims_images] 3,359 image points; 1 with latitude outside [-90, 90]
+2026-10-10 21:28:53,435 INFO [glims_lines] Opened lines layer: 0 features
+2026-10-10 21:28:53,617 INFO [glims_hypsometry] glims_hypsometry_100.csv: 1 rows x 22 bins (100 m); 0 rows belong to RGI region 19 glaciers
+2026-10-10 21:28:59,467 INFO [glims_hypsometry] glims_hypsometry_50.csv: 153,222 rows x 172 bins (50 m); 3,100 rows belong to RGI region 19 glaciers
+2026-10-10 21:29:00,086 INFO [glims_documentation] Read README and CITATIONS (267,627 bytes; 3 DOIs)
+2026-10-10 21:29:00,773 INFO [pgc_ncalm_dv_lidar_tiles] Parsed KMZ (zipped KML 2.2): 4,062 tile placemarks; attributes extracted from HTML descriptions: ['FileName', 'Pt_Count', 'Pt_Spacing', 'Z_Min', 'Z_Max', 'site_name', 'orig_name', 'tiff_name', 'temp', 'http_url', 'n_vertices', 'z_all_zero']
+2026-10-10 21:29:00,776 INFO [pgc_ncalm_dv_lidar_tiles] Renamed FileName->las_file, Pt_Count->point_count, Pt_Spacing->point_spacing_m, Z_Min->z_min_m, Z_Max->z_max_m, http_url->las_url (units assumed metres: PGC elevation products; not stated in the KML)
+2026-10-10 21:29:00,939 INFO [pgc_ncalm_dv_lidar_tiles] Overlap check in EPSG:3031: 5 tile pairs overlap by >1 m^2 (5 across different sites)
+2026-10-10 21:29:01,243 INFO [pgc_ncalm_dv_lidar_tiles__report_pdf] PDF header %PDF-1.5, page count 12
+2026-10-10 21:29:01,250 INFO [nasa_edsc_catalog] JSON is syntactically valid; top-level type=list, 97 records
+2026-10-10 21:29:01,278 INFO [nasa_edsc_catalog] Flattened nested platforms/instruments into delimited columns; full nested JSON kept in platforms_json; timestamps parsed to UTC while keeping original strings
+2026-10-10 21:29:01,284 INFO [nasa_edsc_catalog] CSV export has 97 rows; 97 (provider, short_name, version) keys shared with JSON
+2026-10-10 21:29:01,368 INFO [cmems_omi_si_extent__iso_metadata] Parsed CSW GetRecordById response: 'Antarctic Monthly Sea Ice Extent from Observations Reprocessing', 1979-01-01..2025-05-05, 3 online resources
+2026-10-10 21:29:01,373 INFO [cmems_dmi_asip_sic__iso_metadata] Parsed CSW GetRecordById response: 'Antarctic Ocean - High Resolution Sea Ice Information', 2023-02-02..ongoing / not specified, 2 online resources
+2026-10-10 21:29:01,378 INFO [cmems_sea_ice_drift__iso_metadata] Parsed CSW GetRecordById response: 'Antarctic Ocean Sea Ice Drift REPROCESSED', 2003-04-01..ongoing / not specified, 9 online resources
+2026-10-10 21:29:01,435 INFO [cmems_omi_si_extent__figure_png] PNG verified: 3500x3500 RGBA
+2026-10-10 21:29:01,438 INFO [noaa_ncei_arcgis_antarctic__html] Parsed saved page 'Folder: antarctic': 16 links, 3 map services
+2026-10-10 21:29:01,440 INFO [nsidc_g02135_index__html] Parsed saved page 'Index of /NOAA/G02135/': 4 links, 0 map services
+2026-10-10 21:29:03,030 INFO [ags_glacier_photograph] Opened 4174x2980 3-band uint8 TIFF; CRS=None; georeferenced=False
+2026-10-10 21:29:03,108 INFO [earthdata_download_installer] Identified as Windows executable; excluded from processing
+2026-10-10 21:29:04,111 INFO [era5_single_levels] Parsed API.py with ast (not executed): dataset 'reanalysis-era5-single-levels', 25 variables, 11,236 valid dates x 4 times x 1 level(s), area global (not specified)
+2026-10-10 21:29:04,112 INFO [era5_single_levels] Estimated 1,123,600 fields ~ 4.67 TB uncompressed float32
+2026-10-10 21:29:04,128 INFO [era5_pressure_levels] Parsed PRESSUREAPI.py with ast (not executed): dataset 'reanalysis-era5-pressure-levels', 13 variables, 9,775 valid dates x 4 times x 6 level(s), area [90, -180, -90, 180]
+2026-10-10 21:29:04,128 INFO [era5_pressure_levels] Estimated 3,049,800 fields ~ 12.67 TB uncompressed float32
+2026-10-10 21:29:04,244 INFO [comparison_omi_vs_nsidc_extent] Matched 548 months; mean OMI-NSIDC difference 0.369 10^6 km^2, r=0.9999
+2026-10-10 21:29:08,201 INFO Figure written: data/reports/antarctic/figures/fig01_inventory_status.png
+2026-10-10 21:29:08,700 INFO Figure written: data/reports/antarctic/figures/fig02_omi_extent_timeseries.png
+2026-10-10 21:29:09,073 INFO Figure written: data/reports/antarctic/figures/fig03_omi_extent_anomaly.png
+2026-10-10 21:29:09,111 ERROR Figure fig_extent failed: 'Series' object has no attribute 'month'
+2026-10-10 21:29:09,969 INFO Figure written: data/reports/antarctic/figures/fig06_dmi_sic_distribution.png
+2026-10-10 21:29:11,477 INFO Figure written: data/reports/antarctic/figures/fig07_dmi_sic_map.png
+2026-10-10 21:29:27,872 INFO Figure written: data/reports/antarctic/figures/fig08_glims_map.png
+2026-10-10 21:29:28,074 INFO Figure written: data/reports/antarctic/figures/fig09_glims_area_hist.png
+2026-10-10 21:29:28,381 INFO Figure written: data/reports/antarctic/figures/fig10_glims_hypsometry.png
+2026-10-10 21:29:29,605 INFO Figure written: data/reports/antarctic/figures/fig11_pgc_tiles.png
+2026-10-10 21:29:29,863 INFO Figure written: data/reports/antarctic/figures/fig12_missing_values.png
+2026-10-10 21:29:30,149 INFO Figure written: data/reports/antarctic/figures/fig13_before_after_counts.png
+2026-10-10 21:29:30,244 INFO Figure written: data/reports/antarctic/figures/fig14_edsc_providers.png
+2026-10-10 21:29:43,447 INFO Raw-data integrity: UNCHANGED
+2026-10-10 21:29:43,760 INFO File status counts: {'processed': 23, 'validated': 8, 'metadata_inspected': 4, 'unsupported': 1}
+2026-10-10 21:29:46,181 INFO Word report: reports/Antarctic_Climate_Cryosphere_Data_Preprocessing_Report.docx
+2026-10-10 21:29:46,181 INFO Finished in 127.7 s

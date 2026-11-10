@@ -1,0 +1,58 @@
+# AETHENTRA ML Task 01 - data sources (no credentials in this file; see .env.example)
+sea_ice_concentration:
+  id: nsidc_g02202_v6
+  role: primary_labels_and_sic_predictors
+  name: NOAA/NSIDC Climate Data Record of Passive Microwave Sea Ice Concentration, Version 6
+  product_id: G02202
+  version: v06r00
+  doi: https://doi.org/10.7265/b18j-z797
+  landing_page: https://nsidc.org/data/g02202/versions/6
+  access: public HTTPS (no login) - NOAA@NSIDC archive
+  base_url: https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/aggregate/
+  checksum_url: https://noaadata.apps.nsidc.org/NOAA/G02202_V6/south/checksums/aggregate/
+  checksum_type: md5            # .mnf manifest: filename,md5,size
+  file_pattern: sic_pss25_{year}0101-{year}1231_v06r00.nc
+  years: [1979, 2025]           # complete calendar years
+  partial_year_file_regex: "sic_pss25_(\\d{4})0101-(\\d{8})_v06r00\\.nc"   # latest NRT/ICDR year (resolved from the index)
+  local_dir: data/raw/aethentra/nsidc_g02202_v6
+  grid: NSIDC Polar Stereographic South 25 km (EPSG:3412), 332 x 316
+  variable: cdr_seaice_conc
+  license: "No constraints on data access or use (file attribute 'license')"
+
+atmosphere_interim:
+  id: ncep_ncar_r1_daily
+  role: atmospheric_predictors_interim
+  name: NCEP/NCAR Reanalysis 1, daily means (sigma 0.995 surface / sea-level pressure)
+  doi: https://doi.org/10.1175/1520-0477(1996)077<0437:TNYRP>2.0.CO;2
+  landing_page: https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html
+  access: public OPeNDAP (NOAA PSL THREDDS), no login
+  opendap_base: https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/
+  variables:
+    air: {path: "surface/air.sig995.{year}.nc", units: K, description: near-surface (sigma 0.995) air temperature}
+    uwnd: {path: "surface/uwnd.sig995.{year}.nc", units: m/s, description: near-surface eastward wind}
+    vwnd: {path: "surface/vwnd.sig995.{year}.nc", units: m/s, description: near-surface northward wind}
+    slp: {path: "surface/slp.{year}.nc", units: Pa, description: sea-level pressure}
+  lat_max: -35.0                # subset south of 35 S (covers the whole SIC grid, min lat 39.2 S, + interpolation halo)
+  years: [1979, 2026]
+  local_dir: data/raw/aethentra/ncep_r1
+  note: >-
+    Interim substitute for ERA5. ERA5 (requested by the project) requires a personal CDS token, which is not configured.
+    Swap-in path: configs/data_sources.yaml -> atmosphere_era5 once credentials exist.
+
+atmosphere_era5:
+  id: era5_single_levels
+  role: atmospheric_predictors_preferred
+  status: not_acquired_missing_credentials
+  dataset: reanalysis-era5-single-levels
+  access: Copernicus CDS API (cdsapi) - requires CDSAPI_URL / CDSAPI_KEY or ~/.cdsapirc
+  proposed_variables: [2m_temperature, 10m_u_component_of_wind, 10m_v_component_of_wind, mean_sea_level_pressure, sea_surface_temperature]
+  proposed_area: [-35, -180, -90, 180]
+  proposed_time: daily means (00/06/12/18 UTC), 1979-present
+
+comparison:
+  - id: nsidc_g02135_v4_south_extent
+    role: independent_extent_comparison
+    local_path: data/raw/antarctic/external/nsidc_g02135_south/S_seaice_extent_daily_v4.0.csv
+  - id: cmems_omi_si_extent
+    role: independent_extent_comparison
+    local_path: DATAS/ANTARCTIC_OMI_SI_extent_19790115_P20250505_R19792024.nc

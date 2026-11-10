@@ -1,0 +1,2 @@
+2026-11-08 05:18:27,704 INFO aethentra.train   table test_sample_fit1979-2020: 0/260 dates, 0 s, mem 1.4 GB
+2026-11-08 05:18:52,152 INFO aethentra.train   table test_sample_fit1979-2020: 200/260 dates, 25 s, mem 1.8 GB

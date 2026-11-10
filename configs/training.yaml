@@ -1,0 +1,42 @@
+seed: 42
+splits:                               # by forecast ISSUE date; target windows may not cross a boundary
+  train: ["1979-01-01", "2015-12-31"]
+  validation: ["2016-01-01", "2020-12-31"]
+  test: ["2021-01-01", "2025-12-31"]
+target_mode: residual                 # model predicts (target - persistence); absolute evaluated as ablation
+train_sample_fraction: 0.04           # fraction of ACTIVE cells sampled per training issue date (memory: ~3.7M rows)
+val_sample_fraction: 0.15             # for early stopping / tuning (full grids are used for all reported metrics)
+active_cell_rule: "persistence > 0 or climatology_target > 0 or neighbourhood7 > 0 (inputs only)"
+models:
+  lightgbm:
+    objective: regression_l1
+    learning_rate: 0.05
+    num_leaves: 127
+    min_data_in_leaf: 200
+    feature_fraction: 0.8
+    bagging_fraction: 0.8
+    bagging_freq: 1
+    lambda_l2: 1.0
+    n_estimators: 3000
+    early_stopping_rounds: 100
+  xgboost:
+    objective: reg:absoluteerror
+    learning_rate: 0.05
+    max_depth: 8
+    min_child_weight: 50
+    subsample: 0.8
+    colsample_bytree: 0.8
+    reg_lambda: 1.0
+    n_estimators: 3000
+    early_stopping_rounds: 100
+    device: cuda
+  random_forest:
+    n_estimators: 100                  # reduced for turnaround (user asked for completion asap)
+    max_depth: 20
+    min_samples_leaf: 50
+    max_features: 0.5
+    max_train_rows: 300000            # RF is CPU-bound; subsample (reduced for turnaround)
+optuna:
+  model: lightgbm
+  n_trials: 12                        # reduced budget for turnaround
+  timeout_s: 1500

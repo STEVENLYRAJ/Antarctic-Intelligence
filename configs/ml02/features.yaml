@@ -1,0 +1,14 @@
+labels:
+  horizon_days: 7                # target window t+1 .. t+7
+  min_valid_days: 7              # reanalysis: all 7 days required
+issue:
+  cadence_days: 7
+  anchor: "1979-01-07"           # first issue date (needs history from 1979-01-01 onward; early dates get NaN lags)
+  history_days: 56
+categories:                      # thresholds in units of the training-period weekly-anomaly sigma (per cell, per season)
+  edges_sigma: [-2, -1, 1, 2]
+  names: [strong_cold, cold, near_normal, warm, strong_warm]
+  sigma_period: [1981, 2010]
+seasons: {DJF: [12, 1, 2], MAM: [3, 4, 5], JJA: [6, 7, 8], SON: [9, 10, 11]}
+neighbourhood_cells: 5           # 5x5 (125 km) spatial mean of last-week anomaly
+use_sea_ice: true                # historical CDR SIC observations (ML-01 cube) for ocean cells, no climatology needed

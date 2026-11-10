@@ -1,0 +1,17 @@
+# Preprocessing of the primary SIC record onto its NATIVE grid (no regridding of labels)
+grid:
+  crs: EPSG:3412
+  proj4: "+proj=stere +lat_0=-90 +lat_ts=-70 +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6378273 +b=6356889.449 +units=m +no_defs"
+  shape: [332, 316]
+  resolution_m: 25000
+cube:
+  start: "1979-01-01"
+  variable: cdr_seaice_conc          # stored as uint8 percent 0..100, 255 = missing/not ocean
+  stdev_variable: cdr_seaice_conc_stdev   # stored as uint8 percent (rounded), 255 = missing
+  out_dir: data/interim/aethentra
+masks:
+  surface_type_ocean_value: 50       # surface_type_mask flag values: 50 ocean, 75 lake, 200 coast, 250 land
+  ocean_min_fraction_of_days: 0.99   # static ocean mask = flagged ocean on >= 99 % of days
+qa:
+  max_daily_extent_jump_mkm2: 1.0    # flag day-to-day hemispheric extent jumps larger than this (10^6 km^2)
+  sic_threshold: 15                  # % threshold for extent / ice edge

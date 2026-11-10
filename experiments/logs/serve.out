@@ -1,0 +1,17 @@
+INFO:     127.0.0.1:56098 - "GET /viewer/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56098 - "GET /layers/sic/sic7d_20261101_aethentra-sic-weekly-20261108-v1/forecast_7day_mean.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54352 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54352 - "GET /viewer/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54352 - "GET /viewer/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63015 - "GET /viewer/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63015 - "GET /layers/sic/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63015 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63015 - "GET /forecast/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54352 - "GET /layers/sic/sic7d_20261101_aethentra-sic-weekly-20261108-v1/forecast_7day_mean.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58132 - "GET /layers/sic/sic7d_20261101_aethentra-sic-weekly-20261108-v1/observed_latest_week.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58132 - "GET /layers/sic/sic7d_20261101_aethentra-sic-weekly-20261108-v1/test_spatial_error.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56176 - "GET /layers/t2m/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56176 - "GET /temperature/forecast/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58531 - "GET /layers/t2m/t2m7d_20251231_aethentra-t2m-weekly-20261108-v1/forecast_t2m.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58531 - "GET /layers/sic/latest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58531 - "GET /forecast/metrics HTTP/1.1" 200 OK

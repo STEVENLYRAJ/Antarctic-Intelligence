@@ -1,0 +1,1206 @@
+{
+  "ncep": [
+    {
+      "file": "ncep_r1_air_1979_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1980_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_air_1981_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1982_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1983_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1984_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_air_1985_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1986_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1987_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1988_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_air_1989_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1990_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1991_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1992_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_air_1993_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1994_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1995_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1996_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_air_1997_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1998_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_1999_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2000_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_air_2001_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2002_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2003_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2004_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_air_2005_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2006_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2007_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2008_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_air_2009_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2010_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2011_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2012_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_air_2013_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2014_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2015_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2016_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_air_2017_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2018_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2019_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2020_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_air_2021_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2022_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2023_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2024_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_air_2025_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_air_2026_south.nc",
+      "status": "downloaded",
+      "days": 76
+    },
+    {
+      "file": "ncep_r1_slp_1979_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1980_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_slp_1981_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1982_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1983_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1984_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_slp_1985_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1986_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1987_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1988_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_slp_1989_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1990_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1991_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1992_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_slp_1993_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1994_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1995_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1996_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_slp_1997_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1998_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_1999_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2000_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_slp_2001_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2002_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2003_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2004_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_slp_2005_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2006_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2007_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2008_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_slp_2009_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2010_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2011_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2012_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_slp_2013_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2014_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2015_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2016_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_slp_2017_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2018_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2019_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2020_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_slp_2021_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2022_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2023_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2024_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_slp_2025_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_slp_2026_south.nc",
+      "status": "downloaded",
+      "days": 76
+    },
+    {
+      "file": "ncep_r1_uwnd_1979_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1980_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_uwnd_1981_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1982_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1983_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1984_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_uwnd_1985_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1986_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1987_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1988_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_uwnd_1989_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1990_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1991_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1992_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_uwnd_1993_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1994_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1995_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1996_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_uwnd_1997_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1998_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_1999_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2000_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_uwnd_2001_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2002_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2003_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2004_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_uwnd_2005_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2006_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2007_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2008_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_uwnd_2009_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2010_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2011_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2012_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_uwnd_2013_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2014_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2015_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2016_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_uwnd_2017_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2018_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2019_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2020_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_uwnd_2021_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2022_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2023_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2024_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_uwnd_2025_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_uwnd_2026_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1979_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1980_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_vwnd_1981_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1982_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1983_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1984_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_vwnd_1985_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1986_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1987_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1988_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_vwnd_1989_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1990_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1991_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1992_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_vwnd_1993_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1994_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1995_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1996_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_vwnd_1997_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1998_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_1999_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2000_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_vwnd_2001_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2002_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2003_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2004_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_vwnd_2005_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2006_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2007_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2008_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_vwnd_2009_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2010_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2011_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2012_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_vwnd_2013_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2014_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2015_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2016_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_vwnd_2017_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2018_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2019_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2020_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_vwnd_2021_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2022_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2023_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2024_south.nc",
+      "status": "downloaded",
+      "days": 366
+    },
+    {
+      "file": "ncep_r1_vwnd_2025_south.nc",
+      "status": "downloaded",
+      "days": 365
+    },
+    {
+      "file": "ncep_r1_vwnd_2026_south.nc",
+      "status": "downloaded",
+      "days": 76
+    }
+  ],
+  "cdr": [
+    {
+      "file": "sic_pss25_19790101-19791231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19800101-19801231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19810101-19811231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19820101-19821231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19830101-19831231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19840101-19841231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19850101-19851231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19860101-19861231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19870101-19871231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19880101-19881231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19890101-19891231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19900101-19901231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19910101-19911231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19920101-19921231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19930101-19931231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19940101-19941231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19950101-19951231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19960101-19961231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19970101-19971231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19980101-19981231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_19990101-19991231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20000101-20001231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20010101-20011231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20020101-20021231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20030101-20031231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20040101-20041231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20050101-20051231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20060101-20061231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20070101-20071231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20080101-20081231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20090101-20091231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20100101-20101231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20110101-20111231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20120101-20121231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20130101-20131231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20140101-20141231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20150101-20151231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20160101-20161231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20170101-20171231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20180101-20181231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20190101-20191231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20200101-20201231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20210101-20211231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20220101-20221231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20230101-20231231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20240101-20241231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20250101-20251231_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    },
+    {
+      "file": "sic_pss25_20260101-20261101_v06r00.nc",
+      "status": "downloaded",
+      "verified": true
+    }
+  ]
+}

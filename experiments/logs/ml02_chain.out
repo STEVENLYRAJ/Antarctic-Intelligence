@@ -1,0 +1,248 @@
+== scripts/ml02/train.py select
+{
+ "selected_model": "lgbm_tuned",
+ "selection_basis": "validation 2011-2017 full-grid, rank-sum of all:area_weighted_rmse_degC, antarctica_land:area_weighted_rmse_degC, all:acc_pattern_mean, all:area_weighted_mae_degC",
+ "rank_sum": {
+  "lgbm_tuned": 5,
+  "xgb": 7,
+  "lgbm": 12,
+  "rf": 16,
+  "lgbm_temperature_only": 20,
+  "damped_persistence": 25,
+  "climatology": 31,
+  "persistence_week": 32,
+  "persistence": 33,
+  "recent_trend": 39
+ },
+ "ranks": {
+  "lgbm_tuned": {
+   "all:area_weighted_rmse_degC": {
+    "value": 3.704090100957553,
+    "rank": 1
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 3.9666847239274836,
+    "rank": 1
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.5343111108763209,
+    "rank": 1
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.487131657091744,
+    "rank": 2
+   }
+  },
+  "xgb": {
+   "all:area_weighted_rmse_degC": {
+    "value": 3.7081983459319274,
+    "rank": 2
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 3.970867025929745,
+    "rank": 2
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.5335271774723629,
+    "rank": 2
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.486610869702921,
+    "rank": 1
+   }
+  },
+  "lgbm": {
+   "all:area_weighted_rmse_degC": {
+    "value": 3.7108391602138298,
+    "rank": 3
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 3.972731650719297,
+    "rank": 3
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.5314888646800464,
+    "rank": 3
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.491052261738721,
+    "rank": 3
+   }
+  },
+  "rf": {
+   "all:area_weighted_rmse_degC": {
+    "value": 3.729996220370925,
+    "rank": 4
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 3.9805870684982554,
+    "rank": 4
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.526960660840727,
+    "rank": 4
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.4989068211008876,
+    "rank": 4
+   }
+  },
+  "lgbm_temperature_only": {
+   "all:area_weighted_rmse_degC": {
+    "value": 3.7852015431306687,
+    "rank": 5
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 4.020779061507413,
+    "rank": 5
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.5065267805021805,
+    "rank": 5
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.5437540044512255,
+    "rank": 5
+   }
+  },
+  "damped_persistence": {
+   "all:area_weighted_rmse_degC": {
+    "value": 4.058744136284432,
+    "rank": 6
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 4.3274553687864135,
+    "rank": 6
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.3821016228072549,
+    "rank": 7
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.7403881560786103,
+    "rank": 6
+   }
+  },
+  "climatology": {
+   "all:area_weighted_rmse_degC": {
+    "value": 4.365983816056392,
+    "rank": 7
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 4.606775289802717,
+    "rank": 7
+   },
+   "all:acc_pattern_mean": {
+    "value": null,
+    "ran
+== scripts/ml02/train.py final --source ncep_r1
+2026-11-08 05:02:47,172 INFO aethentra.ml02.train tables: train 3671465 rows, validation 3037913 rows
+done final
+== scripts/ml02/train.py test --source ncep_r1
+2026-11-08 05:08:12,433 INFO aethentra.ml02.train eval test_final: 0/416 dates 0 s
+2026-11-08 05:08:37,133 INFO aethentra.ml02.train eval test_final: 50/416 dates 25 s
+2026-11-08 05:09:02,098 INFO aethentra.ml02.train eval test_final: 100/416 dates 50 s
+2026-11-08 05:09:27,135 INFO aethentra.ml02.train eval test_final: 150/416 dates 75 s
+2026-11-08 05:09:51,621 INFO aethentra.ml02.train eval test_final: 200/416 dates 100 s
+2026-11-08 05:10:17,098 INFO aethentra.ml02.train eval test_final: 250/416 dates 125 s
+2026-11-08 05:10:42,306 INFO aethentra.ml02.train eval test_final: 300/416 dates 150 s
+2026-11-08 05:11:05,366 INFO aethentra.ml02.train eval test_final: 350/416 dates 173 s
+2026-11-08 05:11:28,684 INFO aethentra.ml02.train eval test_final: 400/416 dates 197 s
+done test
+== scripts/ml02/analyze.py final
+2026-11-08 05:15:12,579 INFO aethentra.ml02.train table test_sample: 0/416 dates 0 s
+2026-11-08 05:15:37,290 INFO aethentra.ml02.train table test_sample: 200/416 dates 25 s
+2026-11-08 05:16:01,859 INFO aethentra.ml02.train table test_sample: 400/416 dates 49 s
+{
+ "rows": 150000,
+ "permutation_importance_test": {
+  "baseline_rmse_degC": 3.678868532180786,
+  "rmse_increase_degC": {
+   "anom_d0": 0.4312326908111572,
+   "msl_anom_d0": 0.1335846185684204,
+   "nbr_anom_w1": 0.06854212284088135,
+   "anom_m8": 0.05607044696807861,
+   "anom_d0_minus_w1": 0.04615437984466553,
+   "msl_anom_w1": 0.018679499626159668,
+   "clim_target": 0.012837767601013184,
+   "anom_w2": 0.010782957077026367,
+   "anom_w1": 0.008602142333984375,
+   "sic_w1": 0.007696390151977539,
+   "sic_change_w4": 0.007280707359313965,
+   "lat": 0.006705880165100098,
+   "domain_anom_w1": 0.005792379379272461,
+   "region_anom_w1": 0.005488157272338867,
+   "clim_change": 0.004026055335998535,
+   "anom_tend": 0.002757430076599121,
+   "doy_sin": 0.002463817596435547,
+   "elevation_m": 0.0024394989013671875,
+   "doy_cos": 0.002304673194885254,
+   "u10_w1": 0.001834273338317871,
+   "anom_w3": 0.0015282630920410156,
+   "msl_tend": 0.0012280941009521484,
+   "v10_w1": 0.0012102127075195312,
+   "dist_coast_km": 0.001192927360534668,
+   "lon_sin": 0.0005015134811401367,
+   "wspd_w1": 0.0004004240036010742,
+   "region": 0.00026357173919677734,
+   "t2m_range_w1": 0.0002523660659790039,
+   "month": 0.00023174285888671875,
+   "coastal": 0.0,
+   "land": -4.0411949157714844e-05,
+   "anom_w4": -0.00021564960479736328,
+   "t2m_w1": -0.00027310848236083984,
+   "anom_std_w1": -0.0002894401550292969,
+   "t2m_d0": -0.0017489194869995117,
+   "lon_cos": -0.002277851104736328,
+   "anom_std_w4": -0.0035191774368286133
+  }
+ },
+ "shap_mean_abs": {
+  "anom_d0": 0.8137188920897102,
+  "msl_anom_d0": 0.4853264095061862,
+  "anom_m8": 0.3118696949653823,
+  "nbr_anom_w1": 0.28957885516063697,
+  "anom_d0_minus_w1": 0.2701973812266782,
+  "msl_anom_w1": 0.16935104836639503,
+  "anom_w2": 0.12506036946051216,
+  "domain_anom_w1": 0.11791241636776026,
+  "clim_target": 0.0936486329296943,
+  "region_anom_w1": 0.09274534853452852,
+  "sic_w1": 0.07398878636109953,
+  "sic_change_w4": 0.07008169252778286,
+  "anom_w1": 0.06372897430938161,
+  "doy_cos": 0.05911800776701459,
+  "t2m_d0": 0.05753754815826699,
+  "doy_sin": 0.04950831129023633,
+  "lat": 0.043893198067709555,
+  "anom_std_w4": 0.043580927808122276,
+  "anom_tend": 0.04318629522037441,
+  "anom_w3": 0.04179467389019421,
+  "lon_sin": 0.0374383614910462,
+  "lon_cos": 0.03656119070434331,
+  "clim_change": 0.035862876580402964,
+  "t2m_range_w1": 0.033396132595842905,
+  "msl_tend": 0.029025482347546778,
+  "anom_w4": 0.026180925453408076,
+  "u10_w1": 0.02409228268108096,
+  "anom_std_w1": 0.021328769901377387,
+  "t2m_w1": 0.018143122083553516,
+  "v10_w1": 0.017374029130475064,
+  "dist_coast_km": 0.01510752132035818,
+  "elevation_m": 0.014896009790233814,
+  "month": 0.014439311472795513,
+  "region": 0.006432573958795837,
+  "wspd_w1": 0.004718392138831801,
+  "land": 0.0010248682443804657,
+  "coastal": 0.0
+ },
+ "shap_top10_by_season": {
+  "DJF": [
+   "anom_d0",
+   "msl_anom_d0",
+   "anom_m8",
+   "nbr_anom_w1",
+   "msl_anom_w1",
+   "anom_d0_minus_w1",
+== scripts/ml02/analyze.py stations
+EXIT 127

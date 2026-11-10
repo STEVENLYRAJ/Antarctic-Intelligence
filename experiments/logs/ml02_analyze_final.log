@@ -1,0 +1,3 @@
+2026-11-08 05:15:12,579 INFO aethentra.ml02.train table test_sample: 0/416 dates 0 s
+2026-11-08 05:15:37,290 INFO aethentra.ml02.train table test_sample: 200/416 dates 25 s
+2026-11-08 05:16:01,859 INFO aethentra.ml02.train table test_sample: 400/416 dates 49 s

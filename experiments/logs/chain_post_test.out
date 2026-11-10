@@ -1,0 +1,123 @@
+== analyze.py final
+{
+ "rows": 200000,
+ "shap_rows": 20000,
+ "shap_mean_abs_test": {
+  "sic_d0": 2.2192984950403396,
+  "clim_change": 1.2720943652695165,
+  "nbr7_w1": 1.1349601252253234,
+  "clim_target": 0.7491781717918928,
+  "d_d0_w1": 0.5815168552133797,
+  "sic_w1": 0.565651140408286,
+  "nbr3_w1": 0.5575080843879469,
+  "anom_w1": 0.5012542729927253,
+  "clim_target_std": 0.23498214094194364,
+  "air_w1": 0.19134023499764968,
+  "grad_w1": 0.18936186081680106,
+  "slp_anom_w1": 0.18903653107324436,
+  "sie_change": 0.14799588667425304,
+  "d_w1_w2": 0.14318802956065846,
+  "anom_persist": 0.12702120824947158,
+  "unc_w1": 0.11035175280505366,
+  "sic_trend7": 0.10931125639673439,
+  "slp_w1": 0.0980105065499424,
+  "dist_edge_km": 0.08990641619255402,
+  "clim_now": 0.08616292489834429,
+  "dist_coast_km": 0.07756574184659284,
+  "doy_cos": 0.07095510972537683,
+  "air_anom_w1": 0.07079589437736053,
+  "sic_w4": 0.06845333631071326,
+  "doy_sin": 0.06598502772008695,
+  "vwnd_w1": 0.064200939013572,
+  "sic_w3": 0.06016293112712659,
+  "lon_sin": 0.05624914480745614,
+  "lon_cos": 0.05351190804092572,
+  "sic_w2": 0.04941403674393765,
+  "sie_sector_w1": 0.04883481963031718,
+  "sic_std28": 0.04746705123977373,
+  "uwnd_w1": 0.043432302220307334,
+  "sie_w1": 0.042961786071393025,
+  "wspd_w1": 0.040150922273415615,
+  "sector": 0.0355521500155623,
+  "sic_w8": 0.031214375220575165,
+  "lat": 0.026454077839096375,
+  "month": 0.020577517578437236,
+  "sic_age": 0.0
+ },
+ "pre_clip_below_0_fraction": 0.239105,
+ "pre_clip_above_100_fraction": 0.00784,
+ "pre_clip_min_max": [
+  -5.41623944222216,
+  100.99623356870208
+ ],
+ "mae_pp_test_sample": 2.733324753912211,
+ "sensitivity_missing_atmosphere_mae_pp": 2.8433785268633325,
+ "sensitivity_missing_older_sic_lags_mae_pp": 2.756694265526724,
+ "residual_by_condition": {
+  "open_water": {
+   "bias_pp": 0.659192392420234,
+   "mae_pp": 0.9173686348621087,
+   "n": 107352
+  },
+  "marginal_ice": {
+   "bias_pp": 0.9482215710980587,
+   "mae_pp": 11.487492946159174,
+   "n": 26222
+  },
+  "pack_ice": {
+   "bias_pp": -0.32226393003740383,
+   "mae_pp": 2.2123649332872573,
+   "n": 66426
+  }
+ }
+}
+{
+ "final_model": {
+  "min": 0.0,
+  "max": 100.0,
+  "mean_abs_neighbour_difference_pp": 0.7324454188346863,
+  "p99_abs_neighbour_difference_pp": 15.015625
+ },
+ "persistence": {
+  "min": 0.0,
+  "max": 100.0,
+  "mean_abs_neighbour_difference_pp": 0.8430978655815125,
+  "p99_abs_neighbour_difference_pp": 19.0
+ },
+ "climatology": {
+  "min": 0.0,
+  "max": 99.9375,
+  "mean_abs_neighbour_difference_pp": 0.6202859878540039,
+  "p99_abs_neighbour_difference_pp": 7.578125
+ },
+ "anomaly_persistence": {
+  "min": 0.0,
+  "max": 100.0,
+  "mean_abs_neighbour_difference_pp": 0.7735471725463867,
+  "p99_abs_neighbour_difference_pp": 14.5546875
+ },
+ "observed": {
+  "mean_abs_neighbour_difference_pp": 0.7671172618865967,
+  "p99_abs_neighbour_difference_pp": 14.84375
+ }
+}
+== make_figures.py
+Traceback (most recent call last):
+  File "H:\scientific-intelligence\scripts\make_figures.py", line 7, in <module>
+    for m in make_all():
+             ^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\visualization\figures.py", line 232, in make_all
+    f()
+  File "H:\scientific-intelligence\src\aethentra\visualization\figures.py", line 231, in <lambda>
+    for f in (fig_validation_comparison, fig_learning_curves, fig_optuna, lambda: fig_test(cube), fig_interpretation):
+                                                                                  ^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\visualization\figures.py", line 161, in fig_test
+    k = int(np.argmin([abs((pd.Timestamp(d) - pd.Timestamp("2023-09-10")).days) for d in z["dates"]]))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\visualization\figures.py", line 161, in <listcomp>
+    k = int(np.argmin([abs((pd.Timestamp(d) - pd.Timestamp("2023-09-10")).days) for d in z["dates"]]))
+                            ^^^^^^^^^^^^^^^
+  File "pandas/_libs/tslibs/timestamps.pyx", line 2738, in pandas._libs.tslibs.timestamps.Timestamp.__new__
+  File "pandas/_libs/tslibs/conversion.pyx", line 367, in pandas._libs.tslibs.conversion.convert_to_tsobject
+TypeError: Expected str, got numpy.str_
+EXIT 1

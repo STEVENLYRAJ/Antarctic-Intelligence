@@ -1,0 +1,13 @@
+{
+ "period": [
+  1981,
+  2010
+ ],
+ "smoothing_half_width_days": 15,
+ "variables": [
+  "t2m",
+  "msl",
+  "u10",
+  "v10"
+ ]
+}

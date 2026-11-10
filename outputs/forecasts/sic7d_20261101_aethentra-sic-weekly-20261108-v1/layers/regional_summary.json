@@ -1,0 +1,36 @@
+{
+  "data_type": "model_prediction",
+  "issue_date": "2026-11-01",
+  "sectors": [
+    {
+      "sector": "weddell",
+      "extent_km2": 6704780.174097856,
+      "area_km2": 6012978.068020204,
+      "persistence_extent_km2": 6788810.651457174
+    },
+    {
+      "sector": "indian",
+      "extent_km2": 2832484.0542069357,
+      "area_km2": 2181423.5082466407,
+      "persistence_extent_km2": 2865317.5036704317
+    },
+    {
+      "sector": "west_pacific",
+      "extent_km2": 1680610.2314347264,
+      "area_km2": 1285052.1885614255,
+      "persistence_extent_km2": 1720521.0237986306
+    },
+    {
+      "sector": "ross",
+      "extent_km2": 3704384.7191228326,
+      "area_km2": 3312753.021846924,
+      "persistence_extent_km2": 3728079.0811400292
+    },
+    {
+      "sector": "bellingshausen_amundsen",
+      "extent_km2": 1032371.5292785476,
+      "area_km2": 901647.4867633944,
+      "persistence_extent_km2": 1032984.5915328788
+    }
+  ]
+}

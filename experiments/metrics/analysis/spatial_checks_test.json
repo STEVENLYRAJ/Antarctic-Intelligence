@@ -1,0 +1,30 @@
+{
+  "final_model": {
+    "min": 0.0,
+    "max": 100.0,
+    "mean_abs_neighbour_difference_pp": 0.7324454188346863,
+    "p99_abs_neighbour_difference_pp": 15.015625
+  },
+  "persistence": {
+    "min": 0.0,
+    "max": 100.0,
+    "mean_abs_neighbour_difference_pp": 0.8430978655815125,
+    "p99_abs_neighbour_difference_pp": 19.0
+  },
+  "climatology": {
+    "min": 0.0,
+    "max": 99.9375,
+    "mean_abs_neighbour_difference_pp": 0.6202859878540039,
+    "p99_abs_neighbour_difference_pp": 7.578125
+  },
+  "anomaly_persistence": {
+    "min": 0.0,
+    "max": 100.0,
+    "mean_abs_neighbour_difference_pp": 0.7735471725463867,
+    "p99_abs_neighbour_difference_pp": 14.5546875
+  },
+  "observed": {
+    "mean_abs_neighbour_difference_pp": 0.7671172618865967,
+    "p99_abs_neighbour_difference_pp": 14.84375
+  }
+}

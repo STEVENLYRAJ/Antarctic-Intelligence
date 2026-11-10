@@ -1,0 +1,96 @@
+{
+ "forecast_id": "t2m7d_20251231_aethentra-t2m-weekly-20261108-v1",
+ "data_type": "model_prediction",
+ "target_start": "2026-01-01",
+ "target_end": "2026-01-07",
+ "regions": [
+  {
+   "region": "all",
+   "area_km2": 34417016.0,
+   "forecast_mean_t2m_degC": -4.474526405334473,
+   "climatology_mean_t2m_degC": -5.282381534576416,
+   "forecast_mean_anomaly_degC": 0.8078556656837463,
+   "last_week_observed_anomaly_degC": 0.8982682228088379,
+   "fraction_warm_ge_1sigma": 0.07613711804151535,
+   "fraction_cold_le_minus1sigma": 0.0006183399236761034,
+   "fraction_extreme_abs_ge_2sigma": 0.0
+  },
+  {
+   "region": "antarctica_land",
+   "area_km2": 13951156.0,
+   "forecast_mean_t2m_degC": -11.167560577392578,
+   "climatology_mean_t2m_degC": -12.738525390625,
+   "forecast_mean_anomaly_degC": 1.5709640979766846,
+   "last_week_observed_anomaly_degC": 1.8979054689407349,
+   "fraction_warm_ge_1sigma": 0.11208456754684448,
+   "fraction_cold_le_minus1sigma": 0.0,
+   "fraction_extreme_abs_ge_2sigma": 0.0
+  },
+  {
+   "region": "southern_ocean",
+   "area_km2": 20465860.0,
+   "forecast_mean_t2m_degC": 0.08797822147607803,
+   "climatology_mean_t2m_degC": -0.1996820569038391,
+   "forecast_mean_anomaly_degC": 0.28766027092933655,
+   "last_week_observed_anomaly_degC": 0.21683602035045624,
+   "fraction_warm_ge_1sigma": 0.051632482558488846,
+   "fraction_cold_le_minus1sigma": 0.0010398495942354202,
+   "fraction_extreme_abs_ge_2sigma": 0.0
+  },
+  {
+   "region": "antarctic_peninsula",
+   "area_km2": 466804.59375,
+   "forecast_mean_t2m_degC": -2.2739980220794678,
+   "climatology_mean_t2m_degC": -3.4015259742736816,
+   "forecast_mean_anomaly_degC": 1.1275279521942139,
+   "last_week_observed_anomaly_degC": 0.8669529557228088,
+   "fraction_warm_ge_1sigma": 0.003958005458116531,
+   "fraction_cold_le_minus1sigma": 0.0,
+   "fraction_extreme_abs_ge_2sigma": 0.0
+  },
+  {
+   "region": "west_antarctica",
+   "area_km2": 3453819.25,
+   "forecast_mean_t2m_degC": -5.929922580718994,
+   "climatology_mean_t2m_degC": -6.397254943847656,
+   "forecast_mean_anomaly_degC": 0.4673323929309845,
+   "last_week_observed_anomaly_degC": 0.23945719003677368,
+   "fraction_warm_ge_1sigma": 0.0,
+   "fraction_cold_le_minus1sigma": 0.0,
+   "fraction_extreme_abs_ge_2sigma": 0.0
+  },
+  {
+   "region": "east_antarctica",
+   "area_km2": 10030532.0,
+   "forecast_mean_t2m_degC": -13.384933471679688,
+   "climatology_mean_t2m_degC": -15.356547355651855,
+   "forecast_mean_anomaly_degC": 1.9716150760650635,
+   "last_week_observed_anomaly_degC": 2.5169389247894287,
+   "fraction_warm_ge_1sigma": 0.15571075677871704,
+   "fraction_cold_le_minus1sigma": 0.0,
+   "fraction_extreme_abs_ge_2sigma": 0.0
+  },
+  {
+   "region": "coastal_land",
+   "area_km2": 1784294.75,
+   "forecast_mean_t2m_degC": -2.5596163272857666,
+   "climatology_mean_t2m_degC": -3.372047185897827,
+   "forecast_mean_anomaly_degC": 0.812430739402771,
+   "last_week_observed_anomaly_degC": 0.6737341284751892,
+   "fraction_warm_ge_1sigma": 0.03483543172478676,
+   "fraction_cold_le_minus1sigma": 0.0,
+   "fraction_extreme_abs_ge_2sigma": 0.0
+  },
+  {
+   "region": "inland",
+   "area_km2": 12166861.0,
+   "forecast_mean_t2m_degC": -12.42993450164795,
+   "climatology_mean_t2m_degC": -14.112137794494629,
+   "forecast_mean_anomaly_degC": 1.6822046041488647,
+   "last_week_observed_anomaly_degC": 2.077432870864868,
+   "fraction_warm_ge_1sigma": 0.1234133243560791,
+   "fraction_cold_le_minus1sigma": 0.0,
+   "fraction_extreme_abs_ge_2sigma": 0.0
+  }
+ ]
+}

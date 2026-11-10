@@ -1,0 +1,174 @@
+== scripts/ml02/train.py tables --source ncep_r1
+2026-11-08 04:07:23,874 INFO aethentra.ml02.train tables: train 3671465 rows, validation 3037913 rows
+done tables
+== scripts/ml02/train.py candidates --source ncep_r1
+2026-11-08 04:07:30,852 INFO aethentra.ml02.train tables: train 3671465 rows, validation 3037913 rows
+2026-11-08 04:09:05,960 INFO aethentra.ml02.train lgbm: 94 s, best_iteration=171
+2026-11-08 04:09:38,315 INFO aethentra.ml02.train lgbm_temperature_only: 32 s, best_iteration=82
+2026-11-08 04:09:56,921 INFO aethentra.ml02.train xgb: 18 s, best_iteration=170
+2026-11-08 04:11:00,143 INFO aethentra.ml02.train rf: 61 s, best_iteration=100
+2026-11-08 04:12:09,848 INFO aethentra.ml02.train lgbm_q10: 69 s, best_iteration=249
+2026-11-08 04:13:41,230 INFO aethentra.ml02.train lgbm_q90: 91 s, best_iteration=171
+2026-11-08 04:13:41,902 INFO aethentra.ml02.train eval validation_candidates: 0/365 dates 1 s
+2026-11-08 04:14:19,401 INFO aethentra.ml02.train eval validation_candidates: 50/365 dates 38 s
+2026-11-08 04:14:58,409 INFO aethentra.ml02.train eval validation_candidates: 100/365 dates 77 s
+2026-11-08 04:15:38,244 INFO aethentra.ml02.train eval validation_candidates: 150/365 dates 117 s
+2026-11-08 04:16:35,647 INFO aethentra.ml02.train eval validation_candidates: 200/365 dates 174 s
+2026-11-08 04:17:18,803 INFO aethentra.ml02.train eval validation_candidates: 250/365 dates 217 s
+2026-11-08 04:17:57,223 INFO aethentra.ml02.train eval validation_candidates: 300/365 dates 256 s
+2026-11-08 04:18:35,497 INFO aethentra.ml02.train eval validation_candidates: 350/365 dates 294 s
+done candidates
+== scripts/ml02/analyze.py features
+{
+ "high_collinearity_pairs_abs_spearman_ge_0.9": [
+  [
+   "anom_w1",
+   "nbr_anom_w1",
+   0.9995995852212588
+  ],
+  [
+   "anom_std_w1",
+   "t2m_range_w1",
+   0.9907325193732953
+  ],
+  [
+   "land",
+   "region",
+   0.9757196871567962
+  ],
+  [
+   "t2m_w1",
+   "clim_target",
+   0.9680691460496526
+  ],
+  [
+   "t2m_d0",
+   "t2m_w1",
+   0.9653028172646622
+  ],
+  [
+   "elevation_m",
+   "region",
+   0.9629258188649553
+  ],
+  [
+   "elevation_m",
+   "land",
+   0.9479277794269643
+  ],
+  [
+   "t2m_d0",
+   "clim_target",
+   0.9447400064717558
+  ]
+ ],
+ "spearman_with_target_anomaly": {
+  "t2m_d0": -0.006722354191761929,
+  "t2m_w1": -0.06120685973670091,
+  "anom_d0": 0.4286467327599121,
+  "anom_w1": 0.3477122768224735,
+  "anom_w2": 0.20531124132207101,
+  "anom_w3": 0.15717765270391915,
+  "anom_w4": 0.14110349636783784,
+  "anom_m8": 0.2823123954219078,
+  "anom_std_w1": 0.05382395620073495,
+  "anom_std_w4": 0.06901369617261524,
+  "anom_tend": 0.12704954352932488,
+  "anom_d0_minus_w1": 0.22072461173361738,
+  "t2m_range_w1": 0.05255900431755119,
+  "nbr_anom_w1": 0.34793913979087987,
+  "domain_anom_w1": 0.1575141125830426,
+  "region_anom_w1": 0.20369000659134123,
+  "clim_target": -0.14208016210533292,
+  "clim_change": 0.05549507061702542,
+  "doy_sin": -0.058198317108053045,
+  "doy_cos": -0.019301666018127665,
+  "month": 0.05827414403838886,
+  "lat": -0.12769780409253356,
+  "lon_sin": 0.02311022447233734,
+  "lon_cos": -0.01636817727300895,
+  "elevation_m": 0.10296795476561785,
+  "dist_coast_km": 0.019648148834999272,
+  "land": 0.0906102793875889,
+  "coastal": 0.006067743206886896,
+  "region": 0.09404453842347897,
+  "msl_anom_d0": 0.08444769664053599,
+  "msl_anom_w1": 0.06441247431927437,
+  "msl_tend": 0.05016698406827892,
+  "u10_w1": -0.05805659078732516,
+  "v10_w1": -0.03401077297237603,
+  "wspd_w1": 0.058884150275592684,
+  "sic_w1": 0.042767497612382924,
+  "sic_change_w4": -0.04135193747242699
+ },
+ "lightgbm_gain_importance": {
+  "anom_d0": 87150725.55761719,
+  "nbr_anom_w1": 16485272.20727539,
+  "domain_anom_w1": 14672622.399536133,
+  "msl_anom_d0": 13144474.348144531,
+  "anom_m8": 13034190.395629883,
+  "doy_sin": 10424677.786499023,
+  "doy_cos": 9775116.590942383,
+  "region_anom_w1": 9705168.969482422,
+  "anom_d0_minus_w1": 8725499.622192383,
+  "msl_anom_w1": 3734457.5932617188,
+  "lon_cos": 3325896.8846435547,
+  "lon_sin": 3281287.26171875,
+  "anom_w1": 3078399.300415039,
+  "sic_w1": 2917949.151245117,
+  "anom_w2": 2782795.2614746094,
+  "anom_std_w4": 2485451.3181152344,
+  "anom_w3": 2296879.754760742,
+  "clim_change": 2219454.363220215,
+  "msl_tend": 2073181.9409179688,
+  "sic_change_w4": 2060049.0098876953,
+  "clim_target": 1740192.0112304688,
+  "anom_w4": 1710690.5974121094,
+  "lat": 1674449.7983398438,
+  "t2m_d0": 1606335.8920898438,
+  "anom_std_w1": 1399015.0500488281,
+  "anom_tend": 1254190.3623046875,
+  "t2m_range_w1": 1145498.6176757812,
+  "t2m_w1": 1062437.0305175781,
+  "v10_w1": 861461.1292724609,
+  "u10_w1": 829492.8315429688,
+  "dist_coast_km": 77893
+== scripts/ml02/train.py tune --source ncep_r1
+2026-11-08 04:24:57,266 INFO aethentra.ml02.train tables: train 3671465 rows, validation 3037913 rows
+[I 2026-11-08 04:24:58,834] A new study created in memory with name: no-name-9073582e-db83-4927-adf2-5dc9843e9a27
+C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\lightgbm\basic.py:2515: UserWarning: Overriding the parameters from Reference Dataset.
+  _log_warning("Overriding the parameters from Reference Dataset.")
+[I 2026-11-08 04:27:04,226] Trial 0 finished with value: 3.6922547617311703 and parameters: {'learning_rate': 0.0425378509573798, 'num_leaves': 445, 'min_data_in_leaf': 578, 'feature_fraction': 0.759195090518222, 'bagging_fraction': 0.5780093202212182, 'lambda_l2': 0.004993515273965262}. Best is trial 0 with value: 3.6922547617311703.
+[I 2026-11-08 04:29:12,844] Trial 1 finished with value: 3.6857709745582214 and parameters: {'learning_rate': 0.0224831270535195, 'num_leaves': 351, 'min_data_in_leaf': 315, 'feature_fraction': 0.8248435466776274, 'bagging_fraction': 0.5102922471479012, 'lambda_l2': 21.99905443150215}. Best is trial 1 with value: 3.6857709745582214.
+[I 2026-11-08 04:30:01,126] Trial 2 finished with value: 3.690961205798139 and parameters: {'learning_rate': 0.10702082748695269, 'num_leaves': 56, 'min_data_in_leaf': 45, 'feature_fraction': 0.5100427059120604, 'bagging_fraction': 0.6521211214797689, 'lambda_l2': 0.22356209648036382}. Best is trial 1 with value: 3.6857709745582214.
+[I 2026-11-08 04:31:18,772] Trial 3 finished with value: 3.686371309551642 and parameters: {'learning_rate': 0.047753845433560704, 'num_leaves': 69, 'min_data_in_leaf': 332, 'feature_fraction': 0.4836963163912251, 'bagging_fraction': 0.6460723242676091, 'lambda_l2': 0.043676355831098176}. Best is trial 1 with value: 3.6857709745582214.
+[I 2026-11-08 04:32:30,313] Trial 4 finished with value: 3.689476437617337 and parameters: {'learning_rate': 0.050132478040090245, 'num_leaves': 279, 'min_data_in_leaf': 49, 'feature_fraction': 0.708540663048167, 'bagging_fraction': 0.7962072844310213, 'lambda_l2': 0.0016142252267366923}. Best is trial 1 with value: 3.6857709745582214.
+[I 2026-11-08 04:33:03,706] Trial 5 finished with value: 3.6858597935464825 and parameters: {'learning_rate': 0.0680250643581967, 'num_leaves': 49, 'min_data_in_leaf': 26, 'feature_fraction': 0.9693313223519999, 'bagging_fraction': 0.9828160165372797, 'lambda_l2': 4.161912539691215}. Best is trial 1 with value: 3.6857709745582214.
+[I 2026-11-08 04:33:58,035] Trial 6 finished with value: 3.6793825679504453 and parameters: {'learning_rate': 0.03694755509074355, 'num_leaves': 40, 'min_data_in_leaf': 464, 'feature_fraction': 0.6640914962437607, 'bagging_fraction': 0.5610191174223894, 'lambda_l2': 0.16480374223944863}. Best is trial 6 with value: 3.6793825679504453.
+[I 2026-11-08 04:35:22,196] Trial 7 finished with value: 3.6910870235823414 and parameters: {'learning_rate': 0.02143492944833733, 'num_leaves': 396, 'min_data_in_leaf': 65, 'feature_fraction': 0.7975133706123891, 'bagging_fraction': 0.6558555380447055, 'lambda_l2': 0.21301372721189435}. Best is trial 6 with value: 3.6793825679504453.
+[I 2026-11-08 04:35:57,165] Trial 8 finished with value: 3.6839632010542727 and parameters: {'learning_rate': 0.06017761665213941, 'num_leaves': 51, 'min_data_in_leaf': 1738, 'feature_fraction': 0.8650796940166687, 'bagging_fraction': 0.9697494707820946, 'lambda_l2': 10.144964926243938}. Best is trial 6 with value: 3.6793825679504453.
+[I 2026-11-08 04:36:31,527] Trial 9 finished with value: 3.6959857015040862 and parameters: {'learning_rate': 0.06671586274048924, 'num_leaves': 410, 'min_data_in_leaf': 29, 'feature_fraction': 0.5175897174514872, 'bagging_fraction': 0.522613644455269, 'lambda_l2': 0.02861167865082195}. Best is trial 6 with value: 3.6793825679504453.
+[I 2026-11-08 04:37:59,692] Trial 10 finished with value: 3.6830926358053646 and parameters: {'learning_rate': 0.023207544883369725, 'num_leaves': 223, 'min_data_in_leaf': 119, 'feature_fraction': 0.5664035409576745, 'bagging_fraction': 0.5428173584861098, 'lambda_l2': 0.035406419464222516}. Best is trial 6 with value: 3.6793825679504453.
+[I 2026-11-08 04:58:22,124] Trial 11 finished with value: 3.679094120815682 and parameters: {'learning_rate': 0.026096797290981667, 'num_leaves': 75, 'min_data_in_leaf': 1278, 'feature_fraction': 0.5888169345217917, 'bagging_fraction': 0.5327514368407912, 'lambda_l2': 0.15686572026436765}. Best is trial 11 with value: 3.679094120815682.
+2026-11-08 04:59:53,750 INFO aethentra.ml02.train eval validation_tuned: 0/365 dates 0 s
+2026-11-08 05:00:12,127 INFO aethentra.ml02.train eval validation_tuned: 50/365 dates 19 s
+2026-11-08 05:00:30,327 INFO aethentra.ml02.train eval validation_tuned: 100/365 dates 37 s
+2026-11-08 05:00:48,813 INFO aethentra.ml02.train eval validation_tuned: 150/365 dates 56 s
+2026-11-08 05:01:07,937 INFO aethentra.ml02.train eval validation_tuned: 200/365 dates 75 s
+2026-11-08 05:01:26,718 INFO aethentra.ml02.train eval validation_tuned: 250/365 dates 93 s
+2026-11-08 05:01:45,484 INFO aethentra.ml02.train eval validation_tuned: 300/365 dates 112 s
+2026-11-08 05:02:04,300 INFO aethentra.ml02.train eval validation_tuned: 350/365 dates 131 s
+done tune
+== scripts/ml02/train.py select
+Traceback (most recent call last):
+  File "H:\scientific-intelligence\scripts\ml02\train.py", line 15, in <module>
+    print(json.dumps(P.select(), indent=1, default=str)[:3000])
+                     ^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\temperature\training\pipeline.py", line 275, in select
+    order = sorted(vals, key=lambda m: vals[m] if d == "min" else -vals[m])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\temperature\training\pipeline.py", line 275, in <lambda>
+    order = sorted(vals, key=lambda m: vals[m] if d == "min" else -vals[m])
+                                                                  ^^^^^^^^
+TypeError: bad operand type for unary -: 'NoneType'
+EXIT 1

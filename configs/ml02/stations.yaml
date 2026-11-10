@@ -1,0 +1,20 @@
+# Zenodo 17164992 station files carry no coordinates; coordinates/elevations are taken from the matching
+# NOAA GHCN-Daily station record (ghcnd-stations.txt), matched by WMO index.
+zenodo_to_ghcnd:
+  Amundsen_Scott: AYW00090001     # WMO 89009, South Pole
+  Casey: AYM00089611
+  Concordia: AYM00089625
+  Davis: AYM00089571
+  Dumont_Durville: AYM00089642
+  Esperanza: AYM00088963
+  Halley: AYM00089022
+  Marambio: AYM00089055
+  Mawson: AYM00089564
+  McMurdo: AYM00089664
+  Neumayer: AYM00089002
+  Novolazarevskaya: AYM00089512
+  Rothera: AYM00089062
+  Syowa: AYM00089532
+  Vernadsky: AYM00089063
+  Vostok: AYM00089606
+min_valid_days_per_week: 6

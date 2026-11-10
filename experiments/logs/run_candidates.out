@@ -1,0 +1,19 @@
+2026-11-08 02:11:40,862 INFO aethentra.train Tables: train 3012256 rows, validation 1511821 rows
+2026-11-08 02:11:40,921 INFO aethentra.train Training lgbm_residual (lightgbm, 40 features, residual)
+2026-11-08 02:14:26,393 INFO aethentra.train   lgbm_residual: 165 s, best_iteration=959
+2026-11-08 02:14:26,393 INFO aethentra.train Training lgbm_absolute (lightgbm, 40 features, absolute)
+2026-11-08 02:18:28,909 INFO aethentra.train   lgbm_absolute: 242 s, best_iteration=1349
+2026-11-08 02:18:28,910 INFO aethentra.train Training lgbm_residual_sic_only (lightgbm, 33 features, residual)
+2026-11-08 02:20:46,198 INFO aethentra.train   lgbm_residual_sic_only: 137 s, best_iteration=1055
+2026-11-08 02:20:46,198 INFO aethentra.train Training xgb_residual (xgboost, 40 features, residual)
+2026-11-08 02:22:45,818 INFO aethentra.train   xgb_residual: 116 s, best_iteration=2191
+2026-11-08 02:22:45,819 INFO aethentra.train Training rf_residual (random_forest, 40 features, residual)
+2026-11-08 02:26:48,334 INFO aethentra.train   rf_residual: 240 s, best_iteration=200
+2026-11-08 02:32:56,132 INFO aethentra.train   eval validation_candidates: 0/260 dates 2 s
+2026-11-08 02:35:02,287 INFO aethentra.train   eval validation_candidates: 50/260 dates 128 s
+2026-11-08 02:37:18,590 INFO aethentra.train   eval validation_candidates: 100/260 dates 265 s
+2026-11-08 02:39:32,417 INFO aethentra.train   eval validation_candidates: 150/260 dates 398 s
+2026-11-08 02:41:58,438 INFO aethentra.train   eval validation_candidates: 200/260 dates 544 s
+2026-11-08 02:44:21,697 INFO aethentra.train   eval validation_candidates: 250/260 dates 688 s
+done candidates
+EXIT 0

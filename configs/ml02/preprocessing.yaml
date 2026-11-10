@@ -1,0 +1,43 @@
+# ML-02 preprocessing: daily cube on the ML-01 NSIDC 25 km polar-stereographic grid (EPSG:3412), cells south of 60 S.
+grid_source: data/interim/aethentra/grid.npz       # ML-01 grid (lat/lon/area/ocean mask from the CDR surface-type mask)
+domain_lat_max: -60.0
+out_dir: data/interim/ml02
+start: "1979-01-01"
+end: "2025-12-31"
+interpolation: bilinear       # continuous fields only; masks are never interpolated (ocean/land from the CDR mask)
+coastal_km: 100               # land cells within this distance of the ocean are "coastal"
+# Storage: int16 with per-variable scale (value = int * scale); fill -32768
+# range = physically impossible -> set missing; flag = outside the observed record / physically doubtful -> counted, KEPT
+# (reanalysis values are kept as produced: NCEP R1 has a known cold bias on the plateau; MSL is extrapolated over the ice sheet)
+variables:
+  t2m: {scale: 0.01, units: degC, range: [-110, 40], flag: [-89.2, 20]}
+  d2m: {scale: 0.01, units: degC, range: [-115, 35], flag: [-95, 15]}
+  t850: {scale: 0.01, units: degC, range: [-80, 30], flag: [-65, 20]}
+  msl: {scale: 0.1, units: hPa, range: [850, 1200], flag: [870, 1090]}
+  u10: {scale: 0.01, units: m s-1, range: [-60, 60]}
+  v10: {scale: 0.01, units: m s-1, range: [-60, 60]}
+  tcc: {scale: 0.001, units: "1", range: [0, 1]}
+  z500: {scale: 1.0, units: gpm, range: [4000, 6200]}
+qa:
+  max_domain_mean_daily_jump_degC: 8.0
+sources:
+  era5:
+    t2m: {glob: "data/raw/era5/t2m/era5_daily_mean_t2m_{year}.nc"}
+    msl: {glob: "data/raw/era5/msl/era5_daily_mean_msl_{year}.nc"}
+    u10: {glob: "data/raw/era5/u10/era5_daily_mean_u10_{year}.nc"}
+    v10: {glob: "data/raw/era5/v10/era5_daily_mean_v10_{year}.nc"}
+    d2m: {glob: "data/raw/era5/d2m/era5_daily_mean_d2m_{year}.nc"}
+    tcc: {glob: "data/raw/era5/tcc/era5_daily_mean_tcc_{year}.nc"}
+    z500: {glob: "data/raw/era5/z500/era5_daily_mean_z500_{year}.nc"}
+    t850: {glob: "data/raw/era5/t850/era5_daily_mean_t850_{year}.nc"}
+    orography: {file: data/raw/era5/invariant/era5_z_invariant.nc, var: z, divide_by: 9.80665}
+  ncep_r1:     # INTERIM substitute (not ERA5): 2 m T on T62 Gaussian; slp + sigma-0.995 winds on 2.5 deg (ML-01 files)
+    # QA: 1997-08-07 domain-mean T2m jumps +8.6 C in one day (ocean cells +12.7 C mean, up to +43 C; next-largest jump on
+    # record 2.8 C), decaying over ~4 days -> treated as a reanalysis boundary-condition artefact. Issue dates whose input
+    # (56 d) or target (7 d) window overlaps a suspect period are excluded (training split only is affected).
+    suspect_periods: [["1997-08-06", "1997-08-10"]]
+    t2m: {glob: "data/raw/ncep_r1_2m/ncep_r1_air_{year}_south.nc", var: air}
+    msl: {glob: "data/raw/aethentra/ncep_r1/ncep_r1_slp_{year}_south.nc", var: slp}
+    u10: {glob: "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_{year}_south.nc", var: uwnd}
+    v10: {glob: "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_{year}_south.nc", var: vwnd}
+    orography: {opendap: "https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/surface_gauss/hgt.sfc.gauss.nc", var: hgt, divide_by: 1.0}

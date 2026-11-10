@@ -1,0 +1,22 @@
+# --- AETHENTRA ML Task 01 (added) ---
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+# large raw / interim scientific data (re-creatable with scripts/download_data.py + scripts/preprocess.py)
+data/raw/aethentra/
+data/interim/
+data/processed/aethentra/tables/
+*.part
+# bulky model binaries / evaluation grids (re-creatable with scripts/train.py)
+models/checkpoints/*.joblib
+experiments/metrics/**/grids.npz
+# --- AETHENTRA ML-02 (added) ---
+# raw / interim / tables re-creatable with scripts/ml02/download_data.py, preprocess.py, train.py tables
+data/raw/era5/
+data/raw/ncep_r1_2m/
+data/raw/station_observations/
+data/processed/ml02/tables/
+models/ml02/checkpoints/*.joblib
+experiments/ml02/metrics/**/fields.npz
+.cdsapirc

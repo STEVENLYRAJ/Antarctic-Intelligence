@@ -1,0 +1,10 @@
+{
+  "nominal_coverage": 0.8,
+  "empirical_coverage": 0.8776131993736237,
+  "cells": 10080842,
+  "mean_width_pp": 8.501474720604481,
+  "median_width_pp": 2.6923867124099132,
+  "split": "validation",
+  "n_issue_dates": 260,
+  "note": "Evaluated on active cells with valid persistence (model domain), all issue dates of the split."
+}

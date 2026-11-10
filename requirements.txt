@@ -16,3 +16,24 @@ requests>=2.31
 pytest>=8
 # optional: only needed to run the CDS ERA5 requests in "EXTERNAL APIs/" (not used by the pipeline itself)
 # cdsapi>=0.7
+# AETHENTRA ML Task 01 (src/aethentra, api/)
+scikit-learn>=1.5
+lightgbm>=4.3
+xgboost>=2.1
+optuna>=3.6
+scipy>=1.12
+joblib>=1.3
+psutil>=5.9
+pyyaml>=6.0
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.6
+httpx>=0.27
+# optional: deep spatial models (not used in Task 01 v1) -> torch (CUDA wheel)
+# AETHENTRA ML-02 (src/aethentra/temperature, api/temperature.py)
+cdsapi>=0.7
+nbformat>=5.9
+nbclient>=0.10
+ipykernel>=6.29
+matplotlib>=3.8
+rasterio>=1.3

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AETHENTRA Forecast Viewer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>AETHENTRA <span>Antarctic weekly forecasts</span></h1>
+  <nav id="tabs" role="tablist">
+    <button role="tab" data-product="sic" aria-selected="true">Sea-ice concentration</button>
+    <button role="tab" data-product="t2m" aria-selected="false">2 m temperature</button>
+  </nav>
+</header>
+<p class="banner">Research prototype: statistical forecasts of the 7-day mean, not reviewed for operational or safety-critical use.
+Forecast layers have a dashed orange frame and are labelled <b>MODEL PREDICTION</b>.</p>
+<main>
+  <aside>
+    <section id="meta"></section>
+    <section><h2>Layers</h2><ul id="layers"></ul></section>
+  </aside>
+  <section id="mapcol">
+    <figure id="map">
+      <div id="mapframe"><img id="mapimg" alt=""><div id="stamp"></div></div>
+      <figcaption id="caption"></figcaption>
+      <div id="legend"><div id="ramp"></div><div id="ticks"></div></div>
+    </figure>
+  </section>
+  <section id="info">
+    <h2>This forecast</h2><div id="summary"></div>
+    <h2>Test-period skill</h2><div id="metrics"></div>
+    <h2>Limitations</h2><ul id="limits"></ul>
+  </section>
+</main>
+<footer>Polar stereographic previews (EPSG:3412, 25 km) are rendered from the native GeoTIFFs, which can be downloaded from the layer list. API documentation: <a href="/docs">/docs</a></footer>
+<script src="app.js"></script>
+</body>
+</html>

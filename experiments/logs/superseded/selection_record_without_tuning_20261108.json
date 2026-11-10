@@ -1,0 +1,158 @@
+{
+  "selected_model": "lgbm_residual",
+  "selection_utc": "2026-11-07T21:54:06+00:00",
+  "criteria": "rank-sum over validation SIZ MAE, SIZ RMSE, IIEE, extent MAE; ties -> simpler model",
+  "validation_table": [
+    {
+      "method": "anomaly_persistence",
+      "siz_mae": 4.609956002578267,
+      "siz_rmse": 9.651795411419867,
+      "all_aw_rmse": 6.495113586284928,
+      "iiee": 865970.0559468978,
+      "extent_mae": 304803.57986510405
+    },
+    {
+      "method": "climatology",
+      "siz_mae": 9.574207756505775,
+      "siz_rmse": 17.172443343708125,
+      "all_aw_rmse": 11.54365055778654,
+      "iiee": 2350969.1424745917,
+      "extent_mae": 1933476.363050181
+    },
+    {
+      "method": "lgbm_absolute",
+      "siz_mae": 3.0903747127389303,
+      "siz_rmse": 7.200919150592171,
+      "all_aw_rmse": 4.855639916123022,
+      "iiee": 588110.590091996,
+      "extent_mae": 107211.28372585612
+    },
+    {
+      "method": "lgbm_residual",
+      "siz_mae": 3.067775885970478,
+      "siz_rmse": 7.148494377623577,
+      "all_aw_rmse": 4.82070759303653,
+      "iiee": 586481.5694432694,
+      "extent_mae": 117620.6400986848
+    },
+    {
+      "method": "lgbm_residual_sic_only",
+      "siz_mae": 3.0994434027558517,
+      "siz_rmse": 7.239518228737494,
+      "all_aw_rmse": 4.882645378284537,
+      "iiee": 593457.6024265835,
+      "extent_mae": 122275.33252671668
+    },
+    {
+      "method": "linear_trend",
+      "siz_mae": 4.67677729800088,
+      "siz_rmse": 10.520684629127443,
+      "all_aw_rmse": 7.112720497024136,
+      "iiee": 722667.4418785471,
+      "extent_mae": 345454.2199091327
+    },
+    {
+      "method": "persistence",
+      "siz_mae": 3.8061919402079516,
+      "siz_rmse": 8.771324195520542,
+      "all_aw_rmse": 5.914247905563841,
+      "iiee": 705241.9081675775,
+      "extent_mae": 393080.1835084505
+    },
+    {
+      "method": "persistence_week",
+      "siz_mae": 4.833291101776929,
+      "siz_rmse": 11.03105562729513,
+      "all_aw_rmse": 7.408120694589487,
+      "iiee": 967168.27751447,
+      "extent_mae": 624335.0392954412
+    },
+    {
+      "method": "rf_residual",
+      "siz_mae": 3.2973005935903004,
+      "siz_rmse": 7.080355698046931,
+      "all_aw_rmse": 4.775803332711038,
+      "iiee": 609254.0114784341,
+      "extent_mae": 170744.07658300473
+    },
+    {
+      "method": "xgb_residual",
+      "siz_mae": 3.072228724500305,
+      "siz_rmse": 7.160836786291593,
+      "all_aw_rmse": 4.829339089161645,
+      "iiee": 588397.8479267798,
+      "extent_mae": 119548.63682378507
+    }
+  ],
+  "rank_sum": {
+    "lgbm_residual": 6.0,
+    "lgbm_absolute": 10.0,
+    "xgb_residual": 11.0,
+    "rf_residual": 16.0,
+    "lgbm_residual_sic_only": 17.0
+  },
+  "best_baseline": "persistence",
+  "beats_best_baseline_on_all_criteria": true,
+  "kind": "lightgbm",
+  "features": [
+    "sic_d0",
+    "sic_age",
+    "sic_w1",
+    "sic_w2",
+    "sic_w3",
+    "sic_w4",
+    "sic_w8",
+    "d_w1_w2",
+    "d_d0_w1",
+    "sic_std28",
+    "sic_trend7",
+    "clim_target",
+    "clim_target_std",
+    "clim_now",
+    "clim_change",
+    "anom_w1",
+    "anom_persist",
+    "nbr3_w1",
+    "nbr7_w1",
+    "grad_w1",
+    "dist_edge_km",
+    "unc_w1",
+    "sie_w1",
+    "sie_sector_w1",
+    "sie_change",
+    "dist_coast_km",
+    "lat",
+    "lon_sin",
+    "lon_cos",
+    "sector",
+    "doy_sin",
+    "doy_cos",
+    "month",
+    "air_w1",
+    "air_anom_w1",
+    "uwnd_w1",
+    "vwnd_w1",
+    "wspd_w1",
+    "slp_w1",
+    "slp_anom_w1"
+  ],
+  "params": {
+    "objective": "regression_l1",
+    "learning_rate": 0.05,
+    "num_leaves": 127,
+    "min_data_in_leaf": 200,
+    "feature_fraction": 0.8,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "lambda_l2": 1.0,
+    "n_estimators": 3000,
+    "early_stopping_rounds": 100
+  },
+  "target_mode": "residual",
+  "best_iteration_validation": 959,
+  "fallback_model": {
+    "name": "final_model_sic_only",
+    "rule": "same family/target/parameters as the selected model, atmospheric features removed; used at inference when < 5 of 7 atmospheric days are available (declared before test)"
+  },
+  "test_set_accessed_before_selection": false
+}

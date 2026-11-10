@@ -1,0 +1,9 @@
+{
+ "nominal_coverage": 0.8,
+ "empirical_coverage": 0.7626837193784585,
+ "cells": 20261880,
+ "n_issue_dates": 365,
+ "mean_width_degC": 7.312329292297363,
+ "median_width_degC": 7.302412033081055,
+ "split": "validation"
+}

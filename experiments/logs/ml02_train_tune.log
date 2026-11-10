@@ -1,0 +1,9 @@
+2026-11-08 04:24:57,266 INFO aethentra.ml02.train tables: train 3671465 rows, validation 3037913 rows
+2026-11-08 04:59:53,750 INFO aethentra.ml02.train eval validation_tuned: 0/365 dates 0 s
+2026-11-08 05:00:12,127 INFO aethentra.ml02.train eval validation_tuned: 50/365 dates 19 s
+2026-11-08 05:00:30,327 INFO aethentra.ml02.train eval validation_tuned: 100/365 dates 37 s
+2026-11-08 05:00:48,813 INFO aethentra.ml02.train eval validation_tuned: 150/365 dates 56 s
+2026-11-08 05:01:07,937 INFO aethentra.ml02.train eval validation_tuned: 200/365 dates 75 s
+2026-11-08 05:01:26,718 INFO aethentra.ml02.train eval validation_tuned: 250/365 dates 93 s
+2026-11-08 05:01:45,484 INFO aethentra.ml02.train eval validation_tuned: 300/365 dates 112 s
+2026-11-08 05:02:04,300 INFO aethentra.ml02.train eval validation_tuned: 350/365 dates 131 s

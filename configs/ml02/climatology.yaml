@@ -1,0 +1,5 @@
+# Reference climatology for ML-02 anomalies. 1981-2010 lies entirely inside the training period (1979-2010), so it is
+# fixed before any validation/test data are seen. 1991-2020 (current WMO normal) was rejected: it overlaps validation/test.
+reference_period: [1981, 2010]
+smoothing_half_width_days: 15        # circular moving average over day-of-year
+variables: [t2m, msl, u10, v10, d2m, tcc, z500, t850]

@@ -1,0 +1,13 @@
+class,cells,percent
+sic_fill,64645282,98.736
+sic_zero,743139,1.135
+sic_ice,84415,0.1289
+sic_invalid,0,0.0
+fill_with_acq,295054,0.4507
+fill_without_acq,64350228,98.2854
+sic_valid_conf_missing,0,0.0
+sic_fill_conf_present,0,0.0
+acq_valid,1122608,1.7146
+lat_out_of_range,0,0.0
+lon_out_of_range,0,0.0
+latlon_nan,0,0.0

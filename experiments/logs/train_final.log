@@ -1,0 +1,12 @@
+2026-11-08 03:24:08,811 INFO aethentra.train Fitting SIC climatology on 1979-01-01..2020-12-31
+2026-11-08 04:18:04,399 INFO aethentra.train   table trainval_fit1979-2020: 0/2190 dates, 0 s, mem 1.4 GB
+2026-11-08 04:18:48,024 INFO aethentra.train   table trainval_fit1979-2020: 200/2190 dates, 44 s, mem 1.8 GB
+2026-11-08 04:19:37,038 INFO aethentra.train   table trainval_fit1979-2020: 400/2190 dates, 93 s, mem 2.1 GB
+2026-11-08 04:20:27,888 INFO aethentra.train   table trainval_fit1979-2020: 600/2190 dates, 144 s, mem 2.5 GB
+2026-11-08 04:21:14,378 INFO aethentra.train   table trainval_fit1979-2020: 800/2190 dates, 190 s, mem 2.9 GB
+2026-11-08 04:21:58,982 INFO aethentra.train   table trainval_fit1979-2020: 1000/2190 dates, 235 s, mem 3.3 GB
+2026-11-08 04:23:07,564 INFO aethentra.train   table trainval_fit1979-2020: 1200/2190 dates, 303 s, mem 3.6 GB
+2026-11-08 04:24:12,091 INFO aethentra.train   table trainval_fit1979-2020: 1400/2190 dates, 368 s, mem 4.0 GB
+2026-11-08 04:24:48,121 INFO aethentra.train   table trainval_fit1979-2020: 1600/2190 dates, 404 s, mem 4.4 GB
+2026-11-08 04:25:22,554 INFO aethentra.train   table trainval_fit1979-2020: 1800/2190 dates, 438 s, mem 4.7 GB
+2026-11-08 04:25:57,632 INFO aethentra.train   table trainval_fit1979-2020: 2000/2190 dates, 473 s, mem 5.1 GB

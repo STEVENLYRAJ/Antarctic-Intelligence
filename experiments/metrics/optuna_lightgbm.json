@@ -1,0 +1,94 @@
+{
+  "best_value_mae_pp_validation_sample": 2.7946314026456496,
+  "best_params": {
+    "learning_rate": 0.0425378509573798,
+    "num_leaves": 445,
+    "min_data_in_leaf": 578,
+    "feature_fraction": 0.759195090518222,
+    "bagging_fraction": 0.5780093202212182,
+    "lambda_l2": 0.004993515273965262
+  },
+  "best_iteration": 960,
+  "n_trials": 5,
+  "trials": [
+    {
+      "number": 0,
+      "value": 2.7946314026456496,
+      "params": {
+        "learning_rate": 0.0425378509573798,
+        "num_leaves": 445,
+        "min_data_in_leaf": 578,
+        "feature_fraction": 0.759195090518222,
+        "bagging_fraction": 0.5780093202212182,
+        "lambda_l2": 0.004993515273965262
+      },
+      "best_iteration": 960
+    },
+    {
+      "number": 1,
+      "value": 2.7948768853576964,
+      "params": {
+        "learning_rate": 0.0224831270535195,
+        "num_leaves": 351,
+        "min_data_in_leaf": 315,
+        "feature_fraction": 0.8248435466776274,
+        "bagging_fraction": 0.5102922471479012,
+        "lambda_l2": 21.99905443150215
+      },
+      "best_iteration": 1571
+    },
+    {
+      "number": 2,
+      "value": 2.821184773070655,
+      "params": {
+        "learning_rate": 0.10702082748695269,
+        "num_leaves": 56,
+        "min_data_in_leaf": 45,
+        "feature_fraction": 0.5100427059120604,
+        "bagging_fraction": 0.6521211214797689,
+        "lambda_l2": 0.22356209648036382
+      },
+      "best_iteration": 1171
+    },
+    {
+      "number": 3,
+      "value": 2.811985294167898,
+      "params": {
+        "learning_rate": 0.047753845433560704,
+        "num_leaves": 69,
+        "min_data_in_leaf": 332,
+        "feature_fraction": 0.4836963163912251,
+        "bagging_fraction": 0.6460723242676091,
+        "lambda_l2": 0.043676355831098176
+      },
+      "best_iteration": 2999
+    },
+    {
+      "number": 4,
+      "value": 2.8034221178210004,
+      "params": {
+        "learning_rate": 0.050132478040090245,
+        "num_leaves": 279,
+        "min_data_in_leaf": 49,
+        "feature_fraction": 0.708540663048167,
+        "bagging_fraction": 0.7962072844310213,
+        "lambda_l2": 0.0016142252267366923
+      },
+      "best_iteration": 590
+    }
+  ],
+  "baseline_params": {
+    "objective": "regression_l1",
+    "learning_rate": 0.05,
+    "num_leaves": 127,
+    "min_data_in_leaf": 200,
+    "feature_fraction": 0.8,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "lambda_l2": 1.0,
+    "n_estimators": 3000,
+    "early_stopping_rounds": 100
+  },
+  "objective": "MAE (pp) of residual on the validation sample (model domain cells)",
+  "untuned_candidate_mae_pp_validation_sample": 2.805297550653718
+}

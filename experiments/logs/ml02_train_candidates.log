@@ -1,0 +1,15 @@
+2026-11-08 04:07:30,852 INFO aethentra.ml02.train tables: train 3671465 rows, validation 3037913 rows
+2026-11-08 04:09:05,960 INFO aethentra.ml02.train lgbm: 94 s, best_iteration=171
+2026-11-08 04:09:38,315 INFO aethentra.ml02.train lgbm_temperature_only: 32 s, best_iteration=82
+2026-11-08 04:09:56,921 INFO aethentra.ml02.train xgb: 18 s, best_iteration=170
+2026-11-08 04:11:00,143 INFO aethentra.ml02.train rf: 61 s, best_iteration=100
+2026-11-08 04:12:09,848 INFO aethentra.ml02.train lgbm_q10: 69 s, best_iteration=249
+2026-11-08 04:13:41,230 INFO aethentra.ml02.train lgbm_q90: 91 s, best_iteration=171
+2026-11-08 04:13:41,902 INFO aethentra.ml02.train eval validation_candidates: 0/365 dates 1 s
+2026-11-08 04:14:19,401 INFO aethentra.ml02.train eval validation_candidates: 50/365 dates 38 s
+2026-11-08 04:14:58,409 INFO aethentra.ml02.train eval validation_candidates: 100/365 dates 77 s
+2026-11-08 04:15:38,244 INFO aethentra.ml02.train eval validation_candidates: 150/365 dates 117 s
+2026-11-08 04:16:35,647 INFO aethentra.ml02.train eval validation_candidates: 200/365 dates 174 s
+2026-11-08 04:17:18,803 INFO aethentra.ml02.train eval validation_candidates: 250/365 dates 217 s
+2026-11-08 04:17:57,223 INFO aethentra.ml02.train eval validation_candidates: 300/365 dates 256 s
+2026-11-08 04:18:35,497 INFO aethentra.ml02.train eval validation_candidates: 350/365 dates 294 s

@@ -1,0 +1,23 @@
+labels:
+  horizon_days: 7                    # target window t+1 .. t+7
+  min_valid_days: 5                  # target cell valid if >= 5 of 7 days observed
+  issue_cadence_days: 7
+  issue_anchor: "1979-01-07"         # first possible issue date (7-day cadence from here)
+  persistence_max_age_days: 3        # 'latest valid' persistence may look back up to 3 days
+sic_lags_weeks: [1, 2, 3, 4, 8]      # past-week means: week k = days t-7k+1 .. t-7k+7
+rolling_std_days: 28
+trend_days: 7
+neighbourhood_sizes: [3, 7]
+climatology:
+  window_half_width_days: 7          # +-7 day smoothing of the day-of-year climatology
+atmosphere:
+  enabled: true
+  source: ncep_ncar_r1_daily
+  variables: [air, uwnd, vwnd, slp]
+  window_days: 7                     # mean over t-6 .. t (all available at issue time)
+sectors:                             # standard NSIDC Southern Ocean sectors (longitude, degrees east)
+  weddell: [-60, 20]
+  indian: [20, 90]
+  west_pacific: [90, 160]
+  ross: [160, -130]
+  bellingshausen_amundsen: [-130, -60]

@@ -1,0 +1,62 @@
+2026-11-08 00:31:17,689 INFO CDR: 48 files to ensure
+2026-11-08 00:43:45,436 INFO CDR sic_pss25_19840101-19841231_v06r00.nc: downloaded
+2026-11-08 00:44:08,703 INFO CDR sic_pss25_19830101-19831231_v06r00.nc: downloaded
+2026-11-08 00:44:44,139 INFO CDR sic_pss25_19810101-19811231_v06r00.nc: downloaded
+2026-11-08 00:45:08,881 INFO CDR sic_pss25_19790101-19791231_v06r00.nc: downloaded
+2026-11-08 00:45:14,345 INFO CDR sic_pss25_19820101-19821231_v06r00.nc: downloaded
+2026-11-08 00:45:29,188 INFO CDR sic_pss25_19800101-19801231_v06r00.nc: downloaded
+2026-11-08 00:56:05,445 INFO CDR sic_pss25_19900101-19901231_v06r00.nc: downloaded
+2026-11-08 00:56:06,530 INFO CDR sic_pss25_19850101-19851231_v06r00.nc: downloaded
+2026-11-08 00:56:09,128 INFO CDR sic_pss25_19880101-19881231_v06r00.nc: downloaded
+2026-11-08 00:57:42,764 INFO CDR sic_pss25_19860101-19861231_v06r00.nc: downloaded
+2026-11-08 00:58:00,606 INFO CDR sic_pss25_19870101-19871231_v06r00.nc: downloaded
+2026-11-08 00:59:09,676 INFO CDR sic_pss25_19890101-19891231_v06r00.nc: downloaded
+2026-11-08 01:06:08,101 INFO CDR sic_pss25_19910101-19911231_v06r00.nc: downloaded
+2026-11-08 01:06:14,492 INFO CDR sic_pss25_19930101-19931231_v06r00.nc: downloaded
+2026-11-08 01:06:48,670 INFO CDR sic_pss25_19920101-19921231_v06r00.nc: downloaded
+2026-11-08 01:07:35,806 INFO CDR sic_pss25_19940101-19941231_v06r00.nc: downloaded
+2026-11-08 01:07:40,073 INFO CDR sic_pss25_19950101-19951231_v06r00.nc: downloaded
+2026-11-08 01:09:00,823 INFO CDR sic_pss25_19960101-19961231_v06r00.nc: downloaded
+2026-11-08 01:11:08,517 WARNING sic_pss25_19970101-19971231_v06r00.nc attempt 1 failed: ('Connection broken: IncompleteRead(53935871 bytes read, 21688743 more expected)', IncompleteRead(53935871 bytes read, 21688743 more expected))
+2026-11-08 01:11:08,519 WARNING sic_pss25_19990101-19991231_v06r00.nc attempt 1 failed: ('Connection broken: IncompleteRead(43450111 bytes read, 33379593 more expected)', IncompleteRead(43450111 bytes read, 33379593 more expected))
+2026-11-08 01:11:08,522 WARNING sic_pss25_20000101-20001231_v06r00.nc attempt 1 failed: ('Connection broken: IncompleteRead(38551295 bytes read, 37816189 more expected)', IncompleteRead(38551295 bytes read, 37816189 more expected))
+2026-11-08 01:11:08,525 WARNING sic_pss25_20020101-20021231_v06r00.nc attempt 1 failed: ('Connection broken: IncompleteRead(24502015 bytes read, 50749728 more expected)', IncompleteRead(24502015 bytes read, 50749728 more expected))
+2026-11-08 01:11:08,528 WARNING sic_pss25_19980101-19981231_v06r00.nc attempt 1 failed: ('Connection broken: IncompleteRead(44556031 bytes read, 32457799 more expected)', IncompleteRead(44556031 bytes read, 32457799 more expected))
+2026-11-08 01:11:08,530 WARNING sic_pss25_20010101-20011231_v06r00.nc attempt 1 failed: ('Connection broken: IncompleteRead(35634943 bytes read, 40994328 more expected)', IncompleteRead(35634943 bytes read, 40994328 more expected))
+2026-11-08 01:11:30,566 WARNING sic_pss25_19970101-19971231_v06r00.nc attempt 2 failed: HTTPSConnectionPool(host='noaadata.apps.nsidc.org', port=443): Max retries exceeded with url: /NOAA/G02202_V6/south/aggregate/sic_pss25_19970101-19971231_v06r00.nc (Caused by NameResolutionError("HTTPSConnection(host='noaadata.apps.nsidc.org', port=443): Failed to resolve 'noaadata.apps.nsidc.org' ([Errno 11001] getaddrinfo failed)"))
+2026-11-08 01:11:30,566 WARNING sic_pss25_19990101-19991231_v06r00.nc attempt 2 failed: HTTPSConnectionPool(host='noaadata.apps.nsidc.org', port=443): Max retries exceeded with url: /NOAA/G02202_V6/south/aggregate/sic_pss25_19990101-19991231_v06r00.nc (Caused by NameResolutionError("HTTPSConnection(host='noaadata.apps.nsidc.org', port=443): Failed to resolve 'noaadata.apps.nsidc.org' ([Errno 11001] getaddrinfo failed)"))
+2026-11-08 01:11:30,566 WARNING sic_pss25_20000101-20001231_v06r00.nc attempt 2 failed: HTTPSConnectionPool(host='noaadata.apps.nsidc.org', port=443): Max retries exceeded with url: /NOAA/G02202_V6/south/aggregate/sic_pss25_20000101-20001231_v06r00.nc (Caused by NameResolutionError("HTTPSConnection(host='noaadata.apps.nsidc.org', port=443): Failed to resolve 'noaadata.apps.nsidc.org' ([Errno 11001] getaddrinfo failed)"))
+2026-11-08 01:11:30,567 WARNING sic_pss25_20020101-20021231_v06r00.nc attempt 2 failed: HTTPSConnectionPool(host='noaadata.apps.nsidc.org', port=443): Max retries exceeded with url: /NOAA/G02202_V6/south/aggregate/sic_pss25_20020101-20021231_v06r00.nc (Caused by NameResolutionError("HTTPSConnection(host='noaadata.apps.nsidc.org', port=443): Failed to resolve 'noaadata.apps.nsidc.org' ([Errno 11001] getaddrinfo failed)"))
+2026-11-08 01:11:30,567 WARNING sic_pss25_20010101-20011231_v06r00.nc attempt 2 failed: HTTPSConnectionPool(host='noaadata.apps.nsidc.org', port=443): Max retries exceeded with url: /NOAA/G02202_V6/south/aggregate/sic_pss25_20010101-20011231_v06r00.nc (Caused by NameResolutionError("HTTPSConnection(host='noaadata.apps.nsidc.org', port=443): Failed to resolve 'noaadata.apps.nsidc.org' ([Errno 11001] getaddrinfo failed)"))
+2026-11-08 01:11:30,567 WARNING sic_pss25_19980101-19981231_v06r00.nc attempt 2 failed: HTTPSConnectionPool(host='noaadata.apps.nsidc.org', port=443): Max retries exceeded with url: /NOAA/G02202_V6/south/aggregate/sic_pss25_19980101-19981231_v06r00.nc (Caused by NameResolutionError("HTTPSConnection(host='noaadata.apps.nsidc.org', port=443): Failed to resolve 'noaadata.apps.nsidc.org' ([Errno 11001] getaddrinfo failed)"))
+2026-11-08 01:14:02,574 INFO CDR sic_pss25_19970101-19971231_v06r00.nc: downloaded
+2026-11-08 01:15:14,477 INFO CDR sic_pss25_19990101-19991231_v06r00.nc: downloaded
+2026-11-08 01:15:29,954 INFO CDR sic_pss25_19980101-19981231_v06r00.nc: downloaded
+2026-11-08 01:16:10,295 INFO CDR sic_pss25_20000101-20001231_v06r00.nc: downloaded
+2026-11-08 01:16:39,699 INFO CDR sic_pss25_20010101-20011231_v06r00.nc: downloaded
+2026-11-08 01:17:38,041 INFO CDR sic_pss25_20020101-20021231_v06r00.nc: downloaded
+2026-11-08 01:22:06,193 INFO CDR sic_pss25_20030101-20031231_v06r00.nc: downloaded
+2026-11-08 01:22:24,126 INFO CDR sic_pss25_20040101-20041231_v06r00.nc: downloaded
+2026-11-08 01:22:55,707 INFO CDR sic_pss25_20050101-20051231_v06r00.nc: downloaded
+2026-11-08 01:23:03,469 INFO CDR sic_pss25_20060101-20061231_v06r00.nc: downloaded
+2026-11-08 01:23:29,409 INFO CDR sic_pss25_20070101-20071231_v06r00.nc: downloaded
+2026-11-08 01:23:53,871 INFO CDR sic_pss25_20080101-20081231_v06r00.nc: downloaded
+2026-11-08 01:29:25,368 INFO CDR sic_pss25_20110101-20111231_v06r00.nc: downloaded
+2026-11-08 01:29:27,906 INFO CDR sic_pss25_20150101-20151231_v06r00.nc: downloaded
+2026-11-08 01:29:30,790 INFO CDR sic_pss25_20120101-20121231_v06r00.nc: downloaded
+2026-11-08 01:29:34,218 INFO CDR sic_pss25_20090101-20091231_v06r00.nc: downloaded
+2026-11-08 01:29:56,824 INFO CDR sic_pss25_20100101-20101231_v06r00.nc: downloaded
+2026-11-08 01:30:29,319 INFO CDR sic_pss25_20140101-20141231_v06r00.nc: downloaded
+2026-11-08 01:31:13,232 INFO CDR sic_pss25_20130101-20131231_v06r00.nc: downloaded
+2026-11-08 01:35:43,129 INFO CDR sic_pss25_20190101-20191231_v06r00.nc: downloaded
+2026-11-08 01:36:28,533 INFO CDR sic_pss25_20160101-20161231_v06r00.nc: downloaded
+2026-11-08 01:36:51,477 INFO CDR sic_pss25_20170101-20171231_v06r00.nc: downloaded
+2026-11-08 01:37:05,541 INFO CDR sic_pss25_20180101-20181231_v06r00.nc: downloaded
+2026-11-08 01:38:37,097 INFO CDR sic_pss25_20200101-20201231_v06r00.nc: downloaded
+2026-11-08 01:40:06,997 INFO CDR sic_pss25_20210101-20211231_v06r00.nc: downloaded
+2026-11-08 01:43:18,266 INFO CDR sic_pss25_20250101-20251231_v06r00.nc: downloaded
+2026-11-08 01:43:25,527 INFO CDR sic_pss25_20230101-20231231_v06r00.nc: downloaded
+2026-11-08 01:43:26,774 INFO CDR sic_pss25_20260101-20261101_v06r00.nc: downloaded
+2026-11-08 01:43:27,643 INFO CDR sic_pss25_20240101-20241231_v06r00.nc: downloaded
+2026-11-08 01:44:13,472 INFO CDR sic_pss25_20220101-20221231_v06r00.nc: downloaded
+cdr: 48 files, 0 problems []

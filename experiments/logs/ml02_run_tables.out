@@ -1,0 +1,18 @@
+2026-11-08 03:53:38,878 INFO aethentra.ml02.climatology climatology t2m: 10957 days, min count per slot 30
+2026-11-08 03:56:02,395 INFO aethentra.ml02.climatology climatology msl: 10957 days, min count per slot 30
+2026-11-08 03:58:21,650 INFO aethentra.ml02.climatology climatology u10: 10957 days, min count per slot 30
+2026-11-08 04:00:41,345 INFO aethentra.ml02.climatology climatology v10: 10957 days, min count per slot 30
+2026-11-08 04:01:20,294 INFO aethentra.ml02.train table train: 0/1652 dates 0 s
+2026-11-08 04:01:53,043 INFO aethentra.ml02.train table train: 200/1652 dates 33 s
+2026-11-08 04:02:23,079 INFO aethentra.ml02.train table train: 400/1652 dates 63 s
+2026-11-08 04:02:52,533 INFO aethentra.ml02.train table train: 600/1652 dates 93 s
+2026-11-08 04:03:22,157 INFO aethentra.ml02.train table train: 800/1652 dates 122 s
+2026-11-08 04:03:50,834 INFO aethentra.ml02.train table train: 1000/1652 dates 151 s
+2026-11-08 04:04:20,035 INFO aethentra.ml02.train table train: 1200/1652 dates 180 s
+2026-11-08 04:04:50,241 INFO aethentra.ml02.train table train: 1400/1652 dates 210 s
+2026-11-08 04:05:20,952 INFO aethentra.ml02.train table train: 1600/1652 dates 241 s
+2026-11-08 04:05:43,659 INFO aethentra.ml02.train table validation: 0/365 dates 0 s
+2026-11-08 04:06:14,435 INFO aethentra.ml02.train table validation: 200/365 dates 31 s
+2026-11-08 04:06:50,346 INFO aethentra.ml02.train tables: train 3671465 rows, validation 3037913 rows
+done tables
+EXIT 0

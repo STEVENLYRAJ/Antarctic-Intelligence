@@ -1,0 +1,2 @@
+curl error details: 
+2026-11-08 03:22:01,498 WARNING aethentra.acquisition NCEP air 1981 attempt 1 failed: NetCDF: I/O failure

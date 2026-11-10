@@ -1,0 +1,1397 @@
+{
+ "source": "ncep_r1",
+ "raw_files": 192,
+ "raw_issues": [
+  {
+   "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2026_south.nc",
+   "variable": "u10",
+   "var_in_file": "uwnd",
+   "units": "m/s",
+   "n_time": 365,
+   "first": "2025-03-18",
+   "last": "2026-03-17",
+   "duplicates": 0,
+   "gaps_gt_1day": 0,
+   "non_monotonic": 1,
+   "nan_fraction": 0.7917808219178082,
+   "min": -27.150001525878906,
+   "max": 24.975000381469727,
+   "lat_min": -90.0,
+   "lat_max": -35.0,
+   "dims": {
+    "time": 365,
+    "lat": 23,
+    "lon": 144
+   }
+  }
+ ],
+ "raw_units": [
+  "msl: Pascals",
+  "t2m: degK",
+  "u10: m/s",
+  "v10: m/s"
+ ],
+ "cube": {
+  "t2m": {
+   "units": "degC",
+   "scale": 0.01,
+   "fill": -32768,
+   "unit_conversion": [
+    "degK -> degC (minus 273.15)"
+   ],
+   "days_present": 17167,
+   "first": "1979-01-01",
+   "last": "2025-12-31",
+   "values_out_of_range_set_missing": 0,
+   "values_flagged_doubtful_kept": 32739,
+   "flag_range": [
+    -89.2,
+    20
+   ],
+   "duplicate_timestamps_dropped": 0,
+   "files": [
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1979_south.nc",
+     "md5": "02f1ab058c7655e9a0d55f0b082990fe",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1980_south.nc",
+     "md5": "aa2dfabab299fe44c10b28ae35d5f74c",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1981_south.nc",
+     "md5": "edf0276802ebef9efe7af3dff5a55bb9",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1982_south.nc",
+     "md5": "577330c5a98622833cc17efb82818201",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1983_south.nc",
+     "md5": "6eeff59f929d070524671a6497a11e19",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1984_south.nc",
+     "md5": "26477b142bf0b152e23ed4f2ed87a081",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1985_south.nc",
+     "md5": "49159fe0e4fa36fccbdc1a88590177eb",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1986_south.nc",
+     "md5": "e52372b180a50848e3e67580b119610b",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1987_south.nc",
+     "md5": "906e18cbc77fa5073dc43536ab1cf8c4",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1988_south.nc",
+     "md5": "46a051066b9d0e03a34730a7381c0e10",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1989_south.nc",
+     "md5": "85290055b7b01aee6fc8b48213eab8c5",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1990_south.nc",
+     "md5": "49bac3b0b54f7bb17bfbce83838e703d",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1991_south.nc",
+     "md5": "49296e1c955a3abc6db11e33b6705888",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1992_south.nc",
+     "md5": "7cefd0cbf49f70448aed83ebc9cfcf56",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1993_south.nc",
+     "md5": "cb20543c22af0c61c15a99af03ffaa62",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1994_south.nc",
+     "md5": "2716f847da9b5c6c1b54ba06f850edbb",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1995_south.nc",
+     "md5": "8401dc5205cce268f8690cb76d010a48",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1996_south.nc",
+     "md5": "c31bf6c96f4411194c573f34c18a5b0a",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1997_south.nc",
+     "md5": "1c6d9af3f1c9e2b90fad70c8a5efbd6f",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1998_south.nc",
+     "md5": "e1ecb8eb75dc98f1c339cceeb52e5b41",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_1999_south.nc",
+     "md5": "2c5482b142d757b9c2f9c11ab052982e",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2000_south.nc",
+     "md5": "8d1f75e8f8cc455b71264f58af395c78",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2001_south.nc",
+     "md5": "bcd591830dc2269e2e102333da244e97",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2002_south.nc",
+     "md5": "825ce10810bd7cec46ecc0e7a6b8fd69",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2003_south.nc",
+     "md5": "1906e6e6f571cb8b852c091befe3aac6",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2004_south.nc",
+     "md5": "db5e70c2f88287de5d4302e4a0f05fe1",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2005_south.nc",
+     "md5": "b8f8960132096fa329d20a7fdd77ca7a",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2006_south.nc",
+     "md5": "f661e13d2c291c29023e93b792e642e1",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2007_south.nc",
+     "md5": "e688dd255574bab653e1af5910a36d60",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2008_south.nc",
+     "md5": "e3cff041aa2f461cb89971f11f53e1b4",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2009_south.nc",
+     "md5": "f205160ecf5b433510c1979a6dc77100",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2010_south.nc",
+     "md5": "f77fa6f4d9f913d80e4d83be55b51bac",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2011_south.nc",
+     "md5": "6fbe4c2c9e5c6c575c0879dd92d67d5d",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2012_south.nc",
+     "md5": "7ce33c6b1326bb58f948bc2c49d729e9",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2013_south.nc",
+     "md5": "45fbd6bf6d4ff788136c7bb22ab498ab",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2014_south.nc",
+     "md5": "026d3d0f9045ced83ecf097c795aebc3",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2015_south.nc",
+     "md5": "ffd57da27b2ed5ede16be776e9d4598f",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2016_south.nc",
+     "md5": "9c732bc13da0cad3caf244358fb763f0",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2017_south.nc",
+     "md5": "e4fb4d9ced34937b022d767c5bc2de98",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2018_south.nc",
+     "md5": "69a7ba1fdb83cf0ab7f35036f4aa613d",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2019_south.nc",
+     "md5": "b924e718590a927f6daf10463e2c6dfe",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2020_south.nc",
+     "md5": "5015f2da7d2a2f7489c3d7b8e4af118c",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2021_south.nc",
+     "md5": "436d79cd0abe99b9a3a0ed4c68b3456f",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2022_south.nc",
+     "md5": "eca3cb08b8a199a9d35ef5470a1dd905",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2023_south.nc",
+     "md5": "0f9733fe249db864430c472c7f760c1b",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2024_south.nc",
+     "md5": "51bab4b24cd3cb5c1062c3e8c414d8ff",
+     "units_in_file": "degK"
+    },
+    {
+     "file": "data/raw/ncep_r1_2m/ncep_r1_air_2025_south.nc",
+     "md5": "bf0c7db63295fa4097f73327a2a7ea81",
+     "units_in_file": "degK"
+    }
+   ]
+  },
+  "msl": {
+   "units": "hPa",
+   "scale": 0.1,
+   "fill": -32768,
+   "unit_conversion": [
+    "Pa -> hPa"
+   ],
+   "days_present": 17167,
+   "first": "1979-01-01",
+   "last": "2025-12-31",
+   "values_out_of_range_set_missing": 0,
+   "values_flagged_doubtful_kept": 113324,
+   "flag_range": [
+    870,
+    1090
+   ],
+   "duplicate_timestamps_dropped": 0,
+   "files": [
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1979_south.nc",
+     "md5": "e0fe2a03d032a6b3e7ecc1ee6b01fbb4",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1980_south.nc",
+     "md5": "26260999acf3c32da3e26dade1392669",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1981_south.nc",
+     "md5": "0e181929b263f2ee60ceda5be501cc20",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1982_south.nc",
+     "md5": "84bba9c0e7ff0293134a446d91badcf0",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1983_south.nc",
+     "md5": "ed4ad9aee49bae7310607c73c5448201",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1984_south.nc",
+     "md5": "4e582c5f6bcac67f4587c3563ef10cf4",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1985_south.nc",
+     "md5": "111f2fef85334ab4cf16003379e1e0fc",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1986_south.nc",
+     "md5": "4e7bc8b8ff44df7af9475f0b4e3a7492",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1987_south.nc",
+     "md5": "384ffc7e90de9a590be37a06a2e539cf",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1988_south.nc",
+     "md5": "59d84087fe9ae8dfea59d61d8d3d4370",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1989_south.nc",
+     "md5": "792300f4777c1ce1e9e6b2f386a2966e",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1990_south.nc",
+     "md5": "22cb0c1002f579358c2f814c821c0f2f",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1991_south.nc",
+     "md5": "94a723af94dc6833acc54dcf5456d87b",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1992_south.nc",
+     "md5": "ca78fc8a529a803ee38af6540fac29d6",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1993_south.nc",
+     "md5": "f3060da4f239a91cc723f5a9e02f0463",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1994_south.nc",
+     "md5": "84aa4d56b0c4506b3c1c119f8844974f",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1995_south.nc",
+     "md5": "e768ae77561528f28b2c4e5ff004c909",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1996_south.nc",
+     "md5": "32732c2f64ffc656f39d1a89bfbdb377",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1997_south.nc",
+     "md5": "bc9ee27c5d376edd5f98610ec24d0f3d",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1998_south.nc",
+     "md5": "58bdaef2945e39b4f5f6dbd50831ec52",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_1999_south.nc",
+     "md5": "dd2fef2b2a0338e95e2efa4ff898c5ab",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2000_south.nc",
+     "md5": "14f65b8a7c903ad4f034d3c35a585e77",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2001_south.nc",
+     "md5": "bdcad6300e703458ca0ec5b9254a2beb",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2002_south.nc",
+     "md5": "bac4766cafaadf5044b4871af2a4e824",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2003_south.nc",
+     "md5": "28408ed5c2d3a24b094d3669aaae5c15",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2004_south.nc",
+     "md5": "ec11a1dfee8e642b3c86ac67a5b89a3b",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2005_south.nc",
+     "md5": "98e059e1c1a5cf122b32985d0b10fc64",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2006_south.nc",
+     "md5": "f549fedfaadcd219b199e25aa38e3227",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2007_south.nc",
+     "md5": "c7e1d1bfb6423fef7ccf860602a2ffa9",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2008_south.nc",
+     "md5": "4240d2b3a66cf33f4eb0ce03fe9b4fce",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2009_south.nc",
+     "md5": "0247beefe5b0498818a44ed1dd726540",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2010_south.nc",
+     "md5": "6cf2fe2edb34083c8799fd276c9f07d9",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2011_south.nc",
+     "md5": "d3a6faf7ea165bcbae4a790f1426d9a1",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2012_south.nc",
+     "md5": "cd857d4f73976558206be014c1830956",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2013_south.nc",
+     "md5": "ad794717a687e7b432a925a09f2c6bac",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2014_south.nc",
+     "md5": "4b567fd5e1a7b4b4da8c40c32c395767",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2015_south.nc",
+     "md5": "22e7bf391d29085c465e8a9fe0da6038",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2016_south.nc",
+     "md5": "e6c4ceaf5e47370a7874873bca9e892d",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2017_south.nc",
+     "md5": "e88e685e1b4e7666ddedf4cc77fc623f",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2018_south.nc",
+     "md5": "6fc3ebe3129432d98dade50b9eacd56b",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2019_south.nc",
+     "md5": "ac7ab2ff1d9bc42b14b7456b12a489fa",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2020_south.nc",
+     "md5": "251f8e2fd217c3032e03e07cf676a3a2",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2021_south.nc",
+     "md5": "d95f38f48727530bf72c6dceb00b93d9",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2022_south.nc",
+     "md5": "58b49ac90c6b5ea106c17323a7db33e3",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2023_south.nc",
+     "md5": "ec64bbc094cc81f198b7eb35d20ed1fe",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2024_south.nc",
+     "md5": "cfcba7e6b90c251be1a8288753667584",
+     "units_in_file": "Pascals"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_slp_2025_south.nc",
+     "md5": "2ca529bbe3d8a3323fd73e66af4910c5",
+     "units_in_file": "Pascals"
+    }
+   ]
+  },
+  "u10": {
+   "units": "m s-1",
+   "scale": 0.01,
+   "fill": -32768,
+   "unit_conversion": [
+    "unchanged (m/s)"
+   ],
+   "days_present": 17167,
+   "first": "1979-01-01",
+   "last": "2025-12-31",
+   "values_out_of_range_set_missing": 0,
+   "values_flagged_doubtful_kept": 0,
+   "flag_range": null,
+   "duplicate_timestamps_dropped": 0,
+   "files": [
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1979_south.nc",
+     "md5": "0ab77fa9e01de09ce59c752e0a4629fb",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1980_south.nc",
+     "md5": "b742dbcff29ae55ed51f144a17322160",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1981_south.nc",
+     "md5": "a02f330fcb5848f4b09c064c55dbeed0",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1982_south.nc",
+     "md5": "0beb5756170b384fb2bb43d04259f99f",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1983_south.nc",
+     "md5": "a07b14eab45ba27d31ec00405e51b2be",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1984_south.nc",
+     "md5": "a17eba612efd473275532fafdd3ecf9d",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1985_south.nc",
+     "md5": "c1a77f97ec70d66f160c4a056a4b5ab6",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1986_south.nc",
+     "md5": "64acd3c2c5171ab70c1301a6cfe00210",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1987_south.nc",
+     "md5": "4dfceb14aefca54e77be876308eb597c",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1988_south.nc",
+     "md5": "9332792c7d34079ffb21a92e61d4a8d3",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1989_south.nc",
+     "md5": "858452f950be327ed8b10dc4e5cb0c41",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1990_south.nc",
+     "md5": "35d360cb48fb63b7705a8b814eb7466c",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1991_south.nc",
+     "md5": "6583751001efc314229a4842d03bc209",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1992_south.nc",
+     "md5": "f770e2aefc59c3fbded53c99786e7dce",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1993_south.nc",
+     "md5": "e6706e1984e92e7bf0d6e14f6908f7e2",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1994_south.nc",
+     "md5": "049594edb1d1eb7cd5337b14d0d4aaa0",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1995_south.nc",
+     "md5": "49597ada8fdf050be36cd924d4a3a69f",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1996_south.nc",
+     "md5": "fbbed3d4483d5e2b593bbbaac801f251",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1997_south.nc",
+     "md5": "bd2d3d4db885be5ffb81fb42236c57d8",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1998_south.nc",
+     "md5": "1891a612cb82d69cef0aa0d8ff39a326",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_1999_south.nc",
+     "md5": "aaa245a4a9645d50fe91194e6e187e95",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2000_south.nc",
+     "md5": "7a8e79a51666d68a1f9e043b1bdfac24",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2001_south.nc",
+     "md5": "9f4e8a78cfa6a96ce1ea0a56a0d22537",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2002_south.nc",
+     "md5": "30f9174fc5465e20019eaab8de516848",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2003_south.nc",
+     "md5": "b3e879be2f050bac378eed11f8965986",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2004_south.nc",
+     "md5": "6737f548f76ebc9bcd76ecebd139ebda",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2005_south.nc",
+     "md5": "98f17c0e9c9a5990f6b9a61b4508bd7c",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2006_south.nc",
+     "md5": "8e23e06dbf52241c4488d4f9fa491dcc",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2007_south.nc",
+     "md5": "9a427c9ec57cad12f7bf8dd8dd96b630",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2008_south.nc",
+     "md5": "05d1a24bf5127892f8a8df8a059fbb77",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2009_south.nc",
+     "md5": "8b8c5625cc0616161d94729ad0642b96",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2010_south.nc",
+     "md5": "553c906fca9ee91ad9999081c83bfaf6",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2011_south.nc",
+     "md5": "a5e1419ec8abd5bcf668223c90f18787",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2012_south.nc",
+     "md5": "4792a13ca05197b6042d0b41fb95e7ba",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2013_south.nc",
+     "md5": "fdc847cba2cb763a7b9d00715c27453b",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2014_south.nc",
+     "md5": "1c4876a820eca4c5f1546710e95e29da",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2015_south.nc",
+     "md5": "ba69af01e0afd1908dffb94c203d9095",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2016_south.nc",
+     "md5": "0c366a92763a21b8e7f8635304a6f76c",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2017_south.nc",
+     "md5": "0075df4e18e50b9949f203a7b9f2d863",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2018_south.nc",
+     "md5": "014461beae8374215bb209a7f2f7930b",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2019_south.nc",
+     "md5": "78ccb21ab30b320bc1c89be5b2a75bd8",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2020_south.nc",
+     "md5": "e67173b6a6e00e1bce39c5036c164f48",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2021_south.nc",
+     "md5": "ecc5ebd09b81a85af0c7de1ec9c1c9ea",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2022_south.nc",
+     "md5": "5884a18b61a6eeb3eebe2f7cfc679ad0",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2023_south.nc",
+     "md5": "4fcb5ee39e46e56dafff7d5d75f1bb4e",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2024_south.nc",
+     "md5": "0257613a17dce88318d78c955f9a75f2",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_uwnd_2025_south.nc",
+     "md5": "06b5023a1d1cde5d66501cc1d96bbc77",
+     "units_in_file": "m/s"
+    }
+   ]
+  },
+  "v10": {
+   "units": "m s-1",
+   "scale": 0.01,
+   "fill": -32768,
+   "unit_conversion": [
+    "unchanged (m/s)"
+   ],
+   "days_present": 17167,
+   "first": "1979-01-01",
+   "last": "2025-12-31",
+   "values_out_of_range_set_missing": 0,
+   "values_flagged_doubtful_kept": 0,
+   "flag_range": null,
+   "duplicate_timestamps_dropped": 0,
+   "files": [
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1979_south.nc",
+     "md5": "b1cb0d07363b466f2d4071a607249225",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1980_south.nc",
+     "md5": "82626aeca8dc3516eddc717642d40170",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1981_south.nc",
+     "md5": "11247e87d854eba84c44294225298d5f",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1982_south.nc",
+     "md5": "540812f2f2aa6297e81eab34227cacde",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1983_south.nc",
+     "md5": "5b0b1cbe53c3bd1344705d162034bd86",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1984_south.nc",
+     "md5": "4b41103dd7c43c88a9ef9918a75ab159",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1985_south.nc",
+     "md5": "a71ea3f8749bfb74f8d66e797e3d2985",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1986_south.nc",
+     "md5": "43794c230734d9a3a7f444633d5107d0",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1987_south.nc",
+     "md5": "9e5cd36dea9c5baefd798c55e4024488",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1988_south.nc",
+     "md5": "52553c150010b7b54a6dbf23e1e1d826",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1989_south.nc",
+     "md5": "0a88264a9e52fb7ccd4379081955f571",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1990_south.nc",
+     "md5": "8045504c6698a08eb8f375c3988798db",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1991_south.nc",
+     "md5": "220eb53d022b83724cd7a8cad0d46b05",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1992_south.nc",
+     "md5": "3986069fd47ff2cdf95d04bd64ac6577",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1993_south.nc",
+     "md5": "3e88afcee2ac9529374c1f7db80ce306",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1994_south.nc",
+     "md5": "bd6c6e73166785ca072a2b4c8c2cc5ea",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1995_south.nc",
+     "md5": "1142614a4bfcf19ef1a450e2562f4fa3",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1996_south.nc",
+     "md5": "6343cd86ef91888705fbbc156848ebe3",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1997_south.nc",
+     "md5": "e8b2bb8c756e6f438dd9450614410fdb",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1998_south.nc",
+     "md5": "acdddb0d1aa09073fc9a04222f554020",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_1999_south.nc",
+     "md5": "9a2423e036d103e0636401abae32d5cb",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2000_south.nc",
+     "md5": "b8c11e934bb143e9907b409dbeedef1c",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2001_south.nc",
+     "md5": "d1961889b8d81830c714af26d98a0edd",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2002_south.nc",
+     "md5": "a9c797b01c7ca26fa4fdaae21472627b",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2003_south.nc",
+     "md5": "1ef9e28d17d16dc7bf097a27150ac57f",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2004_south.nc",
+     "md5": "d4b0ccf9173232635a931efa4ec36d9c",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2005_south.nc",
+     "md5": "0ad10b67d3a0fc41e1345772c6a7348e",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2006_south.nc",
+     "md5": "945b6d5180f33fbb7ac469f6d1341e2b",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2007_south.nc",
+     "md5": "7f376dfa9da24520c23b4acca9d29623",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2008_south.nc",
+     "md5": "a96b54a923aa2106ae818da12e1b3e96",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2009_south.nc",
+     "md5": "d8423ccd61c0defb03735a5ec47b8d88",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2010_south.nc",
+     "md5": "e5c55334e72d91bf9ecc138583b80480",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2011_south.nc",
+     "md5": "f5b9f0d241164337a428f7321a0f210e",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2012_south.nc",
+     "md5": "dcbba7b394e510e59a803c1151edae8c",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2013_south.nc",
+     "md5": "594c38c101eff55a03758b400f7f2ac2",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2014_south.nc",
+     "md5": "5f4f295de37744a8e4883873984bb55e",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2015_south.nc",
+     "md5": "d33b3a7f854924b6c2450dce01214cff",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2016_south.nc",
+     "md5": "e173871a750e21b3c31167b58976f002",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2017_south.nc",
+     "md5": "095de381675dd4d3d2398be106738d8a",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2018_south.nc",
+     "md5": "ee1d40f52fd99da273a1120b4a73deae",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2019_south.nc",
+     "md5": "7cf3b725708122b84271b3bf827e3d06",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2020_south.nc",
+     "md5": "05ad32de6f63402ea956047e4e3be876",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2021_south.nc",
+     "md5": "40bd67cc13526a67358ff7b4f6fbb42e",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2022_south.nc",
+     "md5": "998e85e77815db7a35e861116b714285",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2023_south.nc",
+     "md5": "070cacde4482e04072a02bf62d3adb02",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2024_south.nc",
+     "md5": "0251a13e4e79d9b42b18e2c59c3c3fa9",
+     "units_in_file": "m/s"
+    },
+    {
+     "file": "data/raw/aethentra/ncep_r1/ncep_r1_vwnd_2025_south.nc",
+     "md5": "012122f7dd77d3fc5896e27a10215060",
+     "units_in_file": "m/s"
+    }
+   ]
+  }
+ },
+ "orography_source": "https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/surface_gauss/hgt.sfc.gauss.nc",
+ "t2m_domain_mean_jump_days": [
+  "1997-08-07"
+ ],
+ "n_cells": 55512,
+ "n_land": 21691,
+ "calendar_days": 17167,
+ "coverage_by_year": {
+  "1979": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1980": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1981": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1982": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1983": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1984": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1985": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1986": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1987": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1988": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1989": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1990": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1991": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1992": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1993": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1994": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1995": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1996": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1997": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1998": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "1999": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2000": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2001": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2002": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2003": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2004": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2005": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2006": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2007": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2008": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2009": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2010": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2011": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2012": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2013": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2014": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2015": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2016": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2017": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2018": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2019": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2020": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2021": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2022": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2023": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2024": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  },
+  "2025": {
+   "t2m": 1.0,
+   "msl": 1.0,
+   "u10": 1.0,
+   "v10": 1.0
+  }
+ },
+ "seasonal_cycle_1981_2010": {
+  "Southern Ocean": {
+   "min": -17.26763780452342,
+   "max": 0.1442363445224423,
+   "mean": -7.881031823570011
+  },
+  "Antarctic Peninsula": {
+   "min": -30.083157595418466,
+   "max": -2.740312797783261,
+   "mean": -16.20764768351738
+  },
+  "West Antarctica": {
+   "min": -39.791931715495814,
+   "max": -5.865039175983564,
+   "mean": -25.937021740938587
+  },
+  "East Antarctica": {
+   "min": -49.33689784282267,
+   "max": -14.585817338901855,
+   "mean": -36.98190431979365
+  }
+ },
+ "t2m_1981_2010_percentiles": {
+  "p0.1": -80.12999725341797,
+  "p1": -68.79999542236328,
+  "p50": -11.359999656677246,
+  "p99": 3.629999876022339,
+  "p99.9": 5.389999866485596
+ },
+ "cells_with_any_missing_day": 0,
+ "domain_mean_anomaly_correlation": {
+  "t2m": {
+   "t2m": 1.0,
+   "msl": 0.272,
+   "u10": -0.395,
+   "v10": 0.125
+  },
+  "msl": {
+   "t2m": 0.272,
+   "msl": 1.0,
+   "u10": -0.378,
+   "v10": 0.35
+  },
+  "u10": {
+   "t2m": -0.395,
+   "msl": -0.378,
+   "u10": 1.0,
+   "v10": -0.692
+  },
+  "v10": {
+   "t2m": 0.125,
+   "msl": 0.35,
+   "u10": -0.692,
+   "v10": 1.0
+  }
+ }
+}

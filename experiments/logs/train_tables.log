@@ -1,0 +1,27 @@
+2026-11-08 01:49:03,435 INFO aethentra.train Fitting SIC climatology on 1979-01-01..2015-12-31
+2026-11-08 01:49:59,920 INFO aethentra.train   table train_fit1979-2015: 0/1929 dates, 0 s, mem 2.9 GB
+2026-11-08 01:50:21,729 INFO aethentra.train   table train_fit1979-2015: 200/1929 dates, 22 s, mem 3.1 GB
+2026-11-08 01:50:44,138 INFO aethentra.train   table train_fit1979-2015: 400/1929 dates, 44 s, mem 3.3 GB
+2026-11-08 01:51:05,710 INFO aethentra.train   table train_fit1979-2015: 600/1929 dates, 66 s, mem 3.5 GB
+2026-11-08 01:51:27,178 INFO aethentra.train   table train_fit1979-2015: 800/1929 dates, 87 s, mem 3.7 GB
+2026-11-08 01:51:48,525 INFO aethentra.train   table train_fit1979-2015: 1000/1929 dates, 109 s, mem 3.9 GB
+2026-11-08 01:52:10,522 INFO aethentra.train   table train_fit1979-2015: 1200/1929 dates, 131 s, mem 4.2 GB
+2026-11-08 01:52:32,222 INFO aethentra.train   table train_fit1979-2015: 1400/1929 dates, 152 s, mem 4.4 GB
+2026-11-08 01:52:53,666 INFO aethentra.train   table train_fit1979-2015: 1600/1929 dates, 174 s, mem 4.6 GB
+2026-11-08 01:53:14,950 INFO aethentra.train   table train_fit1979-2015: 1800/1929 dates, 195 s, mem 4.8 GB
+2026-11-08 01:53:36,555 INFO aethentra.train   table validation_fit1979-2015: 0/260 dates, 0 s, mem 5.2 GB
+2026-11-08 01:53:58,744 INFO aethentra.train   table validation_fit1979-2015: 200/260 dates, 22 s, mem 5.5 GB
+2026-11-08 01:54:08,783 INFO aethentra.train Tables: train 3012256 rows, validation 1511821 rows
+2026-11-08 02:06:27,177 INFO aethentra.train   table train_fit1979-2015: 0/1929 dates, 0 s, mem 1.4 GB
+2026-11-08 02:06:49,013 INFO aethentra.train   table train_fit1979-2015: 200/1929 dates, 22 s, mem 1.8 GB
+2026-11-08 02:07:10,543 INFO aethentra.train   table train_fit1979-2015: 400/1929 dates, 43 s, mem 2.2 GB
+2026-11-08 02:07:31,959 INFO aethentra.train   table train_fit1979-2015: 600/1929 dates, 65 s, mem 2.5 GB
+2026-11-08 02:07:53,443 INFO aethentra.train   table train_fit1979-2015: 800/1929 dates, 86 s, mem 2.9 GB
+2026-11-08 02:08:14,967 INFO aethentra.train   table train_fit1979-2015: 1000/1929 dates, 108 s, mem 3.3 GB
+2026-11-08 02:08:37,637 INFO aethentra.train   table train_fit1979-2015: 1200/1929 dates, 131 s, mem 3.6 GB
+2026-11-08 02:08:59,363 INFO aethentra.train   table train_fit1979-2015: 1400/1929 dates, 152 s, mem 4.0 GB
+2026-11-08 02:09:21,062 INFO aethentra.train   table train_fit1979-2015: 1600/1929 dates, 174 s, mem 4.4 GB
+2026-11-08 02:09:42,522 INFO aethentra.train   table train_fit1979-2015: 1800/1929 dates, 195 s, mem 4.7 GB
+2026-11-08 02:10:04,574 INFO aethentra.train   table validation_fit1979-2015: 0/260 dates, 0 s, mem 5.2 GB
+2026-11-08 02:10:33,208 INFO aethentra.train   table validation_fit1979-2015: 200/260 dates, 29 s, mem 5.5 GB
+2026-11-08 02:10:49,056 INFO aethentra.train Tables: train 3012256 rows, validation 1511821 rows

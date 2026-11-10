@@ -1,0 +1,254 @@
+{
+ "selected_model": "lgbm_tuned",
+ "selection_basis": "validation 2011-2017 full-grid, rank-sum of all:area_weighted_rmse_degC, antarctica_land:area_weighted_rmse_degC, all:acc_pattern_mean, all:area_weighted_mae_degC",
+ "rank_sum": {
+  "lgbm_tuned": 5,
+  "xgb": 7,
+  "lgbm": 12,
+  "rf": 16,
+  "lgbm_temperature_only": 20,
+  "damped_persistence": 25,
+  "climatology": 31,
+  "persistence_week": 32,
+  "persistence": 33,
+  "recent_trend": 39
+ },
+ "ranks": {
+  "lgbm_tuned": {
+   "all:area_weighted_rmse_degC": {
+    "value": 3.704090100957553,
+    "rank": 1
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 3.9666847239274836,
+    "rank": 1
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.5343111108763209,
+    "rank": 1
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.487131657091744,
+    "rank": 2
+   }
+  },
+  "xgb": {
+   "all:area_weighted_rmse_degC": {
+    "value": 3.7081983459319274,
+    "rank": 2
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 3.970867025929745,
+    "rank": 2
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.5335271774723629,
+    "rank": 2
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.486610869702921,
+    "rank": 1
+   }
+  },
+  "lgbm": {
+   "all:area_weighted_rmse_degC": {
+    "value": 3.7108391602138298,
+    "rank": 3
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 3.972731650719297,
+    "rank": 3
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.5314888646800464,
+    "rank": 3
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.491052261738721,
+    "rank": 3
+   }
+  },
+  "rf": {
+   "all:area_weighted_rmse_degC": {
+    "value": 3.729996220370925,
+    "rank": 4
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 3.9805870684982554,
+    "rank": 4
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.526960660840727,
+    "rank": 4
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.4989068211008876,
+    "rank": 4
+   }
+  },
+  "lgbm_temperature_only": {
+   "all:area_weighted_rmse_degC": {
+    "value": 3.7852015431306687,
+    "rank": 5
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 4.020779061507413,
+    "rank": 5
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.5065267805021805,
+    "rank": 5
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.5437540044512255,
+    "rank": 5
+   }
+  },
+  "damped_persistence": {
+   "all:area_weighted_rmse_degC": {
+    "value": 4.058744136284432,
+    "rank": 6
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 4.3274553687864135,
+    "rank": 6
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.3821016228072549,
+    "rank": 7
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.7403881560786103,
+    "rank": 6
+   }
+  },
+  "climatology": {
+   "all:area_weighted_rmse_degC": {
+    "value": 4.365983816056392,
+    "rank": 7
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 4.606775289802717,
+    "rank": 7
+   },
+   "all:acc_pattern_mean": {
+    "value": null,
+    "rank": 10
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 2.9772794235891147,
+    "rank": 7
+   }
+  },
+  "persistence_week": {
+   "all:area_weighted_rmse_degC": {
+    "value": 4.9169574337056305,
+    "rank": 8
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 5.271569894650497,
+    "rank": 8
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.3786417995964901,
+    "rank": 8
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 3.2754122535411967,
+    "rank": 8
+   }
+  },
+  "persistence": {
+   "all:area_weighted_rmse_degC": {
+    "value": 5.559894189212536,
+    "rank": 9
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 5.8070542287145965,
+    "rank": 9
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.46860232936824237,
+    "rank": 6
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 3.6856684660381194,
+    "rank": 9
+   }
+  },
+  "recent_trend": {
+   "all:area_weighted_rmse_degC": {
+    "value": 6.219369743059697,
+    "rank": 10
+   },
+   "antarctica_land:area_weighted_rmse_degC": {
+    "value": 6.681435806684755,
+    "rank": 10
+   },
+   "all:acc_pattern_mean": {
+    "value": 0.3323595704427429,
+    "rank": 9
+   },
+   "all:area_weighted_mae_degC": {
+    "value": 4.150670017468749,
+    "rank": 10
+   }
+  }
+ },
+ "best_baseline_on_validation": "damped_persistence",
+ "selected_params": {
+  "objective": "regression",
+  "learning_rate": 0.026096797290981667,
+  "num_leaves": 75,
+  "min_data_in_leaf": 1278,
+  "feature_fraction": 0.5888169345217917,
+  "bagging_fraction": 0.5327514368407912,
+  "bagging_freq": 1,
+  "lambda_l2": 0.15686572026436765,
+  "n_estimators": 3000,
+  "early_stopping_rounds": 100
+ },
+ "selected_features": [
+  "t2m_d0",
+  "t2m_w1",
+  "anom_d0",
+  "anom_w1",
+  "anom_w2",
+  "anom_w3",
+  "anom_w4",
+  "anom_m8",
+  "anom_std_w1",
+  "anom_std_w4",
+  "anom_tend",
+  "anom_d0_minus_w1",
+  "t2m_range_w1",
+  "nbr_anom_w1",
+  "domain_anom_w1",
+  "region_anom_w1",
+  "clim_target",
+  "clim_change",
+  "doy_sin",
+  "doy_cos",
+  "month",
+  "lat",
+  "lon_sin",
+  "lon_cos",
+  "elevation_m",
+  "dist_coast_km",
+  "land",
+  "coastal",
+  "region",
+  "msl_anom_d0",
+  "msl_anom_w1",
+  "msl_tend",
+  "u10_w1",
+  "v10_w1",
+  "wspd_w1",
+  "sic_w1",
+  "sic_change_w4"
+ ],
+ "best_iteration": 389,
+ "beats_best_baseline_on_all_selection_metrics": true,
+ "test_set_accessed_before_selection": false,
+ "frozen_utc": "2026-11-07T23:32:43.329940+00:00"
+}

@@ -1,0 +1,216 @@
+== train.py tune
+2026-11-08 03:26:05,531 INFO aethentra.train Tables: train 3012256 rows, validation 1511821 rows
+[I 2026-11-08 03:26:05,590] A new study created in memory with name: no-name-a596a11c-6711-4a85-b53f-1c2cf5f0e4ba
+C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\lightgbm\basic.py:2515: UserWarning: Overriding the parameters from Reference Dataset.
+  _log_warning("Overriding the parameters from Reference Dataset.")
+[I 2026-11-08 03:30:26,098] Trial 0 finished with value: 2.7946314026456496 and parameters: {'learning_rate': 0.0425378509573798, 'num_leaves': 445, 'min_data_in_leaf': 578, 'feature_fraction': 0.759195090518222, 'bagging_fraction': 0.5780093202212182, 'lambda_l2': 0.004993515273965262}. Best is trial 0 with value: 2.7946314026456496.
+[I 2026-11-08 03:38:06,310] Trial 1 finished with value: 2.7948768853576964 and parameters: {'learning_rate': 0.0224831270535195, 'num_leaves': 351, 'min_data_in_leaf': 315, 'feature_fraction': 0.8248435466776274, 'bagging_fraction': 0.5102922471479012, 'lambda_l2': 21.99905443150215}. Best is trial 0 with value: 2.7946314026456496.
+[I 2026-11-08 03:40:40,065] Trial 2 finished with value: 2.821184773070655 and parameters: {'learning_rate': 0.10702082748695269, 'num_leaves': 56, 'min_data_in_leaf': 45, 'feature_fraction': 0.5100427059120604, 'bagging_fraction': 0.6521211214797689, 'lambda_l2': 0.22356209648036382}. Best is trial 0 with value: 2.7946314026456496.
+[I 2026-11-08 03:49:04,871] Trial 3 finished with value: 2.811985294167898 and parameters: {'learning_rate': 0.047753845433560704, 'num_leaves': 69, 'min_data_in_leaf': 332, 'feature_fraction': 0.4836963163912251, 'bagging_fraction': 0.6460723242676091, 'lambda_l2': 0.043676355831098176}. Best is trial 0 with value: 2.7946314026456496.
+[I 2026-11-08 03:59:50,719] Trial 4 finished with value: 2.8034221178210004 and parameters: {'learning_rate': 0.050132478040090245, 'num_leaves': 279, 'min_data_in_leaf': 49, 'feature_fraction': 0.708540663048167, 'bagging_fraction': 0.7962072844310213, 'lambda_l2': 0.0016142252267366923}. Best is trial 0 with value: 2.7946314026456496.
+2026-11-08 04:12:34,992 INFO aethentra.train   eval validation_tuned: 0/260 dates 1 s
+2026-11-08 04:13:21,774 INFO aethentra.train   eval validation_tuned: 50/260 dates 48 s
+2026-11-08 04:14:05,765 INFO aethentra.train   eval validation_tuned: 100/260 dates 92 s
+2026-11-08 04:14:48,488 INFO aethentra.train   eval validation_tuned: 150/260 dates 134 s
+2026-11-08 04:15:32,065 INFO aethentra.train   eval validation_tuned: 200/260 dates 178 s
+2026-11-08 04:16:32,514 INFO aethentra.train   eval validation_tuned: 250/260 dates 238 s
+done tune
+== train.py select
+{
+  "selected_model": "lgbm_residual_tuned",
+  "selection_utc": "2026-11-07T22:46:50+00:00",
+  "criteria": "rank-sum over validation SIZ MAE, SIZ RMSE, IIEE, extent MAE; ties -> simpler model",
+  "validation_table": [
+    {
+      "method": "anomaly_persistence",
+      "siz_mae": 4.609956002578267,
+      "siz_rmse": 9.651795411419867,
+      "all_aw_rmse": 6.495113586284928,
+      "iiee": 865970.0559468978,
+      "extent_mae": 304803.57986510405
+    },
+    {
+      "method": "climatology",
+      "siz_mae": 9.574207756505775,
+      "siz_rmse": 17.172443343708125,
+      "all_aw_rmse": 11.54365055778654,
+      "iiee": 2350969.1424745917,
+      "extent_mae": 1933476.363050181
+    },
+    {
+      "method": "lgbm_absolute",
+      "siz_mae": 3.0903747127389303,
+      "siz_rmse": 7.200919150592171,
+      "all_aw_rmse": 4.855639916123022,
+      "iiee": 588110.590091996,
+      "extent_mae": 107211.28372585612
+    },
+    {
+      "method": "lgbm_residual",
+      "siz_mae": 3.067775885970478,
+      "siz_rmse": 7.148494377623577,
+      "all_aw_rmse": 4.82070759303653,
+      "iiee": 586481.5694432694,
+      "extent_mae": 117620.6400986848
+    },
+    {
+      "method": "lgbm_residual_sic_only",
+      "siz_mae": 3.0994434027558517,
+      "siz_rmse": 7.239518228737494,
+      "all_aw_rmse": 4.882645378284537,
+      "iiee": 593457.6024265835,
+      "extent_mae": 122275.33252671668
+    },
+    {
+      "method": "linear_trend",
+      "siz_mae": 4.67677729800088,
+      "siz_rmse": 10.520684629127443,
+      "all_aw_rmse": 7.112720497024136,
+      "iiee": 722667.4418785471,
+      "extent_mae": 345454.2199091327
+    },
+    {
+      "method": "persistence",
+      "siz_mae": 3.8061919402079516,
+      "siz_rmse": 8.771324195520542,
+      "all_aw_rmse": 5.914247905563841,
+      "iiee": 705241.9081675775,
+      "extent_mae": 393080.1835084505
+    },
+    {
+      "method": "persistence_week",
+      "siz_mae": 4.833291101776929,
+      "siz_rmse": 11.03105562729513,
+      "all_aw_rmse": 7.408120694589487,
+      "iiee": 967168.27751447,
+      "extent_mae": 624335.0392954412
+    },
+    {
+      "method": "rf_residual",
+      "siz_mae": 3.2973005935903004,
+      "siz_rmse": 7.080355698046931,
+      "all_aw_rmse": 4.775803332711038,
+      "iiee": 609254.0114784341,
+      "extent_mae": 170744.07658300473
+    },
+    {
+      "method": "xgb_residual",
+      "siz_mae": 3.072228724500305,
+      "siz_rmse": 7.160836786291593,
+      "all_aw_rmse": 4.829339089161645,
+      "iiee": 588397.8479267798,
+      "extent_mae": 119548.63682378507
+    },
+    {
+      "method": "lgbm_residual_tuned",
+      "siz_mae": 3.0578659672609825,
+      "siz_rmse": 7.129855146465768,
+      "all_aw_rmse": 4.808774029967641,
+      "iiee": 585508.1412564879,
+      "extent_mae": 116514.11335493988
+    }
+  ],
+  "rank_sum": {
+    "lgbm_residual_tuned": 6.0,
+    "lgbm_residual": 10.0,
+    "lgbm_absolute": 13.0,
+    "xgb_residual": 15.0,
+    "rf_residual": 19.0,
+    "lgbm_residual_sic_only": 21.0
+  },
+  "best_baseline": "persistenc
+== train.py final
+2026-11-08 04:18:04,399 INFO aethentra.train   table trainval_fit1979-2020: 0/2190 dates, 0 s, mem 1.4 GB
+2026-11-08 04:18:48,024 INFO aethentra.train   table trainval_fit1979-2020: 200/2190 dates, 44 s, mem 1.8 GB
+2026-11-08 04:19:37,038 INFO aethentra.train   table trainval_fit1979-2020: 400/2190 dates, 93 s, mem 2.1 GB
+2026-11-08 04:20:27,888 INFO aethentra.train   table trainval_fit1979-2020: 600/2190 dates, 144 s, mem 2.5 GB
+2026-11-08 04:21:14,378 INFO aethentra.train   table trainval_fit1979-2020: 800/2190 dates, 190 s, mem 2.9 GB
+2026-11-08 04:21:58,982 INFO aethentra.train   table trainval_fit1979-2020: 1000/2190 dates, 235 s, mem 3.3 GB
+2026-11-08 04:23:07,564 INFO aethentra.train   table trainval_fit1979-2020: 1200/2190 dates, 303 s, mem 3.6 GB
+2026-11-08 04:24:12,091 INFO aethentra.train   table trainval_fit1979-2020: 1400/2190 dates, 368 s, mem 4.0 GB
+2026-11-08 04:24:48,121 INFO aethentra.train   table trainval_fit1979-2020: 1600/2190 dates, 404 s, mem 4.4 GB
+2026-11-08 04:25:22,554 INFO aethentra.train   table trainval_fit1979-2020: 1800/2190 dates, 438 s, mem 4.7 GB
+2026-11-08 04:25:57,632 INFO aethentra.train   table trainval_fit1979-2020: 2000/2190 dates, 473 s, mem 5.1 GB
+{
+  "name": "final_model",
+  "kind": "lightgbm",
+  "file": "final_model.lgb.txt",
+  "features": [
+    "sic_d0",
+    "sic_age",
+    "sic_w1",
+    "sic_w2",
+    "sic_w3",
+    "sic_w4",
+    "sic_w8",
+    "d_w1_w2",
+    "d_d0_w1",
+    "sic_std28",
+    "sic_trend7",
+    "clim_target",
+    "clim_target_std",
+    "clim_now",
+    "clim_change",
+    "anom_w1",
+    "anom_persist",
+    "nbr3_w1",
+    "nbr7_w1",
+    "grad_w1",
+    "dist_edge_km",
+    "unc_w1",
+    "sie_w1",
+    "sie_sector_w1",
+    "sie_change",
+    "dist_coast_km",
+    "lat",
+    "lon_sin",
+    "lon_cos",
+    "sector",
+    "doy_sin",
+    "doy_cos",
+    "month",
+    "air_w1",
+    "air_anom_w1",
+    "uwnd_w1",
+    "vwnd_w1",
+    "wspd_w1",
+    "slp_w1",
+    "slp_anom_w1"
+  ],
+  "params": {
+    "objective": "regression_l1",
+    "learning_rate": 0.0425378509573798,
+    "num_leaves": 445,
+    "min_data_in_leaf": 578,
+    "feature_fraction": 0.759195090518222,
+    "bagging_fraction": 0.5780093202212182,
+    "bagging_freq": 1,
+    "lambda_l2": 0.004993515273965262
+  },
+  "target_mode": "residual",
+  "quantile": null,
+  "best_iteration": 745,
+  "fit_seconds": 339.721839427948,
+  "selected_from": "lgbm_residual_tuned",
+  "train_period": [
+    "1979-01-01",
+    "2020-12-31"
+  ],
+  "train_rows": 3433423,
+  "n_estimators_rule": "1.1 x validation best_iteration",
+  "seed": 42,
+  "climatology_artifact": "models/artifacts/sic_climatology_1979_2020.npz",
+  "model_version": "aethentra-sic-weekly-20261108-v1",
+  "trained_utc": "2026-11-07T23:02:24+00:00"
+}
+== train.py test
+2026-11-08 05:03:19,044 INFO aethentra.train   eval test_final: 0/260 dates 1 s
+2026-11-08 05:04:46,290 INFO aethentra.train   eval test_final: 50/260 dates 89 s
+2026-11-08 05:06:14,145 INFO aethentra.train   eval test_final: 100/260 dates 176 s
+2026-11-08 05:07:37,776 INFO aethentra.train   eval test_final: 150/260 dates 260 s
+2026-11-08 05:09:06,777 INFO aethentra.train   eval test_final: 200/260 dates 349 s
+2026-11-08 05:10:41,624 INFO aethentra.train   eval test_final: 250/260 dates 444 s
+done test
+== analyze.py final
+2026-11-08 05:18:27,704 INFO aethentra.train   table test_sample_fit1979-2020: 0/260 dates, 0 s, mem 1.4 GB
+2026-11-08 05:18:52,152 INFO aethentra.train   table test_sample_fit1979-2020: 200/260 dates, 25 s, mem 1.8 GB

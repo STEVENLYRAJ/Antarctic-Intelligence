@@ -1,0 +1,14 @@
+{
+ "figures": [
+  "01_regional_rmse_validation.png",
+  "01_regional_rmse_test.png",
+  "02_seasonal_performance_test.png",
+  "03_obs_vs_pred_and_residuals_test.png",
+  "04_spatial_error_maps_test.png",
+  "05_example_anomaly_maps_test.png",
+  "06_category_confusion_test.png",
+  "07_land_mean_anomaly_timeseries_test.png",
+  "08_learning_curves.png",
+  "09_station_comparison_test.png"
+ ]
+}
