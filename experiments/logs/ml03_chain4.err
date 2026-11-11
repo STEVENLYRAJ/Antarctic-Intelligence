@@ -1,0 +1,54 @@
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\process.py", line 210, in _process_chunk
+    return [fn(*args) for args in chunk]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\process.py", line 210, in <listcomp>
+    return [fn(*args) for args in chunk]
+            ^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\dataset.py", line 99, in _tiles
+    F = scene_feature_maps(scene, meta, slope=slope, glcm=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\features.py", line 72, in scene_feature_maps
+    F["doy_sin"], F["doy_cos"] = np.full((h, w), np.sin(2 * np.pi * doy / 365.25)), np.full((h, w), np.cos(2 * np.pi * doy / 365.25))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\numpy\_core\numeric.py", line 385, in full
+    a = empty(shape, dtype, order, device=device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 12.1 MiB for an array with shape (1264, 1251) and data type float64
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "H:\scientific-intelligence\scripts\ml03\train.py", line 35, in <module>
+    main()
+  File "H:\scientific-intelligence\scripts\ml03\train.py", line 23, in main
+    print(D.build_tiles(slope, a.workers))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\dataset.py", line 125, in build_tiles
+    for sid, x, y, pos in ex.map(_tiles, [(s, slope) for s in ids], chunksize=2):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\process.py", line 620, in _chain_from_iterable_of_lists
+    for element in iterable:
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 12.1 MiB for an array with shape (1264, 1251) and data type float64
+Traceback (most recent call last):
+  File "H:\scientific-intelligence\scripts\ml03\run_all.py", line 16, in <module>
+    subprocess.run([sys.executable, str(root / "scripts" / "ml03" / "train.py"), s], cwd=root, check=True)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\steve\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\python.exe', 'H:\\scientific-intelligence\\scripts\\ml03\\train.py', 'tiles']' returned non-zero exit status 1.

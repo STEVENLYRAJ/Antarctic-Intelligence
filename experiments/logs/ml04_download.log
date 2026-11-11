@@ -1,0 +1,260 @@
+2026-11-11 03:25:54,081 INFO aethentra.ml04.acquisition ncep_r1_rhum_1979_south.nc: downloaded
+2026-11-11 03:26:00,314 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1979_south.nc: downloaded
+2026-11-11 03:26:13,561 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1979_south.nc: downloaded
+2026-11-11 03:26:17,117 INFO aethentra.ml04.acquisition ncep_r1_prate_1980_south.nc: downloaded
+2026-11-11 03:26:19,304 INFO aethentra.ml04.acquisition ncep_r1_rhum_1980_south.nc: downloaded
+2026-11-11 03:26:20,170 INFO aethentra.ml04.acquisition ncep_r1_prate_1979_south.nc: downloaded
+2026-11-11 03:26:37,154 INFO aethentra.ml04.acquisition ncep_r1_rhum_1981_south.nc: downloaded
+2026-11-11 03:26:38,392 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1980_south.nc: downloaded
+2026-11-11 03:26:40,786 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1980_south.nc: downloaded
+2026-11-11 03:26:46,595 INFO aethentra.ml04.acquisition ncep_r1_prate_1981_south.nc: downloaded
+2026-11-11 03:26:58,425 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1981_south.nc: downloaded
+2026-11-11 03:27:03,347 INFO aethentra.ml04.acquisition ncep_r1_rhum_1982_south.nc: downloaded
+2026-11-11 03:27:05,325 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1981_south.nc: downloaded
+2026-11-11 03:27:13,033 INFO aethentra.ml04.acquisition ncep_r1_prate_1982_south.nc: downloaded
+2026-11-11 03:27:23,497 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1982_south.nc: downloaded
+2026-11-11 03:27:26,819 INFO aethentra.ml04.acquisition ncep_r1_rhum_1983_south.nc: downloaded
+2026-11-11 03:27:30,999 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1982_south.nc: downloaded
+2026-11-11 03:27:38,195 INFO aethentra.ml04.acquisition ncep_r1_prate_1983_south.nc: downloaded
+2026-11-11 03:27:42,014 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1983_south.nc: downloaded
+2026-11-11 03:27:48,080 INFO aethentra.ml04.acquisition ncep_r1_rhum_1984_south.nc: downloaded
+2026-11-11 03:28:01,500 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1983_south.nc: downloaded
+2026-11-11 03:28:11,166 INFO aethentra.ml04.acquisition ncep_r1_prate_1984_south.nc: downloaded
+2026-11-11 03:28:11,236 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1984_south.nc: downloaded
+2026-11-11 03:28:13,562 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1984_south.nc: downloaded
+2026-11-11 03:28:16,076 INFO aethentra.ml04.acquisition ncep_r1_rhum_1985_south.nc: downloaded
+2026-11-11 03:28:36,249 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1985_south.nc: downloaded
+2026-11-11 03:28:38,312 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1985_south.nc: downloaded
+2026-11-11 03:28:39,630 INFO aethentra.ml04.acquisition ncep_r1_rhum_1986_south.nc: downloaded
+2026-11-11 03:28:41,347 INFO aethentra.ml04.acquisition ncep_r1_prate_1985_south.nc: downloaded
+2026-11-11 03:28:55,994 INFO aethentra.ml04.acquisition ncep_r1_prate_1986_south.nc: downloaded
+2026-11-11 03:29:01,724 INFO aethentra.ml04.acquisition ncep_r1_rhum_1987_south.nc: downloaded
+2026-11-11 03:29:03,460 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1986_south.nc: downloaded
+2026-11-11 03:29:15,460 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1986_south.nc: downloaded
+2026-11-11 03:29:19,484 INFO aethentra.ml04.acquisition ncep_r1_prate_1987_south.nc: downloaded
+2026-11-11 03:29:25,443 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1987_south.nc: downloaded
+2026-11-11 03:29:28,741 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1987_south.nc: downloaded
+2026-11-11 03:29:46,025 INFO aethentra.ml04.acquisition ncep_r1_prate_1988_south.nc: downloaded
+2026-11-11 03:29:46,239 INFO aethentra.ml04.acquisition ncep_r1_rhum_1988_south.nc: downloaded
+2026-11-11 03:29:50,205 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1988_south.nc: downloaded
+2026-11-11 03:29:50,972 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1988_south.nc: downloaded
+2026-11-11 03:29:57,848 INFO aethentra.ml04.acquisition ncep_r1_rhum_1989_south.nc: downloaded
+2026-11-11 03:30:06,319 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1989_south.nc: downloaded
+2026-11-11 03:30:10,714 INFO aethentra.ml04.acquisition ncep_r1_rhum_1990_south.nc: downloaded
+2026-11-11 03:30:25,382 INFO aethentra.ml04.acquisition ncep_r1_prate_1989_south.nc: downloaded
+2026-11-11 03:30:29,424 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1989_south.nc: downloaded
+2026-11-11 03:30:33,826 INFO aethentra.ml04.acquisition ncep_r1_prate_1990_south.nc: downloaded
+2026-11-11 03:30:42,572 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1990_south.nc: downloaded
+2026-11-11 03:30:47,546 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1990_south.nc: downloaded
+2026-11-11 03:30:50,037 WARNING aethentra.ml04.acquisition NCEP hgt500 1991 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.1991.nc'
+2026-11-11 03:30:50,399 INFO aethentra.ml04.acquisition ncep_r1_rhum_1991_south.nc: downloaded
+2026-11-11 03:30:52,071 WARNING aethentra.ml04.acquisition NCEP rhum 1992 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface/rhum.sig995.1992.nc'
+2026-11-11 03:30:58,405 INFO aethentra.ml04.acquisition ncep_r1_prate_1991_south.nc: downloaded
+2026-11-11 03:31:02,952 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1991_south.nc: downloaded
+2026-11-11 03:31:20,064 INFO aethentra.ml04.acquisition ncep_r1_prate_1992_south.nc: downloaded
+2026-11-11 03:31:25,063 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1991_south.nc: downloaded
+2026-11-11 03:31:28,188 INFO aethentra.ml04.acquisition ncep_r1_rhum_1992_south.nc: downloaded
+2026-11-11 03:31:29,276 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1992_south.nc: downloaded
+2026-11-11 03:31:40,374 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1992_south.nc: downloaded
+2026-11-11 03:31:42,147 INFO aethentra.ml04.acquisition ncep_r1_rhum_1993_south.nc: downloaded
+2026-11-11 03:31:59,840 INFO aethentra.ml04.acquisition ncep_r1_prate_1993_south.nc: downloaded
+2026-11-11 03:32:00,175 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1993_south.nc: downloaded
+2026-11-11 03:32:01,973 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1993_south.nc: downloaded
+2026-11-11 03:32:03,419 INFO aethentra.ml04.acquisition ncep_r1_rhum_1994_south.nc: downloaded
+2026-11-11 03:32:26,050 INFO aethentra.ml04.acquisition ncep_r1_prate_1994_south.nc: downloaded
+2026-11-11 03:32:27,057 INFO aethentra.ml04.acquisition ncep_r1_rhum_1995_south.nc: downloaded
+2026-11-11 03:32:28,189 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1994_south.nc: downloaded
+2026-11-11 03:32:30,335 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1994_south.nc: downloaded
+2026-11-11 03:32:49,633 INFO aethentra.ml04.acquisition ncep_r1_prate_1995_south.nc: downloaded
+2026-11-11 03:32:51,386 INFO aethentra.ml04.acquisition ncep_r1_rhum_1996_south.nc: downloaded
+2026-11-11 03:32:53,995 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1995_south.nc: downloaded
+2026-11-11 03:32:57,584 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1995_south.nc: downloaded
+2026-11-11 03:33:14,275 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1996_south.nc: downloaded
+2026-11-11 03:33:18,284 INFO aethentra.ml04.acquisition ncep_r1_prate_1996_south.nc: downloaded
+2026-11-11 03:33:21,069 INFO aethentra.ml04.acquisition ncep_r1_rhum_1997_south.nc: downloaded
+2026-11-11 03:33:22,058 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1996_south.nc: downloaded
+2026-11-11 03:33:38,371 INFO aethentra.ml04.acquisition ncep_r1_prate_1997_south.nc: downloaded
+2026-11-11 03:33:44,980 INFO aethentra.ml04.acquisition ncep_r1_rhum_1998_south.nc: downloaded
+2026-11-11 03:33:46,294 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1997_south.nc: downloaded
+2026-11-11 03:33:49,110 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1997_south.nc: downloaded
+2026-11-11 03:34:01,439 INFO aethentra.ml04.acquisition ncep_r1_prate_1998_south.nc: downloaded
+2026-11-11 03:34:04,071 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1998_south.nc: downloaded
+2026-11-11 03:34:14,238 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1998_south.nc: downloaded
+2026-11-11 03:34:15,865 INFO aethentra.ml04.acquisition ncep_r1_rhum_1999_south.nc: downloaded
+2026-11-11 03:34:30,796 INFO aethentra.ml04.acquisition ncep_r1_prate_1999_south.nc: downloaded
+2026-11-11 03:34:36,470 INFO aethentra.ml04.acquisition ncep_r1_hgt500_1999_south.nc: downloaded
+2026-11-11 03:34:37,340 INFO aethentra.ml04.acquisition ncep_r1_rhum_2000_south.nc: downloaded
+2026-11-11 03:34:39,959 INFO aethentra.ml04.acquisition ncep_r1_tcdc_1999_south.nc: downloaded
+2026-11-11 03:34:50,958 INFO aethentra.ml04.acquisition ncep_r1_prate_2000_south.nc: downloaded
+2026-11-11 03:35:04,433 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2000_south.nc: downloaded
+2026-11-11 03:35:05,464 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2000_south.nc: downloaded
+2026-11-11 03:35:05,763 WARNING aethentra.ml04.acquisition NCEP rhum 2001 attempt 1 failed: NetCDF: Attribute not found
+2026-11-11 03:35:11,199 INFO aethentra.ml04.acquisition ncep_r1_prate_2001_south.nc: downloaded
+2026-11-11 03:35:24,770 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2001_south.nc: downloaded
+2026-11-11 03:55:28,848 WARNING aethentra.ml04.acquisition NCEP prate 2002 attempt 1 failed: [Errno -68] NetCDF: I/O failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface_gauss/prate.sfc.gauss.2002.nc'
+2026-11-11 03:55:28,958 INFO aethentra.ml04.acquisition ncep_r1_rhum_2001_south.nc: downloaded
+2026-11-11 03:55:29,094 INFO aethentra.ml04.acquisition ncep_r1_rhum_2002_south.nc: downloaded
+2026-11-11 03:55:29,297 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2001_south.nc: downloaded
+2026-11-11 03:55:30,441 WARNING aethentra.ml04.acquisition NCEP hgt500 2002 attempt 1 failed: [Errno -68] NetCDF: I/O failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.2002.nc'
+2026-11-11 03:55:30,441 WARNING aethentra.ml04.acquisition NCEP rhum 2003 attempt 1 failed: [Errno -68] NetCDF: I/O failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface/rhum.sig995.2003.nc'
+2026-11-11 03:55:30,441 WARNING aethentra.ml04.acquisition NCEP tcdc 2002 attempt 1 failed: [Errno -68] NetCDF: I/O failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2002.nc'
+2026-11-11 03:55:42,706 WARNING aethentra.ml04.acquisition NCEP tcdc 2002 attempt 2 failed: NetCDF: Access failure
+2026-11-11 03:55:43,067 WARNING aethentra.ml04.acquisition NCEP rhum 2003 attempt 2 failed: NetCDF: Access failure
+2026-11-11 03:55:43,186 WARNING aethentra.ml04.acquisition NCEP hgt500 2002 attempt 2 failed: NetCDF: Access failure
+2026-11-11 03:55:58,078 INFO aethentra.ml04.acquisition ncep_r1_prate_2002_south.nc: downloaded
+2026-11-11 03:56:20,969 INFO aethentra.ml04.acquisition ncep_r1_prate_2003_south.nc: downloaded
+2026-11-11 03:56:23,770 WARNING aethentra.ml04.acquisition NCEP tcdc 2003 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2003.nc'
+2026-11-11 03:56:26,213 INFO aethentra.ml04.acquisition ncep_r1_rhum_2003_south.nc: downloaded
+2026-11-11 03:56:27,893 WARNING aethentra.ml04.acquisition NCEP hgt500 2003 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.2003.nc'
+2026-11-11 03:56:29,891 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2002_south.nc: downloaded
+2026-11-11 03:56:31,243 WARNING aethentra.ml04.acquisition NCEP rhum 2004 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface/rhum.sig995.2004.nc'
+2026-11-11 03:56:35,553 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2002_south.nc: downloaded
+2026-11-11 03:56:36,965 WARNING aethentra.ml04.acquisition NCEP prate 2004 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface_gauss/prate.sfc.gauss.2004.nc'
+2026-11-11 03:56:51,309 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2003_south.nc: downloaded
+2026-11-11 03:57:00,915 INFO aethentra.ml04.acquisition ncep_r1_rhum_2004_south.nc: downloaded
+2026-11-11 03:57:07,004 INFO aethentra.ml04.acquisition ncep_r1_prate_2004_south.nc: downloaded
+2026-11-11 03:57:09,673 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2003_south.nc: downloaded
+2026-11-11 03:57:11,985 WARNING aethentra.ml04.acquisition NCEP prate 2005 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface_gauss/prate.sfc.gauss.2005.nc'
+2026-11-11 03:57:14,393 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2004_south.nc: downloaded
+2026-11-11 03:57:17,064 WARNING aethentra.ml04.acquisition NCEP tcdc 2005 attempt 1 failed: NetCDF: Access failure
+2026-11-11 03:57:23,566 INFO aethentra.ml04.acquisition ncep_r1_rhum_2005_south.nc: downloaded
+2026-11-11 03:57:24,617 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2004_south.nc: downloaded
+2026-11-11 03:57:26,538 WARNING aethentra.ml04.acquisition NCEP rhum 2006 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface/rhum.sig995.2006.nc'
+2026-11-11 03:57:26,621 WARNING aethentra.ml04.acquisition NCEP hgt500 2005 attempt 1 failed: NetCDF: Access failure
+2026-11-11 03:57:36,771 INFO aethentra.ml04.acquisition ncep_r1_prate_2005_south.nc: downloaded
+2026-11-11 03:57:48,148 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2005_south.nc: downloaded
+2026-11-11 03:57:56,278 INFO aethentra.ml04.acquisition ncep_r1_rhum_2006_south.nc: downloaded
+2026-11-11 03:58:00,785 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2005_south.nc: downloaded
+2026-11-11 03:58:08,680 INFO aethentra.ml04.acquisition ncep_r1_prate_2006_south.nc: downloaded
+2026-11-11 03:58:10,478 WARNING aethentra.ml04.acquisition NCEP prate 2007 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface_gauss/prate.sfc.gauss.2007.nc'
+2026-11-11 03:58:11,188 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2006_south.nc: downloaded
+2026-11-11 03:58:16,759 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2006_south.nc: downloaded
+2026-11-11 03:58:18,529 WARNING aethentra.ml04.acquisition NCEP hgt500 2007 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.2007.nc'
+2026-11-11 03:58:18,665 INFO aethentra.ml04.acquisition ncep_r1_rhum_2007_south.nc: downloaded
+2026-11-11 03:58:22,932 WARNING aethentra.ml04.acquisition NCEP prate 2007 attempt 2 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface_gauss/prate.sfc.gauss.2007.nc'
+2026-11-11 03:58:26,385 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2007_south.nc: downloaded
+2026-11-11 03:58:28,969 WARNING aethentra.ml04.acquisition NCEP prate 2008 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface_gauss/prate.sfc.gauss.2008.nc'
+2026-11-11 03:58:30,178 INFO aethentra.ml04.acquisition ncep_r1_rhum_2008_south.nc: downloaded
+2026-11-11 03:58:32,124 WARNING aethentra.ml04.acquisition NCEP tcdc 2008 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2008.nc'
+2026-11-11 03:58:39,407 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2007_south.nc: downloaded
+2026-11-11 03:58:42,148 WARNING aethentra.ml04.acquisition NCEP hgt500 2008 attempt 1 failed: NetCDF: Access failure
+2026-11-11 03:58:44,158 WARNING aethentra.ml04.acquisition NCEP tcdc 2008 attempt 2 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2008.nc'
+2026-11-11 03:58:44,211 WARNING aethentra.ml04.acquisition NCEP prate 2007 attempt 3 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface_gauss/prate.sfc.gauss.2007.nc'
+2026-11-11 03:58:52,586 INFO aethentra.ml04.acquisition ncep_r1_prate_2008_south.nc: downloaded
+2026-11-11 03:59:05,449 INFO aethentra.ml04.acquisition ncep_r1_rhum_2009_south.nc: downloaded
+2026-11-11 03:59:06,661 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2008_south.nc: downloaded
+2026-11-11 03:59:30,949 INFO aethentra.ml04.acquisition ncep_r1_prate_2009_south.nc: downloaded
+2026-11-11 03:59:31,685 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2008_south.nc: downloaded
+2026-11-11 03:59:34,576 WARNING aethentra.ml04.acquisition NCEP rhum 2010 attempt 1 failed: NetCDF: Access failure
+2026-11-11 03:59:39,041 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2009_south.nc: downloaded
+2026-11-11 03:59:44,397 INFO aethentra.ml04.acquisition ncep_r1_prate_2007_south.nc: downloaded
+2026-11-11 03:59:46,732 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2009_south.nc: downloaded
+2026-11-11 03:59:46,795 WARNING aethentra.ml04.acquisition NCEP tcdc 2010 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2010.nc'
+2026-11-11 03:59:48,598 WARNING aethentra.ml04.acquisition NCEP hgt500 2010 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.2010.nc'
+2026-11-11 03:59:57,729 INFO aethentra.ml04.acquisition ncep_r1_prate_2010_south.nc: downloaded
+2026-11-11 03:59:58,999 WARNING aethentra.ml04.acquisition NCEP tcdc 2010 attempt 2 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2010.nc'
+2026-11-11 03:59:59,769 WARNING aethentra.ml04.acquisition NCEP rhum 2011 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface/rhum.sig995.2011.nc'
+2026-11-11 03:59:59,910 WARNING aethentra.ml04.acquisition NCEP hgt500 2010 attempt 2 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.2010.nc'
+2026-11-11 04:00:00,144 INFO aethentra.ml04.acquisition ncep_r1_rhum_2010_south.nc: downloaded
+2026-11-11 04:00:02,809 WARNING aethentra.ml04.acquisition NCEP prate 2011 attempt 1 failed: NetCDF: Access failure
+2026-11-11 04:00:19,511 INFO aethentra.ml04.acquisition ncep_r1_rhum_2011_south.nc: downloaded
+2026-11-11 04:00:20,391 WARNING aethentra.ml04.acquisition NCEP tcdc 2010 attempt 3 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2010.nc'
+2026-11-11 04:00:21,159 WARNING aethentra.ml04.acquisition NCEP hgt500 2010 attempt 3 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.2010.nc'
+2026-11-11 04:00:28,967 WARNING aethentra.ml04.acquisition NCEP prate 2011 attempt 2 failed: NetCDF: Attribute not found
+2026-11-11 04:00:35,657 WARNING aethentra.ml04.acquisition NCEP tcdc 2011 attempt 1 failed: NetCDF: Attribute not found
+2026-11-11 04:01:04,434 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2011_south.nc: downloaded
+2026-11-11 04:01:15,557 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2010_south.nc: downloaded
+2026-11-11 04:01:21,473 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2010_south.nc: downloaded
+2026-11-11 04:01:22,125 INFO aethentra.ml04.acquisition ncep_r1_prate_2011_south.nc: downloaded
+2026-11-11 04:01:24,124 WARNING aethentra.ml04.acquisition NCEP prate 2012 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface_gauss/prate.sfc.gauss.2012.nc'
+2026-11-11 04:01:24,913 WARNING aethentra.ml04.acquisition NCEP tcdc 2012 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2012.nc'
+2026-11-11 04:01:27,655 INFO aethentra.ml04.acquisition ncep_r1_rhum_2012_south.nc: downloaded
+2026-11-11 04:01:27,732 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2011_south.nc: downloaded
+2026-11-11 04:01:29,995 WARNING aethentra.ml04.acquisition NCEP rhum 2013 attempt 1 failed: NetCDF: Access failure
+2026-11-11 04:01:30,039 WARNING aethentra.ml04.acquisition NCEP hgt500 2012 attempt 1 failed: NetCDF: Access failure
+2026-11-11 04:01:36,183 WARNING aethentra.ml04.acquisition NCEP tcdc 2012 attempt 2 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2012.nc'
+2026-11-11 04:01:42,687 WARNING aethentra.ml04.acquisition NCEP rhum 2013 attempt 2 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface/rhum.sig995.2013.nc'
+2026-11-11 04:01:42,713 WARNING aethentra.ml04.acquisition NCEP hgt500 2012 attempt 2 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.2012.nc'
+2026-11-11 04:01:51,780 INFO aethentra.ml04.acquisition ncep_r1_prate_2012_south.nc: downloaded
+2026-11-11 04:01:54,003 WARNING aethentra.ml04.acquisition NCEP prate 2013 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface_gauss/prate.sfc.gauss.2013.nc'
+2026-11-11 04:02:06,832 WARNING aethentra.ml04.acquisition NCEP prate 2013 attempt 2 failed: NetCDF: Access failure
+2026-11-11 04:02:15,146 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2012_south.nc: downloaded
+2026-11-11 04:02:17,442 WARNING aethentra.ml04.acquisition NCEP tcdc 2013 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2013.nc'
+2026-11-11 04:02:19,542 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2012_south.nc: downloaded
+2026-11-11 04:02:20,380 WARNING aethentra.ml04.acquisition NCEP rhum 2013 attempt 3 failed: NetCDF: Attribute not found
+2026-11-11 04:02:21,692 WARNING aethentra.ml04.acquisition NCEP hgt500 2013 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.2013.nc'
+2026-11-11 04:02:51,112 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2013_south.nc: downloaded
+2026-11-11 04:02:52,824 INFO aethentra.ml04.acquisition ncep_r1_prate_2013_south.nc: downloaded
+2026-11-11 04:02:53,186 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2013_south.nc: downloaded
+2026-11-11 04:03:06,192 INFO aethentra.ml04.acquisition ncep_r1_rhum_2013_south.nc: downloaded
+2026-11-11 04:03:13,123 INFO aethentra.ml04.acquisition ncep_r1_rhum_2014_south.nc: downloaded
+2026-11-11 04:03:23,139 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2014_south.nc: downloaded
+2026-11-11 04:03:26,728 INFO aethentra.ml04.acquisition ncep_r1_prate_2014_south.nc: downloaded
+2026-11-11 04:03:30,301 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2014_south.nc: downloaded
+2026-11-11 04:03:33,816 INFO aethentra.ml04.acquisition ncep_r1_rhum_2015_south.nc: downloaded
+2026-11-11 04:03:48,138 INFO aethentra.ml04.acquisition ncep_r1_rhum_2016_south.nc: downloaded
+2026-11-11 04:03:52,874 INFO aethentra.ml04.acquisition ncep_r1_prate_2015_south.nc: downloaded
+2026-11-11 04:03:57,980 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2015_south.nc: downloaded
+2026-11-11 04:04:03,644 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2015_south.nc: downloaded
+2026-11-11 04:04:17,053 INFO aethentra.ml04.acquisition ncep_r1_prate_2016_south.nc: downloaded
+2026-11-11 04:04:18,666 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2016_south.nc: downloaded
+2026-11-11 04:04:20,718 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2016_south.nc: downloaded
+2026-11-11 04:04:24,134 INFO aethentra.ml04.acquisition ncep_r1_rhum_2017_south.nc: downloaded
+2026-11-11 04:04:27,348 WARNING aethentra.ml04.acquisition NCEP rhum 2018 attempt 1 failed: NetCDF: Access failure
+2026-11-11 04:04:44,043 INFO aethentra.ml04.acquisition ncep_r1_prate_2017_south.nc: downloaded
+2026-11-11 04:04:47,024 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2017_south.nc: downloaded
+2026-11-11 04:04:48,802 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2017_south.nc: downloaded
+2026-11-11 04:04:50,215 INFO aethentra.ml04.acquisition ncep_r1_rhum_2018_south.nc: downloaded
+2026-11-11 04:04:52,756 WARNING aethentra.ml04.acquisition NCEP rhum 2019 attempt 1 failed: NetCDF: Access failure
+2026-11-11 04:05:04,120 INFO aethentra.ml04.acquisition ncep_r1_prate_2018_south.nc: downloaded
+2026-11-11 04:05:10,251 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2018_south.nc: downloaded
+2026-11-11 04:05:13,308 WARNING aethentra.ml04.acquisition NCEP tcdc 2019 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2019.nc'
+2026-11-11 04:05:17,404 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2018_south.nc: downloaded
+2026-11-11 04:05:22,367 INFO aethentra.ml04.acquisition ncep_r1_rhum_2019_south.nc: downloaded
+2026-11-11 04:05:27,416 WARNING aethentra.ml04.acquisition NCEP tcdc 2019 attempt 2 failed: NetCDF: Access failure
+2026-11-11 04:05:33,520 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2019_south.nc: downloaded
+2026-11-11 04:05:34,215 INFO aethentra.ml04.acquisition ncep_r1_prate_2019_south.nc: downloaded
+2026-11-11 04:05:35,509 WARNING aethentra.ml04.acquisition NCEP tcdc 2020 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2020.nc'
+2026-11-11 04:05:36,590 WARNING aethentra.ml04.acquisition NCEP prate 2020 attempt 1 failed: NetCDF: Access failure
+2026-11-11 04:05:38,344 INFO aethentra.ml04.acquisition ncep_r1_rhum_2020_south.nc: downloaded
+2026-11-11 04:05:39,604 WARNING aethentra.ml04.acquisition NCEP hgt500 2020 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.2020.nc'
+2026-11-11 04:05:51,986 WARNING aethentra.ml04.acquisition NCEP hgt500 2020 attempt 2 failed: NetCDF: Access failure
+2026-11-11 04:06:14,339 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2020_south.nc: downloaded
+2026-11-11 04:06:15,009 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2019_south.nc: downloaded
+2026-11-11 04:06:15,382 INFO aethentra.ml04.acquisition ncep_r1_prate_2020_south.nc: downloaded
+2026-11-11 04:06:30,782 INFO aethentra.ml04.acquisition ncep_r1_rhum_2021_south.nc: downloaded
+2026-11-11 04:06:33,207 WARNING aethentra.ml04.acquisition NCEP hgt500 2021 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.2021.nc'
+2026-11-11 04:06:35,921 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2020_south.nc: downloaded
+2026-11-11 04:06:38,304 WARNING aethentra.ml04.acquisition NCEP rhum 2022 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface/rhum.sig995.2022.nc'
+2026-11-11 04:06:42,803 INFO aethentra.ml04.acquisition ncep_r1_prate_2021_south.nc: downloaded
+2026-11-11 04:06:45,393 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2021_south.nc: downloaded
+2026-11-11 04:06:45,398 WARNING aethentra.ml04.acquisition NCEP prate 2022 attempt 1 failed: NetCDF: Access failure
+2026-11-11 04:06:54,618 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2021_south.nc: downloaded
+2026-11-11 04:07:07,951 INFO aethentra.ml04.acquisition ncep_r1_rhum_2022_south.nc: downloaded
+2026-11-11 04:07:10,281 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2022_south.nc: downloaded
+2026-11-11 04:07:11,765 WARNING aethentra.ml04.acquisition NCEP prate 2023 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface_gauss/prate.sfc.gauss.2023.nc'
+2026-11-11 04:07:23,414 INFO aethentra.ml04.acquisition ncep_r1_rhum_2023_south.nc: downloaded
+2026-11-11 04:07:23,808 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2022_south.nc: downloaded
+2026-11-11 04:07:24,686 WARNING aethentra.ml04.acquisition NCEP tcdc 2023 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2023.nc'
+2026-11-11 04:07:24,868 INFO aethentra.ml04.acquisition ncep_r1_prate_2022_south.nc: downloaded
+2026-11-11 04:07:26,135 WARNING aethentra.ml04.acquisition NCEP rhum 2024 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/surface/rhum.sig995.2024.nc'
+2026-11-11 04:07:39,476 INFO aethentra.ml04.acquisition ncep_r1_prate_2023_south.nc: downloaded
+2026-11-11 04:07:41,130 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2023_south.nc: downloaded
+2026-11-11 04:07:42,643 WARNING aethentra.ml04.acquisition NCEP prate 2024 attempt 1 failed: NetCDF: Access failure
+2026-11-11 04:07:42,742 WARNING aethentra.ml04.acquisition NCEP tcdc 2024 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/other_gauss/tcdc.eatm.gauss.2024.nc'
+2026-11-11 04:07:51,957 INFO aethentra.ml04.acquisition ncep_r1_rhum_2024_south.nc: downloaded
+2026-11-11 04:07:54,270 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2023_south.nc: downloaded
+2026-11-11 04:08:15,406 INFO aethentra.ml04.acquisition ncep_r1_rhum_2025_south.nc: downloaded
+2026-11-11 04:08:16,197 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2024_south.nc: downloaded
+2026-11-11 04:08:21,423 INFO aethentra.ml04.acquisition ncep_r1_prate_2024_south.nc: downloaded
+2026-11-11 04:08:24,085 WARNING aethentra.ml04.acquisition NCEP hgt500 2025 attempt 1 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.2025.nc'
+2026-11-11 04:08:25,225 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2024_south.nc: downloaded
+2026-11-11 04:08:35,445 INFO aethentra.ml04.acquisition ncep_r1_rhum_2026_south.nc: downloaded
+2026-11-11 04:08:36,000 WARNING aethentra.ml04.acquisition NCEP hgt500 2025 attempt 2 failed: [Errno -77] NetCDF: Access failure: 'https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/pressure/hgt.2025.nc'
+2026-11-11 04:08:40,302 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2025_south.nc: downloaded
+2026-11-11 04:08:43,570 INFO aethentra.ml04.acquisition ncep_r1_prate_2025_south.nc: downloaded
+2026-11-11 04:08:44,473 INFO aethentra.ml04.acquisition ncep_r1_prate_2026_south.nc: downloaded
+2026-11-11 04:08:46,375 INFO aethentra.ml04.acquisition ncep_r1_tcdc_2026_south.nc: downloaded
+2026-11-11 04:08:48,613 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2026_south.nc: downloaded
+2026-11-11 04:09:10,470 INFO aethentra.ml04.acquisition ncep_r1_hgt500_2025_south.nc: downloaded
+2026-11-11 04:09:10,471 INFO ml04_download done: 192 files, 0 failed

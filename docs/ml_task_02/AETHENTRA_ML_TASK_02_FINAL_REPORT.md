@@ -20,17 +20,32 @@ Forecast the 7-day-mean 2 m air temperature and its anomaly (vs a fixed 1981–2
 | 4 Climatology & labels | COMPLETED | CLIMATOLOGY_AND_LABELS.md |
 | 5 Features | COMPLETED | FEATURE_ENGINEERING.md, experiments/ml02/metrics/analysis/ |
 | 6 Baselines | COMPLETED | 5 baselines on identical origins and masks |
-| 7 Models | COMPLETED (tree models); U-Net IMPLEMENTED, not trained (PyTorch is not installed) | MODEL_TRAINING_REPORT.md |
+| 7 Models | COMPLETED (tree models); U-Net COMPLETED (addendum; replaces the tree model) | MODEL_TRAINING_REPORT.md |
 | 8 Splits | COMPLETED | train ['1979-01-01', '2010-12-31'], validation ['2011-01-01', '2017-12-31'], test ['2018-01-01', '2025-12-31'] |
 | 9 Evaluation | COMPLETED | MODEL_EVALUATION_REPORT.md |
 | 10 Optuna / final / single test | COMPLETED | selection_record.json frozen 2026-11-07T23:32:43.329940+00:00; test 2026-11-07T23:45:07.364854+00:00 |
 | 11 Interpretability & stations | COMPLETED | MODEL_INTERPRETABILITY_REPORT.md |
-| 12 Inference | COMPLETED | MODEL_OUTPUT_SCHEMA.md, outputs/ml02/forecasts/t2m7d_20251231_aethentra-t2m-weekly-20261108-v1/t2m7d_20251231_aethentra-t2m-weekly-20261108-v1.json |
+| 12 Inference | COMPLETED | MODEL_OUTPUT_SCHEMA.md, outputs/ml02/forecasts/t2m7d_20251231_aethentra-t2m-weekly-unet-20261108-v1/t2m7d_20251231_aethentra-t2m-weekly-unet-20261108-v1.json |
 | 13 FastAPI | COMPLETED locally (TestClient tests + live uvicorn on 127.0.0.1) — not a production deployment | api/temperature.py under /temperature, api/viewer.py |
 | 14 Frontend layers | COMPLETED (layers) + web viewer COMPLETED | layers/manifest.json, frontend/, /viewer/ |
-| 15 Tests | COMPLETED for ML-02 (all ML-02 tests pass); repository suite has failures | whole repository: 56 passed, 1 failed, 2 skipped (2026-11-08T09:52:35+00:00); failed: tests.test_antarctic_preprocessing::test_inventory_covers_all_raw_files — The failure is the pre-existing Stage-1 inventory test: 8 user files added to DATAS/ after the Stage-1 inventory (services*.umm_json, tools*.umm_json) are not in metadata/antarctic_dataset_inventory.csv. Not related to ML-01/ML-02; the Stage-1 inventory was not regenerated without a request. |
+| 15 Tests | COMPLETED for ML-02 (all ML-02 tests pass); repository suite has failures | whole repository: 58 passed, 1 failed, 0 skipped (2026-11-09T10:54:05+00:00); failed: tests.test_antarctic_preprocessing::test_inventory_covers_all_raw_files — The failure is the pre-existing Stage-1 inventory test: 8 user files added to DATAS/ after the Stage-1 inventory (services*.umm_json, tools*.umm_json) are not in metadata/antarctic_dataset_inventory.csv. Not related to ML-01/ML-02; the Stage-1 inventory was not regenerated without a request. |
 
 ## 3. Final test metrics (single evaluation)
+
+## Operational model: U-Net (addendum)
+
+The U-Net was better than the frozen tree selection `lgbm_tuned` on 4/4 selection metrics on validation (decision frozen 2026-11-09T01:31:53.185951+00:00, before its test evaluation), so forecasts are produced by `cnn_unet_final`. The tree model below remains the documented frozen selection and fallback.
+
+| item | value |
+|---|---|
+| Type | U-Net (7,772,545 parameters; base 32, depth 4) |
+| Inputs | 28 dynamic feature maps (the tree features as grids) + 7 static + validity mask |
+| Training | ['1979-01-01', '2017-12-31'], 2017 weekly maps, 25 epochs (= best epoch on validation), mse |
+| Uncertainty | none exported (the q10/q90 interval was validated around the tree model only) |
+
+Test 2018-01-07 … 2025-12-21 (416 issue dates, single evaluation 2026-11-09T02:08:24.488992+00:00): MAE **2.366 °C** (tree 2.471), RMSE **3.549 °C** (tree 3.719), bias -0.115 °C, ACC 0.587 (tree 0.542), MSSS 0.361 (tree 0.299).
+
+### Tree model (frozen selection)
 
 * Test 2018-01-07 … 2025-12-21 (416 weekly issue dates, all 55,512 cells each): area-weighted anomaly MAE **2.471 °C**, RMSE **3.719 °C**, bias -0.253 °C, ACC 0.542, R² (absolute T2m) 0.957, R² (anomaly) 0.278.
 * MSE skill: vs climatology 0.299, vs persistence 0.547, vs damped persistence 0.150.
@@ -53,7 +68,7 @@ TEMPERATURE_DATA_SOURCES.md · DATA_QUALITY_REPORT.md · PREPROCESSING_DOCUMENTA
 ## 6. Blockers and limitations
 
 * **ERA5 not acquired** (no CDS key during this run) → all results use NCEP/NCAR R1 as interim truth; ERA5 pipeline is implemented and switchable by configuration (TEMPERATURE_DATA_SOURCES.md).
-* Deep learning: U-Net IMPLEMENTED, not trained (PyTorch is not installed).
+* Deep learning: U-Net COMPLETED (addendum; replaces the tree model).
 * Station data are only partially independent of reanalysis; Zenodo station series end in 2022.
 * The API runs locally; it is not a production deployment.
 * Web viewer (`frontend/`, served by FastAPI at `/viewer/`; `/` redirects there): COMPLETED and run locally — sea-ice and 2 m temperature tabs, polar-stereographic previews rendered server-side from the native EPSG:3412 GeoTIFFs (`/layers/{sic|t2m}/…`), GeoTIFF downloads, every layer badged by data_type (forecasts framed and stamped MODEL PREDICTION), forecast summary, test skill and limitations. Start with `bash scripts/serve.sh` (loopback 127.0.0.1:8000). Not a production deployment: no authentication, TLS, process supervision or public hosting — those need an owner decision on where to host.

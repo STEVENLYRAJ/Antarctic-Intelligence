@@ -27,6 +27,15 @@ class Bundle:
     meta: dict
     ctx: FeatureContext
     test_metrics: dict | None
+    cnn_test_metrics: dict | None = None
+
+
+def operational_model_name(directory: Path = FINAL) -> str:
+    """'cnn_unet_final' when the frozen U-Net addendum decision (validation only) says it replaces the tree model."""
+    dec = EXPERIMENTS_DIR / "metrics" / "addendum_cnn_decision_record.json"
+    if dec.exists() and json.loads(dec.read_text()).get("cnn_replaces_operational_model") and (directory / "cnn_unet_final.meta.json").exists():
+        return "cnn_unet_final"
+    return "final_model"
 
 
 def load_bundle(directory: Path = FINAL, cube: Cube | None = None) -> Bundle:
@@ -40,8 +49,9 @@ def load_bundle(directory: Path = FINAL, cube: Cube | None = None) -> Bundle:
     q_hi = TreeModel.load(directory, q[1].name.replace(".meta.json", "")) if len(q) == 2 else None
     cube = cube or Cube()
     clim = Climatology.load(directory / "sic_climatology.npz")
+    unet = directory == FINAL and operational_model_name(directory) == "cnn_unet_final"
     atm = None
-    if set(ATM_FEATURES) & set(model.features + (q_lo.features if q_lo else [])):
+    if unet or set(ATM_FEATURES) & set(model.features + (q_lo.features if q_lo else [])):
         atm = Atmosphere.load(cube.grid["lat"], cube.grid["lon"])
         ap = directory / "atmos_climatology.npz"
         if atm is not None and ap.exists():
@@ -51,7 +61,16 @@ def load_bundle(directory: Path = FINAL, cube: Cube | None = None) -> Bundle:
     test_p = EXPERIMENTS_DIR / "metrics" / "test_final" / "summary.json"
     tm = json.loads(test_p.read_text()) if test_p.exists() else None
     fb = TreeModel.load(directory, "final_model_sic_only") if (directory / "final_model_sic_only.meta.json").exists() else None
-    return Bundle(model, fb, q_lo, q_hi, meta, FeatureContext(cube, clim, atm), tm)
+    ctx = FeatureContext(cube, clim, atm)
+    cnn_tm = None
+    if unet:                      # U-Net validated with atmospheric inputs only -> the declared SIC-only tree fallback stays
+        from ..training.deep import CNNResidualModel
+        model = CNNResidualModel.load(directory, "cnn_unet_final", ctx)
+        meta = {**model.meta, "model_version": meta.get("model_version", "v1").replace("sic-weekly", "sic-weekly-unet")}
+        q_lo = q_hi = None        # q10/q90 coverage was assessed around the tree model only
+        cp = EXPERIMENTS_DIR / "metrics" / "test_cnn_addendum" / "summary.json"
+        cnn_tm = json.loads(cp.read_text()) if cp.exists() else None
+    return Bundle(model, fb, q_lo, q_hi, meta, ctx, tm, cnn_tm)
 
 
 @lru_cache(maxsize=1)

@@ -1,0 +1,57 @@
+C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\xgboost\core.py:751: UserWarning: [22:39:25] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\common\error_msg.cc:62: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.
+Potential solutions:
+- Use a data structure that matches the device ordinal in the booster.
+- Set the device for booster before call to inplace_predict.
+
+This warning will only be shown once.
+
+  return func(**kwargs)
+C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\xgboost\core.py:751: UserWarning: [23:28:46] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\common\error_msg.cc:62: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.
+Potential solutions:
+- Use a data structure that matches the device ordinal in the booster.
+- Set the device for booster before call to inplace_predict.
+
+This warning will only be shown once.
+
+  return func(**kwargs)
+Traceback (most recent call last):
+  File "H:\scientific-intelligence\scripts\ml03\analyze.py", line 14, in <module>
+    r = analysis.error_analysis()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\analysis.py", line 75, in error_analysis
+    res["dmi_asip_comparison"] = dmi_asip_comparison()
+                                 ^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\analysis.py", line 112, in dmi_asip_comparison
+    prob = model.prob_map(F)
+           ^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\training.py", line 116, in prob_map
+    logit = self.net(torch.from_numpy(x[None]).to(dev)).float().cpu().numpy()[0, 0]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\.pydeps\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\.pydeps\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\models\unet.py", line 54, in forward
+    return self.head(x)[..., :h, :w]
+           ^^^^^^^^^^^^
+  File "H:\scientific-intelligence\.pydeps\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\.pydeps\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\.pydeps\torch\nn\modules\conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\.pydeps\torch\nn\modules\conv.py", line 549, in _conv_forward
+    return F.conv2d(
+           ^^^^^^^^^
+RuntimeError: bad allocation
+Traceback (most recent call last):
+  File "H:\scientific-intelligence\scripts\ml03\run_all.py", line 18, in <module>
+    subprocess.run([sys.executable, str(root / "scripts" / "ml03" / "analyze.py")], cwd=root, check=True)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\steve\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\python.exe', 'H:\\scientific-intelligence\\scripts\\ml03\\analyze.py']' returned non-zero exit status 1.

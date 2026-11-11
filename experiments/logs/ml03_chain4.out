@@ -1,0 +1,36 @@
+== train.py prepare
+{'processed': 774}
+{'test': 157, 'train': 484, 'validation': 106}
+done prepare
+== train.py samples
+{0: {'test': 406451, 'train': 1077709, 'validation': 223739}, 1: {'test': 443215, 'train': 1549320, 'validation': 340161}}
+done samples
+== train.py baselines
+{
+ "threshold": {
+  "name": "threshold",
+  "kind": "threshold",
+  "slope_db_per_deg": 0.02000000000000035,
+  "threshold_db": -16.399999999999807,
+  "reference_incidence_deg": 35.0,
+  "train_balanced_accuracy": 0.6950138956414924,
+  "train_rows": 2627029
+ },
+ "rf": {
+  "name": "rf",
+  "kind": "random_forest",
+  "best_iteration": 300,
+  "fit_seconds": 118.57733941078186,
+  "train_rows": 400000
+ },
+ "xgb": {
+  "name": "xgb",
+  "kind": "xgboost",
+  "best_iteration": 85,
+  "fit_seconds": 6.03093957901001,
+  "train_rows": 2627029,
+  "validation_rows": 563900
+ }
+}
+done baselines
+== train.py tiles

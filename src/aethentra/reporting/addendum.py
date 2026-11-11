@@ -86,3 +86,20 @@ def ncep_lines() -> list[str]:
             "2026-03-17. NOAA PSL has not extended the series since; later retries were refused (HTTP 429 / 403). This is an upstream "
             "data gap, not a pipeline fault: ML-01 forecasts after 2026-03-17 use the SIC-only fallback declared before the test, whose "
             "test metrics are reported separately. Remedy: ERA5 atmosphere (same CDS key as ML-02) + retraining, or a resumed R1 feed."]
+
+
+def operational_block(task: str) -> list[str]:
+    """Header block naming the U-Net as operational model when the frozen decision says so (else [])."""
+    t = TASKS[task]
+    dec = _j(t["metrics"] / "addendum_cnn_decision_record.json")
+    if not (dec and dec["cnn_replaces_operational_model"] and t["final"].exists()):
+        return []
+    L = ["## Operational model: U-Net (addendum)", "",
+         f"The U-Net beat the frozen tree selection `{dec['frozen_tree_selection']}` on {dec['cnn_better_on']} on validation "
+         f"(decision frozen {dec['frozen_utc']}, before its test evaluation) and now produces the forecasts. The tree model "
+         "documented below remains the frozen selection and the fallback."]
+    if task == "ml01":
+        L.append("When fewer than 5 of 7 atmospheric days are available (all issue dates after 2026-03-17 at present), the forecast "
+                 "uses the SIC-only tree fallback declared before the test, because the U-Net was validated with atmospheric inputs only.")
+    L += ["No uncertainty interval is exported for U-Net forecasts (interval coverage was assessed around the tree model only).", ""]
+    return L + cnn_status(task)[1] + [""]

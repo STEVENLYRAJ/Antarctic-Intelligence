@@ -1,0 +1,9 @@
+{
+ "name": "threshold",
+ "kind": "threshold",
+ "slope_db_per_deg": 0.02000000000000035,
+ "threshold_db": -16.399999999999807,
+ "reference_incidence_deg": 35.0,
+ "train_balanced_accuracy": 0.6950138956414924,
+ "train_rows": 2627029
+}

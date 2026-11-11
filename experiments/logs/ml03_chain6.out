@@ -1,0 +1,557 @@
+== train.py tiles
+{'train': {'tiles': 6387, 'scenes': 479}, 'validation': {'tiles': 1427, 'scenes': 103}, 'test': {'tiles': 2102, 'scenes': 154}}
+done tiles
+== train.py unet
+2026-11-09 21:11:01,499 INFO aethentra.ml03.training unet_bce epoch {'epoch': 1, 'train_loss': 0.343367844838649, 'seconds': 95.4, 'val_tile_miou': 0.8858342583190915}
+2026-11-09 21:12:45,385 INFO aethentra.ml03.training unet_bce epoch {'epoch': 2, 'train_loss': 0.18628537418320776, 'seconds': 200.1, 'val_tile_miou': 0.8713399079175561}
+2026-11-09 21:14:28,549 INFO aethentra.ml03.training unet_bce epoch {'epoch': 3, 'train_loss': 0.13084856058936567, 'seconds': 303.2, 'val_tile_miou': 0.8675694143411852}
+2026-11-09 21:16:11,275 INFO aethentra.ml03.training unet_bce epoch {'epoch': 4, 'train_loss': 0.11191945888800546, 'seconds': 406.0, 'val_tile_miou': 0.9111258170904488}
+2026-11-09 21:17:54,660 INFO aethentra.ml03.training unet_bce epoch {'epoch': 5, 'train_loss': 0.10502646879991516, 'seconds': 509.5, 'val_tile_miou': 0.8943092593701986}
+2026-11-09 21:19:38,018 INFO aethentra.ml03.training unet_bce epoch {'epoch': 6, 'train_loss': 0.09500602719490417, 'seconds': 612.7, 'val_tile_miou': 0.8756887701429096}
+2026-11-09 21:21:21,401 INFO aethentra.ml03.training unet_bce epoch {'epoch': 7, 'train_loss': 0.08995414799777791, 'seconds': 716.2, 'val_tile_miou': 0.8909456889752596}
+2026-11-09 21:23:04,008 INFO aethentra.ml03.training unet_bce epoch {'epoch': 8, 'train_loss': 0.08140633381903171, 'seconds': 818.8, 'val_tile_miou': 0.9242297718870902}
+2026-11-09 21:24:47,902 INFO aethentra.ml03.training unet_bce epoch {'epoch': 9, 'train_loss': 0.080707671927521, 'seconds': 922.6, 'val_tile_miou': 0.8774996028419428}
+2026-11-09 21:26:30,906 INFO aethentra.ml03.training unet_bce epoch {'epoch': 10, 'train_loss': 0.07795090836239979, 'seconds': 1025.7, 'val_tile_miou': 0.9131680307985776}
+2026-11-09 21:28:14,369 INFO aethentra.ml03.training unet_bce epoch {'epoch': 11, 'train_loss': 0.07978411711374064, 'seconds': 1129.2, 'val_tile_miou': 0.9189765507117718}
+2026-11-09 21:29:57,968 INFO aethentra.ml03.training unet_bce epoch {'epoch': 12, 'train_loss': 0.07650424649647902, 'seconds': 1232.2, 'val_tile_miou': 0.8976923394599595}
+2026-11-09 21:31:36,044 INFO aethentra.ml03.training unet_bce epoch {'epoch': 13, 'train_loss': 0.0707740889271372, 'seconds': 1330.4, 'val_tile_miou': 0.9156998220446434}
+2026-11-09 21:33:13,624 INFO aethentra.ml03.training unet_bce epoch {'epoch': 14, 'train_loss': 0.06871061565412674, 'seconds': 1428.0, 'val_tile_miou': 0.9022702399415545}
+2026-11-09 21:34:50,555 INFO aethentra.ml03.training unet_bce epoch {'epoch': 15, 'train_loss': 0.06901883341168286, 'seconds': 1525.0, 'val_tile_miou': 0.9151851835588307}
+2026-11-09 21:36:27,474 INFO aethentra.ml03.training unet_bce epoch {'epoch': 16, 'train_loss': 0.06447397038049531, 'seconds': 1621.9, 'val_tile_miou': 0.9315039588346455}
+2026-11-09 21:38:05,605 INFO aethentra.ml03.training unet_bce epoch {'epoch': 17, 'train_loss': 0.0661400844360469, 'seconds': 1720.0, 'val_tile_miou': 0.9258454888418566}
+2026-11-09 21:39:42,594 INFO aethentra.ml03.training unet_bce epoch {'epoch': 18, 'train_loss': 0.062483588965551465, 'seconds': 1817.0, 'val_tile_miou': 0.9299445257909851}
+2026-11-09 21:41:19,614 INFO aethentra.ml03.training unet_bce epoch {'epoch': 19, 'train_loss': 0.06238323364523239, 'seconds': 1914.0, 'val_tile_miou': 0.9343130373839371}
+2026-11-09 21:42:56,583 INFO aethentra.ml03.training unet_bce epoch {'epoch': 20, 'train_loss': 0.058840031975414604, 'seconds': 2011.0, 'val_tile_miou': 0.929460849598281}
+2026-11-09 21:44:45,573 INFO aethentra.ml03.training unet_bce epoch {'epoch': 21, 'train_loss': 0.055465573294786734, 'seconds': 2108.5, 'val_tile_miou': 0.9326869380785489}
+2026-11-09 21:46:31,475 INFO aethentra.ml03.training unet_bce epoch {'epoch': 22, 'train_loss': 0.057031017240078655, 'seconds': 2226.3, 'val_tile_miou': 0.9254695055163948}
+2026-11-09 21:48:16,153 INFO aethentra.ml03.training unet_bce epoch {'epoch': 23, 'train_loss': 0.054196666333009486, 'seconds': 2330.5, 'val_tile_miou': 0.9297338280937384}
+2026-11-09 21:49:53,558 INFO aethentra.ml03.training unet_bce epoch {'epoch': 24, 'train_loss': 0.051738117740897, 'seconds': 2427.9, 'val_tile_miou': 0.924507218523493}
+2026-11-09 21:51:30,916 INFO aethentra.ml03.training unet_bce epoch {'epoch': 25, 'train_loss': 0.0512453431848553, 'seconds': 2525.2, 'val_tile_miou': 0.9265425893581865}
+2026-11-09 21:53:07,843 INFO aethentra.ml03.training unet_bce epoch {'epoch': 26, 'train_loss': 0.04757794941862812, 'seconds': 2622.3, 'val_tile_miou': 0.9284719487720839}
+2026-11-09 21:54:44,761 INFO aethentra.ml03.training unet_bce epoch {'epoch': 27, 'train_loss': 0.04770554141374305, 'seconds': 2719.1, 'val_tile_miou': 0.9286498518677784}
+2026-11-09 21:57:15,478 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 1, 'train_loss': 0.2800199193879962, 'seconds': 96.9, 'val_tile_miou': 0.8704883203583}
+2026-11-09 21:59:01,185 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 2, 'train_loss': 0.13870621231384575, 'seconds': 202.6, 'val_tile_miou': 0.8679018043192858}
+2026-11-09 22:00:38,469 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 3, 'train_loss': 0.09879521711729466, 'seconds': 299.8, 'val_tile_miou': 0.8672968715749327}
+2026-11-09 22:02:25,521 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 4, 'train_loss': 0.08434205912984907, 'seconds': 406.9, 'val_tile_miou': 0.9027064264825605}
+2026-11-09 22:04:05,639 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 5, 'train_loss': 0.0817737654550001, 'seconds': 506.2, 'val_tile_miou': 0.9004500189747568}
+2026-11-09 22:05:46,325 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 6, 'train_loss': 0.07098565079912078, 'seconds': 607.6, 'val_tile_miou': 0.8546958741811215}
+2026-11-09 22:07:26,050 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 7, 'train_loss': 0.0674641741643427, 'seconds': 707.2, 'val_tile_miou': 0.8501971895644609}
+2026-11-09 22:09:05,652 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 8, 'train_loss': 0.060484418827691115, 'seconds': 806.9, 'val_tile_miou': 0.9239475686702174}
+2026-11-09 22:10:45,409 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 9, 'train_loss': 0.06084915434097638, 'seconds': 906.7, 'val_tile_miou': 0.9062000084137645}
+2026-11-09 22:12:25,157 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 10, 'train_loss': 0.05987730096123414, 'seconds': 1006.3, 'val_tile_miou': 0.8961052471818814}
+2026-11-09 22:14:04,948 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 11, 'train_loss': 0.05721216111647664, 'seconds': 1106.2, 'val_tile_miou': 0.9311610963092181}
+2026-11-09 22:15:44,376 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 12, 'train_loss': 0.05445989012805512, 'seconds': 1205.7, 'val_tile_miou': 0.8905818181661329}
+2026-11-09 22:17:23,914 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 13, 'train_loss': 0.05244354128924897, 'seconds': 1305.2, 'val_tile_miou': 0.9333625794490891}
+2026-11-09 22:19:03,317 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 14, 'train_loss': 0.05362676807009848, 'seconds': 1404.6, 'val_tile_miou': 0.8927076043892066}
+2026-11-09 22:20:42,247 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 15, 'train_loss': 0.048977867043868174, 'seconds': 1503.6, 'val_tile_miou': 0.9103362803740835}
+2026-11-09 22:22:21,254 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 16, 'train_loss': 0.049340722549823114, 'seconds': 1602.6, 'val_tile_miou': 0.9264967458009389}
+2026-11-09 22:24:00,425 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 17, 'train_loss': 0.04872711478034034, 'seconds': 1701.8, 'val_tile_miou': 0.9191153449641803}
+2026-11-09 22:25:48,002 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 18, 'train_loss': 0.045988762075576235, 'seconds': 1801.0, 'val_tile_miou': 0.9352958915115833}
+2026-11-09 22:27:37,049 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 19, 'train_loss': 0.04366104680520948, 'seconds': 1918.2, 'val_tile_miou': 0.9279528557597244}
+2026-11-09 22:29:16,894 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 20, 'train_loss': 0.04703160033561289, 'seconds': 2018.1, 'val_tile_miou': 0.9304845252373142}
+2026-11-09 22:30:56,673 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 21, 'train_loss': 0.04144995896931505, 'seconds': 2118.0, 'val_tile_miou': 0.9323222792695709}
+2026-11-09 22:32:36,402 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 22, 'train_loss': 0.04025876165062073, 'seconds': 2217.6, 'val_tile_miou': 0.9335417878955481}
+2026-11-09 22:34:16,114 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 23, 'train_loss': 0.03970035875114263, 'seconds': 2317.3, 'val_tile_miou': 0.9278487241835633}
+2026-11-09 22:35:55,742 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 24, 'train_loss': 0.03826203462682315, 'seconds': 2417.0, 'val_tile_miou': 0.9210445075647171}
+2026-11-09 22:37:35,139 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 25, 'train_loss': 0.038025333637342555, 'seconds': 2516.4, 'val_tile_miou': 0.9231657328376563}
+2026-11-09 22:39:14,624 INFO aethentra.ml03.training unet_bce_dice epoch {'epoch': 26, 'train_loss': 0.03566725005148328, 'seconds': 2615.9, 'val_tile_miou': 0.9266014404354389}
+{
+ "unet_bce": {
+  "name": "unet_bce",
+  "kind": "unet",
+  "loss": "BCE",
+  "label_encoding": "0 water, 1 ice; 2 uncertain and 255 invalid ignored in loss",
+  "optimizer": "AdamW + OneCycle",
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "batch_size": 16,
+  "tile_size": 256,
+  "augmentation": "rot90 x4, horizontal flip, sigma0 gain (0.05 sd) + pixel noise (0.05 sd) in normalised units",
+  "epochs_run": 27,
+  "best_epoch": 19,
+  "best_val_tile_miou": 0.9343130373839371,
+  "train_tiles": 6387,
+  "seconds": 2727.7,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "seed": 42,
+  "n_parameters": 7763329
+ },
+ "unet_bce_dice": {
+  "name": "unet_bce_dice",
+  "kind": "unet",
+  "loss": "(1-0.5)*BCE + 0.5*Dice",
+  "label_encoding": "0 water, 1 ice; 2 uncertain and 255 invalid ignored in loss",
+  "optimizer": "AdamW + OneCycle",
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "batch_size": 16,
+  "tile_size": 256,
+  "augmentation": "rot90 x4, horizontal flip, sigma0 gain (0.05 sd) + pixel noise (0.05 sd) in normalised units",
+  "epochs_run": 26,
+  "best_epoch": 18,
+  "best_val_tile_miou": 0.9352958915115833,
+  "train_tiles": 6387,
+  "seconds": 2624.7,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "seed": 42,
+  "n_parameters": 7763329
+ }
+}
+done unet
+== train.py validate
+2026-11-09 22:39:26,234 INFO aethentra.ml03.training eval validation_candidates: 0/106 scenes 4 s
+2026-11-09 22:42:08,973 INFO aethentra.ml03.training eval validation_candidates: 25/106 scenes 167 s
+2026-11-09 22:44:49,350 INFO aethentra.ml03.training eval validation_candidates: 50/106 scenes 327 s
+2026-11-09 22:47:30,432 INFO aethentra.ml03.training eval validation_candidates: 75/106 scenes 488 s
+2026-11-09 22:50:24,892 INFO aethentra.ml03.training eval validation_candidates: 100/106 scenes 663 s
+{
+ "rf": {
+  "n_scenes": 106,
+  "n_pixels": 76454134,
+  "iou_ice": 0.9084994591177579,
+  "iou_water": 0.844822406560736,
+  "miou": 0.876660932839247,
+  "dice_ice": 0.9520562919496242,
+  "precision_ice": 0.9320941753176065,
+  "recall_ice": 0.9728921550893667,
+  "f1_ice": 0.952056291949624,
+  "precision_water": 0.9516419829086961,
+  "recall_water": 0.8827174151499185,
+  "f1_water": 0.9158848066418717,
+  "overall_accuracy": 0.9389243098352275,
+  "balanced_accuracy": 0.9278047851196426,
+  "ref_ice_km2": 7511108.633808857,
+  "pred_ice_km2": 7827331.14920483,
+  "ice_area_bias_km2": 316222.5153959729,
+  "ice_area_bias_pct": 4.21006446335496,
+  "boundary_f1_scene_mean": 0.05599865891295229,
+  "boundary_precision_scene_mean": 0.03458061288618102,
+  "boundary_recall_scene_mean": 0.22998798715970967,
+  "edge_displacement_km_mean_scene_mean": 100.79267803009303,
+  "edge_displacement_km_median_scene_mean": 93.58015087530167,
+  "brier_scene_mean": 0.04517883269480355,
+  "uncertain_pixels_predicted_ice_frac_scene_mean": 0.6928899041972553,
+  "scene_iou_ice_median": 0.9803990153059822
+ },
+ "threshold": {
+  "n_scenes": 106,
+  "n_pixels": 76454134,
+  "iou_ice": 0.6248972981721949,
+  "iou_water": 0.33525256402393433,
+  "miou": 0.4800749310980646,
+  "dice_ice": 0.7691529783145381,
+  "precision_ice": 0.7071605061092309,
+  "recall_ice": 0.8430588324860016,
+  "f1_ice": 0.769152978314538,
+  "precision_water": 0.6192238768097089,
+  "recall_water": 0.4223149531855513,
+  "f1_water": 0.5021560310861534,
+  "overall_accuracy": 0.6845691823544819,
+  "balanced_accuracy": 0.6326868928357764,
+  "ref_ice_km2": 7511108.633808857,
+  "pred_ice_km2": 8836831.798152752,
+  "ice_area_bias_km2": 1325723.1643438954,
+  "ice_area_bias_pct": 17.65016629338279,
+  "boundary_f1_scene_mean": 0.039266398462141375,
+  "boundary_precision_scene_mean": 0.02159854381345544,
+  "boundary_recall_scene_mean": 0.31992962318759954,
+  "edge_displacement_km_mean_scene_mean": 108.91037531582668,
+  "edge_displacement_km_median_scene_mean": 98.74030602878061,
+  "uncertain_pixels_predicted_ice_frac_scene_mean": 0.6665922929556437,
+  "scene_iou_ice_median": 0.8123636636259961
+ },
+ "unet_bce": {
+  "n_scenes": 106,
+  "n_pixels": 76454134,
+  "iou_ice": 0.8611149706353877,
+  "iou_water": 0.8072631201363983,
+  "miou": 0.834189045385893,
+  "dice_ice": 0.9253753628572464,
+  "precision_ice": 0.9838855652939534,
+  "recall_ice": 0.8734335750192237,
+  "f1_ice": 0.9253753628572464,
+  "precision_water": 0.8233784996348085,
+  "recall_water": 0.9763287080353849,
+  "f1_water": 0.8933542782364445,
+  "overall_accuracy": 0.912193054204237,
+  "balanced_accuracy": 0.9248811415273043,
+  "ref_ice_km2": 7511108.633808857,
+  "pred_ice_km2": 6686690.271460626,
+  "ice_area_bias_km2": -824418.3623482306,
+  "ice_area_bias_pct": -10.975987734185797,
+  "boundary_f1_scene_mean": 0.04062405315916607,
+  "boundary_precision_scene_mean": 0.02648005852997537,
+  "boundary_recall_scene_mean": 0.13355137898097635,
+  "edge_displacement_km_mean_scene_mean": 105.05075703476098,
+  "edge_displacement_km_median_scene_mean": 95.46158478246014,
+  "brier_scene_mean": 0.08512554366546965,
+  "uncertain_pixels_predicted_ice_frac_scene_mean": 0.41955635173827655,
+  "scene_iou_ice_median": 0.9574490466798159
+ },
+ "unet_bce_dice": {
+  "n_scenes": 106,
+  "n_pixels": 76454134,
+  "iou_ice": 0.910259086973773,
+  "iou_water": 0.8608503470224531,
+  "miou": 0.8855547169981131,
+  "dice_ice": 0.9530216012905379,
+  "precision_ice": 0.9674378064230004,
+  "recall_ice": 0.9390287319452196,
+  "f1_ice": 0.9530216012905379,
+  "precision_water": 0.9037854605980661,
+  "recall_water": 0.9477012783789353,
+  "f1_water": 0.9252225450583921,
+  "overall_accuracy": 0.9422955860045449,
+  "balanced_accuracy": 0.9433650051620774,
+  "ref_ice_km2": 7511108.633808857,
+  "pred_ice_km2": 7297682.442536121,
+  "ice_area_bias_km2": -213426.1912727356,
+  "ice_area_bias_pct": -2.841473897901912,
+  "boundary_f1_scene_mean": 0.04241804787863727,
+  "boundary_precision_scene_mean": 0.043176
+done validate
+== train.py select
+{
+ "selected_model": "unet_bce_dice",
+ "criteria": "rank-sum on validation full scenes: mIoU, ice F1, boundary F1, |ice-area bias| (ties -> simpler)",
+ "rank_sum": {
+  "rf": 8.0,
+  "threshold": 20.0,
+  "unet_bce": 16.0,
+  "unet_bce_dice": 6.0,
+  "xgb": 10.0
+ },
+ "validation_table": {
+  "rf": {
+   "miou": 0.876660932839247,
+   "f1_ice": 0.952056291949624,
+   "boundary_f1_scene_mean": 0.05599865891295229,
+   "abs_area_bias_pct": 4.21006446335496,
+   "iou_ice": 0.9084994591177579,
+   "precision_ice": 0.9320941753176065,
+   "recall_ice": 0.9728921550893667
+  },
+  "threshold": {
+   "miou": 0.4800749310980646,
+   "f1_ice": 0.769152978314538,
+   "boundary_f1_scene_mean": 0.039266398462141375,
+   "abs_area_bias_pct": 17.65016629338279,
+   "iou_ice": 0.6248972981721949,
+   "precision_ice": 0.7071605061092309,
+   "recall_ice": 0.8430588324860016
+  },
+  "unet_bce": {
+   "miou": 0.834189045385893,
+   "f1_ice": 0.9253753628572464,
+   "boundary_f1_scene_mean": 0.04062405315916607,
+   "abs_area_bias_pct": 10.975987734185797,
+   "iou_ice": 0.8611149706353877,
+   "precision_ice": 0.9838855652939534,
+   "recall_ice": 0.8734335750192237
+  },
+  "unet_bce_dice": {
+   "miou": 0.8855547169981131,
+   "f1_ice": 0.9530216012905379,
+   "boundary_f1_scene_mean": 0.04241804787863727,
+   "abs_area_bias_pct": 2.841473897901912,
+   "iou_ice": 0.910259086973773,
+   "precision_ice": 0.9674378064230004,
+   "recall_ice": 0.9390287319452196
+  },
+  "xgb": {
+   "miou": 0.866978974955853,
+   "f1_ice": 0.9483736803474023,
+   "boundary_f1_scene_mean": 0.06649790902070904,
+   "abs_area_bias_pct": 5.002373961667387,
+   "iou_ice": 0.9018162275176751,
+   "precision_ice": 0.9248287530133894,
+   "recall_ice": 0.9731487720033948
+  }
+ },
+ "beats_threshold_on_all": true,
+ "test_set_accessed_before_selection": false,
+ "frozen_utc": "2026-11-09T17:21:01.946458+00:00"
+}
+done select
+== train.py final
+2026-11-09 22:53:01,627 INFO aethentra.ml03.training final_model epoch {'epoch': 1, 'train_loss': 0.245203681008277, 'seconds': 115.7}
+2026-11-09 22:54:55,708 INFO aethentra.ml03.training final_model epoch {'epoch': 2, 'train_loss': 0.11265533228151516, 'seconds': 229.8}
+2026-11-09 22:56:51,297 INFO aethentra.ml03.training final_model epoch {'epoch': 3, 'train_loss': 0.0881873540930709, 'seconds': 345.4}
+2026-11-09 22:58:40,234 INFO aethentra.ml03.training final_model epoch {'epoch': 4, 'train_loss': 0.07929461620031934, 'seconds': 454.3}
+2026-11-09 23:00:29,670 INFO aethentra.ml03.training final_model epoch {'epoch': 5, 'train_loss': 0.07250199848281293, 'seconds': 563.7}
+2026-11-09 23:02:18,424 INFO aethentra.ml03.training final_model epoch {'epoch': 6, 'train_loss': 0.06805223804767147, 'seconds': 672.5}
+2026-11-09 23:04:10,525 INFO aethentra.ml03.training final_model epoch {'epoch': 7, 'train_loss': 0.06305308655477633, 'seconds': 784.6}
+2026-11-09 23:06:00,455 INFO aethentra.ml03.training final_model epoch {'epoch': 8, 'train_loss': 0.06038334815699135, 'seconds': 894.5}
+2026-11-09 23:07:50,232 INFO aethentra.ml03.training final_model epoch {'epoch': 9, 'train_loss': 0.054528417104068604, 'seconds': 1004.3}
+2026-11-09 23:09:48,874 INFO aethentra.ml03.training final_model epoch {'epoch': 10, 'train_loss': 0.05738988722286974, 'seconds': 1122.9}
+2026-11-09 23:11:59,427 INFO aethentra.ml03.training final_model epoch {'epoch': 11, 'train_loss': 0.05372031132932486, 'seconds': 1253.5}
+2026-11-09 23:14:13,984 INFO aethentra.ml03.training final_model epoch {'epoch': 12, 'train_loss': 0.05031466228575093, 'seconds': 1388.0}
+2026-11-09 23:16:40,347 INFO aethentra.ml03.training final_model epoch {'epoch': 13, 'train_loss': 0.04645681368036611, 'seconds': 1534.4}
+2026-11-09 23:18:57,392 INFO aethentra.ml03.training final_model epoch {'epoch': 14, 'train_loss': 0.04408050621150286, 'seconds': 1671.4}
+2026-11-09 23:21:14,650 INFO aethentra.ml03.training final_model epoch {'epoch': 15, 'train_loss': 0.04204195711936931, 'seconds': 1808.7}
+2026-11-09 23:23:31,923 INFO aethentra.ml03.training final_model epoch {'epoch': 16, 'train_loss': 0.03888495698626437, 'seconds': 1946.0}
+2026-11-09 23:25:50,089 INFO aethentra.ml03.training final_model epoch {'epoch': 17, 'train_loss': 0.03818686013700391, 'seconds': 2084.1}
+2026-11-09 23:28:08,954 INFO aethentra.ml03.training final_model epoch {'epoch': 18, 'train_loss': 0.03718216565474754, 'seconds': 2223.0}
+{
+ "name": "final_model",
+ "kind": "unet",
+ "architecture": {
+  "base": 32,
+  "depth": 4,
+  "dropout": 0.1
+ },
+ "channels": [
+  "s0_norm",
+  "inc",
+  "std7",
+  "valid"
+ ],
+ "loss": "(1-0.5)*BCE + 0.5*Dice",
+ "label_encoding": "0 water, 1 ice; 2 uncertain and 255 invalid ignored in loss",
+ "optimizer": "AdamW + OneCycle",
+ "lr": 0.001,
+ "weight_decay": 0.0001,
+ "batch_size": 16,
+ "tile_size": 256,
+ "augmentation": "rot90 x4, horizontal flip, sigma0 gain (0.05 sd) + pixel noise (0.05 sd) in normalised units",
+ "epochs_run": 18,
+ "best_epoch": 18,
+ "best_val_tile_miou": null,
+ "train_splits": [
+  "train",
+  "validation"
+ ],
+ "train_tiles": 7814,
+ "seconds": 2223.0,
+ "device": "cuda",
+ "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+ "seed": 42,
+ "n_parameters": 7763329,
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.245203681008277,
+   "seconds": 115.7
+  },
+  {
+   "epoch": 2,
+   "train_loss": 0.11265533228151516,
+   "seconds": 229.8
+  },
+  {
+   "epoch": 3,
+   "train_loss": 0.0881873540930709,
+   "seconds": 345.4
+  },
+  {
+   "epoch": 4,
+   "train_loss": 0.07929461620031934,
+   "seconds": 454.3
+  },
+  {
+   "epoch": 5,
+   "train_loss": 0.07250199848281293,
+   "seconds": 563.7
+  },
+  {
+   "epoch": 6,
+   "train_loss": 0.06805223804767147,
+   "seconds": 672.5
+  },
+  {
+   "epoch": 7,
+   "train_loss": 0.06305308655477633,
+   "seconds": 784.6
+  },
+  {
+   "epoch": 8,
+   "train_loss": 0.06038334815699135,
+   "seconds": 894.5
+  },
+  {
+   "epoch": 9,
+   "train_loss": 0.054528417104068604,
+   "seconds": 1004.3
+  },
+  {
+   "epoch": 10,
+   "train_loss": 0.05738988722286974,
+   "seconds": 1122.9
+  },
+  {
+   "epoch": 11,
+   "train_loss": 0.05372031132932486,
+   "seconds": 1253.5
+  },
+  {
+   "epoch": 12,
+   "train_loss": 0.05031466228575093,
+   "seconds": 1388.0
+  },
+  {
+   "epoch": 13,
+   "train_loss": 0.04645681368036611,
+   "seconds": 1534.4
+  },
+  {
+   "epoch": 14,
+   "train_loss": 0.04408050621150286,
+   "seconds": 1671.4
+  },
+  {
+   "epoch": 15,
+   "train_loss": 0.04204195711936931,
+   "seconds": 1808.7
+  },
+  {
+   "epoch": 16,
+   "train_loss": 0.03888495698626437,
+   "seconds": 1946.0
+  },
+  {
+   "epoch": 17,
+   "train_loss": 0.03818686013700391,
+   "seconds": 2084.1
+  },
+  {
+   "epoch": 18,
+   "train_loss": 0.03718216565474754,
+   "seconds": 2223.0
+  }
+ ],
+ "selected_from": "unet_bce_dice",
+ "model_version": "aethentra-sar-seaice-20261109-v1",
+ "trained_utc": "2026-11-09T17:58:09.740275+00:00",
+ "norm": {
+  "s0_norm": [
+   -14.006857872009277,
+   5.3739213943481445
+  ],
+  "inc": [
+   33.367557525634766,
+   7.281153678894043
+  ],
+  "std7": [
+   0.7120636105537415,
+   0.6744657754898071
+  ]
+ }
+}
+done final
+== train.py test
+2026-11-09 23:28:47,818 INFO aethentra.ml03.training eval test_final: 0/157 scenes 10 s
+2026-11-09 23:32:07,723 INFO aethentra.ml03.training eval test_final: 25/157 scenes 209 s
+2026-11-09 23:35:22,147 INFO aethentra.ml03.training eval test_final: 50/157 scenes 404 s
+2026-11-09 23:38:55,070 INFO aethentra.ml03.training eval test_final: 75/157 scenes 617 s
+2026-11-09 23:42:06,570 INFO aethentra.ml03.training eval test_final: 100/157 scenes 808 s
+2026-11-09 23:45:04,385 INFO aethentra.ml03.training eval test_final: 125/157 scenes 986 s
+2026-11-09 23:47:47,135 INFO aethentra.ml03.training eval test_final: 150/157 scenes 1149 s
+{
+ "final_model": {
+  "n_scenes": 157,
+  "n_pixels": 113852759,
+  "iou_ice": 0.8628902075775075,
+  "iou_water": 0.8711732003312636,
+  "miou": 0.8670317039543856,
+  "dice_ice": 0.9263994239355687,
+  "precision_ice": 0.9702937769794792,
+  "recall_ice": 0.8863045912609195,
+  "f1_ice": 0.9263994239355687,
+  "precision_water": 0.8933479183660902,
+  "recall_water": 0.9722966828640529,
+  "f1_water": 0.9311518572166759,
+  "overall_accuracy": 0.9288549169019259,
+  "balanced_accuracy": 0.9293006370624862,
+  "ref_ice_km2": 8982546.434634082,
+  "pred_ice_km2": 8208490.939257116,
+  "ice_area_bias_km2": -774055.495376966,
+  "ice_area_bias_pct": -8.617328070717603,
+  "boundary_f1_scene_mean": 0.02172945758544884,
+  "boundary_precision_scene_mean": 0.013894715214223028,
+  "boundary_recall_scene_mean": 0.11971319092529045,
+  "edge_displacement_km_mean_scene_mean": 98.00966230527702,
+  "edge_displacement_km_median_scene_mean": 96.6820073063063,
+  "brier_scene_mean": 0.06529789035089674,
+  "uncertain_pixels_predicted_ice_frac_scene_mean": 0.431093428180075,
+  "scene_iou_ice_median": 0.9684741488020177
+ },
+ "rf": {
+  "n_scenes": 157,
+  "n_pixels": 113852759,
+  "iou_ice": 0.8936473707455126,
+  "iou_water": 0.8873189207490257,
+  "miou": 0.8904831457472692,
+  "dice_ice": 0.9438371521026022,
+  "precision_ice": 0.9256942084783297,
+  "recall_ice": 0.9627054903488667,
+  "f1_ice": 0.9438371521026023,
+  "precision_water": 0.9603037673678073,
+  "recall_water": 0.9211043333555216,
+  "f1_water": 0.9402956871718035,
+  "overall_accuracy": 0.9421205418482657,
+  "balanced_accuracy": 0.941904911852194,
+  "ref_ice_km2": 8982546.434634082,
+  "pred_ice_km2": 9335128.245644722,
+  "ice_area_bias_km2": 352581.8110106401,
+  "ice_area_bias_pct": 3.925187735753721,
+  "boundary_f1_scene_mean": 0.057255516688964156,
+  "boundary_precision_scene_mean": 0.03624082248558799,
+  "boundary_recall_scene_mean": 0.2105950662451154,
+  "edge_displacement_km_mean_scene_mean": 69.77633997255938,
+  "edge_displacement_km_median_scene_mean": 66.09715582982747,
+  "brier_scene_mean": 0.05241368883458088,
+  "uncertain_pixels_predicted_ice_frac_scene_mean": 0.681918627561906,
+  "scene_iou_ice_median": 0.9708433483122584
+ },
+ "threshold": {
+  "n_scenes": 157,
+  "n_pixels": 113852759,
+  "iou_ice": 0.5563961447602029,
+  "iou_water": 0.41694482569315183,
+  "miou": 0.4866704852266774,
+  "dice_ice": 0.7149801117580229,
+  "precision_ice": 0.6244925070793065,
+  "recall_ice": 0.8361341262905925,
+  "f1_ice": 0.7149801117580229,
+  "precision_water": 0.7441905494934928,
+  "recall_water": 0.4866992389447292,
+  "f1_water": 0.5885124362399751,
+  "overall_accuracy": 0.663227897709532,
+  "balanced_accuracy": 0.6614166826176608,
+  "ref_ice_km2": 8982546.434634082,
+  "pred_ice_km2": 11873116.857742567,
+  "ice_area_bias_km2": 2890570.4231084846,
+  "ice_area_bias_pct": 32.17985505717273,
+  "boundary_f1_scene_mean": 0.04425963434305194,
+  "boundary_precision_scene_mean": 0.026543049748769813,
+  "boundary_recall_scene_mean": 0.256223692001826,
+  "edge_displacement_km_mean_scene_mean": 100.67023711993373,
+  "edge_displacement_km_median_scene_mean": 90.67776908939119,
+  "uncertain_pixels_predicted_ice_frac_scene_mean": 0.6860269098195267,
+  "scene_iou_ice_median": 0.7630662020905923
+ },
+ "unet_bce": {
+  "n_scenes": 157,
+  "n_pixels": 113852759,
+  "iou_ice": 0.8307351217678454,
+  "iou_water": 0.84818585453603,
+  "miou": 0.8394604881519376,
+  "dice_ice": 0.9075426716734946,
+  "precision_ice": 0.9798616819245441,
+  "recall_ice": 0.845164994280164,
+  "f1_ice": 0.9075426716734946,
+  "precision_water": 0.8613762949183517,
+  "recall_water": 0.9822660897734585,
+  "f1_water": 0.9178577494837058,
+  "overall_accuracy": 0.9130049101401223,
+  "balanced_accuracy": 0.9137155420268113,
+  "ref_ice_km2": 8982546.434634082,
+  "pred_ice_km2": 7750640.616826109,
+  "ice_area_bias_km2": -1231905.8178079734,
+  "ice_area_bias_pct": -13.714438625756538,
+  "boundary_f1_scene_mean": 0.03329708154456632,
+  "boundary_precision_scene_mean": 0.022817
+done test
+== analyze.py

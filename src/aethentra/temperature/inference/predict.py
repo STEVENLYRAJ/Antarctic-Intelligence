@@ -37,6 +37,15 @@ LIMITATIONS = [
 ]
 
 
+def operational_model_name() -> str:
+    """'cnn_unet_final' when the frozen U-Net addendum decision (validation only) says it replaces the tree model and its
+    refit checkpoint exists; otherwise the tree 'final_model'."""
+    dec = METRICS / "addendum_cnn_decision_record.json"
+    if dec.exists() and json.loads(dec.read_text()).get("cnn_replaces_operational_model") and (FINAL / "cnn_unet_final.meta.json").exists():
+        return "cnn_unet_final"
+    return "final_model"
+
+
 @dataclass
 class Bundle:
     model: AnomalyModel
@@ -46,27 +55,36 @@ class Bundle:
     ctx: FeatureContext
     alpha: dict
     test: dict | None
+    test_key: str = "final_model"
 
 
 def load_bundle(directory: Path = FINAL) -> Bundle:
     if not (directory / "final_model.meta.json").exists():
         raise FileNotFoundError("No ML-02 final model; run scripts/ml02/train.py final")
-    model = AnomalyModel.load(directory, "final_model")
-    meta = model.meta
-    src = meta["source"]
+    tree = AnomalyModel.load(directory, "final_model")
+    src = tree.meta["source"]
     q = sorted(directory.glob("final_q*.meta.json"))
     q_lo = AnomalyModel.load(directory, q[0].name[:-10]) if len(q) == 2 else None
     q_hi = AnomalyModel.load(directory, q[1].name[:-10]) if len(q) == 2 else None
     clim = Climatology.load(directory / f"t2m_climatology_{src}.npz")
     sigma = Sigma.load(directory / f"anomaly_sigma_{src}.npz")
     sic = None
-    if any(f.startswith("sic_") for f in model.features):
+    if any(f.startswith("sic_") for f in tree.features):
         from ...preprocessing.cube import Cube as SicCube
         sic = SicCube()
     ctx = FeatureContext(Cube(src), clim, sigma, sic)
     alpha = json.loads((directory / f"damped_persistence_alpha_{src}.json").read_text())
-    tp = METRICS / "test_final" / "summary.json"
-    return Bundle(model, q_lo, q_hi, meta, ctx, alpha, json.loads(tp.read_text()) if tp.exists() else None)
+    if directory == FINAL and operational_model_name() == "cnn_unet_final":
+        from ..models.cnn import CNNModel
+        model = CNNModel.load(directory, "cnn_unet_final", ctx)
+        meta = dict(model.meta)
+        meta.setdefault("model_version", tree.meta.get("model_version", "v1").replace("t2m-weekly", "t2m-weekly-unet"))
+        tp, key = METRICS / "test_cnn_addendum" / "summary.json", "cnn_unet_final"
+        q_lo = q_hi = None                         # q10/q90 coverage was validated around the tree model only
+    else:
+        model, meta = tree, tree.meta
+        tp, key = METRICS / "test_final" / "summary.json", "final_model"
+    return Bundle(model, q_lo, q_hi, meta, ctx, alpha, json.loads(tp.read_text()) if tp.exists() else None, key)
 
 
 @lru_cache(maxsize=1)
@@ -113,7 +131,8 @@ def run_forecast(issue_date=None, bundle: Bundle | None = None, write: bool = Tr
     sig = ctx.sigma.for_date(t)
     cat = categorize(anom, sig)
     pers = predict_baseline("persistence", F)
-    unc = Uncertainty(validated=False, method="none", note="No interval provided.")
+    unc = Uncertainty(validated=False, method="none", note="No interval provided." if b.test_key == "final_model" else
+                      "No interval: the q10/q90 interval was validated around the tree model, not the U-Net.")
     lo = hi = None
     cov = (b.test or {}).get("interval_coverage")
     if b.q_lo is not None and cov:
@@ -143,7 +162,7 @@ def run_forecast(issue_date=None, bundle: Bundle | None = None, write: bool = Tr
     fid = f"t2m7d_{t:%Y%m%d}_{b.meta.get('model_version', 'v1')}"
     tm = None
     if b.test:
-        a = b.test["metrics"]["final_model"]["all"]
+        a = b.test["metrics"][b.test_key]["all"]
         tm = {k: a[k] for k in ("area_weighted_mae_degC", "area_weighted_rmse_degC", "acc_pattern_mean", "msss_vs_climatology")}
         tm["period"] = f"{b.test['first']}..{b.test['last']} issue dates"
     s = T2mForecastSummary(

@@ -1,0 +1,2 @@
+2026-11-09 23:29:00,880 INFO ml03_prefetch_week week 2026-11-02: 367 acquisitions
+{'week': '2026-11-02', 'acquisitions': 367, 'downloaded': 367, 'failed': 0}

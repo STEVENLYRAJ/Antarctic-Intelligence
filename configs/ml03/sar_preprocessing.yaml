@@ -1,0 +1,20 @@
+grid:
+  crs: EPSG:3031                    # Antarctic Polar Stereographic (true scale at 71S)
+  resolution_m: 400
+  weekly_resolution_m: 2000
+calibration: sigma_nought           # sigma0 = (DN^2 - noise) / A_sigma^2
+thermal_noise_removal: true         # range x azimuth noise vectors (IPF >= 2.9)
+noise_floor_db: -35.0               # sigma0 below this (after noise removal) is clipped to it
+incidence_angle: from_calibration   # sin(theta) = A_beta^2 / A_sigma^2
+speckle: none                       # 6x2-look GRDM + x8 overview averaging (~700 looks) makes speckle filtering unnecessary
+terrain_correction: none            # sea ice lies at sea level; land / ice shelves are masked
+valid_incidence_deg: [18.0, 48.0]
+land_mask:
+  source: Natural Earth 10m land + Antarctic ice shelves (public domain)
+  land_url: https://naciscdn.org/naturalearth/10m/physical/ne_10m_land.zip
+  shelves_url: https://naciscdn.org/naturalearth/10m/physical/ne_10m_antarctic_ice_shelves_polys.zip
+  buffer_m: 2000                    # coastal buffer added to the mask (coastline position error, fast ice / shelf fronts)
+tiles:
+  size: 256                         # 102.4 km at 400 m
+  stride: 256
+  min_valid_fraction: 0.2

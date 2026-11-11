@@ -1,0 +1,55 @@
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\process.py", line 210, in _process_chunk
+    return [fn(*args) for args in chunk]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\process.py", line 210, in <listcomp>
+    return [fn(*args) for args in chunk]
+            ^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\dataset.py", line 103, in _tiles
+    F = scene_feature_maps(scene, meta, slope=slope, glcm=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\features.py", line 54, in scene_feature_maps
+    F[f"mean{k}"] = _masked_mean(s0, ok, k)
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\features.py", line 24, in _masked_mean
+    return np.where(den > 0.2, num / np.maximum(den, 1e-6), np.nan)
+                                     ^^^^^^^^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 15.2 MiB for an array with shape (1413, 1408) and data type float64
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "H:\scientific-intelligence\scripts\ml03\train.py", line 35, in <module>
+    main()
+  File "H:\scientific-intelligence\scripts\ml03\train.py", line 23, in main
+    print(D.build_tiles(slope, a.workers))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\dataset.py", line 133, in build_tiles
+    res = list(ex.map(_tiles, [(s, slope, sd) for s in ids], chunksize=2))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\process.py", line 620, in _chain_from_iterable_of_lists
+    for element in iterable:
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 15.2 MiB for an array with shape (1413, 1408) and data type float64
+Traceback (most recent call last):
+  File "H:\scientific-intelligence\scripts\ml03\run_all.py", line 16, in <module>
+    subprocess.run([sys.executable, str(root / "scripts" / "ml03" / "train.py"), s], cwd=root, check=True)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\steve\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\python.exe', 'H:\\scientific-intelligence\\scripts\\ml03\\train.py', 'tiles']' returned non-zero exit status 1.

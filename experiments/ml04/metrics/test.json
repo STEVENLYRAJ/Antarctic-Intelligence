@@ -1,0 +1,140 @@
+{
+ "split": "test",
+ "seed": 2018,
+ "n_samples": 221184,
+ "n_injected": 2211,
+ "correlated_pairs_used": [
+  [
+   "slp",
+   "z500",
+   0.8010113361428453
+  ],
+  [
+   "rhum",
+   "tcdc",
+   0.5455416030303785
+  ],
+  [
+   "t2m",
+   "z500",
+   0.5383377894317345
+  ]
+ ],
+ "metrics": {
+  "zscore": {
+   "pr_auc": 0.061209938888907287,
+   "roc_auc": 0.8758200597884576,
+   "recall_at_moderate": 0.36635006784260515,
+   "flag_rate_non_injected": 0.04011910144173026,
+   "positives": 2211,
+   "negatives": 218973,
+   "pr_auc_compound_moderate": 0.015651320836676495,
+   "recall_at_moderate_compound_moderate": 0.2727272727272727,
+   "pr_auc_covariance_break": 0.01240403413197683,
+   "recall_at_moderate_covariance_break": 0.18181818181818182,
+   "pr_auc_univariate_spike": 0.04634040269289682,
+   "recall_at_moderate_univariate_spike": 0.6445047489823609
+  },
+  "percentile": {
+   "pr_auc": 0.022706785311024,
+   "roc_auc": 0.7664681363798225,
+   "recall_at_moderate": 0.8498417005879693,
+   "flag_rate_non_injected": 0.40095810899060613,
+   "positives": 2211,
+   "negatives": 218973,
+   "pr_auc_compound_moderate": 0.008492264828125436,
+   "recall_at_moderate_compound_moderate": 0.8331071913161465,
+   "pr_auc_covariance_break": 0.007616339132327574,
+   "recall_at_moderate_covariance_break": 0.8683853459972863,
+   "pr_auc_univariate_spike": 0.007133205682387018,
+   "recall_at_moderate_univariate_spike": 0.8480325644504749
+  },
+  "mad": {
+   "pr_auc": 0.08833941345568211,
+   "roc_auc": 0.8514849622741273,
+   "recall_at_moderate": 0.11080958842152872,
+   "flag_rate_non_injected": 0.009950998524932298,
+   "positives": 2211,
+   "negatives": 218973,
+   "pr_auc_compound_moderate": 0.01038685348731768,
+   "recall_at_moderate_compound_moderate": 0.016282225237449117,
+   "pr_auc_covariance_break": 0.034262040826548504,
+   "recall_at_moderate_covariance_break": 0.12211668928086838,
+   "pr_auc_univariate_spike": 0.10142599318420431,
+   "recall_at_moderate_univariate_spike": 0.19402985074626866
+  },
+  "mahalanobis": {
+   "pr_auc": 0.16794820383757458,
+   "roc_auc": 0.9406397668613395,
+   "recall_at_moderate": 0.7014925373134329,
+   "flag_rate_non_injected": 0.05416649541267645,
+   "positives": 2211,
+   "negatives": 218973,
+   "pr_auc_compound_moderate": 0.024385077100669214,
+   "recall_at_moderate_compound_moderate": 0.5128900949796472,
+   "pr_auc_covariance_break": 0.13946091089059734,
+   "recall_at_moderate_covariance_break": 0.8846675712347354,
+   "pr_auc_univariate_spike": 0.0650343574190682,
+   "recall_at_moderate_univariate_spike": 0.7069199457259159
+  },
+  "isolation_forest_s4096": {
+   "pr_auc": 0.04247648806533643,
+   "roc_auc": 0.86885481481319,
+   "recall_at_moderate": 0.35639981908638624,
+   "flag_rate_non_injected": 0.07467587328118079,
+   "positives": 2211,
+   "negatives": 218973,
+   "pr_auc_compound_moderate": 0.015239617094931298,
+   "recall_at_moderate_compound_moderate": 0.39620081411126185,
+   "pr_auc_covariance_break": 0.013815107490425345,
+   "recall_at_moderate_covariance_break": 0.3242876526458616,
+   "pr_auc_univariate_spike": 0.01539718548634615,
+   "recall_at_moderate_univariate_spike": 0.3487109905020353
+  },
+  "lof_k20": {
+   "pr_auc": 0.36399004867153806,
+   "roc_auc": 0.920538423247508,
+   "recall_at_moderate": 0.8037087290818634,
+   "flag_rate_non_injected": 0.1159047005795235,
+   "positives": 2211,
+   "negatives": 218973,
+   "pr_auc_compound_moderate": 0.04522661429805872,
+   "recall_at_moderate_compound_moderate": 0.6784260515603799,
+   "pr_auc_covariance_break": 0.389726761618025,
+   "recall_at_moderate_covariance_break": 0.9484396200814111,
+   "pr_auc_univariate_spike": 0.21587151004392238,
+   "recall_at_moderate_univariate_spike": 0.7842605156037992
+  },
+  "ocsvm_nu01": {
+   "pr_auc": 0.11003591170265589,
+   "roc_auc": 0.9192431451254203,
+   "recall_at_moderate": 0.7770239710538218,
+   "flag_rate_non_injected": 0.10391235449119297,
+   "positives": 2211,
+   "negatives": 218973,
+   "pr_auc_compound_moderate": 0.022015252301163673,
+   "recall_at_moderate_compound_moderate": 0.6024423337856174,
+   "pr_auc_covariance_break": 0.04789717436716437,
+   "recall_at_moderate_covariance_break": 0.898236092265943,
+   "pr_auc_univariate_spike": 0.059029255422393394,
+   "recall_at_moderate_univariate_spike": 0.830393487109905
+  },
+  "autoencoder_b5": {
+   "pr_auc": 0.18233278754923563,
+   "roc_auc": 0.8983359096150552,
+   "recall_at_moderate": 0.7195838986883764,
+   "flag_rate_non_injected": 0.08603800468550918,
+   "positives": 2211,
+   "negatives": 218973,
+   "pr_auc_compound_moderate": 0.01951765313760647,
+   "recall_at_moderate_compound_moderate": 0.5318860244233379,
+   "pr_auc_covariance_break": 0.14665791547289753,
+   "recall_at_moderate_covariance_break": 0.9470827679782904,
+   "pr_auc_univariate_spike": 0.09586900936546228,
+   "recall_at_moderate_univariate_spike": 0.6797829036635007
+  }
+ },
+ "decision_frozen_utc": "2026-11-10T23:03:51+00:00",
+ "evaluated_utc": "2026-11-10T23:04:46+00:00",
+ "forced_rerun": false
+}

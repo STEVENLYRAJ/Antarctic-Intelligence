@@ -1,0 +1,10 @@
+{
+ "family": "percentile",
+ "thresholds": {
+  "mild": 1.1903317111132758,
+  "moderate": 1.1903317111132758,
+  "strong": 1.491361706777257,
+  "extreme": 1.4913621080099633
+ },
+ "calibrated_on": "1979-2010 training cell-months"
+}

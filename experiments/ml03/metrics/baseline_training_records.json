@@ -1,0 +1,84 @@
+{
+ "threshold": {
+  "name": "threshold",
+  "kind": "threshold",
+  "slope_db_per_deg": 0.02000000000000035,
+  "threshold_db": -16.399999999999807,
+  "reference_incidence_deg": 35.0,
+  "train_balanced_accuracy": 0.6950138956414924,
+  "train_rows": 2627029
+ },
+ "rf": {
+  "name": "rf",
+  "kind": "random_forest",
+  "params": {
+   "n_estimators": 300,
+   "max_depth": 18,
+   "min_samples_leaf": 20,
+   "class_weight": "balanced",
+   "n_jobs": 8
+  },
+  "best_iteration": 300,
+  "fit_seconds": 118.57733941078186,
+  "features": [
+   "s0",
+   "inc",
+   "s0_norm",
+   "mean3",
+   "mean7",
+   "mean15",
+   "std7",
+   "std15",
+   "grad",
+   "glcm_contrast",
+   "glcm_homogeneity",
+   "glcm_entropy",
+   "lat",
+   "lon_sin",
+   "lon_cos",
+   "dist_coast_km",
+   "doy_sin",
+   "doy_cos"
+  ],
+  "train_rows": 400000
+ },
+ "xgb": {
+  "name": "xgb",
+  "kind": "xgboost",
+  "params": {
+   "n_estimators": 2000,
+   "learning_rate": 0.05,
+   "max_depth": 8,
+   "subsample": 0.8,
+   "colsample_bytree": 0.8,
+   "reg_lambda": 1.0,
+   "early_stopping_rounds": 100,
+   "device": "cuda",
+   "eval_metric": "logloss"
+  },
+  "best_iteration": 85,
+  "fit_seconds": 6.03093957901001,
+  "features": [
+   "s0",
+   "inc",
+   "s0_norm",
+   "mean3",
+   "mean7",
+   "mean15",
+   "std7",
+   "std15",
+   "grad",
+   "glcm_contrast",
+   "glcm_homogeneity",
+   "glcm_entropy",
+   "lat",
+   "lon_sin",
+   "lon_cos",
+   "dist_coast_km",
+   "doy_sin",
+   "doy_cos"
+  ],
+  "train_rows": 2627029,
+  "validation_rows": 563900
+ }
+}

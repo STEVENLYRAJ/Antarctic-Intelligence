@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from ..config import DOCS_DIR, EXPERIMENTS_DIR, MODELS_DIR, OUTPUTS_DIR, ROOT, load
-from .addendum import cnn_status, ncep_lines, viewer_lines
+from .addendum import cnn_status, ncep_lines, operational_block, viewer_lines
 from .docs_results import BASE, NAMES, _f, _j, compact_table, figures_md, metrics_table, skill
 
 M = EXPERIMENTS_DIR / "metrics"
@@ -67,6 +67,7 @@ def model_card():
           "## Ethical / communication notes", "",
           "* Forecast layers are labelled `data_type = model_prediction` and must be visually distinct from observations in the UI.",
           "* Always display issue time, target period, model version and data source with the forecast."]
+    L = L[:2] + operational_block("ml01") + L[2:]
     (DOCS_DIR / "MODEL_CARD.md").write_text("\n".join(L), encoding="utf-8")
 
 
@@ -162,4 +163,5 @@ def final_report():
           "* Frontend layers (`outputs/forecasts/<id>/layers/`: EPSG:3412 GeoTIFFs, EPSG:4326 PNG overlays with bounds, GeoJSON edges, extent time "
           "series, regional summary, manifest with data_type labels) — COMPLETED."] + viewer_lines() + ["",
           "## 14. Recommended next research direction", "", "See NEXT_STEPS.md."]
+    L = L[:3] + operational_block("ml01") + L[3:]
     (DOCS_DIR / "AETHENTRA_ML_TASK_01_FINAL_REPORT.md").write_text("\n".join(L), encoding="utf-8")

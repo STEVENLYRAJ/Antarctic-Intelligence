@@ -59,6 +59,10 @@ class CNNModel:
         self.vc = self.channels.index("anom_w1")
         self.name = meta["name"]
 
+    @property
+    def features(self) -> list[str]:
+        return self.channels
+
     @classmethod
     def load(cls, directory: Path, name: str, ctx) -> "CNNModel":
         import torch

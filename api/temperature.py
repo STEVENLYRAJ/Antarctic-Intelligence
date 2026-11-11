@@ -21,7 +21,8 @@ FILE_KINDS = {"netcdf": ".nc", "summary_json": ".json"}
 
 
 def _meta() -> dict:
-    p = FINAL / "final_model.meta.json"
+    from aethentra.temperature.inference.predict import operational_model_name
+    p = FINAL / f"{operational_model_name()}.meta.json"
     if not p.exists():
         raise HTTPException(503, "No ML-02 final model available")
     return json.loads(p.read_text())
@@ -47,8 +48,10 @@ def health():
 def model_info():
     m = _meta()
     sel = METRICS / "selection_record.json"
-    return {"model_version": m.get("model_version"), "selected_from": m.get("selected_from"), "kind": m["kind"], "n_features": len(m["features"]),
-            "features": m["features"], "train_period": m.get("train_period"), "source": m.get("source"),
+    feats = m.get("features") or m["dynamic_channels"] + m["static_channels"]
+    return {"model_version": m.get("model_version") or cached_bundle().meta.get("model_version"), "selected_from": m.get("selected_from"),
+            "kind": m["kind"], "n_features": len(feats), "features": feats,
+            "operational_decision": "U-Net addendum decision record (validation only)" if m["kind"] == "unet" else "tree selection record", "train_period": m.get("train_period"), "source": m.get("source"),
             "climatology_period": m.get("climatology_period"), "selection": json.loads(sel.read_text()).get("selection_basis") if sel.exists() else None}
 
 
@@ -81,6 +84,9 @@ def forecast_metrics():
     if not p.exists():
         raise HTTPException(404, "Test evaluation not available")
     t = json.loads(p.read_text())
+    c = METRICS / "test_cnn_addendum" / "summary.json"
+    if c.exists():                                   # same 416 test dates; the U-Net row comes from its own single evaluation
+        t["metrics"].update(json.loads(c.read_text())["metrics"])
     keep = ("all", "antarctica_land", "southern_ocean", "antarctic_peninsula", "west_antarctica", "east_antarctica", "coastal_land", "inland")
     return {"split": "test", "issue_dates": [t["first"], t["last"]], "n_issue_dates": t["n_issue_dates"], "source": t["source"],
             "metrics": {m: {r: {k: v for k, v in x[r].items() if k not in ("by_season", "categories")} for r in keep if r in x}

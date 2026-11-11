@@ -20,24 +20,31 @@ import numpy as np
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import FileResponse, Response
 
+from aethentra.anomaly.export import MAP_DIR as ANOM_DIR
 from aethentra.inference.export_forecast import FORECAST_DIR as SIC_DIR
+from aethentra.sar.inference import WEEKLY_DIR as SAR_DIR
 from aethentra.temperature.inference.predict import FORECAST_DIR as T2M_DIR
 
 router = APIRouter(tags=["map layers"])
-PRODUCTS = {"sic": (SIC_DIR, "sic7d_"), "t2m": (T2M_DIR, "t2m7d_")}
-ID_RE = re.compile(r"^(sic|t2m)7d_\d{8}_[A-Za-z0-9._-]+$")
+PRODUCTS = {"sic": (SIC_DIR, "sic7d_"), "t2m": (T2M_DIR, "t2m7d_"), "sar": (SAR_DIR, "week_"), "anom": (ANOM_DIR, "anom_")}
+ID_RE = re.compile(r"^((sic|t2m)7d_\d{8}_[A-Za-z0-9._-]+|week_\d{4}-\d{2}-\d{2}|anom_\d{4}-\d{2})$")
 LAYER_RE = re.compile(r"^[a-z0-9_]+$")
 # colormap, vmin, vmax per layer id (fallback by units)
 STYLE = {"forecast_7day_mean": ("Blues_r", 0, 100), "observed_latest_week": ("Blues_r", 0, 100),
          "test_spatial_error": ("magma_r", 0, 15), "test_error_mae": ("magma_r", 0, 4),
          "forecast_anomaly": ("RdBu_r", -6, 6), "observed_anomaly_latest_week": ("RdBu_r", -10, 10),
-         "forecast_warm_regions": ("RdBu_r", 0, 4), "forecast_cold_regions": ("RdBu_r", 0, 4), "forecast_extreme_regions": ("RdBu_r", 0, 4)}
+         "forecast_warm_regions": ("RdBu_r", 0, 4), "forecast_cold_regions": ("RdBu_r", 0, 4), "forecast_extreme_regions": ("RdBu_r", 0, 4),
+         "detection_frequency": ("Blues_r", 0, 1), "weekly_class": ("cividis", 0, 2), "valid_acquisitions": ("viridis", 0, 6),
+         "multivariate_severity": ("YlOrRd", 0, 4), "method_agreement": ("PuRd", 0, 4), "sic_anomaly_native": ("RdBu", -40, 40),
+         "sic_z": ("RdBu", -3, 3), "t2m_normal": ("RdYlBu_r", -60, 0)}
+for _v in ("t2m", "slp", "wspd", "rhum", "prate", "tcdc", "z500"):
+    STYLE[f"{_v}_z"] = ("RdBu_r", -3, 3)
 DEFAULT_T = ("RdYlBu_r", -60, 0)
 
 
 def _forecast_dir(product: str, forecast_id: str | None = None) -> Path:
     if product not in PRODUCTS:
-        raise HTTPException(404, "Unknown product (sic | t2m)")
+        raise HTTPException(404, "Unknown product (sic | t2m | sar | anom)")
     base, prefix = PRODUCTS[product]
     if forecast_id is None:
         dirs = sorted(d for d in base.glob(f"{prefix}*") if (d / "layers" / "manifest.json").exists())
@@ -58,7 +65,7 @@ def _layers(d: Path) -> tuple[dict, list[dict]]:
     out = []
     for lyr in m["layers"]:
         files = list(lyr.get("files") or []) + [lyr[k] for k in ("geotiff", "png", "geojson", "file") if lyr.get(k)]
-        tif = next((f for f in files if f.endswith("_3412.tif")), None)
+        tif = next((f for f in files if f.endswith("_3412.tif")), None) or next((f for f in files if f.endswith(".tif")), None)
         other = [f for f in files if f.endswith((".json", ".geojson"))]
         cmap, lo, hi = STYLE.get(lyr["id"], DEFAULT_T if lyr.get("units") == "degC" else ("viridis", None, None))
         if lyr.get("color_range") and lyr["id"] not in STYLE:
@@ -77,7 +84,15 @@ def _colors(cmap: str, n: int = 11) -> list[str]:
 
 @router.get("/layers/{product}/latest")
 def layers_latest(product: str):
-    d = _forecast_dir(product)
+    return _manifest_response(product, _forecast_dir(product))
+
+
+@router.get("/layers/{product}/{forecast_id}/manifest")
+def layers_by_id(product: str, forecast_id: str):
+    return _manifest_response(product, _forecast_dir(product, forecast_id))
+
+
+def _manifest_response(product: str, d: Path):
     m, layers = _layers(d)
     for lyr in layers:
         if lyr["raster"]:
@@ -86,7 +101,7 @@ def layers_latest(product: str):
             lyr["style"]["colors"] = _colors(lyr["style"]["cmap"])
         lyr["vector_urls"] = [f"/layers/{product}/{d.name}/files/{f}" for f in lyr.pop("vector")]
         lyr.pop("raster")
-    summary = next(iter(sorted(d.glob(f"{d.name}.json"))), None)
+    summary = next(iter(sorted(d.glob(f"{d.name}.json"))), None) or (d / "metadata.json" if (d / "metadata.json").exists() else None)
     return {"product": product, "forecast_id": d.name, "issue_date": m.get("issue_date"), "model_version": m.get("model_version"),
             "source": m.get("source"), "limitations": m.get("limitations"), "display_rules": m.get("display_rules"),
             "summary": json.loads(summary.read_text()) if summary else None, "layers": layers}

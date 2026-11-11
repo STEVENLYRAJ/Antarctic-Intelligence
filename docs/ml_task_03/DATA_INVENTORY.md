@@ -1,0 +1,18 @@
+# ML-03 — Data Inventory
+
+| dataset                                         | source                                          | format                 |   files | temporal                 | crs                            | resolution                                | status                                                   |
+|:------------------------------------------------|:------------------------------------------------|:-----------------------|--------:|:-------------------------|:-------------------------------|:------------------------------------------|:---------------------------------------------------------|
+| Sentinel-1 EW GRDM HH (overview x8)             | ESA Copernicus via Microsoft Planetary Computer | COG GeoTIFF + SAFE XML |     774 | 2018-01-03 .. 2026-10-29 | GCPs (EPSG:4326) -> EPSG:3031  | 40 m read at x8 overview, resampled 400 m | verified existing (downloaded)                           |
+| USNIC Antarctic ice charts                      | U.S. National Ice Center                        | SIGRID-3 shapefile     |     387 | 2018-01-04 .. 2026-10-29 | polar stereographic (WGS84)    | chart polygons (km)                       | verified existing (downloaded)                           |
+| Natural Earth 10 m land + Antarctic ice shelves | naturalearthdata.com                            | shapefile              |       2 | static                   | EPSG:4326                      | 1:10m                                     | verified existing (downloaded)                           |
+| DMI-ASIP Antarctic SIC mosaic                   | CMEMS SEAICE_ANT_PHY_AUTO_L3_NRT_011_012        | NetCDF                 |       1 | 2023-02-02               | polar stereographic lat_ts -70 | 1 km                                      | verified existing (user file); more days need an account |
+| CDSE / ASF full-resolution SAFE                 | ESA / NASA ASF                                  | SAFE zip               |       0 |                          |                                | 40 m                                      | downloadable with registration (missing credentials)     |
+| AI4Arctic ASIP v2                               | DTU                                             | NetCDF                 |       0 | 2018-2019                |                                | 80 m                                      | downloadable; not used (Arctic)                          |
+
+## Scene catalogue status
+
+| split      |   scenes |   charts |   downloaded |   processed |
+|:-----------|---------:|---------:|-------------:|------------:|
+| test       |      164 |       82 |          164 |         164 |
+| train      |      498 |      249 |          498 |         498 |
+| validation |      112 |       56 |          112 |         112 |

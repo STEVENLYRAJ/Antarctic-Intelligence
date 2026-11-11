@@ -1,0 +1,100 @@
+{
+  "forecast_id": "sic7d_20261101_aethentra-sic-weekly-20261108-v1-sic-only",
+  "product": "weekly_mean_sea_ice_concentration_forecast",
+  "data_type": "model_prediction",
+  "issue_date": "2026-11-01",
+  "issue_time_utc": "2026-11-01T23:59:59Z",
+  "target_start": "2026-11-02",
+  "target_end": "2026-11-08",
+  "quantity": "Mean sea-ice concentration over target_start..target_end (7-day mean, not daily, not anomaly)",
+  "units": "percent (0-100)",
+  "grid": "NSIDC Polar Stereographic South 25 km (EPSG:3412), 332 x 316",
+  "sic_threshold_percent": 15.0,
+  "extent_km2": 15954630.708140898,
+  "area_km2": 13693854.273438588,
+  "persistence_extent_km2": 16135712.851599146,
+  "climatology_extent_km2": 18520681.09425742,
+  "sectors": [
+    {
+      "sector": "weddell",
+      "extent_km2": 6704780.174097856,
+      "area_km2": 6012978.068020204,
+      "persistence_extent_km2": 6788810.651457174
+    },
+    {
+      "sector": "indian",
+      "extent_km2": 2832484.0542069357,
+      "area_km2": 2181423.5082466407,
+      "persistence_extent_km2": 2865317.5036704317
+    },
+    {
+      "sector": "west_pacific",
+      "extent_km2": 1680610.2314347264,
+      "area_km2": 1285052.1885614255,
+      "persistence_extent_km2": 1720521.0237986306
+    },
+    {
+      "sector": "ross",
+      "extent_km2": 3704384.7191228326,
+      "area_km2": 3312753.021846924,
+      "persistence_extent_km2": 3728079.0811400292
+    },
+    {
+      "sector": "bellingshausen_amundsen",
+      "extent_km2": 1032371.5292785476,
+      "area_km2": 901647.4867633944,
+      "persistence_extent_km2": 1032984.5915328788
+    }
+  ],
+  "model_version": "aethentra-sic-weekly-20261108-v1-sic-only",
+  "model_name": "final_model_sic_only (fallback)",
+  "input_quality": {
+    "latest_observation_date": "2026-11-01",
+    "persistence_coverage_fraction": 1.0,
+    "history_days_available_of_56": 56,
+    "atmosphere_days_available_of_7": 0,
+    "atmosphere_used": false,
+    "warnings": [
+      "Atmospheric inputs available for 0/7 days; atmospheric features set to missing.",
+      "Using the SIC-only fallback model (declared before test; its test metrics are reported separately)."
+    ]
+  },
+  "uncertainty": {
+    "validated": false,
+    "method": "none",
+    "nominal_coverage": null,
+    "empirical_test_coverage": null,
+    "note": "No interval provided."
+  },
+  "provenance": {
+    "sic_source": "NOAA/NSIDC CDR of Passive Microwave SIC v6 (G02202), doi:10.7265/b18j-z797",
+    "sic_inputs_through": "2026-11-01",
+    "atmosphere_source": "not available for this issue date (NCEP R1 dailies at NOAA PSL end 2026-03-17 at retrieval time)",
+    "model_training_period": [
+      "1979-01-01",
+      "2020-12-31"
+    ],
+    "physical_checks": {
+      "model_cells": 48502,
+      "pre_clip_below_0": 8274,
+      "pre_clip_above_100": 19
+    },
+    "climatology_period": [
+      "1979-01-01",
+      "2020-12-31"
+    ]
+  },
+  "files": {
+    "netcdf": "sic7d_20261101_aethentra-sic-weekly-20261108-v1-sic-only.nc",
+    "ice_edge_geojson": "sic7d_20261101_aethentra-sic-weekly-20261108-v1-sic-only_ice_edge.geojson",
+    "summary_json": "sic7d_20261101_aethentra-sic-weekly-20261108-v1-sic-only.json"
+  },
+  "limitations": [
+    "Statistical forecast of the 7-day MEAN concentration; it does not resolve day-to-day variability.",
+    "Trained on the NOAA/NSIDC passive-microwave CDR v6 (25 km); inherits its biases (melt-pond / thin-ice underestimation, coastal land spill-over).",
+    "Atmospheric predictors are PAST-week NCEP/NCAR R1 means (interim substitute for ERA5); no weather forecast of the target week is used.",
+    "Extent uses the 15 % threshold on the forecast 7-day-mean field; it is not identical to the mean of daily extents.",
+    "Not reviewed by an independent sea-ice expert; not for operational navigation."
+  ],
+  "generated_utc": "2026-11-11T01:49:09Z"
+}

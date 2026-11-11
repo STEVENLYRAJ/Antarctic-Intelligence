@@ -1,0 +1,17 @@
+dataset,variable,source,version,resolution,coverage_start,coverage_end,units,local_path,status,access,licence,files
+NCEP/NCAR Reanalysis 1 daily,air,NOAA PSL OPeNDAP,R1,"2.5 deg, lat<=35S",1979-01-01,2026-03-17,K->degC,data/raw/aethentra/ncep_r1,verified (provenance+MD5),"public, no login",NOAA PSL: no restrictions; cite Kalnay et al. 1996,48
+NCEP/NCAR Reanalysis 1 daily,slp,NOAA PSL OPeNDAP,R1,"2.5 deg, lat<=35S",1979-01-01,2026-03-17,Pa->hPa,data/raw/aethentra/ncep_r1,verified (provenance+MD5),"public, no login",NOAA PSL: no restrictions; cite Kalnay et al. 1996,48
+NCEP/NCAR Reanalysis 1 daily,uwnd,NOAA PSL OPeNDAP,R1,"2.5 deg, lat<=35S",1979-01-01,2026-03-17,m/s,data/raw/aethentra/ncep_r1,verified (provenance+MD5),"public, no login",NOAA PSL: no restrictions; cite Kalnay et al. 1996,48
+NCEP/NCAR Reanalysis 1 daily,vwnd,NOAA PSL OPeNDAP,R1,"2.5 deg, lat<=35S",1979-01-01,2026-03-17,m/s,data/raw/aethentra/ncep_r1,verified (provenance+MD5),"public, no login",NOAA PSL: no restrictions; cite Kalnay et al. 1996,48
+NCEP/NCAR Reanalysis 1 daily,rhum,NOAA PSL OPeNDAP,R1,"2.5 deg, lat<=35S",1979-01-01,2026-03-17,%,data/raw/ml04/ncep_r1,verified (provenance+MD5),"public, no login",NOAA PSL: no restrictions; cite Kalnay et al. 1996,48
+NCEP/NCAR Reanalysis 1 daily,prate,NOAA PSL OPeNDAP,R1,"T62 Gaussian (~1.9 deg), lat<=35S",1979-01-01,2026-03-17,kg m-2 s-1 -> mm/day,data/raw/ml04/ncep_r1,verified (provenance+MD5),"public, no login",NOAA PSL: no restrictions; cite Kalnay et al. 1996,48
+NCEP/NCAR Reanalysis 1 daily,tcdc,NOAA PSL OPeNDAP,R1,"T62 Gaussian (~1.9 deg), lat<=35S",1979-01-01,2026-03-17,%,data/raw/ml04/ncep_r1,verified (provenance+MD5),"public, no login",NOAA PSL: no restrictions; cite Kalnay et al. 1996,48
+NCEP/NCAR Reanalysis 1 daily,hgt500,NOAA PSL OPeNDAP,R1,"2.5 deg, lat<=35S",1979-01-01,2026-03-17,m,data/raw/ml04/ncep_r1,verified (provenance+MD5),"public, no login",NOAA PSL: no restrictions; cite Kalnay et al. 1996,48
+NOAA/NSIDC SIC CDR (G02202),cdr_seaice_conc,NSIDC HTTPS,v6r00,25 km EPSG:3412,1979-01-01,2026-11-01,%,data/raw/aethentra/nsidc_g02202_v6 (cube data/interim/aethentra/sic_daily.npy),verified (MD5 vs manifest),"public, no login",NOAA public domain,48
+NSIDC Sea Ice Index daily extent (G02135),extent,NSIDC,v4.0,hemispheric,1978-10-26,2026-10-09,10^6 km2,data/raw/antarctic/external/nsidc_g02135_south,present (cross-check),public,NSIDC terms,2
+GHCN-Daily Antarctic stations,TAVG,NOAA NCEI,GHCN-D,point,1973,2026,0.1 degC,data/raw/station_observations/ghcnd,present (45 stations),public,NOAA public domain,45
+Antarctic station daily series (Zenodo 17164992),surface daily,Zenodo,record 17164992,point,varies,varies,degC,data/raw/station_observations/zenodo_17164992,present (not used in v1 metrics),public,see zenodo_record.json,32
+ERA5 single levels,,,,,,,,,NOT ACQUIRED,needs CDS API token (CDSAPI_KEY),,0
+MERRA-2,,,,,,,,,NOT ACQUIRED,needs NASA Earthdata login,,0
+Copernicus Marine SST/thickness/drift,,,,,,,,,NOT ACQUIRED,needs Copernicus Marine account,,0
+NCEP R1 snowfall/snow depth,,,,,,,,,NOT ACQUIRED,no daily snowfall; snow fields not meaningful over ice sheet,,0

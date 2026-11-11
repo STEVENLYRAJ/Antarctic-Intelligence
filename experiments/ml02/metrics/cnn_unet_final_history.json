@@ -1,0 +1,127 @@
+[
+ {
+  "epoch": 1,
+  "train_rmse": 3.9693681979156143,
+  "seconds": 74.6
+ },
+ {
+  "epoch": 2,
+  "train_rmse": 3.8026611509879915,
+  "seconds": 136.6
+ },
+ {
+  "epoch": 3,
+  "train_rmse": 3.763672162371385,
+  "seconds": 199.4
+ },
+ {
+  "epoch": 4,
+  "train_rmse": 3.719901897012057,
+  "seconds": 262.3
+ },
+ {
+  "epoch": 5,
+  "train_rmse": 3.690990190531462,
+  "seconds": 324.8
+ },
+ {
+  "epoch": 6,
+  "train_rmse": 3.6706112248580003,
+  "seconds": 387.5
+ },
+ {
+  "epoch": 7,
+  "train_rmse": 3.650793457733514,
+  "seconds": 450.2
+ },
+ {
+  "epoch": 8,
+  "train_rmse": 3.6368543808299716,
+  "seconds": 513.3
+ },
+ {
+  "epoch": 9,
+  "train_rmse": 3.6217251380892006,
+  "seconds": 576.1
+ },
+ {
+  "epoch": 10,
+  "train_rmse": 3.6082327930951763,
+  "seconds": 639.3
+ },
+ {
+  "epoch": 11,
+  "train_rmse": 3.5945109355840774,
+  "seconds": 702.6
+ },
+ {
+  "epoch": 12,
+  "train_rmse": 3.5807669161226623,
+  "seconds": 765.2
+ },
+ {
+  "epoch": 13,
+  "train_rmse": 3.5665723157460745,
+  "seconds": 827.9
+ },
+ {
+  "epoch": 14,
+  "train_rmse": 3.5551214566263694,
+  "seconds": 891.3
+ },
+ {
+  "epoch": 15,
+  "train_rmse": 3.5349113688936122,
+  "seconds": 954.0
+ },
+ {
+  "epoch": 16,
+  "train_rmse": 3.5237918338756877,
+  "seconds": 1016.0
+ },
+ {
+  "epoch": 17,
+  "train_rmse": 3.5078524134218463,
+  "seconds": 1078.5
+ },
+ {
+  "epoch": 18,
+  "train_rmse": 3.4922086931580516,
+  "seconds": 1140.9
+ },
+ {
+  "epoch": 19,
+  "train_rmse": 3.4758669980100403,
+  "seconds": 1203.3
+ },
+ {
+  "epoch": 20,
+  "train_rmse": 3.463673886794619,
+  "seconds": 1266.0
+ },
+ {
+  "epoch": 21,
+  "train_rmse": 3.4518820193145747,
+  "seconds": 1329.5
+ },
+ {
+  "epoch": 22,
+  "train_rmse": 3.441802844222223,
+  "seconds": 1395.5
+ },
+ {
+  "epoch": 23,
+  "train_rmse": 3.4325821078871406,
+  "seconds": 1464.9
+ },
+ {
+  "epoch": 24,
+  "train_rmse": 3.4282579920887155,
+  "seconds": 1536.2
+ },
+ {
+  "epoch": 25,
+  "train_rmse": 3.425396874305253,
+  "seconds": 2061.9
+ }
+]

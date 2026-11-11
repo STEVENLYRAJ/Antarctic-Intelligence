@@ -271,10 +271,36 @@ def _headline():
     return te, L
 
 
+def _operational_unet() -> list[str]:
+    """Card rows for the U-Net when the frozen addendum decision made it the operational model (else [])."""
+    dec, cm = _j(METRICS / "addendum_cnn_decision_record.json"), _j(MODELS / "final" / "cnn_unet_final.meta.json")
+    te = _j(METRICS / "test_cnn_addendum" / "summary.json")
+    if not (dec and dec["cnn_replaces_operational_model"] and cm):
+        return []
+    L = ["## Operational model: U-Net (addendum)", "",
+         f"The U-Net was better than the frozen tree selection `{dec['frozen_tree_selection']}` on {dec['cnn_better_on']} on validation "
+         f"(decision frozen {dec['frozen_utc']}, before its test evaluation), so forecasts are produced by `cnn_unet_final`. The tree "
+         "model below remains the documented frozen selection and fallback.", "", "| item | value |", "|---|---|",
+         f"| Type | U-Net ({cm['n_parameters']:,} parameters; base {cm['architecture']['base']}, depth {cm['architecture']['depth']}) |",
+         f"| Inputs | {len(cm['dynamic_channels'])} dynamic feature maps (the tree features as grids) + {len(cm['static_channels'])} static + validity mask |",
+         f"| Training | {cm['train_period']}, {cm['train_dates']} weekly maps, {cm['epochs_run']} epochs (= best epoch on validation), {cm['loss']} |",
+         "| Uncertainty | none exported (the q10/q90 interval was validated around the tree model only) |"]
+    if te:
+        a, r = te["metrics"]["cnn_unet_final"]["all"], te["tree_final_model_test_metrics_for_reference"]["all"]
+        L += ["", f"Test {te['first']} … {te['last']} ({te['n_issue_dates']} issue dates, single evaluation {te['evaluated_utc']}): "
+              f"MAE **{a['area_weighted_mae_degC']:.3f} °C** (tree {r['area_weighted_mae_degC']:.3f}), RMSE **{a['area_weighted_rmse_degC']:.3f} °C** "
+              f"(tree {r['area_weighted_rmse_degC']:.3f}), bias {a['area_weighted_bias_degC']:+.3f} °C, ACC {a['acc_pattern_mean']:.3f} "
+              f"(tree {r['acc_pattern_mean']:.3f}), MSSS {a['msss_vs_climatology']:.3f} (tree {r['msss_vs_climatology']:.3f})."]
+    return L + [""]
+
+
 def model_card():
     fm = _j(MODELS / "final" / "final_model.meta.json")
     te, H = _headline()
-    L = ["# Model Card — AETHENTRA ML-02 weekly Antarctic 2 m temperature anomaly", "", _src_note(), ""]
+    L = ["# Model Card — AETHENTRA ML-02 weekly Antarctic 2 m temperature anomaly", "", _src_note(), ""] + _operational_unet()
+    if L[-1:] == [""] and len(L) > 5:
+        L.append("## Tree model (frozen selection; fallback)")
+        L.append("")
     if not fm:
         L.append("No final model has been trained yet.")
     else:
@@ -327,7 +353,7 @@ def final_report():
                               "COMPLETED for ML-02 (all ML-02 tests pass); repository suite has failures")) + " | " +
          (f"whole repository: {tests['passed']} passed, {tests['failed']} failed, {tests['skipped']} skipped ({tests['when']})"
           + (f"; failed: {', '.join(tests.get('failed_tests', []))} — {tests.get('note', '')}" if tests["failed"] else "") if tests else "") + " |", "",
-         "## 3. Final test metrics (single evaluation)", ""] + (H or ["Not available."])
+         "## 3. Final test metrics (single evaluation)", ""] + _operational_unet() + (["### Tree model (frozen selection)", ""] if _operational_unet() else []) + (H or ["Not available."])
     if st:
         p = st["pooled"]
         L += ["", f"Independent stations ({st['n_stations']} stations, {st['n_station_weeks']:,} station-weeks, test period): weekly-anomaly RMSE "

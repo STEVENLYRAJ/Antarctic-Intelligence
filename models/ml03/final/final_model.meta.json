@@ -1,0 +1,145 @@
+{
+ "name": "final_model",
+ "kind": "unet",
+ "architecture": {
+  "base": 32,
+  "depth": 4,
+  "dropout": 0.1
+ },
+ "channels": [
+  "s0_norm",
+  "inc",
+  "std7",
+  "valid"
+ ],
+ "loss": "(1-0.5)*BCE + 0.5*Dice",
+ "label_encoding": "0 water, 1 ice; 2 uncertain and 255 invalid ignored in loss",
+ "optimizer": "AdamW + OneCycle",
+ "lr": 0.001,
+ "weight_decay": 0.0001,
+ "batch_size": 16,
+ "tile_size": 256,
+ "augmentation": "rot90 x4, horizontal flip, sigma0 gain (0.05 sd) + pixel noise (0.05 sd) in normalised units",
+ "epochs_run": 18,
+ "best_epoch": 18,
+ "best_val_tile_miou": null,
+ "train_splits": [
+  "train",
+  "validation"
+ ],
+ "train_tiles": 7814,
+ "seconds": 2223.0,
+ "device": "cuda",
+ "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+ "seed": 42,
+ "n_parameters": 7763329,
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.245203681008277,
+   "seconds": 115.7
+  },
+  {
+   "epoch": 2,
+   "train_loss": 0.11265533228151516,
+   "seconds": 229.8
+  },
+  {
+   "epoch": 3,
+   "train_loss": 0.0881873540930709,
+   "seconds": 345.4
+  },
+  {
+   "epoch": 4,
+   "train_loss": 0.07929461620031934,
+   "seconds": 454.3
+  },
+  {
+   "epoch": 5,
+   "train_loss": 0.07250199848281293,
+   "seconds": 563.7
+  },
+  {
+   "epoch": 6,
+   "train_loss": 0.06805223804767147,
+   "seconds": 672.5
+  },
+  {
+   "epoch": 7,
+   "train_loss": 0.06305308655477633,
+   "seconds": 784.6
+  },
+  {
+   "epoch": 8,
+   "train_loss": 0.06038334815699135,
+   "seconds": 894.5
+  },
+  {
+   "epoch": 9,
+   "train_loss": 0.054528417104068604,
+   "seconds": 1004.3
+  },
+  {
+   "epoch": 10,
+   "train_loss": 0.05738988722286974,
+   "seconds": 1122.9
+  },
+  {
+   "epoch": 11,
+   "train_loss": 0.05372031132932486,
+   "seconds": 1253.5
+  },
+  {
+   "epoch": 12,
+   "train_loss": 0.05031466228575093,
+   "seconds": 1388.0
+  },
+  {
+   "epoch": 13,
+   "train_loss": 0.04645681368036611,
+   "seconds": 1534.4
+  },
+  {
+   "epoch": 14,
+   "train_loss": 0.04408050621150286,
+   "seconds": 1671.4
+  },
+  {
+   "epoch": 15,
+   "train_loss": 0.04204195711936931,
+   "seconds": 1808.7
+  },
+  {
+   "epoch": 16,
+   "train_loss": 0.03888495698626437,
+   "seconds": 1946.0
+  },
+  {
+   "epoch": 17,
+   "train_loss": 0.03818686013700391,
+   "seconds": 2084.1
+  },
+  {
+   "epoch": 18,
+   "train_loss": 0.03718216565474754,
+   "seconds": 2223.0
+  }
+ ],
+ "selected_from": "unet_bce_dice",
+ "model_version": "aethentra-sar-seaice-20261109-v1",
+ "trained_utc": "2026-11-09T17:58:09.740275+00:00",
+ "norm": {
+  "s0_norm": [
+   -14.006857872009277,
+   5.3739213943481445
+  ],
+  "inc": [
+   33.367557525634766,
+   7.281153678894043
+  ],
+  "std7": [
+   0.7120636105537415,
+   0.6744657754898071
+  ]
+ }
+}

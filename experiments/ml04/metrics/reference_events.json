@@ -1,0 +1,93 @@
+[
+ {
+  "name": "sea_ice_springtime_retreat_2016",
+  "months": [
+   "2016-10",
+   "2016-11",
+   "2016-12"
+  ],
+  "variable": "sic",
+  "direction": "-",
+  "split": "validation",
+  "reference": "Turner, J. et al. (2017) Unprecedented springtime retreat of Antarctic sea ice in 2016. Geophys. Res. Lett. 44, 6868-6875.",
+  "cells": 2784,
+  "mean_z": -0.3896346688270569,
+  "max_signed_z": -18.52489471435547,
+  "univariate_flag_fraction": 0.11458333333333333,
+  "multivariate_flag_fraction": 0.13757183908045978,
+  "detected_univariate": false,
+  "detected_multivariate": false
+ },
+ {
+  "name": "sea_ice_low_2017",
+  "months": [
+   "2017-01",
+   "2017-02"
+  ],
+  "variable": "sic",
+  "direction": "-",
+  "split": "validation",
+  "reference": "Parkinson, C. L. (2019) A 40-y record reveals gradual Antarctic sea ice increases followed by decreases at rates far exceeding the rates seen in the Arctic. PNAS 116, 14414-14423.",
+  "cells": 1856,
+  "mean_z": -0.026318788528442383,
+  "max_signed_z": -1.9542204141616821,
+  "univariate_flag_fraction": 0.005926724137931034,
+  "multivariate_flag_fraction": 0.14655172413793102,
+  "detected_univariate": false,
+  "detected_multivariate": false
+ },
+ {
+  "name": "peninsula_warm_event_2020_02",
+  "months": [
+   "2020-02"
+  ],
+  "variable": "t2m",
+  "direction": "+",
+  "split": "test",
+  "reference": "WMO (2021) verified a record 18.3 degC at Esperanza (Antarctic Peninsula) on 6 February 2020; a short event, so a monthly mean may not be strongly anomalous.",
+  "cells": 35,
+  "mean_z": 2.001828193664551,
+  "max_signed_z": 2.6712305545806885,
+  "univariate_flag_fraction": 0.6,
+  "multivariate_flag_fraction": 0.08571428571428572,
+  "detected_univariate": true,
+  "detected_multivariate": false
+ },
+ {
+  "name": "east_antarctica_heatwave_2022_03",
+  "months": [
+   "2022-03"
+  ],
+  "variable": "t2m",
+  "direction": "+",
+  "split": "test",
+  "reference": "Wille, J. D. et al. (2024) The extraordinary March 2022 East Antarctica 'heat' wave. Part I/II. J. Climate 37.",
+  "cells": 175,
+  "mean_z": 1.0376760959625244,
+  "max_signed_z": 2.871598482131958,
+  "univariate_flag_fraction": 0.2571428571428571,
+  "multivariate_flag_fraction": 0.19428571428571428,
+  "detected_univariate": true,
+  "detected_multivariate": false
+ },
+ {
+  "name": "record_low_winter_sea_ice_2023",
+  "months": [
+   "2023-06",
+   "2023-07",
+   "2023-08",
+   "2023-09"
+  ],
+  "variable": "sic",
+  "direction": "-",
+  "split": "test",
+  "reference": "Purich, A. & Doddridge, E. W. (2023) Record low Antarctic sea ice coverage indicates a new sea ice state. Commun. Earth Environ. 4, 314.",
+  "cells": 3712,
+  "mean_z": -0.6647682189941406,
+  "max_signed_z": -25.851991653442383,
+  "univariate_flag_fraction": 0.16514008620689655,
+  "multivariate_flag_fraction": 0.1648706896551724,
+  "detected_univariate": false,
+  "detected_multivariate": false
+ }
+]

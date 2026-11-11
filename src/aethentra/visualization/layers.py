@@ -94,12 +94,16 @@ def export_layers(summary, fields: dict, ctx) -> dict:
     (d / "regional_summary.json").write_text(json.dumps({"data_type": "model_prediction", "issue_date": str(summary.issue_date),
                                                          "sectors": [s.model_dump() for s in summary.sectors]}, indent=2))
     layers.append({"id": "regional_summary", "data_type": "model_prediction", "files": ["regional_summary.json"], "units": "km2"})
-    em = EXPERIMENTS_DIR / "metrics" / "test_final" / "error_maps.npz"
-    if em.exists():
-        e = np.where(ctx.ocean, np.load(em)["mae_final_model"], np.nan)
+    # error map of the model that produced this forecast (U-Net, SIC-only fallback or tree final model)
+    tag, key, who = (("test_cnn_addendum", "mae_cnn_unet_final", "U-Net") if summary.model_name.startswith("cnn_unet") else
+                     ("test_final", "mae_final_model_sic_only", "SIC-only fallback") if "fallback" in summary.model_name else
+                     ("test_final", "mae_final_model", "Final-model"))
+    em = EXPERIMENTS_DIR / "metrics" / tag / "error_maps.npz"
+    if em.exists() and key in np.load(em).files:
+        e = np.where(ctx.ocean, np.load(em)[key], np.nan)
         _tif(d / "test_error_mae_3412.tif", e)
         b = _png_4326(d / "test_error_mae_4326.png", e, 0, float(np.nanpercentile(e, 99)))
-        layers.append({"id": "test_spatial_error", "data_type": "evaluation", "title": "Final-model MAE per cell, test 2021-2025",
+        layers.append({"id": "test_spatial_error", "data_type": "evaluation", "title": f"{who} MAE per cell, test 2021-2025",
                        "files": ["test_error_mae_3412.tif", "test_error_mae_4326.png"], "bounds_4326": b, "units": "percentage points"})
     man = {"forecast_id": summary.forecast_id, "issue_date": str(summary.issue_date), "issue_time_utc": summary.issue_time_utc.isoformat(),
            "target_period": [str(summary.target_start), str(summary.target_end)], "model_version": summary.model_version,

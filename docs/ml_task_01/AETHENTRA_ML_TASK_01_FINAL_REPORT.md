@@ -1,6 +1,32 @@
 # AETHENTRA ML Task 01 — Final Report
 ## Antarctic Weekly Sea-Ice Concentration & Extent Forecasting
 
+## Operational model: U-Net (addendum)
+
+The U-Net beat the frozen tree selection `lgbm_residual_tuned` on 4/4 selection criteria on validation (decision frozen 2026-11-09T03:36:53.145488+00:00, before its test evaluation) and now produces the forecasts. The tree model documented below remains the frozen selection and the fallback.
+When fewer than 5 of 7 atmospheric days are available (all issue dates after 2026-03-17 at present), the forecast uses the SIC-only tree fallback declared before the test, because the U-Net was validated with atmospheric inputs only.
+No uncertainty interval is exported for U-Net forecasts (interval coverage was assessed around the tree model only).
+
+* U-Net (`cnn_unet_residual`): 7,773,697 parameters, 34 epochs, best epoch 26 (validation mae 2.576), 84 min on cuda; 34 dynamic + 5 static channels; loss l1.
+
+| criterion (validation) | U-Net | lgbm_residual_tuned | U-Net better |
+|---|---|---|---|
+| siz_mae | 2.767 | 3.058 | yes |
+| siz_rmse | 6.364 | 7.130 | yes |
+| iiee | 502,112.958 | 585,508.141 | yes |
+| extent_mae | 79,879.693 | 116,514.113 | yes |
+
+* Decision (frozen 2026-11-09T03:36:53.145488+00:00, validation only): U-Net better on 4/4 selection criteria; replaces the operational model: **True** (the U-Net replaces the operational model only if it is better on ALL validation selection criteria).
+* Single test evaluation of `test_cnn_addendum` (260 issue dates, 2021-01-03 … 2025-12-21, evaluated 2026-11-09T10:48:38.948388+00:00):
+
+| test metric | U-Net | tree final model |
+|---|---|---|
+| SIZ MAE (pp) | 2.752 | 3.017 |
+| SIZ RMSE (pp) | 6.474 | 7.141 |
+| IIEE (km²) | 516,507 | 584,559 |
+| extent MAE (km²) | 106,184 | 127,375 |
+
+
 Status legend: **COMPLETED** = implemented, executed and verified; **IMPLEMENTED** = code exists and tested but not executed on real data; **NOT DONE** = documented gap.
 
 ## 1. Scientific objective
@@ -41,12 +67,29 @@ Native-grid daily cube (no regridding of labels), static ocean mask from the CDR
 | Random forest residual | COMPLETED (trained, checkpoint verified, validated) | `models/checkpoints/rf_residual.joblib` |
 | LightGBM residual (Optuna-tuned) | COMPLETED | `models/checkpoints/lgbm_residual_tuned.lgb.txt` |
 | **Final model** (LightGBM residual (Optuna-tuned), refit 1979–2020) | COMPLETED | `models/final/final_model.lgb.txt` |
-| U-Net (spatial deep learning, addendum) | U-Net IMPLEMENTED, not trained (PyTorch is not installed) | — |
+| U-Net (spatial deep learning, addendum) | U-Net COMPLETED (addendum; replaces the tree model) | `models/checkpoints/cnn_unet_residual.pt` |
 
 ### U-Net addendum
 
-* U-Net candidate: **IMPLEMENTED, not trained** — PyTorch is not installed. The download host of the CUDA wheel could not be reached from the sandboxed build session. Install with `python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu124`, then run `bash scripts/run_ml01_cnn.sh` (stacks → train → validate → frozen decision → refit → single test).
-* ConvLSTM: not implemented — the weekly-mean target with 7- to 56-day input summaries is already encoded as channels; a recurrent model would only be justified if the U-Net shows that spatial context helps.
+* U-Net (`cnn_unet_residual`): 7,773,697 parameters, 34 epochs, best epoch 26 (validation mae 2.576), 84 min on cuda; 34 dynamic + 5 static channels; loss l1.
+
+| criterion (validation) | U-Net | lgbm_residual_tuned | U-Net better |
+|---|---|---|---|
+| siz_mae | 2.767 | 3.058 | yes |
+| siz_rmse | 6.364 | 7.130 | yes |
+| iiee | 502,112.958 | 585,508.141 | yes |
+| extent_mae | 79,879.693 | 116,514.113 | yes |
+
+* Decision (frozen 2026-11-09T03:36:53.145488+00:00, validation only): U-Net better on 4/4 selection criteria; replaces the operational model: **True** (the U-Net replaces the operational model only if it is better on ALL validation selection criteria).
+* Single test evaluation of `test_cnn_addendum` (260 issue dates, 2021-01-03 … 2025-12-21, evaluated 2026-11-09T10:48:38.948388+00:00):
+
+| test metric | U-Net | tree final model |
+|---|---|---|
+| SIZ MAE (pp) | 2.752 | 3.017 |
+| SIZ RMSE (pp) | 6.474 | 7.141 |
+| IIEE (km²) | 516,507 | 584,559 |
+| extent MAE (km²) | 106,184 | 127,375 |
+
 
 Optuna: 5 trials; best validation-sample MAE 2.795 pp vs 2.805 pp untuned. Hyper-parameters: MODEL_TRAINING_REPORT.md.
 
@@ -141,11 +184,11 @@ Final model vs persistence: SIZ MAE +18.5 %, IIEE +16.1 %, extent MAE +67.7 % (p
 
 ## 10. Latest forecast produced by the inference pipeline
 
-* Forecast `sic7d_20261101_aethentra-sic-weekly-20261108-v1` issued 2026-11-01 for 2026-11-02 … 2026-11-08 (model aethentra-sic-weekly-20261108-v1).
+* Forecast `sic7d_20261101_aethentra-sic-weekly-20261108-v1-sic-only` issued 2026-11-01 for 2026-11-02 … 2026-11-08 (model aethentra-sic-weekly-20261108-v1-sic-only).
 * Extent 15.95 × 10⁶ km², area 13.69 × 10⁶ km² (persistence extent 16.14, climatology 18.52).
 * Inputs: latest observation 2026-11-01, persistence coverage 100.0%, atmosphere used: False. Warnings: ['Atmospheric inputs available for 0/7 days; atmospheric features set to missing.', 'Using the SIC-only fallback model (declared before test; its test metrics are reported separately).'].
-* Uncertainty validated: False — Empirical coverage differs from nominal by > 5 pp; interval NOT exported.
-* Files: `outputs/forecasts/sic7d_20261101_aethentra-sic-weekly-20261108-v1/` (sic7d_20261101_aethentra-sic-weekly-20261108-v1.nc, sic7d_20261101_aethentra-sic-weekly-20261108-v1_ice_edge.geojson, sic7d_20261101_aethentra-sic-weekly-20261108-v1.json) and `layers/` for the frontend.
+* Uncertainty validated: False — No interval provided.
+* Files: `outputs/forecasts/sic7d_20261101_aethentra-sic-weekly-20261108-v1-sic-only/` (sic7d_20261101_aethentra-sic-weekly-20261108-v1-sic-only.nc, sic7d_20261101_aethentra-sic-weekly-20261108-v1-sic-only_ice_edge.geojson, sic7d_20261101_aethentra-sic-weekly-20261108-v1-sic-only.json) and `layers/` for the frontend.
 
 ## 11. Limitations
 
@@ -157,7 +200,7 @@ See MODEL_CARD.md (failure modes) and MISSING_PREREQUISITES.md. Key points: inte
 
 REPRODUCIBILITY_GUIDE.md lists every command; all numbers in this report were generated by `scripts/build_docs.py` from artifacts.
 
-Tests: 56 passed, 1 failed, 2 skipped (2026-11-08T09:52:35+00:00).
+Tests: 58 passed, 1 failed, 0 skipped (2026-11-09T10:54:05+00:00).
 
 ## 13. Integration status
 

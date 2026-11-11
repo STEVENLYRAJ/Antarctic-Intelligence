@@ -1,0 +1,13 @@
+classes: {open_water: 0, sea_ice: 1, uncertain: 2, invalid: 255}
+# SIGRID-3 total concentration (CT) codes -> class
+water_codes: ["00", "01", "02"]     # ice free, open water (<1/10), bergy water
+ice_min_concentration_pct: 70       # CT lower bound >= 70 % -> sea ice; 10-70 % -> uncertain/mixed
+fast_ice_code: "92"                 # 10/10 incl. fast ice -> sea ice
+boundary_buffer_m: 4000             # pixels within this distance of a class boundary -> uncertain (chart scale + time mismatch)
+chart_match_days: [0, 3]            # scene acquired 0..3 days BEFORE the chart valid date
+splits:                             # by chart valid date (scene-level, before tiling)
+  train: ["2018-01-01", "2022-12-31"]
+  validation: ["2023-01-01", "2024-12-31"]
+  test: ["2025-01-01", "2026-12-31"]
+scenes_per_chart: 2                 # stratified by longitude sector, seed 42
+months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]

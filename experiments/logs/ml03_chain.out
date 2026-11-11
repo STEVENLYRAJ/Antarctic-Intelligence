@@ -1,0 +1,22 @@
+== download scenes
+2026-11-09 17:21:55,499 WARNING urllib3.connectionpool Connection pool is full, discarding connection: planetarycomputer.microsoft.com. Connection pool size: 10
+2026-11-09 17:21:57,254 WARNING urllib3.connectionpool Connection pool is full, discarding connection: planetarycomputer.microsoft.com. Connection pool size: 10
+2026-11-09 17:23:54,835 INFO aethentra.ml03.acquisition scenes 0/774
+2026-11-09 17:25:24,709 INFO aethentra.ml03.acquisition scenes 50/774
+2026-11-09 17:27:55,889 INFO aethentra.ml03.acquisition scenes 100/774
+2026-11-09 17:30:34,562 INFO aethentra.ml03.acquisition scenes 150/774
+2026-11-09 17:33:22,754 INFO aethentra.ml03.acquisition scenes 200/774
+2026-11-09 17:36:54,039 INFO aethentra.ml03.acquisition scenes 250/774
+2026-11-09 17:40:05,914 INFO aethentra.ml03.acquisition scenes 300/774
+2026-11-09 17:42:44,786 INFO aethentra.ml03.acquisition scenes 350/774
+2026-11-09 17:45:32,377 INFO aethentra.ml03.acquisition scenes 400/774
+2026-11-09 17:48:25,846 INFO aethentra.ml03.acquisition scenes 450/774
+2026-11-09 17:51:11,058 INFO aethentra.ml03.acquisition scenes 500/774
+2026-11-09 17:53:35,634 INFO aethentra.ml03.acquisition scenes 550/774
+2026-11-09 17:56:17,641 INFO aethentra.ml03.acquisition scenes 600/774
+2026-11-09 17:57:22,439 WARNING rasterio._env CPLE_AppDefined in PROJ: proj_create_from_database: ellipsoid not found: EPSG:4326
+2026-11-09 17:59:01,076 INFO aethentra.ml03.acquisition scenes 650/774
+2026-11-09 18:01:23,585 INFO aethentra.ml03.acquisition scenes 700/774
+2026-11-09 18:03:58,354 INFO aethentra.ml03.acquisition scenes 750/774
+{'downloaded': 774}
+== scripts/ml03/train.py prepare

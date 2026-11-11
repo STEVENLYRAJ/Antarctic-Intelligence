@@ -1,11 +1,10 @@
 {
- "passed": 56,
+ "passed": 69,
  "failed": 1,
- "skipped": 2,
- "when": "2026-11-08T09:52:35+00:00",
+ "skipped": 0,
+ "when": "2026-11-10T17:58:40+00:00",
  "failed_tests": [
   "tests.test_antarctic_preprocessing::test_inventory_covers_all_raw_files"
  ],
- "note": "The failure is the pre-existing Stage-1 inventory test: 8 user files added to DATAS/ after the Stage-1 inventory (services*.umm_json, tools*.umm_json) are not in metadata/antarctic_dataset_inventory.csv. Not related to ML-01/ML-02; the Stage-1 inventory was not regenerated without a request.",
- "skip_note": "2 skipped: U-Net tests require PyTorch (not installed in this session)"
+ "note": "The failure is the pre-existing Stage-1 inventory test: 8 user files added to DATAS/ after the Stage-1 inventory (services*.umm_json, tools*.umm_json) are not in metadata/antarctic_dataset_inventory.csv. Not related to ML-01/ML-02; the Stage-1 inventory was not regenerated without a request."
 }

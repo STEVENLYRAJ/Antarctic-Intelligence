@@ -72,7 +72,8 @@ def run_forecast(issue_date=None, bundle: Bundle | None = None, write: bool = Tr
     persist = predict_baseline("persistence", F); persist[~b.ctx.ocean] = np.nan
     clim = predict_baseline("climatology", F); clim[~b.ctx.ocean] = np.nan
     lo = hi = None
-    unc = Uncertainty(validated=False, method="none", note="No interval provided.")
+    unc = Uncertainty(validated=False, method="none", note="No interval provided." if b.q_lo is not None or b.cnn_test_metrics is None or model is b.fallback else
+                      "No interval: the q10/q90 interval was assessed around the tree model, not the U-Net.")
     tm = b.test_metrics or {}
     cov = tm.get("interval_coverage")
     if b.q_lo is not None and cov:
@@ -97,13 +98,14 @@ def run_forecast(issue_date=None, bundle: Bundle | None = None, write: bool = Tr
         a = float((ctx.area * np.where(ctx.ocean & m & (pred >= 15), pred, 0) / 100).sum())
         sectors.append(SectorSummary(sector=nm, extent_km2=e, area_km2=a, persistence_extent_km2=ctx.extent(persist, m) * 1e6))
     h = load("features")["labels"]["horizon_days"]
-    fid = f"sic7d_{t:%Y%m%d}_{b.meta.get('model_version', 'v1')}"
+    version = (b.fallback.meta.get("model_version") if model is b.fallback else None) or b.meta.get("model_version", "v1")   # model that ran
+    fid = f"sic7d_{t:%Y%m%d}_{version}"
     summary = ForecastSummary(
         forecast_id=fid, issue_date=t.date(), issue_time_utc=dt.datetime.combine(t.date(), dt.time(23, 59, 59), dt.timezone.utc),
         target_start=(t + pd.Timedelta(days=1)).date(), target_end=(t + pd.Timedelta(days=h)).date(),
         extent_km2=ctx.extent(pred) * 1e6, area_km2=float((ctx.area * np.where(ctx.ocean & (pred >= 15), pred, 0) / 100).sum()),
         persistence_extent_km2=ctx.extent(persist) * 1e6, climatology_extent_km2=ctx.extent(clim) * 1e6,
-        sectors=sectors, model_version=b.meta.get("model_version", "unknown"), model_name=(b.meta.get("selected_from", b.model.name) if model is b.model else "final_model_sic_only (fallback)"),
+        sectors=sectors, model_version=version, model_name=(b.meta.get("selected_from", b.model.name) if model is b.model else "final_model_sic_only (fallback)"),
         input_quality=iq, uncertainty=unc,
         provenance={"sic_source": "NOAA/NSIDC CDR of Passive Microwave SIC v6 (G02202), doi:10.7265/b18j-z797",
                     "sic_inputs_through": str(iq.latest_observation_date),

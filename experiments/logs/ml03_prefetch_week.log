@@ -1,0 +1,13 @@
+2026-11-09 23:04:12,647 INFO ml03_prefetch_week week 2026-11-02: 367 acquisitions
+2026-11-09 23:15:03,201 WARNING aethentra.ml03.acquisition GET https://sentinel1euwest.blob.core.windows.net/s1-grd/GRD/2026/11/3/EW/DH/S1D_EW_GRDM_1SDH_20261103T200007_20261103T200107_005307_00A1A4_BA13/annotation/calibration/noise-ew-hh.xml failed (Remote end closed connection without response); retry 1
+2026-11-09 23:15:03,203 WARNING aethentra.ml03.acquisition GET https://sentinel1euwest.blob.core.windows.net/s1-grd/GRD/2026/11/3/EW/DH/S1D_EW_GRDM_1SDH_20261103T200107_20261103T200219_005307_00A1A4_F265/annotation/calibration/noise-ew-hh.xml failed (Remote end closed connection without response); retry 1
+2026-11-09 23:15:03,235 WARNING aethentra.ml03.acquisition GET https://sentinel1euwest.blob.core.windows.net/s1-grd/GRD/2026/11/4/EW/DH/S1D_EW_GRDM_1SDH_20261104T090834_20261104T090934_005315_00A1DC_274E/annotation/calibration/calibration-ew-hh.xml failed (IncompleteRead(80885 bytes read, 871301 more expected)); retry 1
+2026-11-09 23:15:03,241 INFO rasterio._err GDAL signalled an error: err_no=1, msg='TIFFFillTile:Read error at row 4294967295, col 4294967295, tile 0; got 0 bytes, expected 1285818'
+2026-11-09 23:15:03,243 WARNING aethentra.ml03.acquisition GET https://sentinel1euwest.blob.core.windows.net/s1-grd/GRD/2026/11/4/EW/DH/S1D_EW_GRDM_1SDH_20261104T090934_20261104T091034_005315_00A1DC_2AB2/annotation/calibration/calibration-ew-hh.xml failed (<urlopen error [WinError 10054] An existing connection was forcibly closed by the remote host>); retry 1
+2026-11-09 23:15:03,255 INFO rasterio._err GDAL signalled an error: err_no=1, msg='TIFFFillTile:Read error at row 0, col 0, tile 1; got 78000 bytes, expected 189526'
+2026-11-09 23:15:03,241 WARNING aethentra.ml03.acquisition GET https://sentinel1euwest.blob.core.windows.net/s1-grd/GRD/2026/11/4/EW/DH/S1D_EW_GRDM_1SDH_20261104T090729_20261104T090834_005315_00A1DC_B573/annotation/calibration/calibration-ew-hh.xml failed (IncompleteRead(244724 bytes read, 784202 more expected)); retry 1
+2026-11-09 23:15:03,346 INFO rasterio._err GDAL signalled an error: err_no=1, msg='TIFFReadEncodedTile() failed.'
+2026-11-09 23:15:03,346 INFO rasterio._err GDAL signalled an error: err_no=1, msg='TIFFReadEncodedTile() failed.'
+2026-11-09 23:15:03,347 INFO rasterio._err GDAL signalled an error: err_no=1, msg='IReadBlock failed at X offset 0, Y offset 0: TIFFReadEncodedTile() failed.'
+2026-11-09 23:15:03,348 INFO rasterio._err GDAL signalled an error: err_no=1, msg='IReadBlock failed at X offset 1, Y offset 0: TIFFReadEncodedTile() failed.'
+2026-11-09 23:29:00,880 INFO ml03_prefetch_week week 2026-11-02: 367 acquisitions

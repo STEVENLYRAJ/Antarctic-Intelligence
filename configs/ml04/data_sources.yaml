@@ -1,0 +1,56 @@
+# ML-04 climate anomaly detection: data sources (all public, no credentials required for the default pipeline)
+ncep_r1:
+  id: ncep_ncar_r1_daily
+  name: NCEP/NCAR Reanalysis 1, daily means
+  doi: https://doi.org/10.1175/1520-0477(1996)077<0437:TNYRP>2.0.CO;2
+  landing_page: https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html
+  licence: "NOAA PSL: no restrictions on use; cite Kalnay et al. (1996) and NOAA PSL"
+  access: public OPeNDAP (NOAA PSL THREDDS), no login
+  opendap_base: https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis/Dailies/
+  lat_max: -35.0
+  years: [1979, 2026]
+  # variables already acquired for ML-01/ML-02 are reused in place (not duplicated)
+  reused:
+    air:  {dir: data/raw/aethentra/ncep_r1, path: "surface/air.sig995.{year}.nc", units: K, grid: "2.5 deg regular", description: "near-surface (sigma 0.995) air temperature"}
+    slp:  {dir: data/raw/aethentra/ncep_r1, path: "surface/slp.{year}.nc", units: Pa, grid: "2.5 deg regular", description: "sea-level pressure"}
+    uwnd: {dir: data/raw/aethentra/ncep_r1, path: "surface/uwnd.sig995.{year}.nc", units: m/s, grid: "2.5 deg regular", description: "near-surface eastward wind"}
+    vwnd: {dir: data/raw/aethentra/ncep_r1, path: "surface/vwnd.sig995.{year}.nc", units: m/s, grid: "2.5 deg regular", description: "near-surface northward wind"}
+  new:
+    rhum:  {path: "surface/rhum.sig995.{year}.nc", units: "%", grid: "2.5 deg regular", description: "near-surface relative humidity (w.r.t. water in NCEP R1)"}
+    prate: {path: "surface_gauss/prate.sfc.gauss.{year}.nc", units: "kg m-2 s-1", grid: "T62 Gaussian", description: "precipitation rate (model forecast field; no separate snowfall variable)"}
+    tcdc:  {path: "other_gauss/tcdc.eatm.gauss.{year}.nc", units: "%", grid: "T62 Gaussian", description: "total cloud cover (entire atmosphere; model forecast field)"}
+    hgt500: {path: "pressure/hgt.{year}.nc", var: hgt, level: 500, units: m, grid: "2.5 deg regular", description: "500 hPa geopotential height"}
+  local_dir: data/raw/ml04/ncep_r1
+  notes: >-
+    NOAA PSL's NCEP/NCAR R1 daily files end on 2026-03-17 (checked 2026-11-11), so the atmospheric record used here ends then.
+    ERA5 (the preferred source) needs a personal CDS token, which is not configured. MERRA-2 needs NASA Earthdata credentials (not configured).
+
+sea_ice:
+  id: nsidc_g02202_v6
+  name: NOAA/NSIDC Climate Data Record of Passive Microwave Sea Ice Concentration, Version 6 (southern hemisphere, 25 km)
+  doi: https://doi.org/10.7265/rjzb-pf78
+  reuse: data/interim/aethentra/sic_daily.npy (daily cube built and MD5-verified for ML-01; uint8 percent, 255 = missing)
+  grid: EPSG:3412 (NSIDC polar stereographic south, 25 km)
+
+sea_ice_extent_index:
+  id: nsidc_g02135_v4
+  name: NSIDC Sea Ice Index, Version 4, daily southern-hemisphere extent
+  doi: https://doi.org/10.7265/a98x-0f50
+  file: data/raw/antarctic/external/nsidc_g02135_south/S_seaice_extent_daily_v4.0.csv
+  role: independent cross-check of the extent computed from G02202 (different processing chain, same sensors)
+
+stations:
+  ghcnd:
+    id: noaa_ghcn_daily
+    dir: data/raw/station_observations/ghcnd
+    role: independent in-situ temperature check (station anomalies vs reanalysis-cell anomalies); stations may be assimilated by NCEP R1, so agreement is partly non-independent
+  zenodo_17164992:
+    dir: data/raw/station_observations/zenodo_17164992
+    role: Antarctic station daily surface series (secondary in-situ check)
+
+not_acquired:
+  era5: "Copernicus CDS: requires personal API token (CDSAPI_KEY); not configured"
+  merra2: "NASA GES DISC: requires Earthdata login; not configured"
+  copernicus_marine: "SST / sea-ice thickness / drift: requires Copernicus Marine account; not configured"
+  snowfall_snow_depth: "No separate snowfall in NCEP R1 daily; NCEP R1 snow fields over the ice sheet are not physically meaningful; not used"
+  scar_reader: "SCAR READER monthly station records: superseded here by GHCN-D daily station data already on disk"

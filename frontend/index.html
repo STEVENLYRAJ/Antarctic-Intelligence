@@ -8,10 +8,12 @@
 </head>
 <body>
 <header>
-  <h1>AETHENTRA <span>Antarctic weekly forecasts</span></h1>
+  <h1>AETHENTRA <span>Antarctic scientific intelligence</span></h1>
   <nav id="tabs" role="tablist">
     <button role="tab" data-product="sic" aria-selected="true">Sea-ice concentration</button>
     <button role="tab" data-product="t2m" aria-selected="false">2 m temperature</button>
+    <button role="tab" data-product="sar" aria-selected="false">SAR sea-ice detection</button>
+    <button role="tab" data-product="anom" aria-selected="false">Climate anomalies</button>
   </nav>
 </header>
 <p class="banner">Research prototype: statistical forecasts of the 7-day mean, not reviewed for operational or safety-critical use.
@@ -29,12 +31,23 @@ Forecast layers have a dashed orange frame and are labelled <b>MODEL PREDICTION<
     </figure>
   </section>
   <section id="info">
-    <h2>This forecast</h2><div id="summary"></div>
+    <h2 id="summaryhead">This forecast</h2><div id="summary"></div>
     <h2>Test-period skill</h2><div id="metrics"></div>
     <h2>Limitations</h2><ul id="limits"></ul>
   </section>
 </main>
-<footer>Polar stereographic previews (EPSG:3412, 25 km) are rendered from the native GeoTIFFs, which can be downloaded from the layer list. API documentation: <a href="/docs">/docs</a></footer>
+<section id="anompanel" hidden>
+  <div class="card"><h2>Monthly anomaly trend (area flagged by the multivariate detector)</h2><div id="trend"></div>
+    <p class="note" id="trendnote"></p></div>
+  <div class="card"><h2>Variable-wise flagged area, selected month</h2><div id="varbars"></div></div>
+  <div class="card"><h2>Seasonal comparison (area-weighted mean z, all regions)</h2><div id="seasonal"></div></div>
+  <div class="card"><h2>Sea-ice extent vs 1991–2020</h2><div id="extent"></div></div>
+  <div class="card wide"><h2>Strongest anomalies this month</h2><div id="events"></div></div>
+  <div class="card"><h2>Anomaly details</h2><div id="details"><p class="note">Select a row to see its details.</p></div></div>
+  <div class="card"><h2>Multi-month anomaly clusters (events)</h2><div id="clusters"></div></div>
+</section>
+<footer>Polar stereographic previews are rendered server-side from the native GeoTIFFs (ML-01/ML-02: EPSG:3412, 25 km; SAR weekly: EPSG:3031, 2 km; climate anomalies: NCEP R1 2.5° grid shown on EPSG:3412), which can be downloaded from the layer list. API documentation: <a href="/docs">/docs</a></footer>
+<script src="anomaly.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

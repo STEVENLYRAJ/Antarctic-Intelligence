@@ -1,0 +1,3880 @@
+{
+ "tag": "validation_cnn",
+ "source": "ncep_r1",
+ "n_issue_dates": 365,
+ "first": "2011-01-02",
+ "last": "2017-12-24",
+ "seconds": 94.1,
+ "metrics": {
+  "cnn_unet": {
+   "all": {
+    "n_cells": 20261880,
+    "n_dates": 365,
+    "mae_degC": 2.364535546372319,
+    "rmse_degC": 3.5252132958774762,
+    "bias_degC": -0.07102308654678892,
+    "area_weighted_mae_degC": 2.3891604698338216,
+    "area_weighted_rmse_degC": 3.5486625101032754,
+    "area_weighted_bias_degC": -0.07746641193178236,
+    "r2_absolute_t2m": 0.9610997267830221,
+    "r2_anomaly": 0.3330313049702702,
+    "anomaly_correlation_all": 0.5775010850994795,
+    "acc_pattern_mean": 0.5766919108532135,
+    "msss_vs_climatology": 0.33935956147657953,
+    "mse_area_weighted": 12.59300561061248,
+    "by_season": {
+     "DJF": {
+      "n_cells": 4996080,
+      "n_dates": 90,
+      "mae_degC": 0.9489209748496992,
+      "rmse_degC": 1.4427639704809931,
+      "bias_degC": 0.11622609335175105,
+      "area_weighted_mae_degC": 0.9675733981736254,
+      "area_weighted_rmse_degC": 1.4667352285725332,
+      "area_weighted_bias_degC": 0.11602960244895774,
+      "r2_absolute_t2m": 0.9811945008573572,
+      "r2_anomaly": 0.3637745726301168,
+      "anomaly_correlation_all": 0.6067400814023162,
+      "acc_pattern_mean": 0.5970191525178288,
+      "msss_vs_climatology": 0.3671782002870807,
+      "mse_area_weighted": 2.1513122307357215
+     },
+     "JJA": {
+      "n_cells": 5107104,
+      "n_dates": 92,
+      "mae_degC": 3.5615097837032588,
+      "rmse_degC": 4.726756224395309,
+      "bias_degC": -0.05391747648026377,
+      "area_weighted_mae_degC": 3.5792161584608517,
+      "area_weighted_rmse_degC": 4.743332003197552,
+      "area_weighted_bias_degC": -0.06193153474702862,
+      "r2_absolute_t2m": 0.9341596976946375,
+      "r2_anomaly": 0.32359476106536644,
+      "anomaly_correlation_all": 0.5697011262932258,
+      "acc_pattern_mean": 0.5514015080699821,
+      "msss_vs_climatology": 0.32490654836101596,
+      "mse_area_weighted": 22.4991984925581
+     },
+     "MAM": {
+      "n_cells": 5107104,
+      "n_dates": 92,
+      "mae_degC": 2.4076089905798357,
+      "rmse_degC": 3.55925274020003,
+      "bias_degC": -0.20421196475523926,
+      "area_weighted_mae_degC": 2.448587871444086,
+      "area_weighted_rmse_degC": 3.5994596769147917,
+      "area_weighted_bias_degC": -0.2134194822806069,
+      "r2_absolute_t2m": 0.9673313424083658,
+      "r2_anomaly": 0.3384835726854247,
+      "anomaly_correlation_all": 0.5846736237932106,
+      "acc_pattern_mean": 0.5633664537177672,
+      "msss_vs_climatology": 0.34602032275437067,
+      "mse_area_weighted": 12.956109965735537
+     },
+     "SON": {
+      "n_cells": 5051592,
+      "n_dates": 91,
+      "mae_degC": 2.510919334674492,
+      "rmse_degC": 3.5201062748622527,
+      "bias_degC": -0.13885567469856344,
+      "area_weighted_mae_degC": 2.531912031895211,
+      "area_weighted_rmse_degC": 3.540876791126407,
+      "area_weighted_bias_degC": -0.14709462647213506,
+      "r2_absolute_t2m": 0.9503614865214771,
+      "r2_anomaly": 0.32761651025380856,
+      "anomaly_correlation_all": 0.5744888615039238,
+      "acc_pattern_mean": 0.5956282554983009,
+      "msss_vs_climatology": 0.35278299489920006,
+      "mse_area_weighted": 12.53780844993764
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       47598,
+       177129,
+       354095,
+       965,
+       0
+      ],
+      [
+       24589,
+       289910,
+       1938844,
+       10139,
+       156
+      ],
+      [
+       24786,
+       361339,
+       13207713,
+       456972,
+       7619
+      ],
+      [
+       448,
+       8773,
+       2225773,
+       541229,
+       11474
+      ],
+      [
+       2,
+       1778,
+       335326,
+       221110,
+       14113
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.695915828146253,
+     "balanced_accuracy": 0.2736926857884072,
+     "per_class_recall": {
+      "strong_cold": 0.0820956661670579,
+      "cold": 0.1280725981804511,
+      "near_normal": 0.9394871219252166,
+      "warm": 0.19414914892113455,
+      "strong_warm": 0.02465889374817631
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.6234691721719892,
+      "recall": 0.23449997113117577,
+      "f1": 0.3408129628360032,
+      "observed_events": 3360026
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.5758795837462835,
+      "recall": 0.18963960716389566,
+      "f1": 0.28532159436919163,
+      "observed_events": 2843425
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.42302619747017567,
+      "recall": 0.02465889374817631,
+      "f1": 0.0466013198148891,
+      "observed_events": 572329
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.48857046077414984,
+      "recall": 0.0820956661670579,
+      "f1": 0.14057087166462398,
+      "observed_events": 579787
+     }
+    }
+   },
+   "antarctic_peninsula": {
+    "n_cells": 271925,
+    "n_dates": 365,
+    "mae_degC": 3.332998420603055,
+    "rmse_degC": 4.607962522483454,
+    "bias_degC": 0.07385565587488882,
+    "area_weighted_mae_degC": 3.3426793281959193,
+    "area_weighted_rmse_degC": 4.618487589350933,
+    "area_weighted_bias_degC": 0.07454194763848311,
+    "r2_absolute_t2m": 0.829360877177506,
+    "r2_anomaly": 0.3056075312182749,
+    "anomaly_correlation_all": 0.5530945914220348,
+    "acc_pattern_mean": 0.4074472492892833,
+    "msss_vs_climatology": 0.31138766174108656,
+    "mse_area_weighted": 21.330427612988593,
+    "by_season": {
+     "DJF": {
+      "n_cells": 67050,
+      "n_dates": 90,
+      "mae_degC": 1.29161157983117,
+      "rmse_degC": 1.7523751623414408,
+      "bias_degC": 0.3466501591121813,
+      "area_weighted_mae_degC": 1.2987752808263928,
+      "area_weighted_rmse_degC": 1.7608682245460439,
+      "area_weighted_bias_degC": 0.347683810772584,
+      "r2_absolute_t2m": 0.7751759118145055,
+      "r2_anomaly": 0.11424808059302638,
+      "anomaly_correlation_all": 0.39551899394348067,
+      "acc_pattern_mean": 0.2526546977657253,
+      "msss_vs_climatology": 0.11989205218812438,
+      "mse_area_weighted": 3.1006569042159366
+     },
+     "JJA": {
+      "n_cells": 68540,
+      "n_dates": 92,
+      "mae_degC": 4.582570564962525,
+      "rmse_degC": 5.827343764944971,
+      "bias_degC": -0.2766129578763485,
+      "area_weighted_mae_degC": 4.589754619214114,
+      "area_weighted_rmse_degC": 5.837819938832015,
+      "area_weighted_bias_degC": -0.27792953855107555,
+      "r2_absolute_t2m": 0.6571547348827229,
+      "r2_anomaly": 0.2921554708705909,
+      "anomaly_correlation_all": 0.5424614156698201,
+      "acc_pattern_mean": 0.4343477753257782,
+      "msss_vs_climatology": 0.3066218885907165,
+      "mse_area_weighted": 34.08014163822463
+     },
+     "MAM": {
+      "n_cells": 68540,
+      "n_dates": 92,
+      "mae_degC": 4.019873985621197,
+      "rmse_degC": 5.312994380961735,
+      "bias_degC": -0.6285422171835375,
+      "area_weighted_mae_degC": 4.0350176844731624,
+      "area_weighted_rmse_degC": 5.328527871324473,
+      "area_weighted_bias_degC": -0.6288861564024921,
+      "r2_absolute_t2m": 0.6971937103653503,
+      "r2_anomaly": 0.1648019306892744,
+      "anomaly_correlation_all": 0.43440043586288707,
+      "acc_pattern_mean": 0.4725703164600268,
+      "msss_vs_climatology": 0.23990640176403766,
+      "mse_area_weighted": 28.393209275481723
+     },
+     "SON": {
+      "n_cells": 67795,
+      "n_dates": 91,
+      "mae_degC": 3.394225084413266,
+      "rmse_degC": 4.38865908675586,
+      "bias_degC": 0.8684953426345892,
+      "area_weighted_mae_degC": 3.403397006350613,
+      "area_weighted_rmse_degC": 4.39655043762198,
+      "area_weighted_bias_degC": 0.871904525870791,
+      "r2_absolute_t2m": 0.8009591762223354,
+      "r2_anomaly": 0.41344827572578624,
+      "anomaly_correlation_all": 0.6633055714429381,
+      "acc_pattern_mean": 0.4675039422788908,
+      "msss_vs_climatology": 0.4195913902720516,
+      "mse_area_weighted": 19.32965575055402
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       175,
+       1802,
+       5421,
+       55,
+       0
+      ],
+      [
+       6,
+       2239,
+       27352,
+       154,
+       0
+      ],
+      [
+       344,
+       4224,
+       178958,
+       6759,
+       41
+      ],
+      [
+       0,
+       2,
+       32197,
+       6987,
+       67
+      ],
+      [
+       0,
+       0,
+       3316,
+       1821,
+       5
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.6927057092948423,
+     "balanced_accuracy": 0.24359617477995962,
+     "per_class_recall": {
+      "strong_cold": 0.023480477660002684,
+      "cold": 0.0752579745218648,
+      "near_normal": 0.9402709036074945,
+      "warm": 0.1779991338241663,
+      "strong_warm": 0.0009723842862699338
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.5588772106488766,
+      "recall": 0.2000225250591283,
+      "f1": 0.2946055338066485,
+      "observed_events": 44395
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.4802092811646952,
+      "recall": 0.11348242124502742,
+      "f1": 0.18358118097225845,
+      "observed_events": 37204
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.04424778761061947,
+      "recall": 0.0009723842862699338,
+      "f1": 0.0019029495718363464,
+      "observed_events": 5142
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.3333333333333333,
+      "recall": 0.023480477660002684,
+      "f1": 0.04387064427174731,
+      "observed_events": 7453
+     }
+    }
+   },
+   "antarctica_land": {
+    "n_cells": 7917215,
+    "n_dates": 365,
+    "mae_degC": 2.8382708359992233,
+    "rmse_degC": 3.8201119249026916,
+    "bias_degC": -0.1870643019872531,
+    "area_weighted_mae_degC": 2.8419657122578617,
+    "area_weighted_rmse_degC": 3.824733375989395,
+    "area_weighted_bias_degC": -0.18915633221737418,
+    "r2_absolute_t2m": 0.9498611644277912,
+    "r2_anomaly": 0.2823786007502319,
+    "anomaly_correlation_all": 0.5334720058948231,
+    "acc_pattern_mean": 0.5351790571835017,
+    "msss_vs_climatology": 0.31070000713405954,
+    "mse_area_weighted": 14.628585397407235,
+    "by_season": {
+     "DJF": {
+      "n_cells": 1952190,
+      "n_dates": 90,
+      "mae_degC": 1.6066099643969576,
+      "rmse_degC": 2.1288053971004235,
+      "bias_degC": 0.13471454515787554,
+      "area_weighted_mae_degC": 1.6099999872526691,
+      "area_weighted_rmse_degC": 2.1328442661078872,
+      "area_weighted_bias_degC": 0.13366890935650497,
+      "r2_absolute_t2m": 0.9598739416279477,
+      "r2_anomaly": 0.3448009556132944,
+      "anomaly_correlation_all": 0.5894766707163097,
+      "acc_pattern_mean": 0.5905453941650187,
+      "msss_vs_climatology": 0.3685436249449503,
+      "mse_area_weighted": 4.549024663469292
+     },
+     "JJA": {
+      "n_cells": 1995572,
+      "n_dates": 92,
+      "mae_degC": 3.5438927586614177,
+      "rmse_degC": 4.582705398808057,
+      "bias_degC": -0.1634380561790762,
+      "area_weighted_mae_degC": 3.5471202986236885,
+      "area_weighted_rmse_degC": 4.587317763717059,
+      "area_weighted_bias_degC": -0.1686748043301046,
+      "r2_absolute_t2m": 0.8984561685146192,
+      "r2_anomaly": 0.30263910482387313,
+      "anomaly_correlation_all": 0.5519356759033983,
+      "acc_pattern_mean": 0.5200888777342252,
+      "msss_vs_climatology": 0.31474359128280593,
+      "mse_area_weighted": 21.04348426531408
+     },
+     "MAM": {
+      "n_cells": 1995572,
+      "n_dates": 92,
+      "mae_degC": 3.3260951202830524,
+      "rmse_degC": 4.30922972243957,
+      "bias_degC": -0.4418054632691481,
+      "area_weighted_mae_degC": 3.329560920387201,
+      "area_weighted_rmse_degC": 4.313039712785163,
+      "area_weighted_bias_degC": -0.44074111740636995,
+      "r2_absolute_t2m": 0.920314493630231,
+      "r2_anomaly": 0.21882066501784725,
+      "anomaly_correlation_all": 0.47824156076629726,
+      "acc_pattern_mean": 0.4659097605361001,
+      "msss_vs_climatology": 0.2506256753883507,
+      "mse_area_weighted": 18.60231156406192
+     },
+     "SON": {
+      "n_cells": 1973881,
+      "n_dates": 91,
+      "mae_degC": 2.849835972319771,
+      "rmse_degC": 3.7477835793606036,
+      "bias_degC": -0.27165247802548953,
+      "area_weighted_mae_degC": 2.8545364172788745,
+      "area_weighted_rmse_degC": 3.754277024734388,
+      "area_weighted_bias_degC": -0.2747911901282568,
+      "r2_absolute_t2m": 0.9360698690765298,
+      "r2_anomaly": 0.28924956810153535,
+      "anomaly_correlation_all": 0.541285001824143,
+      "acc_pattern_mean": 0.5657076447940274,
+      "msss_vs_climatology": 0.3550833580660331,
+      "mse_area_weighted": 14.094595978448488
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       423,
+       10612,
+       78029,
+       158,
+       0
+      ],
+      [
+       335,
+       31314,
+       705706,
+       2074,
+       3
+      ],
+      [
+       760,
+       47785,
+       5183840,
+       196534,
+       573
+      ],
+      [
+       25,
+       986,
+       1111364,
+       218644,
+       1144
+      ],
+      [
+       0,
+       20,
+       223801,
+       100454,
+       2631
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.6867126887421903,
+     "balanced_accuracy": 0.23480418814856474,
+     "per_class_recall": {
+      "strong_cold": 0.004740983165586963,
+      "cold": 0.04234872172153761,
+      "near_normal": 0.9547559882213659,
+      "warm": 0.16412706252913495,
+      "strong_warm": 0.008048185105198436
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.6182759974340071,
+      "recall": 0.19461095349259133,
+      "f1": 0.29603939697902704,
+      "observed_events": 1659069
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.462649035334923,
+      "recall": 0.05151003917195838,
+      "f1": 0.09269920969819115,
+      "observed_events": 828654
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.6046885773385429,
+      "recall": 0.008048185105198436,
+      "f1": 0.015884947336961934,
+      "observed_events": 326906
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.2741412832145172,
+      "recall": 0.004740983165586963,
+      "f1": 0.00932077342588002,
+      "observed_events": 89222
+     }
+    }
+   },
+   "coastal_land": {
+    "n_cells": 1036600,
+    "n_dates": 365,
+    "mae_degC": 2.684955462952003,
+    "rmse_degC": 3.7773328319641672,
+    "bias_degC": 0.02081566903875293,
+    "area_weighted_mae_degC": 2.6940965040845666,
+    "area_weighted_rmse_degC": 3.7910503237225606,
+    "area_weighted_bias_degC": 0.018359489032190406,
+    "r2_absolute_t2m": 0.8750834366035569,
+    "r2_anomaly": 0.3210307113815706,
+    "anomaly_correlation_all": 0.5669179111393438,
+    "acc_pattern_mean": 0.5363820340071555,
+    "msss_vs_climatology": 0.3270399797221274,
+    "mse_area_weighted": 14.372062556996932,
+    "by_season": {
+     "DJF": {
+      "n_cells": 255600,
+      "n_dates": 90,
+      "mae_degC": 1.084307353240241,
+      "rmse_degC": 1.4584366646367992,
+      "bias_degC": 0.16248701545329697,
+      "area_weighted_mae_degC": 1.0871619348352088,
+      "area_weighted_rmse_degC": 1.462919935214272,
+      "area_weighted_bias_degC": 0.16214241745813038,
+      "r2_absolute_t2m": 0.8454359949266509,
+      "r2_anomaly": 0.23957058628450256,
+      "anomaly_correlation_all": 0.5013513405375062,
+      "acc_pattern_mean": 0.4797369834764778,
+      "msss_vs_climatology": 0.24169120152082912,
+      "mse_area_weighted": 2.14013473684733
+     },
+     "JJA": {
+      "n_cells": 261280,
+      "n_dates": 92,
+      "mae_degC": 3.7179481391710003,
+      "rmse_degC": 4.85454477464653,
+      "bias_degC": -0.00318415078168549,
+      "area_weighted_mae_degC": 3.7305204742305924,
+      "area_weighted_rmse_degC": 4.87294359999929,
+      "area_weighted_bias_degC": -0.006608284843088893,
+      "r2_absolute_t2m": 0.6570233809962832,
+      "r2_anomaly": 0.3214536340744265,
+      "anomaly_correlation_all": 0.5669764177700297,
+      "acc_pattern_mean": 0.5521831120922309,
+      "msss_vs_climatology": 0.3234834884223323,
+      "mse_area_weighted": 23.745579328774035
+     },
+     "MAM": {
+      "n_cells": 261280,
+      "n_dates": 92,
+      "mae_degC": 3.209836967886224,
+      "rmse_degC": 4.241387825263888,
+      "bias_degC": -0.16896815217269467,
+      "area_weighted_mae_degC": 3.222275994145666,
+      "area_weighted_rmse_degC": 4.256763809095133,
+      "area_weighted_bias_degC": -0.1717843971219254,
+      "r2_absolute_t2m": 0.7612233963383936,
+      "r2_anomaly": 0.2888630567954301,
+      "anomaly_correlation_all": 0.5409765486059263,
+      "acc_pattern_mean": 0.5333287780487811,
+      "msss_vs_climatology": 0.30235388860357004,
+      "mse_area_weighted": 18.12003812642211
+     },
+     "SON": {
+      "n_cells": 258440,
+      "n_dates": 91,
+      "mae_degC": 2.693020355347195,
+      "rmse_degC": 3.6212524054132706,
+      "bias_degC": 0.09683406241924249,
+      "area_weighted_mae_degC": 2.7015755468690363,
+      "area_weighted_rmse_degC": 3.633715594702223,
+      "area_weighted_bias_degC": 0.09363211721207781,
+      "r2_absolute_t2m": 0.8277545342636311,
+      "r2_anomaly": 0.36282934610372275,
+      "anomaly_correlation_all": 0.6029937050355535,
+      "acc_pattern_mean": 0.5795167033709413,
+      "msss_vs_climatology": 0.37497531606036216,
+      "mse_area_weighted": 13.203889023182132
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       307,
+       4066,
+       17641,
+       84,
+       0
+      ],
+      [
+       111,
+       8337,
+       103890,
+       517,
+       3
+      ],
+      [
+       570,
+       12429,
+       691083,
+       20969,
+       142
+      ],
+      [
+       25,
+       217,
+       126864,
+       20595,
+       196
+      ],
+      [
+       0,
+       20,
+       17804,
+       10398,
+       332
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.6952093382211074,
+     "balanced_accuracy": 0.23832158124315375,
+     "per_class_recall": {
+      "strong_cold": 0.013892659969227984,
+      "cold": 0.0738715908486771,
+      "near_normal": 0.9529642453801953,
+      "warm": 0.139252317491227,
+      "strong_warm": 0.011627092526441129
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.5920993312795853,
+      "recall": 0.178638828910009,
+      "f1": 0.2744691689124765,
+      "observed_events": 176451
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.49156506402883215,
+      "recall": 0.09500133376804291,
+      "f1": 0.1592294986276531,
+      "observed_events": 134956
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.4933135215453195,
+      "recall": 0.011627092526441129,
+      "f1": 0.02271871899271222,
+      "observed_events": 28554
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.30306021717670284,
+      "recall": 0.013892659969227984,
+      "f1": 0.026567435420362592,
+      "observed_events": 22098
+     }
+    }
+   },
+   "east_antarctica": {
+    "n_cells": 5714805,
+    "n_dates": 365,
+    "mae_degC": 2.7188732149433408,
+    "rmse_degC": 3.6088826661421134,
+    "bias_degC": -0.25812170392705874,
+    "area_weighted_mae_degC": 2.7227404885046917,
+    "area_weighted_rmse_degC": 3.613530792316,
+    "area_weighted_bias_degC": -0.26171503175337185,
+    "r2_absolute_t2m": 0.955560010186697,
+    "r2_anomaly": 0.2576219515789173,
+    "anomaly_correlation_all": 0.5115213909167478,
+    "acc_pattern_mean": 0.5130422799496271,
+    "msss_vs_climatology": 0.29972210235401264,
+    "mse_area_weighted": 13.057604787015897,
+    "by_season": {
+     "DJF": {
+      "n_cells": 1409130,
+      "n_dates": 90,
+      "mae_degC": 1.6211897931680488,
+      "rmse_degC": 2.1302424937218323,
+      "bias_degC": 0.11175804126923793,
+      "area_weighted_mae_degC": 1.6249104320796846,
+      "area_weighted_rmse_degC": 2.134664586194129,
+      "area_weighted_bias_degC": 0.11009137506497481,
+      "r2_absolute_t2m": 0.9570898590484751,
+      "r2_anomaly": 0.36185224543609706,
+      "anomaly_correlation_all": 0.6031176888703036,
+      "acc_pattern_mean": 0.5995611354985454,
+      "msss_vs_climatology": 0.39410855261817446,
+      "mse_area_weighted": 4.556792895551352
+     },
+     "JJA": {
+      "n_cells": 1440444,
+      "n_dates": 92,
+      "mae_degC": 3.3418102107450744,
+      "rmse_degC": 4.241286842697973,
+      "bias_degC": -0.15119820906745568,
+      "area_weighted_mae_degC": 3.3451099860375093,
+      "area_weighted_rmse_degC": 4.245056610479787,
+      "area_weighted_bias_degC": -0.1587732675854896,
+      "r2_absolute_t2m": 0.9134595986847645,
+      "r2_anomaly": 0.2785444112742187,
+      "anomaly_correlation_all": 0.5295106297681375,
+      "acc_pattern_mean": 0.4919426499544765,
+      "msss_vs_climatology": 0.2928801904304419,
+      "mse_area_weighted": 18.02050562617814
+     },
+     "MAM": {
+      "n_cells": 1440444,
+      "n_dates": 92,
+      "mae_degC": 3.170613845786682,
+      "rmse_degC": 4.094811725577497,
+      "bias_degC": -0.5150729346715308,
+      "area_weighted_mae_degC": 3.1738695894298288,
+      "area_weighted_rmse_degC": 4.098546721424259,
+      "area_weighted_bias_degC": -0.5152448543411955,
+      "r2_absolute_t2m": 0.9256492978784798,
+      "r2_anomaly": 0.17537009082987065,
+      "anomaly_correlation_all": 0.435286753376979,
+      "acc_pattern_mean": 0.4121202522975073,
+      "msss_vs_climatology": 0.2121066161464943,
+      "mse_area_weighted": 16.798085227697538
+     },
+     "SON": {
+      "n_cells": 1424787,
+      "n_dates": 91,
+      "mae_degC": 2.718006910640367,
+      "rmse_degC": 3.551515278808606,
+      "bias_degC": -0.4722604442156166,
+      "area_weighted_mae_degC": 2.7232111920224824,
+      "area_weighted_rmse_degC": 3.558929379858497,
+      "area_weighted_bias_degC": -0.477192781632675,
+      "r2_absolute_t2m": 0.942430431277605,
+      "r2_anomaly": 0.24180620330207125,
+      "anomaly_correlation_all": 0.5054972180521966,
+      "acc_pattern_mean": 0.5508367360391461,
+      "msss_vs_climatology": 0.36774606288827694,
+      "mse_area_weighted": 12.665978330819987
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       42,
+       3525,
+       52271,
+       56,
+       0
+      ],
+      [
+       84,
+       15432,
+       491418,
+       1243,
+       3
+      ],
+      [
+       248,
+       29019,
+       3711889,
+       149808,
+       379
+      ],
+      [
+       0,
+       393,
+       836203,
+       163321,
+       914
+      ],
+      [
+       0,
+       0,
+       180265,
+       76816,
+       1476
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.6810661081174249,
+     "balanced_accuracy": 0.23077928030387848,
+     "per_class_recall": {
+      "strong_cold": 0.0007514223351343615,
+      "cold": 0.0303671927269865,
+      "near_normal": 0.9538837876794721,
+      "warm": 0.16318539293846812,
+      "strong_warm": 0.005708605839331366
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.6155257654511492,
+      "recall": 0.19257528259757914,
+      "f1": 0.29336689641491126,
+      "observed_events": 1259388
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.3915023695710153,
+      "recall": 0.03383066760744158,
+      "f1": 0.062279603862164405,
+      "observed_events": 564074
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.5324675324675324,
+      "recall": 0.005708605839331366,
+      "f1": 0.011296105675221655,
+      "observed_events": 258557
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.11229946524064172,
+      "recall": 0.0007514223351343615,
+      "f1": 0.0014928556195350823,
+      "observed_events": 55894
+     }
+    }
+   },
+   "inland": {
+    "n_cells": 6880615,
+    "n_dates": 365,
+    "mae_degC": 2.8613685846308132,
+    "rmse_degC": 3.8265153619909493,
+    "bias_degC": -0.2183824876386168,
+    "area_weighted_mae_degC": 2.863651029249478,
+    "area_weighted_rmse_degC": 3.8296481546287136,
+    "area_weighted_bias_degC": -0.21958894506601115,
+    "r2_absolute_t2m": 0.9468227292157205,
+    "r2_anomaly": 0.27478750465821256,
+    "anomaly_correlation_all": 0.5269037585515417,
+    "acc_pattern_mean": 0.5283887899565154,
+    "msss_vs_climatology": 0.3082863377095745,
+    "mse_area_weighted": 14.66620498825111,
+    "by_season": {
+     "DJF": {
+      "n_cells": 1696590,
+      "n_dates": 90,
+      "mae_degC": 1.685297536180156,
+      "rmse_degC": 2.212262216471015,
+      "bias_degC": 0.13053047982240276,
+      "area_weighted_mae_degC": 1.6866752399439828,
+      "area_weighted_rmse_degC": 2.2141122870185557,
+      "area_weighted_bias_degC": 0.12949321208541742,
+      "r2_absolute_t2m": 0.9533452128018904,
+      "r2_anomaly": 0.3478890420276459,
+      "anomaly_correlation_all": 0.5917729998478518,
+      "acc_pattern_mean": 0.5932007119775919,
+      "msss_vs_climatology": 0.375234753844787,
+      "mse_area_weighted": 4.902293219526539
+     },
+     "JJA": {
+      "n_cells": 1734292,
+      "n_dates": 92,
+      "mae_degC": 3.5176704213505476,
+      "rmse_degC": 4.540340916934191,
+      "bias_degC": -0.18758113035702909,
+      "area_weighted_mae_degC": 3.520224293745561,
+      "area_weighted_rmse_degC": 4.543920838418315,
+      "area_weighted_bias_degC": -0.1924421856004846,
+      "r2_absolute_t2m": 0.8834949358548785,
+      "r2_anomaly": 0.298495397941535,
+      "anomaly_correlation_all": 0.5488161675493627,
+      "acc_pattern_mean": 0.5123354865147415,
+      "msss_vs_climatology": 0.31324722598863286,
+      "mse_area_weighted": 20.647216585812206
+     },
+     "MAM": {
+      "n_cells": 1734292,
+      "n_dates": 92,
+      "mae_degC": 3.343610008236317,
+      "rmse_degC": 4.319358095493612,
+      "bias_degC": -0.4829098059307537,
+      "area_weighted_mae_degC": 3.3452944707504613,
+      "area_weighted_rmse_degC": 4.3212310669938265,
+      "area_weighted_bias_degC": -0.4801841617591765,
+      "r2_absolute_t2m": 0.9042067883808089,
+      "r2_anomaly": 0.2068422310463588,
+      "anomaly_correlation_all": 0.4671906207245518,
+      "acc_pattern_mean": 0.45244297237289766,
+      "msss_vs_climatology": 0.24263414088701152,
+      "mse_area_weighted": 18.673037934352603
+     },
+     "SON": {
+      "n_cells": 1715441,
+      "n_dates": 91,
+      "mae_degC": 2.8734610506817737,
+      "rmse_degC": 3.7664777355705312,
+      "bias_degC": -0.3271668685014876,
+      "area_weighted_mae_degC": 2.876968436785352,
+      "area_weighted_rmse_degC": 3.771633591183533,
+      "area_weighted_bias_degC": -0.328821209666954,
+      "r2_absolute_t2m": 0.9300748931613003,
+      "r2_anomaly": 0.27359684887204816,
+      "anomaly_correlation_all": 0.5283461354849782,
+      "acc_pattern_mean": 0.5572991872360663,
+      "msss_vs_climatology": 0.3522772757864284,
+      "mse_area_weighted": 14.225219946143993
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       116,
+       6546,
+       60388,
+       74,
+       0
+      ],
+      [
+       224,
+       22977,
+       601816,
+       1557,
+       0
+      ],
+      [
+       190,
+       35356,
+       4492757,
+       175565,
+       431
+      ],
+      [
+       0,
+       769,
+       984500,
+       198049,
+       948
+      ],
+      [
+       0,
+       0,
+       205997,
+       90056,
+       2299
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.6854326248453082,
+     "balanced_accuracy": 0.2336740790012905,
+     "per_class_recall": {
+      "strong_cold": 0.0017281449258089506,
+      "cold": 0.03667084813605416,
+      "near_normal": 0.9550321950199169,
+      "warm": 0.16723354381532526,
+      "strong_warm": 0.007705663109347348
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.621247433253941,
+      "recall": 0.19651184593738913,
+      "f1": 0.29857803634664326,
+      "observed_events": 1482618
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.4512526821602345,
+      "recall": 0.04304899250105954,
+      "f1": 0.07859966626133738,
+      "observed_events": 693698
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.6250679717237629,
+      "recall": 0.007705663109347348,
+      "f1": 0.015223653279475547,
+      "observed_events": 298352
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.2188679245283019,
+      "recall": 0.0017281449258089506,
+      "f1": 0.0034292133502823187,
+      "observed_events": 67124
+     }
+    }
+   },
+   "southern_ocean": {
+    "n_cells": 12344665,
+    "n_dates": 365,
+    "mae_degC": 2.0607067959717638,
+    "rmse_degC": 3.3223320053799172,
+    "bias_degC": 0.0033996095331350544,
+    "area_weighted_mae_degC": 2.08049245792611,
+    "area_weighted_rmse_degC": 3.3474457092261143,
+    "area_weighted_bias_degC": -0.0013296926214538673,
+    "r2_absolute_t2m": 0.8843478536988355,
+    "r2_anomaly": 0.3614848858147638,
+    "anomaly_correlation_all": 0.6026160471721261,
+    "acc_pattern_mean": 0.5992822293986413,
+    "msss_vs_climatology": 0.3629318881748723,
+    "mse_area_weighted": 11.205392776216323,
+    "by_season": {
+     "DJF": {
+      "n_cells": 3043890,
+      "n_dates": 90,
+      "mae_degC": 0.5271140539345998,
+      "rmse_degC": 0.7142203170566236,
+      "bias_degC": 0.10436857854950848,
+      "area_weighted_mae_degC": 0.5296444179654388,
+      "area_weighted_rmse_degC": 0.7189165645531168,
+      "area_weighted_bias_degC": 0.1040052500685943,
+      "r2_absolute_t2m": 0.8760809249026427,
+      "r2_anomaly": 0.3484809310173774,
+      "anomaly_correlation_all": 0.6036574930670197,
+      "acc_pattern_mean": 0.584377043403326,
+      "msss_vs_climatology": 0.3588602061151269,
+      "mse_area_weighted": 0.5168410267888558
+     },
+     "JJA": {
+      "n_cells": 3111532,
+      "n_dates": 92,
+      "mae_degC": 3.5728084114843,
+      "rmse_degC": 4.816875928249696,
+      "bias_degC": 0.016323228828477556,
+      "area_weighted_mae_degC": 3.601095245357839,
+      "area_weighted_rmse_degC": 4.846806052715369,
+      "area_weighted_bias_degC": 0.010833154615560024,
+      "r2_absolute_t2m": 0.8021583578617764,
+      "r2_anomaly": 0.3302714398439025,
+      "anomaly_correlation_all": 0.5778814440465783,
+      "acc_pattern_mean": 0.5639429270889575,
+      "msss_vs_climatology": 0.3309655630164885,
+      "mse_area_weighted": 23.491528912638334
+     },
+     "MAM": {
+      "n_cells": 3111532,
+      "n_dates": 92,
+      "mae_degC": 1.8185405822124752,
+      "rmse_degC": 2.9805326648845742,
+      "bias_degC": -0.051832065394924756,
+      "area_weighted_mae_degC": 1.8480466804768385,
+      "area_weighted_rmse_degC": 3.0178155301311302,
+      "area_weighted_bias_degC": -0.05845900346139308,
+      "r2_absolute_t2m": 0.8911056591206634,
+      "r2_anomaly": 0.4421747615345878,
+      "anomaly_correlation_all": 0.6655624648641798,
+      "acc_pattern_mean": 0.6510912936063017,
+      "msss_vs_climatology": 0.4444854314966844,
+      "mse_area_weighted": 9.107210573900636
+     },
+     "SON": {
+      "n_cells": 3077711,
+      "n_dates": 91,
+      "mae_degC": 2.2935561346755646,
+      "rmse_degC": 3.3659901399440226,
+      "bias_degC": -0.05368683105217942,
+      "area_weighted_mae_degC": 2.3119856302126425,
+      "area_weighted_rmse_degC": 3.3877099110120055,
+      "area_weighted_bias_degC": -0.06004650790315939,
+      "r2_absolute_t2m": 0.8303484740054358,
+      "r2_anomaly": 0.34161381239854105,
+      "anomaly_correlation_all": 0.5882451163345225,
+      "acc_pattern_mean": 0.5973728738488006,
+      "msss_vs_climatology": 0.3508445121774456,
+      "mse_area_weighted": 11.476578441168972
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       47175,
+       166517,
+       276066,
+       807,
+       0
+      ],
+      [
+       24254,
+       258596,
+       1233138,
+       8065,
+       153
+      ],
+      [
+       24026,
+       313554,
+       8023873,
+       260438,
+       7046
+      ],
+      [
+       423,
+       7787,
+       1114409,
+       322585,
+       10330
+      ],
+      [
+       2,
+       1758,
+       111525,
+       120656,
+       11482
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.7018182348407186,
+     "balanced_accuracy": 0.2928229727075299,
+     "per_class_recall": {
+      "strong_cold": 0.09616462650209452,
+      "cold": 0.16965948172359904,
+      "near_normal": 0.9298796595687279,
+      "warm": 0.22162656454607038,
+      "strong_warm": 0.04678453119715756
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.6271262551209474,
+      "recall": 0.27340667635924953,
+      "f1": 0.3807978566389862,
+      "observed_events": 1700957
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.5882557825450306,
+      "recall": 0.24645083734081938,
+      "f1": 0.3473702657315163,
+      "observed_events": 2014771
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.39578091068904897,
+      "recall": 0.04678453119715756,
+      "f1": 0.08367767842176989,
+      "observed_events": 245423
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.4920212765957447,
+      "recall": 0.09616462650209452,
+      "f1": 0.1608846524397002,
+      "observed_events": 490565
+     }
+    }
+   },
+   "west_antarctica": {
+    "n_cells": 1930485,
+    "n_dates": 365,
+    "mae_degC": 3.1220364821217608,
+    "rmse_degC": 4.278236034074186,
+    "bias_degC": -0.013466197702087405,
+    "area_weighted_mae_degC": 3.1205433811621477,
+    "area_weighted_rmse_degC": 4.276120869008697,
+    "area_weighted_bias_degC": -0.01407284057341134,
+    "r2_absolute_t2m": 0.9006728152977183,
+    "r2_anomaly": 0.3226443570075065,
+    "anomaly_correlation_all": 0.5693065592135058,
+    "acc_pattern_mean": 0.5053687825763439,
+    "msss_vs_climatology": 0.33230271806075695,
+    "mse_area_weighted": 18.285209686371694,
+    "by_season": {
+     "DJF": {
+      "n_cells": 476010,
+      "n_dates": 90,
+      "mae_degC": 1.6078195347188584,
+      "rmse_degC": 2.1724379541880086,
+      "bias_degC": 0.17281965935497162,
+      "area_weighted_mae_degC": 1.6087611957938597,
+      "area_weighted_rmse_degC": 2.1730669458588956,
+      "area_weighted_bias_degC": 0.17321702873374453,
+      "r2_absolute_t2m": 0.9212625769858992,
+      "r2_anomaly": 0.2945392908879634,
+      "anomaly_correlation_all": 0.5468418033012739,
+      "acc_pattern_mean": 0.4826485592453769,
+      "msss_vs_climatology": 0.30366340079941023,
+      "mse_area_weighted": 4.722219951184508
+     },
+     "JJA": {
+      "n_cells": 486588,
+      "n_dates": 92,
+      "mae_degC": 3.995810226430724,
+      "rmse_degC": 5.300427156972961,
+      "bias_degC": -0.18372997988151046,
+      "area_weighted_mae_degC": 3.992877343469571,
+      "area_weighted_rmse_degC": 5.297243745964711,
+      "area_weighted_bias_degC": -0.1826642631911699,
+      "r2_absolute_t2m": 0.6767466313193651,
+      "r2_anomaly": 0.3454612783271541,
+      "anomaly_correlation_all": 0.5903041377285881,
+      "acc_pattern_mean": 0.5443409379998237,
+      "msss_vs_climatology": 0.3532804550526222,
+      "mse_area_weighted": 28.06079130416225
+     },
+     "MAM": {
+      "n_cells": 486588,
+      "n_dates": 92,
+      "mae_degC": 3.6886409815257735,
+      "rmse_degC": 4.747986197032939,
+      "bias_degC": -0.1986086999087159,
+      "area_weighted_mae_degC": 3.6863706466928963,
+      "area_weighted_rmse_degC": 4.745399889701666,
+      "area_weighted_bias_degC": -0.19893951595112155,
+      "r2_absolute_t2m": 0.7630992789436841,
+      "r2_anomaly": 0.30494013026108746,
+      "anomaly_correlation_all": 0.5596952865889772,
+      "acc_pattern_mean": 0.5045211322556583,
+      "msss_vs_climatology": 0.3238619975242748,
+      "mse_area_weighted": 22.518820113180585
+     },
+     "SON": {
+      "n_cells": 481299,
+      "n_dates": 91,
+      "mae_degC": 3.163407106788437,
+      "rmse_degC": 4.189554136082903,
+      "bias_degC": 0.16160689052188434,
+      "area_weighted_mae_degC": 3.1617473781075778,
+      "area_weighted_rmse_degC": 4.187602699443961,
+      "area_weighted_bias_degC": 0.15803767346987535,
+      "r2_absolute_t2m": 0.8666685909073142,
+      "r2_anomaly": 0.30746132186870645,
+      "anomaly_correlation_all": 0.5557293810269374,
+      "acc_pattern_mean": 0.48929587741513453,
+      "msss_vs_climatology": 0.3149610221895057,
+      "mse_area_weighted": 17.536016368390342
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       206,
+       5285,
+       20337,
+       47,
+       0
+      ],
+      [
+       245,
+       13643,
+       186936,
+       677,
+       0
+      ],
+      [
+       168,
+       14542,
+       1292993,
+       39967,
+       153
+      ],
+      [
+       25,
+       591,
+       242964,
+       48336,
+       163
+      ],
+      [
+       0,
+       20,
+       40220,
+       21817,
+       1150
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.7025840656622558,
+     "balanced_accuracy": 0.2437342916023208,
+     "per_class_recall": {
+      "strong_cold": 0.00796135265700483,
+      "cold": 0.06770686001558304,
+      "near_normal": 0.9593195842480801,
+      "warm": 0.16548947373826944,
+      "strong_warm": 0.018194187352666636
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.6363280206571098,
+      "recall": 0.20115062231554298,
+      "f1": 0.3056741289489217,
+      "observed_events": 355286
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.5580705543556516,
+      "recall": 0.08522887200056295,
+      "f1": 0.14787429273448024,
+      "observed_events": 227376
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.7844474761255116,
+      "recall": 0.018194187352666636,
+      "f1": 0.03556352728341039,
+      "observed_events": 63207
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.3198757763975155,
+      "recall": 0.00796135265700483,
+      "f1": 0.01553603077039104,
+      "observed_events": 25875
+     }
+    }
+   }
+  },
+  "persistence": {
+   "all": {
+    "n_cells": 20261880,
+    "n_dates": 365,
+    "mae_degC": 3.651979573316139,
+    "rmse_degC": 5.531073859625574,
+    "bias_degC": -0.03759978872158595,
+    "area_weighted_mae_degC": 3.6856684660381194,
+    "area_weighted_rmse_degC": 5.559894189212536,
+    "area_weighted_bias_degC": -0.03789056179159067,
+    "r2_absolute_t2m": 0.904236332850658,
+    "r2_anomaly": -0.641925951357627,
+    "anomaly_correlation_all": 0.45578624595484013,
+    "acc_pattern_mean": 0.46860232936824237,
+    "msss_vs_climatology": -0.6216936273293141,
+    "mse_area_weighted": 30.91242339523933,
+    "by_season": {
+     "DJF": {
+      "n_cells": 4996080,
+      "n_dates": 90,
+      "mae_degC": 1.3111937516893704,
+      "rmse_degC": 2.0705920477802335,
+      "bias_degC": -0.019180280665849668,
+      "area_weighted_mae_degC": 1.3392318919304833,
+      "area_weighted_rmse_degC": 2.106074838185456,
+      "area_weighted_bias_degC": -0.019814242449141078,
+      "r2_absolute_t2m": 0.9612668005705323,
+      "r2_anomaly": -0.31041703139568355,
+      "anomaly_correlation_all": 0.5257072894909319,
+      "acc_pattern_mean": 0.5276165204446492,
+      "msss_vs_climatology": -0.3047448288594419,
+      "mse_area_weighted": 4.435551224037896
+     },
+     "JJA": {
+      "n_cells": 5107104,
+      "n_dates": 92,
+      "mae_degC": 5.661027560266083,
+      "rmse_degC": 7.573474280308824,
+      "bias_degC": 0.00517971802431714,
+      "area_weighted_mae_degC": 5.682959296791828,
+      "area_weighted_rmse_degC": 7.590393017063754,
+      "area_weighted_bias_degC": 0.008383459543213215,
+      "r2_absolute_t2m": 0.8309731428016962,
+      "r2_anomaly": -0.7364843071244052,
+      "anomaly_correlation_all": 0.4440346120081214,
+      "acc_pattern_mean": 0.42868212261830485,
+      "msss_vs_climatology": -0.728722860744637,
+      "mse_area_weighted": 57.6140661534902
+     },
+     "MAM": {
+      "n_cells": 5107104,
+      "n_dates": 92,
+      "mae_degC": 3.5529790056020025,
+      "rmse_degC": 5.35403971591623,
+      "bias_degC": -0.11021750507238885,
+      "area_weighted_mae_degC": 3.613569001690925,
+      "area_weighted_rmse_degC": 5.413627110375825,
+      "area_weighted_bias_degC": -0.11487365513741313,
+      "r2_absolute_t2m": 0.9260774721271374,
+      "r2_anomaly": -0.4968771336671285,
+      "anomaly_correlation_all": 0.4682496981858729,
+      "acc_pattern_mean": 0.4534070961885703,
+      "msss_vs_climatology": -0.4793342212306777,
+      "mse_area_weighted": 29.30735849019611
+     },
+     "SON": {
+      "n_cells": 5051592,
+      "n_dates": 91,
+      "mae_degC": 4.036005522510806,
+      "rmse_degC": 5.612351951108863,
+      "bias_degC": -0.02565078258274509,
+      "area_weighted_mae_degC": 4.059972707359965,
+      "area_weighted_rmse_degC": 5.632581690856661,
+      "area_weighted_bias_degC": -0.02472170592133529,
+      "r2_absolute_t2m": 0.8738181146360124,
+      "r2_anomaly": -0.7092094520618708,
+      "anomaly_correlation_all": 0.4486965794615576,
+      "acc_pattern_mean": 0.46595774999074197,
+      "msss_vs_climatology": -0.6377337059278303,
+      "mse_area_weighted": 31.72597650417368
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       228842,
+       148248,
+       173023,
+       22185,
+       7489
+      ],
+      [
+       397559,
+       646626,
+       1069737,
+       120933,
+       28783
+      ],
+      [
+       704209,
+       1768259,
+       8903181,
+       2046161,
+       636619
+      ],
+      [
+       52472,
+       160081,
+       1164107,
+       877525,
+       533512
+      ],
+      [
+       6913,
+       17988,
+       150274,
+       146441,
+       250713
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.538295903440352,
+     "balanced_accuracy": 0.4132997653111777,
+     "per_class_recall": {
+      "strong_cold": 0.39470012263124216,
+      "cold": 0.2856578657894946,
+      "near_normal": 0.6332984290065412,
+      "warm": 0.31478492820417714,
+      "strong_warm": 0.4380574809244333
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.3871630051724053,
+      "recall": 0.5381479190934833,
+      "f1": 0.45033720043629283,
+      "observed_events": 3360026
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.3440346708230084,
+      "recall": 0.49984613626172664,
+      "f1": 0.4075561370924475,
+      "observed_events": 2843425
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.17206111249893624,
+      "recall": 0.4380574809244333,
+      "f1": 0.2470754319530709,
+      "observed_events": 572329
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.1646351245867791,
+      "recall": 0.39470012263124216,
+      "f1": 0.2323526156701604,
+      "observed_events": 579787
+     }
+    }
+   },
+   "antarctic_peninsula": {
+    "n_cells": 271925,
+    "n_dates": 365,
+    "mae_degC": 5.156301498433588,
+    "rmse_degC": 7.269324037104438,
+    "bias_degC": 0.14188930263140875,
+    "area_weighted_mae_degC": 5.170536349292267,
+    "area_weighted_rmse_degC": 7.284623096909017,
+    "area_weighted_bias_degC": 0.14028809927630745,
+    "r2_absolute_t2m": 0.5753327300315212,
+    "r2_anomaly": -0.7281251164831628,
+    "anomaly_correlation_all": 0.46374100693059017,
+    "acc_pattern_mean": 0.3477747600821776,
+    "msss_vs_climatology": -0.7131264127848362,
+    "mse_area_weighted": 53.065733664020314,
+    "by_season": {
+     "DJF": {
+      "n_cells": 67050,
+      "n_dates": 90,
+      "mae_degC": 1.9337007896791891,
+      "rmse_degC": 2.716449306251809,
+      "bias_degC": 0.09138325781571852,
+      "area_weighted_mae_degC": 1.9425167945906257,
+      "area_weighted_rmse_degC": 2.7282830190850547,
+      "area_weighted_bias_degC": 0.09097484636134653,
+      "r2_absolute_t2m": 0.45975361162542816,
+      "r2_anomaly": -1.128438635368327,
+      "anomaly_correlation_all": 0.29813573365856805,
+      "acc_pattern_mean": 0.2159405860129579,
+      "msss_vs_climatology": -1.1128130455318468,
+      "mse_area_weighted": 7.443528232227861
+     },
+     "JJA": {
+      "n_cells": 68540,
+      "n_dates": 92,
+      "mae_degC": 7.557665524845886,
+      "rmse_degC": 9.668705977318623,
+      "bias_degC": 0.5029381639935862,
+      "area_weighted_mae_degC": 7.571704695110749,
+      "area_weighted_rmse_degC": 9.6835355353759,
+      "area_weighted_bias_degC": 0.5007621523275181,
+      "r2_absolute_t2m": 0.05617041589179628,
+      "r2_anomaly": -0.9486476131235055,
+      "anomaly_correlation_all": 0.40814480366233574,
+      "acc_pattern_mean": 0.41297766865010926,
+      "msss_vs_climatology": -0.9078166641608603,
+      "mse_area_weighted": 93.7708604648878
+     },
+     "MAM": {
+      "n_cells": 68540,
+      "n_dates": 92,
+      "mae_degC": 5.890825098977612,
+      "rmse_degC": 7.9512123270338675,
+      "bias_degC": -0.08079119952010202,
+      "area_weighted_mae_degC": 5.912026058083112,
+      "area_weighted_rmse_degC": 7.973799027341837,
+      "area_weighted_bias_degC": -0.08169365484917215,
+      "r2_absolute_t2m": 0.32180765987489124,
+      "r2_anomaly": -0.8705850984047672,
+      "anomaly_correlation_all": 0.3986849391238122,
+      "acc_pattern_mean": 0.3951220966959564,
+      "msss_vs_climatology": -0.7020925162152682,
+      "mse_area_weighted": 63.58147092843762
+     },
+     "SON": {
+      "n_cells": 67795,
+      "n_dates": 91,
+      "mae_degC": 5.17314108203704,
+      "rmse_degC": 6.799064654892149,
+      "bias_degC": 0.051951445335043825,
+      "area_weighted_mae_degC": 5.18589040312842,
+      "area_weighted_rmse_degC": 6.811964876275792,
+      "area_weighted_bias_degC": 0.049045255992562875,
+      "r2_absolute_t2m": 0.5222762742493215,
+      "r2_anomaly": -0.4078000168385847,
+      "anomaly_correlation_all": 0.5895910211453724,
+      "acc_pattern_mean": 0.36437314590099523,
+      "msss_vs_climatology": -0.393331727458355,
+      "mse_area_weighted": 46.40286547561507
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       3473,
+       1981,
+       1653,
+       306,
+       40
+      ],
+      [
+       5603,
+       8223,
+       13267,
+       1837,
+       821
+      ],
+      [
+       11331,
+       24469,
+       110025,
+       32746,
+       11755
+      ],
+      [
+       712,
+       1566,
+       16535,
+       12485,
+       7955
+      ],
+      [
+       128,
+       242,
+       1897,
+       859,
+       2016
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.5009543072538384,
+     "balanced_accuracy": 0.40611963977691456,
+     "per_class_recall": {
+      "strong_cold": 0.4659868509325104,
+      "cold": 0.2763940707875365,
+      "near_normal": 0.5780870716560007,
+      "warm": 0.3180648612844878,
+      "strong_warm": 0.3920653442240373
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.3292149110420785,
+      "recall": 0.5251717535758531,
+      "f1": 0.4047216074295881,
+      "observed_events": 44395
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.333980044345898,
+      "recall": 0.518223846898183,
+      "f1": 0.4061854801331479,
+      "observed_events": 37204
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.0892548811263116,
+      "recall": 0.3920653442240373,
+      "f1": 0.145407335280753,
+      "observed_events": 5142
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.16345837059349555,
+      "recall": 0.4659868509325104,
+      "f1": 0.2420209059233449,
+      "observed_events": 7453
+     }
+    }
+   },
+   "antarctica_land": {
+    "n_cells": 7917215,
+    "n_dates": 365,
+    "mae_degC": 4.273626964570039,
+    "rmse_degC": 5.8001575583392775,
+    "bias_degC": -0.03557378956299541,
+    "area_weighted_mae_degC": 4.278926708394858,
+    "area_weighted_rmse_degC": 5.8070542287145965,
+    "area_weighted_bias_degC": -0.03505736814333136,
+    "r2_absolute_t2m": 0.88441495377505,
+    "r2_anomaly": -0.6543324482444439,
+    "anomaly_correlation_all": 0.45346857490858294,
+    "acc_pattern_mean": 0.4562632982955503,
+    "msss_vs_climatology": -0.588977347795052,
+    "mse_area_weighted": 33.721878815232074,
+    "by_season": {
+     "DJF": {
+      "n_cells": 1952190,
+      "n_dates": 90,
+      "mae_degC": 2.311322043799059,
+      "rmse_degC": 3.089043295025164,
+      "bias_degC": -0.027104786369687217,
+      "area_weighted_mae_degC": 2.3159302594902913,
+      "area_weighted_rmse_degC": 3.0947611570089246,
+      "area_weighted_bias_degC": -0.027660490612961254,
+      "r2_absolute_t2m": 0.9155105338638805,
+      "r2_anomaly": -0.3795877222688959,
+      "anomaly_correlation_all": 0.5063041961604066,
+      "acc_pattern_mean": 0.5145873466159426,
+      "msss_vs_climatology": -0.32947242921710784,
+      "mse_area_weighted": 9.577546618931219
+     },
+     "JJA": {
+      "n_cells": 1995572,
+      "n_dates": 92,
+      "mae_degC": 5.471655924741395,
+      "rmse_degC": 7.105265797484716,
+      "bias_degC": 0.09651342536482331,
+      "area_weighted_mae_degC": 5.475470577089259,
+      "area_weighted_rmse_degC": 7.111329921379703,
+      "area_weighted_bias_degC": 0.10097675313878167,
+      "r2_absolute_t2m": 0.7558985689894193,
+      "r2_anomaly": -0.6763873290306117,
+      "anomaly_correlation_all": 0.467572759186412,
+      "acc_pattern_mean": 0.4522865356176108,
+      "msss_vs_climatology": -0.6467857930966128,
+      "mse_area_weighted": 50.57101325071025
+     },
+     "MAM": {
+      "n_cells": 1995572,
+      "n_dates": 92,
+      "mae_degC": 4.986759449719531,
+      "rmse_degC": 6.508904456864991,
+      "bias_degC": -0.260945035404671,
+      "area_weighted_mae_degC": 4.992133279442323,
+      "area_weighted_rmse_degC": 6.515671318508747,
+      "area_weighted_bias_degC": -0.2628982025095864,
+      "r2_absolute_t2m": 0.8181991804413402,
+      "r2_anomaly": -0.7822443477114327,
+      "anomaly_correlation_all": 0.40411517679637166,
+      "acc_pattern_mean": 0.388274109123058,
+      "msss_vs_climatology": -0.7102131115637538,
+      "mse_area_weighted": 42.453972730837506
+     },
+     "SON": {
+      "n_cells": 1973881,
+      "n_dates": 91,
+      "mae_degC": 4.2822048755576265,
+      "rmse_degC": 5.6239395426293175,
+      "bias_degC": 0.05035940336752214,
+      "area_weighted_mae_degC": 4.289615059440564,
+      "area_weighted_rmse_degC": 5.633697536179891,
+      "area_weighted_bias_degC": 0.0504426167578527,
+      "r2_absolute_t2m": 0.8560413144747145,
+      "r2_anomaly": -0.6004769024345662,
+      "anomaly_correlation_all": 0.4656417457880806,
+      "acc_pattern_mean": 0.47133696006922526,
+      "msss_vs_climatology": -0.45223870067873273,
+      "mse_area_weighted": 31.738547929159378
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       26424,
+       26895,
+       31001,
+       3756,
+       1146
+      ],
+      [
+       98556,
+       211822,
+       375797,
+       40164,
+       13093
+      ],
+      [
+       219751,
+       736272,
+       3283037,
+       847527,
+       342905
+      ],
+      [
+       18776,
+       74020,
+       591999,
+       362344,
+       285024
+      ],
+      [
+       2704,
+       10865,
+       96877,
+       79382,
+       137078
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.50784335148155,
+     "balanced_accuracy": 0.3757218925386055,
+     "per_class_recall": {
+      "strong_cold": 0.2961601398758154,
+      "cold": 0.2864658278246005,
+      "near_normal": 0.6046674348171063,
+      "warm": 0.27199674514304933,
+      "strong_warm": 0.4193193150324558
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.4089283423411738,
+      "recall": 0.520670327756109,
+      "f1": 0.45808338777691987,
+      "observed_events": 1659069
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.2550317828179947,
+      "recall": 0.4389009164259148,
+      "f1": 0.3226067407358457,
+      "observed_events": 828654
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.17591107301160352,
+      "recall": 0.4193193150324558,
+      "f1": 0.24784658889555866,
+      "observed_events": 326906
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.07215512368552555,
+      "recall": 0.2961601398758154,
+      "f1": 0.11603902220524205,
+      "observed_events": 89222
+     }
+    }
+   },
+   "coastal_land": {
+    "n_cells": 1036600,
+    "n_dates": 365,
+    "mae_degC": 3.9734080106638836,
+    "rmse_degC": 5.622079184652315,
+    "bias_degC": -0.0027974692983281486,
+    "area_weighted_mae_degC": 3.984695056253784,
+    "area_weighted_rmse_degC": 5.639404581687858,
+    "area_weighted_bias_degC": -0.004285884756769562,
+    "r2_absolute_t2m": 0.7232781597585096,
+    "r2_anomaly": -0.504089016743615,
+    "anomaly_correlation_all": 0.48944231037434294,
+    "acc_pattern_mean": 0.46735275846707325,
+    "msss_vs_climatology": -0.48914391381607114,
+    "mse_area_weighted": 31.802884035962006,
+    "by_season": {
+     "DJF": {
+      "n_cells": 255600,
+      "n_dates": 90,
+      "mae_degC": 1.5551699559500074,
+      "rmse_degC": 2.117237264787907,
+      "bias_degC": 0.00010708876574304135,
+      "area_weighted_mae_degC": 1.5570447995234875,
+      "area_weighted_rmse_degC": 2.1212969710394884,
+      "area_weighted_bias_degC": -4.939687306170271e-05,
+      "r2_absolute_t2m": 0.6742591137881999,
+      "r2_anomaly": -0.6025914378166961,
+      "anomaly_correlation_all": 0.429844219146577,
+      "acc_pattern_mean": 0.41395452303701324,
+      "msss_vs_climatology": -0.594439050965109,
+      "mse_area_weighted": 4.499900839341308
+     },
+     "JJA": {
+      "n_cells": 261280,
+      "n_dates": 92,
+      "mae_degC": 5.634081722326025,
+      "rmse_degC": 7.3095275016763255,
+      "bias_degC": 0.007143456944642589,
+      "area_weighted_mae_degC": 5.650520106476229,
+      "area_weighted_rmse_degC": 7.330941289560865,
+      "area_weighted_bias_degC": 0.0053849063104215115,
+      "r2_absolute_t2m": 0.2224181737482428,
+      "r2_anomaly": -0.5383711109683043,
+      "anomaly_correlation_all": 0.49315267698814697,
+      "acc_pattern_mean": 0.4941568825645742,
+      "msss_vs_climatology": -0.531140746349986,
+      "mse_area_weighted": 53.74270019098832
+     },
+     "MAM": {
+      "n_cells": 261280,
+      "n_dates": 92,
+      "mae_degC": 4.604665367653926,
+      "rmse_degC": 6.158883085207717,
+      "bias_degC": -0.08627829049630929,
+      "area_weighted_mae_degC": 4.618058630127416,
+      "area_weighted_rmse_degC": 6.177388380217644,
+      "area_weighted_bias_degC": -0.08853006672729379,
+      "r2_absolute_t2m": 0.4965229029142866,
+      "r2_anomaly": -0.4994817679141621,
+      "anomaly_correlation_all": 0.4608849781241504,
+      "acc_pattern_mean": 0.46350778454913594,
+      "msss_vs_climatology": -0.4692167955588784,
+      "mse_area_weighted": 38.16012720004796
+     },
+     "SON": {
+      "n_cells": 258440,
+      "n_dates": 91,
+      "mae_degC": 4.047954896468807,
+      "rmse_degC": 5.475399692776062,
+      "bias_degC": 0.06867791652688669,
+      "area_weighted_mae_degC": 4.061213404483319,
+      "area_weighted_rmse_degC": 5.495254173855434,
+      "area_weighted_bias_degC": 0.06691706088688912,
+      "r2_absolute_t2m": 0.606212560651683,
+      "r2_anomaly": -0.45669901470578544,
+      "anomaly_correlation_all": 0.5209352208844588,
+      "acc_pattern_mean": 0.4969527515680131,
+      "msss_vs_climatology": -0.429456267773596,
+      "mse_area_weighted": 30.19781843527557
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       7647,
+       6109,
+       7175,
+       817,
+       350
+      ],
+      [
+       16623,
+       32078,
+       56950,
+       5611,
+       1596
+      ],
+      [
+       33973,
+       98208,
+       441397,
+       115213,
+       36402
+      ],
+      [
+       2524,
+       8992,
+       63683,
+       43772,
+       28926
+      ],
+      [
+       227,
+       897,
+       7715,
+       8091,
+       11624
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.5175747636503956,
+     "balanced_accuracy": 0.3883990347293074,
+     "per_class_recall": {
+      "strong_cold": 0.3460494162367635,
+      "cold": 0.28423328430416983,
+      "near_normal": 0.6086614184086168,
+      "warm": 0.29596273081942165,
+      "strong_warm": 0.40708832387756533
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.36613418277192733,
+      "recall": 0.5237318008965662,
+      "f1": 0.43097751443967985,
+      "observed_events": 176451
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.30131996642190684,
+      "recall": 0.46279528142505705,
+      "f1": 0.3649958800119217,
+      "observed_events": 134956
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.14732946335775304,
+      "recall": 0.40708832387756533,
+      "f1": 0.21635707106428914,
+      "observed_events": 28554
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.1253729875069679,
+      "recall": 0.3460494162367635,
+      "f1": 0.18406104077408172,
+      "observed_events": 22098
+     }
+    }
+   },
+   "east_antarctica": {
+    "n_cells": 5714805,
+    "n_dates": 365,
+    "mae_degC": 4.129322280149086,
+    "rmse_degC": 5.531455174619336,
+    "bias_degC": -0.06161569505995875,
+    "area_weighted_mae_degC": 4.135781955931442,
+    "area_weighted_rmse_degC": 5.540042330212003,
+    "area_weighted_bias_degC": -0.06086059103454948,
+    "r2_absolute_t2m": 0.8955983840467564,
+    "r2_anomaly": -0.7440478323461586,
+    "anomaly_correlation_all": 0.4301807795207709,
+    "acc_pattern_mean": 0.43836732878566304,
+    "msss_vs_climatology": -0.6460122601874021,
+    "mse_area_weighted": 30.69206902054084,
+    "by_season": {
+     "DJF": {
+      "n_cells": 1409130,
+      "n_dates": 90,
+      "mae_degC": 2.374892773160909,
+      "rmse_degC": 3.1309332826245875,
+      "bias_degC": -0.03813137643561823,
+      "area_weighted_mae_degC": 2.3810369190239142,
+      "area_weighted_rmse_degC": 3.1382734625901145,
+      "area_weighted_bias_degC": -0.03880668145668024,
+      "r2_absolute_t2m": 0.907306457436434,
+      "r2_anomaly": -0.37851274169285,
+      "anomaly_correlation_all": 0.5152142367685396,
+      "acc_pattern_mean": 0.5180273637873064,
+      "msss_vs_climatology": -0.30953497023331766,
+      "mse_area_weighted": 9.848760325997347
+     },
+     "JJA": {
+      "n_cells": 1440444,
+      "n_dates": 92,
+      "mae_degC": 5.235026254592914,
+      "rmse_degC": 6.735441297910931,
+      "bias_degC": 0.037392013505186485,
+      "area_weighted_mae_degC": 5.2408613550898355,
+      "area_weighted_rmse_degC": 6.744142324061052,
+      "area_weighted_bias_degC": 0.04282656784882501,
+      "r2_absolute_t2m": 0.7817492598432023,
+      "r2_anomaly": -0.8194763813966643,
+      "anomaly_correlation_all": 0.43204894926913,
+      "acc_pattern_mean": 0.41292556946242703,
+      "msss_vs_climatology": -0.7847586072929444,
+      "mse_area_weighted": 45.48345568719161
+     },
+     "MAM": {
+      "n_cells": 1440444,
+      "n_dates": 92,
+      "mae_degC": 4.826345737549798,
+      "rmse_degC": 6.263338680316151,
+      "bias_degC": -0.2232678672648005,
+      "area_weighted_mae_degC": 4.832380448782051,
+      "area_weighted_rmse_degC": 6.271678297551461,
+      "area_weighted_bias_degC": -0.2238896952436635,
+      "r2_absolute_t2m": 0.826048174827553,
+      "r2_anomaly": -0.9293143668970683,
+      "anomaly_correlation_all": 0.37532881358873577,
+      "acc_pattern_mean": 0.3547676969059059,
+      "msss_vs_climatology": -0.8449101487611104,
+      "mse_area_weighted": 39.333948667978
+     },
+     "SON": {
+      "n_cells": 1424787,
+      "n_dates": 91,
+      "mae_degC": 4.041934718602255,
+      "rmse_degC": 5.244424914804443,
+      "bias_degC": -0.02150907990983313,
+      "area_weighted_mae_degC": 4.049767530182535,
+      "area_weighted_rmse_degC": 5.255050488023001,
+      "area_weighted_bias_degC": -0.022678095342683276,
+      "r2_absolute_t2m": 0.8744660064273473,
+      "r2_anomaly": -0.653288313839278,
+      "anomaly_correlation_all": 0.44112704969249295,
+      "acc_pattern_mean": 0.46982232703321775,
+      "msss_vs_climatology": -0.3784994192802569,
+      "mse_area_weighted": 27.615555631670784
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       14634,
+       17368,
+       21209,
+       1939,
+       744
+      ],
+      [
+       67036,
+       142898,
+       259630,
+       28659,
+       9957
+      ],
+      [
+       158525,
+       536351,
+       2316666,
+       613461,
+       266340
+      ],
+      [
+       13267,
+       57053,
+       449543,
+       267913,
+       213055
+      ],
+      [
+       2036,
+       8966,
+       78017,
+       62607,
+       106931
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.4985370454459951,
+     "balanced_accuracy": 0.36392200048535395,
+     "per_class_recall": {
+      "strong_cold": 0.2618170107703868,
+      "cold": 0.2811956393403912,
+      "near_normal": 0.5953384217222691,
+      "warm": 0.2676905491536533,
+      "strong_warm": 0.4135683814400693
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.4139116292505883,
+      "recall": 0.5165254869825662,
+      "f1": 0.4595601403605942,
+      "observed_events": 1259388
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.23762687426213053,
+      "recall": 0.42890826380935837,
+      "f1": 0.3058207264784402,
+      "observed_events": 564074
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.17910580258514272,
+      "recall": 0.4135683814400693,
+      "f1": 0.24996026106145042,
+      "observed_events": 258557
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.05727637789728295,
+      "recall": 0.2618170107703868,
+      "f1": 0.09399085397184256,
+      "observed_events": 55894
+     }
+    }
+   },
+   "inland": {
+    "n_cells": 6880615,
+    "n_dates": 365,
+    "mae_degC": 4.318856492398456,
+    "rmse_degC": 5.826514248499146,
+    "bias_degC": -0.040511710604407274,
+    "area_weighted_mae_degC": 4.322076372374721,
+    "area_weighted_rmse_degC": 5.831235140339421,
+    "area_weighted_bias_degC": -0.03957006811503752,
+    "r2_absolute_t2m": 0.8767074748127417,
+    "r2_anomaly": -0.6814191200364221,
+    "anomaly_correlation_all": 0.4472509714359735,
+    "acc_pattern_mean": 0.44991922761712055,
+    "msss_vs_climatology": -0.6037243068757787,
+    "mse_area_weighted": 34.00330326192931,
+    "by_season": {
+     "DJF": {
+      "n_cells": 1696590,
+      "n_dates": 90,
+      "mae_degC": 2.425240240684705,
+      "rmse_degC": 3.2100509919025497,
+      "bias_degC": -0.03120439516416082,
+      "area_weighted_mae_degC": 2.4272223395859815,
+      "area_weighted_rmse_degC": 3.212817080409436,
+      "area_weighted_bias_degC": -0.03170971308213984,
+      "r2_absolute_t2m": 0.9017693831323701,
+      "r2_anomaly": -0.37300511940521597,
+      "anomaly_correlation_all": 0.5092008258900912,
+      "acc_pattern_mean": 0.5178340219096869,
+      "msss_vs_climatology": -0.3154961426597549,
+      "mse_area_weighted": 10.32219359217061
+     },
+     "JJA": {
+      "n_cells": 1734292,
+      "n_dates": 92,
+      "mae_degC": 5.447185643846994,
+      "rmse_degC": 7.0739815192893305,
+      "bias_degC": 0.10997747025969962,
+      "area_weighted_mae_degC": 5.4497992112864395,
+      "area_weighted_rmse_degC": 7.078550626882318,
+      "area_weighted_bias_degC": 0.11499548987170347,
+      "r2_absolute_t2m": 0.7171893773947153,
+      "r2_anomaly": -0.7028697827375454,
+      "anomaly_correlation_all": 0.46268003481633263,
+      "acc_pattern_mean": 0.4425728824680641,
+      "msss_vs_climatology": -0.6665854808540419,
+      "mse_area_weighted": 50.10587897733607
+     },
+     "MAM": {
+      "n_cells": 1734292,
+      "n_dates": 92,
+      "mae_degC": 5.0443238862516155,
+      "rmse_degC": 6.560018411734698,
+      "bias_degC": -0.28725947790319883,
+      "area_weighted_mae_degC": 5.046992079655919,
+      "area_weighted_rmse_degC": 6.563815492535827,
+      "area_weighted_bias_degC": -0.2884696405688529,
+      "r2_absolute_t2m": 0.7790436794617622,
+      "r2_anomaly": -0.8294952144521714,
+      "anomaly_correlation_all": 0.39546822363073486,
+      "acc_pattern_mean": 0.3767282802499647,
+      "msss_vs_climatology": -0.7474448320184255,
+      "mse_area_weighted": 43.08367382005334
+     },
+     "SON": {
+      "n_cells": 1715441,
+      "n_dates": 91,
+      "mae_degC": 4.317495838403748,
+      "rmse_degC": 5.645979120429087,
+      "bias_degC": 0.0475996252457994,
+      "area_weighted_mae_degC": 4.323110621838875,
+      "area_weighted_rmse_degC": 5.653715504907261,
+      "area_weighted_bias_degC": 0.04802660636858938,
+      "r2_absolute_t2m": 0.842876601204557,
+      "r2_anomaly": -0.6322453716692251,
+      "anomaly_correlation_all": 0.45482190128161193,
+      "acc_pattern_mean": 0.46417306745404996,
+      "msss_vs_climatology": -0.45545253117644524,
+      "mse_area_weighted": 31.96449901042876
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       18777,
+       20786,
+       23826,
+       2939,
+       796
+      ],
+      [
+       81933,
+       179744,
+       318847,
+       34553,
+       11497
+      ],
+      [
+       185778,
+       638064,
+       2841640,
+       732314,
+       306503
+      ],
+      [
+       16252,
+       65028,
+       528316,
+       318572,
+       256098
+      ],
+      [
+       2477,
+       9968,
+       89162,
+       71291,
+       125454
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.5063772642416412,
+     "balanced_accuracy": 0.37202986976667146,
+     "per_class_recall": {
+      "strong_cold": 0.2797360109647816,
+      "cold": 0.286867951750312,
+      "near_normal": 0.6040517407588251,
+      "warm": 0.26900375422413547,
+      "strong_warm": 0.4204898911353033
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.41473545671894396,
+      "recall": 0.5203059722733705,
+      "f1": 0.4615610139904596,
+      "observed_events": 1482618
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.2471597225811798,
+      "recall": 0.43425236918659127,
+      "f1": 0.3150213986368663,
+      "observed_events": 693698
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.17913094632953902,
+      "recall": 0.4204898911353033,
+      "f1": 0.2512346049864824,
+      "observed_events": 298352
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.06152016434209104,
+      "recall": 0.2797360109647816,
+      "f1": 0.1008591586744409,
+      "observed_events": 67124
+     }
+    }
+   },
+   "southern_ocean": {
+    "n_cells": 12344665,
+    "n_dates": 365,
+    "mae_degC": 3.25328782665908,
+    "rmse_degC": 5.351381028024631,
+    "bias_degC": -0.03889915739043038,
+    "area_weighted_mae_degC": 3.2812565355670698,
+    "area_weighted_rmse_degC": 5.384911835247298,
+    "area_weighted_bias_degC": -0.03982189157495652,
+    "r2_absolute_t2m": 0.6999460237742567,
+    "r2_anomaly": -0.6565970024681291,
+    "anomaly_correlation_all": 0.45198573050750485,
+    "acc_pattern_mean": 0.49437577162441215,
+    "msss_vs_climatology": -0.6486025883102646,
+    "mse_area_weighted": 28.99727547338642,
+    "by_season": {
+     "DJF": {
+      "n_cells": 3043890,
+      "n_dates": 90,
+      "mae_degC": 0.6697643798744843,
+      "rmse_degC": 0.9576935663442349,
+      "bias_degC": -0.014097921976812082,
+      "area_weighted_mae_degC": 0.6734367219490603,
+      "area_weighted_rmse_degC": 0.9645510982029403,
+      "area_weighted_bias_degC": -0.014465616605730725,
+      "r2_absolute_t2m": 0.7771939893110578,
+      "r2_anomaly": -0.17142872906164563,
+      "anomaly_correlation_all": 0.5709610890436813,
+      "acc_pattern_mean": 0.5766992407717118,
+      "msss_vs_climatology": -0.15410741765112657,
+      "mse_area_weighted": 0.9303588210444981
+     },
+     "JJA": {
+      "n_cells": 3111532,
+      "n_dates": 92,
+      "mae_degC": 5.782480508025345,
+      "rmse_degC": 7.859090637351999,
+      "bias_degC": -0.05339688958405989,
+      "area_weighted_mae_degC": 5.824400085465142,
+      "area_weighted_rmse_degC": 7.900327228839559,
+      "area_weighted_bias_degC": -0.05473548249272317,
+      "r2_absolute_t2m": 0.47333872892474216,
+      "r2_anomaly": -0.7828405130239562,
+      "anomaly_correlation_all": 0.42746468497852286,
+      "acc_pattern_mean": 0.4100018120973124,
+      "msss_vs_climatology": -0.7775726088922754,
+      "mse_area_weighted": 62.41517032274375
+     },
+     "MAM": {
+      "n_cells": 3111532,
+      "n_dates": 92,
+      "mae_degC": 2.6334280871385234,
+      "rmse_degC": 4.458612405447336,
+      "bias_degC": -0.013548841802895555,
+      "area_weighted_mae_degC": 2.673830113902106,
+      "area_weighted_rmse_degC": 4.510607742896991,
+      "area_weighted_bias_degC": -0.013968368559216446,
+      "r2_absolute_t2m": 0.756321631074534,
+      "r2_anomaly": -0.24827372255581004,
+      "anomaly_correlation_all": 0.5321412205015104,
+      "acc_pattern_mean": 0.5421017857226338,
+      "msss_vs_climatology": -0.2410240469110969,
+      "mse_area_weighted": 20.34558221028229
+     },
+     "SON": {
+      "n_cells": 3077711,
+      "n_dates": 91,
+      "mae_degC": 3.878106283371258,
+      "rmse_degC": 5.604907673974068,
+      "bias_degC": -0.07439969430762745,
+      "area_weighted_mae_degC": 3.903430243568991,
+      "area_weighted_rmse_degC": 5.631820915349448,
+      "area_weighted_bias_degC": -0.07595967729192217,
+      "r2_absolute_t2m": 0.5295981535521243,
+      "r2_anomaly": -0.8255425437990287,
+      "anomaly_correlation_all": 0.42790527059978345,
+      "acc_pattern_mean": 0.45000762608814676,
+      "msss_vs_climatology": -0.7940476601032171,
+      "mse_area_weighted": 31.717406822567497
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       202418,
+       121353,
+       142022,
+       18429,
+       6343
+      ],
+      [
+       299003,
+       434804,
+       693940,
+       80769,
+       15690
+      ],
+      [
+       484458,
+       1031987,
+       5620144,
+       1198634,
+       293714
+      ],
+      [
+       33696,
+       86061,
+       572108,
+       515181,
+       248488
+      ],
+      [
+       4209,
+       7123,
+       53397,
+       67059,
+       113635
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.5578265590844304,
+     "balanced_accuracy": 0.4332329961517763,
+     "per_class_recall": {
+      "strong_cold": 0.4126221805469204,
+      "cold": 0.285265902378025,
+      "near_normal": 0.6513135974917884,
+      "warm": 0.3539463866869479,
+      "strong_warm": 0.46301691365519937
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.36918858988984116,
+      "recall": 0.5551951048733155,
+      "f1": 0.44347752787751016,
+      "observed_events": 1700957
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.3909553467656792,
+      "recall": 0.5249122605000767,
+      "f1": 0.44813737967657247,
+      "observed_events": 2014771
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.16763538731615207,
+      "recall": 0.46301691365519937,
+      "f1": 0.24615154669211184,
+      "observed_events": 245423
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.1977155337453994,
+      "recall": 0.4126221805469204,
+      "f1": 0.26733335578522516,
+      "observed_events": 490565
+     }
+    }
+   },
+   "west_antarctica": {
+    "n_cells": 1930485,
+    "n_dates": 365,
+    "mae_degC": 4.5764792837703645,
+    "rmse_degC": 6.320662174335911,
+    "bias_degC": 0.01652076719274744,
+    "area_weighted_mae_degC": 4.574139156883549,
+    "area_weighted_rmse_degC": 6.3171646221337765,
+    "area_weighted_bias_degC": 0.016180971593437413,
+    "r2_absolute_t2m": 0.7831977419230998,
+    "r2_anomaly": -0.4784696995295974,
+    "anomaly_correlation_all": 0.4969062931427949,
+    "acc_pattern_mean": 0.44705397888947945,
+    "msss_vs_climatology": -0.45721640705593014,
+    "mse_area_weighted": 39.906568863138574,
+    "by_season": {
+     "DJF": {
+      "n_cells": 476010,
+      "n_dates": 90,
+      "mae_degC": 2.1763250547086495,
+      "rmse_degC": 3.0125668770083966,
+      "bias_degC": -0.011152862046723597,
+      "area_weighted_mae_degC": 2.177317544776314,
+      "area_weighted_rmse_degC": 3.0130246026741756,
+      "area_weighted_bias_degC": -0.011324170839150124,
+      "r2_absolute_t2m": 0.8485881635728386,
+      "r2_anomaly": -0.35659890056005294,
+      "anomaly_correlation_all": 0.4879669991047324,
+      "acc_pattern_mean": 0.4641522386419028,
+      "msss_vs_climatology": -0.3386849045741984,
+      "mse_area_weighted": 9.078317256319874
+     },
+     "JJA": {
+      "n_cells": 486588,
+      "n_dates": 92,
+      "mae_degC": 5.878317598675392,
+      "rmse_degC": 7.718852518401919,
+      "bias_degC": 0.2142819099947922,
+      "area_weighted_mae_degC": 5.873500503744745,
+      "area_weighted_rmse_degC": 7.714110600620441,
+      "area_weighted_bias_degC": 0.21582225076376643,
+      "r2_absolute_t2m": 0.31446946378931817,
+      "r2_anomaly": -0.3880946783956001,
+      "anomaly_correlation_all": 0.5418405621160283,
+      "acc_pattern_mean": 0.5098146156414691,
+      "msss_vs_climatology": -0.3714746825619064,
+      "mse_area_weighted": 59.50750235860467
+     },
+     "MAM": {
+      "n_cells": 486588,
+      "n_dates": 92,
+      "mae_degC": 5.334286124467922,
+      "rmse_degC": 6.979459050437711,
+      "bias_degC": -0.3978567444801025,
+      "area_weighted_mae_degC": 5.331756027712212,
+      "area_weighted_rmse_degC": 6.975642732653422,
+      "area_weighted_bias_degC": -0.4006770291149407,
+      "r2_absolute_t2m": 0.4880930638015383,
+      "r2_anomaly": -0.5019201579718566,
+      "anomaly_correlation_all": 0.4617872278866977,
+      "acc_pattern_mean": 0.4158617589595684,
+      "msss_vs_climatology": -0.4610267702955577,
+      "mse_area_weighted": 48.6595915336205
+     },
+     "SON": {
+      "n_cells": 481299,
+      "n_dates": 91,
+      "mae_degC": 4.8679795727826365,
+      "rmse_degC": 6.463953999963918,
+      "bias_degC": 0.26288705914512617,
+      "area_weighted_mae_degC": 4.865039696028427,
+      "area_weighted_rmse_degC": 6.459915662951056,
+      "area_weighted_bias_degC": 0.26298757819160634,
+      "r2_absolute_t2m": 0.6826099044809033,
+      "r2_anomaly": -0.6485606707265963,
+      "anomaly_correlation_all": 0.46770974563779444,
+      "acc_pattern_mean": 0.3982282895999261,
+      "msss_vs_climatology": -0.6301892954762813,
+      "mse_area_weighted": 41.730510372440385
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       8317,
+       7546,
+       8139,
+       1511,
+       362
+      ],
+      [
+       25917,
+       60701,
+       102900,
+       9668,
+       2315
+      ],
+      [
+       49895,
+       175452,
+       856346,
+       201320,
+       64810
+      ],
+      [
+       4797,
+       15401,
+       125921,
+       81946,
+       64014
+      ],
+      [
+       540,
+       1657,
+       16963,
+       15916,
+       28131
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.5363631419047545,
+     "balanced_accuracy": 0.39673031981562135,
+     "per_class_recall": {
+      "strong_cold": 0.3214299516908213,
+      "cold": 0.3012441625599873,
+      "near_normal": 0.6353549390387313,
+      "warm": 0.28056108107737976,
+      "strong_warm": 0.44506146471118707
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.404276233901356,
+      "recall": 0.5348001328507175,
+      "f1": 0.46046730863138413,
+      "observed_events": 355286
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.2926164186818113,
+      "recall": 0.450711596650482,
+      "f1": 0.35485172238871604,
+      "observed_events": 227376
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.17622406535030571,
+      "recall": 0.44506146471118707,
+      "f1": 0.25247824662648816,
+      "observed_events": 63207
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.09296268973688329,
+      "recall": 0.3214299516908213,
+      "f1": 0.1442158469234704,
+      "observed_events": 25875
+     }
+    }
+   }
+  },
+  "damped_persistence": {
+   "all": {
+    "n_cells": 20261880,
+    "n_dates": 365,
+    "mae_degC": 2.711581915029942,
+    "rmse_degC": 4.031606605161343,
+    "bias_degC": -0.2865394815082402,
+    "area_weighted_mae_degC": 2.7403881560786103,
+    "area_weighted_rmse_degC": 4.058744136284432,
+    "area_weighted_bias_degC": -0.30046785787539,
+    "r2_absolute_t2m": 0.9491210489808724,
+    "r2_anomaly": 0.1276496343244583,
+    "anomaly_correlation_all": 0.3633987894650019,
+    "acc_pattern_mean": 0.3821016228072549,
+    "msss_vs_climatology": 0.135790362114804,
+    "mse_area_weighted": 16.47340396382326,
+    "by_season": {
+     "DJF": {
+      "n_cells": 4996080,
+      "n_dates": 90,
+      "mae_degC": 1.056341204569792,
+      "rmse_degC": 1.6463299978105057,
+      "bias_degC": -0.0724389063313418,
+      "area_weighted_mae_degC": 1.0788124407071153,
+      "area_weighted_rmse_degC": 1.6749827019625572,
+      "area_weighted_bias_degC": -0.0797548368202196,
+      "r2_absolute_t2m": 0.9755134234182286,
+      "r2_anomaly": 0.17157303125039325,
+      "anomaly_correlation_all": 0.41900126734981546,
+      "acc_pattern_mean": 0.43908291995089316,
+      "msss_vs_climatology": 0.1747250977256486,
+      "mse_area_weighted": 2.8055670518737883
+     },
+     "JJA": {
+      "n_cells": 5107104,
+      "n_dates": 92,
+      "mae_degC": 4.054240819414345,
+      "rmse_degC": 5.372432402781489,
+      "bias_degC": -0.15208521478834006,
+      "area_weighted_mae_degC": 4.07409115685002,
+      "area_weighted_rmse_degC": 5.390841270781052,
+      "area_weighted_bias_degC": -0.16758702898448846,
+      "r2_absolute_t2m": 0.9149435355626496,
+      "r2_anomaly": 0.12617900987378605,
+      "anomaly_correlation_all": 0.3563878482954372,
+      "acc_pattern_mean": 0.3382885417319923,
+      "msss_vs_climatology": 0.12801314655807572,
+      "mse_area_weighted": 29.061169606756266
+     },
+     "MAM": {
+      "n_cells": 5107104,
+      "n_dates": 92,
+      "mae_degC": 2.7427312405782733,
+      "rmse_degC": 4.05080271750644,
+      "bias_degC": -0.34157141853140777,
+      "area_weighted_mae_degC": 2.7901843932688672,
+      "area_weighted_rmse_degC": 4.0967048514223094,
+      "area_weighted_bias_degC": -0.3573001523084459,
+      "r2_absolute_t2m": 0.9576848564848187,
+      "r2_anomaly": 0.14314928671465987,
+      "anomaly_correlation_all": 0.38636457412066977,
+      "acc_pattern_mean": 0.3793210647268573,
+      "msss_vs_climatology": 0.1528526053905882,
+      "mse_area_weighted": 16.782990639667084
+     },
+     "SON": {
+      "n_cells": 5051592,
+      "n_dates": 91,
+      "mae_degC": 2.9597281434651266,
+      "rmse_degC": 4.091928123758131,
+      "bias_degC": -0.5785824056623093,
+      "area_weighted_mae_degC": 2.985002271363896,
+      "area_weighted_rmse_degC": 4.117276211357977,
+      "area_weighted_bias_degC": -0.5956396937554682,
+      "r2_absolute_t2m": 0.9329246095201028,
+      "r2_anomaly": 0.09142353454086838,
+      "anomaly_correlation_all": 0.33120941401995674,
+      "acc_pattern_mean": 0.3728521509324558,
+      "msss_vs_climatology": 0.12491891812412181,
+      "mse_area_weighted": 16.951963400614297
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       7861,
+       93792,
+       477574,
+       560,
+       0
+      ],
+      [
+       3251,
+       109821,
+       2147613,
+       2953,
+       0
+      ],
+      [
+       2791,
+       132769,
+       13853504,
+       68809,
+       556
+      ],
+      [
+       388,
+       10953,
+       2711088,
+       64500,
+       768
+      ],
+      [
+       129,
+       2192,
+       516843,
+       51547,
+       1618
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.6927937585258623,
+     "balanced_accuracy": 0.21469229057800204,
+     "per_class_recall": {
+      "strong_cold": 0.013558427491475318,
+      "cold": 0.04851526613354255,
+      "near_normal": 0.9854233357084209,
+      "warm": 0.02313737827317675,
+      "strong_warm": 0.0028270452833946908
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.6190600645023026,
+      "recall": 0.03524764391704112,
+      "f1": 0.06669769723346447,
+      "observed_events": 3360026
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.5899897512549904,
+      "recall": 0.0755163227445774,
+      "f1": 0.13389466516512583,
+      "observed_events": 2843425
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.5499660095173351,
+      "recall": 0.0028270452833946908,
+      "f1": 0.005625174917560593,
+      "observed_events": 572329
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.5451456310679612,
+      "recall": 0.013558427491475318,
+      "f1": 0.0264587929795509,
+      "observed_events": 579787
+     }
+    }
+   },
+   "antarctic_peninsula": {
+    "n_cells": 271925,
+    "n_dates": 365,
+    "mae_degC": 3.87124672129663,
+    "rmse_degC": 5.346975962513399,
+    "bias_degC": -0.3695033730082801,
+    "area_weighted_mae_degC": 3.8813628039420753,
+    "area_weighted_rmse_degC": 5.357617085779347,
+    "area_weighted_bias_degC": -0.3696985437893699,
+    "r2_absolute_t2m": 0.7702385322351165,
+    "r2_anomaly": 0.06501727040559646,
+    "anomaly_correlation_all": 0.2665662405658936,
+    "acc_pattern_mean": 0.210374901749728,
+    "msss_vs_climatology": 0.07334391932060702,
+    "mse_area_weighted": 28.704060837834778,
+    "by_season": {
+     "DJF": {
+      "n_cells": 67050,
+      "n_dates": 90,
+      "mae_degC": 1.3558591890890543,
+      "rmse_degC": 1.9087363172861143,
+      "bias_degC": 0.08434469251112714,
+      "area_weighted_mae_degC": 1.3634157233624769,
+      "area_weighted_rmse_degC": 1.9180283645357707,
+      "area_weighted_bias_degC": 0.08420641333734548,
+      "r2_absolute_t2m": 0.7332646741885761,
+      "r2_anomaly": -0.050871944896679455,
+      "anomaly_correlation_all": 0.1521042508806319,
+      "acc_pattern_mean": 0.16364681912264348,
+      "msss_vs_climatology": -0.04422065783980589,
+      "mse_area_weighted": 3.6788328071637633
+     },
+     "JJA": {
+      "n_cells": 68540,
+      "n_dates": 92,
+      "mae_degC": 5.4015313087880745,
+      "rmse_degC": 6.8506039165811465,
+      "bias_degC": -0.7368833864456368,
+      "area_weighted_mae_degC": 5.4100308105896024,
+      "area_weighted_rmse_degC": 6.861259748533959,
+      "area_weighted_bias_degC": -0.7394577909729798,
+      "r2_absolute_t2m": 0.5261786827274029,
+      "r2_anomaly": 0.021739947023709405,
+      "anomaly_correlation_all": 0.21567716801224757,
+      "acc_pattern_mean": 0.18190134189159174,
+      "msss_vs_climatology": 0.042196414779968605,
+      "mse_area_weighted": 47.076885336852285
+     },
+     "MAM": {
+      "n_cells": 68540,
+      "n_dates": 92,
+      "mae_degC": 4.5844862695522055,
+      "rmse_degC": 5.844720399640176,
+      "bias_degC": -1.29362940739395,
+      "area_weighted_mae_degC": 4.5991200529658585,
+      "area_weighted_rmse_degC": 5.861250674984173,
+      "area_weighted_bias_degC": -1.2942094654285798,
+      "r2_absolute_t2m": 0.6335509004596178,
+      "r2_anomaly": -0.01073719705774323,
+      "anomaly_correlation_all": 0.2071358151554301,
+      "acc_pattern_mean": 0.2632824896298346,
+      "msss_vs_climatology": 0.08032753727366515,
+      "mse_area_weighted": 34.354259475002415
+     },
+     "SON": {
+      "n_cells": 67795,
+      "n_dates": 91,
+      "mae_degC": 4.0908143851423,
+      "rmse_degC": 5.393412707086675,
+      "bias_degC": 0.48733432482657474,
+      "area_weighted_mae_degC": 4.100528888891559,
+      "area_weighted_rmse_degC": 5.400673472934305,
+      "area_weighted_bias_degC": 0.4898773835765099,
+      "r2_absolute_t2m": 0.6993883712836255,
+      "r2_anomaly": 0.11413012760925156,
+      "anomaly_correlation_all": 0.35433225175146077,
+      "acc_pattern_mean": 0.23188695513891852,
+      "msss_vs_climatology": 0.12419873649732527,
+      "mse_area_weighted": 29.16727396125629
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       1,
+       518,
+       6934,
+       0,
+       0
+      ],
+      [
+       0,
+       172,
+       29579,
+       0,
+       0
+      ],
+      [
+       32,
+       1153,
+       189115,
+       26,
+       0
+      ],
+      [
+       1,
+       126,
+       39124,
+       2,
+       0
+      ],
+      [
+       0,
+       29,
+       5111,
+       2,
+       0
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.6961110600349361,
+     "balanced_accuracy": 0.19992073538217794,
+     "per_class_recall": {
+      "strong_cold": 0.0001341741580571582,
+      "cold": 0.005781318275015965,
+      "near_normal": 0.9936372329581875,
+      "warm": 5.095151962907294e-05,
+      "strong_warm": 0.0
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.13333333333333333,
+      "recall": 9.010023651312085e-05,
+      "f1": 0.00018007878446820485,
+      "observed_events": 44395
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.34005905511811024,
+      "recall": 0.018573271691216,
+      "f1": 0.03522275461311041,
+      "observed_events": 37204
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": NaN,
+      "recall": 0.0,
+      "f1": NaN,
+      "observed_events": 5142
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.029411764705882353,
+      "recall": 0.0001341741580571582,
+      "f1": 0.0002671296914652064,
+      "observed_events": 7453
+     }
+    }
+   },
+   "antarctica_land": {
+    "n_cells": 7917215,
+    "n_dates": 365,
+    "mae_degC": 3.2214846309046594,
+    "rmse_degC": 4.321768056623933,
+    "bias_degC": -0.6231829394610049,
+    "area_weighted_mae_degC": 3.2262489443457776,
+    "area_weighted_rmse_degC": 4.3274553687864135,
+    "area_weighted_bias_degC": -0.6272344884186545,
+    "r2_absolute_t2m": 0.9358280880166594,
+    "r2_anomaly": 0.08152758745870614,
+    "anomaly_correlation_all": 0.317214493400733,
+    "acc_pattern_mean": 0.347266300362701,
+    "msss_vs_climatology": 0.11758854426145982,
+    "mse_area_weighted": 18.726869968838354,
+    "by_season": {
+     "DJF": {
+      "n_cells": 1952190,
+      "n_dates": 90,
+      "mae_degC": 1.8490657707285698,
+      "rmse_degC": 2.4594598862829335,
+      "bias_degC": -0.2748574212748394,
+      "area_weighted_mae_degC": 1.8529573755376436,
+      "area_weighted_rmse_degC": 2.464372061464345,
+      "area_weighted_bias_degC": -0.2781752316594866,
+      "r2_absolute_t2m": 0.946440802318906,
+      "r2_anomaly": 0.1254577059775993,
+      "anomaly_correlation_all": 0.3781113699992186,
+      "acc_pattern_mean": 0.41565774793721966,
+      "msss_vs_climatology": 0.15698051288872805,
+      "mse_area_weighted": 6.073129657326026
+     },
+     "JJA": {
+      "n_cells": 1995572,
+      "n_dates": 92,
+      "mae_degC": 3.9853661610912017,
+      "rmse_degC": 5.154761643160161,
+      "bias_degC": -0.4814578159242377,
+      "area_weighted_mae_degC": 3.990004315025906,
+      "area_weighted_rmse_degC": 5.160680100866235,
+      "area_weighted_bias_degC": -0.489860292823043,
+      "r2_absolute_t2m": 0.8715225689501772,
+      "r2_anomaly": 0.11767032013429135,
+      "anomaly_correlation_all": 0.35542421851141737,
+      "acc_pattern_mean": 0.34487050828256804,
+      "msss_vs_climatology": 0.13273996399621368,
+      "mse_area_weighted": 26.632619103476728
+     },
+     "MAM": {
+      "n_cells": 1995572,
+      "n_dates": 92,
+      "mae_degC": 3.693443200809953,
+      "rmse_degC": 4.783471221214658,
+      "bias_degC": -0.7151787182653031,
+      "area_weighted_mae_degC": 3.698622555739075,
+      "area_weighted_rmse_degC": 4.789293197318593,
+      "area_weighted_bias_degC": -0.716101122170804,
+      "r2_absolute_t2m": 0.901810200252091,
+      "r2_anomaly": 0.03741789487828229,
+      "anomaly_correlation_all": 0.24593021307274615,
+      "acc_pattern_mean": 0.2686445487436778,
+      "msss_vs_climatology": 0.0759940980570174,
+      "mse_area_weighted": 22.93732932988215
+     },
+     "SON": {
+      "n_cells": 1973881,
+      "n_dates": 91,
+      "mae_degC": 3.329401204612342,
+      "rmse_degC": 4.351653575372052,
+      "bias_degC": -1.0179565257482803,
+      "area_weighted_mae_degC": 3.3347365799718993,
+      "area_weighted_rmse_degC": 4.358004651790658,
+      "area_weighted_bias_degC": -1.0214985411430892,
+      "r2_absolute_t2m": 0.9138083458404692,
+      "r2_anomaly": 0.041754575893737544,
+      "anomaly_correlation_all": 0.3078446184122362,
+      "acc_pattern_mean": 0.36153425353430213,
+      "msss_vs_climatology": 0.13098688342456366,
+      "mse_area_weighted": 18.99220454502901
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       82,
+       1670,
+       87423,
+       47,
+       0
+      ],
+      [
+       123,
+       2077,
+       736469,
+       763,
+       0
+      ],
+      [
+       146,
+       10019,
+       5400201,
+       18949,
+       177
+      ],
+      [
+       2,
+       1415,
+       1320078,
+       10491,
+       177
+      ],
+      [
+       0,
+       723,
+       316800,
+       9351,
+       32
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.683685235275283,
+     "balanced_accuracy": 0.201261244566551,
+     "per_class_recall": {
+      "strong_cold": 0.0009190558382461725,
+      "cold": 0.00280891278711227,
+      "near_normal": 0.9946052043174574,
+      "warm": 0.007875162423817505,
+      "strong_warm": 9.788746612175977e-05
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.5014379673393853,
+      "recall": 0.012085693843957062,
+      "f1": 0.023602518104170786,
+      "observed_events": 1659069
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.24309528203235528,
+      "recall": 0.004769179898968689,
+      "f1": 0.00935483145562077,
+      "observed_events": 828654
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.08290155440414508,
+      "recall": 9.788746612175977e-05,
+      "f1": 0.00019554404018430025,
+      "observed_events": 326906
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.23229461756373937,
+      "recall": 0.0009190558382461725,
+      "f1": 0.0018308679877197878,
+      "observed_events": 89222
+     }
+    }
+   },
+   "coastal_land": {
+    "n_cells": 1036600,
+    "n_dates": 365,
+    "mae_degC": 3.0733818520703307,
+    "rmse_degC": 4.3178231858395915,
+    "bias_degC": -0.2885677585133672,
+    "area_weighted_mae_degC": 3.0849428788563373,
+    "area_weighted_rmse_degC": 4.334649401782441,
+    "area_weighted_bias_degC": -0.2918779185542294,
+    "r2_absolute_t2m": 0.8367777993539257,
+    "r2_anomaly": 0.11282492532487276,
+    "anomaly_correlation_all": 0.34358259402698516,
+    "acc_pattern_mean": 0.3238661052783539,
+    "msss_vs_climatology": 0.12021183026994409,
+    "mse_area_weighted": 18.789185436372872,
+    "by_season": {
+     "DJF": {
+      "n_cells": 255600,
+      "n_dates": 90,
+      "mae_degC": 1.2114237509953392,
+      "rmse_degC": 1.637590212960519,
+      "bias_degC": -0.046047252773329675,
+      "area_weighted_mae_degC": 1.214546945887763,
+      "area_weighted_rmse_degC": 1.6429004623168453,
+      "area_weighted_bias_degC": -0.04732020696611523,
+      "r2_absolute_t2m": 0.805130584157482,
+      "r2_anomaly": 0.0412746126118706,
+      "anomaly_correlation_all": 0.26699663022276865,
+      "acc_pattern_mean": 0.2645533262542655,
+      "msss_vs_climatology": 0.04362661296491466,
+      "mse_area_weighted": 2.6991219290809036
+     },
+     "JJA": {
+      "n_cells": 261280,
+      "n_dates": 92,
+      "mae_degC": 4.268403160321986,
+      "rmse_degC": 5.558947167177588,
+      "bias_degC": -0.19572223799366842,
+      "area_weighted_mae_degC": 4.284023362671169,
+      "area_weighted_rmse_degC": 5.580220249142492,
+      "area_weighted_bias_degC": -0.20048135394431574,
+      "r2_absolute_t2m": 0.5502692473428683,
+      "r2_anomaly": 0.11025081316938778,
+      "anomaly_correlation_all": 0.33381827153854254,
+      "acc_pattern_mean": 0.327287994502497,
+      "msss_vs_climatology": 0.1128474350287294,
+      "mse_area_weighted": 31.138858028939897
+     },
+     "MAM": {
+      "n_cells": 261280,
+      "n_dates": 92,
+      "mae_degC": 3.6097928635860432,
+      "rmse_degC": 4.745675431962591,
+      "bias_degC": -0.4769374033096043,
+      "area_weighted_mae_degC": 3.626387797524008,
+      "area_weighted_rmse_degC": 4.766868453685481,
+      "area_weighted_bias_degC": -0.4823787865922569,
+      "r2_absolute_t2m": 0.7010683738629031,
+      "r2_anomaly": 0.10970622926031703,
+      "anomaly_correlation_all": 0.351617619459429,
+      "acc_pattern_mean": 0.342110190242926,
+      "msss_vs_climatology": 0.1251322544172624,
+      "mse_area_weighted": 22.723034854741808
+     },
+     "SON": {
+      "n_cells": 258440,
+      "n_dates": 91,
+      "mae_degC": 3.1644198265555095,
+      "rmse_degC": 4.256363710038999,
+      "bias_degC": -0.4318493638228381,
+      "area_weighted_mae_degC": 3.175132955106685,
+      "area_weighted_rmse_degC": 4.270828168600955,
+      "area_weighted_bias_degC": -0.43355482105471066,
+      "r2_absolute_t2m": 0.7620379683037405,
+      "r2_anomaly": 0.11973053868100825,
+      "anomaly_correlation_all": 0.36741008515969814,
+      "acc_pattern_mean": 0.36062303370479526,
+      "msss_vs_climatology": 0.13658517631018285,
+      "mse_area_weighted": 18.239973245715387
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       35,
+       942,
+       21107,
+       14,
+       0
+      ],
+      [
+       8,
+       509,
+       112187,
+       154,
+       0
+      ],
+      [
+       66,
+       2587,
+       721713,
+       818,
+       9
+      ],
+      [
+       2,
+       377,
+       147114,
+       330,
+       74
+      ],
+      [
+       0,
+       195,
+       27613,
+       730,
+       16
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.697089523442022,
+     "balanced_accuracy": 0.20081736958283386,
+     "per_class_recall": {
+      "strong_cold": 0.0015838537424201285,
+      "cold": 0.004510092328412696,
+      "near_normal": 0.9952012774530367,
+      "warm": 0.002231282581796791,
+      "strong_warm": 0.0005603418085031869
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.5361305361305362,
+      "recall": 0.00651739009696743,
+      "f1": 0.012878227955833278,
+      "observed_events": 176451
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.316458377462402,
+      "recall": 0.01107027475621684,
+      "f1": 0.02139221203204536,
+      "observed_events": 134956
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.16161616161616163,
+      "recall": 0.0005603418085031869,
+      "f1": 0.0011168115031584824,
+      "observed_events": 28554
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.3153153153153153,
+      "recall": 0.0015838537424201285,
+      "f1": 0.0031518753658426766,
+      "observed_events": 22098
+     }
+    }
+   },
+   "east_antarctica": {
+    "n_cells": 5714805,
+    "n_dates": 365,
+    "mae_degC": 3.062700649902599,
+    "rmse_degC": 4.050113260200763,
+    "bias_degC": -0.6999951703847387,
+    "area_weighted_mae_degC": 3.067752241488253,
+    "area_weighted_rmse_degC": 4.055911355139998,
+    "area_weighted_bias_degC": -0.7061271718807345,
+    "r2_absolute_t2m": 0.9440290391145906,
+    "r2_anomaly": 0.0649949992129677,
+    "anomaly_correlation_all": 0.30522513005167595,
+    "acc_pattern_mean": 0.3348023426077447,
+    "msss_vs_climatology": 0.11776596362295244,
+    "mse_area_weighted": 16.45041692075358,
+    "by_season": {
+     "DJF": {
+      "n_cells": 1409130,
+      "n_dates": 90,
+      "mae_degC": 1.8975311446476009,
+      "rmse_degC": 2.4910843636270315,
+      "bias_degC": -0.3272794990483122,
+      "area_weighted_mae_degC": 1.9021694464482533,
+      "area_weighted_rmse_degC": 2.4967541691004422,
+      "area_weighted_bias_degC": -0.3319547729889332,
+      "r2_absolute_t2m": 0.941321537596385,
+      "r2_anomaly": 0.1273501276439274,
+      "anomaly_correlation_all": 0.38539390143683644,
+      "acc_pattern_mean": 0.41139609821424067,
+      "msss_vs_climatology": 0.17112870606098496,
+      "mse_area_weighted": 6.233781380920439
+     },
+     "JJA": {
+      "n_cells": 1440444,
+      "n_dates": 92,
+      "mae_degC": 3.6935474547993468,
+      "rmse_degC": 4.715274828247297,
+      "bias_degC": -0.4468498717415201,
+      "area_weighted_mae_degC": 3.697975765734838,
+      "area_weighted_rmse_degC": 4.720637719438916,
+      "area_weighted_bias_degC": -0.4577675451196948,
+      "r2_absolute_t2m": 0.8930359999874055,
+      "r2_anomaly": 0.10828035889908683,
+      "anomaly_correlation_all": 0.3412799981895321,
+      "acc_pattern_mean": 0.3259374929518823,
+      "msss_vs_climatology": 0.12556531477040167,
+      "mse_area_weighted": 22.28442047818945
+     },
+     "MAM": {
+      "n_cells": 1440444,
+      "n_dates": 92,
+      "mae_degC": 3.4564065373412434,
+      "rmse_degC": 4.466231588829301,
+      "bias_degC": -0.7034062368407503,
+      "area_weighted_mae_degC": 3.4610865270804974,
+      "area_weighted_rmse_degC": 4.471129986656352,
+      "area_weighted_bias_degC": -0.7057512756388669,
+      "r2_absolute_t2m": 0.9115496256204068,
+      "r2_anomaly": 0.0189894364212555,
+      "anomaly_correlation_all": 0.21816343881629652,
+      "acc_pattern_mean": 0.24944061841385373,
+      "msss_vs_climatology": 0.06234674556490871,
+      "mse_area_weighted": 19.991003357577625
+     },
+     "SON": {
+      "n_cells": 1424787,
+      "n_dates": 91,
+      "mae_degC": 3.1792545815300017,
+      "rmse_degC": 4.124566497705936,
+      "bias_degC": -1.3210936295221174,
+      "area_weighted_mae_degC": 3.185720736525921,
+      "area_weighted_rmse_degC": 4.132453783606596,
+      "area_weighted_bias_degC": -1.3276566665678728,
+      "r2_absolute_t2m": 0.9223534397981732,
+      "r2_anomaly": -0.022608673061953466,
+      "anomaly_correlation_all": 0.2869357037749636,
+      "acc_pattern_mean": 0.3543123073285435,
+      "msss_vs_climatology": 0.14755020202566937,
+      "mse_area_weighted": 17.077174273644474
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       0,
+       561,
+       55330,
+       3,
+       0
+      ],
+      [
+       0,
+       1054,
+       506837,
+       289,
+       0
+      ],
+      [
+       0,
+       5349,
+       3870794,
+       15160,
+       40
+      ],
+      [
+       0,
+       252,
+       991847,
+       8708,
+       24
+      ],
+      [
+       0,
+       396,
+       252061,
+       6094,
+       6
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.6790366425451088,
+     "balanced_accuracy": 0.20110346949366767,
+     "per_class_recall": {
+      "strong_cold": 0.0,
+      "cold": 0.002074068243535755,
+      "near_normal": 0.9947193038495964,
+      "warm": 0.008700769660412198,
+      "strong_warm": 2.3205714794029944e-05
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.4891175306687772,
+      "recall": 0.011777148900894721,
+      "f1": 0.02300048382894786,
+      "observed_events": 1259388
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.21216500262743038,
+      "recall": 0.002863099522403089,
+      "f1": 0.005649954695409718,
+      "observed_events": 564074
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.08571428571428572,
+      "recall": 2.3205714794029944e-05,
+      "f1": 4.639886786762403e-05,
+      "observed_events": 258557
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": NaN,
+      "recall": 0.0,
+      "f1": NaN,
+      "observed_events": 55894
+     }
+    }
+   },
+   "inland": {
+    "n_cells": 6880615,
+    "n_dates": 365,
+    "mae_degC": 3.2437970754375485,
+    "rmse_degC": 4.322362059611088,
+    "bias_degC": -0.6735944356092883,
+    "area_weighted_mae_degC": 3.2469717632533186,
+    "area_weighted_rmse_degC": 4.326399343576999,
+    "area_weighted_bias_degC": -0.6764152043538367,
+    "r2_absolute_t2m": 0.9321481947678169,
+    "r2_anomaly": 0.07466148111491144,
+    "anomaly_correlation_all": 0.3117444176835671,
+    "acc_pattern_mean": 0.3440604656001369,
+    "msss_vs_climatology": 0.11720104390329011,
+    "mse_area_weighted": 18.717731280103486,
+    "by_season": {
+     "DJF": {
+      "n_cells": 1696590,
+      "n_dates": 90,
+      "mae_degC": 1.9451298169883107,
+      "rmse_degC": 2.5605146206896063,
+      "bias_degC": -0.30932884870809435,
+      "area_weighted_mae_degC": 1.946581549959995,
+      "area_weighted_rmse_degC": 2.5627982131767664,
+      "area_weighted_bias_degC": -0.3120305856674434,
+      "r2_absolute_t2m": 0.9375003581203327,
+      "r2_anomaly": 0.12641973553508523,
+      "anomaly_correlation_all": 0.3813386565740997,
+      "acc_pattern_mean": 0.4210918182420476,
+      "msss_vs_climatology": 0.16295963047447215,
+      "mse_area_weighted": 6.5679346814620265
+     },
+     "JJA": {
+      "n_cells": 1734292,
+      "n_dates": 92,
+      "mae_degC": 3.9427251830096446,
+      "rmse_degC": 5.091088462863452,
+      "bias_degC": -0.5245053487512928,
+      "area_weighted_mae_degC": 3.946885829923257,
+      "area_weighted_rmse_degC": 5.096250591901133,
+      "area_weighted_bias_degC": -0.5322982966360374,
+      "r2_absolute_t2m": 0.8535163466263809,
+      "r2_anomaly": 0.11798720749227032,
+      "anomaly_correlation_all": 0.35848762095106534,
+      "acc_pattern_mean": 0.34637550850540444,
+      "msss_vs_climatology": 0.13614578096237173,
+      "mse_area_weighted": 25.971770095452644
+     },
+     "MAM": {
+      "n_cells": 1734292,
+      "n_dates": 92,
+      "mae_degC": 3.706045553879599,
+      "rmse_degC": 4.789139497073217,
+      "bias_degC": -0.751070996365891,
+      "area_weighted_mae_degC": 3.709215928416573,
+      "area_weighted_rmse_degC": 4.79257300893446,
+      "area_weighted_bias_degC": -0.7503769730910436,
+      "r2_absolute_t2m": 0.8822363420466269,
+      "r2_anomaly": 0.024929234261059197,
+      "anomaly_correlation_all": 0.22848716899987584,
+      "acc_pattern_mean": 0.2548548224861107,
+      "msss_vs_climatology": 0.06840270358430889,
+      "mse_area_weighted": 22.96875604596711
+     },
+     "SON": {
+      "n_cells": 1715441,
+      "n_dates": 91,
+      "mae_degC": 3.354256496834581,
+      "rmse_degC": 4.3658292158946805,
+      "bias_degC": -1.1062565809107787,
+      "area_weighted_mae_degC": 3.35814277278898,
+      "area_weighted_rmse_degC": 4.370643062419103,
+      "area_weighted_bias_degC": -1.1077216710350444,
+      "r2_absolute_t2m": 0.9060502096964492,
+      "r2_anomaly": 0.02402117337145726,
+      "anomaly_correlation_all": 0.29464843260943807,
+      "acc_pattern_mean": 0.3557210533082012,
+      "msss_vs_climatology": 0.13019715370228824,
+      "mse_area_weighted": 19.102520779072236
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       47,
+       728,
+       66316,
+       33,
+       0
+      ],
+      [
+       115,
+       1568,
+       624282,
+       609,
+       0
+      ],
+      [
+       80,
+       7432,
+       4678488,
+       18131,
+       168
+      ],
+      [
+       0,
+       1038,
+       1172964,
+       10161,
+       103
+      ],
+      [
+       0,
+       528,
+       289187,
+       8621,
+       16
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.681665810396309,
+     "balanced_accuracy": 0.20126992736033125,
+     "per_class_recall": {
+      "strong_cold": 0.0007001966509743162,
+      "cold": 0.002502497709767721,
+      "near_normal": 0.9945133164367316,
+      "warm": 0.008579998074756854,
+      "strong_warm": 5.362792942564488e-05
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.4994714867078907,
+      "recall": 0.01274839506872303,
+      "f1": 0.024862212751404184,
+      "observed_events": 1482618
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.21307212205270457,
+      "recall": 0.003543328653102647,
+      "f1": 0.006970735954307365,
+      "observed_events": 693698
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.05574912891986063,
+      "recall": 5.362792942564488e-05,
+      "f1": 0.00010715278312611548,
+      "observed_events": 298352
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.19421487603305784,
+      "recall": 0.0007001966509743162,
+      "f1": 0.001395362645845085,
+      "observed_events": 67124
+     }
+    }
+   },
+   "southern_ocean": {
+    "n_cells": 12344665,
+    "n_dates": 365,
+    "mae_degC": 2.384557290978657,
+    "rmse_degC": 3.8339714680399393,
+    "bias_degC": -0.07063417869479838,
+    "area_weighted_mae_degC": 2.4091868590806005,
+    "area_weighted_rmse_degC": 3.86487549347536,
+    "area_weighted_bias_degC": -0.07771777294347543,
+    "r2_absolute_t2m": 0.845984159515469,
+    "r2_anomaly": 0.14967905811943205,
+    "anomaly_correlation_all": 0.3873943454373593,
+    "acc_pattern_mean": 0.42917317450869447,
+    "msss_vs_climatology": 0.15076125774751392,
+    "mse_area_weighted": 14.93726258006641,
+    "by_season": {
+     "DJF": {
+      "n_cells": 3043890,
+      "n_dates": 90,
+      "mae_degC": 0.5479296092724899,
+      "rmse_degC": 0.7544794491820493,
+      "bias_degC": 0.05738161960341492,
+      "area_weighted_mae_degC": 0.5510937758715388,
+      "area_weighted_rmse_degC": 0.7603531368360533,
+      "area_weighted_bias_degC": 0.05550426148241087,
+      "r2_absolute_t2m": 0.8617170637911714,
+      "r2_anomaly": 0.2729612468122695,
+      "anomaly_correlation_all": 0.5266168210413698,
+      "acc_pattern_mean": 0.5318517671491692,
+      "msss_vs_climatology": 0.2828228623343103,
+      "mse_area_weighted": 0.5781368926964261
+     },
+     "JJA": {
+      "n_cells": 3111532,
+      "n_dates": 92,
+      "mae_degC": 4.098413381245377,
+      "rmse_degC": 5.507508749053876,
+      "bias_degC": 0.05915694514894024,
+      "area_weighted_mae_degC": 4.131411425834763,
+      "area_weighted_rmse_degC": 5.542261495863785,
+      "area_weighted_bias_degC": 0.05210002036928186,
+      "r2_absolute_t2m": 0.741359113869856,
+      "r2_anomaly": 0.12445536544618063,
+      "anomaly_correlation_all": 0.35471407444196534,
+      "acc_pattern_mean": 0.337772428589268,
+      "msss_vs_climatology": 0.12519508328072237,
+      "mse_area_weighted": 30.71666248853428
+     },
+     "MAM": {
+      "n_cells": 3111532,
+      "n_dates": 92,
+      "mae_degC": 2.132994889512801,
+      "rmse_degC": 3.501117413680791,
+      "bias_degC": -0.10195946328088523,
+      "area_weighted_mae_degC": 2.170920799831536,
+      "area_weighted_rmse_degC": 3.5479155363755837,
+      "area_weighted_bias_degC": -0.11271291775019869,
+      "r2_absolute_t2m": 0.8497443228694976,
+      "r2_anomaly": 0.23029600758610957,
+      "anomaly_correlation_all": 0.48131499004795847,
+      "acc_pattern_mean": 0.4819588452272781,
+      "msss_vs_climatology": 0.23218495255399607,
+      "mse_area_weighted": 12.587704653255246
+     },
+     "SON": {
+      "n_cells": 3077711,
+      "n_dates": 91,
+      "mae_degC": 2.722639400691576,
+      "rmse_degC": 3.916298407261097,
+      "bias_degC": -0.29679109142604193,
+      "area_weighted_mae_degC": 2.746595593128364,
+      "area_weighted_rmse_degC": 3.9447652673754217,
+      "area_weighted_bias_degC": -0.3053404846015513,
+      "r2_absolute_t2m": 0.7703409079505336,
+      "r2_anomaly": 0.10873554967430443,
+      "anomaly_correlation_all": 0.33754155748711756,
+      "acc_pattern_mean": 0.36666233473764875,
+      "msss_vs_climatology": 0.11980553165510399,
+      "mse_area_weighted": 15.561173014691482
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       7779,
+       92122,
+       390151,
+       513,
+       0
+      ],
+      [
+       3128,
+       107744,
+       1411144,
+       2190,
+       0
+      ],
+      [
+       2645,
+       122750,
+       8453303,
+       49860,
+       379
+      ],
+      [
+       386,
+       9538,
+       1391010,
+       54009,
+       591
+      ],
+      [
+       129,
+       1469,
+       200043,
+       42196,
+       1586
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.6986354834254311,
+     "balanced_accuracy": 0.2219520087001654,
+     "per_class_recall": {
+      "strong_cold": 0.015857225851823916,
+      "cold": 0.070688607707882,
+      "near_normal": 0.9796459285772975,
+      "warm": 0.037105969355576716,
+      "strong_warm": 0.006462312008246986
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.6501414184134704,
+      "recall": 0.05783920463597845,
+      "f1": 0.10622794273655022,
+      "observed_events": 1700957
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.6062095544881935,
+      "recall": 0.1046138742318606,
+      "f1": 0.17843511490771696,
+      "observed_events": 2014771
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.6205007824726134,
+      "recall": 0.006462312008246986,
+      "f1": 0.01279140572387178,
+      "observed_events": 245423
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.5529963744934954,
+      "recall": 0.015857225851823916,
+      "f1": 0.030830387292125744,
+      "observed_events": 490565
+     }
+    }
+   },
+   "west_antarctica": {
+    "n_cells": 1930485,
+    "n_dates": 365,
+    "mae_degC": 3.6000076093896736,
+    "rmse_degC": 4.900398932150011,
+    "bias_degC": -0.4315289741432474,
+    "area_weighted_mae_degC": 3.598010138977344,
+    "area_weighted_rmse_degC": 4.897921371347716,
+    "area_weighted_bias_degC": -0.43292305663083447,
+    "r2_absolute_t2m": 0.8696828670639298,
+    "r2_anomaly": 0.11131030606143522,
+    "anomaly_correlation_all": 0.345327064140937,
+    "acc_pattern_mean": 0.3368961809414917,
+    "msss_vs_climatology": 0.124001664134886,
+    "mse_area_weighted": 23.989633759904695,
+    "by_season": {
+     "DJF": {
+      "n_cells": 476010,
+      "n_dates": 90,
+      "mae_degC": 1.7750662517025093,
+      "rmse_degC": 2.433997239464556,
+      "bias_degC": -0.1702692388341667,
+      "area_weighted_mae_degC": 1.7762009197220587,
+      "area_weighted_rmse_degC": 2.4351942419537522,
+      "area_weighted_bias_degC": -0.1709675502418525,
+      "r2_absolute_t2m": 0.901161397521868,
+      "r2_anomaly": 0.11443951398588981,
+      "anomaly_correlation_all": 0.356511526035957,
+      "acc_pattern_mean": 0.38711688291472535,
+      "msss_vs_climatology": 0.12553943976541349,
+      "mse_area_weighted": 5.930170996044709
+     },
+     "JJA": {
+      "n_cells": 486588,
+      "n_dates": 92,
+      "mae_degC": 4.649756868101483,
+      "rmse_degC": 6.045231568907605,
+      "bias_degC": -0.5479287049449163,
+      "area_weighted_mae_degC": 4.646184164883384,
+      "area_weighted_rmse_degC": 6.04131007273266,
+      "area_weighted_bias_degC": -0.5493289666808444,
+      "r2_absolute_t2m": 0.5795182008525668,
+      "r2_anomaly": 0.14858855013953343,
+      "anomaly_correlation_all": 0.40376238380171725,
+      "acc_pattern_mean": 0.36269361588630256,
+      "msss_vs_climatology": 0.15884055511010187,
+      "mse_area_weighted": 36.497427394901095
+     },
+     "MAM": {
+      "n_cells": 486588,
+      "n_dates": 92,
+      "mae_degC": 4.2696307511439695,
+      "rmse_degC": 5.4753484158027526,
+      "bias_degC": -0.6685491055338575,
+      "area_weighted_mae_degC": 4.2667635165689575,
+      "area_weighted_rmse_degC": 5.4727450846161485,
+      "area_weighted_bias_degC": -0.6680241512908468,
+      "r2_absolute_t2m": 0.6849561491615088,
+      "r2_anomaly": 0.07567044562184899,
+      "anomaly_correlation_all": 0.299215619368847,
+      "acc_pattern_mean": 0.29855203238017036,
+      "msss_vs_climatology": 0.10070919326671368,
+      "mse_area_weighted": 29.950938761190212
+     },
+     "SON": {
+      "n_cells": 481299,
+      "n_dates": 91,
+      "mae_degC": 3.666628063773882,
+      "rmse_degC": 4.817155501221617,
+      "bias_degC": -0.33261412640838584,
+      "area_weighted_mae_degC": 3.6640047391003256,
+      "area_weighted_rmse_degC": 4.814414307560561,
+      "area_weighted_bias_degC": -0.33663021203398075,
+      "r2_absolute_t2m": 0.8237300881006847,
+      "r2_anomaly": 0.08443379836920939,
+      "anomaly_correlation_all": 0.29809688166786685,
+      "acc_pattern_mean": 0.29991194440443597,
+      "msss_vs_climatology": 0.09453584397663084,
+      "mse_area_weighted": 23.17858512484384
+     }
+    },
+    "categories": {
+     "confusion_matrix_obs_rows_pred_cols": [
+      [
+       81,
+       591,
+       25159,
+       44,
+       0
+      ],
+      [
+       123,
+       851,
+       200053,
+       474,
+       0
+      ],
+      [
+       114,
+       3517,
+       1340292,
+       3763,
+       137
+      ],
+      [
+       1,
+       1037,
+       289107,
+       1781,
+       153
+      ],
+      [
+       0,
+       298,
+       59628,
+       3255,
+       26
+      ]
+     ],
+     "labels": [
+      "strong_cold",
+      "cold",
+      "near_normal",
+      "warm",
+      "strong_warm"
+     ],
+     "accuracy": 0.6956961592553167,
+     "balanced_accuracy": 0.20165504443223942,
+     "per_class_recall": {
+      "strong_cold": 0.003130434782608696,
+      "cold": 0.004223304102709167,
+      "near_normal": 0.9944124710737241,
+      "warm": 0.006097665357660085,
+      "strong_warm": 0.00041134684449507173
+     },
+     "warm_ge_1sigma": {
+      "precision": 0.5413682134329908,
+      "recall": 0.014678315497936873,
+      "f1": 0.02858168525069947,
+      "observed_events": 355286
+     },
+     "cold_le_-1sigma": {
+      "precision": 0.248903674580372,
+      "recall": 0.007239110548166913,
+      "f1": 0.014069037433383622,
+      "observed_events": 227376
+     },
+     "extreme_warm_ge_2sigma": {
+      "precision": 0.08227848101265822,
+      "recall": 0.00041134684449507173,
+      "f1": 0.0008186011365961934,
+      "observed_events": 63207
+     },
+     "extreme_cold_le_-2sigma": {
+      "precision": 0.25391849529780564,
+      "recall": 0.003130434782608696,
+      "f1": 0.0061846224326181564,
+      "observed_events": 25875
+     }
+    }
+   }
+  }
+ }
+}

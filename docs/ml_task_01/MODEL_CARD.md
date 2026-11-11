@@ -1,5 +1,31 @@
 # Model Card — AETHENTRA Antarctic Weekly Sea-Ice Concentration Forecast
 
+## Operational model: U-Net (addendum)
+
+The U-Net beat the frozen tree selection `lgbm_residual_tuned` on 4/4 selection criteria on validation (decision frozen 2026-11-09T03:36:53.145488+00:00, before its test evaluation) and now produces the forecasts. The tree model documented below remains the frozen selection and the fallback.
+When fewer than 5 of 7 atmospheric days are available (all issue dates after 2026-03-17 at present), the forecast uses the SIC-only tree fallback declared before the test, because the U-Net was validated with atmospheric inputs only.
+No uncertainty interval is exported for U-Net forecasts (interval coverage was assessed around the tree model only).
+
+* U-Net (`cnn_unet_residual`): 7,773,697 parameters, 34 epochs, best epoch 26 (validation mae 2.576), 84 min on cuda; 34 dynamic + 5 static channels; loss l1.
+
+| criterion (validation) | U-Net | lgbm_residual_tuned | U-Net better |
+|---|---|---|---|
+| siz_mae | 2.767 | 3.058 | yes |
+| siz_rmse | 6.364 | 7.130 | yes |
+| iiee | 502,112.958 | 585,508.141 | yes |
+| extent_mae | 79,879.693 | 116,514.113 | yes |
+
+* Decision (frozen 2026-11-09T03:36:53.145488+00:00, validation only): U-Net better on 4/4 selection criteria; replaces the operational model: **True** (the U-Net replaces the operational model only if it is better on ALL validation selection criteria).
+* Single test evaluation of `test_cnn_addendum` (260 issue dates, 2021-01-03 … 2025-12-21, evaluated 2026-11-09T10:48:38.948388+00:00):
+
+| test metric | U-Net | tree final model |
+|---|---|---|
+| SIZ MAE (pp) | 2.752 | 3.017 |
+| SIZ RMSE (pp) | 6.474 | 7.141 |
+| IIEE (km²) | 516,507 | 584,559 |
+| extent MAE (km²) | 106,184 | 127,375 |
+
+
 **Version** `aethentra-sic-weekly-20261108-v1` · **Family** lightgbm gradient-boosted trees (745 trees) · **Selected candidate** LightGBM residual (Optuna-tuned) · **Trained** 2026-11-07T23:02:24+00:00
 
 ## Intended use

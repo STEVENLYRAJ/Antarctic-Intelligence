@@ -1,0 +1,7 @@
+seed: 42
+pixel_sample_per_scene: 4000        # per class-balanced sample for threshold / RF / XGBoost
+random_forest: {n_estimators: 300, max_depth: 18, min_samples_leaf: 20, class_weight: balanced, n_jobs: 8}
+xgboost: {n_estimators: 2000, learning_rate: 0.05, max_depth: 8, subsample: 0.8, colsample_bytree: 0.8, reg_lambda: 1.0,
+          early_stopping_rounds: 100, device: cuda, eval_metric: logloss}
+unet: {base: 32, depth: 4, dropout: 0.1, epochs: 40, lr: 0.001, weight_decay: 0.0001, batch_size: 16, patience: 8, dice_weight: 0.5}
+optuna: {n_trials: 12}

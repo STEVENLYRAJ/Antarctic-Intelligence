@@ -1,0 +1,67 @@
+# ML-04 anomaly-detection configuration (all thresholds and choices documented in docs/ml_task_04/)
+domain:
+  grid: NCEP/NCAR R1 2.5 deg regular lat/lon
+  lat_min: -87.5          # 90 S row (144 copies of the pole) is excluded
+  lat_max: -50.0          # Antarctica + Southern Ocean sea-ice zone (max ice edge ~55 S)
+  ocean_fraction_min: 0.25  # 2.5 deg cell needs >= 25 % of its area covered by valid 25 km SIC ocean pixels for a SIC value
+
+variables:               # name: [source var(s), units after conversion, description, distribution]
+  t2m:   {source: air,  units: degC,     description: "near-surface air temperature (sigma 0.995, ~40 m)", kind: gaussian}
+  slp:   {source: slp,  units: hPa,      description: "mean sea-level pressure", kind: gaussian}
+  wspd:  {source: [uwnd, vwnd], units: "m s-1", description: "near-surface wind speed of the daily-mean wind vector", kind: positive}
+  rhum:  {source: rhum, units: "%",      description: "near-surface relative humidity", kind: bounded}
+  prate: {source: prate, units: "mm day-1", description: "precipitation (rain + snow; NCEP R1 forecast field)", kind: skewed}
+  tcdc:  {source: tcdc, units: "%",      description: "total cloud cover (NCEP R1 forecast field)", kind: bounded}
+  z500:  {source: hgt500, units: m,      description: "500 hPa geopotential height", kind: gaussian}
+  sic:   {source: nsidc_g02202_v6, units: "%", description: "sea-ice concentration (25 km CDR averaged to 2.5 deg ocean cells)", kind: bounded}
+
+std_floor:               # minimum climatological spread (prevents division by ~0 for bounded / near-constant fields)
+  t2m: 0.3
+  slp: 0.3
+  wspd: 0.2
+  rhum: 1.0
+  prate: 0.05
+  tcdc: 2.0
+  z500: 5.0
+  sic: 2.0
+
+baselines:
+  reporting: {start: 1991, end: 2020, role: "WMO standard normal; univariate anomaly products, maps and summaries"}
+  model:     {start: 1981, end: 2010, role: "leakage-free baseline inside the training period; all ML features, thresholds and evaluation"}
+  daily_window_days: 31   # +-15 day window around each day of year (Feb 29 shares Feb 28's climatology)
+  type: fixed             # rolling (trailing 30-yr) baseline only as the 'rolling' comparison method
+
+splits:                   # chronological; whole calendar years
+  train: [1979, 2010]
+  validation: [2011, 2017]
+  test: [2018, 2025]
+  operational: [2026, 2026]
+
+severity:                 # base-rate calibrated on the TRAINING-period distribution of each score
+  basis: "percentile of the score within its 1979-2010 (training) distribution"
+  classes:
+    - {name: normal,   below: 0.90}
+    - {name: mild,     below: 0.95}
+    - {name: moderate, below: 0.98}
+    - {name: strong,   below: 0.995}
+    - {name: extreme,  below: 1.01}
+  flag_from: moderate     # a cell-month is 'flagged' at >= moderate (expected base rate 5 % under the training climate)
+
+synthetic_tests:          # clearly labelled synthetic injections (software and method testing only; never real events)
+  fraction: 0.01
+  seed_validation: 2011
+  seed_test: 2018
+  types: [univariate_spike, compound_moderate, covariance_break]
+
+compound_pairs:           # physically motivated co-occurrence checks (co-occurrence only; no causal claim)
+  - {name: warm_low_ice,       a: [t2m, "+"],  b: [sic, "-"]}
+  - {name: wind_precip,        a: [wspd, "+"], b: [prate, "+"]}
+  - {name: high_z500_warm,     a: [z500, "+"], b: [t2m, "+"]}
+  - {name: low_slp_wind,       a: [slp, "-"],  b: [wspd, "+"]}
+  - {name: warm_moist_cloudy,  a: [t2m, "+"],  b: [rhum, "+"]}
+
+clustering:
+  method: DBSCAN
+  metric: haversine
+  eps_km: 450
+  min_samples: 3

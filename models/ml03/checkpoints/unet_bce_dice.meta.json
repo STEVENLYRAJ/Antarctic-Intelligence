@@ -1,0 +1,207 @@
+{
+ "name": "unet_bce_dice",
+ "kind": "unet",
+ "architecture": {
+  "base": 32,
+  "depth": 4,
+  "dropout": 0.1
+ },
+ "channels": [
+  "s0_norm",
+  "inc",
+  "std7",
+  "valid"
+ ],
+ "loss": "(1-0.5)*BCE + 0.5*Dice",
+ "label_encoding": "0 water, 1 ice; 2 uncertain and 255 invalid ignored in loss",
+ "optimizer": "AdamW + OneCycle",
+ "lr": 0.001,
+ "weight_decay": 0.0001,
+ "batch_size": 16,
+ "tile_size": 256,
+ "augmentation": "rot90 x4, horizontal flip, sigma0 gain (0.05 sd) + pixel noise (0.05 sd) in normalised units",
+ "epochs_run": 26,
+ "best_epoch": 18,
+ "best_val_tile_miou": 0.9352958915115833,
+ "train_splits": [
+  "train"
+ ],
+ "train_tiles": 6387,
+ "seconds": 2624.7,
+ "device": "cuda",
+ "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+ "seed": 42,
+ "n_parameters": 7763329,
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.2800199193879962,
+   "seconds": 96.9,
+   "val_tile_miou": 0.8704883203583
+  },
+  {
+   "epoch": 2,
+   "train_loss": 0.13870621231384575,
+   "seconds": 202.6,
+   "val_tile_miou": 0.8679018043192858
+  },
+  {
+   "epoch": 3,
+   "train_loss": 0.09879521711729466,
+   "seconds": 299.8,
+   "val_tile_miou": 0.8672968715749327
+  },
+  {
+   "epoch": 4,
+   "train_loss": 0.08434205912984907,
+   "seconds": 406.9,
+   "val_tile_miou": 0.9027064264825605
+  },
+  {
+   "epoch": 5,
+   "train_loss": 0.0817737654550001,
+   "seconds": 506.2,
+   "val_tile_miou": 0.9004500189747568
+  },
+  {
+   "epoch": 6,
+   "train_loss": 0.07098565079912078,
+   "seconds": 607.6,
+   "val_tile_miou": 0.8546958741811215
+  },
+  {
+   "epoch": 7,
+   "train_loss": 0.0674641741643427,
+   "seconds": 707.2,
+   "val_tile_miou": 0.8501971895644609
+  },
+  {
+   "epoch": 8,
+   "train_loss": 0.060484418827691115,
+   "seconds": 806.9,
+   "val_tile_miou": 0.9239475686702174
+  },
+  {
+   "epoch": 9,
+   "train_loss": 0.06084915434097638,
+   "seconds": 906.7,
+   "val_tile_miou": 0.9062000084137645
+  },
+  {
+   "epoch": 10,
+   "train_loss": 0.05987730096123414,
+   "seconds": 1006.3,
+   "val_tile_miou": 0.8961052471818814
+  },
+  {
+   "epoch": 11,
+   "train_loss": 0.05721216111647664,
+   "seconds": 1106.2,
+   "val_tile_miou": 0.9311610963092181
+  },
+  {
+   "epoch": 12,
+   "train_loss": 0.05445989012805512,
+   "seconds": 1205.7,
+   "val_tile_miou": 0.8905818181661329
+  },
+  {
+   "epoch": 13,
+   "train_loss": 0.05244354128924897,
+   "seconds": 1305.2,
+   "val_tile_miou": 0.9333625794490891
+  },
+  {
+   "epoch": 14,
+   "train_loss": 0.05362676807009848,
+   "seconds": 1404.6,
+   "val_tile_miou": 0.8927076043892066
+  },
+  {
+   "epoch": 15,
+   "train_loss": 0.048977867043868174,
+   "seconds": 1503.6,
+   "val_tile_miou": 0.9103362803740835
+  },
+  {
+   "epoch": 16,
+   "train_loss": 0.049340722549823114,
+   "seconds": 1602.6,
+   "val_tile_miou": 0.9264967458009389
+  },
+  {
+   "epoch": 17,
+   "train_loss": 0.04872711478034034,
+   "seconds": 1701.8,
+   "val_tile_miou": 0.9191153449641803
+  },
+  {
+   "epoch": 18,
+   "train_loss": 0.045988762075576235,
+   "seconds": 1801.0,
+   "val_tile_miou": 0.9352958915115833
+  },
+  {
+   "epoch": 19,
+   "train_loss": 0.04366104680520948,
+   "seconds": 1918.2,
+   "val_tile_miou": 0.9279528557597244
+  },
+  {
+   "epoch": 20,
+   "train_loss": 0.04703160033561289,
+   "seconds": 2018.1,
+   "val_tile_miou": 0.9304845252373142
+  },
+  {
+   "epoch": 21,
+   "train_loss": 0.04144995896931505,
+   "seconds": 2118.0,
+   "val_tile_miou": 0.9323222792695709
+  },
+  {
+   "epoch": 22,
+   "train_loss": 0.04025876165062073,
+   "seconds": 2217.6,
+   "val_tile_miou": 0.9335417878955481
+  },
+  {
+   "epoch": 23,
+   "train_loss": 0.03970035875114263,
+   "seconds": 2317.3,
+   "val_tile_miou": 0.9278487241835633
+  },
+  {
+   "epoch": 24,
+   "train_loss": 0.03826203462682315,
+   "seconds": 2417.0,
+   "val_tile_miou": 0.9210445075647171
+  },
+  {
+   "epoch": 25,
+   "train_loss": 0.038025333637342555,
+   "seconds": 2516.4,
+   "val_tile_miou": 0.9231657328376563
+  },
+  {
+   "epoch": 26,
+   "train_loss": 0.03566725005148328,
+   "seconds": 2615.9,
+   "val_tile_miou": 0.9266014404354389
+  }
+ ],
+ "norm": {
+  "s0_norm": [
+   -14.006857872009277,
+   5.3739213943481445
+  ],
+  "inc": [
+   33.367557525634766,
+   7.281153678894043
+  ],
+  "std7": [
+   0.7120636105537415,
+   0.6744657754898071
+  ]
+ }
+}

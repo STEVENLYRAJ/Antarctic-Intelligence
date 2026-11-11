@@ -120,6 +120,10 @@ class CNNResidualModel:
         self.std = np.asarray(meta["norm_std"], np.float32)[:, None, None]
         self.vc = self.channels.index("sic_d0")
 
+    @property
+    def features(self) -> list[str]:
+        return self.channels
+
     @classmethod
     def load(cls, directory, name, ctx):
         import torch

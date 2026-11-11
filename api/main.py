@@ -29,6 +29,12 @@ app = FastAPI(title="AETHENTRA Antarctic Sea-Ice Forecast API", version=__versio
 from api.temperature import router as temperature_router  # noqa: E402  ML-02, mounted under /temperature
 
 app.include_router(temperature_router)
+from api.seaice_detection import router as seaice_detection_router  # noqa: E402  ML-03, under /seaice-detection
+
+app.include_router(seaice_detection_router)
+from api.anomaly import router as anomaly_router  # noqa: E402  ML-04, under /api/ml04
+
+app.include_router(anomaly_router)
 from fastapi.responses import RedirectResponse  # noqa: E402
 from fastapi.staticfiles import StaticFiles  # noqa: E402
 
@@ -48,7 +54,8 @@ FILE_KINDS = {"netcdf": ".nc", "summary_json": ".json", "ice_edge_geojson": "_ic
 
 
 def _final_meta() -> dict:
-    p = MODELS_DIR / "final" / "final_model.meta.json"
+    from aethentra.inference.model_loader import operational_model_name
+    p = MODELS_DIR / "final" / f"{operational_model_name()}.meta.json"
     if not p.exists():
         raise HTTPException(503, "No final model available")
     return json.loads(p.read_text())
@@ -66,6 +73,11 @@ def _summaries() -> list[dict]:
     return sorted(out, key=lambda s: (s["issue_date"], s["generated_utc"]))
 
 
+def cached_bundle_version() -> str | None:
+    from aethentra.inference.model_loader import cached_bundle
+    return cached_bundle().meta.get("model_version")
+
+
 @app.get("/health")
 def health():
     ok = (MODELS_DIR / "final" / "final_model.meta.json").exists()
@@ -75,9 +87,13 @@ def health():
 @app.get("/model/info")
 def model_info():
     m = _final_meta()
-    return {"model_version": m.get("model_version"), "model_family": m["kind"], "selected_candidate": m.get("selected_from"),
+    unet = m["kind"] == "unet"
+    return {"model_version": m.get("model_version") or (cached_bundle_version() if unet else None), "model_family": m["kind"],
+            "selected_candidate": m.get("selected_from"),
             "target": "7-day mean sea-ice concentration (%) for days t+1..t+7, residual over persistence" if m["target_mode"] == "residual" else m["target_mode"],
-            "features": m["features"], "training_period": m.get("train_period"), "trained_utc": m.get("trained_utc"),
+            "operational_decision": "U-Net addendum decision record (validation only); SIC-only tree fallback when atmosphere is missing"
+                                    if unet else "tree selection record",
+            "features": m.get("features") or m["dynamic_channels"] + m["static_channels"], "training_period": m.get("train_period"), "trained_utc": m.get("trained_utc"),
             "n_estimators": m.get("best_iteration"), "grid": "EPSG:3412 25 km (332 x 316)"}
 
 
@@ -114,6 +130,9 @@ def forecast_metrics():
     if not p.exists():
         raise HTTPException(404, "Test metrics not available")
     r = json.loads(p.read_text())
+    c = EXPERIMENTS_DIR / "metrics" / "test_cnn_addendum" / "summary.json"
+    if c.exists():                                   # same test dates; U-Net row from its own single evaluation
+        r["metrics"].update(json.loads(c.read_text())["metrics"])
     keep = ["all", "seasonal_ice_zone", "ice_edge_band"]
     return {"evaluation_period": [r["first"], r["last"]], "issue_dates": r["n_issue_dates"], "climatology_period": r["climatology_period"],
             "metrics": {m: {g: v for g, v in groups.items() if g in keep} for m, groups in r["metrics"].items()},

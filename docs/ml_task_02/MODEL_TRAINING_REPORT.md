@@ -14,8 +14,25 @@
 
 ## U-Net addendum (spatial deep-learning candidate)
 
-* U-Net candidate: **IMPLEMENTED, not trained** — PyTorch is not installed. The download host of the CUDA wheel could not be reached from the sandboxed build session. Install with `python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu124`, then run `bash scripts/ml02/run_cnn.sh` (stacks → train → validate → frozen decision → refit → single test).
-* ConvLSTM: not implemented — the weekly-mean target with 7- to 56-day input summaries is already encoded as channels; a recurrent model would only be justified if the U-Net shows that spatial context helps.
+* U-Net (`cnn_unet`): 7,772,545 parameters, 33 epochs, best epoch 25 (validation rmse 3.549), 33 min on cuda; 28 dynamic + 7 static channels; loss mse.
+
+| criterion (validation) | U-Net | lgbm_tuned | U-Net better |
+|---|---|---|---|
+| all:area_weighted_rmse_degC | 3.549 | 3.704 | yes |
+| antarctica_land:area_weighted_rmse_degC | 3.825 | 3.967 | yes |
+| all:acc_pattern_mean | 0.577 | 0.534 | yes |
+| all:area_weighted_mae_degC | 2.389 | 2.487 | yes |
+
+* Decision (frozen 2026-11-09T01:31:53.185951+00:00, validation only): U-Net better on 4/4 selection metrics; replaces the operational model: **True** (the U-Net replaces the operational model only if it is better on ALL validation selection metrics).
+* Single test evaluation of `test_cnn_addendum` (416 issue dates, 2018-01-07 … 2025-12-21, evaluated 2026-11-09T02:08:24.488992+00:00):
+
+| test metric | U-Net | tree final model |
+|---|---|---|
+| MAE (°C) | 2.366 | 2.471 |
+| RMSE (°C) | 3.549 | 3.719 |
+| ACC | 0.587 | 0.542 |
+| MSSS | 0.361 | 0.299 |
+
 
 ## Candidates (training records from the saved checkpoint metadata)
 

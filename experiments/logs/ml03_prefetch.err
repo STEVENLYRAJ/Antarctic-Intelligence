@@ -1,0 +1,49 @@
+rasterio._err.CPLE_AppDefinedError: TIFFFillTile:Read error at row 0, col 0, tile 1; got 78000 bytes, expected 189526
+
+The above exception was the direct cause of the following exception:
+
+rasterio._err.CPLE_AppDefinedError: TIFFReadEncodedTile() failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "rasterio/_io.pyx", line 969, in rasterio._io.DatasetReaderBase._read
+  File "rasterio/_io.pyx", line 199, in rasterio._io.io_multi_band
+  File "rasterio/_io.pyx", line 205, in rasterio._io.io_multi_band
+  File "rasterio/_err.pyx", line 325, in rasterio._err.StackChecker.exc_wrap_int
+rasterio._err.CPLE_AppDefinedError: IReadBlock failed at X offset 1, Y offset 0: TIFFReadEncodedTile() failed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "H:\scientific-intelligence\scripts\ml03\prefetch_week.py", line 34, in <module>
+    main()
+  File "H:\scientific-intelligence\scripts\ml03\prefetch_week.py", line 29, in main
+    ok = sum(1 for _ in ex.map(lambda s: A.download_scene(s, client), ids))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\scripts\ml03\prefetch_week.py", line 29, in <genexpr>
+    ok = sum(1 for _ in ex.map(lambda s: A.download_scene(s, client), ids))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\scripts\ml03\prefetch_week.py", line 29, in <lambda>
+    ok = sum(1 for _ in ex.map(lambda s: A.download_scene(s, client), ids))
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\acquisition.py", line 230, in download_scene
+    a = r.read(1, out_shape=(h, w))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "rasterio/_io.pyx", line 644, in rasterio._io.DatasetReaderBase.read
+  File "rasterio/_io.pyx", line 972, in rasterio._io.DatasetReaderBase._read
+rasterio.errors.RasterioIOError: Read failed. See previous exception for details.

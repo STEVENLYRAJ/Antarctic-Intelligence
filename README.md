@@ -75,3 +75,36 @@ bash scripts/run_ml01_cnn.sh
 
 The U-Net runs after the tree-model selection and test were frozen. It replaces a tree model only if it is better on every
 validation selection metric; that decision is written to `addendum_cnn_decision_record.json` before its single test evaluation.
+
+## ML Task 03 quick start (Sentinel-1 SAR sea-ice detection)
+
+```bash
+pip install -r requirements.txt                                   # + torch (CUDA) for the U-Net
+python scripts/ml03/download_data.py --land --charts --start 2018-01-01 --end 2026-11-09   # USNIC charts, anonymous
+python scripts/ml03/download_data.py --catalogue --scenes         # Sentinel-1 EW HH via Planetary Computer, anonymous
+python scripts/ml03/run_all.py                                    # prepare -> samples -> baselines -> tiles -> U-Nets -> validate -> select -> final -> test -> analysis/docs
+python scripts/ml03/generate_weekly_map.py --week-start 2026-11-02
+python scripts/ml03/predict.py --scene-id <S1 EW GRDM HH id>
+python -m pytest tests/test_ml03_sar.py
+```
+
+Labels are USNIC Antarctic ice charts (expert, chart-scale), so every ML-03 metric is *agreement with the charts*, not pixel truth.
+Results and limitations: `docs/ml_task_03/AETHENTRA_ML_TASK_03_FINAL_REPORT.md`. API under `/seaice-detection`; weekly layers in
+the viewer's "SAR sea-ice detection" tab.
+
+## ML Task 04 quick start (Antarctic climate anomaly detection)
+
+Public data only (NCEP/NCAR R1 daily via NOAA PSL OPeNDAP, NOAA/NSIDC SIC CDR v6); no credentials needed.
+
+```bash
+python scripts/ml04/run_all.py                 # download -> preprocess -> baselines -> features -> fit -> validate (frozen)
+                                               # -> test (once) -> score -> products -> export -> store
+python scripts/ml04/run_all.py --from score    # rebuild products from the saved detectors
+python scripts/ml04/update_pipeline.py --check # are newer source data available?
+python -m pytest tests/test_ml04_anomaly.py
+```
+
+API under `/api/ml04` (health, model-info, detect, latest, anomalies, monthly-summary, seasonal-summary, spatial-data, metrics,
+data-coverage, events, compound, sea-ice-extent); dashboard at `/viewer/#anom`. Documentation: `docs/ml_task_04/`
+(progress tracker, audit, data inventory and documentation, model card, scientific limitations, test report).
+Note: NOAA PSL's NCEP R1 daily record ends 2026-03-17, so multivariate anomalies stop at February 2026.

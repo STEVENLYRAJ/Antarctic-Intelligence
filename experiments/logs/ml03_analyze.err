@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "H:\scientific-intelligence\scripts\ml03\analyze.py", line 14, in <module>
+    r = analysis.error_analysis()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\analysis.py", line 63, in error_analysis
+    "by_incidence_deg": _bins(A["inc"], A["err"], 0, np.arange(18, 50, 3)),
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\sar\analysis.py", line 24, in _bins
+    i = np.digitize(x, edges) - 1
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\numpy\lib\_function_base_impl.py", line 5760, in digitize
+    return _nx.searchsorted(bins, x, side=side)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\numpy\_core\fromnumeric.py", line 1501, in searchsorted
+    return _wrapfunc(a, 'searchsorted', v, side=side, sorter=sorter)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\numpy\_core\fromnumeric.py", line 54, in _wrapfunc
+    return bound(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 869. MiB for an array with shape (113852759,) and data type int64

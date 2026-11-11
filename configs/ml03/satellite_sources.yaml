@@ -1,0 +1,29 @@
+# ML-03 satellite imagery and reference sources (no credentials stored here; see .env.example)
+sentinel1:
+  stac_api: https://planetarycomputer.microsoft.com/api/stac/v1
+  collection: sentinel-1-grd
+  provider_note: "Official ESA Sentinel-1 Level-1 GRD (Copernicus), redistributed by Microsoft Planetary Computer as COGs with the SAFE annotation XMLs; Copernicus Sentinel data licence."
+  instrument_mode: EW               # Antarctic sea-ice monitoring mode (400 km swath); IW used only near coasts
+  product_resolution: medium        # GRDM, 40 m pixels
+  polarization: HH                  # Antarctic EW acquisitions are mostly single-pol HH (1SSH)
+  search_lat_max: -55.0             # scene centroid must be south of this
+  overview_factor: 8                # read the x8 COG overview (~320 m) - matched to chart-label scale
+  local_dir: data/raw/sentinel1
+usnic_charts:
+  name: "U.S. National Ice Center Antarctic sea-ice charts (SIGRID-3 shapefiles)"
+  search_url: https://usicecenter.gov/Products/DisplaySearchResults
+  download_url: https://usicecenter.gov/File/DownloadArchive?prd={prd}
+  search_text: WeeklyAntarctic
+  search_product: Antarctic Weekly Shapefile
+  local_dir: data/raw/ice_charts/usnic_antarctic
+  note: "Expert analyses from multi-sensor imagery (incl. SAR) over the preceding days; chart scale ~ km; time stamp = chart valid date."
+dmi_asip:
+  name: "DMI-ASIP Antarctic sea-ice concentration mosaic (CMEMS SEAICE_ANT_PHY_AUTO_L3_NRT_011_012)"
+  local_files: [DATAS/dmi_asip_seaice_mosaic_ant_20230202.nc]
+  access: "Copernicus Marine account (copernicusmarine login); only the local file is used"
+  role: comparison only (automated CNN product from Sentinel-1 + AMSR2; not independent)
+amsr2_asi:
+  name: "University of Bremen AMSR2 ASI sea-ice concentration, 3.125 km, Antarctic"
+  url: https://data.seaice.uni-bremen.de/amsr2/asi_daygrid_swath/s3125/{year}/{mon}/Antarctic3125/asi-AMSR2-s3125-{date}-v5.4.tif
+  local_dir: data/raw/amsr2_asi
+  role: independent passive-microwave comparison (coarse)

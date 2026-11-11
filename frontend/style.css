@@ -40,3 +40,19 @@ th { color: var(--muted); font-weight: 600; }
 .warn { font-size: 13px; color: var(--pred); margin: 6px 0; }
 footer { padding: 12px 20px 24px; font-size: 12px; color: var(--muted); }
 a { color: var(--accent); }
+#anompanel { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; padding: 0 20px 16px; }
+#anompanel[hidden] { display: none; }
+@media (max-width: 600px) { #anompanel { padding: 0 16px 16px; grid-template-columns: 1fr; } }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; min-width: 0; }
+.card.wide { grid-column: 1 / -1; }
+.statistical_anomaly { background: var(--accent); } .anomaly_detection { background: var(--eval); } .climatology { background: #64748b; }
+svg.chart { width: 100%; height: auto; display: block; }
+svg.chart .axis { stroke: var(--line); } svg.chart text { fill: var(--muted); font-size: 10px; }
+svg.chart .line { fill: none; stroke: var(--accent); stroke-width: 1.5; } svg.chart .line2 { fill: none; stroke: var(--pred); stroke-width: 1.5; }
+svg.chart .bar { fill: var(--accent); } svg.chart .neg { fill: var(--obs); } svg.chart .pos { fill: var(--pred); }
+svg.chart .mark { stroke: var(--ink); stroke-dasharray: 3 3; }
+#events table tr { cursor: pointer; } #events tr[aria-selected=true] td { background: color-mix(in srgb, var(--accent) 15%, transparent); }
+.scroll { max-height: 360px; overflow: auto; }
+select { font: inherit; padding: 4px 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink); }
+.sev-extreme { color: #b91c1c; font-weight: 700; } .sev-strong { color: var(--pred); font-weight: 600; }
+dl.kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; margin: 0; font-size: 13px; } dl.kv dt { color: var(--muted); } dl.kv dd { margin: 0; overflow-wrap: anywhere; }

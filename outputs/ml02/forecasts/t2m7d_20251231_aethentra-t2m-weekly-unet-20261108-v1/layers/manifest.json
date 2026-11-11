@@ -1,0 +1,202 @@
+{
+ "forecast_id": "t2m7d_20251231_aethentra-t2m-weekly-unet-20261108-v1",
+ "crs_geotiff": "EPSG:3412 (NSIDC Sea Ice Polar Stereographic South, 25 km)",
+ "layers": [
+  {
+   "id": "historical_t2m_past_year",
+   "data_type": "reanalysis_observation",
+   "units": "degC",
+   "period": "2025-01-01..2025-12-31 mean",
+   "geotiff": "historical_t2m_past_year_3412.tif",
+   "png": "historical_t2m_past_year_4326.png",
+   "png_bounds": {
+    "west": -180.0,
+    "south": -90.0,
+    "east": 180.0,
+    "north": -39.0,
+    "crs": "EPSG:4326",
+    "resampling": "nearest (display only)"
+   },
+   "color_range": [
+    -60,
+    0
+   ]
+  },
+  {
+   "id": "observed_t2m_latest_week",
+   "data_type": "reanalysis_observation",
+   "units": "degC",
+   "period": "7 days ending 2025-12-31",
+   "geotiff": "observed_t2m_latest_week_3412.tif",
+   "png": "observed_t2m_latest_week_4326.png",
+   "png_bounds": {
+    "west": -180.0,
+    "south": -90.0,
+    "east": 180.0,
+    "north": -39.0,
+    "crs": "EPSG:4326",
+    "resampling": "nearest (display only)"
+   },
+   "color_range": [
+    -60,
+    0
+   ]
+  },
+  {
+   "id": "observed_anomaly_latest_week",
+   "data_type": "reanalysis_observation",
+   "units": "degC",
+   "period": "7 days ending 2025-12-31",
+   "geotiff": "observed_anomaly_latest_week_3412.tif",
+   "png": "observed_anomaly_latest_week_4326.png",
+   "png_bounds": {
+    "west": -180.0,
+    "south": -90.0,
+    "east": 180.0,
+    "north": -39.0,
+    "crs": "EPSG:4326",
+    "resampling": "nearest (display only)"
+   },
+   "color_range": [
+    -10,
+    10
+   ]
+  },
+  {
+   "id": "forecast_t2m",
+   "data_type": "model_prediction",
+   "units": "degC",
+   "period": "2026-01-01..2026-01-07",
+   "geotiff": "forecast_t2m_3412.tif",
+   "png": "forecast_t2m_4326.png",
+   "png_bounds": {
+    "west": -180.0,
+    "south": -90.0,
+    "east": 180.0,
+    "north": -39.0,
+    "crs": "EPSG:4326",
+    "resampling": "nearest (display only)"
+   },
+   "color_range": [
+    -60,
+    0
+   ]
+  },
+  {
+   "id": "forecast_anomaly",
+   "data_type": "model_prediction",
+   "units": "degC",
+   "period": "2026-01-01..2026-01-07",
+   "geotiff": "forecast_anomaly_3412.tif",
+   "png": "forecast_anomaly_4326.png",
+   "png_bounds": {
+    "west": -180.0,
+    "south": -90.0,
+    "east": 180.0,
+    "north": -39.0,
+    "crs": "EPSG:4326",
+    "resampling": "nearest (display only)"
+   },
+   "color_range": [
+    -6,
+    6
+   ]
+  },
+  {
+   "id": "forecast_warm_regions",
+   "data_type": "model_prediction",
+   "units": "category",
+   "period": "warm (3) / strong warm (4)",
+   "geotiff": "forecast_warm_regions_3412.tif",
+   "png": "forecast_warm_regions_4326.png",
+   "png_bounds": {
+    "west": -180.0,
+    "south": -90.0,
+    "east": 180.0,
+    "north": -39.0,
+    "crs": "EPSG:4326",
+    "resampling": "nearest (display only)"
+   },
+   "color_range": [
+    0,
+    4
+   ]
+  },
+  {
+   "id": "forecast_cold_regions",
+   "data_type": "model_prediction",
+   "units": "category",
+   "period": "strong cold (0) / cold (1)",
+   "geotiff": "forecast_cold_regions_3412.tif",
+   "png": "forecast_cold_regions_4326.png",
+   "png_bounds": {
+    "west": -180.0,
+    "south": -90.0,
+    "east": 180.0,
+    "north": -39.0,
+    "crs": "EPSG:4326",
+    "resampling": "nearest (display only)"
+   },
+   "color_range": [
+    0,
+    4
+   ]
+  },
+  {
+   "id": "forecast_extreme_regions",
+   "data_type": "model_prediction",
+   "units": "category",
+   "period": "|anomaly| >= 2 sigma",
+   "geotiff": "forecast_extreme_regions_3412.tif",
+   "png": "forecast_extreme_regions_4326.png",
+   "png_bounds": {
+    "west": -180.0,
+    "south": -90.0,
+    "east": 180.0,
+    "north": -39.0,
+    "crs": "EPSG:4326",
+    "resampling": "nearest (display only)"
+   },
+   "color_range": [
+    0,
+    4
+   ]
+  },
+  {
+   "id": "test_error_mae",
+   "data_type": "evaluation",
+   "units": "degC",
+   "period": "per-cell MAE over the 2018-2025 test issue dates",
+   "geotiff": "test_error_mae_3412.tif",
+   "png": "test_error_mae_4326.png",
+   "png_bounds": {
+    "west": -180.0,
+    "south": -90.0,
+    "east": 180.0,
+    "north": -39.0,
+    "crs": "EPSG:4326",
+    "resampling": "nearest (display only)"
+   },
+   "color_range": [
+    0,
+    4
+   ]
+  }
+ ],
+ "regional_summary": "regional_anomaly_summary.json",
+ "model_version": "aethentra-t2m-weekly-unet-20261108-v1",
+ "source": "NCEP/NCAR Reanalysis 1 daily means (NOAA PSL) - INTERIM substitute for ERA5",
+ "issue_date": "2025-12-31",
+ "climatology_reference_period": [
+  1981,
+  2010
+ ],
+ "limitations": [
+  "Statistical forecast of the 7-day MEAN 2 m temperature anomaly learnt from reanalysis; it is NOT a numerical weather forecast and uses no forecast of the target-week atmosphere.",
+  "Truth for training and evaluation is a reanalysis (gridded model-data blend), not direct observation; reanalysis 2 m temperature over the Antarctic plateau has known biases (strong surface inversions).",
+  "25 km cells: station-scale and steep-topography effects (Peninsula, Transantarctic Mountains) are smoothed.",
+  "Anomaly categories use training-period (1981-2010) sigma per cell and season; under a warming trend the 'warm' class becomes more frequent.",
+  "Not reviewed by an independent Antarctic meteorology expert; not for operational or safety-critical use."
+ ],
+ "display_notes": "Distinguish data_type visually: observations/reanalysis vs model predictions vs evaluation layers."
+}

@@ -1,0 +1,213 @@
+{
+ "name": "unet_bce",
+ "kind": "unet",
+ "architecture": {
+  "base": 32,
+  "depth": 4,
+  "dropout": 0.1
+ },
+ "channels": [
+  "s0_norm",
+  "inc",
+  "std7",
+  "valid"
+ ],
+ "loss": "BCE",
+ "label_encoding": "0 water, 1 ice; 2 uncertain and 255 invalid ignored in loss",
+ "optimizer": "AdamW + OneCycle",
+ "lr": 0.001,
+ "weight_decay": 0.0001,
+ "batch_size": 16,
+ "tile_size": 256,
+ "augmentation": "rot90 x4, horizontal flip, sigma0 gain (0.05 sd) + pixel noise (0.05 sd) in normalised units",
+ "epochs_run": 27,
+ "best_epoch": 19,
+ "best_val_tile_miou": 0.9343130373839371,
+ "train_splits": [
+  "train"
+ ],
+ "train_tiles": 6387,
+ "seconds": 2727.7,
+ "device": "cuda",
+ "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+ "seed": 42,
+ "n_parameters": 7763329,
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.343367844838649,
+   "seconds": 95.4,
+   "val_tile_miou": 0.8858342583190915
+  },
+  {
+   "epoch": 2,
+   "train_loss": 0.18628537418320776,
+   "seconds": 200.1,
+   "val_tile_miou": 0.8713399079175561
+  },
+  {
+   "epoch": 3,
+   "train_loss": 0.13084856058936567,
+   "seconds": 303.2,
+   "val_tile_miou": 0.8675694143411852
+  },
+  {
+   "epoch": 4,
+   "train_loss": 0.11191945888800546,
+   "seconds": 406.0,
+   "val_tile_miou": 0.9111258170904488
+  },
+  {
+   "epoch": 5,
+   "train_loss": 0.10502646879991516,
+   "seconds": 509.5,
+   "val_tile_miou": 0.8943092593701986
+  },
+  {
+   "epoch": 6,
+   "train_loss": 0.09500602719490417,
+   "seconds": 612.7,
+   "val_tile_miou": 0.8756887701429096
+  },
+  {
+   "epoch": 7,
+   "train_loss": 0.08995414799777791,
+   "seconds": 716.2,
+   "val_tile_miou": 0.8909456889752596
+  },
+  {
+   "epoch": 8,
+   "train_loss": 0.08140633381903171,
+   "seconds": 818.8,
+   "val_tile_miou": 0.9242297718870902
+  },
+  {
+   "epoch": 9,
+   "train_loss": 0.080707671927521,
+   "seconds": 922.6,
+   "val_tile_miou": 0.8774996028419428
+  },
+  {
+   "epoch": 10,
+   "train_loss": 0.07795090836239979,
+   "seconds": 1025.7,
+   "val_tile_miou": 0.9131680307985776
+  },
+  {
+   "epoch": 11,
+   "train_loss": 0.07978411711374064,
+   "seconds": 1129.2,
+   "val_tile_miou": 0.9189765507117718
+  },
+  {
+   "epoch": 12,
+   "train_loss": 0.07650424649647902,
+   "seconds": 1232.2,
+   "val_tile_miou": 0.8976923394599595
+  },
+  {
+   "epoch": 13,
+   "train_loss": 0.0707740889271372,
+   "seconds": 1330.4,
+   "val_tile_miou": 0.9156998220446434
+  },
+  {
+   "epoch": 14,
+   "train_loss": 0.06871061565412674,
+   "seconds": 1428.0,
+   "val_tile_miou": 0.9022702399415545
+  },
+  {
+   "epoch": 15,
+   "train_loss": 0.06901883341168286,
+   "seconds": 1525.0,
+   "val_tile_miou": 0.9151851835588307
+  },
+  {
+   "epoch": 16,
+   "train_loss": 0.06447397038049531,
+   "seconds": 1621.9,
+   "val_tile_miou": 0.9315039588346455
+  },
+  {
+   "epoch": 17,
+   "train_loss": 0.0661400844360469,
+   "seconds": 1720.0,
+   "val_tile_miou": 0.9258454888418566
+  },
+  {
+   "epoch": 18,
+   "train_loss": 0.062483588965551465,
+   "seconds": 1817.0,
+   "val_tile_miou": 0.9299445257909851
+  },
+  {
+   "epoch": 19,
+   "train_loss": 0.06238323364523239,
+   "seconds": 1914.0,
+   "val_tile_miou": 0.9343130373839371
+  },
+  {
+   "epoch": 20,
+   "train_loss": 0.058840031975414604,
+   "seconds": 2011.0,
+   "val_tile_miou": 0.929460849598281
+  },
+  {
+   "epoch": 21,
+   "train_loss": 0.055465573294786734,
+   "seconds": 2108.5,
+   "val_tile_miou": 0.9326869380785489
+  },
+  {
+   "epoch": 22,
+   "train_loss": 0.057031017240078655,
+   "seconds": 2226.3,
+   "val_tile_miou": 0.9254695055163948
+  },
+  {
+   "epoch": 23,
+   "train_loss": 0.054196666333009486,
+   "seconds": 2330.5,
+   "val_tile_miou": 0.9297338280937384
+  },
+  {
+   "epoch": 24,
+   "train_loss": 0.051738117740897,
+   "seconds": 2427.9,
+   "val_tile_miou": 0.924507218523493
+  },
+  {
+   "epoch": 25,
+   "train_loss": 0.0512453431848553,
+   "seconds": 2525.2,
+   "val_tile_miou": 0.9265425893581865
+  },
+  {
+   "epoch": 26,
+   "train_loss": 0.04757794941862812,
+   "seconds": 2622.3,
+   "val_tile_miou": 0.9284719487720839
+  },
+  {
+   "epoch": 27,
+   "train_loss": 0.04770554141374305,
+   "seconds": 2719.1,
+   "val_tile_miou": 0.9286498518677784
+  }
+ ],
+ "norm": {
+  "s0_norm": [
+   -14.006857872009277,
+   5.3739213943481445
+  ],
+  "inc": [
+   33.367557525634766,
+   7.281153678894043
+  ],
+  "std7": [
+   0.7120636105537415,
+   0.6744657754898071
+  ]
+ }
+}

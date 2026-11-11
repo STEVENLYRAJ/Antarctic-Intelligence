@@ -2,6 +2,21 @@
 
 **Truth = NCEP/NCAR Reanalysis 1 (interim substitute for ERA5).** All skill numbers below are agreement with NCEP R1, not with ERA5 and not with direct observations.
 
+## Operational model: U-Net (addendum)
+
+The U-Net was better than the frozen tree selection `lgbm_tuned` on 4/4 selection metrics on validation (decision frozen 2026-11-09T01:31:53.185951+00:00, before its test evaluation), so forecasts are produced by `cnn_unet_final`. The tree model below remains the documented frozen selection and fallback.
+
+| item | value |
+|---|---|
+| Type | U-Net (7,772,545 parameters; base 32, depth 4) |
+| Inputs | 28 dynamic feature maps (the tree features as grids) + 7 static + validity mask |
+| Training | ['1979-01-01', '2017-12-31'], 2017 weekly maps, 25 epochs (= best epoch on validation), mse |
+| Uncertainty | none exported (the q10/q90 interval was validated around the tree model only) |
+
+Test 2018-01-07 … 2025-12-21 (416 issue dates, single evaluation 2026-11-09T02:08:24.488992+00:00): MAE **2.366 °C** (tree 2.471), RMSE **3.549 °C** (tree 3.719), bias -0.115 °C, ACC 0.587 (tree 0.542), MSSS 0.361 (tree 0.299).
+
+## Tree model (frozen selection; fallback)
+
 | item | value |
 |---|---|
 | Model version | `aethentra-t2m-weekly-20261108-v1` |

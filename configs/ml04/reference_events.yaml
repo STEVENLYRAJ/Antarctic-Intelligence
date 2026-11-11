@@ -1,0 +1,44 @@
+# Literature-documented Antarctic events used ONLY for a qualitative, after-the-fact recall check of the frozen detectors.
+# They are not training labels, are not used for any threshold or model choice, and are far too few (n=5) for statistics.
+# Boxes are coarse (2.5 deg cells); 'detected' = >= 20 % of the box's cell-months flagged (>= moderate) in the stated direction.
+events:
+  - name: sea_ice_springtime_retreat_2016
+    months: ["2016-10", "2016-11", "2016-12"]
+    lat: [-72, -55]
+    lon: [-180, 180]
+    variable: sic
+    direction: "-"
+    split: validation
+    reference: "Turner, J. et al. (2017) Unprecedented springtime retreat of Antarctic sea ice in 2016. Geophys. Res. Lett. 44, 6868-6875."
+  - name: sea_ice_low_2017
+    months: ["2017-01", "2017-02"]
+    lat: [-72, -55]
+    lon: [-180, 180]
+    variable: sic
+    direction: "-"
+    split: validation
+    reference: "Parkinson, C. L. (2019) A 40-y record reveals gradual Antarctic sea ice increases followed by decreases at rates far exceeding the rates seen in the Arctic. PNAS 116, 14414-14423."
+  - name: peninsula_warm_event_2020_02
+    months: ["2020-02"]
+    lat: [-70, -60]
+    lon: [-70, -55]
+    variable: t2m
+    direction: "+"
+    split: test
+    reference: "WMO (2021) verified a record 18.3 degC at Esperanza (Antarctic Peninsula) on 6 February 2020; a short event, so a monthly mean may not be strongly anomalous."
+  - name: east_antarctica_heatwave_2022_03
+    months: ["2022-03"]
+    lat: [-80, -65]
+    lon: [75, 135]
+    variable: t2m
+    direction: "+"
+    split: test
+    reference: "Wille, J. D. et al. (2024) The extraordinary March 2022 East Antarctica 'heat' wave. Part I/II. J. Climate 37."
+  - name: record_low_winter_sea_ice_2023
+    months: ["2023-06", "2023-07", "2023-08", "2023-09"]
+    lat: [-72, -55]
+    lon: [-180, 180]
+    variable: sic
+    direction: "-"
+    split: test
+    reference: "Purich, A. & Doddridge, E. W. (2023) Record low Antarctic sea ice coverage indicates a new sea ice state. Commun. Earth Environ. 4, 314."

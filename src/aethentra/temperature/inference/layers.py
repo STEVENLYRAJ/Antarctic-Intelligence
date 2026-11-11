@@ -40,10 +40,11 @@ def export_layers(s, fields: dict, ctx) -> dict:
         ("forecast_cold_regions", np.where((cat >= 0) & (cat <= 1), cat, np.nan), "model_prediction", "category", "strong cold (0) / cold (1)", TEMP_DIV, 0, 4),
         ("forecast_extreme_regions", np.where((cat == 0) | (cat == 4), cat, np.nan), "model_prediction", "category", "|anomaly| >= 2 sigma", TEMP_DIV, 0, 4),
     ]
-    em = METRICS / "test_final" / "error_maps.npz"
+    unet = s.model_name == "cnn_unet"                     # error map of the model that produced this forecast
+    em = METRICS / ("test_cnn_addendum" if unet else "test_final") / "error_maps.npz"
     if em.exists():
         z = np.load(em)
-        specs.append(("test_error_mae", z["final_model__mae"], "evaluation", "degC", "per-cell MAE over the 2018-2025 test issue dates",
+        specs.append(("test_error_mae", z["cnn_unet_final__mae" if unet else "final_model__mae"], "evaluation", "degC", "per-cell MAE over the 2018-2025 test issue dates",
                       colormaps["magma_r"], 0, 4))
     layers = []
     for name, v, dtype, units, period, cmap, vmin, vmax in specs:

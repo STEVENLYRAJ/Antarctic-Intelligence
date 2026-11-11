@@ -1,0 +1,38 @@
+{
+ "frozen_utc": "2026-11-10T23:03:51+00:00",
+ "selection_split": "validation (2011-2017), synthetic injections seed 2011",
+ "family_best": {
+  "isolation_forest": "isolation_forest_s4096",
+  "lof": "lof_k20",
+  "ocsvm": "ocsvm_nu01",
+  "autoencoder": "autoencoder_b5"
+ },
+ "eligible": [
+  "zscore",
+  "percentile",
+  "mad",
+  "mahalanobis",
+  "isolation_forest_s4096",
+  "lof_k20",
+  "ocsvm_nu01"
+ ],
+ "rank_sum": {
+  "lof_k20": 4.0,
+  "mahalanobis": 9.0,
+  "ocsvm_nu01": 13.0,
+  "mad": 16.0,
+  "isolation_forest_s4096": 21.0,
+  "zscore": 21.0,
+  "percentile": 28.0
+ },
+ "criteria": [
+  "pr_auc",
+  "pr_auc_univariate_spike",
+  "pr_auc_compound_moderate",
+  "pr_auc_covariance_break"
+ ],
+ "selected_overall": "lof_k20",
+ "selected_multivariate": "lof_k20",
+ "univariate_reference": "zscore (+ percentile and MAD shown alongside)",
+ "rule": "lowest rank-sum over the four PR-AUC criteria among candidates with seed-stability Spearman >= 0.9; operational multivariate detector = best multivariate method; univariate z/percentile/MAD stay as references"
+}

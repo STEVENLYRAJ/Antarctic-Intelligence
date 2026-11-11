@@ -1,0 +1,132 @@
+{
+  "forecast_id": "sic7d_20261101_aethentra-sic-weekly-20261108-v1-sic-only",
+  "issue_date": "2026-11-01",
+  "issue_time_utc": "2026-11-01T23:59:59+00:00",
+  "target_period": [
+    "2026-11-02",
+    "2026-11-08"
+  ],
+  "model_version": "aethentra-sic-weekly-20261108-v1-sic-only",
+  "display_rules": [
+    "Always label data_type; never present model_prediction layers as observations.",
+    "Show issue time, target period, model version and source with every forecast layer.",
+    "Show uncertainty only when uncertainty.validated is true."
+  ],
+  "native_crs": "EPSG:3412 (NSIDC Sea Ice Polar Stereographic South, 25 km)",
+  "layers": [
+    {
+      "id": "observed_latest_week",
+      "data_type": "observation",
+      "title": "Observed sea-ice concentration (7-day mean)",
+      "period": [
+        "2026-10-26",
+        "2026-11-01"
+      ],
+      "files": [
+        "observed_latest_week_sic_3412.tif",
+        "observed_latest_week_sic_4326.png"
+      ],
+      "bounds_4326": {
+        "west": -180.0,
+        "south": -90.0,
+        "east": 180.0,
+        "north": -39.0,
+        "crs": "EPSG:4326",
+        "resampling": "nearest (display only)"
+      },
+      "units": "percent",
+      "source": "NOAA/NSIDC CDR of Passive Microwave SIC v6 (G02202), doi:10.7265/b18j-z797"
+    },
+    {
+      "id": "forecast_7day_mean",
+      "data_type": "model_prediction",
+      "title": "FORECAST 7-day mean sea-ice concentration",
+      "issue_date": "2026-11-01",
+      "period": [
+        "2026-11-02",
+        "2026-11-08"
+      ],
+      "files": [
+        "forecast_sic_3412.tif",
+        "forecast_sic_4326.png"
+      ],
+      "bounds_4326": {
+        "west": -180.0,
+        "south": -90.0,
+        "east": 180.0,
+        "north": -39.0,
+        "crs": "EPSG:4326",
+        "resampling": "nearest (display only)"
+      },
+      "model_version": "aethentra-sic-weekly-20261108-v1-sic-only",
+      "units": "percent",
+      "source": "NOAA/NSIDC CDR of Passive Microwave SIC v6 (G02202), doi:10.7265/b18j-z797",
+      "limitations": [
+        "Statistical forecast of the 7-day MEAN concentration; it does not resolve day-to-day variability.",
+        "Trained on the NOAA/NSIDC passive-microwave CDR v6 (25 km); inherits its biases (melt-pond / thin-ice underestimation, coastal land spill-over).",
+        "Atmospheric predictors are PAST-week NCEP/NCAR R1 means (interim substitute for ERA5); no weather forecast of the target week is used.",
+        "Extent uses the 15 % threshold on the forecast 7-day-mean field; it is not identical to the mean of daily extents.",
+        "Not reviewed by an independent sea-ice expert; not for operational navigation."
+      ],
+      "uncertainty": {
+        "validated": false,
+        "method": "none",
+        "nominal_coverage": null,
+        "empirical_test_coverage": null,
+        "note": "No interval provided."
+      }
+    },
+    {
+      "id": "ice_edge_observed",
+      "data_type": "observation",
+      "title": "15 % ice edge (observation)",
+      "files": [
+        "ice_edge_observed.geojson"
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "id": "ice_edge_forecast",
+      "data_type": "model_prediction",
+      "title": "15 % ice edge (model prediction)",
+      "files": [
+        "ice_edge_forecast.geojson"
+      ],
+      "crs": "EPSG:4326"
+    },
+    {
+      "id": "extent_timeseries",
+      "data_type": "mixed (each series labelled)",
+      "files": [
+        "extent_timeseries.json"
+      ],
+      "units": "10^6 km2"
+    },
+    {
+      "id": "regional_summary",
+      "data_type": "model_prediction",
+      "files": [
+        "regional_summary.json"
+      ],
+      "units": "km2"
+    },
+    {
+      "id": "test_spatial_error",
+      "data_type": "evaluation",
+      "title": "SIC-only fallback MAE per cell, test 2021-2025",
+      "files": [
+        "test_error_mae_3412.tif",
+        "test_error_mae_4326.png"
+      ],
+      "bounds_4326": {
+        "west": -180.0,
+        "south": -90.0,
+        "east": 180.0,
+        "north": -39.0,
+        "crs": "EPSG:4326",
+        "resampling": "nearest (display only)"
+      },
+      "units": "percentage points"
+    }
+  ]
+}

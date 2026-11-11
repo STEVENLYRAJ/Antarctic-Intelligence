@@ -20,3 +20,28 @@ data/processed/ml02/tables/
 models/ml02/checkpoints/*.joblib
 experiments/ml02/metrics/**/fields.npz
 .cdsapirc
+
+# local PyTorch install (C: drive too small)
+.pydeps/
+# --- AETHENTRA ML-03 (added) ---
+# raw satellite scenes, charts, aux data, tiles and per-scene maps (re-creatable with scripts/ml03/*)
+data/raw/sentinel1/
+data/raw/ice_charts/
+data/raw/ml03_aux/
+data/processed/ml03/
+experiments/ml03/metrics/**/maps/
+outputs/ml03/segmentation/
+outputs/ml03/weekly_maps/
+models/ml03/checkpoints/*.pkl
+# ML-04 (climate anomaly detection): raw NCEP files, cubes, features, NetCDF/GeoTIFF products, SQLite store and fitted
+# detectors are re-creatable with scripts/ml04/run_all.py (metrics JSON, decision.json and *.meta.json stay tracked)
+data/raw/ml04/
+data/interim/ml04/
+data/processed/ml04/
+outputs/ml04/anomaly_maps/
+outputs/ml04/anomalies_monthly_*.nc
+outputs/ml04/summaries/daily_t2m_spells_*.csv
+outputs/ml04/summaries/sea_ice_extent_anomalies_daily.csv
+models/ml04/*.joblib
+experiments/ml04/metrics/*_SYNTHETIC.csv
+experiments/ml04/metrics/station_pairs.csv

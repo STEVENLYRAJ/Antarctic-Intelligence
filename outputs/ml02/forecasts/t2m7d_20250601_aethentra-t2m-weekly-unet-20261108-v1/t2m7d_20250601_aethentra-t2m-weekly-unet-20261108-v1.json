@@ -1,0 +1,154 @@
+{
+  "forecast_id": "t2m7d_20250601_aethentra-t2m-weekly-unet-20261108-v1",
+  "data_type": "model_prediction",
+  "product": "AETHENTRA ML-02 weekly-mean 2 m temperature and anomaly (statistical forecast from reanalysis; not an NWP weather forecast)",
+  "issue_date": "2025-06-01",
+  "issue_time_utc": "2025-06-01T23:59:59Z",
+  "target_start": "2025-06-02",
+  "target_end": "2025-06-08",
+  "units": {
+    "t2m": "degC",
+    "anomaly": "degC",
+    "category": "0 strong_cold .. 4 strong_warm (sigma bins)"
+  },
+  "climatology_reference_period": [
+    1981,
+    2010
+  ],
+  "model_version": "aethentra-t2m-weekly-unet-20261108-v1",
+  "model_name": "cnn_unet",
+  "reanalysis_source": "NCEP/NCAR Reanalysis 1 daily means (NOAA PSL) - INTERIM substitute for ERA5",
+  "regions": [
+    {
+      "region": "all",
+      "area_km2": 34417016.0,
+      "forecast_mean_t2m_degC": -23.119150161743164,
+      "climatology_mean_t2m_degC": -24.64158058166504,
+      "forecast_mean_anomaly_degC": 1.5224285125732422,
+      "last_week_observed_anomaly_degC": 1.5842567682266235,
+      "fraction_warm_ge_1sigma": 0.04124607890844345,
+      "fraction_cold_le_minus1sigma": 0.021560240536928177,
+      "fraction_extreme_abs_ge_2sigma": 0.0012880023568868637
+    },
+    {
+      "region": "antarctica_land",
+      "area_km2": 13951156.0,
+      "forecast_mean_t2m_degC": -40.904239654541016,
+      "climatology_mean_t2m_degC": -42.54887771606445,
+      "forecast_mean_anomaly_degC": 1.6446373462677002,
+      "last_week_observed_anomaly_degC": 2.5590641498565674,
+      "fraction_warm_ge_1sigma": 0.0062288204208016396,
+      "fraction_cold_le_minus1sigma": 0.0,
+      "fraction_extreme_abs_ge_2sigma": 0.0
+    },
+    {
+      "region": "southern_ocean",
+      "area_km2": 20465860.0,
+      "forecast_mean_t2m_degC": -10.995420455932617,
+      "climatology_mean_t2m_degC": -12.434541702270508,
+      "forecast_mean_anomaly_degC": 1.4391214847564697,
+      "last_week_observed_anomaly_degC": 0.9197506308555603,
+      "fraction_warm_ge_1sigma": 0.06511662900447845,
+      "fraction_cold_le_minus1sigma": 0.036257412284612656,
+      "fraction_extreme_abs_ge_2sigma": 0.002166007412597537
+    },
+    {
+      "region": "antarctic_peninsula",
+      "area_km2": 466804.59375,
+      "forecast_mean_t2m_degC": -17.4334716796875,
+      "climatology_mean_t2m_degC": -23.538848876953125,
+      "forecast_mean_anomaly_degC": 6.105376720428467,
+      "last_week_observed_anomaly_degC": 8.666415214538574,
+      "fraction_warm_ge_1sigma": 0.04304232448339462,
+      "fraction_cold_le_minus1sigma": 0.0,
+      "fraction_extreme_abs_ge_2sigma": 0.0
+    },
+    {
+      "region": "west_antarctica",
+      "area_km2": 3453819.25,
+      "forecast_mean_t2m_degC": -32.313514709472656,
+      "climatology_mean_t2m_degC": -33.85728454589844,
+      "forecast_mean_anomaly_degC": 1.5437648296356201,
+      "last_week_observed_anomaly_degC": 4.441737651824951,
+      "fraction_warm_ge_1sigma": 0.018247930333018303,
+      "fraction_cold_le_minus1sigma": 0.0,
+      "fraction_extreme_abs_ge_2sigma": 0.0
+    },
+    {
+      "region": "east_antarctica",
+      "area_km2": 10030532.0,
+      "forecast_mean_t2m_degC": -44.95458221435547,
+      "climatology_mean_t2m_degC": -46.426361083984375,
+      "forecast_mean_anomaly_degC": 1.4717752933502197,
+      "last_week_observed_anomaly_degC": 1.6265759468078613,
+      "fraction_warm_ge_1sigma": 0.0003770320035982877,
+      "fraction_cold_le_minus1sigma": 0.0,
+      "fraction_extreme_abs_ge_2sigma": 0.0
+    },
+    {
+      "region": "coastal_land",
+      "area_km2": 1784294.75,
+      "forecast_mean_t2m_degC": -22.1553955078125,
+      "climatology_mean_t2m_degC": -24.50704574584961,
+      "forecast_mean_anomaly_degC": 2.3516480922698975,
+      "last_week_observed_anomaly_degC": 2.8726682662963867,
+      "fraction_warm_ge_1sigma": 0.03235063701868057,
+      "fraction_cold_le_minus1sigma": 0.0,
+      "fraction_extreme_abs_ge_2sigma": 0.0
+    },
+    {
+      "region": "inland",
+      "area_km2": 12166861.0,
+      "forecast_mean_t2m_degC": -43.6537971496582,
+      "climatology_mean_t2m_degC": -45.19475173950195,
+      "forecast_mean_anomaly_degC": 1.5409528017044067,
+      "last_week_observed_anomaly_degC": 2.513073444366455,
+      "fraction_warm_ge_1sigma": 0.002398003824055195,
+      "fraction_cold_le_minus1sigma": 0.0,
+      "fraction_extreme_abs_ge_2sigma": 0.0
+    }
+  ],
+  "input_quality": {
+    "latest_input_date": "2025-06-01",
+    "t2m_cells_valid_fraction": 1.0,
+    "history_days_available_of_56": 56,
+    "predictors_missing": [],
+    "warnings": []
+  },
+  "uncertainty": {
+    "validated": false,
+    "method": "none",
+    "nominal_coverage": null,
+    "empirical_test_coverage": null,
+    "note": "No interval: the q10/q90 interval was validated around the tree model, not the U-Net."
+  },
+  "test_metrics_reference": {
+    "area_weighted_mae_degC": 2.36591716525696,
+    "area_weighted_rmse_degC": 3.5489170261423943,
+    "acc_pattern_mean": 0.5869616691687727,
+    "msss_vs_climatology": 0.3613504320325238,
+    "period": "2018-01-07..2025-12-21 issue dates"
+  },
+  "provenance": {
+    "inputs_through": "2025-06-01",
+    "training_period": [
+      "1979-01-01",
+      "2017-12-31"
+    ],
+    "climatology": "1981-2010 daily, +-15 day smoothing",
+    "grid": "NSIDC polar stereographic 25 km (EPSG:3412), cells south of 60S",
+    "target_season": "JJA"
+  },
+  "limitations": [
+    "Statistical forecast of the 7-day MEAN 2 m temperature anomaly learnt from reanalysis; it is NOT a numerical weather forecast and uses no forecast of the target-week atmosphere.",
+    "Truth for training and evaluation is a reanalysis (gridded model-data blend), not direct observation; reanalysis 2 m temperature over the Antarctic plateau has known biases (strong surface inversions).",
+    "25 km cells: station-scale and steep-topography effects (Peninsula, Transantarctic Mountains) are smoothed.",
+    "Anomaly categories use training-period (1981-2010) sigma per cell and season; under a warming trend the 'warm' class becomes more frequent.",
+    "Not reviewed by an independent Antarctic meteorology expert; not for operational or safety-critical use."
+  ],
+  "files": {
+    "netcdf": "t2m7d_20250601_aethentra-t2m-weekly-unet-20261108-v1.nc",
+    "summary_json": "t2m7d_20250601_aethentra-t2m-weekly-unet-20261108-v1.json"
+  },
+  "generated_utc": "2026-11-11T01:49:26Z"
+}

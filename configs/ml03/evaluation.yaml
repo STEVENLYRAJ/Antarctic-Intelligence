@@ -1,0 +1,8 @@
+boundary_tolerance_px: 5            # 2 km for boundary F1
+sectors:                            # longitude ranges (deg E), same definition as ML-01
+  weddell: [-60, 20]
+  indian: [20, 90]
+  west_pacific: [90, 160]
+  ross: [160, -130]
+  bellingshausen_amundsen: [-130, -60]
+seasons: {DJF: [12, 1, 2], MAM: [3, 4, 5], JJA: [6, 7, 8], SON: [9, 10, 11]}
