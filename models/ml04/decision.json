@@ -1,5 +1,7 @@
 {
- "frozen_utc": "2026-11-10T23:03:51+00:00",
+ "version": 2,
+ "supersedes": "v1 (decision frozen 2026-11-10T23:03Z) INVALIDATED: NCEP R1 rhum 2001, rhum 2002 and tcdc 2001 raw files were all zeros (passed the day-count check). Files re-downloaded through the content check on 2026-11-12; ML-04 rebuilt from preprocessing. See experiments/ml04/v1_invalidated/README.md.",
+ "frozen_utc": "2026-11-11T03:41:16+00:00",
  "selection_split": "validation (2011-2017), synthetic injections seed 2011",
  "family_best": {
   "isolation_forest": "isolation_forest_s4096",
@@ -18,11 +20,11 @@
  ],
  "rank_sum": {
   "lof_k20": 4.0,
-  "mahalanobis": 9.0,
-  "ocsvm_nu01": 13.0,
-  "mad": 16.0,
-  "isolation_forest_s4096": 21.0,
-  "zscore": 21.0,
+  "mahalanobis": 8.0,
+  "ocsvm_nu01": 12.0,
+  "zscore": 17.0,
+  "isolation_forest_s4096": 20.0,
+  "mad": 23.0,
   "percentile": 28.0
  },
  "criteria": [

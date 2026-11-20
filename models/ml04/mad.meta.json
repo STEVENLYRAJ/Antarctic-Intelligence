@@ -1,10 +1,10 @@
 {
  "family": "mad",
  "thresholds": {
-  "mild": 3.6145007610321045,
-  "moderate": 7.963740229606628,
-  "strong": 39.19158592224113,
-  "extreme": 50.0
+  "mild": 3.04483962059021,
+  "moderate": 3.721815764904022,
+  "strong": 5.0314222812652565,
+  "extreme": 9.782254004478325
  },
  "calibrated_on": "1979-2010 training cell-months"
 }

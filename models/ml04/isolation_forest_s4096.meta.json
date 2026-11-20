@@ -4,9 +4,9 @@
   "n_estimators": 300,
   "max_samples": 4096
  },
- "trained_utc": "2026-11-10T22:47:33+00:00",
+ "trained_utc": "2026-11-11T03:26:48+00:00",
  "n_train": 884736,
- "fit_seconds": 5.6,
+ "fit_seconds": 3.4,
  "train_split": "1979-2010",
  "features": [
   "t2m",
@@ -20,10 +20,10 @@
   "dsic"
  ],
  "thresholds": {
-  "mild": 0.44190015127720017,
-  "moderate": 0.4732473460619806,
-  "strong": 0.5092310660278303,
-  "extreme": 0.5595623066040294
+  "mild": 0.4399049069776265,
+  "moderate": 0.46734873280865574,
+  "strong": 0.50341289879929,
+  "extreme": 0.5583736986960167
  },
  "calibration_rows": 884736
 }

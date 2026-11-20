@@ -42,6 +42,20 @@ outputs/ml04/anomaly_maps/
 outputs/ml04/anomalies_monthly_*.nc
 outputs/ml04/summaries/daily_t2m_spells_*.csv
 outputs/ml04/summaries/sea_ice_extent_anomalies_daily.csv
-models/ml04/*.joblib
-experiments/ml04/metrics/*_SYNTHETIC.csv
-experiments/ml04/metrics/station_pairs.csv
+models/ml04/**/*.joblib
+experiments/ml04/**/*_SYNTHETIC.csv
+experiments/ml04/**/station_pairs.csv
+# --- Phase 1 P0 (2026-11-12): keep data and oversized binaries out of git (GitHub rejects files > 100 MB) ---
+# U-Net training arrays (re-creatable with scripts/train_cnn.py and scripts/ml02/train_cnn.py)
+data/processed/aethentra/cnn/
+data/processed/ml02/cnn/
+# original source data stays on disk / in its archive, not in git
+DATAS/glims_download_33432/
+DATAS/*.exe
+DATAS/*.nc
+# ML-02 daily climatology (281 MB; re-creatable with scripts/ml02/train.py climatology stage)
+models/ml02/artifacts/t2m_climatology_ncep_r1.npz
+models/ml02/final/t2m_climatology_ncep_r1.npz
+# MERRA-2 / Copernicus Marine raw data (re-downloadable; never commit)
+data/raw/merra2/
+data/raw/cmems/

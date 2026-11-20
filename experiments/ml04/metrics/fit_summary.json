@@ -4,34 +4,34 @@
  },
  "isolation_forest_s256": {
   "n_train": 884736,
-  "fit_seconds": 1.6
+  "fit_seconds": 1.4
  },
  "isolation_forest_s4096": {
   "n_train": 884736,
-  "fit_seconds": 5.6
+  "fit_seconds": 3.4
  },
  "lof_k20": {
   "n_train": 50000,
-  "fit_seconds": 7.2
+  "fit_seconds": 5.6
  },
  "lof_k100": {
   "n_train": 50000,
-  "fit_seconds": 11.7
+  "fit_seconds": 9.3
  },
  "ocsvm_nu01": {
   "n_train": 20000,
-  "fit_seconds": 0.5
+  "fit_seconds": 0.6
  },
  "ocsvm_nu05": {
   "n_train": 20000,
-  "fit_seconds": 1.5
+  "fit_seconds": 1.8
  },
  "autoencoder_b3": {
   "n_train": 884736,
-  "fit_seconds": 111.9
+  "fit_seconds": 54.7
  },
  "autoencoder_b5": {
   "n_train": 884736,
-  "fit_seconds": 105.6
+  "fit_seconds": 37.8
  }
 }

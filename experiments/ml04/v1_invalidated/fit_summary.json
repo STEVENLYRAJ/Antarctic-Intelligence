@@ -1,0 +1,37 @@
+{
+ "mahalanobis": {
+  "n_train": 884736
+ },
+ "isolation_forest_s256": {
+  "n_train": 884736,
+  "fit_seconds": 1.6
+ },
+ "isolation_forest_s4096": {
+  "n_train": 884736,
+  "fit_seconds": 5.6
+ },
+ "lof_k20": {
+  "n_train": 50000,
+  "fit_seconds": 7.2
+ },
+ "lof_k100": {
+  "n_train": 50000,
+  "fit_seconds": 11.7
+ },
+ "ocsvm_nu01": {
+  "n_train": 20000,
+  "fit_seconds": 0.5
+ },
+ "ocsvm_nu05": {
+  "n_train": 20000,
+  "fit_seconds": 1.5
+ },
+ "autoencoder_b3": {
+  "n_train": 884736,
+  "fit_seconds": 111.9
+ },
+ "autoencoder_b5": {
+  "n_train": 884736,
+  "fit_seconds": 105.6
+ }
+}

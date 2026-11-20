@@ -158,7 +158,7 @@ def build_cube(source: str | None = None, variables: list[str] | None = None, ye
     grid = build_grid(cfg)
     grid["elevation_m"], oro_src = _orography(scfg, grid)
     np.savez_compressed(out / "grid.npz", **grid)
-    start, end = pd.Timestamp(cfg["start"]), pd.Timestamp(cfg["end"])
+    start, end = pd.Timestamp(cfg["start"]), pd.Timestamp(scfg.get("end", cfg["end"]))      # per-source end (ERA5 is current)
     if years:
         start, end = max(start, pd.Timestamp(f"{years[0]}-01-01")), min(end, pd.Timestamp(f"{years[1]}-12-31"))
     dates = pd.date_range(start, end, freq="D")

@@ -3,9 +3,9 @@
  "params": {
   "n_neighbors": 20
  },
- "trained_utc": "2026-11-10T22:48:11+00:00",
+ "trained_utc": "2026-11-11T03:27:16+00:00",
  "n_train": 50000,
- "fit_seconds": 7.2,
+ "fit_seconds": 5.6,
  "train_split": "1979-2010",
  "features": [
   "t2m",
@@ -19,10 +19,10 @@
   "dsic"
  ],
  "thresholds": {
-  "mild": 1.2825350642204285,
-  "moderate": 1.3646057188510894,
-  "strong": 1.4715172624588004,
-  "extreme": 1.6404798907041558
+  "mild": 1.2690792679786682,
+  "moderate": 1.3477675437927246,
+  "strong": 1.449079349040985,
+  "extreme": 1.604905318617821
  },
  "calibration_rows": 200000
 }

@@ -1,0 +1,132 @@
+[
+ {
+  "epoch": 1,
+  "train_mae": 3.3947643253348345,
+  "seconds": 155.6
+ },
+ {
+  "epoch": 2,
+  "train_mae": 3.0339186233428492,
+  "seconds": 360.7
+ },
+ {
+  "epoch": 3,
+  "train_mae": 2.918582379143246,
+  "seconds": 1225.6
+ },
+ {
+  "epoch": 4,
+  "train_mae": 2.862544806958151,
+  "seconds": 1406.3
+ },
+ {
+  "epoch": 5,
+  "train_mae": 2.8209440369314396,
+  "seconds": 10619.3
+ },
+ {
+  "epoch": 6,
+  "train_mae": 2.784229430553347,
+  "seconds": 10808.1
+ },
+ {
+  "epoch": 7,
+  "train_mae": 2.759248964274044,
+  "seconds": 22442.5
+ },
+ {
+  "epoch": 8,
+  "train_mae": 2.737104686412251,
+  "seconds": 22651.2
+ },
+ {
+  "epoch": 9,
+  "train_mae": 2.711976963913091,
+  "seconds": 22844.9
+ },
+ {
+  "epoch": 10,
+  "train_mae": 2.696162627892015,
+  "seconds": 23006.6
+ },
+ {
+  "epoch": 11,
+  "train_mae": 2.678933292685106,
+  "seconds": 23170.6
+ },
+ {
+  "epoch": 12,
+  "train_mae": 2.6607640552437584,
+  "seconds": 23333.1
+ },
+ {
+  "epoch": 13,
+  "train_mae": 2.649225335021267,
+  "seconds": 23487.9
+ },
+ {
+  "epoch": 14,
+  "train_mae": 2.6317551139837216,
+  "seconds": 23643.0
+ },
+ {
+  "epoch": 15,
+  "train_mae": 2.6205512336258887,
+  "seconds": 23795.5
+ },
+ {
+  "epoch": 16,
+  "train_mae": 2.603988662110369,
+  "seconds": 23946.4
+ },
+ {
+  "epoch": 17,
+  "train_mae": 2.58991607457664,
+  "seconds": 24097.2
+ },
+ {
+  "epoch": 18,
+  "train_mae": 2.57610590897738,
+  "seconds": 24248.8
+ },
+ {
+  "epoch": 19,
+  "train_mae": 2.563411189090224,
+  "seconds": 24399.3
+ },
+ {
+  "epoch": 20,
+  "train_mae": 2.5498654299420953,
+  "seconds": 24547.8
+ },
+ {
+  "epoch": 21,
+  "train_mae": 2.536313889981388,
+  "seconds": 24698.7
+ },
+ {
+  "epoch": 22,
+  "train_mae": 2.5252106156258294,
+  "seconds": 24856.5
+ },
+ {
+  "epoch": 23,
+  "train_mae": 2.5160710473755548,
+  "seconds": 25012.7
+ },
+ {
+  "epoch": 24,
+  "train_mae": 2.509839767396788,
+  "seconds": 25167.2
+ },
+ {
+  "epoch": 25,
+  "train_mae": 2.505501484084545,
+  "seconds": 25312.7
+ },
+ {
+  "epoch": 26,
+  "train_mae": 2.5023680517848312,
+  "seconds": 25463.4
+ }
+]

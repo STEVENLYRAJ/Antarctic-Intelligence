@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   AETHENTRA design tokens. Dark polar theme is the primary (presentation) theme.
+   --------------------------------------------------------------------------- */
+:root {
+  /* AETHENTRA palette (v2) */
+  --polar-black: #05080d;   /* Polar Black   */
+  --midnight: #081321;      /* Midnight Navy */
+  --navy: #0b1f33;          /* Deep Ocean    */
+  --navy-2: #12304d;
+  --line: rgba(141, 220, 244, 0.11);
+  --line-strong: rgba(141, 220, 244, 0.22);
+  --glacial: #eaf5fc;       /* Glacial White */
+  --ice: #8ddcf4;           /* Ice Blue      */
+  --ice-dim: #7fa6c4;
+  --cyan: #48c8e8;          /* Cyan Accent   */
+  --cyan-deep: #2a9fc0;
+  --silver: #8b9baa;        /* Muted Steel   */
+  --muted: #6f8094;
+  --alert: #e76f6a;         /* Restrained warning red  */
+  --alert-soft: rgba(231, 111, 106, 0.14);
+  --warn: #f4a261;          /* Restrained alert orange */
+  --ok: #7ed3b2;
+
+  --radius: 8px;
+  --radius-lg: 14px;
+  --container: 1280px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@theme inline {
+  --color-polar: var(--polar-black);
+  --color-midnight: var(--midnight);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-glacial: var(--glacial);
+  --color-ice: var(--ice);
+  --color-ice-dim: var(--ice-dim);
+  --color-cyan: var(--cyan);
+  --color-cyan-deep: var(--cyan-deep);
+  --color-silver: var(--silver);
+  --color-muted: var(--muted);
+  --color-alert: var(--alert);
+  --color-warn: var(--warn);
+  --color-ok: var(--ok);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-grotesk);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  background: var(--polar-black);
+  color-scheme: dark;
+}
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+body {
+  background: var(--polar-black);
+  color: var(--glacial);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--cyan); color: var(--polar-black); }
+
+/* Typography scale */
+.t-display { font-family: var(--font-grotesk); font-weight: 500; letter-spacing: -0.035em; line-height: 0.92; font-size: clamp(3.2rem, 9.5vw, 9.5rem); }
+.t-h1 { font-family: var(--font-grotesk); font-weight: 500; letter-spacing: -0.03em; line-height: 1; font-size: clamp(2.4rem, 5.6vw, 5rem); }
+.t-h2 { font-family: var(--font-grotesk); font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(1.8rem, 3.4vw, 3rem); }
+.t-h3 { font-family: var(--font-grotesk); font-weight: 500; letter-spacing: -0.01em; line-height: 1.15; font-size: clamp(1.2rem, 1.8vw, 1.5rem); }
+.t-serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+.t-lead { font-size: clamp(1.05rem, 1.35vw, 1.25rem); line-height: 1.6; color: var(--silver); }
+.t-body { font-size: 0.975rem; line-height: 1.65; color: var(--silver); }
+.t-meta { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.t-num { font-family: var(--font-grotesk); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+
+.container-x { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: clamp(16px, 4vw, 40px); }
+
+.hairline { border-color: var(--line); }
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(141, 220, 244, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(141, 220, 244, 0.045) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Focus visibility */
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 2px; }
+
+/* Split-text helpers (GSAP) */
+.split-line { display: block; overflow: hidden; padding-bottom: 0.06em; }
+.split-inner { display: inline-block; will-change: transform; }
+
+/* Cesium: hide default credit clutter styling but keep attribution visible */
+.cesium-viewer-bottom { opacity: 0.55; font-size: 10px; }
+.cesium-widget-credits { font-family: var(--font-mono) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--polar-black); }
+::-webkit-scrollbar-thumb { background: #1a2a42; border-radius: 10px; border: 2px solid var(--polar-black); }
+
+/* ---------------------------------------------------------------------------
+   v2 surfaces & interaction utilities
+   --------------------------------------------------------------------------- */
+.surface { background: linear-gradient(180deg, rgba(11, 31, 51, 0.55), rgba(8, 19, 33, 0.35)); border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.glass { background: rgba(5, 8, 13, 0.72); border: 1px solid var(--line-strong); backdrop-filter: blur(14px) saturate(120%); -webkit-backdrop-filter: blur(14px) saturate(120%); }
+.atmo { background: radial-gradient(1200px 600px at 70% -10%, rgba(72, 200, 232, 0.08), transparent 60%), radial-gradient(900px 500px at 0% 110%, rgba(18, 48, 77, 0.55), transparent 60%); }
+
+/* pointer-follow spotlight (set --mx/--my from JS) */
+.spotlight { position: relative; isolation: isolate; }
+.spotlight::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: -1; opacity: 0; transition: opacity .4s var(--ease-out);
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(72, 200, 232, 0.10), transparent 45%); }
+.spotlight:hover::before { opacity: 1; }
+.spotlight::after { content: ""; position: absolute; inset: -1px; border-radius: inherit; pointer-events: none; padding: 1px; opacity: 0; transition: opacity .4s var(--ease-out);
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(141, 220, 244, 0.55), transparent 55%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+.spotlight:hover::after { opacity: 1; }
+
+/* page enter */
+@keyframes page-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.page-enter { animation: page-in .7s var(--ease-out) both; }
+
+/* scroll cue */
+@keyframes cue { 0% { transform: translateY(-100%); } 100% { transform: translateY(260%); } }
+.scroll-cue { position: relative; width: 1px; height: 44px; overflow: hidden; background: var(--line-strong); }
+.scroll-cue::after { content: ""; position: absolute; inset: 0 0 auto 0; height: 35%; background: var(--cyan); animation: cue 1.8s var(--ease-in-out) infinite; }
+
+/* globe placeholder while Cesium initialises */
+.earth-fallback { aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 38% 34%, #2f6f99 0%, #123d61 32%, #0a2440 58%, #061321 78%);
+  box-shadow: inset -40px -30px 90px rgba(0,0,0,.65), 0 0 80px 10px rgba(72,200,232,.12), 0 0 0 1px rgba(141,220,244,.12); }
+@keyframes breathe { 0%,100% { opacity: .75 } 50% { opacity: 1 } }
+.breathe { animation: breathe 3.2s ease-in-out infinite; }
+
+/* range inputs */
+input[type="range"].range { -webkit-appearance: none; appearance: none; height: 2px; background: var(--line-strong); border-radius: 2px; }
+input[type="range"].range::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: var(--glacial); border: 2px solid var(--cyan); cursor: pointer; }
+input[type="range"].range::-moz-range-thumb { width: 10px; height: 10px; border-radius: 50%; background: var(--glacial); border: 2px solid var(--cyan); cursor: pointer; }
+
+.kbd { font-family: var(--font-mono); font-size: 10px; border: 1px solid var(--line-strong); border-radius: 4px; padding: 1px 5px; color: var(--silver); }

@@ -14,7 +14,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import numpy as np
 
 from ..config import ROOT
-from ..data.acquisition import _now, _write_prov, md5sum, read_prov
+from ..data.acquisition import _now, _write_prov, content_check, md5sum, read_prov
 from .paths import load
 
 LOG = logging.getLogger("aethentra.ml04.acquisition")
@@ -51,6 +51,7 @@ def download_var_year(var: str, year: int, retries: int = 4) -> dict:
                 else:
                     arr = v[:, idx[0]:idx[-1] + 1, :]
                 data = np.ma.filled(arr.astype("float32"), np.nan)
+                qa = content_check(data, var)                 # raises ContentError -> retried, never written
                 t = netCDF4.num2date(d["time"][:], d["time"].units, only_use_cftime_datetimes=False)
                 attrs = {k: v.getncattr(k) for k in v.ncattrs() if k in ("units", "long_name", "level_desc", "statistic", "dataset")}
                 if "level" in spec:
@@ -65,7 +66,7 @@ def download_var_year(var: str, year: int, retries: int = 4) -> dict:
             info = {"dataset": cfg["id"], "product": cfg["name"], "variable": var, "year": year, "source_url": url,
                     "retrieved_utc": _now(), "days": n, "complete_year": n >= 365, "md5": md5sum(dst),
                     "subset": f"lat <= {cfg['lat_max']}" + (f", level {spec['level']} hPa" if "level" in spec else ""),
-                    "units": attrs.get("units"), "grid": spec["grid"], "access": cfg["access"]}
+                    "units": attrs.get("units"), "grid": spec["grid"], "access": cfg["access"], "content_check": qa}
             _write_prov(dst, info)
             return {"file": dst.name, "status": "downloaded", "days": n}
         except Exception as e:  # noqa: BLE001

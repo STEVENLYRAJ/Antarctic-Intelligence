@@ -14,7 +14,7 @@
   "mean_z": -0.3896346688270569,
   "max_signed_z": -18.52489471435547,
   "univariate_flag_fraction": 0.11458333333333333,
-  "multivariate_flag_fraction": 0.13757183908045978,
+  "multivariate_flag_fraction": 0.19216954022988506,
   "detected_univariate": false,
   "detected_multivariate": false
  },
@@ -32,9 +32,9 @@
   "mean_z": -0.026318788528442383,
   "max_signed_z": -1.9542204141616821,
   "univariate_flag_fraction": 0.005926724137931034,
-  "multivariate_flag_fraction": 0.14655172413793102,
+  "multivariate_flag_fraction": 0.20905172413793102,
   "detected_univariate": false,
-  "detected_multivariate": false
+  "detected_multivariate": true
  },
  {
   "name": "peninsula_warm_event_2020_02",
@@ -66,7 +66,7 @@
   "mean_z": 1.0376760959625244,
   "max_signed_z": 2.871598482131958,
   "univariate_flag_fraction": 0.2571428571428571,
-  "multivariate_flag_fraction": 0.19428571428571428,
+  "multivariate_flag_fraction": 0.1657142857142857,
   "detected_univariate": true,
   "detected_multivariate": false
  },
@@ -86,7 +86,7 @@
   "mean_z": -0.6647682189941406,
   "max_signed_z": -25.851991653442383,
   "univariate_flag_fraction": 0.16514008620689655,
-  "multivariate_flag_fraction": 0.1648706896551724,
+  "multivariate_flag_fraction": 0.19100215517241378,
   "detected_univariate": false,
   "detected_multivariate": false
  }

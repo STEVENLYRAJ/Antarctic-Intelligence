@@ -1,0 +1,29 @@
+{
+ "family": "isolation_forest",
+ "params": {
+  "n_estimators": 300,
+  "max_samples": 256
+ },
+ "trained_utc": "2026-11-10T22:47:16+00:00",
+ "n_train": 884736,
+ "fit_seconds": 1.6,
+ "train_split": "1979-2010",
+ "features": [
+  "t2m",
+  "slp",
+  "wspd",
+  "rhum",
+  "prate",
+  "tcdc",
+  "z500",
+  "sic",
+  "dsic"
+ ],
+ "thresholds": {
+  "mild": 0.4831917286101213,
+  "moderate": 0.5177278425340425,
+  "strong": 0.5527375073306037,
+  "extreme": 0.5939800625174587
+ },
+ "calibration_rows": 884736
+}

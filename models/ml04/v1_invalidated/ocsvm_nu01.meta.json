@@ -1,0 +1,29 @@
+{
+ "family": "ocsvm",
+ "params": {
+  "nu": 0.01,
+  "gamma": "scale"
+ },
+ "trained_utc": "2026-11-10T22:49:23+00:00",
+ "n_train": 20000,
+ "fit_seconds": 0.5,
+ "train_split": "1979-2010",
+ "features": [
+  "t2m",
+  "slp",
+  "wspd",
+  "rhum",
+  "prate",
+  "tcdc",
+  "z500",
+  "sic",
+  "dsic"
+ ],
+ "thresholds": {
+  "mild": -3.8993069058353065,
+  "moderate": -3.5123846932882477,
+  "strong": -3.0181634115404563,
+  "extreme": -2.2725565994961987
+ },
+ "calibration_rows": 200000
+}

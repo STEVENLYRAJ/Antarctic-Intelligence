@@ -1,0 +1,39 @@
+{
+ "operational": {
+  "pairs": 32,
+  "stations": 16,
+  "pearson_r": 0.3824546723052369,
+  "flag_agreement": 0.90625,
+  "cohen_kappa": 0.35135135135135137,
+  "station_flag_rate": 0.09375,
+  "ncep_flag_rate": 0.0625
+ },
+ "test": {
+  "pairs": 1530,
+  "stations": 16,
+  "pearson_r": 0.7161617875647365,
+  "flag_agreement": 0.9411764705882353,
+  "cohen_kappa": 0.3995552260934022,
+  "station_flag_rate": 0.04771241830065359,
+  "ncep_flag_rate": 0.05555555555555555
+ },
+ "train": {
+  "pairs": 5266,
+  "stations": 16,
+  "pearson_r": 0.7849894838068575,
+  "flag_agreement": 0.9422711735662742,
+  "cohen_kappa": 0.3642122353273849,
+  "station_flag_rate": 0.04500569692366122,
+  "ncep_flag_rate": 0.050322825674135964
+ },
+ "validation": {
+  "pairs": 1308,
+  "stations": 16,
+  "pearson_r": 0.8060019871508659,
+  "flag_agreement": 0.9334862385321101,
+  "cohen_kappa": 0.4038098830629954,
+  "station_flag_rate": 0.06574923547400612,
+  "ncep_flag_rate": 0.052752293577981654
+ },
+ "note": "GHCN-D monthly TAVG (>= 20 valid days) vs NCEP R1 sigma-0.995 temperature of the containing 2.5 deg cell; flags at |z| >= 1.96. NCEP R1 assimilates surface pressure, not screen temperature, at these stations, but the comparison is still not fully independent; the point-vs-cell scale mismatch lowers agreement."
+}

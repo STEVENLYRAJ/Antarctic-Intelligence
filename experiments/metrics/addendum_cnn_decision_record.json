@@ -1,0 +1,32 @@
+{
+  "frozen_tree_selection": "lgbm_residual_tuned",
+  "frozen_tree_selection_utc": "2026-11-07T22:46:50+00:00",
+  "comparison_on_validation": {
+    "siz_mae": {
+      "cnn_unet_residual": 2.767183758313841,
+      "lgbm_residual_tuned": 3.0578659672609825,
+      "cnn_better": true
+    },
+    "siz_rmse": {
+      "cnn_unet_residual": 6.364391930315915,
+      "lgbm_residual_tuned": 7.129855146465768,
+      "cnn_better": true
+    },
+    "iiee": {
+      "cnn_unet_residual": 502112.957610658,
+      "lgbm_residual_tuned": 585508.1412564879,
+      "cnn_better": true
+    },
+    "extent_mae": {
+      "cnn_unet_residual": 79879.69273294907,
+      "lgbm_residual_tuned": 116514.11335493988,
+      "cnn_better": true
+    }
+  },
+  "cnn_better_on": "4/4 selection criteria",
+  "rule": "the U-Net replaces the operational model only if it is better on ALL validation selection criteria",
+  "cnn_replaces_operational_model": true,
+  "context": "Addendum after the tree-model test evaluation; the CNN test result is reported for comparison and is not used to choose between models.",
+  "test_set_accessed_before_decision_for_cnn": false,
+  "frozen_utc": "2026-11-09T03:36:53.145488+00:00"
+}

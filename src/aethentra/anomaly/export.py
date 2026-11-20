@@ -142,7 +142,7 @@ def export_month(month: str) -> dict:
 
 def model_version() -> str:
     d = json.loads((MODELS / "decision.json").read_text())
-    return f"aethentra-ml04-{d['selected_multivariate'].replace('_', '-')}-{d['frozen_utc'][:10].replace('-', '')}-v1"
+    return f"aethentra-ml04-{d['selected_multivariate'].replace('_', '-')}-{d['frozen_utc'][:10].replace('-', '')}-v{d.get('version', 1)}"
 
 
 def limitations(atm: bool = True) -> list[str]:

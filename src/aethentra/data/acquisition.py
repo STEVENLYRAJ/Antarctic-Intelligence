@@ -30,6 +30,46 @@ def _now():
     return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
 
 
+# Plausible ranges in the SOURCE units (NCEP R1 / ERA5 short names). SLP allows plateau-extrapolated values (> 1100 hPa).
+PLAUSIBLE = {"air": (150, 330), "t2m": (150, 330), "skt": (150, 340), "slp": (85_000, 113_500), "msl": (85_000, 113_500),
+             "uwnd": (-100, 100), "vwnd": (-100, 100), "u10": (-100, 100), "v10": (-100, 100), "rhum": (0, 110),
+             "prate": (0, 0.02), "tcdc": (0, 100.5), "hgt500": (4000, 6500), "hgt": (-1000, 40_000)}
+
+
+class ContentError(ValueError):
+    """Downloaded array is structurally valid but its CONTENT is implausible (e.g. all zeros)."""
+
+
+def content_check(data: np.ndarray, var: str, max_flat_day_fraction: float = 0.01, max_zero_fraction: float = 0.9) -> dict:
+    """Reject arrays that cannot be real geophysical fields (added after three all-zero NCEP files passed the
+    day-count check in ML-04, 2026-11-11). Checks: some finite data; not mostly zeros; per-day spatial variance > 0
+    on (almost) every day with data; values inside the plausible range for the variable. Raises ContentError."""
+    a = np.asarray(data, dtype=np.float64)
+    fin = np.isfinite(a)
+    if not fin.any():
+        raise ContentError(f"{var}: no finite values")
+    flat = a.reshape(a.shape[0], -1) if a.ndim >= 2 else a[:, None]
+    finite_days = np.isfinite(flat).any(1)
+    with np.errstate(invalid="ignore"):
+        day_std = np.nanstd(flat[finite_days], 1)
+    flat_days = int((day_std == 0).sum()) if flat.shape[1] > 1 else 0
+    zero_frac = float((a[fin] == 0).mean())
+    lo, hi = float(np.nanmin(a)), float(np.nanmax(a))
+    rep = {"finite_fraction": round(float(fin.mean()), 4), "days_with_data": int(finite_days.sum()), "flat_days": flat_days,
+           "zero_fraction": round(zero_frac, 4), "min": lo, "max": hi}
+    if zero_frac > max_zero_fraction:
+        raise ContentError(f"{var}: {zero_frac:.0%} of values are exactly 0 ({rep})")
+    if flat_days > max_flat_day_fraction * max(int(finite_days.sum()), 1):
+        raise ContentError(f"{var}: {flat_days} days with a spatially constant field ({rep})")
+    if var in PLAUSIBLE:
+        plo, phi = PLAUSIBLE[var]
+        if lo < plo or hi > phi:
+            raise ContentError(f"{var}: values {lo:.4g}..{hi:.4g} outside plausible {plo}..{phi} ({rep})")
+        rep["plausible_range"] = [plo, phi]
+    rep["status"] = "passed"
+    return rep
+
+
 def md5sum(path: Path, chunk=4 << 20) -> str:
     h = hashlib.md5()
     with open(path, "rb") as f:
@@ -153,6 +193,7 @@ def download_ncep_var_year(cfg: dict, var: str, year: int, retries: int = 4) -> 
                 v = d[var]
                 arr = v[:, idx[0]:idx[-1] + 1, :]
                 data = np.ma.filled(arr.astype("float32"), np.nan)
+                qa = content_check(data, var)                 # raises ContentError -> retried, never written
                 t = netCDF4.num2date(d["time"][:], d["time"].units, only_use_cftime_datetimes=False)
                 attrs = {k: v.getncattr(k) for k in v.ncattrs() if k in ("units", "long_name", "level_desc", "statistic", "dataset")}
                 ds = xr.Dataset({var: (("time", "lat", "lon"), data, attrs)},
@@ -164,7 +205,7 @@ def download_ncep_var_year(cfg: dict, var: str, year: int, retries: int = 4) -> 
             n_days = int(ds.sizes["time"])
             info = {"dataset": cfg["id"], "product": cfg["name"], "variable": var, "year": year, "source_url": url,
                     "retrieved_utc": _now(), "days": n_days, "complete_year": n_days >= 365, "md5": md5sum(dst),
-                    "subset": f"lat <= {cfg['lat_max']}", "units": attrs.get("units"), "access": cfg["access"]}
+                    "subset": f"lat <= {cfg['lat_max']}", "units": attrs.get("units"), "access": cfg["access"], "content_check": qa}
             _write_prov(dst, info)
             return {"file": dst.name, "status": "downloaded", "days": n_days}
         except Exception as e:

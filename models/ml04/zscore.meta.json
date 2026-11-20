@@ -1,10 +1,10 @@
 {
  "family": "zscore",
  "thresholds": {
-  "mild": 2.584039330482483,
-  "moderate": 3.4742507934570312,
-  "strong": 3.898484826087929,
-  "extreme": 5.054485309123992
+  "mild": 2.372753143310547,
+  "moderate": 2.6728873252868652,
+  "strong": 3.079737305641174,
+  "extreme": 3.8057478845119475
  },
  "calibrated_on": "1979-2010 training cell-months"
 }

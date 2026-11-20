@@ -1,0 +1,28 @@
+{
+ "family": "lof",
+ "params": {
+  "n_neighbors": 20
+ },
+ "trained_utc": "2026-11-10T22:48:11+00:00",
+ "n_train": 50000,
+ "fit_seconds": 7.2,
+ "train_split": "1979-2010",
+ "features": [
+  "t2m",
+  "slp",
+  "wspd",
+  "rhum",
+  "prate",
+  "tcdc",
+  "z500",
+  "sic",
+  "dsic"
+ ],
+ "thresholds": {
+  "mild": 1.2825350642204285,
+  "moderate": 1.3646057188510894,
+  "strong": 1.4715172624588004,
+  "extreme": 1.6404798907041558
+ },
+ "calibration_rows": 200000
+}

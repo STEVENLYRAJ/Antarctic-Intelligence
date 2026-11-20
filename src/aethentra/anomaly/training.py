@@ -152,7 +152,9 @@ def validate() -> dict:
     tab = pd.DataFrame({n: {k: res["metrics"][n][k] for k in keys} for n in eligible}).T
     ranks = tab.rank(ascending=False).sum(1).sort_values()
     multivariate = [n for n in ranks.index if n not in ("zscore", "percentile", "mad")]
-    decision = {"frozen_utc": NOW(), "selection_split": "validation (2011-2017), synthetic injections seed 2011",
+    rel = load("anomaly").get("release", {"version": 1})
+    decision = {"version": int(rel["version"]), "supersedes": rel.get("supersedes"),
+                "frozen_utc": NOW(), "selection_split": "validation (2011-2017), synthetic injections seed 2011",
                 "family_best": fam_best, "eligible": eligible, "rank_sum": ranks.round(2).to_dict(), "criteria": keys,
                 "selected_overall": ranks.index[0], "selected_multivariate": multivariate[0],
                 "univariate_reference": "zscore (+ percentile and MAD shown alongside)",
@@ -174,7 +176,8 @@ def test_once(force: bool = False) -> dict:
     names = STATS + list(d["family_best"].values())
     res, log = evaluate_split("test", load("anomaly")["synthetic_tests"]["seed_test"], names)
     log.to_csv(METRICS / "test_injections_SYNTHETIC.csv", index=False)
-    res |= {"decision_frozen_utc": d["frozen_utc"], "evaluated_utc": NOW(), "forced_rerun": bool(force)}
+    res |= {"decision_version": d.get("version", 1), "decision_frozen_utc": d["frozen_utc"], "evaluated_utc": NOW(),
+            "forced_rerun": bool(force)}
     out.write_text(json.dumps(res, indent=1, default=float))
     return res
 

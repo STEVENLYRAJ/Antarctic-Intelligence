@@ -4,9 +4,9 @@
   "nu": 0.01,
   "gamma": "scale"
  },
- "trained_utc": "2026-11-10T22:49:23+00:00",
+ "trained_utc": "2026-11-11T03:33:24+00:00",
  "n_train": 20000,
- "fit_seconds": 0.5,
+ "fit_seconds": 0.6,
  "train_split": "1979-2010",
  "features": [
   "t2m",
@@ -20,10 +20,10 @@
   "dsic"
  ],
  "thresholds": {
-  "mild": -3.8993069058353065,
-  "moderate": -3.5123846932882477,
-  "strong": -3.0181634115404563,
-  "extreme": -2.2725565994961987
+  "mild": -4.282305800646721,
+  "moderate": -3.8380752262669393,
+  "strong": -3.251079405418781,
+  "extreme": -2.389882242271053
  },
  "calibration_rows": 200000
 }

@@ -1,0 +1,94 @@
+[
+ {
+  "scene_id": "S1D_EW_GRDM_1SDH_20261106T135207_20261106T135249_005347_00A2FF",
+  "acquired": "2026-11-06T13:52:28.489587Z",
+  "sensor": "Sentinel-1 C-SAR",
+  "mode": "EW",
+  "polarization": "HH",
+  "resolution_m": 400,
+  "model_version": "aethentra-sar-seaice-20261109-v1",
+  "data_type": "model_prediction",
+  "fractions": {
+   "ice": 0.4499,
+   "water": 0.2724,
+   "uncertain": 0.2777
+  },
+  "nominal_ice_area_km2": 56329.28,
+  "width": 1199,
+  "height": 1288,
+  "files": {
+   "sar": "/data/sar/S1D_EW_GRDM_1SDH_20261106T135207_20261106T135249_005347_00A2FF/sar.png",
+   "class": "/data/sar/S1D_EW_GRDM_1SDH_20261106T135207_20261106T135249_005347_00A2FF/class.png",
+   "prob": "/data/sar/S1D_EW_GRDM_1SDH_20261106T135207_20261106T135249_005347_00A2FF/prob.png"
+  }
+ },
+ {
+  "scene_id": "S1C_EW_GRDM_1SDH_20261105T070945_20261105T071050_010198_0145C0",
+  "acquired": "2026-11-05T07:10:18.112795Z",
+  "sensor": "Sentinel-1 C-SAR",
+  "mode": "EW",
+  "polarization": "HH",
+  "resolution_m": 400,
+  "model_version": "aethentra-sar-seaice-20261109-v1",
+  "data_type": "model_prediction",
+  "fractions": {
+   "ice": 0.7131,
+   "water": 0.2156,
+   "uncertain": 0.0713
+  },
+  "nominal_ice_area_km2": 138498.56,
+  "width": 1322,
+  "height": 1384,
+  "files": {
+   "sar": "/data/sar/S1C_EW_GRDM_1SDH_20261105T070945_20261105T071050_010198_0145C0/sar.png",
+   "class": "/data/sar/S1C_EW_GRDM_1SDH_20261105T070945_20261105T071050_010198_0145C0/class.png",
+   "prob": "/data/sar/S1C_EW_GRDM_1SDH_20261105T070945_20261105T071050_010198_0145C0/prob.png"
+  }
+ },
+ {
+  "scene_id": "S1D_EW_GRDM_1SSH_20261106T220549_20261106T220639_005352_00A330",
+  "acquired": "2026-11-06T22:06:14.688762Z",
+  "sensor": "Sentinel-1 C-SAR",
+  "mode": "EW",
+  "polarization": "HH",
+  "resolution_m": 400,
+  "model_version": "aethentra-sar-seaice-20261109-v1",
+  "data_type": "model_prediction",
+  "fractions": {
+   "ice": 0.6383,
+   "water": 0.2107,
+   "uncertain": 0.151
+  },
+  "nominal_ice_area_km2": 95122.40000000001,
+  "width": 1226,
+  "height": 1358,
+  "files": {
+   "sar": "/data/sar/S1D_EW_GRDM_1SSH_20261106T220549_20261106T220639_005352_00A330/sar.png",
+   "class": "/data/sar/S1D_EW_GRDM_1SSH_20261106T220549_20261106T220639_005352_00A330/class.png",
+   "prob": "/data/sar/S1D_EW_GRDM_1SSH_20261106T220549_20261106T220639_005352_00A330/prob.png"
+  }
+ },
+ {
+  "scene_id": "S1D_EW_GRDM_1SDH_20261106T121255_20261106T121322_005346_00A2FA",
+  "acquired": "2026-11-06T12:13:08.998559Z",
+  "sensor": "Sentinel-1 C-SAR",
+  "mode": "EW",
+  "polarization": "HH",
+  "resolution_m": 400,
+  "model_version": "aethentra-sar-seaice-20261109-v1",
+  "data_type": "model_prediction",
+  "fractions": {
+   "ice": 0.2099,
+   "water": 0.2776,
+   "uncertain": 0.5125
+  },
+  "nominal_ice_area_km2": 15656.32,
+  "width": 569,
+  "height": 1105,
+  "files": {
+   "sar": "/data/sar/S1D_EW_GRDM_1SDH_20261106T121255_20261106T121322_005346_00A2FA/sar.png",
+   "class": "/data/sar/S1D_EW_GRDM_1SDH_20261106T121255_20261106T121322_005346_00A2FA/class.png",
+   "prob": "/data/sar/S1D_EW_GRDM_1SDH_20261106T121255_20261106T121322_005346_00A2FA/prob.png"
+  }
+ }
+]

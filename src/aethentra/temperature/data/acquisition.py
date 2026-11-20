@@ -7,6 +7,8 @@
 """
 from __future__ import annotations
 
+import datetime as dt
+
 import logging
 import os
 import time
@@ -18,7 +20,7 @@ import pandas as pd
 import requests
 
 from ...config import ROOT
-from ...data.acquisition import UA, _now, _write_prov, download_ncep_var_year, md5sum, read_prov
+from ...data.acquisition import UA, _now, _write_prov, content_check, download_ncep_var_year, md5sum, read_prov
 from ..paths import load
 
 LOG = logging.getLogger("aethentra.ml02.acquisition")
@@ -53,8 +55,9 @@ def _check_nc(path: Path, short: str | None, n_days: int | None) -> dict:
         nt = int(ds.sizes[tdim]) if tdim else 1
         if n_days is not None and nt != n_days:
             raise ValueError(f"{path.name}: {nt} time steps, expected {n_days}")
+        qa = content_check(ds[var].values, var)                # raises ContentError on all-zero / constant / implausible data
         return {"variable_in_file": var, "time_steps": nt, "dims": {k: int(v) for k, v in ds.sizes.items()},
-                "units": ds[var].attrs.get("units")}
+                "units": ds[var].attrs.get("units"), "content_check": qa}
 
 
 def era5_request(kind: str, key: str, year: int | None) -> tuple[str, dict]:
@@ -64,7 +67,11 @@ def era5_request(kind: str, key: str, year: int | None) -> tuple[str, dict]:
         return cfg["dataset_invariant"], {"product_type": ["reanalysis"], "variable": [v["cds"]], "year": ["1979"], "month": ["01"],
                                           "day": ["01"], "time": ["00:00"], "data_format": "netcdf", "download_format": "unarchived",
                                           "area": cfg["area"]}
-    common = {"product_type": "reanalysis", "year": str(year), "month": MONTHS, "day": DAYS,
+    months = MONTHS
+    today = dt.date.today()
+    if year == today.year:                                   # partial current year: complete months only
+        months = [f"{m:02d}" for m in range(1, today.month)]
+    common = {"product_type": "reanalysis", "year": str(year), "month": months, "day": DAYS,
               "daily_statistic": cfg["daily_statistic"], "time_zone": cfg["time_zone"], "frequency": cfg["frequency"],
               "area": cfg["area"]}
     if kind == "single":
@@ -80,10 +87,14 @@ def download_era5(kind: str, key: str, year: int | None = None, retries: int = 3
     out.mkdir(parents=True, exist_ok=True)
     dst = out / (f"era5_{key}_invariant.nc" if kind == "invariant" else f"era5_daily_mean_{key}_{year}.nc")
     prov = read_prov(dst)
-    if dst.exists() and prov and prov.get("validated"):
+    if dst.exists() and prov and prov.get("validated") and prov.get("complete_year", True):
         return {"file": dst.name, "status": "already_present"}
     dataset, req = era5_request(kind, key, year)
-    n_days = None if kind == "invariant" else (366 if pd.Timestamp(year=year, month=12, day=31).dayofyear == 366 else 365)
+    partial = kind != "invariant" and year == dt.date.today().year
+    if partial:                                              # Jan 1 .. last day of the previous month
+        n_days = (pd.Timestamp(dt.date.today().replace(day=1)) - pd.Timestamp(year=year, month=1, day=1)).days
+    else:
+        n_days = None if kind == "invariant" else (366 if pd.Timestamp(year=year, month=12, day=31).dayofyear == 366 else 365)
     for attempt in range(1, retries + 1):
         try:
             t0 = time.time()
@@ -94,7 +105,7 @@ def download_era5(kind: str, key: str, year: int | None = None, retries: int = 3
             chk = _check_nc(dst, key if kind != "invariant" else None, n_days)
             info = {"dataset": dataset, "product": cfg["name"], "doi": cfg["doi"], "variable": key, "year": year, "request": req,
                     "retrieved_utc": _now(), "seconds": round(time.time() - t0, 1), "md5": md5sum(dst), "bytes": dst.stat().st_size,
-                    "validated": True, **chk, "licence": cfg["licence"]}
+                    "validated": True, "complete_year": not partial, **chk, "licence": cfg["licence"]}
             _write_prov(dst, info)
             LOG.info("ERA5 %s %s %s: %.0f MB in %.0f s", kind, key, year, dst.stat().st_size / 1e6, time.time() - t0)
             return {"file": dst.name, "status": "downloaded"}

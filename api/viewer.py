@@ -98,6 +98,8 @@ def _manifest_response(product: str, d: Path):
         if lyr["raster"]:
             lyr["png_url"] = f"/layers/{product}/{d.name}/{lyr['id']}.png"
             lyr["tif_url"] = f"/layers/{product}/{d.name}/{lyr['id']}.tif"
+            lyr["globe_png_url"] = f"/globe/{product}/{d.name}/{lyr['id']}.png"
+            lyr["globe_bounds"] = GLOBE_BOUNDS
             lyr["style"]["colors"] = _colors(lyr["style"]["cmap"])
         lyr["vector_urls"] = [f"/layers/{product}/{d.name}/files/{f}" for f in lyr.pop("vector")]
         lyr.pop("raster")
@@ -160,6 +162,51 @@ def layer_png(product: str, forecast_id: str, layer: str):
     s = lyr["style"]
     png = _render(str(p), p.stat().st_mtime, s["cmap"], s["vmin"], s["vmax"])
     return Response(png, media_type="image/png", headers={"Cache-Control": "max-age=300"})
+
+
+GLOBE_BOUNDS = {"west": -180.0, "south": -90.0, "east": 180.0, "north": -40.0}   # EPSG:4326 extent of every /globe PNG
+GLOBE_RES = 0.1                                                                   # degrees per pixel (3600 x 500)
+
+
+@lru_cache(maxsize=64)
+def _render_globe(tif: str, mtime: float, cmap: str, vmin, vmax) -> bytes:
+    """Reproject a polar-stereographic layer to a plate-carree PNG (lon -180..180, lat -90..-40) for 3D globes.
+
+    Cells without data are fully transparent; values are colour-mapped exactly like the polar preview (no smoothing
+    beyond bilinear resampling of the native grid)."""
+    import matplotlib
+    import rasterio
+    from rasterio.transform import from_origin
+    from rasterio.warp import Resampling, reproject
+    b = GLOBE_BOUNDS
+    w, h = int(round((b["east"] - b["west"]) / GLOBE_RES)), int(round((b["north"] - b["south"]) / GLOBE_RES))
+    dst = np.full((h, w), np.nan, dtype="float32")
+    with rasterio.open(tif) as r:
+        src = r.read(1, masked=True).astype("float32").filled(np.nan)
+        cat = cmap in ("cividis",) or "class" in Path(tif).stem or "regions" in Path(tif).stem
+        reproject(src, dst, src_transform=r.transform, src_crs=r.crs, src_nodata=np.nan,
+                  dst_transform=from_origin(b["west"], b["north"], GLOBE_RES, GLOBE_RES), dst_crs="EPSG:4326",
+                  dst_nodata=np.nan, resampling=Resampling.nearest if cat else Resampling.bilinear)
+    if vmin is None:
+        vmin, vmax = np.nanpercentile(dst, [2, 98])
+    rgba = matplotlib.colormaps[cmap]((np.clip(dst, vmin, vmax) - vmin) / max(vmax - vmin, 1e-9))
+    rgba[..., 3] = np.where(np.isfinite(dst), 0.85, 0.0)
+    buf = io.BytesIO()
+    matplotlib.pyplot.imsave(buf, rgba, format="png")
+    return buf.getvalue()
+
+
+@router.get("/globe/{product}/{forecast_id}/{layer}.png")
+def globe_png(product: str, forecast_id: str, layer: str):
+    """Layer reprojected to EPSG:4326 for draping on a 3D globe. Extent: GLOBE_BOUNDS (also in the X-Bounds header)."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot  # noqa: F401
+    p, lyr = _layer_tif(product, forecast_id, layer)
+    s = lyr["style"]
+    png = _render_globe(str(p), p.stat().st_mtime, s["cmap"], s["vmin"], s["vmax"])
+    return Response(png, media_type="image/png",
+                    headers={"Cache-Control": "max-age=600", "X-Bounds": json.dumps(GLOBE_BOUNDS)})
 
 
 @router.get("/layers/{product}/{forecast_id}/{layer}.tif")

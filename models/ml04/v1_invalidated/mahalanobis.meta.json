@@ -1,0 +1,23 @@
+{
+ "family": "mahalanobis",
+ "trained_utc": "2026-11-10T22:47:05+00:00",
+ "n_train": 884736,
+ "train_split": "1979-2010",
+ "thresholds": {
+  "mild": 4.296267032623291,
+  "moderate": 5.309211015701294,
+  "strong": 6.222146606445306,
+  "extreme": 7.8484370231628375
+ },
+ "features": [
+  "t2m",
+  "slp",
+  "wspd",
+  "rhum",
+  "prate",
+  "tcdc",
+  "z500",
+  "sic",
+  "dsic"
+ ]
+}
