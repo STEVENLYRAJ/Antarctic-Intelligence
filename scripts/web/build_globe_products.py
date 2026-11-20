@@ -172,7 +172,7 @@ def c4():
             d = ll(d)
             a = d["ice_concentration"].isel(time=0).values.astype("float32")
             lat = d.lat.values; lon = d.lon.values
-        a = coarsen(a, 4); latc = coarsen(lat[:, None], 4)[:, 0]; lonc = coarsen(lon[None, :], 4)[0]
+        a = coarsen(a, 4); latc = lat[: len(lat) // 4 * 4].reshape(-1, 4).mean(1); lonc = lon[: len(lon) // 4 * 4].reshape(-1, 4).mean(1)
         if np.isfinite(a).sum() < 1000:
             continue
         key = Path(f).stem.split("_")[-1]; key = f"{key[:4]}-{key[4:6]}-{key[6:]}"
@@ -372,36 +372,49 @@ def pack_monthly(s: pd.Series, base: tuple[int, int], nd: int) -> dict:
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     only = set(sys.argv[1:])
-    run = lambda name: not only or name in only
+    failed: list[str] = []
+
+    def run(name: str) -> bool:
+        return not only or name in only
+
+    def safe(name, fn):
+        try:
+            return fn()
+        except Exception as e:  # one product failing must not lose the others
+            import traceback
+            traceback.print_exc()
+            failed.append(f"{name}: {e}")
+            return None
     daily: dict = {"meta": {"generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                             "day_index": "day of year 1-365 (31 Dec of leap years folded onto day 365)"}}
     extra: dict = {}
-    if run("c1"):
-        ext = c1()
+    ext = safe("c1", c1) if run("c1") else None
+    if ext is not None:
         daily["sea_ice_extent"] = {"title": "Daily Antarctic sea-ice extent (concentration ≥ 15 %)", "units": "million km²",
                                    "source": "EUMETSAT OSI SAF OSI-450-a CDR + OSI-430-a ICDR via Copernicus Marine (C1)",
                                    "data_type": "observation",
                                    "note": "Days with missing swaths are omitted. Before 1987 the SMMR record is every other day.",
                                    **by_year(ext, (1991, 2020), 3)}
-    if run("c2"): c2()
-    if run("c3"): c3()
-    if run("c4"): c4()
-    if run("c5"):
-        ds = c5()
+    if run("c2"): safe("c2", c2)
+    if run("c3"): safe("c3", c3)
+    if run("c4"): safe("c4", c4)
+    ds = safe("c5", c5) if run("c5") else None
+    if ds is not None:
         extra["ifremer_drift_speed"] = {"title": "Mean sea-ice drift speed (monthly mean of daily speeds, ice-covered cells)", "units": "cm/s",
                                         "domain": "50-90S", "clim": "2003-2020",
                                         "source": "IFREMER AMSR-E/AMSR2 3-day sea-ice drift via Copernicus Marine (C5)",
                                         "antarctic": pack_monthly(ds, (2003, 2020), 2)}
-    if run("c6"): c6()
-    if run("c7"):
-        sst, mld = c7()
+    if run("c6"): safe("c6", c6)
+    r7 = safe("c7", c7) if run("c7") else None
+    if r7 is not None:
+        sst, mld = r7
         extra["multiobs_sst"] = {"title": "Near-surface ocean temperature, Southern Ocean mean", "units": "degC", "domain": "50-82S", "clim": "1993-2020",
                                  "source": "Copernicus Marine MULTIOBS observation-based T/S reconstruction (C7)", "antarctic": pack_monthly(sst, (1993, 2020), 3)}
         extra["multiobs_mld"] = {"title": "Ocean mixed-layer depth, Southern Ocean mean", "units": "m", "domain": "50-82S", "clim": "1993-2020",
                                  "source": "Copernicus Marine MULTIOBS observation-based T/S reconstruction (C7)", "antarctic": pack_monthly(mld, (1993, 2020), 1)}
-    if run("era5m"): era5_monthly()
-    if run("era5d"):
-        t = era5_daily()
+    if run("era5m"): safe("era5m", era5_monthly)
+    t = safe("era5d", era5_daily) if run("era5d") else None
+    if t is not None:
         daily["t2m"] = {"title": "Daily Antarctic-mean 2 m air temperature (60–90° S, area-weighted)", "units": "°C",
                         "source": "ECMWF ERA5 daily means (Copernicus CDS)", "data_type": "reanalysis",
                         "note": "Daily ERA5 on disk starts in 2014, so the reference envelope uses 2014–2025 (short baseline).",
@@ -422,7 +435,7 @@ def main():
         cs = json.loads((OUT / "climate_series.json").read_text())
         cs["series"].update(extra)
         (OUT / "climate_series.json").write_text(json.dumps(cs, separators=(",", ":")))
-    log("done", len(layers), "layers")
+    log("done", len(layers), "layers", "FAILED: " + "; ".join(failed) if failed else "")
 
 
 if __name__ == "__main__":

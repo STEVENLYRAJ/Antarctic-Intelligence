@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { ModuleShell, Prose, BulletList } from "@/components/ml/ModuleShell";
+import { ModuleShell, Prose, BulletList, Sub } from "@/components/ml/ModuleShell";
 import { MapViewer } from "@/components/ml/MapViewer";
 import { Ml04Events, Ml04Limits, Ml04Metrics, Ml04Model, Ml04Summary, Ml04Trend, Ml04Variables } from "@/components/ml/Ml04Live";
+import { Ml04Skill } from "@/components/ml/Evaluation";
 import { KV } from "@/components/ui/primitives";
 
 export const metadata: Metadata = { title: "ML-04 Climate Anomaly Intelligence" };
@@ -16,7 +17,7 @@ export default function Page() {
       sections={[
         {
           id: "overview",
-          title: "Overview",
+          title: "Module introduction",
           content: (
             <Prose>
               <p>
@@ -40,7 +41,7 @@ export default function Page() {
         },
         {
           id: "inputs",
-          title: "Input datasets",
+          title: "Data inputs",
           content: (
             <KV
               rows={[
@@ -65,22 +66,78 @@ export default function Page() {
             />
           ),
         },
-        { id: "map", title: "Anomaly map", content: <MapViewer product="anom" /> },
-        { id: "variables", title: "Variable-wise analysis", content: <Ml04Variables /> },
-        { id: "trend", title: "Monthly trend", content: <Ml04Trend /> },
-        { id: "episodes", title: "Anomaly episodes", content: <Ml04Events /> },
-        { id: "metrics", title: "Evaluation metrics", content: <Ml04Metrics /> },
-        { id: "model", title: "Model details", content: <Ml04Model /> },
-        { id: "limitations", title: "Known limitations", content: <Ml04Limits /> },
         {
-          id: "provenance",
-          title: "Data provenance",
+          id: "visualisation",
+          title: "Interactive visualisation",
+          content: (
+            <>
+              <Sub title="Anomaly map">
+                <MapViewer product="anom" />
+              </Sub>
+              <Sub title="Variable-wise analysis" note="Area-weighted mean standardised anomaly per variable for the latest multivariate month, and flagged cells by region.">
+                <Ml04Variables />
+              </Sub>
+            </>
+          ),
+        },
+        {
+          id: "results",
+          title: "Results & metrics",
+          content: (
+            <>
+              <Sub title="Monthly trend">
+                <Ml04Trend />
+              </Sub>
+              <Sub title="Largest anomaly episodes">
+                <Ml04Events />
+              </Sub>
+              <Sub title="Detector metrics" note="SYNTHETIC evaluation — see Evaluation below.">
+                <Ml04Metrics />
+              </Sub>
+            </>
+          ),
+        },
+        {
+          id: "evaluation",
+          title: "Evaluation",
+          content: (
+            <>
+              <Sub title="Detectors compared on injected anomalies">
+                <Ml04Skill />
+              </Sub>
+              <Sub title="Deployed detector">
+                <Ml04Model />
+              </Sub>
+              <Sub title="Provenance">
+                <Prose>
+                  <p>
+                    API endpoints: <code className="font-mono text-ice">/api/ml04/latest</code>, <code className="font-mono text-ice">/api/ml04/monthly-summary</code>,{" "}
+                    <code className="font-mono text-ice">/api/ml04/events</code>, <code className="font-mono text-ice">/api/ml04/metrics</code>,{" "}
+                    <code className="font-mono text-ice">/api/ml04/model-info</code>, <code className="font-mono text-ice">/layers/anom/latest</code>.
+                  </p>
+                </Prose>
+              </Sub>
+            </>
+          ),
+        },
+        { id: "limitations", title: "Limitations", content: <Ml04Limits /> },
+        {
+          id: "interpretation",
+          title: "Research interpretation",
           content: (
             <Prose>
               <p>
-                API endpoints: <code className="font-mono text-ice">/api/ml04/latest</code>, <code className="font-mono text-ice">/api/ml04/monthly-summary</code>,{" "}
-                <code className="font-mono text-ice">/api/ml04/events</code>, <code className="font-mono text-ice">/api/ml04/metrics</code>,{" "}
-                <code className="font-mono text-ice">/api/ml04/model-info</code>, <code className="font-mono text-ice">/layers/anom/latest</code>.
+                On injected test anomalies, the selected local-outlier-factor detector recovers <strong>compound and covariance-break anomalies</strong> far
+                better than univariate z-scores, which mostly catch single-variable spikes. That is the case for a multivariate approach: unusual
+                combinations can hide inside individually ordinary values.
+              </p>
+              <p>
+                Absolute PR-AUC values are low because anomalies are rare and the definition is strict. Above all, <strong>injected anomalies are not real
+                events</strong>: the evaluation shows the detector behaves as designed, not that it finds physically significant episodes.
+              </p>
+              <p>
+                A flag means a month is statistically unusual relative to 1981–2010. It does not identify a cause, an impact or a trend. Flagged episodes are
+                prompts for expert analysis.
               </p>
             </Prose>
           ),

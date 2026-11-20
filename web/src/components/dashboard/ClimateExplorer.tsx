@@ -15,7 +15,18 @@ const VARIABLES = [
   { id: "era5_sf", label: "Snowfall", digits: 2, type: "reanalysis" },
   { id: "era5_sst", label: "Sea-surface temp.", digits: 2, type: "reanalysis" },
   { id: "glorys_sea_ice_thickness", label: "Ice thickness", digits: 2, type: "model_reanalysis" },
+  { id: "ifremer_drift_speed", label: "Ice drift speed", digits: 2, type: "observation" },
+  { id: "multiobs_sst", label: "Ocean temperature", digits: 2, type: "observation" },
+  { id: "multiobs_mld", label: "Mixed-layer depth", digits: 1, type: "observation" },
 ] as const;
+
+const METHOD: Record<string, string> = {
+  era5_sea_ice_extent: "Total area of 0.25° cells with concentration ≥ 15 %, south of 50° S.",
+  glorys_sea_ice_thickness: "Mean thickness over cells with concentration ≥ 15 %; model reanalysis with data assimilation.",
+  ifremer_drift_speed: "Monthly mean of daily 3-day drift speeds over ice-covered cells; summer melt degrades passive-microwave drift.",
+  multiobs_sst: "Area-weighted mean near-surface temperature of the observation-based reconstruction; under-ice values are sparse.",
+  multiobs_mld: "Area-weighted mean mixed-layer depth from the observation-based reconstruction.",
+};
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const SECTOR_COLORS: Record<string, string> = { weddell: "#48c8e8", indian: "#f4a261", pacific: "#7ed3b2", ross: "#b9a3ff", bellingshausen_amundsen: "#e76f6a" };
@@ -49,6 +60,7 @@ export function ClimateExplorer() {
   const [cmp, setCmp] = useState(true);
 
   const v = VARIABLES.find((x) => x.id === vid)!;
+  const avail = VARIABLES.filter((x) => !data || data.series[x.id]);
   const s = data?.series[vid];
   const pack = useMemo(() => {
     if (!s) return null;
@@ -96,7 +108,7 @@ export function ClimateExplorer() {
     <div className="space-y-10">
       {/* controls */}
       <div className="flex flex-wrap gap-2" role="tablist" aria-label="Variable">
-        {VARIABLES.map((x) => (
+        {avail.map((x) => (
           <button
             key={x.id}
             role="tab"
@@ -121,10 +133,24 @@ export function ClimateExplorer() {
             </span>
           </div>
           <TimeSeries series={chart} units={s.units} zeroLine={mode === "anom"} signed={mode === "anom"} brush height={360} digits={v.digits} />
-          <p className="mt-3 text-[12px] text-muted">
-            {s.source}. {mode === "anom" ? data.meta.climatology : "Monthly means."} {s.note ?? ""}
-            {vid === "era5_sea_ice_extent" && " OSI SAF reads up to ~1.6 M km² lower than ERA5 in December (summer melt affects passive-microwave retrievals); anomalies use each record's own climatology."}
-          </p>
+          <dl className="mt-6 grid gap-x-8 gap-y-3 border-t border-line pt-5 text-[12px] sm:grid-cols-2 xl:grid-cols-3">
+            {[
+              ["Metric", s.title],
+              ["Units", `${s.units}${mode === "anom" ? " (anomaly)" : ""}`],
+              ["Coverage", `${s.antarctic.t[0]} → ${s.antarctic.t[s.antarctic.t.length - 1]} · ${s.domain}`],
+              ["Source", s.source],
+              ["Method", `${METHOD[vid] ?? "Area-weighted (cos latitude) monthly mean."} ${mode === "anom" ? `Anomaly vs ${s.clim ?? data.meta.climatology}.` : ""}`],
+              [
+                "Limitations",
+                `${s.note ?? ""}${vid === "era5_sea_ice_extent" ? " OSI SAF reads up to ~1.6 M km² lower than ERA5 in December (summer melt affects passive-microwave retrievals); anomalies use each record's own climatology." : ""}${s.clim ? " Anomaly baseline is shorter than 1991–2020 because the record starts later." : ""}` || "Reanalysis values are model-constrained estimates, sparse in the interior before the satellite era.",
+              ],
+            ].map(([k, val]) => (
+              <div key={k}>
+                <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted">{k}</dt>
+                <dd className="mt-1 leading-relaxed text-silver">{val}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
         <aside className="space-y-6">
           <div>

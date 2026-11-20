@@ -1,0 +1,164 @@
+[
+ {
+  "id": "continent",
+  "title": "Antarctica and the Southern Ocean",
+  "url": "/data/imagery/continent.jpg",
+  "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+  "date": "2025-12-15",
+  "crs": "EPSG:3031",
+  "bbox_m": [
+   -3200000,
+   -3200000,
+   3200000,
+   3200000
+  ],
+  "width": 1600,
+  "height": 1600,
+  "attribution": "NASA EOSDIS GIBS / Worldview \u2014 MODIS Terra Corrected Reflectance (true colour)",
+  "license": "NASA imagery, public domain (no copyright)"
+ },
+ {
+  "id": "continent_bluemarble",
+  "title": "Antarctica, Blue Marble shaded relief and bathymetry",
+  "url": "/data/imagery/continent_bluemarble.jpg",
+  "layer": "BlueMarble_ShadedRelief_Bathymetry",
+  "date": "composite (static)",
+  "crs": "EPSG:3031",
+  "bbox_m": [
+   -4000000,
+   -4000000,
+   4000000,
+   4000000
+  ],
+  "width": 1200,
+  "height": 1200,
+  "attribution": "NASA Earth Observatory Blue Marble shaded relief & bathymetry, via NASA GIBS",
+  "license": "NASA imagery, public domain (no copyright)"
+ },
+ {
+  "id": "peninsula",
+  "title": "Antarctic Peninsula",
+  "url": "/data/imagery/peninsula.jpg",
+  "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+  "date": "2025-12-15",
+  "crs": "EPSG:3031",
+  "bbox_m": [
+   -2855526,
+   690438,
+   -1555526,
+   1557105
+  ],
+  "width": 1200,
+  "height": 800,
+  "attribution": "NASA EOSDIS GIBS / Worldview \u2014 MODIS Terra Corrected Reflectance (true colour)",
+  "license": "NASA imagery, public domain (no copyright)"
+ },
+ {
+  "id": "ross",
+  "title": "Ross Sea and Ross Ice Shelf",
+  "url": "/data/imagery/ross.jpg",
+  "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+  "date": "2025-12-15",
+  "crs": "EPSG:3031",
+  "bbox_m": [
+   -951419,
+   -2072460,
+   848581,
+   -872460
+  ],
+  "width": 1200,
+  "height": 800,
+  "attribution": "NASA EOSDIS GIBS / Worldview \u2014 MODIS Terra Corrected Reflectance (true colour)",
+  "license": "NASA imagery, public domain (no copyright)"
+ },
+ {
+  "id": "weddell",
+  "title": "Weddell Sea",
+  "url": "/data/imagery/weddell.jpg",
+  "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+  "date": "2025-12-15",
+  "crs": "EPSG:3031",
+  "bbox_m": [
+   -2281881,
+   757007,
+   -281881,
+   2090340
+  ],
+  "width": 1200,
+  "height": 800,
+  "attribution": "NASA EOSDIS GIBS / Worldview \u2014 MODIS Terra Corrected Reflectance (true colour)",
+  "license": "NASA imagery, public domain (no copyright)"
+ },
+ {
+  "id": "east",
+  "title": "East Antarctica",
+  "url": "/data/imagery/east.jpg",
+  "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+  "date": "2025-12-15",
+  "crs": "EPSG:3031",
+  "bbox_m": [
+   243262,
+   -1467106,
+   3243262,
+   532894
+  ],
+  "width": 1200,
+  "height": 800,
+  "attribution": "NASA EOSDIS GIBS / Worldview \u2014 MODIS Terra Corrected Reflectance (true colour)",
+  "license": "NASA imagery, public domain (no copyright)"
+ },
+ {
+  "id": "west",
+  "title": "West Antarctica and the Amundsen Sea",
+  "url": "/data/imagery/west.jpg",
+  "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+  "date": "2025-12-15",
+  "crs": "EPSG:3031",
+  "bbox_m": [
+   -2232792,
+   -1085097,
+   -432792,
+   114903
+  ],
+  "width": 1200,
+  "height": 800,
+  "attribution": "NASA EOSDIS GIBS / Worldview \u2014 MODIS Terra Corrected Reflectance (true colour)",
+  "license": "NASA imagery, public domain (no copyright)"
+ },
+ {
+  "id": "pole",
+  "title": "South Pole and the polar plateau",
+  "url": "/data/imagery/pole.jpg",
+  "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+  "date": "2025-12-15",
+  "crs": "EPSG:3031",
+  "bbox_m": [
+   -700000,
+   -466667,
+   700000,
+   466667
+  ],
+  "width": 1200,
+  "height": 800,
+  "attribution": "NASA EOSDIS GIBS / Worldview \u2014 MODIS Terra Corrected Reflectance (true colour)",
+  "license": "NASA imagery, public domain (no copyright)"
+ },
+ {
+  "id": "southern_ocean",
+  "title": "Southern Ocean",
+  "url": "/data/imagery/southern_ocean.jpg",
+  "layer": "BlueMarble_ShadedRelief_Bathymetry",
+  "date": "composite (static)",
+  "crs": "EPSG:3031",
+  "bbox_m": [
+   -4100000,
+   -2733333,
+   4100000,
+   2733333
+  ],
+  "width": 1200,
+  "height": 800,
+  "attribution": "NASA Earth Observatory Blue Marble shaded relief & bathymetry, via NASA GIBS",
+  "license": "NASA imagery, public domain (no copyright)"
+ }
+]

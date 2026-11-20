@@ -1,0 +1,92 @@
+[
+ {
+  "id": "era5_t2m_anom",
+  "title": "2 m temperature anomaly (October 2026 vs 1991-2020)",
+  "units": "degC",
+  "vmin": -6,
+  "vmax": 6,
+  "colors": [
+   "#053061",
+   "#2065ab",
+   "#4393c3",
+   "#90c4dd",
+   "#d1e5f0",
+   "#f7f6f6",
+   "#fddbc7",
+   "#f3a481",
+   "#d6604d",
+   "#b1182b",
+   "#67001f"
+  ],
+  "month": "2026-10",
+  "data_type": "reanalysis_anomaly",
+  "source": "ERA5 monthly averaged reanalysis (Copernicus CDS)",
+  "url": "/data/globe/era5_t2m_anom_202610.png",
+  "bounds": {
+   "west": -180.125,
+   "east": 179.875,
+   "south": -90.0,
+   "north": -49.875
+  }
+ },
+ {
+  "id": "era5_msl_anom",
+  "title": "Sea-level pressure anomaly (October 2026 vs 1991-2020)",
+  "units": "hPa",
+  "vmin": -12,
+  "vmax": 12,
+  "colors": [
+   "#2d004b",
+   "#532687",
+   "#8073ac",
+   "#b1aad1",
+   "#d8daeb",
+   "#f7f7f6",
+   "#fee0b6",
+   "#fcb761",
+   "#e08214",
+   "#b25706",
+   "#7f3b08"
+  ],
+  "month": "2026-10",
+  "data_type": "reanalysis_anomaly",
+  "source": "ERA5 monthly averaged reanalysis (Copernicus CDS)",
+  "url": "/data/globe/era5_msl_anom_202610.png",
+  "bounds": {
+   "west": -180.125,
+   "east": 179.875,
+   "south": -90.0,
+   "north": -49.875
+  }
+ },
+ {
+  "id": "era5_sst_anom",
+  "title": "Sea-surface temperature anomaly (October 2026 vs 1991-2020)",
+  "units": "degC",
+  "vmin": -2,
+  "vmax": 2,
+  "colors": [
+   "#053061",
+   "#2065ab",
+   "#4393c3",
+   "#90c4dd",
+   "#d1e5f0",
+   "#f7f6f6",
+   "#fddbc7",
+   "#f3a481",
+   "#d6604d",
+   "#b1182b",
+   "#67001f"
+  ],
+  "month": "2026-10",
+  "data_type": "reanalysis_anomaly",
+  "source": "ERA5 monthly averaged reanalysis (Copernicus CDS)",
+  "url": "/data/globe/era5_sst_anom_202610.png",
+  "bounds": {
+   "west": -180.125,
+   "east": 179.875,
+   "south": -90.0,
+   "north": -49.875
+  }
+ }
+]
