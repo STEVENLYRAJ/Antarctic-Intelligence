@@ -20,7 +20,7 @@ const DT: Record<string, { label: string; cls: string }> = {
 export function DataBadge({ type, className }: { type: DataType; className?: string }) {
   const known = DT[type] ?? (type.includes("prediction") ? DT.model_prediction : { label: type.replace(/_/g, " "), cls: "border-silver/40 text-silver" });
   return (
-    <span className={cn("inline-flex items-center gap-1.5 rounded-sm border px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em]", known.cls, className)}>
+    <span className={cn("inline-flex items-center gap-1.5 rounded-sm border px-2 py-0.5 font-mono text-[0.625rem] uppercase tracking-[0.14em]", known.cls, className)}>
       <span className="h-1 w-1 rounded-full bg-current" />
       {known.label}
     </span>
@@ -58,7 +58,7 @@ export function Panel({ children, className, title, meta }: { children: ReactNod
     <section className={cn("rounded-[var(--radius)] border border-line bg-navy/40", className)}>
       {(title || meta) && (
         <header className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-5 py-3.5">
-          {title && <h3 className="font-display text-[15px] text-glacial">{title}</h3>}
+          {title && <h3 className="font-display text-[0.9375rem] text-glacial">{title}</h3>}
           {meta}
         </header>
       )}
@@ -100,7 +100,7 @@ export function ButtonLink({ href, children, variant = "primary", className }: {
     <Link
       href={href}
       className={cn(
-        "group inline-flex items-center gap-3 rounded-full px-6 py-3.5 text-[13px] font-medium uppercase tracking-[0.16em] transition-all duration-300",
+        "group inline-flex items-center gap-3 rounded-full px-6 py-3.5 text-[0.8125rem] font-medium uppercase tracking-[0.16em] transition-all duration-300",
         variant === "primary"
           ? "bg-glacial text-polar hover:bg-cyan"
           : "border border-line-strong text-glacial hover:border-cyan hover:text-cyan",
@@ -118,7 +118,7 @@ export function KV({ rows, className }: { rows: [string, ReactNode][]; className
   return (
     <dl className={cn("divide-y divide-line text-sm", className)}>
       {rows.map(([k, v]) => (
-        <div key={k} className="grid grid-cols-[minmax(120px,40%)_1fr] gap-4 py-2.5">
+        <div key={k} className="grid grid-cols-[minmax(7.5rem,40%)_minmax(0,1fr)] gap-4 py-2.5">
           <dt className="text-muted">{k}</dt>
           <dd className="break-words text-glacial">{v}</dd>
         </div>
@@ -132,7 +132,7 @@ export function Legend({ colors, vmin, vmax, units, className }: { colors: strin
   return (
     <div className={cn("w-full", className)}>
       <div className="h-2 w-full rounded-sm" style={{ background: `linear-gradient(90deg, ${colors.join(",")})` }} />
-      <div className="mt-1.5 flex justify-between font-mono text-[10px] text-muted">
+      <div className="mt-1.5 flex justify-between font-mono text-[0.625rem] text-muted">
         <span>{vmin ?? "auto"}</span>
         <span>{units}</span>
         <span>{vmax ?? "auto"}</span>

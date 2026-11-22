@@ -34,7 +34,7 @@ export function DatasetCatalogue() {
 
   return (
     <div>
-      <div className="grid gap-4 md:grid-cols-[1fr_auto_auto_auto]">
+      <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_auto_auto_auto]">
         <label className="flex items-center gap-2 rounded border border-line bg-navy/50 px-3 py-2.5">
           <Search size={15} className="text-muted" />
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Filter by name, variable, provider or region" className="w-full bg-transparent text-sm text-glacial placeholder:text-muted focus:outline-none" aria-label="Filter datasets" />
@@ -55,7 +55,7 @@ export function DatasetCatalogue() {
         </select>
         <input type="number" min={1978} max={2026} value={year} onChange={(e) => setYear(e.target.value ? +e.target.value : "")} placeholder="Covers year…" className="w-40 rounded border border-line bg-navy px-3 py-2.5 text-sm text-glacial placeholder:text-muted" aria-label="Covers year" />
       </div>
-      <p className="mt-4 font-mono text-[11px] text-muted">
+      <p className="mt-4 font-mono text-[0.6875rem] text-muted">
         {rows.length} of {DATASETS.length} datasets · coverage and sizes verified on the local archive, 20 Nov 2026
       </p>
 
@@ -64,25 +64,25 @@ export function DatasetCatalogue() {
           const isOpen = open === d.id;
           return (
             <li key={d.id}>
-              <button onClick={() => setOpen(isOpen ? null : d.id)} aria-expanded={isOpen} className="grid w-full gap-3 py-5 text-left md:grid-cols-[1.6fr_1fr_1fr_auto] md:items-center">
+              <button onClick={() => setOpen(isOpen ? null : d.id)} aria-expanded={isOpen} className="grid w-full gap-3 py-5 text-left md:grid-cols-[1.6fr_minmax(0,1fr)_minmax(0,1fr)_auto] md:items-center">
                 <span>
-                  <span className="block text-[15px] text-glacial">{d.name}</span>
-                  <span className="mt-1 block text-[12px] text-muted">
+                  <span className="block text-[0.9375rem] text-glacial">{d.name}</span>
+                  <span className="mt-1 block text-[0.75rem] text-muted">
                     {d.provider} · {d.category}
                   </span>
                 </span>
-                <span className="font-mono text-[11px] text-silver">{d.coverage}</span>
-                <span className="font-mono text-[11px] text-silver">{d.resolution}</span>
+                <span className="font-mono text-[0.6875rem] text-silver">{d.coverage}</span>
+                <span className="font-mono text-[0.6875rem] text-silver">{d.resolution}</span>
                 <span className="flex flex-wrap justify-start gap-1.5 md:justify-end">
                   {d.status.map((s) => (
-                    <span key={s} className={cn("rounded-sm border px-2 py-0.5 font-mono text-[9.5px] uppercase tracking-[0.12em]", STATUS_CLS[s])}>
+                    <span key={s} className={cn("rounded-sm border px-2 py-0.5 font-mono text-[0.5938rem] uppercase tracking-[0.12em]", STATUS_CLS[s])}>
                       {STATUS_LABEL[s]}
                     </span>
                   ))}
                 </span>
               </button>
               {isOpen && (
-                <dl className="grid gap-x-10 gap-y-3 pb-6 text-[13px] md:grid-cols-2">
+                <dl className="grid gap-x-10 gap-y-3 pb-6 text-[0.8125rem] md:grid-cols-2">
                   {[
                     ["Variables", d.variables.join(", ")],
                     ["Units", d.units],
@@ -93,7 +93,7 @@ export function DatasetCatalogue() {
                     ["Used by", d.usedBy.length ? d.usedBy.join(", ") : "Not yet used by a model or the frontend"],
                     ["Provenance", d.provenance],
                   ].map(([k, v]) => (
-                    <div key={k} className="grid grid-cols-[110px_1fr] gap-3">
+                    <div key={k} className="grid grid-cols-[6.875rem_minmax(0,1fr)] gap-3">
                       <dt className="text-muted">{k}</dt>
                       <dd className="text-silver">{v}</dd>
                     </div>

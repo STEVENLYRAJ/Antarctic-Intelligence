@@ -460,7 +460,7 @@ export const CesiumGlobe = forwardRef<GlobeHandle, Props>(function CesiumGlobe(
       {!ready && (
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-6" role="status">
           <div className="earth-fallback breathe w-[min(42vh,60%)]" />
-          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">Initialising globe…</span>
+          <span className="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-muted">Initialising globe…</span>
         </div>
       )}
     </div>

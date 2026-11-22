@@ -56,7 +56,7 @@ export function TimeSeries({ series, units, height = 320, zeroLine = false, brus
   const Tip = ({ active, payload, label }: TooltipProps<number, string>) => {
     if (!active || !payload?.length) return null;
     return (
-      <div className="rounded border border-line-strong bg-polar/95 px-3 py-2 font-mono text-[11px] shadow-xl">
+      <div className="rounded border border-line-strong bg-polar/95 px-3 py-2 font-mono text-[0.6875rem] shadow-xl">
         <p className="mb-1 text-muted">{label}</p>
         {payload.map((p) => (
           <p key={p.dataKey as string} style={{ color: p.color }}>

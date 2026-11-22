@@ -56,7 +56,7 @@ export default function AboutPage() {
             {PHASES.map((p, i) => (
               <div key={p.n} data-reveal className={i === 0 ? "bg-navy p-8" : "bg-polar p-8"}>
                 <p className="t-meta">{p.n}</p>
-                <p className={`mt-4 font-mono text-[10px] uppercase tracking-[0.16em] ${i === 0 ? "text-ok" : "text-muted"}`}>{p.s}</p>
+                <p className={`mt-4 font-mono text-[0.625rem] uppercase tracking-[0.16em] ${i === 0 ? "text-ok" : "text-muted"}`}>{p.s}</p>
                 <h3 className="t-h3 mt-3 text-glacial">{p.t}</h3>
                 <p className="t-body mt-3">{p.d}</p>
               </div>
@@ -76,7 +76,7 @@ export default function AboutPage() {
               <p className="t-meta">Technology</p>
               <dl className="mt-5 divide-y divide-line text-sm">
                 {STACK.map(([k, v]) => (
-                  <div key={k} className="grid grid-cols-[150px_1fr] gap-4 py-3">
+                  <div key={k} className="grid grid-cols-[9.375rem_minmax(0,1fr)] gap-4 py-3">
                     <dt className="text-muted">{k}</dt>
                     <dd className="text-glacial">{v}</dd>
                   </div>
@@ -98,7 +98,7 @@ export default function AboutPage() {
                   ]}
                 />
               </div>
-              <p className="mt-6 text-[12px] text-muted">
+              <p className="mt-6 text-[0.75rem] text-muted">
                 AETHENTRA is a research prototype. Its outputs are statistical, have not been independently reviewed by domain experts, and must not be used for
                 navigation, operations or safety-critical decisions.
               </p>

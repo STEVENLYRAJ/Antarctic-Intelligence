@@ -42,12 +42,12 @@ export function MetricsTable({
   }
   return (
     <div className="overflow-x-auto" data-lenis-prevent>
-      <table className="w-full min-w-[640px] border-collapse text-[13px]">
+      <table className="w-full min-w-[40rem] border-collapse text-[0.8125rem]">
         <thead>
           <tr className="border-b border-line-strong text-left">
-            <th className="py-3 pr-4 font-mono text-[10px] font-normal uppercase tracking-[0.14em] text-muted">Model</th>
+            <th className="py-3 pr-4 font-mono text-[0.625rem] font-normal uppercase tracking-[0.14em] text-muted">Model</th>
             {cols.map((c) => (
-              <th key={c.key} className="px-3 py-3 text-right font-mono text-[10px] font-normal uppercase tracking-[0.14em] text-muted">
+              <th key={c.key} className="px-3 py-3 text-right font-mono text-[0.625rem] font-normal uppercase tracking-[0.14em] text-muted">
                 {c.label}
                 <span className="ml-1 text-ice-dim">{c.better === "higher" ? "↑" : "↓"}</span>
               </th>
@@ -59,14 +59,14 @@ export function MetricsTable({
             <tr key={k} className={cn("border-b border-line", highlight?.includes(k) && "bg-navy-2/60")}>
               <td className="py-2.5 pr-4 text-glacial">
                 {names[k] ?? k.replace(/_/g, " ")}
-                {highlight?.includes(k) && <span className="ml-2 font-mono text-[9px] uppercase tracking-[0.14em] text-cyan">deployed</span>}
+                {highlight?.includes(k) && <span className="ml-2 font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-cyan">deployed</span>}
               </td>
               {cols.map((c) => {
                 const v = rows[k][c.key];
                 return (
                   <td key={c.key} className={cn("t-num px-3 py-2.5 text-right", best[c.key] === k ? "text-cyan" : "text-silver")}>
                     {v == null ? "—" : fmt(v * (c.scale ?? 1), c.digits ?? 3)}
-                    {v != null && c.unit ? <span className="ml-0.5 text-[10px] text-muted">{c.unit}</span> : null}
+                    {v != null && c.unit ? <span className="ml-0.5 text-[0.625rem] text-muted">{c.unit}</span> : null}
                   </td>
                 );
               })}
@@ -74,7 +74,7 @@ export function MetricsTable({
           ))}
         </tbody>
       </table>
-      <p className="mt-3 font-mono text-[10px] text-muted">Cyan = best value in column. Values are returned by the API from the frozen evaluation files.</p>
+      <p className="mt-3 font-mono text-[0.625rem] text-muted">Cyan = best value in column. Values are returned by the API from the frozen evaluation files.</p>
     </div>
   );
 }

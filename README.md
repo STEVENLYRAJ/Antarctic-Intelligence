@@ -20,6 +20,172 @@ Antarctic climate & cryosphere data and models. Repository layout:
 | `notebooks/` | `01_temperature_exploration.ipynb` (ML-02) |
 | `metadata/`, `reports/` | Stage 1 manifests and Word report |
 
+## Run and host the website anywhere
+
+The platform has two processes:
+
+| Process | What it is | Port | Who connects to it |
+|---|---|---|---|
+| **API** (`api/`, FastAPI + Uvicorn) | Serves model outputs, metrics and forecasts | `8000` | Only the website server (keep it on `127.0.0.1`) |
+| **Website** (`web/`, Next.js 15) | The site, the 3D globe and the pre-built map layers in `web/public/data/` | `3000` | Browsers on any device |
+
+The browser never calls the API directly: Next.js forwards `/backend/*` to the API on the server side. So **only port 3000
+has to be reachable** from other devices, and the API can stay private. If the API is not running, the site still loads; the
+globe layers and climate charts come from static files, and model panels show an "unavailable" message.
+
+### 1. Requirements (download and install these first)
+
+| Requirement | Version | Download / install | Check |
+|---|---|---|---|
+| Git | any recent | https://git-scm.com/downloads | `git --version` |
+| Python | **3.11** (tested 3.11.9; 3.10–3.12 should work) | https://www.python.org/downloads/ — on Windows tick "Add python.exe to PATH" | `python --version` |
+| Node.js | **20 LTS or newer** (tested 24.13; Next.js 15 needs ≥ 18.18) | https://nodejs.org/en/download (npm is included) | `node --version` · `npm --version` |
+| Web browser | Chrome, Edge, Firefox or Safari with **WebGL 2** and hardware acceleration on | — | open https://get.webgl.org/webgl2/ |
+| Disk / RAM | allow about 5 GB free for the repository, Python packages and `node_modules`; 8 GB RAM recommended | — | — |
+| Internet | Needed at install time. While running, only the live NASA GIBS satellite layer and the optional Cesium terrain need it; everything else is served locally. | — | — |
+
+Optional, only for re-downloading data or retraining (not needed to run the site):
+
+| Optional | Used for | Install |
+|---|---|---|
+| CDS API key (`~/.cdsapirc`) | ERA5 downloads (`scripts/era5_bulk_download.py`) | https://cds.climate.copernicus.eu/how-to-api |
+| Copernicus Marine account | CMEMS C1–C7 downloads (`scripts/cmems_download.py`) | `pip install copernicusmarine` then `copernicusmarine login` |
+| PyTorch (CUDA) | Training or re-running the U-Net models | `pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu124` |
+| Cesium ion token | 3D terrain relief on the globe (the site works without it) | https://ion.cesium.com/tokens, put in `web/.env.local` |
+
+Raw data (`data/raw/`) and some large derived products are **not** in git (see `.gitignore`). They are only needed to
+retrain models or rebuild the map layers; the website runs from what is committed.
+
+### 2. Get the code and install dependencies (once per machine)
+
+```bash
+git clone https://github.com/STEVENLYRAJ/Antarctic-Intelligence.git
+cd Antarctic-Intelligence
+
+# Python environment for the API
+python -m venv .venv
+# Windows (PowerShell):      .venv\Scripts\Activate.ps1
+# macOS / Linux:             source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+# Website (npm install also copies the CesiumJS assets into web/public/cesium)
+cd web
+npm install
+cp .env.example .env.local        # Windows PowerShell: Copy-Item .env.example .env.local
+npm run build                     # production build, about 1 minute
+cd ..
+```
+
+If PowerShell refuses to run `Activate.ps1`, run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once.
+
+`web/.env.local` settings (no secrets are needed):
+
+```ini
+AETHENTRA_API_URL=http://127.0.0.1:8000     # where the website server finds the API
+NEXT_PUBLIC_CESIUM_ION_TOKEN=               # optional, public Cesium ion token for terrain
+```
+
+### 3. Start it (every time)
+
+Use two terminals, both started in the repository folder.
+
+```bash
+# Terminal 1: API, private to this machine
+#   (activate .venv first, as above)
+python -m uvicorn api.main:app --host 127.0.0.1 --port 8000
+```
+
+```bash
+# Terminal 2: website, reachable from this machine and the local network
+cd web
+npx next start -H 0.0.0.0 -p 3000
+```
+
+Open **http://localhost:3000**. Check: http://localhost:3000/backend/health returns `{"status":"ok",...}`.
+
+For development with hot reload, use `npm run dev` instead of `npm run build` + `next start`.
+
+Windows, start both hidden in the background from PowerShell:
+
+```powershell
+Start-Process -WindowStyle Hidden python -ArgumentList '-m','uvicorn','api.main:app','--host','127.0.0.1','--port','8000'
+Start-Process -WindowStyle Hidden -WorkingDirectory web cmd.exe -ArgumentList '/c','npx next start -H 0.0.0.0 -p 3000'
+```
+
+Stop them: close the terminals, or on Windows run
+`Get-NetTCPConnection -LocalPort 3000,8000 -State Listen | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }`.
+
+### 4. Open it on other devices (phone, tablet, laptop on the same Wi-Fi / LAN)
+
+1. Find the host computer's IP address: Windows `ipconfig` (IPv4 Address), macOS `ipconfig getifaddr en0`, Linux `hostname -I`.
+2. Allow incoming connections on port 3000 (once):
+   - **Windows** (PowerShell as Administrator):
+     `New-NetFirewallRule -DisplayName "AETHENTRA web 3000" -Direction Inbound -Protocol TCP -LocalPort 3000 -Action Allow -Profile Private`
+     (and set the Wi-Fi network to *Private* in Windows Settings > Network)
+   - **macOS**: allow "node" when the firewall prompt appears.
+   - **Linux (ufw)**: `sudo ufw allow 3000/tcp`
+3. On the other device open **http://\<host-IP\>:3000**, for example `http://192.168.1.20:3000`.
+
+Port 8000 does not need to be opened; the API stays private.
+
+### 5. Share a public link (anyone on the internet, temporary)
+
+Cloudflare quick tunnel: no account and no router changes. The link works while the command runs.
+
+```bash
+# install once:  Windows: winget install --id Cloudflare.cloudflared   macOS: brew install cloudflared
+#                Linux: https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/
+cloudflared tunnel --url http://localhost:3000
+# prints a https://<random-name>.trycloudflare.com address; share it
+```
+
+The API has no authentication and the website forwards every `/backend/*` request to it, so share public links only
+for demos and stop the tunnel (Ctrl+C) afterwards.
+
+### 6. Permanent hosting (server or cloud VM)
+
+On any Linux server or VM (Ubuntu 22.04+, 2 vCPU / 4 GB RAM or more), follow steps 1–3, then keep both processes running and
+put a web server with HTTPS in front of port 3000:
+
+```bash
+# keep both processes alive across logouts and reboots (example with pm2)
+sudo npm install -g pm2
+pm2 start "python -m uvicorn api.main:app --host 127.0.0.1 --port 8000" --name aethentra-api   # run inside the activated .venv
+pm2 start "npx next start -H 127.0.0.1 -p 3000" --name aethentra-web --cwd web
+pm2 save && pm2 startup
+
+# HTTPS reverse proxy to the website (Caddy obtains the certificate automatically)
+sudo apt install -y caddy
+echo 'your-domain.example { reverse_proxy 127.0.0.1:3000 }' | sudo tee /etc/caddy/Caddyfile
+sudo systemctl reload caddy
+```
+
+The website alone can also be deployed to Vercel (root directory `web/`). Set `AETHENTRA_API_URL` to a publicly reachable API
+URL in the Vercel project settings; without one, the static layers and charts work but the live model panels show "unavailable".
+
+### 7. Update the data shown on the site
+
+The map layers and series in `web/public/data/` are pre-built from the local archive (needs `data/raw/`):
+
+```bash
+python scripts/web/build_globe_products.py              # all products, about 16 min
+python scripts/web/build_globe_products.py era5d era5d2 # only the ERA5 daily layers and records, about 2 min
+```
+
+The running site picks up the new files without a rebuild. Commit `web/public/data/` so other machines get them on `git pull`.
+
+### Troubleshooting
+
+| Symptom | Fix |
+|---|---|
+| `/backend/health` fails | The API is not running or not on `127.0.0.1:8000`; start terminal 1, or set `AETHENTRA_API_URL` in `web/.env.local` and rebuild |
+| Globe is black or missing | Enable hardware acceleration in the browser; check https://get.webgl.org/webgl2/ |
+| `cesium not installed` during `npm install` | Delete `web/node_modules` and run `npm install` again |
+| Other devices cannot connect | Firewall rule for port 3000, network set to *Private*, and both devices on the same network (guest Wi-Fi often blocks this) |
+| Port already in use | Stop the old process (see step 3) or use another port: `npx next start -p 3001` |
+| `pip install` fails on geopandas/rasterio | Use Python 3.11 (prebuilt wheels exist), or install them with `conda install -c conda-forge geopandas rasterio` |
+
 ## ML Task 01 quick start
 
 ```bash

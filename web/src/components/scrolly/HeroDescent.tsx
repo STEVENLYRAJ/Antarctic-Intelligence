@@ -123,7 +123,7 @@ export function HeroDescent() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-polar via-polar/75 to-polar/10 md:hidden" />
 
         {/* giant wordmark */}
-        <p aria-hidden className="hero-wordmark pointer-events-none absolute inset-x-0 bottom-[-2.2vw] select-none text-center font-display text-[19vw] font-medium leading-none tracking-[0.06em] text-transparent [-webkit-text-stroke:1px_rgba(141,220,244,0.16)]">
+        <p aria-hidden className="hero-wordmark pointer-events-none absolute inset-x-0 bottom-[-2.2vw] select-none whitespace-nowrap text-center font-display text-[14.5vw] font-medium leading-none tracking-[0.02em] text-transparent [-webkit-text-stroke:1px_rgba(141,220,244,0.16)]">
           AETHENTRA
         </p>
 
@@ -170,7 +170,7 @@ export function HeroDescent() {
                   </p>
                   <p className="t-num mt-4 text-5xl text-glacial">{f.value}</p>
                   <p className="t-body mt-4">{f.body}</p>
-                  <p className="mt-5 border-t border-line pt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">Source · {f.src}</p>
+                  <p className="mt-5 border-t border-line pt-3 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-muted">Source · {f.src}</p>
                 </li>
               ))}
             </ol>
@@ -178,7 +178,7 @@ export function HeroDescent() {
         </div>
 
         {/* telemetry + scroll cue */}
-        <div className="absolute inset-x-0 bottom-7 flex items-end justify-between px-[clamp(16px,4vw,40px)] font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+        <div className="absolute inset-x-0 bottom-7 flex items-end justify-between px-[clamp(16px,4vw,40px)] font-mono text-[0.625rem] uppercase tracking-[0.2em] text-muted">
           <span className="hidden flex-col gap-1 md:flex">
             <span className="text-ice-dim">Camera · scroll-driven</span>
             <span ref={hud} className="text-silver">

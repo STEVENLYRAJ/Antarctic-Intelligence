@@ -15,7 +15,7 @@ export function Ml01Summary() {
     <div className="rounded-[var(--radius)] border border-dashed border-warn/50 bg-polar/60 p-6 backdrop-blur">
       <div className="flex flex-wrap items-center gap-3">
         <DataBadge type={f.data_type} />
-        <span className="font-mono text-[11px] text-muted">
+        <span className="font-mono text-[0.6875rem] text-muted">
           {f.target_start} → {f.target_end}
         </span>
       </div>
@@ -25,7 +25,7 @@ export function Ml01Summary() {
         <Stat label="Persistence" value={fmt(f.persistence_extent_km2 / 1e6, 2)} unit="M km²" note="Baseline: last observed week" />
         <Stat label="Climatology" value={fmt(f.climatology_extent_km2 / 1e6, 2)} unit="M km²" note="Same week, long-term mean" />
       </div>
-      <p className="mt-6 font-mono text-[10.5px] leading-relaxed text-muted">
+      <p className="mt-6 font-mono text-[0.6563rem] leading-relaxed text-muted">
         Issued {f.issue_date} · {String(f.model_version)}
         {fallback && <span className="block text-warn">Issued by the SIC-only fallback model (atmospheric inputs unavailable for this date).</span>}
       </p>
@@ -43,7 +43,7 @@ export function Ml01Sectors() {
       <div className="space-y-5">
         {f.sectors.map((s) => (
           <div key={s.sector}>
-            <div className="flex items-baseline justify-between text-[13px]">
+            <div className="flex items-baseline justify-between text-[0.8125rem]">
               <span className="text-glacial">{titleCase(s.sector)}</span>
               <span className="t-num text-silver">
                 {fmt(s.extent_km2 / 1e6, 2)} <span className="text-muted">M km² forecast</span>
@@ -57,7 +57,7 @@ export function Ml01Sectors() {
           </div>
         ))}
       </div>
-      <p className="mt-5 font-mono text-[10px] text-muted">Cyan: forecast 7-day-mean extent · pale: persistence baseline. Sectors follow the NSIDC regional convention.</p>
+      <p className="mt-5 font-mono text-[0.625rem] text-muted">Cyan: forecast 7-day-mean extent · pale: persistence baseline. Sectors follow the NSIDC regional convention.</p>
     </div>
   );
 }

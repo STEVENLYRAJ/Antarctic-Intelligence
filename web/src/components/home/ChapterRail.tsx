@@ -52,7 +52,7 @@ export function ChapterRail() {
               <span className={cn("h-px transition-all duration-500", i === active ? "w-8 bg-cyan" : "w-4 bg-line-strong group-hover:w-6 group-hover:bg-ice-dim")} />
               <span
                 className={cn(
-                  "font-mono text-[10px] uppercase tracking-[0.18em] transition-all duration-500",
+                  "font-mono text-[0.625rem] uppercase tracking-[0.18em] transition-all duration-500",
                   i === active ? "text-glacial opacity-100" : "text-muted opacity-0 group-hover:opacity-100",
                 )}
               >

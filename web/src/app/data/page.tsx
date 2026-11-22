@@ -11,7 +11,7 @@ export default function DataPage() {
     <main id="main" className="pt-16">
       <section className="container-x py-20 md:py-28">
         <Eyebrow>Scientific data intelligence</Eyebrow>
-        <div className="mt-8 grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-end">
+        <div className="mt-8 grid gap-10 lg:grid-cols-[1.3fr_minmax(0,1fr)] lg:items-end">
           <SplitReveal as="h1" trigger="mount" className="t-h1 text-glacial" lines={["What powers", <span key="b"><span className="t-serif text-ice">AETHENTRA.</span></span>]} />
           <p className="t-lead">
             Every dataset in the archive, with its source, coverage, resolution and how it is used today. A source being listed does not mean it is integrated —

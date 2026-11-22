@@ -28,13 +28,13 @@ export function Ml04Summary() {
     <div className="rounded-[var(--radius)] border border-alert/40 bg-polar/60 p-6 backdrop-blur">
       <div className="flex flex-wrap items-center gap-3">
         <DataBadge type="statistical_anomaly" />
-        <span className="font-mono text-[11px] text-muted">Latest multivariate month · {s.month}</span>
+        <span className="font-mono text-[0.6875rem] text-muted">Latest multivariate month · {s.month}</span>
       </div>
       <div className="mt-6 grid grid-cols-2 gap-6">
         <Stat label="Flagged cells" value={fmt(s.statistics.multivariate_flag_cells, 0)} note="≥ moderate severity, 2.5° grid" accent="#e76f6a" />
         <Stat label="Strong or extreme" value={fmt(s.statistics.strong_or_extreme_cells, 0)} note="Base-rate classes P98 / P99.5" />
       </div>
-      <p className="mt-6 font-mono text-[10.5px] leading-relaxed text-muted">
+      <p className="mt-6 font-mono text-[0.6563rem] leading-relaxed text-muted">
         {s.model_version} · method {s.selected_method}
         <span className="block text-warn">Statistical unusualness only — not a confirmed extreme event.</span>
       </p>
@@ -57,7 +57,7 @@ export function Ml04Variables() {
             const z = st[`${k}_area_weighted_mean_z`];
             const w = Math.min(Math.abs(z) / 1.5, 1) * 50;
             return (
-              <div key={k} className="grid grid-cols-[150px_1fr_56px] items-center gap-3 text-[13px]">
+              <div key={k} className="grid grid-cols-[9.375rem_minmax(0,1fr)_3.5rem] items-center gap-3 text-[0.8125rem]">
                 <span className="text-silver">{VARS[k]}</span>
                 <div className="relative h-2.5">
                   <div className="absolute inset-y-0 left-1/2 w-px bg-line-strong" />
@@ -68,13 +68,13 @@ export function Ml04Variables() {
             );
           })}
         </div>
-        <p className="mt-4 font-mono text-[10px] text-muted">σ relative to the {data.latest_multivariate.period ? "1981–2010 model baseline" : "baseline"}; scale ±1.5σ.</p>
+        <p className="mt-4 font-mono text-[0.625rem] text-muted">σ relative to the {data.latest_multivariate.period ? "1981–2010 model baseline" : "baseline"}; scale ±1.5σ.</p>
       </div>
       <div>
         <p className="t-meta mb-5">Flagged cells by region</p>
         <div className="space-y-3.5">
           {data.latest_multivariate.regions.map((r) => (
-            <div key={r.region} className="grid grid-cols-[170px_1fr_72px] items-center gap-3 text-[13px]">
+            <div key={r.region} className="grid grid-cols-[10.625rem_minmax(0,1fr)_4.5rem] items-center gap-3 text-[0.8125rem]">
               <span className="text-silver">{titleCase(r.region)}</span>
               <div className="h-2.5 rounded-sm bg-navy">
                 <div className="h-full rounded-sm bg-alert" style={{ width: `${(r.flagged / Math.max(r.cells, 1)) * 100}%` }} />
@@ -111,7 +111,7 @@ export function Ml04Trend() {
     <div>
       <div className="mb-5 flex flex-wrap gap-2">
         {["multivariate", ...Object.keys(VARS)].map((k) => (
-          <button key={k} onClick={() => setV(k)} className={cn("rounded-full border px-3 py-1.5 text-[12px]", v === k ? "border-alert text-alert" : "border-line text-silver hover:text-glacial")}>
+          <button key={k} onClick={() => setV(k)} className={cn("rounded-full border px-3 py-1.5 text-[0.75rem]", v === k ? "border-alert text-alert" : "border-line text-silver hover:text-glacial")}>
             {k === "multivariate" ? "Multivariate (LOF)" : VARS[k]}
           </button>
         ))}
@@ -126,7 +126,7 @@ export function Ml04Trend() {
           { key: "r", name: "12-month mean", color: "#e76f6a", t: series.t, v: series.run },
         ]}
       />
-      <p className="mt-3 text-[12px] text-muted">
+      <p className="mt-3 text-[0.75rem] text-muted">
         Share of the 50–90° S area flagged at ≥ moderate severity. Expected base rate under the 1979–2010 training climate: 5 %. {data.note}
       </p>
     </div>
@@ -140,11 +140,11 @@ export function Ml04Events() {
   const top = [...data.events].sort((a, b) => b.max_area_km2 - a.max_area_km2).slice(0, 12);
   return (
     <div>
-      <p className="mb-5 max-w-3xl text-[13px] text-silver">{data.definition}</p>
+      <p className="mb-5 max-w-3xl text-[0.8125rem] text-silver">{data.definition}</p>
       <div className="overflow-x-auto" data-lenis-prevent>
-        <table className="w-full min-w-[640px] text-[13px]">
+        <table className="w-full min-w-[40rem] text-[0.8125rem]">
           <thead>
-            <tr className="border-b border-line-strong text-left font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
+            <tr className="border-b border-line-strong text-left font-mono text-[0.625rem] uppercase tracking-[0.14em] text-muted">
               <th className="py-3 font-normal">Period</th>
               <th className="py-3 font-normal">Regions</th>
               <th className="py-3 text-right font-normal">Months</th>
@@ -167,7 +167,7 @@ export function Ml04Events() {
           </tbody>
         </table>
       </div>
-      <p className="mt-3 font-mono text-[10px] text-muted">Largest 12 of {data.events.length} episodes by area. {data.note}</p>
+      <p className="mt-3 font-mono text-[0.625rem] text-muted">Largest 12 of {data.events.length} episodes by area. {data.note}</p>
     </div>
   );
 }
@@ -179,7 +179,7 @@ export function Ml04Metrics() {
   const rows = data.test ?? data.validation;
   return (
     <div>
-      <div className="mb-6 flex items-start gap-3 rounded border border-warn/40 bg-warn/5 p-4 text-[13px] text-silver">
+      <div className="mb-6 flex items-start gap-3 rounded border border-warn/40 bg-warn/5 p-4 text-[0.8125rem] text-silver">
         <DataBadge type="demo" className="shrink-0" />
         <p>
           <strong className="text-glacial">Synthetic evaluation.</strong> {data.evaluation}. These scores measure whether each detector recovers anomalies
@@ -196,7 +196,7 @@ export function Ml04Metrics() {
           { key: "flag_rate_non_injected", label: "False-flag rate", digits: 3, better: "lower" },
         ]}
       />
-      <p className="mt-2 font-mono text-[10px] text-muted">{data.test ? "Test split (2018–2025)" : "Validation split (2011–2017)"} with injected anomalies.</p>
+      <p className="mt-2 font-mono text-[0.625rem] text-muted">{data.test ? "Test split (2018–2025)" : "Validation split (2011–2017)"} with injected anomalies.</p>
     </div>
   );
 }

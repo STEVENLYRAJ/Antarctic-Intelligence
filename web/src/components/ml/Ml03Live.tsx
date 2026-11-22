@@ -28,7 +28,7 @@ export function Ml03Summary() {
     <div className="rounded-[var(--radius)] border border-dashed border-warn/50 bg-polar/60 p-6 backdrop-blur">
       <div className="flex flex-wrap items-center gap-3">
         <DataBadge type="model_prediction" />
-        <span className="font-mono text-[11px] text-muted">
+        <span className="font-mono text-[0.6875rem] text-muted">
           Week {w.week_start} → {w.week_end}
         </span>
       </div>
@@ -38,7 +38,7 @@ export function Ml03Summary() {
         <Stat label="Ice in every view" value={pct(w.cells_weekly_ice / tot)} note="Share of observed cells" />
         <Stat label="Changed during week" value={pct(w.cells_variable / tot)} note="Ice in some views, water in others" />
       </div>
-      <p className="mt-6 font-mono text-[10.5px] text-muted">{w.model_version}</p>
+      <p className="mt-6 font-mono text-[0.6563rem] text-muted">{w.model_version}</p>
     </div>
   );
 }
@@ -51,7 +51,7 @@ export function Ml03Compare() {
   if (error || !data?.length) return <ErrorState error={error} what="SAR examples" />;
   const s = data[i];
   return (
-    <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
+    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18.75rem]">
       <CompareSlider
         before={s.files.sar}
         after={mode === "class" ? s.files.class : s.files.prob}
@@ -66,7 +66,7 @@ export function Ml03Compare() {
             <button
               key={d.scene_id}
               onClick={() => setI(k)}
-              className={cn("block w-full rounded px-3 py-2 text-left font-mono text-[11px]", k === i ? "bg-navy-2 text-glacial" : "text-muted hover:bg-navy hover:text-glacial")}
+              className={cn("block w-full rounded px-3 py-2 text-left font-mono text-[0.6875rem]", k === i ? "bg-navy-2 text-glacial" : "text-muted hover:bg-navy hover:text-glacial")}
             >
               {d.scene_id.slice(0, 3)} · {d.acquired.slice(0, 16).replace("T", " ")} UTC
             </button>
@@ -74,12 +74,12 @@ export function Ml03Compare() {
         </div>
         <div className="mt-6 flex gap-2">
           {(["class", "prob"] as const).map((m) => (
-            <button key={m} onClick={() => setMode(m)} className={cn("rounded-full border px-3 py-1.5 text-[12px]", mode === m ? "border-cyan text-cyan" : "border-line text-silver hover:text-glacial")}>
+            <button key={m} onClick={() => setMode(m)} className={cn("rounded-full border px-3 py-1.5 text-[0.75rem]", mode === m ? "border-cyan text-cyan" : "border-line text-silver hover:text-glacial")}>
               {m === "class" ? "Classes" : "Probability"}
             </button>
           ))}
         </div>
-        <div className="mt-6 space-y-2 text-[13px]">
+        <div className="mt-6 space-y-2 text-[0.8125rem]">
           {[
             ["Sea ice", s.fractions.ice, "#eaf5fc"],
             ["Open water", s.fractions.water, "#0a2452"],
@@ -94,7 +94,7 @@ export function Ml03Compare() {
             </div>
           ))}
         </div>
-        <p className="mt-6 text-[11px] leading-relaxed text-muted">
+        <p className="mt-6 text-[0.6875rem] leading-relaxed text-muted">
           Both images are on the identical 400 m EPSG:3031 grid produced by the ML-03 pipeline. Drag the handle (or use ← →) to compare the radar backscatter
           with the model output.
         </p>
@@ -133,7 +133,7 @@ export function Ml03Metrics() {
           { key: "ice_area_bias_pct", label: "Ice-area bias", unit: "%", digits: 1, better: "abs-lower" },
         ]}
       />
-      <p className="mt-4 max-w-3xl text-[13px] leading-relaxed text-silver">
+      <p className="mt-4 max-w-3xl text-[0.8125rem] leading-relaxed text-silver">
         On this test set the pixel-feature tree models score slightly higher than the deployed U-Net on overlap metrics. The scores measure agreement with
         chart-scale USNIC analyses, which smooth the ice edge, so they favour smooth classifiers and are not independent ground truth.
       </p>

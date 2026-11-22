@@ -394,7 +394,7 @@ export function Explorer() {
                   className="flex w-full items-center justify-between px-4 py-2.5 text-left text-sm text-silver hover:bg-navy hover:text-glacial"
                 >
                   {p.name}
-                  <span className="font-mono text-[10px] uppercase text-muted">
+                  <span className="font-mono text-[0.625rem] uppercase text-muted">
                     {p.kind} · {fmt(p.lat, 1)}°, {fmt(p.lon, 1)}°
                   </span>
                 </button>
@@ -409,7 +409,7 @@ export function Explorer() {
               onClick={() => goRegion(r)}
               aria-pressed={region?.id === r.id}
               className={cn(
-                "shrink-0 rounded-full border px-3 py-1 text-[11.5px] backdrop-blur-md transition-colors",
+                "shrink-0 rounded-full border px-3 py-1 text-[0.7188rem] backdrop-blur-md transition-colors",
                 region?.id === r.id ? "border-cyan bg-cyan/15 text-glacial" : "border-line bg-polar/70 text-silver hover:border-line-strong hover:text-glacial",
               )}
             >
@@ -422,7 +422,7 @@ export function Explorer() {
       {/* Layer panel */}
       <aside
         className={cn(
-          "glass absolute bottom-[7.5rem] left-4 top-[9.75rem] z-20 flex w-[350px] lg:bottom-14 lg:top-20 lg:z-10 max-w-[calc(100%-32px)] flex-col overflow-hidden rounded-[var(--radius-lg)] transition-transform duration-500",
+          "glass absolute bottom-[7.5rem] left-4 top-[9.75rem] z-20 flex w-[21.875rem] lg:bottom-14 lg:top-20 lg:z-10 max-w-[calc(100%-32px)] flex-col overflow-hidden rounded-[var(--radius-lg)] transition-transform duration-500",
           panel ? "translate-x-0" : "-translate-x-[110%]",
         )}
         aria-label="Map layers"
@@ -431,14 +431,14 @@ export function Explorer() {
         <header className="flex items-center justify-between border-b border-line px-4 py-3">
           <p className="flex items-center gap-2 font-display text-sm">
             <Layers size={15} className="text-cyan" /> Scientific layers
-            <span className="font-mono text-[10px] text-muted">{catalog.length}</span>
+            <span className="font-mono text-[0.625rem] text-muted">{catalog.length}</span>
           </p>
           <button aria-label="Hide layer panel" onClick={() => setPanel(false)} className="text-muted hover:text-glacial">
             <X size={15} />
           </button>
         </header>
         <div className="flex-1 space-y-4 overflow-y-auto px-3 py-3" data-lenis-prevent>
-          {catalog.length === 0 && !loadErr.length && <p className="px-1 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">Loading layer catalogue…</p>}
+          {catalog.length === 0 && !loadErr.length && <p className="px-1 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-muted">Loading layer catalogue…</p>}
           {groups.map((g) => (
             <section key={g}>
               <button
@@ -457,13 +457,13 @@ export function Explorer() {
                       const on = active.includes(c.key);
                       return (
                         <li key={c.key}>
-                          <label className={cn("flex cursor-pointer items-start gap-3 rounded-md px-2 py-2 text-[12.5px] leading-snug transition-colors", on ? "bg-navy-2/60 text-glacial" : "text-silver hover:bg-navy/60")}>
+                          <label className={cn("flex cursor-pointer items-start gap-3 rounded-md px-2 py-2 text-[0.7813rem] leading-snug transition-colors", on ? "bg-navy-2/60 text-glacial" : "text-silver hover:bg-navy/60")}>
                             <input type="checkbox" checked={on} onChange={() => toggle(c.key)} className="mt-0.5 accent-[var(--cyan)]" />
                             <span className="flex-1">
                               {c.title}
                               <span className="mt-1 flex flex-wrap items-center gap-2">
                                 <DataBadge type={c.dataType} />
-                                <span className="font-mono text-[10px] text-muted">
+                                <span className="font-mono text-[0.625rem] text-muted">
                                   {c.frames.length > 1 ? `${c.frames.length} frames · ${c.period}` : c.period}
                                 </span>
                               </span>
@@ -478,7 +478,7 @@ export function Explorer() {
           ))}
           <section>
             <p className="t-meta mb-1 px-1 py-1">Satellite imagery & reference</p>
-            <label className="flex items-start gap-3 rounded-md px-2 py-2 text-[12.5px] text-silver hover:bg-navy/60">
+            <label className="flex items-start gap-3 rounded-md px-2 py-2 text-[0.7813rem] text-silver hover:bg-navy/60">
               <input type="checkbox" checked={!!tcDate} onChange={(e) => setTcDate(e.target.checked ? yesterday() : null)} className="mt-0.5 accent-[var(--cyan)]" />
               <span className="flex-1">
                 MODIS Terra true colour (NASA GIBS, daily)
@@ -491,21 +491,21 @@ export function Explorer() {
                       max={yesterday()}
                       min="2000-03-01"
                       onChange={(e) => e.target.value && setTcDate(e.target.value)}
-                      className="rounded border border-line bg-navy px-1.5 py-0.5 font-mono text-[10px] text-glacial"
+                      className="rounded border border-line bg-navy px-1.5 py-0.5 font-mono text-[0.625rem] text-glacial"
                       aria-label="Imagery date"
                     />
                   )}
                 </span>
-                <span className="mt-1 block text-[11px] text-muted">Optical: no data during polar night or under cloud.</span>
+                <span className="mt-1 block text-[0.6875rem] text-muted">Optical: no data during polar night or under cloud.</span>
               </span>
             </label>
-            <label className="flex items-center gap-3 rounded-md px-2 py-2 text-[12.5px] text-silver hover:bg-navy/60">
+            <label className="flex items-center gap-3 rounded-md px-2 py-2 text-[0.7813rem] text-silver hover:bg-navy/60">
               <input type="checkbox" checked={grid} onChange={(e) => setGrid(e.target.checked)} className="accent-[var(--cyan)]" />
               Graticule & Antarctic Circle (66.56° S)
             </label>
           </section>
           {loadErr.length > 0 && (
-            <div className="rounded border border-alert/30 bg-alert/5 p-3 text-[11px] text-silver">
+            <div className="rounded border border-alert/30 bg-alert/5 p-3 text-[0.6875rem] text-silver">
               <p className="text-glacial">Some layers are unavailable</p>
               {loadErr.map((e) => (
                 <p key={e} className="mt-1 font-mono text-muted">
@@ -520,7 +520,7 @@ export function Explorer() {
             {activeEntries.map((c) => (
               <div key={c.key}>
                 <div className="flex items-center justify-between gap-2">
-                  <p className="truncate text-[12px] text-glacial" title={c.title}>
+                  <p className="truncate text-[0.75rem] text-glacial" title={c.title}>
                     {c.title}
                   </p>
                   <div className="flex shrink-0 items-center gap-2">
@@ -540,14 +540,14 @@ export function Explorer() {
                   </div>
                 </div>
                 <Legend className="mt-2" colors={c.colors} vmin={c.vmin} vmax={c.vmax} units={c.units} />
-                <p className="mt-1 flex justify-between gap-2 font-mono text-[9.5px] text-muted">
+                <p className="mt-1 flex justify-between gap-2 font-mono text-[0.5938rem] text-muted">
                   <span className="truncate" title={c.source}>
                     {c.source}
                   </span>
                   <span className="shrink-0 text-ice-dim">{frameOf(c).t}</span>
                 </p>
                 {info === c.key && (
-                  <div className="mt-2 space-y-1.5 rounded-md border border-line bg-navy/50 p-2.5 text-[11px] leading-relaxed text-silver">
+                  <div className="mt-2 space-y-1.5 rounded-md border border-line bg-navy/50 p-2.5 text-[0.6875rem] leading-relaxed text-silver">
                     <p>
                       <span className="text-muted">Units · </span>
                       {c.units}
@@ -579,14 +579,14 @@ export function Explorer() {
         )}
       </aside>
       {!panel && (
-        <button onClick={() => setPanel(true)} className="glass absolute left-4 top-[9.75rem] z-10 flex items-center gap-2 rounded-full px-4 py-2.5 text-[13px] hover:border-cyan lg:top-20">
+        <button onClick={() => setPanel(true)} className="glass absolute left-4 top-[9.75rem] z-10 flex items-center gap-2 rounded-full px-4 py-2.5 text-[0.8125rem] hover:border-cyan lg:top-20">
           <Layers size={15} className="text-cyan" /> Layers ({active.length})
         </button>
       )}
 
       {/* Region intelligence */}
       {region && (
-        <aside className="glass absolute right-4 top-[9.5rem] z-10 hidden max-h-[calc(100%-9.5rem-10.5rem)] min-h-[260px] w-[320px] overflow-hidden rounded-[var(--radius-lg)] md:block" aria-label={`${region.name} details`}>
+        <aside className="glass absolute right-4 top-[9.5rem] z-10 hidden max-h-[calc(100%-9.5rem-10.5rem)] min-h-[16.25rem] w-[20rem] overflow-hidden rounded-[var(--radius-lg)] md:block" aria-label={`${region.name} details`}>
           <RegionCard region={region} onClose={() => setRegion(null)} />
         </aside>
       )}
@@ -594,7 +594,7 @@ export function Explorer() {
       {/* Timeline */}
       {focusEntry && (
         <div className={cn("absolute bottom-12 z-10 transition-[left] duration-500", panel ? "left-4 right-4 lg:left-[374px]" : "left-4 right-4")}>
-          <div className="glass mx-auto flex max-w-[820px] items-center gap-3 rounded-full px-3 py-2">
+          <div className="glass mx-auto flex max-w-[51.25rem] items-center gap-3 rounded-full px-3 py-2">
             <button onClick={() => setF(focusEntry.key, (fIdx + focusEntry.frames.length - 1) % focusEntry.frames.length)} aria-label="Previous frame" className="p-1 text-silver hover:text-glacial">
               <SkipBack size={14} />
             </button>
@@ -617,7 +617,7 @@ export function Explorer() {
                       setFocus(e.target.value);
                       setPlaying(false);
                     }}
-                    className="max-w-[60%] truncate bg-transparent text-[11px] text-silver focus:outline-none"
+                    className="max-w-[60%] truncate bg-transparent text-[0.6875rem] text-silver focus:outline-none"
                     aria-label="Layer controlled by the timeline"
                   >
                     {timeLayers.map((t) => (
@@ -627,9 +627,9 @@ export function Explorer() {
                     ))}
                   </select>
                 ) : (
-                  <span className="truncate text-[11px] text-silver">{focusEntry.title}</span>
+                  <span className="truncate text-[0.6875rem] text-silver">{focusEntry.title}</span>
                 )}
-                <span className="t-num shrink-0 text-[15px] text-glacial">{focusEntry.frames[fIdx].t}</span>
+                <span className="t-num shrink-0 text-[0.9375rem] text-glacial">{focusEntry.frames[fIdx].t}</span>
               </div>
               <input
                 type="range"
@@ -643,7 +643,7 @@ export function Explorer() {
                 aria-label={`Time: ${focusEntry.frames[fIdx].t}`}
                 className="range mt-1.5 w-full"
               />
-              <div className="mt-0.5 flex justify-between font-mono text-[9px] text-muted">
+              <div className="mt-0.5 flex justify-between font-mono text-[0.5625rem] text-muted">
                 <span>{focusEntry.frames[0].t}</span>
                 <span>
                   {fIdx + 1} / {focusEntry.frames.length}
@@ -673,7 +673,7 @@ export function Explorer() {
       </div>
 
       {/* Status bar */}
-      <div className="absolute inset-x-0 bottom-0 z-10 flex h-10 items-center justify-between gap-4 overflow-x-auto border-t border-line bg-polar/90 px-4 font-mono text-[10.5px] text-muted backdrop-blur-md">
+      <div className="absolute inset-x-0 bottom-0 z-10 flex h-10 items-center justify-between gap-4 overflow-x-auto border-t border-line bg-polar/90 px-4 font-mono text-[0.6563rem] text-muted backdrop-blur-md">
         <span className="flex shrink-0 items-center gap-2">
           <Navigation size={12} className="text-cyan" />
           {ptr ? `Cursor ${fmt(Math.abs(ptr.lat), 3)}° ${ptr.lat < 0 ? "S" : "N"}, ${fmt(Math.abs(ptr.lon), 3)}° ${ptr.lon < 0 ? "W" : "E"}` : "Cursor off globe"}

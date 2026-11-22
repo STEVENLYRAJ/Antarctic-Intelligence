@@ -17,14 +17,14 @@ export function SectionIndex({ sections, accent }: { sections: { id: string; tit
     return () => window.removeEventListener("scroll", on);
   }, [sections]);
   return (
-    <ol className="sticky top-36 space-y-1 border-l border-line text-[13px]">
+    <ol className="sticky top-36 space-y-1 border-l border-line text-[0.8125rem]">
       {sections.map((s, k) => {
         const on = s.id === active;
         return (
           <li key={s.id} className="relative">
             {on && <span className="absolute -left-px top-0 h-full w-px" style={{ background: accent }} />}
             <a href={`#${s.id}`} aria-current={on ? "location" : undefined} className={cn("flex gap-2 py-1 pl-4 transition-colors", on ? "text-glacial" : "text-muted hover:text-silver")}>
-              <span className="font-mono text-[10px] leading-5" style={{ color: on ? accent : undefined }}>
+              <span className="font-mono text-[0.625rem] leading-5" style={{ color: on ? accent : undefined }}>
                 {String(k + 1).padStart(2, "0")}
               </span>
               {s.title}

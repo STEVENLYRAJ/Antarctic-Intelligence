@@ -23,30 +23,36 @@ Production: `npm run build && npm start`.
 | `NEXT_DIST_DIR` | build | `.next` | Build into another folder (e.g. while `dev` is running) |
 
 ## Regenerating presentation data
+Run these from the repository root. They read only files already in the archive, except the GIBS fetch.
 ```bash
-python scripts/web/build_climate_series.py   # climate_series.json + ERA5 anomaly globe images (~15 min)
+python scripts/web/build_climate_series.py   # climate_series.json + ERA5 anomaly images (~15 min)
+python scripts/web/build_globe_products.py   # 24 time-enabled globe layers, drift + wind vectors, daily records,
+                                             # ocean/drift series (~16 min; pass e.g. "c5 c7" to rebuild parts)
 python scripts/web/build_sar_examples.py     # SAR / ML-03 comparison images
+python scripts/web/fetch_gibs_imagery.py     # cache NASA GIBS polar imagery (network, public domain)
 ```
 
-## Build & test report (2026-11-20)
+## Build & test report (2026-11-20, v2 upgrade)
 | Check | Result |
 |---|---|
 | `tsc --noEmit` | Pass, 0 errors |
-| `next build` | Pass. 15 routes prerendered static. First-load JS 103–276 kB. Cesium (5 MB) loads at runtime only on globe pages. |
-| ESLint (during build) | 0 errors. One `exhaustive-deps` warning fixed afterwards. |
-| Headless Chrome (puppeteer-core, SwiftShader WebGL), desktop 1600×900 and 1440 wide | All 12 pages load with **0 console errors and 0 failed requests**. Globe renders Blue Marble + ML-01 overlay. Scroll descent verified at two depths. |
-| Mobile 390×844 | Home and explorer render. Hero overlay and collapsed layer panel fixed after the first check. |
-| API integration | All endpoints in `docs/FRONTEND_API_INTEGRATION.md` returned data in the rendered pages |
+| `next lint` | 0 warnings, 0 errors |
+| `next build` | Pass. 15 routes prerendered static. First-load JS 103–281 kB. Cesium loads at runtime only on globe pages. |
+| Headless Chrome (puppeteer-core, SwiftShader WebGL), 1600×900 and 1440 wide | Home, explorer, Intelligence, ML-03 and Research checked: 0 console errors, 0 failed requests |
+| Interaction test (`scripts/interact.mjs`) | Timeline play, pause (Space) and step (→); Ross Sea fly-to opens its region panel; search "Thwaites" flies there; layer toggle adds the layer to the legend list; mega menu opens and lists 5 links; Escape closes it. 0 errors. |
+| Mobile 390×844 | Home hero and explorer (timeline, destinations) render. The layer button and panel were moved below the search bar. |
+| Data files | `climate_series.json`, `daily_series.json`, `globe/catalog.json` parse as strict JSON (the builder now refuses NaN) |
 
-Not yet tested: Safari / Firefox, real touch devices, Lighthouse scores, keyboard-only walkthrough of the explorer.
+Not yet tested: Safari / Firefox, real touch devices, Lighthouse scores, a full keyboard-only walkthrough.
 
 ## Known limitations
 - **Terrain:** without an ion token the globe is a smooth ellipsoid (no relief). Imagery is still real.
-- **Overlays:** globe overlays are single 0.1° images (3600 × 500), not tiled, so they soften when zoomed in close. The 2D maps on the ML pages are native resolution.
-- **ML-02 / ML-04 currency:** driven by NCEP/NCAR R1, which ends in March 2026. ML-02's latest forecast is for 2026-01-01…07, and ML-04 multivariate output stops at 2026-02.
-- **ERA5 globe anomalies and Climate Explorer:** cover the latest *monthly* ERA5 (Oct 2026). Daily ERA5 is still downloading and is not yet used.
-- **Copernicus Marine:** C3–C7 are catalogued but not yet visualised (only C1 extent and C2 thickness are in the explorer).
-- **Search:** a curated Antarctic gazetteer plus coordinate entry. There is no global geocoder (it would need an external service).
+- **Overlays:** globe layers are single equirectangular images per frame (0.1–0.3°), not tiled, so they soften when zoomed in close. The 2D maps on the ML pages are native resolution.
+- **ML-02 / ML-04 currency:** driven by NCEP/NCAR R1, which ends in March 2026. ML-02's latest forecast is for 2026-01-01…07, and ML-04 multivariate output stops at 2026-02. No model was retrained on ERA5.
+- **ERA5 daily:** on disk from 2014 (t2m, msl) to 31 Oct 2026, so the daily-temperature envelope uses a short 2014–2025 baseline. It is labelled as such.
+- **Copernicus Marine record ends:** OSI SAF 2025-09; MULTIOBS 2025-05; ensemble spread 2025-12; GLORYS 2026-09; drift 2026-10; thickness 2026-10; DMI ASIP has 96 usable dates. Drift is absent in summer months and during the AMSR-E/AMSR2 gap (Oct 2011 – Jul 2012).
+- **Region panel:** shows only the regional breakdowns each API provides. Some destinations (e.g. the Peninsula) have no ML-01 sector.
+- **Search:** curated destinations, a 22-place gazetteer and coordinate entry. There is no global geocoder (it would need an external service).
 - **Roadmap:** Phases 2–4 are shown as planned only. No content was invented for them.
 
 ## Documentation

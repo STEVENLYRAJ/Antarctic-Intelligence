@@ -26,7 +26,7 @@ export function ClimateTeaser() {
       <div className="mb-6 flex flex-wrap items-center gap-3">
         <DataBadge type="reanalysis" />
         <DataBadge type="observation" />
-        <span className="font-mono text-[11px] text-muted">12-month running mean · million km² · baseline 1991–2020</span>
+        <span className="font-mono text-[0.6875rem] text-muted">12-month running mean · million km² · baseline 1991–2020</span>
       </div>
       <TimeSeries
         units="M km²"

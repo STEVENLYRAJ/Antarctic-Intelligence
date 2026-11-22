@@ -40,7 +40,7 @@ function Headline({ slug }: { slug: string }) {
   }
   const st = [sic, t2m, sar, anom].find((s) => s.loading || s.error);
   return (
-    <div className="mt-8 min-h-[92px]">
+    <div className="mt-8 min-h-[5.75rem]">
       {value ? (
         <>
           <DataBadge type={type} />
@@ -50,9 +50,9 @@ function Headline({ slug }: { slug: string }) {
           </p>
         </>
       ) : st?.error ? (
-        <p className="font-mono text-[11px] text-muted">Live value unavailable (API offline)</p>
+        <p className="font-mono text-[0.6875rem] text-muted">Live value unavailable (API offline)</p>
       ) : (
-        <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">Loading live output…</p>
+        <p className="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-muted">Loading live output…</p>
       )}
     </div>
   );

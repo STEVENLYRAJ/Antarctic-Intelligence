@@ -14,6 +14,8 @@ interface Insight {
   body: string;
   method: string;
   type: string;
+  /** Established scientific background: why this quantity matters. Not derived from this project's data. */
+  context?: string;
   chart?: { t: string[]; v: (number | null)[]; units: string; signed?: boolean; label?: string; second?: { name: string; v: (number | null)[] } };
 }
 
@@ -47,6 +49,7 @@ export function Insights() {
       body: `${mon(ice.t[iMin])} had the lowest monthly sea-ice extent relative to the 1991–2020 average for that month in the 1979–2026 ERA5 record (${fmt(ice.v[iMin], 2)} million km²).`,
       method: "ERA5 monthly sea-ice cover ≥ 15 %, area south of 50° S, anomaly vs 1991–2020 monthly climatology.",
       type: "reanalysis",
+        context: "Sea ice reflects most incoming sunlight, insulates the ocean from the much colder winter atmosphere, and rejects salt as it freezes, producing the dense shelf water that feeds Antarctic Bottom Water. Less ice means more solar heat absorbed by the ocean in summer.",
       chart: { t: ann.t, v: ann.v, units: "M km²", signed: true },
     });
     const recent = ice.anom.slice(-36);
@@ -59,6 +62,7 @@ export function Insights() {
       body: `In the last 36 months of the record (${ice.t[ice.t.length - 36]} → ${ice.t[ice.t.length - 1]}), ${below} months had below-average Antarctic sea-ice extent.`,
       method: "Count of months with negative ERA5 extent anomaly. Descriptive statistic; no attribution of cause.",
       type: "reanalysis",
+        context: "A run of below-average months is more informative than a single record month: weather can produce one extreme month, but many consecutive months point to a persistent change in the ocean or atmosphere. Persistence is also why sea ice carries memory useful for forecasting (ML-01).",
     });
     const t = S.era5_t2m.antarctic;
     const tMax = maxIdx(t.anom);
@@ -71,6 +75,7 @@ export function Insights() {
       body: `${mon(t.t[tMax])} was the largest positive 2 m temperature anomaly averaged over 60–90° S in ERA5 (monthly mean ${fmt(t.v[tMax], 1)} °C).`,
       method: "cos(latitude)-weighted ERA5 monthly 2 m temperature, anomaly vs 1991–2020. MERRA-2 is available in the Climate Explorer for comparison.",
       type: "reanalysis",
+        context: "Antarctic near-surface temperature is among the most variable on Earth. Large monthly anomalies are usually driven by the atmospheric circulation — blocking highs and warm, moist air intrusions (atmospheric rivers) — rather than by slow background change, so a single warm month is not evidence of a trend.",
       chart: { t: tAnn.t, v: tAnn.v, units: "°C", signed: true },
     });
     const g = S.glorys_sea_ice_thickness?.antarctic;
@@ -84,6 +89,7 @@ export function Insights() {
         body: "Mean thickness of ice-covered cells in the GLORYS12 reanalysis over 1993–2026. Thickness is modelled, not observed: the only satellite Antarctic thickness record in the archive (merged CryoSat-2 + Sentinel-3 + SMOS) begins in April 2025.",
         method: "GLORYS12 monthly sithick where siconc ≥ 15 %, cos(latitude)-weighted, 50–80° S.",
         type: "model_reanalysis",
+        context: "Thickness times area gives volume, the quantity that matters for freshwater and heat budgets. Antarctic thickness is hard to observe: heavy snow pushes the ice below the waterline, flooding it and complicating satellite altimetry, which is why models fill the gap.",
         chart: { t: gAnn.t, v: gAnn.v, units: "m", signed: true },
       });
     }
@@ -104,6 +110,7 @@ export function Insights() {
         body: `${yrs[lo].y} had the lowest annual maximum daily extent in the OSI SAF record (${yrs[0].y}–${yrs[yrs.length - 1].y}). The lowest annual minimum was ${fmt(mins[loMin], 2)} M km² in ${yrs[loMin].y}.`,
         method: `${de.source}. Annual max / min of daily extent (≥ 15 %); years need data in both February and September. Single-day extremes are sensitive to weather.`,
         type: "observation",
+        context: "Each year Southern Ocean sea ice grows from about 3 to about 18 million km² and back — one of the largest seasonal changes on Earth’s surface. The winter maximum sets how much ocean is capped by ice during the season of strongest heat loss.",
         chart: { t: yrs.map((r) => r.y), v: maxs, units: "M km²", label: "Annual maximum and minimum daily extent", second: { name: "Annual minimum", v: mins } },
       });
     }
@@ -125,6 +132,7 @@ export function Insights() {
         body: `Average winter (May–October) drift speed of Antarctic sea ice, ${yrs[0][0]}–${yrs[yrs.length - 1][0]} — roughly ${fmt((vv.reduce((a, b) => a + b, 0) / vv.length) * 0.864, 0)} km per day. The fastest winter was ${yrs[fast][0]} (${fmt(vv[fast], 1)} cm/s). Drift is driven mainly by wind, so it tracks the atmosphere year to year.`,
         method: "IFREMER AMSR-E/AMSR2 3-day drift (Copernicus Marine C5): monthly mean of daily speeds over ice-covered cells, averaged May–Oct. Winters with a missing month are skipped (AMSR-E/AMSR2 gap 2011–2012).",
         type: "observation",
+        context: "Ice that forms in coastal polynyas is blown northward and melts far from where it grew. This drift is a net northward transport of fresh water that helps set the ocean’s salinity and stratification, and it links sea-ice extent directly to the winds.",
         chart: { t: yrs.map(([y]) => y), v: vv, units: "cm/s", label: "Winter-mean drift speed" },
       });
     }
@@ -140,6 +148,7 @@ export function Insights() {
         body: `${sAnn.t[w]} had the highest annual-mean near-surface ocean temperature anomaly south of 50° S in the MULTIOBS reconstruction (${sAnn.t[0]}–${sAnn.t[sAnn.t.length - 1]}, complete years only), relative to 1993–2020.`,
         method: "Copernicus Marine MULTIOBS observation-based T/S (C7), area-weighted 50–82° S, anomaly vs 1993–2020 monthly climatology. Under-ice values are sparse and largely interpolated.",
         type: "observation",
+        context: "The Southern Ocean absorbs a large share of the heat and carbon taken up by the global ocean. Warmer near-surface water can delay autumn freeze-up and melt ice from below, so ocean heat is a leading candidate in the scientific debate about recent low sea ice.",
         chart: { t: sAnn.t, v: sAnn.v, units: "°C", signed: true },
       });
     }
@@ -155,6 +164,7 @@ export function Insights() {
         body: `Average share of the 50–90° S area flagged at ≥ moderate severity over the 12 months ending ${lastYear[lastYear.length - 1].month}, against an expected 5 % under the 1979–2010 training climate. A higher rate signals a climate that differs from the training baseline — it is not, by itself, evidence of extreme events.`,
         method: "ML-04 LOF (k = 20) monthly summary from /api/ml04/monthly-summary.",
         type: "statistical_anomaly",
+        context: "A detector trained on one climate flags more often when the climate drifts away from it. The flag rate itself is therefore a simple, transparent diagnostic of non-stationarity — but distinguishing a genuine extreme from a shifted baseline needs the event-level evidence on the ML-04 page.",
       });
     }
     return out;
@@ -166,7 +176,7 @@ export function Insights() {
   return (
     <div className="space-y-px overflow-hidden rounded-[var(--radius)] border border-line bg-line">
       {items.map((it, i) => (
-        <article key={it.k} className="grid gap-10 bg-polar p-8 md:p-12 lg:grid-cols-[1fr_1.1fr]">
+        <article key={it.k} className="grid gap-10 bg-polar p-8 md:p-12 lg:grid-cols-[minmax(0,1fr)_1.1fr]">
           <div>
             <p className="t-meta flex items-center gap-3">
               <span className="text-cyan">{String(i + 1).padStart(2, "0")}</span>
@@ -176,9 +186,15 @@ export function Insights() {
             <h3 className="t-h2 mt-6 text-glacial">{it.title}</h3>
             <p className="t-num mt-6 text-5xl text-glacial">{it.value}</p>
             <p className="t-body mt-5 max-w-xl">{it.body}</p>
+            {it.context && (
+              <div className="mt-6 max-w-xl border-l-2 border-cyan/40 pl-4">
+                <p className="t-meta text-ice-dim">Why it matters</p>
+                <p className="mt-2 text-[0.875rem] leading-relaxed text-silver">{it.context}</p>
+              </div>
+            )}
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <DataBadge type={it.type} />
-              <span className="text-[11px] text-muted">{it.method}</span>
+              <span className="text-[0.6875rem] text-muted">{it.method}</span>
             </div>
           </div>
           {it.chart && (

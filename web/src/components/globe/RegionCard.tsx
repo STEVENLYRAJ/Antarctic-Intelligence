@@ -11,11 +11,11 @@ function Row({ label, value, sub, type, href }: { label: string; value: string; 
   const body = (
     <>
       <div className="flex items-center justify-between gap-2">
-        <span className="text-[11.5px] text-silver">{label}</span>
+        <span className="text-[0.7188rem] text-silver">{label}</span>
         <DataBadge type={type} />
       </div>
       <p className="t-num mt-1 text-xl text-glacial">{value}</p>
-      <p className="font-mono text-[9.5px] text-muted">{sub}</p>
+      <p className="font-mono text-[0.5938rem] text-muted">{sub}</p>
     </>
   );
   return href ? (
@@ -111,21 +111,21 @@ export function RegionCard({ region, onClose }: { region: Region; onClose: () =>
           <X size={14} />
         </button>
         <div className="absolute bottom-3 left-4">
-          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ice">{region.kicker}</p>
+          <p className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-ice">{region.kicker}</p>
           <p className="font-display text-xl text-glacial">{region.name}</p>
         </div>
       </div>
       <div className="flex-1 overflow-y-auto px-4 pb-4" data-lenis-prevent>
-        <p className="mt-3 text-[12.5px] leading-relaxed text-silver">{region.context}</p>
-        <p className="mt-2 font-mono text-[10px] text-muted">
+        <p className="mt-3 text-[0.7813rem] leading-relaxed text-silver">{region.context}</p>
+        <p className="mt-2 font-mono text-[0.625rem] text-muted">
           Centre {fmt(Math.abs(region.centre[0]), 1)}° {region.centre[0] < 0 ? "S" : "N"}, {fmt(Math.abs(region.centre[1]), 1)}° {region.centre[1] < 0 ? "W" : "E"}
         </p>
         <p className="t-meta mt-5 mb-1">Regional intelligence</p>
-        {rows.length ? rows : loading ? <p className="py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">Loading regional outputs…</p> : null}
+        {rows.length ? rows : loading ? <p className="py-3 font-mono text-[0.625rem] uppercase tracking-[0.16em] text-muted">Loading regional outputs…</p> : null}
         {!loading && !rows.length && (
-          <p className="border-t border-line py-3 text-[12px] text-muted">No AETHENTRA model reports a separate breakdown for this region. Use the map layers for spatial detail.</p>
+          <p className="border-t border-line py-3 text-[0.75rem] text-muted">No AETHENTRA model reports a separate breakdown for this region. Use the map layers for spatial detail.</p>
         )}
-        {region.imagery && <p className="mt-3 font-mono text-[9px] text-muted">Header image: NASA MODIS/Blue Marble via GIBS.</p>}
+        {region.imagery && <p className="mt-3 font-mono text-[0.5625rem] text-muted">Header image: NASA MODIS/Blue Marble via GIBS.</p>}
       </div>
     </div>
   );

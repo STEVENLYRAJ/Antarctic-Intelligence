@@ -5,7 +5,7 @@ import { Logo } from "./Nav";
 export function Footer() {
   return (
     <footer className="border-t border-line bg-polar">
-      <div className="container-x grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="container-x grid gap-12 py-16 md:grid-cols-[1.4fr_minmax(0,1fr)_minmax(0,1fr)]">
         <div>
           <div className="flex items-center gap-3">
             <Logo />
@@ -41,7 +41,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="container-x flex flex-col justify-between gap-2 border-t border-line py-6 font-mono text-[11px] text-muted md:flex-row">
+      <div className="container-x flex flex-col justify-between gap-2 border-t border-line py-6 font-mono text-[0.6875rem] text-muted md:flex-row">
         <span>Data: NSIDC · NOAA PSL · ECMWF ERA5 · NASA MERRA-2 · Copernicus Marine · ESA Sentinel-1 · NASA GIBS</span>
         <span>© 2026 AETHENTRA</span>
       </div>

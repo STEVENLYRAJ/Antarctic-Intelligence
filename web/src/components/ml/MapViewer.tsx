@@ -31,7 +31,7 @@ export function MapViewer({ product, initial, height = 560 }: { product: LayerMa
 
   const pred = layer?.data_type.includes("prediction");
   return (
-    <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
+    <div className="grid gap-6 lg:grid-cols-[17.5rem_minmax(0,1fr)]">
       <div role="tablist" aria-label="Map layers" className="flex flex-col gap-1">
         {rasters.map((l) => (
           <button
@@ -40,7 +40,7 @@ export function MapViewer({ product, initial, height = 560 }: { product: LayerMa
             aria-selected={l.id === sel}
             onClick={() => setSel(l.id)}
             className={cn(
-              "rounded px-3 py-2.5 text-left text-[13px] leading-snug transition-colors",
+              "rounded px-3 py-2.5 text-left text-[0.8125rem] leading-snug transition-colors",
               l.id === sel ? "bg-navy-2 text-glacial" : "text-silver hover:bg-navy hover:text-glacial",
             )}
           >
@@ -50,7 +50,7 @@ export function MapViewer({ product, initial, height = 560 }: { product: LayerMa
             </span>
           </button>
         ))}
-        <Link href="/explore" className="mt-4 inline-flex items-center gap-2 px-3 text-[12px] text-cyan hover:underline">
+        <Link href="/explore" className="mt-4 inline-flex items-center gap-2 px-3 text-[0.75rem] text-cyan hover:underline">
           <Globe2 size={14} /> View these layers on the 3D globe
         </Link>
       </div>
@@ -71,17 +71,17 @@ export function MapViewer({ product, initial, height = 560 }: { product: LayerMa
               className={cn("h-full w-full object-contain transition-opacity duration-500", imgOk ? "opacity-100" : "opacity-0")}
               style={{ imageRendering: "auto" }}
             />
-            {imgOk === null && <span className="absolute font-mono text-[11px] uppercase tracking-[0.16em] text-muted">Rendering…</span>}
+            {imgOk === null && <span className="absolute font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-muted">Rendering…</span>}
             {pred && (
-              <span className="absolute left-3 top-3 rounded-sm bg-warn px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-polar">
+              <span className="absolute left-3 top-3 rounded-sm bg-warn px-2 py-0.5 font-mono text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-polar">
                 Model prediction
               </span>
             )}
           </div>
-          <figcaption className="mt-4 grid gap-4 md:grid-cols-[1fr_260px]">
-            <div className="text-[13px] text-silver">
+          <figcaption className="mt-4 grid gap-4 md:grid-cols-[minmax(0,1fr)_16.25rem]">
+            <div className="text-[0.8125rem] text-silver">
               <p className="text-glacial">{layer.title}</p>
-              <p className="mt-1 font-mono text-[11px] text-muted">
+              <p className="mt-1 font-mono text-[0.6875rem] text-muted">
                 {period(layer.period)} · issued {layer.issue_date} · {data.forecast_id}
               </p>
             </div>

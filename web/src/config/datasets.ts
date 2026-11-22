@@ -121,7 +121,11 @@ export const DATASETS: Dataset[] = [
     region: "50–90° S",
     size: "7.8 GB (growing)",
     status: ["explorer", "downloaded"],
-    usedBy: ["Climate Intelligence (monthly + daily records)", "Explorer: 36-month anomaly maps, 92 daily temperature maps"],
+    usedBy: [
+      "Climate Intelligence: monthly records (t2m, MSLP, wind, precipitation, snowfall, SST, 850 hPa temperature, 500 hPa height, cloud cover, sea ice)",
+      "Climate Intelligence: daily records (t2m, MSLP, 850 hPa temperature, 500 hPa height, 10 m wind)",
+      "Explorer: 36-month anomaly maps for 9 variables; 92-day daily maps for 8 variables incl. wind arrows",
+    ],
     provenance: "Copernicus CDS API; daily means computed from 00/06/12/18 UTC fields.",
     dataType: "reanalysis",
   },

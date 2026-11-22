@@ -79,7 +79,7 @@ export default function Page() {
               <Sub title="Weekly composite">
                 <MapViewer product="sar" initial="weekly_class" />
               </Sub>
-              <p className="mt-4 text-[12.5px] text-muted">
+              <p className="mt-4 text-[0.7813rem] text-muted">
                 Compare with an independent SAR + AMSR2 analysis on the same dates:{" "}
                 <a href="/explore?layer=dmi_asip" className="text-cyan hover:text-glacial">
                   DMI ASIP in the explorer

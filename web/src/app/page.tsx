@@ -24,6 +24,19 @@ function catalogueStats() {
   }
 }
 
+/** "≈ 105 GB" -> small approx sign and unit around a large number, so the value never wraps in a narrow column. */
+function StatText({ v }: { v: string }) {
+  const m = v.match(/^(≈\s*)?([\d.,]+)\s*(.*)$/);
+  if (!m) return <>{v}</>;
+  return (
+    <>
+      {m[1] && <span className="mr-1 align-[0.18em] text-[0.55em] text-muted">≈</span>}
+      {m[2]}
+      {m[3] && <span className="ml-1.5 text-[0.5em] text-silver">{m[3]}</span>}
+    </>
+  );
+}
+
 export default function Home() {
   const modelSets = DATASETS.filter((d) => d.status.includes("model")).length;
   const cat = catalogueStats();
@@ -45,7 +58,7 @@ export default function Home() {
       <section id="data" className="relative border-t border-line py-32 md:py-44">
         <div className="container-x">
           <Eyebrow index="05">The data</Eyebrow>
-          <div className="mt-8 grid gap-10 md:grid-cols-[1fr_1.4fr] md:items-end">
+          <div className="mt-8 grid gap-10 md:grid-cols-[minmax(0,1fr)_1.4fr] md:items-end">
             <SplitReveal className="t-h1 text-glacial" lines={["Forty-seven years", <span key="l3">of <span className="t-serif text-ice">sea ice.</span></span>]} />
             <p className="t-lead">
               Monthly Antarctic sea-ice extent anomaly from two independent records — ERA5 and the EUMETSAT OSI SAF climate data record — relative to
@@ -56,7 +69,7 @@ export default function Home() {
             <ClimateTeaser />
           </Reveal>
 
-          <div className="mt-24 grid gap-12 lg:grid-cols-[1fr_1.3fr]">
+          <div className="mt-24 grid gap-12 lg:grid-cols-[minmax(0,1fr)_1.3fr]">
             <div>
               <h3 className="t-h2 text-glacial">
                 Built on verified <span className="t-serif text-ice">records.</span>
@@ -77,7 +90,9 @@ export default function Home() {
             <Reveal className="grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-3">
               {stats.map(([v, l, f]) => (
                 <div key={l} data-reveal className="border-t border-line pt-4">
-                  <p className="t-num text-4xl text-glacial md:text-5xl">{typeof v === "number" && !f ? <CountUp value={v} /> : v}</p>
+                  <p className="t-num whitespace-nowrap text-4xl text-glacial md:text-5xl">
+                    {typeof v === "number" && !f ? <CountUp value={v} /> : typeof v === "string" ? <StatText v={v} /> : v}
+                  </p>
                   <p className="mt-2 text-sm text-muted">{l}</p>
                 </div>
               ))}
@@ -90,7 +105,7 @@ export default function Home() {
       <section id="platform" className="relative border-t border-line py-32 md:py-44">
         <div className="atmo pointer-events-none absolute inset-0 opacity-70" />
         <div className="container-x relative">
-          <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:items-end">
+          <div className="grid gap-10 md:grid-cols-[1.2fr_minmax(0,1fr)] md:items-end">
             <div>
               <Eyebrow index="06">Machine intelligence</Eyebrow>
               <SplitReveal className="t-h1 mt-8 text-glacial" lines={["Four models.", <span key="l2">One <span className="t-serif text-ice">frozen</span> continent.</span>]} />
@@ -120,7 +135,7 @@ export default function Home() {
       {/* CTA */}
       <section className="relative overflow-hidden border-t border-line py-40">
         <div className="grid-lines absolute inset-0 opacity-60" />
-        <div className="absolute left-1/2 top-1/2 h-[620px] w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(72,200,232,0.10),transparent_65%)]" />
+        <div className="absolute left-1/2 top-1/2 h-[38.75rem] w-[38.75rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(72,200,232,0.10),transparent_65%)]" />
         <div className="container-x relative text-center">
           <SplitReveal className="t-display mx-auto text-glacial" lines={[<span key="l6">Explore the <span className="t-serif text-ice">ice.</span></span>]} />
           <p className="t-lead mx-auto mt-8 max-w-xl">
@@ -135,7 +150,7 @@ export default function Home() {
               Research insights
             </ButtonLink>
           </div>
-          <p className="mt-16 font-mono text-[11px] text-muted">
+          <p className="mt-16 font-mono text-[0.6875rem] text-muted">
             Research prototype · statistical models · not for operational or safety-critical use ·{" "}
             <Link href="/about" className="underline decoration-line-strong underline-offset-4 hover:text-glacial">
               about & limitations

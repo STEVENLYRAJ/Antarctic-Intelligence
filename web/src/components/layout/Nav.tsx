@@ -67,7 +67,7 @@ export function Nav() {
       <div className="container-x flex h-16 items-center justify-between gap-6">
         <Link href="/" className="group flex items-center gap-3" aria-label="AETHENTRA home">
           <Logo />
-          <span className="font-display text-[15px] font-medium tracking-[0.28em] text-glacial">AETHENTRA</span>
+          <span className="font-display text-[0.9375rem] font-medium tracking-[0.28em] text-glacial">AETHENTRA</span>
         </Link>
         <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-0.5">
@@ -79,7 +79,7 @@ export function Nav() {
                     aria-controls="mega-models"
                     onClick={() => setMega((m) => !m)}
                     className={cn(
-                      "relative flex items-center gap-1 rounded px-3 py-2 text-[13px] transition-colors",
+                      "relative flex items-center gap-1 rounded px-3 py-2 text-[0.8125rem] transition-colors",
                       isActive(n.href) || mega ? "text-glacial" : "text-silver hover:text-glacial",
                     )}
                   >
@@ -93,7 +93,7 @@ export function Nav() {
                   <Link
                     href={n.href}
                     aria-current={isActive(n.href) ? "page" : undefined}
-                    className={cn("relative rounded px-3 py-2 text-[13px] transition-colors", isActive(n.href) ? "text-glacial" : "text-silver hover:text-glacial")}
+                    className={cn("relative rounded px-3 py-2 text-[0.8125rem] transition-colors", isActive(n.href) ? "text-glacial" : "text-silver hover:text-glacial")}
                   >
                     {n.label}
                     {isActive(n.href) && <span className="absolute inset-x-3 -bottom-[1px] h-px bg-cyan" />}
@@ -104,14 +104,14 @@ export function Nav() {
           </ul>
         </nav>
         <div className="flex items-center gap-3">
-          <span className="hidden items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-muted xl:flex">
+          <span className="hidden items-center gap-2 font-mono text-[0.625rem] uppercase tracking-[0.18em] text-muted xl:flex">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan opacity-50" />
               <span className="relative h-1.5 w-1.5 rounded-full bg-cyan" />
             </span>
             Phase 1 · Antarctica
           </span>
-          <Link href="/explore" className="hidden rounded-full border border-line-strong px-4 py-1.5 text-[12px] text-glacial transition-colors hover:border-cyan hover:text-cyan md:inline-flex lg:hidden xl:inline-flex">
+          <Link href="/explore" className="hidden rounded-full border border-line-strong px-4 py-1.5 text-[0.75rem] text-glacial transition-colors hover:border-cyan hover:text-cyan md:inline-flex lg:hidden xl:inline-flex">
             Launch explorer
           </Link>
           <button
@@ -136,11 +136,11 @@ export function Nav() {
         )}
         aria-hidden={!mega}
       >
-        <div className="container-x grid grid-cols-[1fr_3fr] gap-10 py-8">
+        <div className="container-x grid grid-cols-[minmax(0,1fr)_3fr] gap-10 py-8">
           <div>
             <p className="t-meta">Machine-learning intelligence</p>
             <p className="mt-3 text-sm leading-relaxed text-silver">Four Antarctic models, each trained on a strictly time-ordered split and served through the AETHENTRA API.</p>
-            <Link href="/models" tabIndex={mega ? 0 : -1} className="mt-5 inline-flex items-center gap-2 text-[13px] text-cyan hover:text-glacial">
+            <Link href="/models" tabIndex={mega ? 0 : -1} className="mt-5 inline-flex items-center gap-2 text-[0.8125rem] text-cyan hover:text-glacial">
               All models <ArrowUpRight size={14} />
             </Link>
           </div>
@@ -155,12 +155,12 @@ export function Nav() {
                     pathname === `/models/${m.slug}` && "border-line-strong bg-navy/40",
                   )}
                 >
-                  <span className="flex items-center justify-between font-mono text-[10px] tracking-[0.16em]" style={{ color: m.accent }}>
+                  <span className="flex items-center justify-between font-mono text-[0.625rem] tracking-[0.16em]" style={{ color: m.accent }}>
                     {m.code}
                     <ArrowUpRight size={13} className="text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-glacial" />
                   </span>
-                  <span className="mt-3 block font-display text-[15px] leading-snug text-glacial">{m.name}</span>
-                  <span className="mt-2 block text-[12px] leading-relaxed text-muted">{m.short}</span>
+                  <span className="mt-3 block font-display text-[0.9375rem] leading-snug text-glacial">{m.name}</span>
+                  <span className="mt-2 block text-[0.75rem] leading-relaxed text-muted">{m.short}</span>
                   <span className="mt-4 block h-px w-full origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100" style={{ background: m.accent }} />
                 </Link>
               </li>
@@ -181,8 +181,8 @@ export function Nav() {
                   <ul className="mb-2 grid grid-cols-2 gap-2">
                     {MODELS.map((m) => (
                       <li key={m.slug}>
-                        <Link href={`/models/${m.slug}`} className="block rounded border border-line px-3 py-2.5 text-[13px] text-silver">
-                          <span className="font-mono text-[10px]" style={{ color: m.accent }}>
+                        <Link href={`/models/${m.slug}`} className="block rounded border border-line px-3 py-2.5 text-[0.8125rem] text-silver">
+                          <span className="font-mono text-[0.625rem]" style={{ color: m.accent }}>
                             {m.code}
                           </span>
                           <span className="block text-glacial">{m.name}</span>

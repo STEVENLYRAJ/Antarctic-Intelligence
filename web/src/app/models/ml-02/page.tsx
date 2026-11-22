@@ -74,7 +74,7 @@ export default function Page() {
           content: (
             <>
               <MapViewer product="t2m" initial="forecast_anomaly" />
-              <p className="mt-4 text-[12.5px] text-muted">
+              <p className="mt-4 text-[0.7813rem] text-muted">
                 For the most recent reanalysis temperature (ERA5, daily to 31 Oct 2026), open the{" "}
                 <a href="/explore?layer=era5_t2m_daily" className="text-cyan hover:text-glacial">
                   explorer

@@ -117,10 +117,10 @@ export function PolarCompare() {
   if (error || !data) return <ErrorState error={error} what="the sea-ice map catalogue" />;
   if (!layer) return <p className="text-sm text-muted">The OSI SAF monthly map series has not been generated yet (run scripts/web/build_globe_products.py c1).</p>;
 
-  const sel = "rounded border border-line bg-navy px-2 py-1.5 font-mono text-[12px] text-glacial";
+  const sel = "rounded border border-line bg-navy px-2 py-1.5 font-mono text-[0.75rem] text-glacial";
   return (
-    <div className="grid gap-8 lg:grid-cols-[1fr_280px]">
-      <div className="mx-auto w-full max-w-[640px]">
+    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_17.5rem]">
+      <div className="mx-auto w-full max-w-[40rem]">
         {imgs ? (
           <CompareSlider before={imgs.a} after={imgs.b} beforeLabel={`${MONTHS[+month - 1]} ${ya}`} afterLabel={`${MONTHS[+month - 1]} ${yb}`} aspect={1} />
         ) : err ? (
@@ -132,7 +132,7 @@ export function PolarCompare() {
       <aside className="space-y-5">
         <DataBadge type="observation" />
         <div className="grid grid-cols-2 gap-3">
-          <label className="text-[12px] text-muted">
+          <label className="text-[0.75rem] text-muted">
             Left year
             <select value={ya} onChange={(e) => setYa(e.target.value)} className={`${sel} mt-1 w-full`}>
               {years.map((y) => (
@@ -140,7 +140,7 @@ export function PolarCompare() {
               ))}
             </select>
           </label>
-          <label className="text-[12px] text-muted">
+          <label className="text-[0.75rem] text-muted">
             Right year
             <select value={yb} onChange={(e) => setYb(e.target.value)} className={`${sel} mt-1 w-full`}>
               {years.map((y) => (
@@ -149,7 +149,7 @@ export function PolarCompare() {
             </select>
           </label>
         </div>
-        <label className="block text-[12px] text-muted">
+        <label className="block text-[0.75rem] text-muted">
           Month
           <select value={month} onChange={(e) => setMonth(e.target.value)} className={`${sel} mt-1 w-full`}>
             {MONTHS.map((m, i) => (
@@ -172,14 +172,14 @@ export function PolarCompare() {
                 setYb(b);
                 setMonth(m);
               }}
-              className="rounded-full border border-line px-3 py-1 text-[11.5px] text-silver hover:border-cyan hover:text-glacial"
+              className="rounded-full border border-line px-3 py-1 text-[0.7188rem] text-silver hover:border-cyan hover:text-glacial"
             >
               {l}
             </button>
           ))}
         </div>
         <Legend colors={layer.colors} vmin={layer.vmin} vmax={layer.vmax} units={layer.units} />
-        <p className="text-[12px] leading-relaxed text-muted">
+        <p className="text-[0.75rem] leading-relaxed text-muted">
           Monthly mean sea-ice concentration (≥ 15 %), {layer.source}. Reprojected in your browser to south-polar stereographic over NASA Blue Marble.
           The dashed ring is the Antarctic Circle. Single months show weather-driven variability as well as long-term change.
         </p>

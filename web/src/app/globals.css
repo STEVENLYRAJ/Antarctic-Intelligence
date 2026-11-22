@@ -25,7 +25,7 @@
 
   --radius: 8px;
   --radius-lg: 14px;
-  --container: 1280px;
+  --container: 80rem;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
@@ -57,6 +57,12 @@ html {
   background: var(--polar-black);
   color-scheme: dark;
 }
+/* Large and high-resolution monitors: scale type, spacing and the content column with the viewport so the
+   layout fills the screen proportionally instead of sitting in a narrow 1280 px column. All sizes are rem-based. */
+@media (min-width: 1680px) { html { font-size: 17px; } :root { --container: 84rem; } }
+@media (min-width: 2200px) { html { font-size: 19px; } :root { --container: 96rem; } }
+@media (min-width: 2800px) { html { font-size: 22px; } :root { --container: 100rem; } }
+@media (min-width: 3600px) { html { font-size: 26px; } }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 

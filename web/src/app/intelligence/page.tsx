@@ -18,6 +18,9 @@ const GLOBE_LAYERS = [
   { id: "glorys_sithick", t: "Ice thickness (reanalysis)", d: "GLORYS12 monthly thickness 2023–2026 — model reanalysis, not an observation.", type: "model_reanalysis" },
   { id: "ens_sic_spread", t: "Reanalysis disagreement", d: "Spread of sea-ice concentration across an ensemble of ocean reanalyses.", type: "model_reanalysis" },
   { id: "era5_t2m_anom_series", t: "Temperature anomaly maps", d: "ERA5 monthly 2 m temperature anomaly for the latest 36 months.", type: "reanalysis_anomaly" },
+  { id: "era5_wind10_daily", t: "Katabatic and westerly winds", d: "ERA5 daily 10 m wind speed with direction arrows for the latest 92 days.", type: "reanalysis" },
+  { id: "era5_z500_daily", t: "The polar vortex", d: "ERA5 daily 500 hPa geopotential height — troughs, ridges and the circumpolar jet.", type: "reanalysis" },
+  { id: "era5_siconc_anom_series", t: "Sea-ice anomaly maps", d: "ERA5 monthly sea-ice concentration anomaly vs 1991–2020 for the latest 36 months.", type: "reanalysis_anomaly" },
 ];
 
 export default function IntelligencePage() {
@@ -27,14 +30,14 @@ export default function IntelligencePage() {
         <div className="atmo pointer-events-none absolute inset-0" />
         <div className="container-x relative py-20 md:py-28">
           <Eyebrow>Antarctic climate intelligence</Eyebrow>
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-end">
+          <div className="mt-8 grid gap-10 lg:grid-cols-[1.3fr_minmax(0,1fr)] lg:items-end">
             <SplitReveal as="h1" trigger="mount" className="t-h1 text-glacial" lines={["Forty-seven years", <span key="b">of the <span className="t-serif text-ice">southern</span> climate.</span>]} />
             <p className="t-lead">
               Records from ERA5, MERRA-2, the EUMETSAT OSI SAF sea-ice climate record, IFREMER sea-ice drift, the GLORYS12 reanalysis and the MULTIOBS ocean
               reconstruction — each labelled with its units, coverage, method and limitations.
             </p>
           </div>
-          <nav aria-label="Sections" className="mt-12 flex flex-wrap gap-2 font-mono text-[11px] uppercase tracking-[0.14em]">
+          <nav aria-label="Sections" className="mt-12 flex flex-wrap gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em]">
             {[
               ["#monthly", "01 Monthly records"],
               ["#daily", "02 This year vs history"],
@@ -99,7 +102,7 @@ export default function IntelligencePage() {
                     <ArrowUpRight size={16} className="text-muted transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cyan" />
                   </div>
                   <h3 className="mt-5 font-display text-lg text-glacial">{l.t}</h3>
-                  <p className="mt-2 text-[13px] leading-relaxed text-silver">{l.d}</p>
+                  <p className="mt-2 text-[0.8125rem] leading-relaxed text-silver">{l.d}</p>
                 </Link>
               </Spotlight>
             ))}

@@ -19,7 +19,7 @@ export function ContinentSection() {
     <section id="continent" className="relative overflow-hidden border-t border-line py-32 md:py-44">
       <div className="atmo pointer-events-none absolute inset-0" />
       <div className="container-x relative">
-        <div className="grid gap-14 lg:grid-cols-[1fr_1.05fr] lg:items-center">
+        <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_1.05fr] lg:items-center">
           <div>
             <Eyebrow index="04">The continent</Eyebrow>
             <SplitReveal className="t-h1 mt-8 text-glacial" lines={["A frozen continent,", <span key="a">seen from <span className="t-serif text-ice">orbit.</span></span>]} />
@@ -30,15 +30,15 @@ export function ContinentSection() {
             <Reveal className="mt-12 grid gap-px overflow-hidden rounded-[var(--radius-lg)] border border-line bg-line sm:grid-cols-2">
               {CHALLENGES.map((c, i) => (
                 <div key={c.t} data-reveal className="bg-polar/95 p-6">
-                  <span className="font-mono text-[10px] text-cyan">0{i + 1}</span>
-                  <h3 className="mt-3 font-display text-[17px] text-glacial">{c.t}</h3>
-                  <p className="mt-2 text-[13.5px] leading-relaxed text-silver">{c.d}</p>
+                  <span className="font-mono text-[0.625rem] text-cyan">0{i + 1}</span>
+                  <h3 className="mt-3 font-display text-[1.0625rem] text-glacial">{c.t}</h3>
+                  <p className="mt-2 text-[0.8438rem] leading-relaxed text-silver">{c.d}</p>
                 </div>
               ))}
             </Reveal>
           </div>
           <Reveal>
-            <figure data-reveal className="relative mx-auto aspect-square w-full max-w-[640px]">
+            <figure data-reveal className="relative mx-auto aspect-square w-full max-w-[40rem]">
               <div className="absolute inset-[-8%] rounded-full bg-[radial-gradient(circle,rgba(72,200,232,0.12),transparent_62%)]" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -47,7 +47,7 @@ export function ContinentSection() {
                 className="relative h-full w-full rounded-full object-cover shadow-[0_0_120px_rgba(72,200,232,0.15)] [mask-image:radial-gradient(circle,#000_62%,transparent_71%)]"
                 loading="lazy"
               />
-              <figcaption className="mt-4 text-center font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
+              <figcaption className="mt-4 text-center font-mono text-[0.625rem] uppercase tracking-[0.14em] text-muted">
                 NASA MODIS Terra corrected reflectance · 15 Dec 2025 · EPSG:3031 · via NASA GIBS (public domain)
               </figcaption>
             </figure>
@@ -78,13 +78,13 @@ export function ContinentSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-polar via-polar/55 to-polar/10" />
                 <div className="absolute inset-x-0 bottom-0 p-5">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ice">{r.kicker}</p>
+                  <p className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-ice">{r.kicker}</p>
                   <p className="mt-2 flex items-center justify-between font-display text-xl text-glacial">
                     {r.name}
                     <ArrowUpRight size={18} className="text-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cyan" />
                   </p>
-                  <p className="mt-2 line-clamp-3 text-[12.5px] leading-relaxed text-silver">{r.context}</p>
-                  <p className="mt-3 font-mono text-[9.5px] text-muted">
+                  <p className="mt-2 line-clamp-3 text-[0.7813rem] leading-relaxed text-silver">{r.context}</p>
+                  <p className="mt-3 font-mono text-[0.5938rem] text-muted">
                     {Math.abs(r.centre[0]).toFixed(1)}° S · {Math.abs(r.centre[1]).toFixed(1)}° {r.centre[1] < 0 ? "W" : "E"}
                   </p>
                 </div>
@@ -92,7 +92,7 @@ export function ContinentSection() {
             </Spotlight>
           ))}
         </Reveal>
-        <p className="mt-6 font-mono text-[10px] text-muted">Imagery: NASA EOSDIS GIBS — MODIS Terra true colour (15 Dec 2025) and Blue Marble. Polar stereographic views; grid north points toward 180°.</p>
+        <p className="mt-6 font-mono text-[0.625rem] text-muted">Imagery: NASA EOSDIS GIBS — MODIS Terra true colour (15 Dec 2025) and Blue Marble. Polar stereographic views; grid north points toward 180°.</p>
       </div>
     </section>
   );

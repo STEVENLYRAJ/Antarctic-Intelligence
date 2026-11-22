@@ -1,0 +1,6 @@
+2026-11-09 09:05:56,097 INFO aethentra.train   eval validation_cnn: 0/260 dates 1 s
+2026-11-09 09:06:05,484 INFO aethentra.train   eval validation_cnn: 50/260 dates 10 s
+2026-11-09 09:06:15,765 INFO aethentra.train   eval validation_cnn: 100/260 dates 21 s
+2026-11-09 09:06:26,673 INFO aethentra.train   eval validation_cnn: 150/260 dates 31 s
+2026-11-09 09:06:37,783 INFO aethentra.train   eval validation_cnn: 200/260 dates 43 s
+2026-11-09 09:06:48,944 INFO aethentra.train   eval validation_cnn: 250/260 dates 54 s

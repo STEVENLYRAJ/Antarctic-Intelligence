@@ -22,6 +22,7 @@ qa:
   max_domain_mean_daily_jump_degC: 8.0
 sources:
   era5:
+    end: "2026-10-31"     # ERA5 runs to ~5 days before today; cube ends at the last complete downloaded month
     t2m: {glob: "data/raw/era5/t2m/era5_daily_mean_t2m_{year}.nc"}
     msl: {glob: "data/raw/era5/msl/era5_daily_mean_msl_{year}.nc"}
     u10: {glob: "data/raw/era5/u10/era5_daily_mean_u10_{year}.nc"}
@@ -30,7 +31,7 @@ sources:
     tcc: {glob: "data/raw/era5/tcc/era5_daily_mean_tcc_{year}.nc"}
     z500: {glob: "data/raw/era5/z500/era5_daily_mean_z500_{year}.nc"}
     t850: {glob: "data/raw/era5/t850/era5_daily_mean_t850_{year}.nc"}
-    orography: {file: data/raw/era5/invariant/era5_z_invariant.nc, var: z, divide_by: 9.80665}
+    orography: {file: data/raw/era5/invariant/era5_invariant.nc, var: z, divide_by: 9.80665}
   ncep_r1:     # INTERIM substitute (not ERA5): 2 m T on T62 Gaussian; slp + sigma-0.995 winds on 2.5 deg (ML-01 files)
     # QA: 1997-08-07 domain-mean T2m jumps +8.6 C in one day (ocean cells +12.7 C mean, up to +43 C; next-largest jump on
     # record 2.8 C), decaying over ~4 days -> treated as a reanalysis boundary-condition artefact. Issue dates whose input

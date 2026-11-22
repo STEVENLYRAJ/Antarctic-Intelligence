@@ -331,4 +331,8 @@ export interface DailySeriesFile {
   meta: { generated_utc: string; day_index: string };
   sea_ice_extent?: DailyRecord;
   t2m?: DailyRecord;
+  era5_msl?: DailyRecord;
+  era5_t850?: DailyRecord;
+  era5_z500?: DailyRecord;
+  era5_wind10?: DailyRecord;
 }

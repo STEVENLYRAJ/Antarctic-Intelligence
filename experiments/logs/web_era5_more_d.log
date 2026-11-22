@@ -1,0 +1,12 @@
+[     7s] layer era5_t850_daily 92 frames
+[    10s] layer era5_z500_daily 92 frames
+[    16s] layer era5_msl_daily 92 frames
+[    19s] layer era5_tcc_daily 92 frames
+[    23s] layer era5_tp_daily 92 frames
+[    25s] layer era5_siconc_daily 92 frames
+[    33s] layer era5_wind10_daily 92 frames
+[    77s] daily record msl 2014-01-01 -> 2026-10-31 4687
+[    77s] daily record t850 2018-01-01 -> 2026-10-31 3226
+[    77s] daily record z500 2018-01-01 -> 2026-10-31 3226
+[    77s] daily record wind10 2018-01-01 -> 2026-10-31 3226
+[    77s] done 24 layers 

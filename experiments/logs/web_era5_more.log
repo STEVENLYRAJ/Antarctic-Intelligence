@@ -1,0 +1,18 @@
+[    10s] layer era5_t850_anom_series 36 frames
+[    26s] layer era5_z500_anom_series 36 frames
+[    46s] layer era5_tp_anom_series 36 frames
+[    57s] layer era5_tcc_anom_series 36 frames
+[    74s] layer era5_siconc_anom_series 36 frames
+[    89s] layer era5_wind10_anom_series 36 frames
+[    95s] layer era5_t850_daily 92 frames
+[    98s] layer era5_z500_daily 92 frames
+[   104s] layer era5_msl_daily 92 frames
+[   107s] layer era5_tcc_daily 92 frames
+[   111s] layer era5_tp_daily 92 frames
+[   113s] layer era5_siconc_daily 92 frames
+[   121s] layer era5_wind10_daily 92 frames
+[   176s] daily record msl 2014-01-01 -> 2026-10-31 4687
+[   176s] daily record t850 2018-01-01 -> 2026-10-31 2861
+[   176s] daily record z500 2018-01-01 -> 2026-10-31 3226
+[   176s] daily record wind10 2018-01-01 -> 2026-10-31 3226
+[   176s] done 24 layers 

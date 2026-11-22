@@ -1,0 +1,81 @@
+[     3s] C1 osisaf_sic_cdr_1978.nc
+[     8s] C1 osisaf_sic_cdr_1979.nc
+[    13s] C1 osisaf_sic_cdr_1980.nc
+[    19s] C1 osisaf_sic_cdr_1981.nc
+[    24s] C1 osisaf_sic_cdr_1982.nc
+[    30s] C1 osisaf_sic_cdr_1983.nc
+[    35s] C1 osisaf_sic_cdr_1984.nc
+[    40s] C1 osisaf_sic_cdr_1985.nc
+[    45s] C1 osisaf_sic_cdr_1986.nc
+[    52s] C1 osisaf_sic_cdr_1987.nc
+[    62s] C1 osisaf_sic_cdr_1988.nc
+[    73s] C1 osisaf_sic_cdr_1989.nc
+[    83s] C1 osisaf_sic_cdr_1990.nc
+[    95s] C1 osisaf_sic_cdr_1991.nc
+[   105s] C1 osisaf_sic_cdr_1992.nc
+[   115s] C1 osisaf_sic_cdr_1993.nc
+[   128s] C1 osisaf_sic_cdr_1994.nc
+[   139s] C1 osisaf_sic_cdr_1995.nc
+[   152s] C1 osisaf_sic_cdr_1996.nc
+[   161s] C1 osisaf_sic_cdr_1997.nc
+[   172s] C1 osisaf_sic_cdr_1998.nc
+[   183s] C1 osisaf_sic_cdr_1999.nc
+[   194s] C1 osisaf_sic_cdr_2000.nc
+[   205s] C1 osisaf_sic_cdr_2001.nc
+[   216s] C1 osisaf_sic_cdr_2002.nc
+[   227s] C1 osisaf_sic_cdr_2003.nc
+[   238s] C1 osisaf_sic_cdr_2004.nc
+[   250s] C1 osisaf_sic_cdr_2005.nc
+[   262s] C1 osisaf_sic_cdr_2006.nc
+[   275s] C1 osisaf_sic_cdr_2007.nc
+[   301s] C1 osisaf_sic_cdr_2008.nc
+[   323s] C1 osisaf_sic_cdr_2009.nc
+[   334s] C1 osisaf_sic_cdr_2010.nc
+[   344s] C1 osisaf_sic_cdr_2011.nc
+[   355s] C1 osisaf_sic_cdr_2012.nc
+[   365s] C1 osisaf_sic_cdr_2013.nc
+[   375s] C1 osisaf_sic_cdr_2014.nc
+[   386s] C1 osisaf_sic_cdr_2015.nc
+[   396s] C1 osisaf_sic_cdr_2016.nc
+[   405s] C1 osisaf_sic_cdr_2017.nc
+[   415s] C1 osisaf_sic_cdr_2018.nc
+[   424s] C1 osisaf_sic_cdr_2019.nc
+[   434s] C1 osisaf_sic_cdr_2020.nc
+[   439s] C1 osisaf_sic_icdr_2021.nc
+[   445s] C1 osisaf_sic_icdr_2022.nc
+[   450s] C1 osisaf_sic_icdr_2023.nc
+[   455s] C1 osisaf_sic_icdr_2024.nc
+[   459s] C1 osisaf_sic_icdr_2025.nc
+[   459s] layer osisaf_sic 558 frames
+[   646s] layer dmi_asip 96 frames
+[   652s] C5 ifremer_drift_amsr_p3d_2003.nc
+[   659s] C5 ifremer_drift_amsr_p3d_2004.nc
+[   665s] C5 ifremer_drift_amsr_p3d_2005.nc
+[   673s] C5 ifremer_drift_amsr_p3d_2006.nc
+[   682s] C5 ifremer_drift_amsr_p3d_2007.nc
+[   689s] C5 ifremer_drift_amsr_p3d_2008.nc
+[   696s] C5 ifremer_drift_amsr_p3d_2009.nc
+[   704s] C5 ifremer_drift_amsr_p3d_2010.nc
+[   712s] C5 ifremer_drift_amsr_p3d_2011.nc
+[   720s] C5 ifremer_drift_amsr_p3d_2012.nc
+[   728s] C5 ifremer_drift_amsr_p3d_2013.nc
+[   737s] C5 ifremer_drift_amsr_p3d_2014.nc
+[   745s] C5 ifremer_drift_amsr_p3d_2015.nc
+[   752s] C5 ifremer_drift_amsr_p3d_2016.nc
+[   759s] C5 ifremer_drift_amsr_p3d_2017.nc
+[   767s] C5 ifremer_drift_amsr_p3d_2018.nc
+[   775s] C5 ifremer_drift_amsr_p3d_2019.nc
+[   782s] C5 ifremer_drift_amsr_p3d_2020.nc
+[   790s] C5 ifremer_drift_amsr_p3d_2021.nc
+[   799s] C5 ifremer_drift_amsr_p3d_2022.nc
+[   813s] C5 ifremer_drift_amsr_p3d_2023.nc
+[   821s] C5 ifremer_drift_amsr_p3d_2024.nc
+[   833s] C5 ifremer_drift_amsr_p3d_2025.nc
+[   841s] C5 ifremer_drift_amsr_p3d_2026.nc
+[   841s] layer drift_speed 164 frames
+[   861s] layer multiobs_sst_anom 36 frames
+[   912s] layer era5_t2m_anom_series 36 frames
+[   922s] layer era5_msl_anom_series 36 frames
+[   931s] layer era5_sst_anom_series 36 frames
+[   949s] layer era5_t2m_daily 92 frames
+[   949s] done 11 layers 

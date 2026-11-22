@@ -17,7 +17,7 @@ era5:
   daily_statistic: daily_mean
   frequency: 1_hourly                  # daily mean of the 24 hourly values (UTC day)
   time_zone: utc+00:00
-  years: [1979, 2025]
+  years: [1979, 2026]                 # current year = partial: complete months only, provenance complete_year: false (refreshed)
   # Priority order = download order. Target first so baselines can run as soon as it is complete.
   single_levels:
     t2m: {cds: 2m_temperature, units: K, range: [170, 320]}
@@ -26,6 +26,7 @@ era5:
     v10: {cds: 10m_v_component_of_wind, units: m s-1, range: [-60, 60]}
     d2m: {cds: 2m_dewpoint_temperature, units: K, range: [160, 310]}
     tcc: {cds: total_cloud_cover, units: "(0 - 1)", range: [0, 1]}
+    tp: {cds: total_precipitation, units: m, range: [0, 0.05]}   # for ML-04 (daily mean of hourly accumulations); not an ML-02 input
   pressure_levels:
     z500: {cds: geopotential, level: 500, units: m2 s-2, range: [40000, 60000]}
     t850: {cds: temperature, level: 850, units: K, range: [200, 300]}

@@ -23,8 +23,8 @@ export function ModuleShell({ slug, headline, lead, sections, heroAside }: { slu
     <main id="main" className="pt-16">
       <header className="relative overflow-hidden border-b border-line">
         <div className="grid-lines absolute inset-0 opacity-50" />
-        <div className="absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full opacity-[0.12] blur-3xl" style={{ background: m.accent }} />
-        <div className="container-x relative grid gap-12 py-24 md:py-32 lg:grid-cols-[1.3fr_1fr] lg:items-end">
+        <div className="absolute -right-40 -top-40 h-[32.5rem] w-[32.5rem] rounded-full opacity-[0.12] blur-3xl" style={{ background: m.accent }} />
+        <div className="container-x relative grid gap-12 py-24 md:py-32 lg:grid-cols-[1.3fr_minmax(0,1fr)] lg:items-end">
           <div>
             <p className="t-meta flex items-center gap-3">
               <Link href="/models" className="hover:text-glacial">
@@ -49,9 +49,9 @@ export function ModuleShell({ slug, headline, lead, sections, heroAside }: { slu
                 <Link
                   href={`/models/${x.slug}`}
                   aria-current={on ? "page" : undefined}
-                  className={cn("relative flex items-center gap-2.5 px-3 py-3.5 text-[12.5px] transition-colors", on ? "text-glacial" : "text-muted hover:text-silver")}
+                  className={cn("relative flex items-center gap-2.5 px-3 py-3.5 text-[0.7813rem] transition-colors", on ? "text-glacial" : "text-muted hover:text-silver")}
                 >
-                  <span className="font-mono text-[10px]" style={{ color: x.accent }}>
+                  <span className="font-mono text-[0.625rem]" style={{ color: x.accent }}>
                     {x.code}
                   </span>
                   <span className="hidden sm:inline">{x.name}</span>
@@ -63,7 +63,7 @@ export function ModuleShell({ slug, headline, lead, sections, heroAside }: { slu
         </ul>
       </nav>
 
-      <div className="container-x grid gap-12 py-16 lg:grid-cols-[210px_1fr]">
+      <div className="container-x grid gap-12 py-16 lg:grid-cols-[13.125rem_minmax(0,1fr)]">
         <nav aria-label="On this page" className="hidden lg:block">
           <SectionIndex sections={sections.map(({ id, title }) => ({ id, title }))} accent={m.accent} />
         </nav>
@@ -112,7 +112,7 @@ export function BulletList({ items }: { items: ReactNode[] }) {
   return (
     <ul className="max-w-3xl space-y-3">
       {items.map((t, i) => (
-        <li key={i} className="flex gap-3 text-[14px] leading-relaxed text-silver">
+        <li key={i} className="flex gap-3 text-[0.875rem] leading-relaxed text-silver">
           <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-ice/70" />
           <span>{t}</span>
         </li>
@@ -126,7 +126,7 @@ export function Sub({ title, children, note }: { title: string; children: ReactN
   return (
     <div className="mt-12 first:mt-0">
       <h3 className="font-display text-lg text-glacial">{title}</h3>
-      {note && <p className="mt-1 text-[12.5px] text-muted">{note}</p>}
+      {note && <p className="mt-1 text-[0.7813rem] text-muted">{note}</p>}
       <div className="mt-5">{children}</div>
     </div>
   );

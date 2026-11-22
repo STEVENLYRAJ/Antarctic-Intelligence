@@ -52,13 +52,13 @@ function SkillBars({ rows, metrics, deployed, accent, note }: { rows: Rows; metr
             role="tab"
             aria-selected={x.key === mk}
             onClick={() => setMk(x.key)}
-            className={cn("rounded-full border px-3 py-1 text-[12px] transition-colors", x.key === mk ? "border-cyan bg-cyan/10 text-glacial" : "border-line text-silver hover:border-line-strong")}
+            className={cn("rounded-full border px-3 py-1 text-[0.75rem] transition-colors", x.key === mk ? "border-cyan bg-cyan/10 text-glacial" : "border-line text-silver hover:border-line-strong")}
           >
             {x.label}
           </button>
         ))}
       </div>
-      <p className="mt-4 font-mono text-[10.5px] text-muted">
+      <p className="mt-4 font-mono text-[0.6563rem] text-muted">
         {m.better === "lower" ? "Lower is better" : m.better === "higher" ? "Higher is better" : "Closer to zero is better"}
         {m.units ? ` · ${m.units}` : ""} · sorted best → worst
       </p>
@@ -67,15 +67,15 @@ function SkillBars({ rows, metrics, deployed, accent, note }: { rows: Rows; metr
           const isDep = d.name === deployed;
           const isBase = BASELINES.has(d.name);
           return (
-            <li key={d.name} className="grid grid-cols-[minmax(120px,190px)_1fr_auto] items-center gap-3 text-[12.5px]">
+            <li key={d.name} className="grid grid-cols-[minmax(7.5rem,11.875rem)_minmax(0,1fr)_auto] items-center gap-3 text-[0.7813rem]">
               <span className={cn("truncate", isDep ? "text-glacial" : "text-silver")} title={d.name}>
                 {d.name}
                 {isDep && (
-                  <span className="ml-2 rounded-sm border px-1 font-mono text-[9px] uppercase" style={{ borderColor: accent, color: accent }}>
+                  <span className="ml-2 rounded-sm border px-1 font-mono text-[0.5625rem] uppercase" style={{ borderColor: accent, color: accent }}>
                     deployed
                   </span>
                 )}
-                {isBase && <span className="ml-2 font-mono text-[9px] uppercase text-muted">baseline</span>}
+                {isBase && <span className="ml-2 font-mono text-[0.5625rem] uppercase text-muted">baseline</span>}
               </span>
               <span className="relative h-2.5 overflow-hidden rounded-sm bg-navy/70">
                 <span
@@ -89,13 +89,13 @@ function SkillBars({ rows, metrics, deployed, accent, note }: { rows: Rows; metr
         })}
       </ul>
       {dep && bestBase && (
-        <p className="mt-5 text-[13px] text-silver">
+        <p className="mt-5 text-[0.8125rem] text-silver">
           Deployed <span className="text-glacial">{deployed}</span>: {fmt(dep.v, m.digits)}
           {m.units ? ` ${m.units}` : ""} vs best baseline <span className="text-glacial">{bestBase.name}</span>: {fmt(bestBase.v, m.digits)}
           {m.units ? ` ${m.units}` : ""}.
         </p>
       )}
-      <p className="mt-3 text-[12px] leading-relaxed text-muted">{note}</p>
+      <p className="mt-3 text-[0.75rem] leading-relaxed text-muted">{note}</p>
     </div>
   );
 }

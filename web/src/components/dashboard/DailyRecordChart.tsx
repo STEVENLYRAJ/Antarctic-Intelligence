@@ -39,17 +39,17 @@ function RecordChart({ rec, digits, defaults }: { rec: DailyRecord; digits: numb
     <div>
       <div className="flex flex-wrap items-center gap-3">
         <DataBadge type={rec.data_type} />
-        <span className="font-mono text-[11px] text-muted">
+        <span className="font-mono text-[0.6875rem] text-muted">
           {rec.units} · reference {rec.clim.base}
         </span>
         {lastPt && dev != null && (
-          <span className="ml-auto font-mono text-[11px] text-silver">
+          <span className="ml-auto font-mono text-[0.6875rem] text-silver">
             Latest {last}, day {lastPt[0] + 1}: <span className="text-glacial">{fmt(lastPt[1]!, digits)}</span> ({dev >= 0 ? "+" : ""}
             {fmt(dev, digits)} vs {rec.clim.base} mean)
           </span>
         )}
       </div>
-      <div className="mt-5 h-[380px] w-full">
+      <div className="mt-5 h-[23.75rem] w-full">
         <ResponsiveContainer>
           <ComposedChart data={data} margin={{ top: 8, right: 12, bottom: 0, left: -8 }}>
             <CartesianGrid stroke="rgba(141,220,244,0.07)" vertical={false} />
@@ -78,7 +78,7 @@ function RecordChart({ rec, digits, defaults }: { rec: DailyRecord; digits: numb
         </ResponsiveContainer>
       </div>
       <div className="mt-4 flex flex-wrap items-center gap-1.5">
-        <span className="mr-2 text-[11px] text-muted">Highlight up to 5 years:</span>
+        <span className="mr-2 text-[0.6875rem] text-muted">Highlight up to 5 years:</span>
         {years.map((y) => {
           const i = picked.indexOf(y);
           return (
@@ -86,46 +86,58 @@ function RecordChart({ rec, digits, defaults }: { rec: DailyRecord; digits: numb
               key={y}
               onClick={() => toggle(y)}
               aria-pressed={i >= 0}
-              className={cn("rounded px-1.5 py-0.5 font-mono text-[10.5px] transition-colors", i >= 0 ? "text-polar" : "text-muted hover:text-glacial")}
+              className={cn("rounded px-1.5 py-0.5 font-mono text-[0.6563rem] transition-colors", i >= 0 ? "text-polar" : "text-muted hover:text-glacial")}
               style={i >= 0 ? { background: HILITE[i % HILITE.length] } : undefined}
             >
               {y}
             </button>
           );
         })}
-        <label className="ml-auto flex items-center gap-2 text-[11px] text-muted">
+        <label className="ml-auto flex items-center gap-2 text-[0.6875rem] text-muted">
           <input type="checkbox" checked={ghosts} onChange={(e) => setGhosts(e.target.checked)} className="accent-[var(--cyan)]" /> show all other years
         </label>
       </div>
-      <p className="mt-3 text-[12px] leading-relaxed text-muted">
+      <p className="mt-3 text-[0.75rem] leading-relaxed text-muted">
         {rec.title}. {rec.source}. Shaded: {rec.clim.base} minimum–maximum (light) and 10–90th percentile (darker); dashed: {rec.clim.base} mean. {rec.note}
       </p>
     </div>
   );
 }
 
+type TabKey = "sea_ice_extent" | "t2m" | "era5_t850" | "era5_z500" | "era5_msl" | "era5_wind10";
+const TABS: { k: TabKey; label: string; digits: number; defaults: string[] }[] = [
+  { k: "sea_ice_extent", label: "Sea-ice extent", digits: 2, defaults: ["2014", "2023", "2024", "2025"] },
+  { k: "t2m", label: "Surface temperature", digits: 1, defaults: ["2023", "2025", "2026"] },
+  { k: "era5_t850", label: "850 hPa temperature", digits: 1, defaults: ["2019", "2025", "2026"] },
+  { k: "era5_z500", label: "500 hPa height", digits: 1, defaults: ["2019", "2025", "2026"] },
+  { k: "era5_msl", label: "Sea-level pressure", digits: 1, defaults: ["2016", "2025", "2026"] },
+  { k: "era5_wind10", label: "10 m wind", digits: 2, defaults: ["2019", "2025", "2026"] },
+];
+
+function span(rec?: DailyRecord) {
+  if (!rec) return "";
+  const ys = Object.keys(rec.years).sort();
+  return `${ys[0]}–${ys[ys.length - 1]}`;
+}
+
 export function DailyRecords() {
   const { data, error, loading } = useApi<DailySeriesFile>("/data/daily_series.json", true);
-  const [tab, setTab] = useState<"ice" | "t2m">("ice");
+  const [tab, setTab] = useState<TabKey>("sea_ice_extent");
   if (loading) return <Loading label="Loading daily records" />;
   if (error || !data) return <ErrorState error={error} what="daily records" />;
-  const rec = tab === "ice" ? data.sea_ice_extent : data.t2m;
+  const cfg = TABS.find((t) => t.k === tab)!;
+  const rec = data[tab];
   return (
     <div>
-      <div className="flex gap-2" role="tablist">
-        {(
-          [
-            ["ice", "Daily sea-ice extent · 1978–2025", !!data.sea_ice_extent],
-            ["t2m", "Daily temperature · 2014–2026", !!data.t2m],
-          ] as const
-        ).map(([k, l, ok]) => (
+      <div className="flex flex-wrap gap-2" role="tablist">
+        {TABS.filter((t) => !!data[t.k]).map(({ k, label }) => [k, `${label} · ${span(data[k])}`, true] as const).map(([k, l, ok]) => (
           <button
             key={k}
             role="tab"
             aria-selected={tab === k}
             disabled={!ok}
             onClick={() => setTab(k)}
-            className={cn("rounded-full border px-4 py-2 text-[13px] transition-colors disabled:opacity-40", tab === k ? "border-cyan bg-cyan/10 text-cyan" : "border-line text-silver hover:border-line-strong")}
+            className={cn("rounded-full border px-4 py-2 text-[0.8125rem] transition-colors disabled:opacity-40", tab === k ? "border-cyan bg-cyan/10 text-cyan" : "border-line text-silver hover:border-line-strong")}
           >
             {l}
           </button>
@@ -133,7 +145,7 @@ export function DailyRecords() {
       </div>
       <div className="mt-6">
         {rec ? (
-          <RecordChart key={tab} rec={rec} digits={tab === "ice" ? 2 : 1} defaults={tab === "ice" ? ["2014", "2023", "2024", "2025"] : ["2023", "2025", "2026"]} />
+          <RecordChart key={tab} rec={rec} digits={cfg.digits} defaults={cfg.defaults} />
         ) : (
           <p className="text-sm text-muted">This record has not been generated.</p>
         )}

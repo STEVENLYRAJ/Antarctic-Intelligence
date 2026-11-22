@@ -1,0 +1,48 @@
+2026-11-09 09:07:33,181 INFO aethentra.deep stack trainval 0/2190
+2026-11-09 09:07:44,614 INFO aethentra.deep stack trainval 100/2190
+2026-11-09 09:07:56,097 INFO aethentra.deep stack trainval 200/2190
+2026-11-09 09:08:07,688 INFO aethentra.deep stack trainval 300/2190
+2026-11-09 09:08:18,888 INFO aethentra.deep stack trainval 400/2190
+2026-11-09 09:08:29,962 INFO aethentra.deep stack trainval 500/2190
+2026-11-09 09:08:41,016 INFO aethentra.deep stack trainval 600/2190
+2026-11-09 09:08:52,047 INFO aethentra.deep stack trainval 700/2190
+2026-11-09 09:09:03,086 INFO aethentra.deep stack trainval 800/2190
+2026-11-09 09:09:14,264 INFO aethentra.deep stack trainval 900/2190
+2026-11-09 09:09:25,333 INFO aethentra.deep stack trainval 1000/2190
+2026-11-09 09:09:36,375 INFO aethentra.deep stack trainval 1100/2190
+2026-11-09 09:09:47,573 INFO aethentra.deep stack trainval 1200/2190
+2026-11-09 09:09:58,707 INFO aethentra.deep stack trainval 1300/2190
+2026-11-09 09:10:09,754 INFO aethentra.deep stack trainval 1400/2190
+2026-11-09 09:10:20,875 INFO aethentra.deep stack trainval 1500/2190
+2026-11-09 09:10:32,360 INFO aethentra.deep stack trainval 1600/2190
+2026-11-09 09:10:43,414 INFO aethentra.deep stack trainval 1700/2190
+2026-11-09 09:10:55,228 INFO aethentra.deep stack trainval 1800/2190
+2026-11-09 09:11:06,124 INFO aethentra.deep stack trainval 1900/2190
+2026-11-09 09:11:16,960 INFO aethentra.deep stack trainval 2000/2190
+2026-11-09 09:11:28,441 INFO aethentra.deep stack trainval 2100/2190
+2026-11-09 09:14:43,241 INFO aethentra.unet epoch {'epoch': 1, 'train_mae': 3.3947643253348345, 'seconds': 155.6}
+2026-11-09 09:18:08,427 INFO aethentra.unet epoch {'epoch': 2, 'train_mae': 3.0339186233428492, 'seconds': 360.7}
+2026-11-09 09:32:33,291 INFO aethentra.unet epoch {'epoch': 3, 'train_mae': 2.918582379143246, 'seconds': 1225.6}
+2026-11-09 09:35:33,963 INFO aethentra.unet epoch {'epoch': 4, 'train_mae': 2.862544806958151, 'seconds': 1406.3}
+2026-11-09 12:09:07,005 INFO aethentra.unet epoch {'epoch': 5, 'train_mae': 2.8209440369314396, 'seconds': 10619.3}
+2026-11-09 12:12:15,803 INFO aethentra.unet epoch {'epoch': 6, 'train_mae': 2.784229430553347, 'seconds': 10808.1}
+2026-11-09 15:26:10,166 INFO aethentra.unet epoch {'epoch': 7, 'train_mae': 2.759248964274044, 'seconds': 22442.5}
+2026-11-09 15:29:38,932 INFO aethentra.unet epoch {'epoch': 8, 'train_mae': 2.737104686412251, 'seconds': 22651.2}
+2026-11-09 15:32:52,615 INFO aethentra.unet epoch {'epoch': 9, 'train_mae': 2.711976963913091, 'seconds': 22844.9}
+2026-11-09 15:35:34,294 INFO aethentra.unet epoch {'epoch': 10, 'train_mae': 2.696162627892015, 'seconds': 23006.6}
+2026-11-09 15:38:18,328 INFO aethentra.unet epoch {'epoch': 11, 'train_mae': 2.678933292685106, 'seconds': 23170.6}
+2026-11-09 15:41:00,797 INFO aethentra.unet epoch {'epoch': 12, 'train_mae': 2.6607640552437584, 'seconds': 23333.1}
+2026-11-09 15:43:35,635 INFO aethentra.unet epoch {'epoch': 13, 'train_mae': 2.649225335021267, 'seconds': 23487.9}
+2026-11-09 15:46:10,658 INFO aethentra.unet epoch {'epoch': 14, 'train_mae': 2.6317551139837216, 'seconds': 23643.0}
+2026-11-09 15:48:43,165 INFO aethentra.unet epoch {'epoch': 15, 'train_mae': 2.6205512336258887, 'seconds': 23795.5}
+2026-11-09 15:51:14,104 INFO aethentra.unet epoch {'epoch': 16, 'train_mae': 2.603988662110369, 'seconds': 23946.4}
+2026-11-09 15:53:44,912 INFO aethentra.unet epoch {'epoch': 17, 'train_mae': 2.58991607457664, 'seconds': 24097.2}
+2026-11-09 15:56:16,503 INFO aethentra.unet epoch {'epoch': 18, 'train_mae': 2.57610590897738, 'seconds': 24248.8}
+2026-11-09 15:58:47,000 INFO aethentra.unet epoch {'epoch': 19, 'train_mae': 2.563411189090224, 'seconds': 24399.3}
+2026-11-09 16:01:15,469 INFO aethentra.unet epoch {'epoch': 20, 'train_mae': 2.5498654299420953, 'seconds': 24547.8}
+2026-11-09 16:03:46,429 INFO aethentra.unet epoch {'epoch': 21, 'train_mae': 2.536313889981388, 'seconds': 24698.7}
+2026-11-09 16:06:24,226 INFO aethentra.unet epoch {'epoch': 22, 'train_mae': 2.5252106156258294, 'seconds': 24856.5}
+2026-11-09 16:09:00,387 INFO aethentra.unet epoch {'epoch': 23, 'train_mae': 2.5160710473755548, 'seconds': 25012.7}
+2026-11-09 16:11:34,923 INFO aethentra.unet epoch {'epoch': 24, 'train_mae': 2.509839767396788, 'seconds': 25167.2}
+2026-11-09 16:14:00,407 INFO aethentra.unet epoch {'epoch': 25, 'train_mae': 2.505501484084545, 'seconds': 25312.7}
+2026-11-09 16:16:31,133 INFO aethentra.unet epoch {'epoch': 26, 'train_mae': 2.5023680517848312, 'seconds': 25463.4}

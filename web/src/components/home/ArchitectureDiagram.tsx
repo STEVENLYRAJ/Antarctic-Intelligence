@@ -51,7 +51,7 @@ export function ArchitectureDiagram() {
           </p>
           <ul className="mt-5 space-y-2.5">
             {c.items.map((it) => (
-              <li key={it} className="arch-item flex gap-2 text-[13px] leading-snug text-silver">
+              <li key={it} className="arch-item flex gap-2 text-[0.8125rem] leading-snug text-silver">
                 <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-ice/60" />
                 {it}
               </li>

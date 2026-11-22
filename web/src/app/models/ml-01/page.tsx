@@ -77,7 +77,7 @@ export default function Page() {
           content: (
             <>
               <MapViewer product="sic" initial="forecast_7day_mean" />
-              <p className="mt-4 text-[12.5px] text-muted">
+              <p className="mt-4 text-[0.7813rem] text-muted">
                 Toggle between the latest observed week and the forecast. The same layers can be draped on the 3D globe in the{" "}
                 <a href="/explore?layer=sic:forecast_7day_mean" className="text-cyan hover:text-glacial">
                   Earth explorer

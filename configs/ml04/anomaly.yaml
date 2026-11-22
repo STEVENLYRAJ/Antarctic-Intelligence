@@ -65,3 +65,10 @@ clustering:
   metric: haversine
   eps_km: 450
   min_samples: 3
+
+release:                  # model/decision release; bump on any data, baseline or model change (new frozen decision + single test)
+  version: 2
+  supersedes: >-
+    v1 (decision frozen 2026-11-10T23:03Z) INVALIDATED: NCEP R1 rhum 2001, rhum 2002 and tcdc 2001 raw files were all
+    zeros (passed the day-count check). Files re-downloaded through the content check on 2026-11-12; ML-04 rebuilt from
+    preprocessing. See experiments/ml04/v1_invalidated/README.md.

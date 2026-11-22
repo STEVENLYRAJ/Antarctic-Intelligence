@@ -1103,3 +1103,77 @@ Each child in a list should have a unique "key" prop. See https://react.dev/link
  GET / 200 in 119ms
  ✓ Compiled in 996ms (1525 modules)
  GET / 200 in 107ms
+ ✓ Compiled in 210ms (669 modules)
+ ✓ Compiled in 276ms (669 modules)
+ GET / 200 in 295ms
+ GET / 200 in 62ms
+ GET /explore 200 in 158ms
+ GET /favicon.ico 200 in 17ms
+ GET / 200 in 1766ms
+ ✓ Compiled in 947ms (669 modules)
+ GET / 200 in 130ms
+ ✓ Compiled in 227ms (669 modules)
+ GET / 200 in 67ms
+ ✓ Compiled in 223ms (669 modules)
+ ✓ Compiled in 274ms (669 modules)
+ GET / 200 in 295ms
+ GET / 200 in 62ms
+ ✓ Compiled in 238ms (669 modules)
+ GET / 200 in 75ms
+ GET /models 200 in 136ms
+ GET /favicon.ico 200 in 19ms
+ ○ Compiling /models/ml-01 ...
+ ✓ Compiled /models/ml-01 in 1061ms (1517 modules)
+ GET /models/ml-01 200 in 1500ms
+ GET / 200 in 429ms
+ GET /favicon.ico 200 in 29ms
+ ✓ Compiled /models/ml-02 in 243ms (864 modules)
+ GET /models/ml-02 200 in 623ms
+ GET /favicon.ico 200 in 23ms
+ GET /models/ml-04 200 in 977ms
+ GET /favicon.ico 200 in 29ms
+ ○ Compiling /data ...
+ ✓ Compiled /data in 715ms (872 modules)
+ GET /data 200 in 960ms
+ GET /favicon.ico 200 in 19ms
+ ✓ Compiled /about in 252ms (876 modules)
+ GET /about 200 in 504ms
+ GET /favicon.ico 200 in 15ms
+ GET / 200 in 288ms
+ GET /favicon.ico 200 in 14ms
+ GET /explore 200 in 60ms
+ ○ Compiling /intelligence ...
+ ✓ Compiled /intelligence in 1264ms (857 modules)
+ GET /intelligence 200 in 1470ms
+ ✓ Compiled /models in 224ms (844 modules)
+ GET /models 200 in 381ms
+ GET /data 200 in 41ms
+ ✓ Compiled /research in 354ms (850 modules)
+ GET /research 200 in 536ms
+ GET /about 200 in 47ms
+ GET / 200 in 72ms
+ GET /explore 200 in 56ms
+ GET / 200 in 60ms
+ ✓ Compiled /models/ml-02 in 470ms (855 modules)
+ GET /models/ml-02 200 in 688ms
+ GET /explore 200 in 31ms
+ ✓ Compiled /models/ml-01 in 470ms (861 modules)
+ GET /models/ml-01 200 in 627ms
+ ✓ Compiled /models in 224ms (865 modules)
+ GET /models 200 in 306ms
+ ✓ Compiled /data in 229ms (867 modules)
+ GET /data 200 in 307ms
+ GET /research 200 in 46ms
+ GET /about 200 in 57ms
+ GET / 200 in 69ms
+ GET /explore 200 in 49ms
+ GET /about 200 in 59ms
+ GET /models 200 in 39ms
+ ○ Compiling /models/ml-03 ...
+ ✓ Compiled /models/ml-03 in 739ms (854 modules)
+ GET /models/ml-03 200 in 1085ms
+ GET /models/ml-03 200 in 74ms
+ GET / 200 in 360ms
+ GET / 200 in 1431ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 2s (855 modules)

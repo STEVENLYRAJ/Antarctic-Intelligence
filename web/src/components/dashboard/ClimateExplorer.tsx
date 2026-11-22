@@ -14,6 +14,9 @@ const VARIABLES = [
   { id: "era5_tp", label: "Precipitation", digits: 2, type: "reanalysis" },
   { id: "era5_sf", label: "Snowfall", digits: 2, type: "reanalysis" },
   { id: "era5_sst", label: "Sea-surface temp.", digits: 2, type: "reanalysis" },
+  { id: "era5_t850", label: "850 hPa temperature", digits: 2, type: "reanalysis" },
+  { id: "era5_z500", label: "500 hPa height", digits: 1, type: "reanalysis" },
+  { id: "era5_tcc", label: "Cloud cover", digits: 1, type: "reanalysis" },
   { id: "glorys_sea_ice_thickness", label: "Ice thickness", digits: 2, type: "model_reanalysis" },
   { id: "ifremer_drift_speed", label: "Ice drift speed", digits: 2, type: "observation" },
   { id: "multiobs_sst", label: "Ocean temperature", digits: 2, type: "observation" },
@@ -26,6 +29,9 @@ const METHOD: Record<string, string> = {
   ifremer_drift_speed: "Monthly mean of daily 3-day drift speeds over ice-covered cells; summer melt degrades passive-microwave drift.",
   multiobs_sst: "Area-weighted mean near-surface temperature of the observation-based reconstruction; under-ice values are sparse.",
   multiobs_mld: "Area-weighted mean mixed-layer depth from the observation-based reconstruction.",
+  era5_t850: "Area-weighted mean 850 hPa temperature south of 60° S; over the high plateau this level is below ground and extrapolated.",
+  era5_z500: "Area-weighted mean 500 hPa geopotential height south of 60° S (dam); lower values indicate a stronger polar vortex.",
+  era5_tcc: "Area-weighted mean total cloud cover south of 60° S; a model diagnostic, weakly constrained by observations.",
 };
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -117,23 +123,23 @@ export function ClimateExplorer() {
               setVid(x.id);
               if (!data.series[x.id]?.sectors) setRegion("antarctic");
             }}
-            className={cn("rounded-full border px-4 py-2 text-[13px] transition-colors", x.id === vid ? "border-cyan bg-cyan/10 text-cyan" : "border-line text-silver hover:border-line-strong hover:text-glacial")}
+            className={cn("rounded-full border px-4 py-2 text-[0.8125rem] transition-colors", x.id === vid ? "border-cyan bg-cyan/10 text-cyan" : "border-line text-silver hover:border-line-strong hover:text-glacial")}
           >
             {x.label}
           </button>
         ))}
       </div>
 
-      <div className="grid gap-8 rounded-[var(--radius)] border border-line bg-navy/30 p-5 md:p-8 lg:grid-cols-[1fr_260px]">
+      <div className="grid gap-8 rounded-[var(--radius)] border border-line bg-navy/30 p-5 md:p-8 lg:grid-cols-[minmax(0,1fr)_16.25rem]">
         <div className="min-w-0">
           <div className="mb-5 flex flex-wrap items-center gap-3">
             <DataBadge type={v.type} />
-            <span className="font-mono text-[11px] text-muted">
+            <span className="font-mono text-[0.6875rem] text-muted">
               {s.title} · {s.units} · {s.domain}
             </span>
           </div>
           <TimeSeries series={chart} units={s.units} zeroLine={mode === "anom"} signed={mode === "anom"} brush height={360} digits={v.digits} />
-          <dl className="mt-6 grid gap-x-8 gap-y-3 border-t border-line pt-5 text-[12px] sm:grid-cols-2 xl:grid-cols-3">
+          <dl className="mt-6 grid gap-x-8 gap-y-3 border-t border-line pt-5 text-[0.75rem] sm:grid-cols-2 xl:grid-cols-3">
             {[
               ["Metric", s.title],
               ["Units", `${s.units}${mode === "anom" ? " (anomaly)" : ""}`],
@@ -146,7 +152,7 @@ export function ClimateExplorer() {
               ],
             ].map(([k, val]) => (
               <div key={k}>
-                <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted">{k}</dt>
+                <dt className="font-mono text-[0.625rem] uppercase tracking-[0.14em] text-muted">{k}</dt>
                 <dd className="mt-1 leading-relaxed text-silver">{val}</dd>
               </div>
             ))}
@@ -157,7 +163,7 @@ export function ClimateExplorer() {
             <p className="t-meta mb-2">View</p>
             <div className="flex gap-2">
               {(["anom", "value"] as const).map((m) => (
-                <button key={m} onClick={() => setMode(m)} className={cn("flex-1 rounded border px-3 py-2 text-[12px]", mode === m ? "border-cyan text-cyan" : "border-line text-silver")}>
+                <button key={m} onClick={() => setMode(m)} className={cn("flex-1 rounded border px-3 py-2 text-[0.75rem]", mode === m ? "border-cyan text-cyan" : "border-line text-silver")}>
                   {m === "anom" ? "Anomaly" : "Absolute"}
                 </button>
               ))}
@@ -165,7 +171,7 @@ export function ClimateExplorer() {
           </div>
           <div>
             <p className="t-meta mb-2">Years</p>
-            <div className="flex items-center gap-2 font-mono text-[12px]">
+            <div className="flex items-center gap-2 font-mono text-[0.75rem]">
               <input type="number" min={1979} max={to} value={from} onChange={(e) => setFrom(Math.min(+e.target.value, to))} className="w-full rounded border border-line bg-navy px-2 py-1.5 text-glacial" aria-label="From year" />
               <span className="text-muted">→</span>
               <input type="number" min={from} max={2026} value={to} onChange={(e) => setTo(Math.max(+e.target.value, from))} className="w-full rounded border border-line bg-navy px-2 py-1.5 text-glacial" aria-label="To year" />
@@ -174,7 +180,7 @@ export function ClimateExplorer() {
           {sectors.length > 0 && (
             <div>
               <p className="t-meta mb-2">Region</p>
-              <select value={region} onChange={(e) => setRegion(e.target.value)} className="w-full rounded border border-line bg-navy px-2 py-2 text-[13px] text-glacial" aria-label="Region">
+              <select value={region} onChange={(e) => setRegion(e.target.value)} className="w-full rounded border border-line bg-navy px-2 py-2 text-[0.8125rem] text-glacial" aria-label="Region">
                 <option value="antarctic">Whole domain ({s.domain})</option>
                 {sectors.map((k) => (
                   <option key={k} value={k}>
@@ -185,7 +191,7 @@ export function ClimateExplorer() {
             </div>
           )}
           {"compare" in v && (
-            <label className="flex items-center gap-2 text-[13px] text-silver">
+            <label className="flex items-center gap-2 text-[0.8125rem] text-silver">
               <input type="checkbox" checked={cmp} onChange={(e) => setCmp(e.target.checked)} className="accent-[var(--cyan)]" />
               Compare with {data.series[v.compare]?.source.split(" ").slice(0, 2).join(" ")}
             </label>

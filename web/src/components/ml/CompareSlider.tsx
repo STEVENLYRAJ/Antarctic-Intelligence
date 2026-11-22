@@ -47,8 +47,8 @@ export function CompareSlider({ before, after, beforeLabel, afterLabel, aspect }
       >
         <MoveHorizontal size={16} />
       </button>
-      <span className="pointer-events-none absolute left-3 top-3 rounded-sm bg-polar/80 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-glacial">{beforeLabel}</span>
-      <span className="pointer-events-none absolute right-3 top-3 rounded-sm bg-warn px-2 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-polar">{afterLabel}</span>
+      <span className="pointer-events-none absolute left-3 top-3 rounded-sm bg-polar/80 px-2 py-1 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-glacial">{beforeLabel}</span>
+      <span className="pointer-events-none absolute right-3 top-3 rounded-sm bg-warn px-2 py-1 font-mono text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-polar">{afterLabel}</span>
     </div>
   );
 }

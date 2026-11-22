@@ -17,7 +17,7 @@ export function Ml02Summary() {
     <div className="rounded-[var(--radius)] border border-dashed border-warn/50 bg-polar/60 p-6 backdrop-blur">
       <div className="flex flex-wrap items-center gap-3">
         <DataBadge type={f.data_type} />
-        <span className="font-mono text-[11px] text-muted">
+        <span className="font-mono text-[0.6875rem] text-muted">
           {f.target_start} → {f.target_end}
         </span>
       </div>
@@ -27,7 +27,7 @@ export function Ml02Summary() {
           <Stat label="Forecast anomaly" value={sign(all.forecast_mean_anomaly_degC)} unit="°C" accent={all.forecast_mean_anomaly_degC >= 0 ? "#e76f6a" : "#48c8e8"} note={`vs ${f.climatology_reference_period.join("–")}`} />
         </div>
       )}
-      <p className="mt-6 font-mono text-[10.5px] leading-relaxed text-muted">
+      <p className="mt-6 font-mono text-[0.6563rem] leading-relaxed text-muted">
         Issued {f.issue_date} · {f.model_version}
         <span className="block text-warn">Driven by NCEP/NCAR R1, whose record ends in March 2026; the latest possible issue date is therefore 2025-12-31.</span>
       </p>
@@ -43,7 +43,7 @@ export function Ml02Regions() {
   return (
     <div className="space-y-4">
       {f.regions.map((r) => (
-        <div key={r.region} className="grid grid-cols-[180px_1fr_120px] items-center gap-4 text-[13px]">
+        <div key={r.region} className="grid grid-cols-[11.25rem_minmax(0,1fr)_7.5rem] items-center gap-4 text-[0.8125rem]">
           <span className="text-glacial">{titleCase(r.region)}</span>
           <div className="relative h-3">
             <div className="absolute inset-y-0 left-1/2 w-px bg-line-strong" />
@@ -59,7 +59,7 @@ export function Ml02Regions() {
           <span className="t-num text-right text-silver">{sign(r.forecast_mean_anomaly_degC)} °C</span>
         </div>
       ))}
-      <p className="pt-2 font-mono text-[10px] text-muted">Forecast 7-day-mean anomaly by region · red warmer, cyan colder than the {f.climatology_reference_period.join("–")} climatology.</p>
+      <p className="pt-2 font-mono text-[0.625rem] text-muted">Forecast 7-day-mean anomaly by region · red warmer, cyan colder than the {f.climatology_reference_period.join("–")} climatology.</p>
     </div>
   );
 }
