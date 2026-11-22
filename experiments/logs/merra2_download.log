@@ -1,0 +1,285 @@
+2026-11-14 13:06:51,934 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198005.nc4 attempt 1: ('Connection broken: IncompleteRead(48311858 bytes read, 5929431 more expected)', IncompleteRead(48311858 bytes read, 5929431 more expected))
+2026-11-14 13:06:51,937 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198008.nc4 attempt 1: ('Connection broken: IncompleteRead(17807858 bytes read, 36297568 more expected)', IncompleteRead(17807858 bytes read, 36297568 more expected))
+2026-11-14 13:06:51,940 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198009.nc4 attempt 1: ('Connection broken: IncompleteRead(1871858 bytes read, 52323959 more expected)', IncompleteRead(1871858 bytes read, 52323959 more expected))
+2026-11-14 13:06:51,943 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198006.nc4 attempt 1: ('Connection broken: IncompleteRead(35623858 bytes read, 18511549 more expected)', IncompleteRead(35623858 bytes read, 18511549 more expected))
+2026-11-14 13:16:26,298 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198109.nc4 attempt 1: ('Connection broken: IncompleteRead(41951858 bytes read, 12195109 more expected)', IncompleteRead(41951858 bytes read, 12195109 more expected))
+2026-11-14 13:21:00,929 INFO merra2_download M1: 25/562 {'downloaded': 25}
+2026-11-14 13:38:51,939 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198208.nc4 attempt 1: ('Connection broken: IncompleteRead(51215858 bytes read, 2967757 more expected)', IncompleteRead(51215858 bytes read, 2967757 more expected))
+2026-11-14 13:38:51,940 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198210.nc4 attempt 1: ('Connection broken: IncompleteRead(27231858 bytes read, 27066423 more expected)', IncompleteRead(27231858 bytes read, 27066423 more expected))
+2026-11-14 13:38:51,955 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198211.nc4 attempt 1: ('Connection broken: IncompleteRead(2543858 bytes read, 51748261 more expected)', IncompleteRead(2543858 bytes read, 51748261 more expected))
+2026-11-14 13:38:52,055 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198209.nc4 attempt 1: ('Connection broken: IncompleteRead(29959858 bytes read, 24250664 more expected)', IncompleteRead(29959858 bytes read, 24250664 more expected))
+2026-11-14 13:39:20,038 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198208.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/1982/MERRA2_100.tavgM_2d_slv_Nx.198208.nc4 (Caused by NameR
+2026-11-14 13:39:20,038 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198210.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/1982/MERRA2_100.tavgM_2d_slv_Nx.198210.nc4 (Caused by NameR
+2026-11-14 13:39:20,053 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198211.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/1982/MERRA2_100.tavgM_2d_slv_Nx.198211.nc4 (Caused by NameR
+2026-11-14 13:39:20,142 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198209.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/1982/MERRA2_100.tavgM_2d_slv_Nx.198209.nc4 (Caused by NameR
+2026-11-14 14:14:07,728 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198208.nc4 attempt 3: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/1982/MERRA2_100.tavgM_2d_slv_Nx.198208.nc4 (Caused by NameR
+2026-11-14 14:14:07,831 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198210.nc4 attempt 3: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/1982/MERRA2_100.tavgM_2d_slv_Nx.198210.nc4 (Caused by NameR
+2026-11-14 14:14:07,832 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198211.nc4 attempt 3: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/1982/MERRA2_100.tavgM_2d_slv_Nx.198211.nc4 (Caused by NameR
+2026-11-14 14:14:07,865 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198209.nc4 attempt 3: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/1982/MERRA2_100.tavgM_2d_slv_Nx.198209.nc4 (Caused by NameR
+2026-11-14 14:25:31,295 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198303.nc4 attempt 1: ('Connection broken: IncompleteRead(15055858 bytes read, 39244718 more expected)', IncompleteRead(15055858 bytes read, 39244718 more expected))
+2026-11-14 14:25:31,303 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198301.nc4 attempt 1: ('Connection broken: IncompleteRead(22663858 bytes read, 31798307 more expected)', IncompleteRead(22663858 bytes read, 31798307 more expected))
+2026-11-14 14:25:31,366 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198302.nc4 attempt 1: ('Connection broken: IncompleteRead(25431858 bytes read, 29011320 more expected)', IncompleteRead(25431858 bytes read, 29011320 more expected))
+2026-11-14 14:25:35,486 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198304.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/1983/MERRA2_100.tavgM_2d_slv_Nx.198304.nc4 (Caused by NewCo
+2026-11-14 14:33:59,440 INFO merra2_download M1: 50/562 {'downloaded': 50}
+2026-11-14 15:14:13,220 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198412.nc4 attempt 1: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-11-14 15:14:13,230 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198409.nc4 attempt 1: ('Connection broken: IncompleteRead(41351858 bytes read, 12804296 more expected)', IncompleteRead(41351858 bytes read, 12804296 more expected))
+2026-11-14 15:14:13,240 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198411.nc4 attempt 1: ('Connection broken: IncompleteRead(22215858 bytes read, 32051159 more expected)', IncompleteRead(22215858 bytes read, 32051159 more expected))
+2026-11-14 15:14:13,385 WARNING merra2_download MERRA2_100.tavgM_2d_slv_Nx.198410.nc4 attempt 1: ('Connection broken: IncompleteRead(27423858 bytes read, 26782594 more expected)', IncompleteRead(27423858 bytes read, 26782594 more expected))
+2026-11-14 15:21:08,865 INFO merra2_download M1: 75/562 {'downloaded': 75}
+2026-11-14 15:29:14,506 INFO merra2_download M1: 100/562 {'downloaded': 100}
+2026-11-14 15:36:53,039 INFO merra2_download M1: 125/562 {'downloaded': 125}
+2026-11-14 15:44:57,828 INFO merra2_download M1: 150/562 {'downloaded': 150}
+2026-11-14 15:54:50,498 INFO merra2_download M1: 175/562 {'downloaded': 175}
+2026-11-14 16:07:01,423 INFO merra2_download M1: 200/562 {'downloaded': 200}
+2026-11-14 16:17:13,599 INFO merra2_download M1: 225/562 {'downloaded': 225}
+2026-11-14 16:26:23,803 INFO merra2_download M1: 250/562 {'downloaded': 250}
+2026-11-14 16:34:07,375 INFO merra2_download M1: 275/562 {'downloaded': 275}
+2026-11-14 16:44:14,564 INFO merra2_download M1: 300/562 {'downloaded': 300}
+2026-11-14 16:55:24,724 INFO merra2_download M1: 325/562 {'downloaded': 325}
+2026-11-14 16:57:27,405 WARNING merra2_download MERRA2_300.tavgM_2d_slv_Nx.200705.nc4 attempt 1: ('Connection broken: IncompleteRead(13727858 bytes read, 40545423 more expected)', IncompleteRead(13727858 bytes read, 40545423 more expected))
+2026-11-14 17:04:37,177 INFO merra2_download M1: 350/562 {'downloaded': 350}
+2026-11-14 17:12:39,753 INFO merra2_download M1: 375/562 {'downloaded': 375}
+2026-11-14 17:19:56,756 INFO merra2_download M1: 400/562 {'downloaded': 400}
+2026-11-14 17:27:37,839 INFO merra2_download M1: 425/562 {'downloaded': 425}
+2026-11-14 17:34:29,451 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201611.nc4 attempt 1: ('Connection broken: IncompleteRead(20647858 bytes read, 58163921 more expected)', IncompleteRead(20647858 bytes read, 58163921 more expected))
+2026-11-14 17:34:29,453 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201610.nc4 attempt 1: ('Connection broken: IncompleteRead(19399858 bytes read, 59411921 more expected)', IncompleteRead(19399858 bytes read, 59411921 more expected))
+2026-11-14 17:34:29,456 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201609.nc4 attempt 1: ('Connection broken: IncompleteRead(61807858 bytes read, 17003921 more expected)', IncompleteRead(61807858 bytes read, 17003921 more expected))
+2026-11-14 17:34:35,391 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201612.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/2016/MERRA2_400.tavgM_2d_slv_Nx.201612.nc4 (Caused by NewCo
+2026-11-14 17:47:21,975 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201707.nc4 attempt 1: ('Connection broken: IncompleteRead(18983858 bytes read, 59827929 more expected)', IncompleteRead(18983858 bytes read, 59827929 more expected))
+2026-11-14 17:47:21,982 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201706.nc4 attempt 1: ('Connection broken: IncompleteRead(55239858 bytes read, 23571929 more expected)', IncompleteRead(55239858 bytes read, 23571929 more expected))
+2026-11-14 17:47:21,991 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201708.nc4 attempt 1: ('Connection broken: IncompleteRead(2487858 bytes read, 76323929 more expected)', IncompleteRead(2487858 bytes read, 76323929 more expected))
+2026-11-14 17:47:21,995 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201705.nc4 attempt 1: ('Connection broken: IncompleteRead(29727858 bytes read, 49083929 more expected)', IncompleteRead(29727858 bytes read, 49083929 more expected))
+2026-11-14 19:59:56,116 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201708.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/2017/MERRA2_400.tavgM_2d_slv_Nx.201708.nc4 (Caused by NameR
+2026-11-14 19:59:56,116 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201706.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/2017/MERRA2_400.tavgM_2d_slv_Nx.201706.nc4 (Caused by NameR
+2026-11-14 19:59:56,122 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201707.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/2017/MERRA2_400.tavgM_2d_slv_Nx.201707.nc4 (Caused by NameR
+2026-11-14 19:59:56,358 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201705.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2_MONTHLY/M2TMNXSLV.5.12.4/2017/MERRA2_400.tavgM_2d_slv_Nx.201705.nc4 (Caused by NameR
+2026-11-14 20:00:23,637 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201707.nc4 attempt 3: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-14 20:00:23,637 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201708.nc4 attempt 3: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-14 20:00:23,638 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201706.nc4 attempt 3: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-14 20:00:23,638 WARNING merra2_download MERRA2_400.tavgM_2d_slv_Nx.201705.nc4 attempt 3: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-14 20:06:19,085 INFO merra2_download M1: 450/562 {'downloaded': 450}
+2026-11-14 20:22:21,205 INFO merra2_download M1: 475/562 {'downloaded': 475}
+2026-11-14 20:36:06,574 INFO merra2_download M1: 500/562 {'downloaded': 499, 'present': 1}
+2026-11-14 21:00:04,996 INFO merra2_download M1: 525/562 {'downloaded': 524, 'present': 1}
+2026-11-14 21:14:08,201 INFO merra2_download M1: 550/562 {'downloaded': 549, 'present': 1}
+2026-11-14 21:18:52,192 INFO merra2_download M1 finished: {'downloaded': 560, 'present': 1, 'not_published': 1}
+2026-11-14 21:27:33,753 INFO merra2_download M2: 25/562 {'downloaded': 25}
+2026-11-14 21:35:12,690 INFO merra2_download M2: 50/562 {'downloaded': 50}
+2026-11-14 21:42:44,268 INFO merra2_download M2: 75/562 {'downloaded': 74, 'present': 1}
+2026-11-14 21:51:20,113 INFO merra2_download M2: 100/562 {'downloaded': 99, 'present': 1}
+2026-11-14 22:02:30,843 INFO merra2_download M2: 125/562 {'downloaded': 124, 'present': 1}
+2026-11-14 22:12:46,568 INFO merra2_download M2: 150/562 {'downloaded': 149, 'present': 1}
+2026-11-14 22:26:33,572 INFO merra2_download M2: 175/562 {'downloaded': 174, 'present': 1}
+2026-11-14 22:42:53,520 INFO merra2_download M2: 200/562 {'downloaded': 199, 'present': 1}
+2026-11-14 23:08:52,395 INFO merra2_download M2: 225/562 {'downloaded': 224, 'present': 1}
+2026-11-14 23:21:21,235 WARNING merra2_download MERRA2_200.tavgM_2d_flx_Nx.199906.nc4 attempt 1: ('Connection broken: IncompleteRead(26927858 bytes read, 27516277 more expected)', IncompleteRead(26927858 bytes read, 27516277 more expected))
+2026-11-14 23:43:44,194 INFO merra2_download M2: 250/562 {'downloaded': 249, 'present': 1}
+2026-11-15 00:14:11,208 INFO merra2_download M2: 275/562 {'downloaded': 274, 'present': 1}
+2026-11-15 00:22:42,751 INFO merra2_download M2: 300/562 {'downloaded': 299, 'present': 1}
+2026-11-15 00:26:33,118 WARNING merra2_download MERRA2_300.tavgM_2d_flx_Nx.200505.nc4 attempt 1: ('Connection broken: IncompleteRead(26175858 bytes read, 28302699 more expected)', IncompleteRead(26175858 bytes read, 28302699 more expected))
+2026-11-15 00:26:33,128 WARNING merra2_download MERRA2_300.tavgM_2d_flx_Nx.200504.nc4 attempt 1: ('Connection broken: IncompleteRead(16895858 bytes read, 37665038 more expected)', IncompleteRead(16895858 bytes read, 37665038 more expected))
+2026-11-15 00:26:33,129 WARNING merra2_download MERRA2_300.tavgM_2d_flx_Nx.200507.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 00:26:33,151 WARNING merra2_download MERRA2_300.tavgM_2d_flx_Nx.200506.nc4 attempt 1: ('Connection broken: IncompleteRead(767858 bytes read, 53651246 more expected)', IncompleteRead(767858 bytes read, 53651246 more expected))
+2026-11-15 00:36:48,991 WARNING merra2_download MERRA2_300.tavgM_2d_flx_Nx.200510.nc4 attempt 1: ('Connection broken: IncompleteRead(15487858 bytes read, 39195089 more expected)', IncompleteRead(15487858 bytes read, 39195089 more expected))
+2026-11-15 00:37:07,303 WARNING merra2_download MERRA2_300.tavgM_2d_flx_Nx.200509.nc4 attempt 1: ('Connection broken: IncompleteRead(17999858 bytes read, 36677657 more expected)', IncompleteRead(17999858 bytes read, 36677657 more expected))
+2026-11-15 00:55:07,267 INFO merra2_download M2: 325/562 {'downloaded': 324, 'present': 1}
+2026-11-15 00:57:48,674 WARNING merra2_download MERRA2_300.tavgM_2d_flx_Nx.200706.nc4 attempt 1: ('Connection broken: IncompleteRead(25935858 bytes read, 28418637 more expected)', IncompleteRead(25935858 bytes read, 28418637 more expected))
+2026-11-15 01:05:18,488 INFO merra2_download M2: 350/562 {'downloaded': 349, 'present': 1}
+2026-11-15 01:12:24,925 INFO merra2_download M2: 375/562 {'downloaded': 374, 'present': 1}
+2026-11-15 01:19:44,347 INFO merra2_download M2: 400/562 {'downloaded': 399, 'present': 1}
+2026-11-15 01:26:36,138 INFO merra2_download M2: 425/562 {'downloaded': 424, 'present': 1}
+2026-11-15 01:36:42,540 INFO merra2_download M2: 450/562 {'downloaded': 449, 'present': 1}
+2026-11-15 01:47:06,662 INFO merra2_download M2: 475/562 {'downloaded': 474, 'present': 1}
+2026-11-15 01:58:21,366 INFO merra2_download M2: 500/562 {'downloaded': 499, 'present': 1}
+2026-11-15 02:07:58,296 INFO merra2_download M2: 525/562 {'downloaded': 524, 'present': 1}
+2026-11-15 02:18:53,021 INFO merra2_download M2: 550/562 {'downloaded': 549, 'present': 1}
+2026-11-15 02:23:22,439 INFO merra2_download M2 finished: {'downloaded': 560, 'present': 1, 'not_published': 1}
+2026-11-15 02:29:41,698 INFO merra2_download M3 2026: 274 days, 44 missing
+2026-11-15 02:37:03,040 INFO merra2_download M3 2025: 365 days, 0 missing
+2026-11-15 02:44:28,394 INFO merra2_download M3 2024: 366 days, 0 missing
+2026-11-15 02:51:39,897 INFO merra2_download M3 2023: 365 days, 0 missing
+2026-11-15 02:59:03,181 INFO merra2_download M3 2022: 365 days, 0 missing
+2026-11-15 03:07:18,409 INFO merra2_download M3 2021: 365 days, 0 missing
+2026-11-15 03:14:32,331 INFO merra2_download M3 2020: 366 days, 0 missing
+2026-11-15 03:21:39,656 INFO merra2_download M3 2019: 365 days, 0 missing
+2026-11-15 03:29:06,404 INFO merra2_download M3 2018: 365 days, 0 missing
+2026-11-15 03:36:23,568 INFO merra2_download M3 2017: 365 days, 0 missing
+2026-11-15 03:43:31,322 INFO merra2_download M3 2016: 366 days, 0 missing
+2026-11-15 03:51:54,558 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20150816.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 03:51:54,665 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20150813.nc4 attempt 1: ('Connection broken: IncompleteRead(1007860 bytes read, 606972 more expected)', IncompleteRead(1007860 bytes read, 606972 more expected))
+2026-11-15 03:51:54,665 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20150815.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 03:51:54,667 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20150814.nc4 attempt 1: ('Connection broken: IncompleteRead(1007860 bytes read, 623711 more expected)', IncompleteRead(1007860 bytes read, 623711 more expected))
+2026-11-15 03:54:48,521 INFO merra2_download M3 2015: 365 days, 0 missing
+2026-11-15 03:56:01,244 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20140301.nc4 attempt 1: 503 Server Error: Service Unavailable for url: https://goldsmr4.gesdisc.eosdis.nasa.gov/data/MERRA2/M2SDNXSLV.5.12.4/2014/03/MERRA2_400.statD_2d_slv_Nx.20140301.nc4
+2026-11-15 04:07:11,924 INFO merra2_download M3 2014: 365 days, 0 missing
+2026-11-15 04:07:12,972 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20130102.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/2013/01/MERRA2_400.statD_2d_slv_Nx.20130102.nc4 (Caused by NameReso
+2026-11-15 04:07:12,972 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20130101.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/2013/01/MERRA2_400.statD_2d_slv_Nx.20130101.nc4 (Caused by NameReso
+2026-11-15 04:07:12,973 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20130103.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/2013/01/MERRA2_400.statD_2d_slv_Nx.20130103.nc4 (Caused by NameReso
+2026-11-15 04:07:12,973 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20130104.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/2013/01/MERRA2_400.statD_2d_slv_Nx.20130104.nc4 (Caused by NameReso
+2026-11-15 04:14:37,087 INFO merra2_download M3 2013: 365 days, 0 missing
+2026-11-15 04:18:57,323 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20120605.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 04:18:57,325 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20120604.nc4 attempt 1: ('Connection broken: IncompleteRead(303860 bytes read, 1362414 more expected)', IncompleteRead(303860 bytes read, 1362414 more expected))
+2026-11-15 04:18:57,327 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20120602.nc4 attempt 1: ('Connection broken: IncompleteRead(567860 bytes read, 1066120 more expected)', IncompleteRead(567860 bytes read, 1066120 more expected))
+2026-11-15 04:18:57,329 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20120603.nc4 attempt 1: ('Connection broken: IncompleteRead(143860 bytes read, 1502905 more expected)', IncompleteRead(143860 bytes read, 1502905 more expected))
+2026-11-15 04:23:12,490 INFO merra2_download M3 2012: 366 days, 0 missing
+2026-11-15 04:30:16,069 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20111029.nc4 attempt 1: ('Connection broken: IncompleteRead(127860 bytes read, 1573941 more expected)', IncompleteRead(127860 bytes read, 1573941 more expected))
+2026-11-15 04:30:16,069 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20111030.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 04:30:16,071 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20111028.nc4 attempt 1: ('Connection broken: IncompleteRead(303860 bytes read, 1400552 more expected)', IncompleteRead(303860 bytes read, 1400552 more expected))
+2026-11-15 04:30:16,074 WARNING merra2_download MERRA2_400.statD_2d_slv_Nx.20111031.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 04:31:51,708 INFO merra2_download M3 2011: 365 days, 0 missing
+2026-11-15 04:38:52,977 INFO merra2_download M3 2010: 365 days, 0 missing
+2026-11-15 04:42:59,734 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20090807.nc4 attempt 1: 503 Server Error: Service Unavailable for url: https://goldsmr4.gesdisc.eosdis.nasa.gov/data/MERRA2/M2SDNXSLV.5.12.4/2009/08/MERRA2_300.statD_2d_slv_Nx.20090807.nc4
+2026-11-15 04:44:30,098 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20091029.nc4 attempt 1: 503 Server Error: Service Unavailable for url: https://goldsmr4.gesdisc.eosdis.nasa.gov/data/MERRA2/M2SDNXSLV.5.12.4/2009/10/MERRA2_300.statD_2d_slv_Nx.20091029.nc4
+2026-11-15 04:45:46,548 INFO merra2_download M3 2009: 365 days, 0 missing
+2026-11-15 04:45:59,713 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20080106.nc4 attempt 1: 503 Server Error: Service Unavailable for url: https://goldsmr4.gesdisc.eosdis.nasa.gov/data/MERRA2/M2SDNXSLV.5.12.4/2008/01/MERRA2_300.statD_2d_slv_Nx.20080106.nc4
+2026-11-15 04:54:41,162 INFO merra2_download M3 2008: 366 days, 0 missing
+2026-11-15 05:03:06,954 INFO merra2_download M3 2007: 365 days, 0 missing
+2026-11-15 05:10:15,537 INFO merra2_download M3 2006: 365 days, 0 missing
+2026-11-15 05:34:20,871 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20050316.nc4 attempt 1: ('Connection broken: IncompleteRead(7860 bytes read, 1681726 more expected)', IncompleteRead(7860 bytes read, 1681726 more expected))
+2026-11-15 05:34:20,872 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20050318.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 05:34:20,873 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20050315.nc4 attempt 1: ('Connection broken: IncompleteRead(31860 bytes read, 1666219 more expected)', IncompleteRead(31860 bytes read, 1666219 more expected))
+2026-11-15 05:34:21,043 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20050317.nc4 attempt 1: ('Connection broken: IncompleteRead(7860 bytes read, 1712705 more expected)', IncompleteRead(7860 bytes read, 1712705 more expected))
+2026-11-15 05:34:31,047 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20050316.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/2005/03/MERRA2_300.statD_2d_slv_Nx.20050316.nc4 (Caused by NameReso
+2026-11-15 05:34:31,048 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20050318.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/2005/03/MERRA2_300.statD_2d_slv_Nx.20050318.nc4 (Caused by NameReso
+2026-11-15 05:34:31,049 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20050315.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/2005/03/MERRA2_300.statD_2d_slv_Nx.20050315.nc4 (Caused by NameReso
+2026-11-15 05:34:31,049 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20050317.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/2005/03/MERRA2_300.statD_2d_slv_Nx.20050317.nc4 (Caused by NameReso
+2026-11-15 05:35:08,876 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20050322.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/2005/03/MERRA2_300.statD_2d_slv_Nx.20050322.nc4 (Caused by NameReso
+2026-11-15 05:35:08,883 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20050323.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/2005/03/MERRA2_300.statD_2d_slv_Nx.20050323.nc4 (Caused by NameReso
+2026-11-15 05:35:10,779 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20050315.nc4 attempt 3: ('Connection broken: IncompleteRead(647860 bytes read, 1050219 more expected)', IncompleteRead(647860 bytes read, 1050219 more expected))
+2026-11-15 05:35:10,788 WARNING merra2_download MERRA2_300.statD_2d_slv_Nx.20050321.nc4 attempt 1: ('Connection broken: IncompleteRead(1135860 bytes read, 578913 more expected)', IncompleteRead(1135860 bytes read, 578913 more expected))
+2026-11-15 05:41:23,490 INFO merra2_download M3 2005: 365 days, 0 missing
+2026-11-15 05:48:34,847 INFO merra2_download M3 2004: 366 days, 0 missing
+2026-11-15 05:55:39,731 INFO merra2_download M3 2003: 365 days, 0 missing
+2026-11-15 06:03:04,058 INFO merra2_download M3 2002: 365 days, 0 missing
+2026-11-15 06:19:15,533 INFO merra2_download M3 2001: 365 days, 0 missing
+2026-11-15 06:28:38,649 INFO merra2_download M3 2000: 366 days, 0 missing
+2026-11-15 06:35:55,242 INFO merra2_download M3 1999: 365 days, 0 missing
+2026-11-15 06:43:09,667 INFO merra2_download M3 1998: 365 days, 0 missing
+2026-11-15 06:50:27,966 INFO merra2_download M3 1997: 365 days, 0 missing
+2026-11-15 06:54:00,655 WARNING merra2_download MERRA2_200.statD_2d_slv_Nx.19960626.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1996/06/MERRA2_200.statD_2d_slv_Nx.19960626.nc4 (Caused by NewConne
+2026-11-15 06:54:00,981 WARNING merra2_download MERRA2_200.statD_2d_slv_Nx.19960624.nc4 attempt 1: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2026-11-15 06:59:43,239 WARNING merra2_download MERRA2_200.statD_2d_slv_Nx.19960623.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Read timed out. (read timeout=300)
+2026-11-15 07:00:40,855 INFO merra2_download M3 1996: 366 days, 0 missing
+2026-11-15 07:08:28,970 INFO merra2_download M3 1995: 365 days, 0 missing
+2026-11-15 07:15:41,464 INFO merra2_download M3 1994: 365 days, 0 missing
+2026-11-15 07:22:04,718 WARNING merra2_download MERRA2_200.statD_2d_slv_Nx.19930618.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 07:22:04,733 WARNING merra2_download MERRA2_200.statD_2d_slv_Nx.19930617.nc4 attempt 1: ('Connection broken: IncompleteRead(87860 bytes read, 1576636 more expected)', IncompleteRead(87860 bytes read, 1576636 more expected))
+2026-11-15 07:22:04,774 WARNING merra2_download MERRA2_200.statD_2d_slv_Nx.19930616.nc4 attempt 1: ('Connection broken: IncompleteRead(79860 bytes read, 1582942 more expected)', IncompleteRead(79860 bytes read, 1582942 more expected))
+2026-11-15 07:26:31,158 INFO merra2_download M3 1993: 365 days, 0 missing
+2026-11-15 07:34:07,185 INFO merra2_download M3 1992: 366 days, 0 missing
+2026-11-15 07:42:10,047 INFO merra2_download M3 1991: 365 days, 0 missing
+2026-11-15 07:49:38,458 INFO merra2_download M3 1990: 365 days, 0 missing
+2026-11-15 07:57:17,396 INFO merra2_download M3 1989: 365 days, 0 missing
+2026-11-15 08:07:00,131 INFO merra2_download M3 1988: 366 days, 0 missing
+2026-11-15 08:09:04,553 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870411.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/04/MERRA2_100.statD_2d_slv_Nx.19870411.nc4 (Caused by NameReso
+2026-11-15 08:09:04,587 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870412.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/04/MERRA2_100.statD_2d_slv_Nx.19870412.nc4 (Caused by NameReso
+2026-11-15 08:09:04,598 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870413.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/04/MERRA2_100.statD_2d_slv_Nx.19870413.nc4 (Caused by NameReso
+2026-11-15 08:09:04,610 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870414.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/04/MERRA2_100.statD_2d_slv_Nx.19870414.nc4 (Caused by NameReso
+2026-11-15 08:09:45,790 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870430.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 08:09:45,793 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870428.nc4 attempt 1: ('Connection broken: IncompleteRead(1199860 bytes read, 506714 more expected)', IncompleteRead(1199860 bytes read, 506714 more expected))
+2026-11-15 08:09:45,802 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870427.nc4 attempt 1: ('Connection broken: IncompleteRead(1599860 bytes read, 93800 more expected)', IncompleteRead(1599860 bytes read, 93800 more expected))
+2026-11-15 08:09:45,807 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870429.nc4 attempt 1: ('Connection broken: IncompleteRead(1535860 bytes read, 169041 more expected)', IncompleteRead(1535860 bytes read, 169041 more expected))
+2026-11-15 08:09:55,798 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870430.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/04/MERRA2_100.statD_2d_slv_Nx.19870430.nc4 (Caused by NameReso
+2026-11-15 08:09:55,811 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870428.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/04/MERRA2_100.statD_2d_slv_Nx.19870428.nc4 (Caused by NameReso
+2026-11-15 08:09:55,813 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870427.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/04/MERRA2_100.statD_2d_slv_Nx.19870427.nc4 (Caused by NameReso
+2026-11-15 08:09:55,814 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870429.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/04/MERRA2_100.statD_2d_slv_Nx.19870429.nc4 (Caused by NameReso
+2026-11-15 08:11:12,722 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870610.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 08:11:12,724 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870609.nc4 attempt 1: ('Connection broken: IncompleteRead(7860 bytes read, 1656640 more expected)', IncompleteRead(7860 bytes read, 1656640 more expected))
+2026-11-15 08:11:12,728 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870607.nc4 attempt 1: ('Connection broken: IncompleteRead(111860 bytes read, 1573350 more expected)', IncompleteRead(111860 bytes read, 1573350 more expected))
+2026-11-15 08:11:12,729 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870608.nc4 attempt 1: ('Connection broken: IncompleteRead(47860 bytes read, 1637576 more expected)', IncompleteRead(47860 bytes read, 1637576 more expected))
+2026-11-15 08:11:22,729 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870610.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/06/MERRA2_100.statD_2d_slv_Nx.19870610.nc4 (Caused by NameReso
+2026-11-15 08:11:22,731 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870609.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/06/MERRA2_100.statD_2d_slv_Nx.19870609.nc4 (Caused by NameReso
+2026-11-15 08:11:22,733 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870607.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/06/MERRA2_100.statD_2d_slv_Nx.19870607.nc4 (Caused by NameReso
+2026-11-15 08:11:22,733 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870608.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/06/MERRA2_100.statD_2d_slv_Nx.19870608.nc4 (Caused by NameReso
+2026-11-15 08:11:42,732 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870610.nc4 attempt 3: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/06/MERRA2_100.statD_2d_slv_Nx.19870610.nc4 (Caused by NameReso
+2026-11-15 08:11:42,734 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870609.nc4 attempt 3: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/06/MERRA2_100.statD_2d_slv_Nx.19870609.nc4 (Caused by NameReso
+2026-11-15 08:11:42,736 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870608.nc4 attempt 3: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/06/MERRA2_100.statD_2d_slv_Nx.19870608.nc4 (Caused by NameReso
+2026-11-15 08:11:42,737 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870607.nc4 attempt 3: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1987/06/MERRA2_100.statD_2d_slv_Nx.19870607.nc4 (Caused by NameReso
+2026-11-15 08:12:35,385 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870617.nc4 attempt 1: ('Connection broken: IncompleteRead(111860 bytes read, 1525394 more expected)', IncompleteRead(111860 bytes read, 1525394 more expected))
+2026-11-15 08:12:35,389 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870615.nc4 attempt 1: ('Connection broken: IncompleteRead(735860 bytes read, 899443 more expected)', IncompleteRead(735860 bytes read, 899443 more expected))
+2026-11-15 08:12:35,392 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870616.nc4 attempt 1: ('Connection broken: IncompleteRead(159860 bytes read, 1467718 more expected)', IncompleteRead(159860 bytes read, 1467718 more expected))
+2026-11-15 08:12:35,396 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19870618.nc4 attempt 1: ('Connection broken: IncompleteRead(223860 bytes read, 1416659 more expected)', IncompleteRead(223860 bytes read, 1416659 more expected))
+2026-11-15 08:18:16,000 INFO merra2_download M3 1987: 365 days, 0 missing
+2026-11-15 08:26:02,283 INFO merra2_download M3 1986: 365 days, 0 missing
+2026-11-15 08:36:25,392 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19850815.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 08:36:25,396 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19850812.nc4 attempt 1: ('Connection broken: IncompleteRead(1007860 bytes read, 642875 more expected)', IncompleteRead(1007860 bytes read, 642875 more expected))
+2026-11-15 08:36:25,401 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19850814.nc4 attempt 1: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-11-15 08:36:25,468 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19850813.nc4 attempt 1: ('Connection broken: IncompleteRead(239860 bytes read, 1412291 more expected)', IncompleteRead(239860 bytes read, 1412291 more expected))
+2026-11-15 08:39:24,413 INFO merra2_download M3 1985: 365 days, 0 missing
+2026-11-15 08:46:30,669 INFO merra2_download M3 1984: 366 days, 0 missing
+2026-11-15 08:53:10,941 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19830213.nc4 attempt 1: ('Connection broken: IncompleteRead(111860 bytes read, 1617949 more expected)', IncompleteRead(111860 bytes read, 1617949 more expected))
+2026-11-15 08:53:10,944 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19830210.nc4 attempt 1: ('Connection broken: IncompleteRead(823860 bytes read, 927227 more expected)', IncompleteRead(823860 bytes read, 927227 more expected))
+2026-11-15 08:53:10,955 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19830212.nc4 attempt 1: ('Connection broken: IncompleteRead(1087860 bytes read, 643286 more expected)', IncompleteRead(1087860 bytes read, 643286 more expected))
+2026-11-15 08:53:10,964 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19830214.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 08:59:45,386 INFO merra2_download M3 1983: 365 days, 0 missing
+2026-11-15 09:19:23,964 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19820712.nc4 attempt 1: ('Connection broken: IncompleteRead(247860 bytes read, 1409841 more expected)', IncompleteRead(247860 bytes read, 1409841 more expected))
+2026-11-15 09:19:23,969 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19820711.nc4 attempt 1: ('Connection broken: IncompleteRead(479860 bytes read, 1178622 more expected)', IncompleteRead(479860 bytes read, 1178622 more expected))
+2026-11-15 09:19:23,990 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19820713.nc4 attempt 1: ('Connection broken: IncompleteRead(359860 bytes read, 1291634 more expected)', IncompleteRead(359860 bytes read, 1291634 more expected))
+2026-11-15 09:19:25,277 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19820714.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 09:22:56,884 INFO merra2_download M3 1982: 365 days, 0 missing
+2026-11-15 09:24:17,699 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19810219.nc4 attempt 1: ('Connection broken: IncompleteRead(7860 bytes read, 1710975 more expected)', IncompleteRead(7860 bytes read, 1710975 more expected))
+2026-11-15 09:24:18,368 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19810220.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1981/02/MERRA2_100.statD_2d_slv_Nx.19810220.nc4 (Caused by NameReso
+2026-11-15 09:24:18,383 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19810221.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1981/02/MERRA2_100.statD_2d_slv_Nx.19810221.nc4 (Caused by NameReso
+2026-11-15 09:24:18,394 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19810222.nc4 attempt 1: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1981/02/MERRA2_100.statD_2d_slv_Nx.19810222.nc4 (Caused by NameReso
+2026-11-15 12:35:11,451 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19810222.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1981/02/MERRA2_100.statD_2d_slv_Nx.19810222.nc4 (Caused by NameReso
+2026-11-15 12:35:11,455 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19810220.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1981/02/MERRA2_100.statD_2d_slv_Nx.19810220.nc4 (Caused by NameReso
+2026-11-15 12:35:11,467 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19810221.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1981/02/MERRA2_100.statD_2d_slv_Nx.19810221.nc4 (Caused by NameReso
+2026-11-15 12:35:11,494 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19810219.nc4 attempt 2: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1981/02/MERRA2_100.statD_2d_slv_Nx.19810219.nc4 (Caused by NameReso
+2026-11-15 14:03:36,002 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19810221.nc4 attempt 3: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1981/02/MERRA2_100.statD_2d_slv_Nx.19810221.nc4 (Caused by NewConne
+2026-11-15 14:03:36,002 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19810219.nc4 attempt 3: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1981/02/MERRA2_100.statD_2d_slv_Nx.19810219.nc4 (Caused by NewConne
+2026-11-15 14:03:36,024 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19810220.nc4 attempt 3: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1981/02/MERRA2_100.statD_2d_slv_Nx.19810220.nc4 (Caused by NewConne
+2026-11-15 14:03:36,581 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19810222.nc4 attempt 3: HTTPSConnectionPool(host='goldsmr4.gesdisc.eosdis.nasa.gov', port=443): Max retries exceeded with url: /data/MERRA2/M2SDNXSLV.5.12.4/1981/02/MERRA2_100.statD_2d_slv_Nx.19810222.nc4 (Caused by NewConne
+2026-11-15 14:16:19,844 INFO merra2_download M3 1981: 365 days, 0 missing
+2026-11-15 14:18:03,260 WARNING merra2_download MERRA2_100.statD_2d_slv_Nx.19800304.nc4 attempt 1: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-11-15 14:24:51,659 INFO merra2_download M3 1980: 366 days, 0 missing
+2026-11-15 14:24:51,659 INFO merra2_download M3 finished: {'years': 47}
+2026-11-15 14:24:51,694 INFO merra2_download MERRA-2 download complete
+2026-11-15 14:24:53,968 INFO merra2_download M1: 25/562 {'present': 25}
+2026-11-15 14:24:53,973 INFO merra2_download M1: 50/562 {'present': 50}
+2026-11-15 14:24:53,977 INFO merra2_download M1: 75/562 {'present': 75}
+2026-11-15 14:24:53,982 INFO merra2_download M1: 100/562 {'present': 100}
+2026-11-15 14:24:53,986 INFO merra2_download M1: 125/562 {'present': 125}
+2026-11-15 14:24:53,991 INFO merra2_download M1: 150/562 {'present': 150}
+2026-11-15 14:24:53,995 INFO merra2_download M1: 175/562 {'present': 175}
+2026-11-15 14:24:54,000 INFO merra2_download M1: 200/562 {'present': 200}
+2026-11-15 14:24:54,004 INFO merra2_download M1: 225/562 {'present': 225}
+2026-11-15 14:24:54,009 INFO merra2_download M1: 250/562 {'present': 250}
+2026-11-15 14:24:54,013 INFO merra2_download M1: 275/562 {'present': 275}
+2026-11-15 14:24:54,018 INFO merra2_download M1: 300/562 {'present': 300}
+2026-11-15 14:24:54,022 INFO merra2_download M1: 325/562 {'present': 325}
+2026-11-15 14:24:54,027 INFO merra2_download M1: 350/562 {'present': 350}
+2026-11-15 14:24:54,031 INFO merra2_download M1: 375/562 {'present': 375}
+2026-11-15 14:24:54,036 INFO merra2_download M1: 400/562 {'present': 400}
+2026-11-15 14:24:54,040 INFO merra2_download M1: 425/562 {'present': 425}
+2026-11-15 14:24:54,044 INFO merra2_download M1: 450/562 {'present': 450}
+2026-11-15 14:24:54,049 INFO merra2_download M1: 475/562 {'present': 475}
+2026-11-15 14:24:54,053 INFO merra2_download M1: 500/562 {'present': 500}
+2026-11-15 14:24:54,058 INFO merra2_download M1: 525/562 {'present': 525}
+2026-11-15 14:24:54,063 INFO merra2_download M1: 550/562 {'present': 550}
+2026-11-15 14:25:04,421 INFO merra2_download M1 finished: {'present': 561, 'not_published': 1}
+2026-11-15 14:25:04,437 INFO merra2_download M2: 25/562 {'present': 25}
+2026-11-15 14:25:04,444 INFO merra2_download M2: 50/562 {'present': 50}
+2026-11-15 14:25:04,450 INFO merra2_download M2: 75/562 {'present': 75}
+2026-11-15 14:25:04,454 INFO merra2_download M2: 100/562 {'present': 100}
+2026-11-15 14:25:04,459 INFO merra2_download M2: 125/562 {'present': 125}
+2026-11-15 14:25:04,464 INFO merra2_download M2: 150/562 {'present': 150}
+2026-11-15 14:25:04,471 INFO merra2_download M2: 175/562 {'present': 175}
+2026-11-15 14:25:04,476 INFO merra2_download M2: 200/562 {'present': 200}
+2026-11-15 14:25:04,482 INFO merra2_download M2: 225/562 {'present': 225}
+2026-11-15 14:25:04,487 INFO merra2_download M2: 250/562 {'present': 250}
+2026-11-15 14:25:04,492 INFO merra2_download M2: 275/562 {'present': 275}
+2026-11-15 14:25:04,497 INFO merra2_download M2: 300/562 {'present': 300}
+2026-11-15 14:25:04,503 INFO merra2_download M2: 325/562 {'present': 325}
+2026-11-15 14:25:04,509 INFO merra2_download M2: 350/562 {'present': 350}
+2026-11-15 14:25:04,516 INFO merra2_download M2: 375/562 {'present': 375}
+2026-11-15 14:25:04,521 INFO merra2_download M2: 400/562 {'present': 400}
+2026-11-15 14:25:04,527 INFO merra2_download M2: 425/562 {'present': 425}
+2026-11-15 14:25:04,531 INFO merra2_download M2: 450/562 {'present': 450}
+2026-11-15 14:25:04,536 INFO merra2_download M2: 475/562 {'present': 475}
+2026-11-15 14:25:04,541 INFO merra2_download M2: 500/562 {'present': 500}
+2026-11-15 14:25:04,548 INFO merra2_download M2: 525/562 {'present': 525}
+2026-11-15 14:25:04,553 INFO merra2_download M2: 550/562 {'present': 550}
+2026-11-15 14:25:14,718 INFO merra2_download M2 finished: {'present': 561, 'not_published': 1}
+2026-11-15 14:31:39,160 INFO merra2_download M3 2026: 274 days, 44 missing
+2026-11-15 14:31:39,194 INFO merra2_download M3 finished: {'years': 1, 'present': 46}
+2026-11-15 14:31:39,220 INFO merra2_download MERRA-2 download complete

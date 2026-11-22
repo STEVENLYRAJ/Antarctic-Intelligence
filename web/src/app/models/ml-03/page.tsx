@@ -49,7 +49,7 @@ export default function Page() {
                 ["Processing", "σ⁰ from the product calibration LUT, thermal-noise removal, GCP geocoding to EPSG:3031 at 400 m"],
                 ["Reference labels", "U.S. National Ice Center Antarctic charts (SIGRID-3), matched 0–3 days before the chart date — expert analyses, not pixel ground truth"],
                 ["Label rules", "Concentration ≥ 70 % → ice; open-water codes → water; 10–70 % and 4 km around boundaries → uncertain"],
-                ["Independent context", "DMI ASIP SAR + AMSR2 1 km concentration (Copernicus Marine C4) on the 97 test dates, viewable in the explorer; not used for training or scoring"],
+                ["Independent context", "DMI ASIP SAR + AMSR2 1 km concentration (Copernicus Marine C4) on 96 of the test dates, viewable in the explorer; not used for training or scoring"],
               ]}
             />
           ),

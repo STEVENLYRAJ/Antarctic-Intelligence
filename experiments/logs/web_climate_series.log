@@ -1,0 +1,11 @@
+ERA5 t2m 1979-01 -> 2026-10
+ERA5 msl 1979-01 -> 2026-10
+ERA5 tp 1979-01 -> 2026-10
+ERA5 sf 1979-01 -> 2026-10
+ERA5 sst 1979-01 -> 2026-10
+ERA5 extent done
+MERRA-2 done
+OSI-SAF done 538
+GLORYS done
+wrote climate_series.json 503 KB
+globe images ['era5_t2m_anom', 'era5_msl_anom', 'era5_sst_anom']

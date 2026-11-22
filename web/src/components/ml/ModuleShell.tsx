@@ -2,8 +2,10 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { MODELS } from "@/config/site";
+import { cn } from "@/lib/utils";
 import { Footer } from "@/components/layout/Footer";
 import { SplitReveal } from "@/components/ui/Reveal";
+import { SectionIndex } from "./SectionIndex";
 
 export interface ModuleSection {
   id: string;
@@ -11,7 +13,7 @@ export interface ModuleSection {
   content: ReactNode;
 }
 
-/** Shared layout for the four ML module pages: hero, sticky section index, 10 standard sections, prev/next. */
+/** Shared layout for the four ML module pages: hero, module switcher, scroll-spy index, 9 standard sections, prev/next. */
 export function ModuleShell({ slug, headline, lead, sections, heroAside }: { slug: string; headline: ReactNode[]; lead: string; sections: ModuleSection[]; heroAside?: ReactNode }) {
   const i = MODELS.findIndex((m) => m.slug === slug);
   const m = MODELS[i];
@@ -38,22 +40,36 @@ export function ModuleShell({ slug, headline, lead, sections, heroAside }: { slu
         </div>
       </header>
 
-      <div className="container-x grid gap-12 py-16 lg:grid-cols-[200px_1fr]">
-        <nav aria-label="On this page" className="hidden lg:block">
-          <ol className="sticky top-28 space-y-2 border-l border-line pl-4 text-[13px]">
-            {sections.map((s, k) => (
-              <li key={s.id}>
-                <a href={`#${s.id}`} className="flex gap-2 text-muted transition-colors hover:text-glacial">
-                  <span className="font-mono text-[10px] leading-5 text-ice-dim">{String(k + 1).padStart(2, "0")}</span>
-                  {s.title}
-                </a>
+      <nav aria-label="ML modules" className="sticky top-16 z-30 border-b border-line bg-polar/[0.97] backdrop-blur-md">
+        <ul className="container-x flex gap-1 overflow-x-auto [scrollbar-width:none]">
+          {MODELS.map((x) => {
+            const on = x.slug === slug;
+            return (
+              <li key={x.slug} className="shrink-0">
+                <Link
+                  href={`/models/${x.slug}`}
+                  aria-current={on ? "page" : undefined}
+                  className={cn("relative flex items-center gap-2.5 px-3 py-3.5 text-[12.5px] transition-colors", on ? "text-glacial" : "text-muted hover:text-silver")}
+                >
+                  <span className="font-mono text-[10px]" style={{ color: x.accent }}>
+                    {x.code}
+                  </span>
+                  <span className="hidden sm:inline">{x.name}</span>
+                  {on && <span className="absolute inset-x-3 bottom-0 h-px" style={{ background: x.accent }} />}
+                </Link>
               </li>
-            ))}
-          </ol>
+            );
+          })}
+        </ul>
+      </nav>
+
+      <div className="container-x grid gap-12 py-16 lg:grid-cols-[210px_1fr]">
+        <nav aria-label="On this page" className="hidden lg:block">
+          <SectionIndex sections={sections.map(({ id, title }) => ({ id, title }))} accent={m.accent} />
         </nav>
         <div className="min-w-0 space-y-24">
           {sections.map((s, k) => (
-            <section key={s.id} id={s.id} className="scroll-mt-28">
+            <section key={s.id} id={s.id} className="scroll-mt-36">
               <p className="t-meta flex items-center gap-3">
                 <span style={{ color: m.accent }}>{String(k + 1).padStart(2, "0")}</span>
                 <span className="h-px w-8 bg-line-strong" />
@@ -102,5 +118,16 @@ export function BulletList({ items }: { items: ReactNode[] }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+/** Sub-heading inside a module section. */
+export function Sub({ title, children, note }: { title: string; children: ReactNode; note?: ReactNode }) {
+  return (
+    <div className="mt-12 first:mt-0">
+      <h3 className="font-display text-lg text-glacial">{title}</h3>
+      {note && <p className="mt-1 text-[12.5px] text-muted">{note}</p>}
+      <div className="mt-5">{children}</div>
+    </div>
   );
 }

@@ -87,3 +87,106 @@ ValueError: operands could not be broadcast together with shapes (365,16,144) (7
 2026-11-11 04:45:02,581 INFO ml04_run_all === stage store
 2026-11-11 04:45:11,140 INFO ml04_run_all events stored: {'multivariate': 89102, 'prate': 29466, 'rhum': 17272, 'sic': 18221, 'slp': 35898, 't2m': 40240, 'tcdc': 17239, 'wspd': 33661, 'z500': 36169}
 2026-11-11 04:45:11,161 INFO ml04_run_all === stage store done in 9s
+2026-11-11 08:51:05,383 INFO ml04_run_all === stage preprocess
+2026-11-11 08:51:16,711 INFO ml04_run_all daily rhum: {'var': 'rhum', 'status': 'built'}
+2026-11-11 08:51:30,202 INFO ml04_run_all daily tcdc: {'var': 'tcdc', 'status': 'built'}
+2026-11-11 08:51:30,202 INFO ml04_run_all === stage preprocess done in 25s
+2026-11-11 08:51:46,789 INFO ml04_run_all === stage climatology
+2026-11-11 08:52:12,227 INFO ml04_run_all monthly clim model: {'t2m': 30, 'slp': 30, 'wspd': 30, 'rhum': 30, 'prate': 30, 'tcdc': 30, 'z500': 30, 'sic': 30, 'dsic': 30}
+2026-11-11 08:52:35,601 INFO ml04_run_all monthly clim reporting: {'t2m': 30, 'slp': 30, 'wspd': 30, 'rhum': 30, 'prate': 30, 'tcdc': 30, 'z500': 30, 'sic': 30, 'dsic': 30}
+2026-11-11 08:56:22,443 INFO ml04_run_all daily clim reporting: {'t2m': 10958, 'slp': 10958, 'wspd': 10958, 'rhum': 10958, 'prate': 10958, 'tcdc': 10958, 'z500': 10958, 'sic': 10958}
+2026-11-11 08:56:22,443 INFO ml04_run_all === stage climatology done in 276s
+2026-11-11 08:56:22,443 INFO ml04_run_all === stage features
+2026-11-11 08:56:26,516 INFO ml04_run_all feature table: 1324800 rows
+2026-11-11 08:56:26,518 INFO ml04_run_all === stage features done in 4s
+2026-11-11 08:56:26,518 INFO ml04_run_all === stage fit
+2026-11-11 08:56:29,247 INFO aethentra.ml04.training fit isolation_forest_s256
+2026-11-11 08:56:36,242 INFO aethentra.ml04.training fit isolation_forest_s4096
+2026-11-11 08:56:48,336 INFO aethentra.ml04.training fit lof_k20
+2026-11-11 08:57:16,353 INFO aethentra.ml04.training fit lof_k100
+2026-11-11 09:03:12,609 INFO aethentra.ml04.training fit ocsvm_nu01
+2026-11-11 09:03:24,335 INFO aethentra.ml04.training fit ocsvm_nu05
+2026-11-11 09:03:58,344 INFO aethentra.ml04.training fit autoencoder_b3
+2026-11-11 09:05:16,478 INFO aethentra.ml04.training fit autoencoder_b5
+2026-11-11 09:05:54,524 INFO ml04_run_all fit: {'mahalanobis': {'n_train': 884736}, 'isolation_forest_s256': {'n_train': 884736, 'fit_seconds': 1.4}, 'isolation_forest_s4096': {'n_train': 884736, 'fit_seconds': 3.4}, 'lof_k20': {'n_train': 50000, 'fit_seconds': 5.6}, 'lof_k100': {'n_train': 50000, 'fit_seconds': 9.3}, 'ocsvm_nu01': {'n_train': 20000, 'fit_seconds': 0.6}, 'ocsvm_nu05': {'n_train': 20000, 'fit_seconds': 1.8}, 'autoencoder_b3': {'n_train': 884736, 'fit_seconds': 54.7}, 'autoencoder_b5': {'n_train': 884736, 'fit_seconds': 37.8}}
+2026-11-11 09:05:54,524 INFO ml04_run_all === stage fit done in 568s
+2026-11-11 09:05:54,524 INFO ml04_run_all === stage validate
+2026-11-11 09:07:18,008 INFO aethentra.ml04.training stability isolation_forest_s256 {'spearman': 0.989456292887816, 'top2pct_jaccard': 0.7398573887386279}
+2026-11-11 09:07:25,339 INFO aethentra.ml04.training stability isolation_forest_s4096 {'spearman': 0.9911068552620725, 'top2pct_jaccard': 0.8312629399585921}
+2026-11-11 09:08:11,159 INFO aethentra.ml04.training stability lof_k20 {'spearman': 0.9284451234903112, 'top2pct_jaccard': 0.6274149034038639}
+2026-11-11 09:09:28,029 INFO aethentra.ml04.training stability lof_k100 {'spearman': 0.9880525215539044, 'top2pct_jaccard': 0.8185556412233359}
+2026-11-11 09:09:36,821 INFO aethentra.ml04.training stability ocsvm_nu01 {'spearman': 0.961429587793004, 'top2pct_jaccard': 0.781021897810219}
+2026-11-11 09:10:04,079 INFO aethentra.ml04.training stability ocsvm_nu05 {'spearman': 0.9966862895108767, 'top2pct_jaccard': 0.9093362115488397}
+2026-11-11 09:10:40,652 INFO aethentra.ml04.training stability autoencoder_b3 {'spearman': 0.846493084900295, 'top2pct_jaccard': 0.6843608664603665}
+2026-11-11 09:11:16,607 INFO aethentra.ml04.training stability autoencoder_b5 {'spearman': 0.870519614220936, 'top2pct_jaccard': 0.50169779286927}
+2026-11-11 09:11:16,621 INFO ml04_run_all decision: {"version": 2, "supersedes": "v1 (decision frozen 2026-11-10T23:03Z) INVALIDATED: NCEP R1 rhum 2001, rhum 2002 and tcdc 2001 raw files were all zeros (passed the day-count check). Files re-downloaded through the content check on 2026-11-12; ML-04 rebuilt from preprocessing. See experiments/ml04/v1_invalidated/README.md.", "frozen_utc": "2026-11-11T03:41:16+00:00", "selection_split": "validation (2011-2017), synthetic injections seed 2011", "family_best": {"isolation_forest": "isolation_forest_s4096", "lof": "lof_k20", "ocsvm": "ocsvm_nu01", "autoencoder": "autoencoder_b5"}, "eligible": ["zscore", "percentile", "mad", "mahalanobis", "isolation_forest_s4096", "lof_k20", "ocsvm_nu01"], "rank_sum": {"lof_k20": 4.0, "mahalanobis": 8.0, "ocsvm_nu01": 12.0, "zscore": 17.0, "isolation_forest_s4096": 20.0, "mad": 23.0, "percentile": 28.0}, "criteria": ["pr_auc", "pr_auc_univariate_spike", "pr_auc_compound_moderate", "pr_auc_covariance_break"], "selected_overall": "lof_k20", "selected_multivariate": "lof_k20", "univariate_reference": "zscore (+ percentile and MAD shown alongside)", "rule": "lowest rank-sum over the four PR-AUC criteria among candidates with seed-stability Spearman >= 0.9; operational multivariate detector = best multivariate method; univariate z/percentile/MAD stay as references"}
+2026-11-11 09:11:16,621 INFO ml04_run_all === stage validate done in 322s
+2026-11-11 09:11:16,621 INFO ml04_run_all === stage test
+2026-11-11 09:11:53,431 INFO ml04_run_all test: {"zscore": 0.056, "percentile": 0.023, "mad": 0.036, "mahalanobis": 0.161, "isolation_forest_s4096": 0.039, "lof_k20": 0.296, "ocsvm_nu01": 0.104, "autoencoder_b5": 0.14}
+2026-11-11 09:11:53,431 INFO ml04_run_all === stage test done in 37s
+2026-11-11 09:11:53,431 INFO ml04_run_all === stage score
+2026-11-11 09:15:27,286 INFO ml04_run_all scored 1287467 cell-months
+2026-11-11 09:15:27,286 INFO ml04_run_all === stage score done in 214s
+2026-11-11 09:15:27,286 INFO ml04_run_all === stage products
+2026-11-11 09:15:29,187 ERROR ml04_run_all stage failed
+Traceback (most recent call last):
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\xarray\backends\file_manager.py", line 265, in _acquire_with_cache_info
+    file = self._cache[self._key]
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\xarray\backends\lru_cache.py", line 56, in __getitem__
+    value = self._cache[key]
+            ~~~~~~~~~~~^^^^^
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('H:\\scientific-intelligence\\outputs\\ml04\\anomalies_monthly_1991-2020.nc',), 'a', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'e5dc7073-9ca9-4dd9-ab56-b2ebdcd1cdeb']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "h:\scientific-intelligence\scripts\ml04\run_all.py", line 142, in <module>
+    globals()[f"stage_{s}"](a)
+  File "h:\scientific-intelligence\scripts\ml04\run_all.py", line 83, in stage_products
+    log.info("reporting cube: %s", P.reporting_cube())
+                                   ^^^^^^^^^^^^^^^^^^
+  File "H:\scientific-intelligence\src\aethentra\anomaly\products.py", line 109, in reporting_cube
+    ds.to_netcdf(dst, encoding=enc)
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\xarray\core\dataset.py", line 2214, in to_netcdf
+    return to_netcdf(  # type: ignore[return-value]  # mypy cannot resolve the overloads:(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\xarray\backends\writers.py", line 422, in to_netcdf
+    store = get_writable_netcdf_store(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\xarray\backends\writers.py", line 78, in get_writable_netcdf_store
+    return store_open(target, mode=mode, format=format, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\xarray\backends\netCDF4_.py", line 555, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\xarray\backends\netCDF4_.py", line 454, in __init__
+    with manager.acquire_context():
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\xarray\backends\file_manager.py", line 235, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\steve\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\xarray\backends\file_manager.py", line 278, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/netCDF4/_netCDF4.pyx", line 2521, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2158, in netCDF4._netCDF4._ensure_nc_success
+PermissionError: [Errno 13] Permission denied: 'H:\\scientific-intelligence\\outputs\\ml04\\anomalies_monthly_1991-2020.nc'
+2026-11-11 09:15:55,430 INFO ml04_run_all === stage products
+2026-11-11 09:16:02,006 INFO ml04_run_all reporting cube: {'file': 'anomalies_monthly_1991-2020.nc', 'variables': 45, 'months': 575}
+2026-11-11 09:18:06,580 INFO ml04_run_all explained flagged: 94513
+2026-11-11 09:18:08,922 INFO ml04_run_all compound co-occurrence rows: 31488
+2026-11-11 09:18:27,170 INFO ml04_run_all clusters 5566, events 1926
+2026-11-11 09:26:22,391 INFO ml04_run_all t2m spells: 794338
+2026-11-11 09:26:24,484 INFO ml04_run_all stations: {"operational": {"pairs": 32, "stations": 16, "pearson_r": 0.3824546723052369, "flag_agreement": 0.90625, "cohen_kappa": 0.35135135135135137, "station_flag_rate": 0.09375, "ncep_flag_rate": 0.0625}, "test": {"pairs": 1530, "stations": 16, "pearson_r": 0.7161617875647365, "flag_agreement": 0.9411764705882353, "cohen_kappa": 0.3995552260934022, "station_flag_rate": 0.04771241830065359, "ncep_flag_rate": 0.05555555555555555}, "train": {"pairs": 5266, "stations": 16, "pearson_r": 0.7849894838068575, "flag_agreement": 0.9422711735662742, "cohen_kappa": 0.3642122353273849, "station_flag_rate": 0.04500569692366122, "ncep_flag_rate": 0.050322825674135964}, "validation": {"pairs": 1308, "stations": 16, "pearson_r": 0.8060019871508659, "flag_agreement": 0.9334862385321101, "cohen_kappa": 0.4038098830629954, "station_flag_rate": 0.06574923547400612, "ncep_flag_rate": 0.052752293577981654}, "note": "GHCN-D monthly TAVG (>= 20 valid days) vs NCEP R1 sigma-0.995 temperature of the containing 2.5 deg cell; flags at |z| >= 1.96. NCEP R1 assimilates surface pressure, not screen temperature, at these stations, but the comparison is still not fully independent; the point-vs-cell scale mismatch lowers agreement."}
+2026-11-11 09:26:24,805 INFO ml04_run_all reference events: [{"name": "sea_ice_springtime_retreat_2016", "months": ["2016-10", "2016-11", "2016-12"], "variable": "sic", "direction": "-", "split": "validation", "reference": "Turner, J. et al. (2017) Unprecedented springtime retreat of Antarctic sea ice in 2016. Geophys. Res. Lett. 44, 6868-6875.", "cells": 2784, "mean_z": -0.3896346688270569, "max_signed_z": -18.52489471435547, "univariate_flag_fraction": 0.11458333333333333, "multivariate_flag_fraction": 0.19216954022988506, "detected_univariate": false, "detected_multivariate": false}, {"name": "sea_ice_low_2017", "months": ["2017-01", "2017-02"], "variable": "sic", "direction": "-", "split": "validation", "reference": "Parkinson, C. L. (2019) A 40-y record reveals gradual Antarctic sea ice increases followed by decreases at rates far exceeding the rates seen in the Arctic. PNAS 116, 14414-14423.", "cells": 1856, "mean_z": -0.026318788528442383, "max_signed_z": -1.9542204141616821, "univariate_flag_fraction": 0.005926724137931034, "multivariate_flag_fraction": 0.20905172413793102, "detected_univariate": false, "detected_multivariate": true}, {"name": "peninsula_warm_event_2020_02", "months": ["2020-02"], "variable": "t2m", "direction": "+", "split": "test", "reference": "WMO (2021) verified a record 18.3 degC at Esperanza (Antarctic Peninsula) on 6 February 2020; a short event, so a monthly mean may not be strongly anomalous.", "cells": 35, "mean_z": 2.001828193664551, "max_signed_z": 2.6712305545806885, "univariate_flag_fraction": 0.6, "multivariate_flag_fraction": 0.08571428571428572, "detected_univariate": true, "detected_multivariate": false}, {"name": "east_antarctica_heatwave_2022_03", "months": ["2022-03"], "variable": "t2m", "direction": "+", "split": "test", "reference": "Wille, J. D. et al. (2024) The extraordinary March 2022 East Antarctica 'heat' wave. Part I/II. J. Climate 37.", "cells": 175, "mean_z": 1.0376760959625244, "max_signed_z": 2.871598482131958, "univariate_flag_fraction": 0.2571428571428571, "multivariate_flag_fraction": 0.1657142857142857, "detected_univariate": true, "detected_multivariate": false}, {"name": "record_low_winter_sea_ice_2023", "months": ["2023-06", "2023-07", "2023-08", "2023-09"], "variable": "sic", "direction": "-", "split": "test", "reference": "Purich, A. & Doddridge, E. W. (2023) Record low Antarctic sea ice coverage indicates a new sea ice state. Commun. Earth Environ. 4, 314.", "cells": 3712, "mean_z": -0.6647682189941406, "max_signed_z": -25.851991653442383, "univariate_flag_fraction": 0.16514008620689655, "multivariate_flag_fraction": 0.19100215517241378, "detected_univariate": false, "detected_multivariate": false}]
+2026-11-11 09:26:24,813 INFO ml04_run_all === stage products done in 629s
+2026-11-11 09:26:24,814 INFO ml04_run_all === stage export
+2026-11-11 09:26:27,540 INFO ml04_run_all export 2026-02: {'multivariate_flag_cells': 283, 'strong_or_extreme_cells': 165, 't2m_area_weighted_mean_z': 0.24270962905226812, 'slp_area_weighted_mean_z': -0.3316239472921081, 'wspd_area_weighted_mean_z': 0.07438546843293034, 'rhum_area_weighted_mean_z': -0.4735812068915537, 'prate_area_weighted_mean_z': 0.0704142387019892, 'tcdc_area_weighted_mean_z': 0.23569315585181172, 'z500_area_weighted_mean_z': -0.027249680087391825, 'sic_area_weighted_mean_z': -0.014222705147207724}
+2026-11-11 09:26:29,402 INFO ml04_run_all export 2026-10: {'sic_area_weighted_mean_z': -0.03950191800794168}
+2026-11-11 09:26:29,403 INFO ml04_run_all === stage export done in 5s
+2026-11-11 09:26:29,403 INFO ml04_run_all === stage store
+2026-11-11 09:26:37,574 INFO ml04_run_all events stored: {'multivariate': 94513, 'prate': 29466, 'rhum': 3671, 'sic': 18221, 'slp': 35898, 't2m': 40240, 'tcdc': 2366, 'wspd': 33661, 'z500': 36169}
+2026-11-11 09:26:37,597 INFO ml04_run_all === stage store done in 8s

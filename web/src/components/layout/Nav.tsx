@@ -61,7 +61,7 @@ export function Nav() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[background,border-color,transform] duration-500",
         solid || onExplore || open || mega ? "border-b border-line bg-polar/80 backdrop-blur-md" : "border-b border-transparent",
-        hidden && !open && !mega && !onExplore ? "-translate-y-full" : "translate-y-0",
+        hidden && !open && !mega && !onExplore && !pathname.startsWith("/models/") ? "-translate-y-full" : "translate-y-0",
       )}
     >
       <div className="container-x flex h-16 items-center justify-between gap-6">

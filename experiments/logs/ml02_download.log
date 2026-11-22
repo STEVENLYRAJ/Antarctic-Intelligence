@@ -2,3 +2,105 @@
 2026-11-08 03:21:47,630 INFO ml02_download ghcnd: {'downloaded': 45}
 2026-11-08 03:22:01,498 WARNING aethentra.acquisition NCEP air 1981 attempt 1 failed: NetCDF: I/O failure
 2026-11-08 03:32:52,990 INFO ml02_download ncep interim: {'already_present': 46, 'downloaded': 2}
+2026-11-14 10:15:54,944 WARNING aethentra.ml02.acquisition ERA5 single t2m 2026 attempt 1 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/8a74ba25-a1a7-4a11-aa26-fcf0157f0c26/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:15:55,110 WARNING aethentra.ml02.acquisition ERA5 invariant z None attempt 1 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/56dd55af-d927-48c1-aa5a-039611f3a13c/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:15:55,111 WARNING aethentra.ml02.acquisition ERA5 invariant lsm None attempt 1 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/7944cc4e-2bcf-495d-885a-a939b546df56/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:15:55,669 WARNING aethentra.ml02.acquisition ERA5 single t2m 2025 attempt 1 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/f2503ee3-bee7-47be-b02d-541583ac211d/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:16:46,444 WARNING aethentra.ml02.acquisition ERA5 single t2m 2025 attempt 2 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/e3d617c9-ec3b-43e5-9faa-e948218d2e3c/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:16:48,334 WARNING aethentra.ml02.acquisition ERA5 invariant lsm None attempt 2 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/40e825a3-073f-443b-833e-3787c3ca34e3/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:16:48,830 WARNING aethentra.ml02.acquisition ERA5 invariant z None attempt 2 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/8822bbe2-2255-47d3-a575-c6437b2c2adb/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:16:48,873 WARNING aethentra.ml02.acquisition ERA5 single t2m 2026 attempt 2 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/e5b905fa-392d-4522-ae85-d5fb7ac28a83/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:18:07,262 WARNING aethentra.ml02.acquisition ERA5 single t2m 2026 attempt 3 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/9a91c90c-82ff-436f-b02f-9d95cb8df503/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:18:08,039 WARNING aethentra.ml02.acquisition ERA5 invariant z None attempt 3 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/6fe16183-0256-4e5b-bfa2-5d3d1ad93472/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:18:08,942 WARNING aethentra.ml02.acquisition ERA5 invariant lsm None attempt 3 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/e3a47e90-fa02-49d3-b24c-ea98dfd17ccb/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:18:10,087 WARNING aethentra.ml02.acquisition ERA5 single t2m 2025 attempt 3 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/55b0e84f-f55a-4200-914e-4e4060869323/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:19:49,719 WARNING aethentra.ml02.acquisition ERA5 single t2m 2024 attempt 1 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/2b2d107c-29a6-4e4d-a6d2-58e17128bd3b/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:19:52,655 WARNING aethentra.ml02.acquisition ERA5 single t2m 2023 attempt 1 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/9107942b-929e-44e0-87bc-7999ea4ae914/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:20:37,878 WARNING aethentra.ml02.acquisition ERA5 single t2m 2024 attempt 2 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/741a418b-1117-4ea9-87e7-4ec1d84730bd/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:20:38,699 WARNING aethentra.ml02.acquisition ERA5 single t2m 2023 attempt 2 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/9b2c0ef8-26fd-4d69-98ec-e9ad5e4d26a2/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:21:55,122 WARNING aethentra.ml02.acquisition ERA5 single t2m 2024 attempt 3 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/02525db5-1a98-4406-8f38-b96bbe7695ee/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:21:59,954 WARNING aethentra.ml02.acquisition ERA5 single t2m 2023 attempt 3 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/2ae07220-af6c-4af0-941a-cdfa31a028c4/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:23:46,949 WARNING aethentra.ml02.acquisition ERA5 single t2m 2020 attempt 1 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/7e69611e-4c91-46f6-bae7-81b1b4a3d00f/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:23:50,571 WARNING aethentra.ml02.acquisition ERA5 single t2m 2019 attempt 1 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/3fbe5a39-032e-4770-9fbc-b37e82ca868e/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:24:29,326 WARNING aethentra.ml02.acquisition ERA5 single t2m 2020 attempt 2 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/c6af0628-1857-4bd9-9279-81317f535cf2/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:25:59,507 WARNING aethentra.ml02.acquisition ERA5 single t2m 2020 attempt 3 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/6884bc6e-0a4c-4f61-8e82-30092ab4b62f/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:27:59,294 WARNING aethentra.ml02.acquisition ERA5 single t2m 2018 attempt 1 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/f1cd2785-e5e9-416d-a64a-66b6f08bcb80/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:28:51,404 WARNING aethentra.ml02.acquisition ERA5 single t2m 2018 attempt 2 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/64c2ce47-404d-4aa9-8692-8ed9f393a7fc/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:30:14,124 WARNING aethentra.ml02.acquisition ERA5 single t2m 2018 attempt 3 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/067248c5-bce8-4d2e-84f4-e3cf03577599/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:31:59,942 WARNING aethentra.ml02.acquisition ERA5 single t2m 2017 attempt 1 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/5480d42b-1953-4c61-958d-deff14688a7b/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:32:43,005 WARNING aethentra.ml02.acquisition ERA5 single t2m 2017 attempt 2 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/7b287576-5205-40ae-b13b-ff499de5e82b/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:33:59,718 WARNING aethentra.ml02.acquisition ERA5 single t2m 2017 attempt 3 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/2449db70-716a-4a29-a637-5411941cb769/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:35:52,019 WARNING aethentra.ml02.acquisition ERA5 single t2m 2016 attempt 1 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/b9cf0fcf-5828-406f-844b-62b6a0848795/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:37:22,268 WARNING aethentra.ml02.acquisition ERA5 single t2m 2016 attempt 2 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/19cab3e0-b5ac-468c-ade4-4bdc3b392981/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:38:34,212 WARNING aethentra.ml02.acquisition ERA5 single t2m 2016 attempt 3 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/4094555d-c30d-4204-850e-feb8041a0a4d/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:40:25,317 WARNING aethentra.ml02.acquisition ERA5 single t2m 2015 attempt 1 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/e3b03233-8087-4277-b4fd-d241d4dc26bb/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:41:17,271 WARNING aethentra.ml02.acquisition ERA5 single t2m 2015 attempt 2 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/a4129d89-3154-47bf-9d7c-fc3c83026030/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially
+2026-11-14 10:42:34,036 WARNING aethentra.ml02.acquisition ERA5 single t2m 2015 attempt 3 failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/d1a1e049-6e05-403b-8828-a87e55bc1cc0/results
+The job has been rejected
+Maximum number queued requests for this dataset has been reached. Please configure your scripts to request data sequentially

@@ -7,7 +7,7 @@ Inputs (all regular lat/lon grids, so images are equirectangular EPSG:4326 and d
   C3  Copernicus Marine multi-reanalysis ensemble (mean/std)        -> SIC ensemble spread (uncertainty) frames
   C4  DMI ASIP SAR+AMSR2 1 km SIC (97 ML-03 test dates)            -> high-resolution SIC frames (0.1 deg)
   C5  IFREMER AMSR2/AMSR-E 3-day sea-ice drift                     -> monthly drift speed frames + drift vectors
-  C6  SMOS (+CryoSat-2) sea-ice thickness daily                    -> weekly thin-ice thickness frames
+  C6  AWI merged CryoSat-2 + Sentinel-3 + SMOS sea-ice thickness  -> weekly thickness frames
   C7  MULTIOBS ARMOR3D-type observation-based ocean T/S            -> monthly upper-ocean temperature anomaly frames
   ERA5 monthly (Copernicus CDS)                                     -> 36-month t2m / MSLP / SST anomaly frames
   ERA5 daily mean t2m 2014-2026                                     -> last 92 daily frames, daily Antarctic-mean record
@@ -181,7 +181,7 @@ def c4():
         b = bounds_of(latc, lonc)
     add_layer("dmi_asip", "Sea ice · observations", "Sea-ice concentration from SAR + AMSR2 (DMI ASIP, ML-03 test dates)", "%", "observation",
               "DMI ASIP automated sea-ice product (Sentinel-1 SAR + AMSR2), 1 km, via Copernicus Marine (C4)",
-              "Daily analysis on the 97 dates of the ML-03 test scenes; averaged from 0.025° to 0.1° for the globe. Cells below 15 % are transparent. Swath gaps leave holes.",
+              "Daily analysis on the ML-03 test-scene dates (dates with almost no valid data are skipped); averaged from 0.025° to 0.1° for the globe. Cells below 15 % are transparent. Swath gaps leave holes.",
               SIC_CMAP, 15, 100, frames, b, default=frames[-1]["t"] if frames else None)
 
 
@@ -255,7 +255,7 @@ def c5():
 # ---------------------------------------------------------------- C6 SMOS thin-ice thickness, weekly
 def c6():
     frames, lat, lon = [], None, None
-    vmax = 1.0
+    vmax = 3.0
     for f in sorted(glob.glob(str(CM / "C6" / "*.nc"))):
         with xr.open_dataset(f) as d:
             d = ll(d)
@@ -268,9 +268,9 @@ def c6():
                 save_png(a, lat, "viridis", 0, vmax, LAYERS / "smos_sit" / f"{key}.png")
                 frames.append({"t": key, "url": f"/data/globe/layers/smos_sit/{key}.png"})
     if frames:
-        add_layer("smos_sit", "Sea ice · observations", "Thin sea-ice thickness from SMOS L-band radiometry (weekly samples)", "m", "observation",
-                  "ESA SMOS sea-ice thickness product, via Copernicus Marine (C6)",
-                  "L-band brightness temperature retrieval, sensitive to thin ice (≲ 1 m); thicker ice saturates. One daily field every 7 days.",
+        add_layer("smos_sit", "Sea ice · observations", "Sea-ice thickness, merged CryoSat-2 + Sentinel-3 + SMOS (weekly samples)", "m", "observation",
+                  "AWI merged sea-ice thickness (CryoSat-2, Sentinel-3A/B altimetry + SMOS L-band), ESA product via Copernicus Marine (C6)",
+                  "Daily L4 optimal-interpolation analysis; one field every 7 days is shown. Altimetry constrains thick ice, SMOS thin ice. Antarctic snow-depth assumptions dominate the uncertainty.",
                   "viridis", 0, vmax, frames, bounds_of(lat, lon), default=frames[-1]["t"])
 
 
@@ -365,6 +365,8 @@ def pack_monthly(s: pd.Series, base: tuple[int, int], nd: int) -> dict:
     b = s[(s.index.year >= base[0]) & (s.index.year <= base[1])]
     clim = b.groupby(b.index.month).mean()
     a = s - clim.reindex(s.index.month).values
+    ok = np.isfinite(a.values) & np.isfinite(s.values)  # months with no reference climatology are dropped, never NaN
+    s, a = s[ok], a[ok]
     return {"t": [d.strftime("%Y-%m") for d in s.index], "v": [round(float(x), nd) for x in s.values],
             "anom": [round(float(x), nd) for x in a.values]}
 
@@ -422,19 +424,19 @@ def main():
 
     # merge outputs with any previous run so partial rebuilds keep the other layers
     cpath = G / "catalog.json"
-    old = json.loads(cpath.read_text()) if cpath.exists() else {"layers": []}
+    old = json.loads(cpath.read_text(encoding="utf-8")) if cpath.exists() else {"layers": []}
     ids = {l["id"] for l in catalog}
     layers = [l for l in old["layers"] if l["id"] not in ids] + catalog
-    cpath.write_text(json.dumps({"generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"), "layers": layers}, separators=(",", ":")))
+    cpath.write_text(json.dumps({"generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"), "layers": layers}, separators=(",", ":")), encoding="utf-8")
     dpath = OUT / "daily_series.json"
     if len(daily) > 1:
-        prev = json.loads(dpath.read_text()) if dpath.exists() else {}
+        prev = json.loads(dpath.read_text(encoding="utf-8")) if dpath.exists() else {}
         prev.update(daily)
-        dpath.write_text(json.dumps(prev, separators=(",", ":")))
+        dpath.write_text(json.dumps(prev, separators=(",", ":"), allow_nan=False), encoding="utf-8")
     if extra:
-        cs = json.loads((OUT / "climate_series.json").read_text())
+        cs = json.loads((OUT / "climate_series.json").read_text(encoding="utf-8"))
         cs["series"].update(extra)
-        (OUT / "climate_series.json").write_text(json.dumps(cs, separators=(",", ":")))
+        (OUT / "climate_series.json").write_text(json.dumps(cs, separators=(",", ":"), allow_nan=False), encoding="utf-8")
     log("done", len(layers), "layers", "FAILED: " + "; ".join(failed) if failed else "")
 
 

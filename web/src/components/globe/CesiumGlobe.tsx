@@ -19,8 +19,17 @@ export interface Overlay {
   alpha?: number;
 }
 
+export interface VectorSet {
+  id: string;
+  /** JSON {segments: [lon0, lat0, lon1, lat1][]} */
+  url: string;
+  color?: string;
+}
+
 export interface GlobeHandle {
   flyTo: (lat: number, lon: number, height: number, duration?: number) => void;
+  /** Fly to a geographic box (degrees), looking straight down. */
+  flyToRect: (west: number, south: number, east: number, north: number, duration?: number) => void;
   setView: (lat: number, lon: number, height: number, pitchDeg?: number) => void;
   zoom: (factor: number) => void;
   resetNorth: () => void;
@@ -40,6 +49,9 @@ interface Props {
   onReady?: () => void;
   onFallback?: (reason: string) => void;
   autoRotate?: boolean;
+  /** Transparent canvas background so page content (e.g. a starfield) shows behind the globe. */
+  transparent?: boolean;
+  vectors?: VectorSet[];
 }
 
 const GIBS = "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best";
@@ -70,13 +82,14 @@ function hasWebGL(): boolean {
  * Natural Earth II (offline fallback). Terrain: Cesium World Terrain only when NEXT_PUBLIC_CESIUM_ION_TOKEN is set.
  */
 export const CesiumGlobe = forwardRef<GlobeHandle, Props>(function CesiumGlobe(
-  { className, interactive = true, overlays = [], trueColorDate = null, showGraticule = false, initial, onCamera, onPointer, onReady, onFallback, autoRotate = false },
+  { className, interactive = true, overlays = [], trueColorDate = null, showGraticule = false, initial, onCamera, onPointer, onReady, onFallback, autoRotate = false, transparent = false, vectors = [] },
   ref,
 ) {
   const host = useRef<HTMLDivElement>(null);
   const viewerRef = useRef<CesiumNS.Viewer | null>(null);
   const CRef = useRef<Cesium | null>(null);
-  const overlayLayers = useRef<Map<string, CesiumNS.ImageryLayer>>(new Map());
+  const overlayLayers = useRef<Map<string, { url: string; layer: CesiumNS.ImageryLayer }>>(new Map());
+  const vectorPrims = useRef<Map<string, { url: string; prim: CesiumNS.PolylineCollection }>>(new Map());
   const trueColorLayer = useRef<CesiumNS.ImageryLayer | null>(null);
   const gridRef = useRef<CesiumNS.Entity[]>([]);
   const [ready, setReady] = useState(false);
@@ -88,6 +101,7 @@ export const CesiumGlobe = forwardRef<GlobeHandle, Props>(function CesiumGlobe(
   useEffect(() => {
     let disposed = false;
     const layers = overlayLayers.current;
+    const vprims = vectorPrims.current;
     if (!hasWebGL()) {
       setFailed("WebGL is not available in this browser");
       cbs.current.onFallback?.("webgl");
@@ -124,6 +138,7 @@ export const CesiumGlobe = forwardRef<GlobeHandle, Props>(function CesiumGlobe(
           requestRenderMode: true,
           maximumRenderTimeChange: Infinity,
           msaaSamples: 4,
+          contextOptions: { webgl: { alpha: transparent } },
         });
         viewerRef.current = viewer;
         const blue = new C.WebMapTileServiceImageryProvider({
@@ -149,7 +164,7 @@ export const CesiumGlobe = forwardRef<GlobeHandle, Props>(function CesiumGlobe(
           }
         }
         const scene = viewer.scene;
-        scene.backgroundColor = C.Color.fromCssColorString("#05080d");
+        scene.backgroundColor = transparent ? C.Color.TRANSPARENT : C.Color.fromCssColorString("#05080d");
         if (scene.skyAtmosphere) scene.skyAtmosphere.show = true;
         scene.globe.showGroundAtmosphere = true;
         scene.globe.enableLighting = false;
@@ -204,6 +219,7 @@ export const CesiumGlobe = forwardRef<GlobeHandle, Props>(function CesiumGlobe(
     return () => {
       disposed = true;
       layers.clear();
+      vprims.clear();
       trueColorLayer.current = null;
       gridRef.current = [];
       if (viewerRef.current && !viewerRef.current.isDestroyed()) viewerRef.current.destroy();
@@ -232,43 +248,89 @@ export const CesiumGlobe = forwardRef<GlobeHandle, Props>(function CesiumGlobe(
     };
   }, [autoRotate, ready]);
 
-  /* ---------- data overlays ---------- */
+  /* ---------- data overlays (keyed by id; a new url for the same id is swapped in after it loads: no flicker) ---------- */
   useEffect(() => {
     const v = viewerRef.current;
     const C = CRef.current;
     if (!v || !C) return;
-    const want = new Map(overlays.map((o) => [o.id + o.url, o]));
-    for (const [k, layer] of overlayLayers.current) {
-      if (!want.has(k)) {
-        v.imageryLayers.remove(layer, true);
-        overlayLayers.current.delete(k);
+    const want = new Map(overlays.map((o) => [o.id, o]));
+    for (const [id, cur] of overlayLayers.current) {
+      if (!want.has(id)) {
+        v.imageryLayers.remove(cur.layer, true);
+        overlayLayers.current.delete(id);
       }
     }
     let cancelled = false;
-    (async () => {
-      for (const [k, o] of want) {
-        if (overlayLayers.current.has(k)) {
-          overlayLayers.current.get(k)!.alpha = o.alpha ?? 0.9;
-          continue;
-        }
-        try {
-          const p = await C.SingleTileImageryProvider.fromUrl(o.url, {
-            rectangle: C.Rectangle.fromDegrees(o.bounds.west, o.bounds.south, o.bounds.east, o.bounds.north),
-          });
-          if (cancelled || v.isDestroyed()) return;
-          const layer = v.imageryLayers.addImageryProvider(p);
-          layer.alpha = o.alpha ?? 0.9;
-          overlayLayers.current.set(k, layer);
-        } catch {
-          /* missing layer: ignored; the panel shows the error state */
-        }
+    overlays.forEach(async (o, order) => {
+      const cur = overlayLayers.current.get(o.id);
+      if (cur && cur.url === o.url) {
+        cur.layer.alpha = o.alpha ?? 0.9;
+        v.scene.requestRender();
+        return;
       }
-      if (!v.isDestroyed()) v.scene.requestRender();
-    })();
+      try {
+        const p = await C.SingleTileImageryProvider.fromUrl(o.url, {
+          rectangle: C.Rectangle.fromDegrees(o.bounds.west, o.bounds.south, o.bounds.east, o.bounds.north),
+        });
+        if (cancelled || v.isDestroyed()) return;
+        const layer = v.imageryLayers.addImageryProvider(p);
+        layer.alpha = o.alpha ?? 0.9;
+        const old = overlayLayers.current.get(o.id);
+        overlayLayers.current.set(o.id, { url: o.url, layer });
+        // keep panel order: later overlays draw above earlier ones
+        const target = Math.min(v.imageryLayers.length - 1, 2 + order + (trueColorLayer.current ? 1 : 0));
+        while (v.imageryLayers.indexOf(layer) > target) v.imageryLayers.lower(layer);
+        // let the new image paint for a frame before removing the previous one
+        window.setTimeout(() => {
+          if (old && !v.isDestroyed() && v.imageryLayers.contains(old.layer)) v.imageryLayers.remove(old.layer, true);
+          if (!v.isDestroyed()) v.scene.requestRender();
+        }, 60);
+        v.scene.requestRender();
+      } catch {
+        /* missing image: ignored; the panel shows the error state */
+      }
+    });
     return () => {
       cancelled = true;
     };
   }, [overlays, ready]);
+
+  /* ---------- vector overlays (e.g. sea-ice drift arrows) ---------- */
+  useEffect(() => {
+    const v = viewerRef.current;
+    const C = CRef.current;
+    if (!v || !C) return;
+    const want = new Map(vectors.map((x) => [x.id, x]));
+    for (const [id, cur] of vectorPrims.current) {
+      if (!want.has(id) || want.get(id)!.url !== cur.url) {
+        v.scene.primitives.remove(cur.prim);
+        vectorPrims.current.delete(id);
+      }
+    }
+    let cancelled = false;
+    vectors.forEach(async (vs) => {
+      if (vectorPrims.current.has(vs.id)) return;
+      try {
+        const r = await fetch(vs.url);
+        if (!r.ok) return;
+        const j = (await r.json()) as { segments: number[][] };
+        if (cancelled || v.isDestroyed()) return;
+        const col = new C.PolylineCollection();
+        const material = C.Material.fromType("Color", { color: C.Color.fromCssColorString(vs.color ?? "#eaf5fc").withAlpha(0.85) });
+        for (const sg of j.segments) {
+          col.add({ positions: C.Cartesian3.fromDegreesArrayHeights([sg[0], sg[1], 2000, sg[2], sg[3], 2000]), width: 1.25, material });
+        }
+        v.scene.primitives.add(col);
+        vectorPrims.current.set(vs.id, { url: vs.url, prim: col });
+        v.scene.requestRender();
+      } catch {
+        /* ignore */
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [vectors, ready]);
 
   /* ---------- GIBS daily true colour ---------- */
   useEffect(() => {
@@ -342,6 +404,17 @@ export const CesiumGlobe = forwardRef<GlobeHandle, Props>(function CesiumGlobe(
           easingFunction: C.EasingFunction.QUINTIC_IN_OUT,
         });
       },
+      flyToRect: (west, south, east, north, duration = 2.8) => {
+        const v = viewerRef.current;
+        const C = CRef.current;
+        if (!v || !C) return;
+        v.camera.flyTo({
+          destination: C.Rectangle.fromDegrees(west, south, east, north),
+          orientation: { heading: 0, pitch: C.Math.toRadians(-90), roll: 0 },
+          duration,
+          easingFunction: C.EasingFunction.QUINTIC_IN_OUT,
+        });
+      },
       setView: (lat, lon, height, pitchDeg = -90) => {
         const v = viewerRef.current;
         const C = CRef.current;
@@ -385,7 +458,8 @@ export const CesiumGlobe = forwardRef<GlobeHandle, Props>(function CesiumGlobe(
     <div className={className}>
       <div ref={host} className="h-full w-full" />
       {!ready && (
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-6" role="status">
+          <div className="earth-fallback breathe w-[min(42vh,60%)]" />
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">Initialising globe…</span>
         </div>
       )}

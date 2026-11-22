@@ -5,6 +5,7 @@ import { MODELS } from "@/config/site";
 import { useApi } from "@/hooks/useApi";
 import type { Ml04Latest, SarWeekly, SicForecast, T2mForecast } from "@/lib/api/types";
 import { DataBadge } from "@/components/ui/primitives";
+import { Spotlight } from "@/components/ui/interactive";
 import { fmt } from "@/lib/utils";
 
 function Headline({ slug }: { slug: string }) {
@@ -59,14 +60,15 @@ function Headline({ slug }: { slug: string }) {
 
 export function ModuleCards() {
   return (
-    <div className="grid gap-px overflow-hidden rounded-[var(--radius)] border border-line bg-line md:grid-cols-2">
+    <div className="grid gap-4 md:grid-cols-2">
       {MODELS.map((m) => (
+        <Spotlight key={m.slug} className="rounded-[var(--radius-lg)]">
         <Link
-          key={m.slug}
           href={`/models/${m.slug}`}
           data-reveal
-          className="group relative flex flex-col justify-between bg-polar p-8 transition-colors duration-500 hover:bg-navy md:p-10"
+          className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[var(--radius-lg)] border border-line bg-midnight/60 p-8 transition-colors duration-500 hover:bg-navy/60 md:p-10"
         >
+          <span className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-[0.07] blur-3xl transition-opacity duration-700 group-hover:opacity-[0.16]" style={{ background: m.accent }} />
           <span className="absolute left-0 top-0 h-px w-0 transition-all duration-700 group-hover:w-full" style={{ background: m.accent }} />
           <div>
             <div className="flex items-center justify-between">
@@ -80,6 +82,7 @@ export function ModuleCards() {
           </div>
           <Headline slug={m.slug} />
         </Link>
+        </Spotlight>
       ))}
     </div>
   );
